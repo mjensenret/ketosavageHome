@@ -52,6 +52,9 @@
       <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="KetoSavageThemeAssembly">
+      <HintPath>App_Themes\KetoSavage\KetoSavageThemeAssembly.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.AspNet.Identity.Core, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.AspNet.Identity.Core.2.2.1\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
       <Private>True</Private>
@@ -219,6 +222,7 @@
     </Content>
     <Content Include="App_Data\SideMenu.xml" />
     <Content Include="App_Data\TopMenu.xml" />
+    <Content Include="Content\generic.dark.custom.css" />
     <Content Include="Content\Images\AquaHeader.jpg" />
     <Content Include="Content\Images\BlackGlassHeader.jpg" />
     <Content Include="Content\Images\GlassHeader.jpg" />
@@ -252,6 +256,84 @@
     <Content Include="Scripts\knockout-3.3.0.debug.js" />
     <Content Include="Scripts\knockout-3.3.0.js" />
     <Content Include="packages.config" />
+    <Content Include="App_Themes\KetoSavage\ASPxBinaryImage.skin" />
+    <Content Include="App_Themes\KetoSavage\ASPxButton.skin" />
+    <Content Include="App_Themes\KetoSavage\ASPxButtonEdit.skin" />
+    <Content Include="App_Themes\KetoSavage\ASPxCalendar.skin" />
+    <Content Include="App_Themes\KetoSavage\ASPxCallbackPanel.skin" />
+    <Content Include="App_Themes\KetoSavage\ASPxCaptcha.skin" />
+    <Content Include="App_Themes\KetoSavage\ASPxCardView.skin" />
+    <Content Include="App_Themes\KetoSavage\ASPxCheckBox.skin" />
+    <Content Include="App_Themes\KetoSavage\ASPxCheckBoxList.skin" />
+    <Content Include="App_Themes\KetoSavage\ASPxCloudControl.skin" />
+    <Content Include="App_Themes\KetoSavage\ASPxColorEdit.skin" />
+    <Content Include="App_Themes\KetoSavage\ASPxComboBox.skin" />
+    <Content Include="App_Themes\KetoSavage\ASPxDataView.skin" />
+    <Content Include="App_Themes\KetoSavage\ASPxDateEdit.skin" />
+    <Content Include="App_Themes\KetoSavage\ASPxDateNavigator.skin" />
+    <Content Include="App_Themes\KetoSavage\ASPxDockPanel.skin" />
+    <Content Include="App_Themes\KetoSavage\ASPxDocumentViewer.skin" />
+    <Content Include="App_Themes\KetoSavage\ASPxDropDownEdit.skin" />
+    <Content Include="App_Themes\KetoSavage\ASPxFileManager.skin" />
+    <Content Include="App_Themes\KetoSavage\ASPxFilterControl.skin" />
+    <Content Include="App_Themes\KetoSavage\ASPxFormLayout.skin" />
+    <Content Include="App_Themes\KetoSavage\ASPxGridLookup.skin" />
+    <Content Include="App_Themes\KetoSavage\ASPxGridView.skin" />
+    <Content Include="App_Themes\KetoSavage\ASPxHeadline.skin" />
+    <Content Include="App_Themes\KetoSavage\ASPxHint.skin" />
+    <Content Include="App_Themes\KetoSavage\ASPxHtmlEditor.skin" />
+    <Content Include="App_Themes\KetoSavage\ASPxHyperLink.skin" />
+    <Content Include="App_Themes\KetoSavage\ASPxImage.skin" />
+    <Content Include="App_Themes\KetoSavage\ASPxImageGallery.skin" />
+    <Content Include="App_Themes\KetoSavage\ASPxImageSlider.skin" />
+    <Content Include="App_Themes\KetoSavage\ASPxImageZoom.skin" />
+    <Content Include="App_Themes\KetoSavage\ASPxImageZoomNavigator.skin" />
+    <Content Include="App_Themes\KetoSavage\ASPxLabel.skin" />
+    <Content Include="App_Themes\KetoSavage\ASPxListBox.skin" />
+    <Content Include="App_Themes\KetoSavage\ASPxLoadingPanel.skin" />
+    <Content Include="App_Themes\KetoSavage\ASPxMemo.skin" />
+    <Content Include="App_Themes\KetoSavage\ASPxMenu.skin" />
+    <Content Include="App_Themes\KetoSavage\ASPxNavBar.skin" />
+    <Content Include="App_Themes\KetoSavage\ASPxNewsControl.skin" />
+    <Content Include="App_Themes\KetoSavage\ASPxPageControl.skin" />
+    <Content Include="App_Themes\KetoSavage\ASPxPager.skin" />
+    <Content Include="App_Themes\KetoSavage\ASPxPanel.skin" />
+    <Content Include="App_Themes\KetoSavage\ASPxPivotGrid.skin" />
+    <Content Include="App_Themes\KetoSavage\ASPxPopupControl.skin" />
+    <Content Include="App_Themes\KetoSavage\ASPxPopupMenu.skin" />
+    <Content Include="App_Themes\KetoSavage\ASPxProgressBar.skin" />
+    <Content Include="App_Themes\KetoSavage\ASPxRadioButton.skin" />
+    <Content Include="App_Themes\KetoSavage\ASPxRadioButtonList.skin" />
+    <Content Include="App_Themes\KetoSavage\ASPxRatingControl.skin" />
+    <Content Include="App_Themes\KetoSavage\ASPxRibbon.skin" />
+    <Content Include="App_Themes\KetoSavage\ASPxRichEdit.skin" />
+    <Content Include="App_Themes\KetoSavage\ASPxRoundPanel.skin" />
+    <Content Include="App_Themes\KetoSavage\ASPxScheduler.skin" />
+    <Content Include="App_Themes\KetoSavage\ASPxSiteMapControl.skin" />
+    <Content Include="App_Themes\KetoSavage\ASPxSpellChecker.skin" />
+    <Content Include="App_Themes\KetoSavage\ASPxSpinEdit.skin" />
+    <Content Include="App_Themes\KetoSavage\ASPxSplitter.skin" />
+    <Content Include="App_Themes\KetoSavage\ASPxSpreadsheet.skin" />
+    <Content Include="App_Themes\KetoSavage\ASPxTabControl.skin" />
+    <Content Include="App_Themes\KetoSavage\ASPxTextBox.skin" />
+    <Content Include="App_Themes\KetoSavage\ASPxTimeEdit.skin" />
+    <Content Include="App_Themes\KetoSavage\ASPxTitleIndex.skin" />
+    <Content Include="App_Themes\KetoSavage\ASPxTokenBox.skin" />
+    <Content Include="App_Themes\KetoSavage\ASPxTrackBar.skin" />
+    <Content Include="App_Themes\KetoSavage\ASPxTreeList.skin" />
+    <Content Include="App_Themes\KetoSavage\ASPxTreeView.skin" />
+    <Content Include="App_Themes\KetoSavage\ASPxUploadControl.skin" />
+    <Content Include="App_Themes\KetoSavage\ASPxValidationSummary.skin" />
+    <Content Include="App_Themes\KetoSavage\ASPxVerticalGrid.skin" />
+    <Content Include="App_Themes\KetoSavage\MonthEdit.skin" />
+    <Content Include="App_Themes\KetoSavage\RecurrenceTypeEdit.skin" />
+    <Content Include="App_Themes\KetoSavage\ReportDocumentMap.skin" />
+    <Content Include="App_Themes\KetoSavage\ReportParametersPanel.skin" />
+    <Content Include="App_Themes\KetoSavage\ReportToolbar.skin" />
+    <Content Include="App_Themes\KetoSavage\ReportViewer.skin" />
+    <Content Include="App_Themes\KetoSavage\WebChartControl.skin" />
+    <Content Include="App_Themes\KetoSavage\WeekDaysEdit.skin" />
+    <Content Include="App_Themes\KetoSavage\WeekOfMonthEdit.skin" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Views\Shared\DisplayTemplates\Boolean.cshtml" />

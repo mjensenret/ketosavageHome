@@ -1,4 +1,5 @@
 html, body {
+    background-color: #000000;
     margin: 0;
     padding: 0;
 }
@@ -6,7 +7,7 @@ html, body {
 /* Header */
 .dxpnl-edge.t.headerPane 
 {
-    background-color: #EDEDED;
+    background-color: #000000;
     background-position: left top;
     background-repeat: no-repeat;
 }
@@ -16,6 +17,7 @@ html, body {
 }
 .headerMenu 
 {
+    background-color: #000000;
     border-width: 0!important;
     border-top-width: 1px!important;
 }
@@ -29,6 +31,7 @@ html, body {
 }
 .templateTitle 
 {
+    color: #ffffff;
     float:left;
     margin: 12px 12px 18px;
 }
@@ -44,7 +47,7 @@ html, body {
 {
     text-decoration: none;
     font-size: x-large;
-    color: black;
+    color: #ffffff;
 }
 .loginControl 
 {
@@ -60,7 +63,7 @@ html, body {
 }
 .loginControl a 
 {
-    color: black;
+    color: #ffffff;
     text-decoration: none;
     border-bottom: dashed 1px black;
     display: inline-block;
@@ -70,7 +73,7 @@ html, body {
 /* Footer */
 .dxpnl-edge.b.footerPane 
 {
-    background-color: #EDEDED;
+    background-color: #000000;
 }
 .dxpnl-edge.b.footerPane.panel 
 {
@@ -608,7 +611,7 @@ html, body {
 }
 .dxpnlControl_Moderno.headerPane .headerMenu .dxm-main
 {
-    border-color: #d1d1d1;
+    border-color: #000000;
     border-style: solid;
 }
 .dxpnlControl_Moderno.leftPane
