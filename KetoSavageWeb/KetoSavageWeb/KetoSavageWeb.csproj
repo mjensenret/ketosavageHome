@@ -226,6 +226,8 @@
     <Content Include="Content\Images\AquaHeader.jpg" />
     <Content Include="Content\Images\BlackGlassHeader.jpg" />
     <Content Include="Content\Images\GlassHeader.jpg" />
+    <Content Include="Content\Images\KSHeaderLogo_white.png" />
+    <Content Include="Content\Images\KSLogo_white.png" />
     <Content Include="Content\Images\PlasticBlueHeader.jpg" />
     <Content Include="Content\Images\RedWineHeader.jpg" />
     <Content Include="Content\jquery-ui.css" />
@@ -334,6 +336,7 @@
     <Content Include="App_Themes\KetoSavage\WebChartControl.skin" />
     <Content Include="App_Themes\KetoSavage\WeekDaysEdit.skin" />
     <Content Include="App_Themes\KetoSavage\WeekOfMonthEdit.skin" />
+    <None Include="Properties\PublishProfiles\file.pubxml" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Views\Shared\DisplayTemplates\Boolean.cshtml" />
@@ -380,6 +383,7 @@
     <Content Include="Views\Account\VerifyCode.cshtml" />
     <Content Include="Views\Manage\SetPassword.cshtml" />
     <Content Include="Views\Home\GridViewPartialView.cshtml" />
+    <Content Include="Views\Account\_loginPartial.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

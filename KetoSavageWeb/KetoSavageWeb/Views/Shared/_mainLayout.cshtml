@@ -1,6 +1,6 @@
 @{ Layout = "~/Views/Shared/_rootLayout.cshtml"; }
 
-    @Html.DevExpress().Panel(settings => {
+    @*@Html.DevExpress().Panel(settings => {
         settings.Name = "LeftPane";
         settings.FixedPosition = PanelFixedPosition.WindowLeft;
         settings.Collapsible = true;
@@ -10,7 +10,7 @@
         settings.SetContent(() => {
             Html.RenderPartial("ContentLeftPartialView");
         });
-    }).GetHtml()
+    }).GetHtml()*@
 
     <div class="contentPane">
         @RenderBody()

@@ -12,8 +12,9 @@ namespace KetoSavageWeb.Controllers
         public ActionResult Index()
         {
             // DXCOMMENT: Pass a data model for GridView
-            
-            return View(NorthwindDataProvider.GetCustomers());
+
+            //return View(NorthwindDataProvider.GetCustomers());
+            return View();
         }
         
         public ActionResult GridViewPartialView() 
