@@ -52,6 +52,7 @@ namespace KetoSavageWeb.Controllers {
                 // This doesn't count login failures towards account lockout
                 // To enable password failures to trigger account lockout, change to shouldLockout: true
                 var result = await SignInManager.PasswordSignInAsync(model.UserName, model.Password, model.RememberMe.Value, shouldLockout: false);
+                var url = returnUrl;
                 switch (result)
                 {
                     case SignInStatus.Success:
@@ -76,7 +77,7 @@ namespace KetoSavageWeb.Controllers {
 
         public ActionResult LogOff() {
             AuthenticationManager.SignOut(DefaultAuthenticationTypes.ApplicationCookie);
-            return Redirect("/");
+            return Redirect("~/");
         }
 
         //
@@ -108,7 +109,7 @@ namespace KetoSavageWeb.Controllers {
                     // var callbackUrl = Url.Action("ConfirmEmail", "Account", new { userId = user.Id, code = code }, protocol: Request.Url.Scheme);
                     // await UserManager.SendEmailAsync(user.Id, "Confirm your account", "Please confirm your account by clicking <a href=\"" + callbackUrl + "\">here</a>");
 
-                    return Redirect("/");
+                    return RedirectToAction("Index", "Home");
                 }
                 ViewBag.ErrorMessage = result.Errors.First();
             }
@@ -451,7 +452,7 @@ namespace KetoSavageWeb.Controllers {
             {
                 return Redirect(returnUrl);
             }
-            return Redirect("/");
+            return RedirectToAction("Index", "Home");
         }
 
         internal class ChallengeResult : HttpUnauthorizedResult
