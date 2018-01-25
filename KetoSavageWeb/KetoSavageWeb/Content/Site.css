@@ -112,14 +112,13 @@ html, body {
 }
 .center
 {
-	border: 3px solid green;
+
     text-align: center;
 
 }
 
 .loginForm
 {
-    border: 3px solid red;
     width: 100%;
     margin: auto;
     position: relative;

@@ -385,6 +385,7 @@
     <Content Include="Views\Manage\SetPassword.cshtml" />
     <Content Include="Views\Home\GridViewPartialView.cshtml" />
     <Content Include="Views\Account\_loginPartial.cshtml" />
+    <Content Include="Views\Account\ManageUsers.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
