@@ -6,6 +6,7 @@ using Microsoft.Owin.Security.Cookies;
 using Microsoft.Owin.Security.Google;
 using Owin;
 using KetoSavageWeb.Models;
+using Microsoft.AspNet.Identity.EntityFramework;
 
 namespace KetoSavageWeb
 {
@@ -62,6 +63,72 @@ namespace KetoSavageWeb
             //    ClientId = "",
             //    ClientSecret = ""
             //});
+            createRolesandUsers();
+        }
+
+        private void createRolesandUsers()
+        {
+            ApplicationDbContext context = new ApplicationDbContext();
+
+            var roleManager = new RoleManager<IdentityRole>(new RoleStore<IdentityRole>(context));
+            var userManager = new UserManager<ApplicationUser>(new UserStore<ApplicationUser>(context));
+
+            // In startup create the first Admin Role and create a default admin user
+            if (!roleManager.RoleExists("Admin"))
+            {
+                // First create the admin role
+                var role = new Microsoft.AspNet.Identity.EntityFramework.IdentityRole();
+                role.Name = "Admin";
+                roleManager.Create(role);
+
+                // Now create the admin super user who will maintain the site
+
+                var user = new ApplicationUser();
+                user.UserName = "superUser";
+                user.Email = "mjensen@razoredgetech.com";
+
+                string userPWD = "S4v4g3!";
+
+                var chkUser = userManager.Create(user, userPWD);
+
+                // Add default User to Role Admin
+
+                if (chkUser.Succeeded)
+                {
+                    var result1 = userManager.AddToRole(user.Id, "Admin");
+                }            
+            }
+
+            // create Manager role
+            if (!roleManager.RoleExists("Manager"))
+            {
+                var role = new Microsoft.AspNet.Identity.EntityFramework.IdentityRole();
+                role.Name = "Manager";
+                roleManager.Create(role);
+            }
+
+            // create registeredUser role
+            if (!roleManager.RoleExists("Registered User"))
+            {
+                var role = new IdentityRole();
+                role.Name = "Registered User";
+                roleManager.Create(role);
+            }
+
+            // create client role
+            if (!roleManager.RoleExists("Client"))
+            {
+                var role = new IdentityRole();
+                role.Name = "Client";
+                roleManager.Create(role);
+            }
+
+            if (!roleManager.RoleExists("Coach"))
+            {
+                var role = new IdentityRole();
+                role.Name = "Coach";
+                roleManager.Create(role);
+            }
         }
     }
 }
