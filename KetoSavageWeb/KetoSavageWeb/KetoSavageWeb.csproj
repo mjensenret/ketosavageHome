@@ -417,7 +417,10 @@
     <Compile Include="Models\NorthwindContext.cs" />
     <Compile Include="Models\NorthwindDataProvider.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repositories\UserProfileRepository.cs" />
+    <Compile Include="Repositories\Abstract\GenericRepository.cs" />
     <Compile Include="Startup.cs" />
+    <Compile Include="Util\Interfaces\IDataLayer.cs" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201801202225138_Initial.resx">

@@ -147,4 +147,13 @@ namespace KetoSavageWeb.Models {
         public ICollection<System.Web.Mvc.SelectListItem> Roles { get; set; }
 
     }
+
+    public class UserRole
+    {
+        public string UserId { get; set; }
+        public string RoleId { get; set; }
+
+        public virtual UserProfile userProfile { get; set; }
+        public virtual UserRole userRole { get; set; }
+    }
 }

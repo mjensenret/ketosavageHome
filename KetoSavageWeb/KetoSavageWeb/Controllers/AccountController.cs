@@ -10,11 +10,16 @@ using System.Threading.Tasks;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
+using KetoSavageWeb.Repositories;
 
 namespace KetoSavageWeb.Controllers {
-    public class AccountController : Controller {
+    public class AccountController : Controller
+    {
 
-    ApplicationSignInManager _signInManager;
+        private UserProfileRepository profileRepository;
+        private RoleRepository roleRepository;
+
+        ApplicationSignInManager _signInManager;
         public ApplicationSignInManager SignInManager {
             get {
                 if(_signInManager == null) {
