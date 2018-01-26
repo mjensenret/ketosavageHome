@@ -1,10 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <items>
-  <item Text="Home" NavigateUrl="#" />
+  <item Text="Home" NavigateUrl="~/" />
   <item Text="Stats" NavigateUrl="#"  />
   <item Text="Macros" NavigateUrl="#"  />
   <item Text="Workouts" NavigateUrl="#"  />
   <item Text="Admin" NavigateUrl="#" Roles="Admin;Manager;Coach">
-    <item Text="Manage Users" NavigateUrl="~/Account/ManageUsers" />
+    <item Text="Manage Users" NavigateUrl="~/UsersAdmin" />
   </item>
 </items>

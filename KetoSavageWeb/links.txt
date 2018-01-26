@@ -5,3 +5,9 @@ http://www.c-sharpcorner.com/article/code-first-approach-in-mvc-5/
 	Update-Database -StartupProjectName "KetoSavageWeb" -Verbose -ConnectionString "Server=13-01-0110;Persist Security Info=True;Initial Catalog=KetoSavageDB;Integrated Security=True;" -ConnectionProviderName "System.Data.SqlClient"
 	
 https://code.msdn.microsoft.com/ASPNET-MVC-5-Security-And-44cbdb97
+
+http://johnatten.com/2013/10/27/configuring-db-connection-and-code-first-migration-for-identity-accounts-in-asp-net-mvc-5-and-visual-studio-2013/
+
+http://johnatten.com/2013/11/11/extending-identity-accounts-and-implementing-role-based-authentication-in-asp-net-mvc-5/
+
+http://johnatten.com/2014/02/13/asp-net-mvc-5-identity-extending-and-modifying-roles/

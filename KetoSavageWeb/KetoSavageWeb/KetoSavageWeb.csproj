@@ -386,6 +386,8 @@
     <Content Include="Views\Home\GridViewPartialView.cshtml" />
     <Content Include="Views\Account\_loginPartial.cshtml" />
     <Content Include="Views\Account\ManageUsers.cshtml" />
+    <Content Include="Views\UsersAdmin\_addUser.cshtml" />
+    <Content Include="Views\UsersAdmin\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -402,12 +404,17 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\UsersAdminController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Migrations\201801202225138_Initial.cs" />
     <Compile Include="Migrations\201801202225138_Initial.Designer.cs">
       <DependentUpon>201801202225138_Initial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201801261801225_addUserNotes.cs" />
+    <Compile Include="Migrations\201801261801225_addUserNotes.Designer.cs">
+      <DependentUpon>201801261801225_addUserNotes.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountModels.cs" />
@@ -426,7 +433,11 @@
     <EmbeddedResource Include="Migrations\201801202225138_Initial.resx">
       <DependentUpon>201801202225138_Initial.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201801261801225_addUserNotes.resx">
+      <DependentUpon>201801261801225_addUserNotes.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

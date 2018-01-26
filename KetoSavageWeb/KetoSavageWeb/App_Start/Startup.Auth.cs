@@ -82,9 +82,11 @@ namespace KetoSavageWeb
                 roleManager.Create(role);
 
                 // Now create the admin super user who will maintain the site
-
+                
                 var user = new ApplicationUser();
                 user.UserName = "superUser";
+                user.FirstName = "Admin";
+                user.LastName = "User";
                 user.Email = "mjensen@razoredgetech.com";
 
                 string userPWD = "S4v4g3!";

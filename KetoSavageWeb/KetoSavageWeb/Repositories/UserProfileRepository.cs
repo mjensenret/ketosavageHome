@@ -8,19 +8,26 @@ using System.Web;
 
 namespace KetoSavageWeb.Repositories
 {
-    public class UserProfileRepository : GenericRepository<UserProfile>
+    public class UserProfileRepository //: GenericRepository<ApplicationUser>
     {
-        private IDataLayer<UserRole> userRoleLayer;
+        private KSDataContext db = new KSDataContext();
+        
+        //private IDataLayer<UserRole> userRoleLayer;
 
-        public UserProfileRepository(IDataLayer<UserProfile> dataLayer, IDataLayer<UserRole> userRoleLayer)
-            : base(dataLayer)
-        {
-            this.userRoleLayer = userRoleLayer;
-        }
+        //public UserProfileRepository(IDataLayer<ApplicationUser> dataLayer, IDataLayer<UserRole> userRoleLayer)
+        //    : base(dataLayer)
+        //{
+        //    this.userRoleLayer = userRoleLayer;
+        //}
 
-        public IQueryable<UserRole> GetUserRoles
+        //public IQueryable<UserRole> GetUserRoles
+        //{
+        //    get { return this.userRoleLayer.Get; }
+        //}
+
+        public IEnumerable<ApplicationUser> GetUsers()
         {
-            get { return this.userRoleLayer.Get; }
+            return db.Users;
         }
     }
 }

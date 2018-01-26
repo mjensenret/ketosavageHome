@@ -17,7 +17,7 @@ namespace KetoSavageWeb.Controllers {
     {
 
         private UserProfileRepository profileRepository;
-        private RoleRepository roleRepository;
+        //private RoleRepository roleRepository;
 
         ApplicationSignInManager _signInManager;
         public ApplicationSignInManager SignInManager {
@@ -102,7 +102,13 @@ namespace KetoSavageWeb.Controllers {
         public async Task<ActionResult> Register(RegisterModel model) {
             if(ModelState.IsValid) {
                 // Attempt to register the user
-                var user = new ApplicationUser { UserName = model.UserName, Email = model.Email };
+                var user = new ApplicationUser
+                {
+                    UserName = model.UserName
+                    , Email = model.Email
+                    , FirstName = model.FirstName
+                    , LastName = model.LastName
+                };
                 var result = await UserManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)
                 {
@@ -431,15 +437,6 @@ namespace KetoSavageWeb.Controllers {
         public ActionResult ExternalLoginFailure()
         {
             return View();
-        }
-
-        // GET: /Account/ManagerUsers
-
-        public ActionResult ManageUsers(UserListViewModel model)
-        {
-            var userList = UserManager.Users.AsEnumerable();
-
-            return View(userList);
         }
 
 

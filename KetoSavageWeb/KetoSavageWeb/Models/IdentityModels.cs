@@ -19,6 +19,12 @@ namespace KetoSavageWeb.Models
         [Required]
         public string LastName { get; set; }
 
+        [DataType(DataType.Date)]
+        [DisplayFormat(DataFormatString = "{0:MM/dd/yyyy}", ApplyFormatInEditMode = true)]
+        public DateTime? ExpirationDate { get; set; }
+
+        public string notes { get; set; }
+
         public ClaimsIdentity GenerateUserIdentity(ApplicationUserManager manager)
         {
             // Note the authenticationType must match the one defined in CookieAuthenticationOptions.AuthenticationType
@@ -36,7 +42,7 @@ namespace KetoSavageWeb.Models
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
         public ApplicationDbContext()
-            : base("ApplicationServices", throwIfV1Schema: false)
+            : base("KSDataContext", throwIfV1Schema: false)
         {
         }
 

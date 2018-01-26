@@ -26,7 +26,27 @@
         tb.Properties.ValidationSettings.ErrorDisplayMode = ErrorDisplayMode.Text;
         tb.Properties.ValidationSettings.ErrorTextPosition = ErrorTextPosition.Bottom;
     }).GetHtml()
-    
+
+    @Html.DevExpress().TextBoxFor(m => m.FirstName, tb =>
+    {
+        tb.Properties.Caption = "First Name";
+        tb.Properties.CaptionSettings.Position = EditorCaptionPosition.Top;
+        tb.ShowModelErrors = true;
+        tb.Properties.ValidationSettings.Display = Display.Dynamic;
+        tb.Properties.ValidationSettings.ErrorDisplayMode = ErrorDisplayMode.Text;
+        tb.Properties.ValidationSettings.ErrorTextPosition = ErrorTextPosition.Bottom;
+    }).GetHtml()
+
+    @Html.DevExpress().TextBoxFor(m => m.LastName, tb =>
+   {
+       tb.Properties.Caption = "Last Name";
+       tb.Properties.CaptionSettings.Position = EditorCaptionPosition.Top;
+       tb.ShowModelErrors = true;
+       tb.Properties.ValidationSettings.Display = Display.Dynamic;
+       tb.Properties.ValidationSettings.ErrorDisplayMode = ErrorDisplayMode.Text;
+       tb.Properties.ValidationSettings.ErrorTextPosition = ErrorTextPosition.Bottom;
+   }).GetHtml()
+
     @Html.DevExpress().TextBoxFor(m => m.Password, tb => {
         tb.Properties.Caption = "Password";
         tb.Properties.Password = true;
