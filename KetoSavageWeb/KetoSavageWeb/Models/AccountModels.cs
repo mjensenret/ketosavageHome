@@ -1,9 +1,11 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Data.Entity;
 using System.Globalization;
+using System.Linq;
 using System.Web.Mvc;
 using System.Web.Security;
 
@@ -145,7 +147,18 @@ namespace KetoSavageWeb.Models {
         [System.ComponentModel.DataAnnotations.Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
         public string ConfirmPassword { get; set; }
     }
+    public class UserListViewModel
+    {
+        public string Id { get; set; }
 
+        [Display(Name = "User name")]
+        public string UserName { get; set; }
+        public string Email { get; set; }
+        public string FirstName { get; set; }
+        public string LastName { get; set; }
+        public string Roles { get; set; }
+        //public bool Active { get; set; }
+    }
     public class EditUserViewModel
     {
         public string Id { get; set; }
@@ -173,12 +186,80 @@ namespace KetoSavageWeb.Models {
 
     }
 
-    public class UserRole
+    public class RoleViewModel
     {
         public string UserId { get; set; }
-        public string RoleId { get; set; }
+        [Required(AllowEmptyStrings = false)]
+        [Display(Name = "Role Name")]
+        public string Name { get; set; }
+        
+    }
 
-        public virtual UserProfile userProfile { get; set; }
-        public virtual UserRole userRole { get; set; }
+    public class ListModel<T> : IEnumerable<T> where T : class
+    {
+        public delegate void WiteCookieDeligate(string name, string value, DateTime? expires = null);
+
+        public IEnumerable<T> Items { get; set; }
+
+        public int Page { get; set; }
+        public int TotalItems { get; set; }
+        public int ItemsPerPage { get; set; }
+        public int MaxLinks { get; set; }
+
+        public string Sort { get; set; }
+        public bool Desc { get; set; }
+
+        private string _search;
+        public string Search
+        {
+            get { return string.IsNullOrWhiteSpace(_search) ? null : _search.Trim(); }
+            set { _search = value; }
+        }
+
+        /// <summary>
+        /// Controller action to call to redisplay list.
+        /// </summary>
+        public string ActionName { get; set; }
+
+        public int TotalPages
+        {
+            get { return (int)Math.Ceiling((decimal)TotalItems / ItemsPerPage); }
+        }
+
+        public ListModel()
+        {
+            //Set default values
+            Page = 1;
+            ItemsPerPage = 50;
+            MaxLinks = 500;
+            ActionName = "Index";
+            Sort = null;
+            Desc = false;
+        }
+
+        public void SetQuery(IOrderedQueryable<T> query)
+        {
+            this.TotalItems = query.Count();
+            //this.Items = query.Page(this.Page, this.ItemsPerPage, this.TotalItems);
+        }
+
+        public IEnumerator<T> GetEnumerator()
+        {
+            return Items.GetEnumerator();
+        }
+
+        IEnumerator IEnumerable.GetEnumerator()
+        {
+            return Items.GetEnumerator();
+        }
+
+        public virtual void SaveState(WiteCookieDeligate writeCookie)
+        {
+            int page = this.Page > this.TotalPages ? this.TotalPages : this.Page;
+            writeCookie("Page", page.ToString());
+            writeCookie("Sort", this.Sort);
+            writeCookie("Desc", this.Desc.ToString());
+            writeCookie("Search", this.Search);
+        }
     }
 }

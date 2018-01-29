@@ -1,23 +1,22 @@
-using System;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin;
 using Microsoft.Owin.Security.Cookies;
-using Microsoft.Owin.Security.Google;
-using Owin;
 using KetoSavageWeb.Models;
-using Microsoft.AspNet.Identity.EntityFramework;
+using Owin;
+using System;
 
 namespace KetoSavageWeb
 {
-    public partial class Startup {
-
-        // For more information on configuring authentication, please visit http://go.microsoft.com/fwlink/?LinkId=301883
+    public partial class Startup
+    {
+        // For more information on configuring authentication, please visit http://go.microsoft.com/fwlink/?LinkId=301864
         public void ConfigureAuth(IAppBuilder app)
         {
-            // Configure the db context, user manager and signin manager to use a single instance per request
+            // Configure the db context, user manager and role manager to use a single instance per request
             app.CreatePerOwinContext(ApplicationDbContext.Create);
             app.CreatePerOwinContext<ApplicationUserManager>(ApplicationUserManager.Create);
+            app.CreatePerOwinContext<ApplicationRoleManager>(ApplicationRoleManager.Create);
             app.CreatePerOwinContext<ApplicationSignInManager>(ApplicationSignInManager.Create);
 
             // Enable the application to use a cookie to store information for the signed in user
@@ -29,12 +28,13 @@ namespace KetoSavageWeb
                 LoginPath = new PathString("/Account/Login"),
                 Provider = new CookieAuthenticationProvider
                 {
+                    // Enables the application to validate the security stamp when the user logs in.
+                    // This is a security feature which is used when you change a password or add an external login to your account.  
                     OnValidateIdentity = SecurityStampValidator.OnValidateIdentity<ApplicationUserManager, ApplicationUser>(
                         validateInterval: TimeSpan.FromMinutes(30),
                         regenerateIdentity: (manager, user) => user.GenerateUserIdentityAsync(manager))
                 }
             });
-            // Use a cookie to temporarily store information about a user logging in with a third party login provider
             app.UseExternalSignInCookie(DefaultAuthenticationTypes.ExternalCookie);
 
             // Enables the application to temporarily store user information when they are verifying the second factor in the two-factor authentication process.
@@ -58,79 +58,9 @@ namespace KetoSavageWeb
             //   appId: "",
             //   appSecret: "");
 
-            //app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions()
-            //{
-            //    ClientId = "",
-            //    ClientSecret = ""
-            //});
-            createRolesandUsers();
-        }
-
-        private void createRolesandUsers()
-        {
-            ApplicationDbContext context = new ApplicationDbContext();
-
-            var roleManager = new RoleManager<IdentityRole>(new RoleStore<IdentityRole>(context));
-            var userManager = new UserManager<ApplicationUser>(new UserStore<ApplicationUser>(context));
-
-            // In startup create the first Admin Role and create a default admin user
-            if (!roleManager.RoleExists("Admin"))
-            {
-                // First create the admin role
-                var role = new Microsoft.AspNet.Identity.EntityFramework.IdentityRole();
-                role.Name = "Admin";
-                roleManager.Create(role);
-
-                // Now create the admin super user who will maintain the site
-                
-                var user = new ApplicationUser();
-                user.UserName = "superUser";
-                user.FirstName = "Admin";
-                user.LastName = "User";
-                user.Email = "mjensen@razoredgetech.com";
-
-                string userPWD = "S4v4g3!";
-
-                var chkUser = userManager.Create(user, userPWD);
-
-                // Add default User to Role Admin
-
-                if (chkUser.Succeeded)
-                {
-                    var result1 = userManager.AddToRole(user.Id, "Admin");
-                }            
-            }
-
-            // create Manager role
-            if (!roleManager.RoleExists("Manager"))
-            {
-                var role = new Microsoft.AspNet.Identity.EntityFramework.IdentityRole();
-                role.Name = "Manager";
-                roleManager.Create(role);
-            }
-
-            // create registeredUser role
-            if (!roleManager.RoleExists("Registered User"))
-            {
-                var role = new IdentityRole();
-                role.Name = "Registered User";
-                roleManager.Create(role);
-            }
-
-            // create client role
-            if (!roleManager.RoleExists("Client"))
-            {
-                var role = new IdentityRole();
-                role.Name = "Client";
-                roleManager.Create(role);
-            }
-
-            if (!roleManager.RoleExists("Coach"))
-            {
-                var role = new IdentityRole();
-                role.Name = "Coach";
-                roleManager.Create(role);
-            }
+            //app.UseGoogleAuthentication(
+            //    clientId: "",
+            //    clientSecret: "");
         }
     }
 }

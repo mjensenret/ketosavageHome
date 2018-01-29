@@ -1,0 +1,21 @@
+﻿
+@Html.DevExpress().GridView(users =>
+{
+    users.Name = "gvUsers";
+    users.CallbackRouteValues = new { Controller = "UsersAdmin", Action = "userGridPartialView" };
+    users.Width = Unit.Percentage(50);
+    users.SettingsPager.PageSize = 50;
+    users.SettingsAdaptivity.AdaptivityMode = GridViewAdaptivityMode.HideDataCells;
+    users.ControlStyle.Paddings.Padding = Unit.Pixel(0);
+    users.ControlStyle.Border.BorderWidth = Unit.Pixel(0);
+    users.ControlStyle.Paddings.PaddingTop = Unit.Pixel(10);
+    users.SettingsBehavior.AllowFixedGroups = true;
+    users.Settings.ShowGroupPanel = false;
+
+    users.KeyFieldName = "UserName";
+    users.Columns.Add("UserName");
+    users.Columns.Add("FirstName");
+    users.Columns.Add("LastName");
+    users.Columns.Add("Email");
+    users.Columns.Add("Roles");
+}).Bind(Model).GetHtml()

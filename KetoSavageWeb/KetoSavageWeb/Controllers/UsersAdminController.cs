@@ -3,6 +3,7 @@ using KetoSavageWeb.Repositories;
 using Microsoft.AspNet.Identity.Owin;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Web;
@@ -16,45 +17,95 @@ namespace KetoSavageWeb.Controllers
         private UserProfileRepository userRepository;
 
         ApplicationUserManager _userManager;
+        ApplicationRoleManager _roleManager;
         public ApplicationUserManager UserManager
         {
             get
             {
-                if (_userManager == null)
-                {
-                    _userManager = HttpContext.GetOwinContext().GetUserManager<ApplicationUserManager>();
-                }
-                return _userManager;
+                return _userManager ?? HttpContext.GetOwinContext().GetUserManager<ApplicationUserManager>();
+            }
+            private set
+            {
+                _userManager = value;
             }
         }
 
-        public UsersAdminController(UserProfileRepository r)
+        public ApplicationRoleManager RoleManager
         {
-            this.userRepository = r;
+            get
+            {
+                return _roleManager ?? HttpContext.GetOwinContext().Get<ApplicationRoleManager>();
+            }
+            private set
+            {
+                _roleManager = value;
+            }
         }
+
+        public UsersAdminController()
+        {
+
+        }
+        public UsersAdminController(ApplicationUserManager userManager, ApplicationRoleManager roleManager)
+        {
+            UserManager = userManager;
+            RoleManager = roleManager;
+        }
+
 
         // GET: UsersAdmin
 
-        public ActionResult Index()
+        public async Task<ActionResult> Index(ListModel<UserListViewModel> model)
         {
-            var q = this.userRepository.GetUsers();
+            var userQuery = UserManager.Users;
 
-            var model = q
-                .Select(u => new EditUserViewModel
+            var items = (await userQuery
+                .OrderBy(x => x.UserName)
+                //.Page(model.Page, model.ItemsPerPage, model.TotalItems)
+                .Select(x => new
                 {
-                    Id = u.Id
-                    ,
-                    FirstName = u.FirstName
-                    ,
-                    LastName = u.LastName
-                    ,
-                    Email = u.Email
-                    ,
-                    UserName = u.UserName
+                    x.Id,
+                    x.UserName,
+                    x.Email
                 })
-                .OrderBy(u => u.LastName);
+                .ToListAsync())
+                .Select(x => new UserListViewModel
+                {
+                    Id = x.Id,
+                    UserName = x.UserName,
+                    Email = x.Email
+                });
+
+            model.Items = items;
 
             return View(model);
+        }
+
+        public ActionResult userGridPartialView(ListModel<UserListViewModel> model)
+        {
+            var userQuery = UserManager.Users;
+
+            var items = (userQuery
+                .OrderBy(x => x.UserName)
+                //.Page(model.Page, model.ItemsPerPage, model.TotalItems)
+                .Select(x => new
+                {
+                    x.Id,
+                    x.UserName,
+                    x.Email
+                })
+                .ToList())
+                .Select(x => new UserListViewModel
+                {
+                    Id = x.Id,
+                    UserName = x.UserName,
+                    Email = x.Email
+                });
+
+            model.Items = items;
+
+
+            return PartialView("UserGridPartialView", model);
         }
 
         public async Task<ActionResult> AddUser(RegisterModel model)
@@ -66,8 +117,6 @@ namespace KetoSavageWeb.Controllers
                 {
                     UserName = model.UserName
                     , Email = model.Email
-                    , FirstName = model.FirstName
-                    , LastName = model.LastName
                 };
                 var result = await UserManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)
@@ -81,4 +130,14 @@ namespace KetoSavageWeb.Controllers
             return View(model);
         }
     }
+
+    //public async Task<ActionResult> CreateRole(RoleViewModel roleViewModel)
+    //{
+    //    if (ModelState.IsValid)
+    //    {
+    //        // Initialize ApplicationRole
+    //        var role = new ApplicationRole(roleViewModel.Name);
+    //        var roleResult = await ApplicationRoleManager.CreateAsync(role);
+    //    }
+    //}
 }

@@ -388,6 +388,7 @@
     <Content Include="Views\Account\ManageUsers.cshtml" />
     <Content Include="Views\UsersAdmin\_addUser.cshtml" />
     <Content Include="Views\UsersAdmin\Index.cshtml" />
+    <Content Include="Views\UsersAdmin\UserGridPartialView.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
