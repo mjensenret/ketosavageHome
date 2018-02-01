@@ -103,7 +103,7 @@ namespace KetoSavageWeb.Models
     // This is useful if you do not want to tear down the database each time you run the application.
     // public class ApplicationDbInitializer : DropCreateDatabaseAlways<ApplicationDbContext>
     // This example shows you how to create a new database if the Model changes
-    public class ApplicationDbInitializer : DropCreateDatabaseAlways<ApplicationDbContext>
+    public class ApplicationDbInitializer : DropCreateDatabaseIfModelChanges<ApplicationDbContext>
     {
         protected override void Seed(ApplicationDbContext context)
         {
@@ -116,23 +116,26 @@ namespace KetoSavageWeb.Models
         {
             var userManager = HttpContext.Current.GetOwinContext().GetUserManager<ApplicationUserManager>();
             var roleManager = HttpContext.Current.GetOwinContext().Get<ApplicationRoleManager>();
-            const string name = "admin@example.com";
-            const string password = "Admin@123456";
-            const string roleName = "Admin";
+            const string adminName = "superUser";
+            const string adminEmail = "mjensen@razoredgetech.com";
+            const string adminPassword = "S4v4g3!";
+            const string adminRoleName = "Admin";
+            const string adminFirstName = "Super";
+            const string adminLastName = "User";
 
             //Create Role Admin if it does not exist
-            var role = roleManager.FindByName(roleName);
+            var role = roleManager.FindByName(adminRoleName);
             if (role == null)
             {
-                role = new ApplicationRole(roleName);
+                role = new ApplicationRole(adminRoleName);
                 var roleresult = roleManager.Create(role);
             }
 
-            var user = userManager.FindByName(name);
+            var user = userManager.FindByName(adminName);
             if (user == null)
             {
-                user = new ApplicationUser { UserName = name, Email = name };
-                var result = userManager.Create(user, password);
+                user = new ApplicationUser { UserName = adminName, Email = adminEmail, FirstName = adminFirstName, LastName = adminLastName };
+                var result = userManager.Create(user, adminPassword);
                 result = userManager.SetLockoutEnabled(user.Id, false);
             }
 
@@ -142,6 +145,28 @@ namespace KetoSavageWeb.Models
             {
                 var result = userManager.AddToRole(user.Id, role.Name);
             }
+
+            var registeredUserRole = roleManager.FindByName("Registered User");
+            if (registeredUserRole == null)
+            {
+                role = new ApplicationRole("Registered User");
+                var roleresult = roleManager.Create(role);
+            }
+
+            var clientUserRole = roleManager.FindByName("Client");
+            if (clientUserRole == null)
+            {
+                role = new ApplicationRole("Clent");
+                var roleresult = roleManager.Create(role);
+            }
+
+            var coachRole = roleManager.FindByName("Coach");
+            if (coachRole == null)
+            {
+                role = new ApplicationRole("Coach");
+                var roleresult = roleManager.Create(role);
+            }
+
         }
     }
 

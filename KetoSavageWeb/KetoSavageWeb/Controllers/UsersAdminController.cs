@@ -66,14 +66,18 @@ namespace KetoSavageWeb.Controllers
                 {
                     x.Id,
                     x.UserName,
-                    x.Email
+                    x.Email,
+                    x.FirstName,
+                    x.LastName
                 })
                 .ToListAsync())
                 .Select(x => new UserListViewModel
                 {
                     Id = x.Id,
                     UserName = x.UserName,
-                    Email = x.Email
+                    Email = x.Email,
+                    FirstName = x.FirstName,
+                    LastName = x.LastName
                 });
 
             model.Items = items;
@@ -92,14 +96,18 @@ namespace KetoSavageWeb.Controllers
                 {
                     x.Id,
                     x.UserName,
-                    x.Email
+                    x.Email,
+                    x.FirstName,
+                    x.LastName
                 })
                 .ToList())
                 .Select(x => new UserListViewModel
                 {
                     Id = x.Id,
                     UserName = x.UserName,
-                    Email = x.Email
+                    Email = x.Email,
+                    FirstName = x.FirstName,
+                    LastName = x.LastName
                 });
 
             model.Items = items;

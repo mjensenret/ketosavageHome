@@ -21,6 +21,14 @@ namespace KetoSavageWeb.Models
         public string City { get; set; }
         public string State { get; set; }
 
+        [Display(Name = "First Name")]
+        [Required]
+        public string FirstName { get; set; }
+
+        [Display(Name = "Last Name")]
+        [Required]
+        public string LastName { get; set; }
+
         // Use a sensible display name for views:
         [Display(Name = "Postal Code")]
         public string PostalCode { get; set; }
