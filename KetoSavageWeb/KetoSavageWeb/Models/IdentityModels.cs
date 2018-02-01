@@ -4,6 +4,7 @@ using System.Data.Entity;
 using System.Security.Claims;
 using System.Threading.Tasks;
 using System.ComponentModel.DataAnnotations;
+using System.Collections;
 
 namespace KetoSavageWeb.Models
 {
@@ -33,6 +34,7 @@ namespace KetoSavageWeb.Models
         [Display(Name = "Postal Code")]
         public string PostalCode { get; set; }
 
+        
         // Concatenate the address info for display in tables and such:
         public string DisplayAddress
         {

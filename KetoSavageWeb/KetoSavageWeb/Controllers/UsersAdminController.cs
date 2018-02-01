@@ -58,6 +58,7 @@ namespace KetoSavageWeb.Controllers
         public async Task<ActionResult> Index(ListModel<UserListViewModel> model)
         {
             var userQuery = UserManager.Users;
+            var systemRoles = RoleManager.Roles.ToList();
 
             var items = (await userQuery
                 .OrderBy(x => x.UserName)
@@ -68,7 +69,9 @@ namespace KetoSavageWeb.Controllers
                     x.UserName,
                     x.Email,
                     x.FirstName,
-                    x.LastName
+                    x.LastName,
+                    x.Roles
+
                 })
                 .ToListAsync())
                 .Select(x => new UserListViewModel
@@ -77,7 +80,9 @@ namespace KetoSavageWeb.Controllers
                     UserName = x.UserName,
                     Email = x.Email,
                     FirstName = x.FirstName,
-                    LastName = x.LastName
+                    LastName = x.LastName,
+                    Roles = string.Join(", ", systemRoles.Where(userRole => x.Roles.Select(r => r.RoleId).Contains(userRole.Id)).Select(r => r.Name).ToList())
+                    //Roles = string.Join (", ", systemRoles.Wh)
                 });
 
             model.Items = items;
