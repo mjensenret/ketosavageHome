@@ -2,6 +2,7 @@
 using KetoSavageWeb.Repositories;
 using Microsoft.AspNet.Identity.Owin;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
@@ -124,7 +125,8 @@ namespace KetoSavageWeb.Controllers
             return PartialView("UserGridPartialView", model);
         }
 
-        public async Task<ActionResult> AddUser(RegisterModel model)
+        [HttpPost]
+        public async Task<ActionResult> AddUser(RegisterModel model, params string[] selectedRoles)
         {
             if (ModelState.IsValid)
             {
@@ -133,18 +135,132 @@ namespace KetoSavageWeb.Controllers
                 {
                     UserName = model.UserName
                     , Email = model.Email
+                    , FirstName = model.FirstName
+                    , LastName = model.LastName
+
                 };
                 var result = await UserManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)
                 {
-                    
+                    if (model.SelectedRoleId != null)
+                    {
+                        var roleResult = await UserManager.AddToRolesAsync(user.Id, model.SelectedRoleId);
+                        if (!roleResult.Succeeded)
+                        {
+                            ModelState.AddModelError("", roleResult.Errors.First());
+                            ViewBag.RoleId = new SelectList(await RoleManager.Roles.ToListAsync(), "Name", "Name");
+                            return View();
+                        }
+                    }
                 }
-                ViewBag.ErrorMessage = result.Errors.First();
+                else
+                {
+                    ModelState.AddModelError("", result.Errors.First());
+                    ViewBag.RoleId = new SelectList(await RoleManager.Roles.ToListAsync(), "Name", "Name");
+                    return View(model);
+                }
+                return RedirectToAction("Index");
             }
+            ViewBag.RoleId = new SelectList(await RoleManager.Roles.ToListAsync(), "Name", "Name");
 
             // If we got this far, something failed, redisplay form
             return View(model);
         }
+
+        public async Task<ActionResult> UpdateUserPartial(string userName)
+        {
+            var user = await UserManager.FindByNameAsync(userName);
+            var systemRoles = RoleManager.Roles.ToList();
+
+
+            EditUserViewModel model = new EditUserViewModel
+            {
+                UserName = user.UserName,
+                FirstName = user.FirstName,
+                LastName = user.LastName,
+                Email = user.Email,
+                Roles = string.Join(", ", systemRoles.Where(userRole => user.Roles.Select(r => r.RoleId).Contains(userRole.Id)).Select(r => r.Name).ToList())
+            };
+            return PartialView("UpdateUserPartial");
+        }
+
+        [HttpPost]
+        public async Task<ActionResult> UpdateUserPartial(EditUserViewModel model)
+        {
+            if (ModelState.IsValid)
+            {
+                //find user
+                var userEdit = await UserManager.FindByIdAsync(model.Id);
+
+                if (userEdit == null)
+                {
+                    return HttpNotFound();
+                }
+
+                userEdit.FirstName = model.FirstName;
+                userEdit.LastName = model.LastName;
+                userEdit.Email = model.Email;
+
+                var userRole = await UserManager.GetRolesAsync(model.Id);
+
+                await UserManager.RemoveFromRolesAsync(userEdit.Id, userRole.ToArray());
+
+                var updRoleResult = await UserManager.AddToRoleAsync(userEdit.Id, model.SelectedRoleId);
+                if (!updRoleResult.Succeeded)
+                {
+                    ModelState.AddModelError("", updRoleResult.Errors.First());
+                    return View();
+                }
+                return RedirectToAction("Index");
+            }
+            ModelState.AddModelError("", "Something failed!");
+            // If we got this far, something failed, redisplay form
+            return View(model);
+        }
+
+        public ActionResult testUpdate(string userName)
+        {
+            var user = UserManager.Users.Where(x => x.UserName == userName).FirstOrDefault();
+            var systemRoles = RoleManager.Roles.ToArray();
+            var userRoles = UserManager.GetRolesAsync(user.Id).Result.ToList();
+
+            EditUserViewModel upd = new EditUserViewModel()
+            {
+                UserName = user.UserName,
+                FirstName = user.FirstName,
+                LastName = user.LastName,
+                Email = user.Email,
+                //Roles = string.Join(", ", systemRoles.Where(userRole => user.Roles.Select(r => r.RoleId).Contains(userRole.Id)).Select(r => r.Name).ToList()),
+                SelectedRoleId = userRoles.FirstOrDefault(),
+                RolesList = RoleManager.Roles.ToList().Select(x => new SelectListItem()
+                {
+                    Selected = userRoles.Contains(x.Name),
+                    Text = x.Name,
+                    Value = x.Name
+                })
+
+            };
+
+            return PartialView("UserGridPartialView", upd);
+
+        }
+        [HttpPost]
+        public ActionResult UpdateUser([Bind(Include = "FirstName,LastName,Email,SelectedRoleId")] EditUserViewModel model)
+        {
+            if (ModelState.IsValid)
+            {
+                var user = UserManager.FindByNameAsync(model.UserName);
+                return RedirectToAction("Index");
+            }
+            return View();
+
+        }
+
+        public ActionResult GetUserGridPartialView(EditUserViewModel model)
+        {
+
+        }
+
     }
 
     //public async Task<ActionResult> CreateRole(RoleViewModel roleViewModel)

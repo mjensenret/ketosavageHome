@@ -4,10 +4,10 @@
     users.Name = "gvUsers";
     users.CallbackRouteValues = new { Controller = "UsersAdmin", Action = "userGridPartialView" };
     users.KeyFieldName = "UserName";
-    users.SettingsEditing.AddNewRowRouteValues = new { Controller = "Editing", Action = "EditAddNewUser" };
-    users.SettingsEditing.UpdateRowRouteValues = new { Controller = "Editing", Action = "EditUpdateUser" };
-    users.SettingsEditing.DeleteRowRouteValues = new { Controller = "Editing", Action = "EditDeleteUser" };
-    users.SettingsEditing.Mode = GridViewEditingMode.PopupEditForm;
+    //users.SettingsEditing.AddNewRowRouteValues = new { Controller = "UsersAdmin", Action = "AddUser" };
+    users.SettingsEditing.UpdateRowRouteValues = new { Controller = "UsersAdmin", Action = "UpdateUser" };
+    //users.SettingsEditing.DeleteRowRouteValues = new { Controller = "UsersAdmin", Action = "EditDeleteUser" };
+    users.SettingsEditing.Mode = GridViewEditingMode.EditFormAndDisplayRow;
     users.SettingsBehavior.ConfirmDelete = true;
     users.SettingsPopup.EditForm.Width = 600;
     users.Width = Unit.Percentage(50);
@@ -19,20 +19,34 @@
     users.SettingsBehavior.AllowFixedGroups = true;
     users.Settings.ShowGroupPanel = true;
 
+
     users.SettingsPopup.EditForm.SettingsAdaptivity.Mode = PopupControlAdaptivityMode.OnWindowInnerWidth;
     users.SettingsPopup.EditForm.SettingsAdaptivity.SwitchAtWindowInnerWidth = 768;
     users.EditFormLayoutProperties.SettingsAdaptivity.AdaptivityMode = FormLayoutAdaptivityMode.SingleColumnWindowLimit;
     users.EditFormLayoutProperties.SettingsAdaptivity.SwitchToSingleColumnAtWindowInnerWidth = 700;
 
     users.CommandColumn.Visible = true;
-    users.CommandColumn.ShowNewButton = true;
-    users.CommandColumn.ShowDeleteButton = true;
+    users.CommandColumn.ShowNewButton = false;
+    users.CommandColumn.ShowDeleteButton = false;
     users.CommandColumn.ShowEditButton = true;
 
-    users.Columns.Add("UserName");
+    users.SetEditFormTemplateContent(c =>
+    {
+        if (c.Grid.IsNewRowEditing)
+        {
+            //TODO: add new logic
+        }
+        else
+        {
+            Html.RenderAction("testUpdate", new { userName = c.KeyValue.ToString() });
+        }
+
+    });
+
     users.Columns.Add("UserName");
     users.Columns.Add("FirstName");
     users.Columns.Add("LastName");
     users.Columns.Add("Email");
     users.Columns.Add("Roles");
+
 }).Bind(Model).GetHtml()

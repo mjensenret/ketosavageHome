@@ -386,12 +386,13 @@
     <Content Include="Views\Home\GridViewPartialView.cshtml" />
     <Content Include="Views\Account\_loginPartial.cshtml" />
     <Content Include="Views\Account\ManageUsers.cshtml" />
-    <Content Include="Views\UsersAdmin\_addUser.cshtml" />
+    <Content Include="Views\UsersAdmin\AddUser.cshtml" />
     <Content Include="Views\UsersAdmin\Index.cshtml" />
     <Content Include="Views\UsersAdmin\UserGridPartialView.cshtml" />
     <Content Include="Views\UsersAdmin\AddNewUserPartial.cshtml" />
     <Content Include="Views\UsersAdmin\UpdateUserPartial.cshtml" />
     <Content Include="Views\UsersAdmin\DeleteUserPartial.cshtml" />
+    <Content Include="Views\UsersAdmin\UpdateUser.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

@@ -1,1 +1,75 @@
-﻿
+﻿@model KetoSavageWeb.Models.EditUserViewModel
+
+@Html.DevExpress().FormLayout(settings =>
+{
+    settings.Name = "FormLayout";
+
+    settings.SettingsItems.ShowCaption = DefaultBoolean.True;
+    settings.SettingsItemCaptions.Location = LayoutItemCaptionLocation.Left;
+
+    settings.Items.AddGroupItem(group =>
+    {
+        group.GroupBoxDecoration = GroupBoxDecoration.None;
+        group.ColCount = 2;
+
+        group.Items.Add(m => m.UserName, s =>
+        {
+            s.HelpText = "Enter user name";
+            s.Caption = "User Name";
+        });
+        group.Items.Add(m => m.FirstName, s =>
+        {
+            s.HelpText = "Enter first name";
+            s.Caption = "First Name";
+        });
+        group.Items.Add(m => m.LastName, s =>
+        {
+            s.HelpText = "Enter last name";
+            s.Caption = "Last Name";
+        });
+        group.Items.Add(m => m.Email, s =>
+        {
+            s.HelpText = "Enter email address";
+            s.Caption = "Email";
+        });
+        group.Items.Add(m => m.SelectedRoleId, s =>
+        {
+            s.NestedExtension().ComboBox(r =>
+            {
+                r.ControlStyle.CssClass = "maxWidth";
+                r.Properties.DropDownStyle = DropDownStyle.DropDownList;
+                r.Properties.IncrementalFilteringMode = IncrementalFilteringMode.StartsWith;
+                r.Properties.DataSource = Model.RolesList;
+            });
+        });
+    });
+    settings.Items.AddGroupItem(b => {
+
+        b.GroupBoxDecoration = GroupBoxDecoration.None;
+        b.ColCount = 2;
+        b.Items.Add(i => {
+            i.ShowCaption = DefaultBoolean.False;
+            i.NestedExtensionType = FormLayoutNestedExtensionItemType.Button;
+            var button = (ButtonSettings)i.NestedExtensionSettings;
+            button.Name = "cancel";
+            button.Text = "Cancel";
+            button.ClientSideEvents.Click = "function (s,e) {gvUsers.CancelEdit();}";
+
+        });
+        b.Items.Add(i =>
+        {
+            i.ShowCaption = DefaultBoolean.False;
+            i.NestedExtensionType = FormLayoutNestedExtensionItemType.Button;
+            var button = (ButtonSettings)i.NestedExtensionSettings;
+            button.Name = "update";
+            button.Text = "Update";
+            button.ClientSideEvents.Click = "function (s,e) {gvUsers.UpdateEdit();}";
+        });
+    });
+
+
+    //settings.Items.Add(m => m.Password, s =>
+    //{
+    //    s.Caption = "Password";
+    //});
+}).GetHtml()
