@@ -1,0 +1,41 @@
+﻿@{ 
+    var grid = Html.DevExpress().GridView(settings =>
+    {
+        settings.Name = "ManageUserGrid";
+        settings.CallbackRouteValues = new { Controller = "ManageUsers", Action = "GridViewPartial" };
+        settings.SettingsEditing.AddNewRowRouteValues = new { Controller = "ManageUsers", Action = "GridViewPartialAddNew" };
+
+        settings.SettingsEditing.Mode = GridViewEditingMode.EditFormAndDisplayRow;
+        settings.SettingsBehavior.ConfirmDelete = true;
+
+        settings.CommandColumn.Visible = true;
+        settings.CommandColumn.ShowNewButtonInHeader = true;
+
+        settings.KeyFieldName = "UserName";
+
+        settings.Columns.Add("UserName");
+        settings.Columns.Add("FirstName");
+        settings.Columns.Add("LastName");
+        settings.Columns.Add("Email");
+        settings.Columns.Add(r =>
+        {
+            r.Visible = false;
+            r.FieldName = "SelectedRoleId";
+            r.Caption = "Role";
+            r.EditFormSettings.Visible = DefaultBoolean.True;
+            r.ColumnType = MVCxGridViewColumnType.ComboBox;
+            var combo = r.PropertiesEdit as ComboBoxProperties;
+            combo.DataSource = Model.RolesList;
+            
+        });
+        settings.Columns.Add("Roles");
+        settings.Columns.Add("Password");
+        settings.Columns.Add("ConfirmPassword");
+        
+    });
+    if (ViewData["EditError"] != null)
+    {
+        grid.SetEditErrorText((string)ViewData["EditError"]);
+    }
+}
+@grid.Bind(Model).GetHtml()

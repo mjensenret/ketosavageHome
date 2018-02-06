@@ -256,10 +256,10 @@ namespace KetoSavageWeb.Controllers
 
         }
 
-        public ActionResult GetUserGridPartialView(EditUserViewModel model)
-        {
+        //public ActionResult GetUserGridPartialView(EditUserViewModel model)
+        //{
 
-        }
+        //}
 
     }
 

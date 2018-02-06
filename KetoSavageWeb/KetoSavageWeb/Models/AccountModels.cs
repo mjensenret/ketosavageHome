@@ -147,6 +147,7 @@ namespace KetoSavageWeb.Models {
         [System.ComponentModel.DataAnnotations.Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
         public string ConfirmPassword { get; set; }
 
+        public string Roles { get; set; }
         public string SelectedRoleId { get; set; }
         public IEnumerable<SelectListItem> RolesList { get; set; }
     }
