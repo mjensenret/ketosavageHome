@@ -63,43 +63,24 @@ namespace KetoSavageWeb.Controllers
                         where role.Users.Any(r => r.UserId == user.Id)
                         select new RegisterModel()
                         {
+                            Id = user.Id,
                             UserName = user.UserName,
                             FirstName = user.FirstName,
                             LastName = user.LastName,
                             Email = user.Email,
                             Roles = role.Name,
-                            SelectedRoleId = role.Id,
-                            RolesList = RoleManager.Roles.ToList().Select(x => new SelectListItem()
-                            {
-                                Selected = role.Name.Contains(x.Name),
-                                Text = x.Name,
-                                Value = x.Name
-                            })
+                            SelectedRoleId = role.Name,
+                            //RolesList = RoleManager.Roles.ToList().Select(x => new SelectListItem()
+                            //{
+                            //    Selected = role.Name.Contains(x.Name),
+                            //    Text = x.Name,
+                            //    Value = x.Name
+                            //})
+                            
                         };
             var model = users.ToList();
+            ViewBag.RoleId = new SelectList(RoleManager.Roles.ToList(), "Name", "Name");
 
-            var systemRoles = RoleManager.Roles.ToList();
-
-            //var items = (users
-            //    .OrderBy(x => x.UserName)
-            //    .Select(x => new
-            //    {
-            //        x.Id
-            //        ,x.UserName
-            //        ,x.FirstName
-            //        ,x.LastName
-            //        ,x.Email
-            //        ,x.Roles
-            //    })
-            //    .ToList())
-            //    .Select(x => new RegisterModel
-            //    {
-            //        UserName = x.UserName,
-            //        FirstName = x.FirstName,
-            //        LastName = x.LastName,
-            //        Email = x.Email,
-            //        Roles = string.Join(", ", systemRoles.Where(userRole => x.Roles.Select(r => r.RoleId).Contains(userRole.Id)).Select(r => r.Name).ToList())
-            //    });
 
             return PartialView("_GridViewPartial", model);
 
@@ -121,7 +102,7 @@ namespace KetoSavageWeb.Controllers
                 var result = await UserManager.CreateAsync(newUser, item.Password);
                 if (result.Succeeded)
                 {
-                    await UserManager.AddToRoleAsync(newUser.UserName, "Registered User");
+                    await UserManager.AddToRoleAsync(newUser.Id, item.SelectedRoleId);
                     return RedirectToAction("Index");
                 }
                 ViewBag.ErrorMessage = result.Errors.First();
@@ -130,7 +111,42 @@ namespace KetoSavageWeb.Controllers
             {
                 ViewData["EditError"] = "Please correct all errors";
             }
-            return PartialView("_GridViewPartial", UserManager.Users);
+            return RedirectToAction("GridViewPartial");
+        }
+
+        public async Task<ActionResult> GridViewPartialEdit(EditUserViewModel model)
+        {
+            if(ModelState.IsValid)
+            {
+                var systemRoles = RoleManager.Roles.ToList();
+                var userEdit = await UserManager.FindByNameAsync(model.UserName);
+
+                if(userEdit == null)
+                {
+                    return HttpNotFound();
+                }
+
+                userEdit.FirstName = model.FirstName;
+                userEdit.LastName = model.LastName;
+                userEdit.Email = model.Email;
+
+                var userRole = await UserManager.GetRolesAsync(userEdit.Id);
+
+                if(userRole.Count() > 0)
+                {
+                    await UserManager.RemoveFromRolesAsync(userEdit.Id, userRole.ToArray());
+                }
+
+                var updRoleResult = await UserManager.AddToRoleAsync(userEdit.Id, model.SelectedRoleId);
+                if(!updRoleResult.Succeeded)
+                {
+                    ModelState.AddModelError("", updRoleResult.Errors.First());
+                }
+                return RedirectToAction("Index");
+
+            }
+            ModelState.AddModelError("", "Something failed!");
+            return View(model);
         }
     }
 }

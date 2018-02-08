@@ -4,34 +4,80 @@
         settings.Name = "ManageUserGrid";
         settings.CallbackRouteValues = new { Controller = "ManageUsers", Action = "GridViewPartial" };
         settings.SettingsEditing.AddNewRowRouteValues = new { Controller = "ManageUsers", Action = "GridViewPartialAddNew" };
+        settings.SettingsEditing.UpdateRowRouteValues = new { Controller = "ManageUsers", Action = "GridViewPartialEdit" };
 
         settings.SettingsEditing.Mode = GridViewEditingMode.EditFormAndDisplayRow;
         settings.SettingsBehavior.ConfirmDelete = true;
 
         settings.CommandColumn.Visible = true;
         settings.CommandColumn.ShowNewButtonInHeader = true;
+        settings.CommandColumn.ShowEditButton = true;
 
         settings.KeyFieldName = "UserName";
 
-        settings.Columns.Add("UserName");
-        settings.Columns.Add("FirstName");
-        settings.Columns.Add("LastName");
-        settings.Columns.Add("Email");
+        settings.Columns.Add(c =>
+        {
+            c.FieldName = "Id";
+            c.Visible = false;
+        });
+        settings.Columns.Add(c =>
+        {
+            c.FieldName = "UserName";
+            c.VisibleIndex = 1;
+        });
+        settings.Columns.Add(c =>
+        {
+            c.FieldName = "FirstName";
+            c.VisibleIndex = 2;
+        });
+        settings.Columns.Add(c =>
+        {
+            c.FieldName = "LastName";
+            c.VisibleIndex = 3;
+        });
+        settings.Columns.Add(c =>
+        {
+            c.FieldName = "Email";
+            c.VisibleIndex = 4;
+        });
         settings.Columns.Add(r =>
         {
             r.Visible = false;
+            r.VisibleIndex = 5;
             r.FieldName = "SelectedRoleId";
             r.Caption = "Role";
             r.EditFormSettings.Visible = DefaultBoolean.True;
             r.ColumnType = MVCxGridViewColumnType.ComboBox;
             var combo = r.PropertiesEdit as ComboBoxProperties;
-            combo.DataSource = Model.RolesList;
-            
+            combo.DataSource = ViewBag.RoleId;
+            //combo.DataSource = Model.RolesList;
+
         });
-        settings.Columns.Add("Roles");
-        settings.Columns.Add("Password");
-        settings.Columns.Add("ConfirmPassword");
-        
+        settings.Columns.Add(p =>
+        {
+            p.FieldName = "Password";
+            p.Visible = false;
+            p.VisibleIndex = 6;
+            p.EditFormSettings.Visible = DefaultBoolean.True;
+
+        });
+        settings.Columns.Add(cp =>
+        {
+            cp.FieldName = "ConfirmPassword";
+            cp.Visible = false;
+            cp.VisibleIndex = 7;
+            cp.EditFormSettings.Visible = DefaultBoolean.True;
+
+        });
+        settings.Columns.Add(r =>
+        {
+            r.FieldName = "Roles";
+            r.Visible = true;
+            r.VisibleIndex = 6;
+            r.EditFormSettings.Visible = DefaultBoolean.False;
+
+        });
+
     });
     if (ViewData["EditError"] != null)
     {
