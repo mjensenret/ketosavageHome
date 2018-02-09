@@ -1,0 +1,46 @@
+﻿@if (Request.IsAuthenticated)
+    {
+<div class="headerMenu">
+    @* DXCOMMENT: Configure the header menu *@
+    @Html.DevExpress().Menu(settings =>
+       {
+           settings.Name = "HeaderMenu";
+           settings.ItemAutoWidth = false;
+           settings.ControlStyle.CssClass = "headerMenu";
+           settings.Width = System.Web.UI.WebControls.Unit.Percentage(100);
+           settings.SettingsAdaptivity.Enabled = true;
+           settings.SettingsAdaptivity.EnableAutoHideRootItems = true;
+           settings.SettingsAdaptivity.EnableCollapseToSideMenu = true;
+           settings.ItemDataBound = (sender, e) =>
+           {
+               var node = e.Item.DataItem as IHierarchyData;
+               var item = node.Item as System.Xml.XmlElement;
+               if (item != null)
+               {
+                   string itemText = item.GetAttribute("Text");
+                   if (!String.IsNullOrEmpty(itemText))
+                   {
+                       string allowedRoles = item.GetAttribute("Roles");
+                       if (String.IsNullOrEmpty(allowedRoles))
+                       {
+                           e.Item.Visible = true;
+                       }
+                       else if (HttpContext.Current.User != null)
+                       {
+                           e.Item.Visible = false;
+                           string[] roles = allowedRoles.Split(';');
+                           foreach (var role in roles)
+                           {
+                               if (HttpContext.Current.User.IsInRole(role))
+                               {
+                                   e.Item.Visible = true;
+                                   break;
+                               }
+                           }
+                       }
+                   }
+               }
+           };
+       }).BindToXML(HttpContext.Current.Server.MapPath("~/App_Data/TopMenu.xml"), "/items/*").GetHtml()
+</div>
+    }
