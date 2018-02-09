@@ -5,11 +5,16 @@
         settings.CallbackRouteValues = new { Controller = "ManageUsers", Action = "GridViewPartial" };
         settings.SettingsEditing.AddNewRowRouteValues = new { Controller = "ManageUsers", Action = "GridViewPartialAddNew" };
         settings.SettingsEditing.UpdateRowRouteValues = new { Controller = "ManageUsers", Action = "GridViewPartialEdit" };
+        settings.Styles.AlternatingRow.Enabled = DefaultBoolean.True;
         settings.SettingsBehavior.AllowFixedGroups = true;
         settings.Settings.ShowGroupPanel = true;
-
+        settings.SettingsBehavior.AllowFocusedRow = true;
         settings.SettingsEditing.Mode = GridViewEditingMode.EditFormAndDisplayRow;
         settings.SettingsBehavior.ConfirmDelete = true;
+        settings.SettingsPager.FirstPageButton.Visible = true;
+        settings.SettingsPager.LastPageButton.Visible = true;
+        settings.SettingsPager.PageSizeItemSettings.Visible = true;
+        settings.SettingsPager.PageSizeItemSettings.Items = new string[] { "10", "20", "50" };
 
         settings.CommandColumn.Visible = true;
         settings.CommandColumn.ShowNewButtonInHeader = true;
