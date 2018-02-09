@@ -5,7 +5,6 @@
   <item Text="Macros" NavigateUrl="#"  />
   <item Text="Workouts" NavigateUrl="#"  />
   <item Text="Admin" NavigateUrl="#" Roles="Admin;Manager;Coach">
-    <item Text="Manage Users" NavigateUrl="~/UsersAdmin" />
-    <item Text="UPD Manage Users" NavigateUrl="~/ManageUsers" />
+    <item Text="Manage Users" NavigateUrl="~/ManageUsers" />
   </item>
 </items>

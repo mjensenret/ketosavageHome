@@ -156,7 +156,7 @@ namespace KetoSavageWeb.Models
             var clientUserRole = roleManager.FindByName("Client");
             if (clientUserRole == null)
             {
-                role = new ApplicationRole("Clent");
+                role = new ApplicationRole("Client");
                 var roleresult = roleManager.Create(role);
             }
 

@@ -5,6 +5,8 @@
         settings.CallbackRouteValues = new { Controller = "ManageUsers", Action = "GridViewPartial" };
         settings.SettingsEditing.AddNewRowRouteValues = new { Controller = "ManageUsers", Action = "GridViewPartialAddNew" };
         settings.SettingsEditing.UpdateRowRouteValues = new { Controller = "ManageUsers", Action = "GridViewPartialEdit" };
+        settings.SettingsBehavior.AllowFixedGroups = true;
+        settings.Settings.ShowGroupPanel = true;
 
         settings.SettingsEditing.Mode = GridViewEditingMode.EditFormAndDisplayRow;
         settings.SettingsBehavior.ConfirmDelete = true;
