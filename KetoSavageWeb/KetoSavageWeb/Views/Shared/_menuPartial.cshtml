@@ -4,13 +4,14 @@
     @* DXCOMMENT: Configure the header menu *@
     @Html.DevExpress().Menu(settings =>
        {
-           settings.Name = "HeaderMenu";
+           settings.Name = "HeaderMainMenu";
            settings.ItemAutoWidth = false;
            settings.ControlStyle.CssClass = "headerMenu";
            settings.Width = System.Web.UI.WebControls.Unit.Percentage(100);
            settings.SettingsAdaptivity.Enabled = true;
-           settings.SettingsAdaptivity.EnableAutoHideRootItems = true;
+           settings.SettingsAdaptivity.EnableAutoHideRootItems = false;
            settings.SettingsAdaptivity.EnableCollapseToSideMenu = true;
+           settings.SettingsAdaptivity.CollapseToSideMenuAtWindowInnerWidth = 400;
            settings.ItemDataBound = (sender, e) =>
            {
                var node = e.Item.DataItem as IHierarchyData;

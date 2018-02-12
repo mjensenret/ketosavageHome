@@ -1,50 +1,89 @@
-@{ Layout = "~/Views/Shared/_lightLayout.cshtml"; }
 @model KetoSavageWeb.Models.LoginModel
-<div class="accountHeader">
-    <h2>Log In</h2>
-    <p>
-        Please enter your username and password. @Html.ActionLink("Register", "Register")
-        if you don't have an account.
-    </p>
-    <p style="color:red">@ViewBag.ErrorMessage</p>
-</div>
-@using(Html.BeginForm()) {
-    @Html.AntiForgeryToken()
 
-    @Html.DevExpress().TextBoxFor(m => m.UserName, tb => {
-        tb.Properties.Caption = "User Name";
-        tb.Properties.CaptionSettings.Position = EditorCaptionPosition.Top;
-        tb.ShowModelErrors = true;
-        tb.Properties.ValidationSettings.Display = Display.Dynamic;
-        tb.Properties.ValidationSettings.ErrorDisplayMode = ErrorDisplayMode.Text;
-        tb.Properties.ValidationSettings.ErrorTextPosition = ErrorTextPosition.Bottom;
-    }).GetHtml()
-    
-    @Html.DevExpress().TextBoxFor(m => m.Password, tb => {
-        tb.Properties.Caption = "Password";
-        tb.Properties.Password = true;
-        tb.Properties.CaptionSettings.Position = EditorCaptionPosition.Top;
-        tb.ShowModelErrors = true;
-        tb.Properties.ValidationSettings.Display = Display.Dynamic;
-        tb.Properties.ValidationSettings.ErrorDisplayMode = ErrorDisplayMode.Text;
-        tb.Properties.ValidationSettings.ErrorTextPosition = ErrorTextPosition.Bottom;
-    }).GetHtml()
-    
-    @Html.DevExpress().CheckBox(cb => {
-        cb.Name = "RememberMe";
-        cb.Text = "Remember me?";
-    }).GetHtml()
-    <br />
-    @Html.DevExpress().Button(b => {
-        b.Name = "Button";
-        b.Text = "Log On";
-        b.UseSubmitBehavior = true;
-    }).GetHtml()
+@using (Html.BeginForm("Login", "Account", FormMethod.Post, new { id = "popupForm", @class = "edit_form" }))
+{
+    ViewContext.Writer.Write(Html.AntiForgeryToken().ToHtmlString());
+
+    Html.Hidden("UserId");
+
+    Html.DevExpress().FormLayout(form =>
+    {
+        form.Name = "ModalModeFormLayout";
+        form.RequiredMarkDisplayMode = RequiredMarkMode.None;
+        form.SettingsItemCaptions.Location = LayoutItemCaptionLocation.Top;
+        form.Width = Unit.Percentage(100);
+        form.Height = Unit.Percentage(100);
+
+        form.NestedExtensionWidth = Unit.Percentage(100);
+        form.Items.Add(m => m.UserName, item =>
+        {
+            item.HelpText = "";
+            item.Caption = "Username";
+            item.NestedExtensionType = FormLayoutNestedExtensionItemType.TextBox;
+            var tbSettings = (TextBoxSettings)item.NestedExtensionSettings;
+            tbSettings.Properties.Password = false;
+        });
+        form.Items.Add(m => m.Password, item =>
+        {
+            item.HelpText = "";
+            item.Caption = "Password";
+            item.NestedExtensionType = FormLayoutNestedExtensionItemType.TextBox;
+            var tbSettings = (TextBoxSettings)item.NestedExtensionSettings;
+            tbSettings.Properties.Password = true;
+        });
+
+        form.Items.Add(m => m.RememberMe, item =>
+        {
+            item.HelpText = "";
+            item.Caption = "Remember Me";
+            item.NestedExtensionType = FormLayoutNestedExtensionItemType.CheckBox;
+        });
+
+        form.Items.AddGroupItem(g =>
+        {
+            g.ColCount = 2;
+            g.GroupBoxDecoration = GroupBoxDecoration.None;
+            g.ShowCaption = DefaultBoolean.False;
+            g.Paddings.Padding = 10;
+            g.Items.Add(i =>
+            {
+                i.ShowCaption = DefaultBoolean.False;
+                i.Paddings.Padding = 0;
+                //i.Width = Unit.Percentage(100);
+                i.HorizontalAlign = FormLayoutHorizontalAlign.Left;
+
+                i.SetNestedContent(() =>
+                {
+                    Html.DevExpress().Button(
+                        buttonSettings =>
+                        {
+                            buttonSettings.Name = "btnLogin";
+                            buttonSettings.ControlStyle.CssClass = "button";
+                            buttonSettings.Width = 100;
+                            buttonSettings.Text = "Login";
+                            buttonSettings.UseSubmitBehavior = true;
+                        }).Render();
+                });
+            });
+
+            g.Items.Add(i =>
+            {
+                i.ShowCaption = DefaultBoolean.False;
+                i.HorizontalAlign = FormLayoutHorizontalAlign.Right;
+                i.SetNestedContent(() =>
+                {
+                    Html.DevExpress().Button(
+                    buttonSettings =>
+                    {
+                        buttonSettings.Name = "btnCancel";
+                        buttonSettings.ControlStyle.CssClass = "button";
+                        buttonSettings.Width = 100;
+                        buttonSettings.Text = "Cancel";
+                        buttonSettings.ClientSideEvents.Click = "function(s, e){ modLogin.Hide(); }";
+                    }).Render();
+                });
+            });
+        }); //group
+
+    }).Render();
 }
- 
-@* Enable this once you have account confirmation enabled for password reset functionality
-<br />
-@Html.ActionLink("Forgot your password?", "ForgotPassword")
-*@
-<br />
-@Html.Partial("_ExternalLoginsListPartial", new KetoSavageWeb.Models.ExternalLoginListViewModel { ReturnUrl = ViewBag.ReturnUrl })

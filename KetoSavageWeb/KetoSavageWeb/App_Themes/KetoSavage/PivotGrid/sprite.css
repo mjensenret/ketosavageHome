@@ -1,0 +1,362 @@
+.dxPivotGrid_CTNAttribute,
+.dxPivotGrid_CTNCalculatedMeasure,
+.dxPivotGrid_CTNDimension,
+.dxPivotGrid_CTNFolderClosed,
+.dxPivotGrid_CTNFolderOpen,
+.dxPivotGrid_CTNHierarchy,
+.dxPivotGrid_CTNKpi,
+.dxPivotGrid_CTNMeasure,
+.dxPivotGrid_FLBottomPanelOnly1by4_KetoSavage,
+.dxPivotGrid_FLBottomPanelOnly2by2_KetoSavage,
+.dxPivotGrid_FLButton_KetoSavage,
+.dxPivotGrid_FLColumnAreaHeaders_KetoSavage,
+.dxPivotGrid_FLDataAreaHeaders_KetoSavage,
+.dxPivotGrid_FLFieldList_KetoSavage,
+.dxPivotGrid_FLFilterAreaHeaders_KetoSavage,
+.dxPivotGrid_FLRowAreaHeaders_KetoSavage,
+.dxPivotGrid_FLStackedDefault_KetoSavage,
+.dxPivotGrid_FLStackedSideBySide_KetoSavage,
+.dxPivotGrid_FLTopPanelOnly_KetoSavage,
+.dxPivotGrid_pgCollapsedButton_KetoSavage,
+.dxPivotGrid_pgCustomizationFormCloseButton_KetoSavage,
+.dxPivotGrid_pgDataHeaders_KetoSavage,
+.dxPivotGrid_pgDragArrowDown_KetoSavage,
+.dxPivotGrid_pgDragArrowLeft_KetoSavage,
+.dxPivotGrid_pgDragArrowRight_KetoSavage,
+.dxPivotGrid_pgDragArrowUp_KetoSavage,
+.dxPivotGrid_pgDragHideField_KetoSavage,
+.dxPivotGrid_pgExpandedButton_KetoSavage,
+.dxPivotGrid_pgFilterButton_KetoSavage,
+.dxPivotGrid_pgFilterButtonActive_KetoSavage,
+.dxPivotGrid_pgFilterResizer_KetoSavage,
+.dxPivotGrid_pgGroupSeparator_KetoSavage,
+.dxPivotGrid_pgPrefilterButton_KetoSavage,
+.dxPivotGrid_pgSortByColumn_KetoSavage,
+.dxPivotGrid_pgSortDownButton_KetoSavage,
+.dxPivotGrid_pgSortUpButton_KetoSavage,
+.dxtv-ndSel .dxPivotGrid_CTNCalculatedMeasure,
+.dxtv-ndSel .dxPivotGrid_CTNDimension,
+.dxtv-ndSel .dxPivotGrid_CTNFolderClosed,
+.dxtv-ndSel .dxPivotGrid_CTNFolderOpen,
+.dxtv-ndSel .dxPivotGrid_CTNHierarchy,
+.dxtv-ndSel .dxPivotGrid_CTNKpi,
+.dxtv-ndSel .dxPivotGrid_CTNMeasure
+{
+    background-image: url('sprite.svg');
+    background-repeat: no-repeat;
+    background-color: transparent;
+}
+.dxIE .dx-acc-r .dxPivotGrid_CTNAttribute::before,
+.dxIE .dx-acc-r .dxPivotGrid_CTNCalculatedMeasure::before,
+.dxIE .dx-acc-r .dxPivotGrid_CTNDimension::before,
+.dxIE .dx-acc-r .dxPivotGrid_CTNFolderClosed::before,
+.dxIE .dx-acc-r .dxPivotGrid_CTNFolderOpen::before,
+.dxIE .dx-acc-r .dxPivotGrid_CTNHierarchy::before,
+.dxIE .dx-acc-r .dxPivotGrid_CTNKpi::before,
+.dxIE .dx-acc-r .dxPivotGrid_CTNMeasure::before,
+.dxIE .dx-acc-r .dxPivotGrid_FLBottomPanelOnly1by4_KetoSavage::before,
+.dxIE .dx-acc-r .dxPivotGrid_FLBottomPanelOnly2by2_KetoSavage::before,
+.dxIE .dx-acc-r .dxPivotGrid_FLButton_KetoSavage::before,
+.dxIE .dx-acc-r .dxPivotGrid_FLColumnAreaHeaders_KetoSavage::before,
+.dxIE .dx-acc-r .dxPivotGrid_FLDataAreaHeaders_KetoSavage::before,
+.dxIE .dx-acc-r .dxPivotGrid_FLFieldList_KetoSavage::before,
+.dxIE .dx-acc-r .dxPivotGrid_FLFilterAreaHeaders_KetoSavage::before,
+.dxIE .dx-acc-r .dxPivotGrid_FLRowAreaHeaders_KetoSavage::before,
+.dxIE .dx-acc-r .dxPivotGrid_FLStackedDefault_KetoSavage::before,
+.dxIE .dx-acc-r .dxPivotGrid_FLStackedSideBySide_KetoSavage::before,
+.dxIE .dx-acc-r .dxPivotGrid_FLTopPanelOnly_KetoSavage::before,
+.dxIE .dx-acc-r .dxPivotGrid_pgCollapsedButton_KetoSavage::before,
+.dxIE .dx-acc-r .dxPivotGrid_pgCustomizationFormCloseButton_KetoSavage::before,
+.dxIE .dx-acc-r .dxPivotGrid_pgDataHeaders_KetoSavage::before,
+.dxIE .dx-acc-r .dxPivotGrid_pgDragArrowDown_KetoSavage::before,
+.dxIE .dx-acc-r .dxPivotGrid_pgDragArrowLeft_KetoSavage::before,
+.dxIE .dx-acc-r .dxPivotGrid_pgDragArrowRight_KetoSavage::before,
+.dxIE .dx-acc-r .dxPivotGrid_pgDragArrowUp_KetoSavage::before,
+.dxIE .dx-acc-r .dxPivotGrid_pgDragHideField_KetoSavage::before,
+.dxIE .dx-acc-r .dxPivotGrid_pgExpandedButton_KetoSavage::before,
+.dxIE .dx-acc-r .dxPivotGrid_pgFilterButton_KetoSavage::before,
+.dxIE .dx-acc-r .dxPivotGrid_pgFilterButtonActive_KetoSavage::before,
+.dxIE .dx-acc-r .dxPivotGrid_pgFilterResizer_KetoSavage::before,
+.dxIE .dx-acc-r .dxPivotGrid_pgGroupSeparator_KetoSavage::before,
+.dxIE .dx-acc-r .dxPivotGrid_pgPrefilterButton_KetoSavage::before,
+.dxIE .dx-acc-r .dxPivotGrid_pgSortByColumn_KetoSavage::before,
+.dxIE .dx-acc-r .dxPivotGrid_pgSortDownButton_KetoSavage::before,
+.dxIE .dx-acc-r .dxPivotGrid_pgSortUpButton_KetoSavage::before,
+.dxIE .dx-acc-r .dxtv-ndSel .dxPivotGrid_CTNCalculatedMeasure::before,
+.dxIE .dx-acc-r .dxtv-ndSel .dxPivotGrid_CTNDimension::before,
+.dxIE .dx-acc-r .dxtv-ndSel .dxPivotGrid_CTNFolderClosed::before,
+.dxIE .dx-acc-r .dxtv-ndSel .dxPivotGrid_CTNFolderOpen::before,
+.dxIE .dx-acc-r .dxtv-ndSel .dxPivotGrid_CTNHierarchy::before,
+.dxIE .dx-acc-r .dxtv-ndSel .dxPivotGrid_CTNKpi::before,
+.dxIE .dx-acc-r .dxtv-ndSel .dxPivotGrid_CTNMeasure::before{
+    width: 88px;
+}
+.dxPivotGrid_CTNAttribute
+{
+    background-position: -68px -36px;
+    width: 16px;
+    height: 16px;
+}
+.dxPivotGrid_CTNCalculatedMeasure
+{
+    background-position: -17px -70px;
+    width: 16px;
+    height: 16px;
+}
+.dxPivotGrid_CTNDimension
+{
+    background-position: -51px -36px;
+    width: 16px;
+    height: 16px;
+}
+.dxPivotGrid_CTNFolderClosed
+{
+    background-position: 0px -104px;
+    width: 16px;
+    height: 16px;
+}
+.dxPivotGrid_CTNFolderOpen
+{
+    background-position: -34px -87px;
+    width: 16px;
+    height: 16px;
+}
+.dxPivotGrid_CTNHierarchy
+{
+    background-position: -68px -70px;
+    width: 16px;
+    height: 16px;
+}
+.dxPivotGrid_CTNKpi
+{
+    background-position: -17px -87px;
+    width: 16px;
+    height: 16px;
+}
+.dxPivotGrid_CTNMeasure
+{
+    background-position: -34px -104px;
+    width: 16px;
+    height: 16px;
+}
+.dxPivotGrid_FLBottomPanelOnly1by4_KetoSavage
+{
+    background-position: -21px 0px;
+    width: 16px;
+    height: 16px;
+}
+.dxPivotGrid_FLBottomPanelOnly2by2_KetoSavage
+{
+    background-position: -51px -87px;
+    width: 16px;
+    height: 16px;
+}
+.dxPivotGrid_FLButton_KetoSavage
+{
+    background-position: -51px -104px;
+    width: 16px;
+    height: 16px;
+}
+.dxPivotGrid_FLColumnAreaHeaders_KetoSavage
+{
+    background-position: -68px -87px;
+    width: 16px;
+    height: 16px;
+}
+.dxPivotGrid_FLDataAreaHeaders_KetoSavage
+{
+    background-position: -34px -53px;
+    width: 16px;
+    height: 16px;
+}
+.dxPivotGrid_FLFieldList_KetoSavage
+{
+    background-position: -51px -53px;
+    width: 16px;
+    height: 16px;
+}
+.dxPivotGrid_FLFilterAreaHeaders_KetoSavage
+{
+    background-position: 0px -36px;
+    width: 16px;
+    height: 16px;
+}
+.dxPivotGrid_FLRowAreaHeaders_KetoSavage
+{
+    background-position: 0px -70px;
+    width: 16px;
+    height: 16px;
+}
+.dxPivotGrid_FLStackedDefault_KetoSavage
+{
+    background-position: -34px -36px;
+    width: 16px;
+    height: 16px;
+}
+.dxPivotGrid_FLStackedSideBySide_KetoSavage
+{
+    background-position: -38px 0px;
+    width: 16px;
+    height: 16px;
+}
+.dxPivotGrid_FLTopPanelOnly_KetoSavage
+{
+    background-position: 0px -87px;
+    width: 16px;
+    height: 16px;
+}
+.dxPivotGrid_pgCollapsedButton_KetoSavage
+{
+    background-position: -83px -104px;
+    width: 4px;
+    height: 7px;
+}
+.dxPivotGrid_pgCustomizationFormCloseButton_KetoSavage
+{
+    background-position: 0px 0px;
+    width: 20px;
+    height: 20px;
+}
+.dxPivotGrid_pgDataHeaders_KetoSavage
+{
+    background-position: 0px -21px;
+    width: 22px;
+    height: 14px;
+}
+.dxPivotGrid_pgDragArrowDown_KetoSavage
+{
+    background-position: -59px -121px;
+    width: 10px;
+    height: 9px;
+}
+.dxPivotGrid_pgDragArrowLeft_KetoSavage
+{
+    background-position: -38px -121px;
+    width: 9px;
+    height: 10px;
+}
+.dxPivotGrid_pgDragArrowRight_KetoSavage
+{
+    background-position: -28px -121px;
+    width: 9px;
+    height: 10px;
+}
+.dxPivotGrid_pgDragArrowUp_KetoSavage
+{
+    background-position: -48px -121px;
+    width: 10px;
+    height: 9px;
+}
+.dxPivotGrid_pgDragHideField_KetoSavage
+{
+    background-position: -34px -70px;
+    width: 16px;
+    height: 16px;
+}
+.dxPivotGrid_pgExpandedButton_KetoSavage
+{
+    background-position: -80px -16px;
+    width: 7px;
+    height: 4px;
+}
+.dxPivotGrid_pgFilterButton_KetoSavage
+{
+    background-position: -68px -104px;
+    width: 14px;
+    height: 14px;
+}
+.dxPivotGrid_pgFilterButtonActive_KetoSavage
+{
+    background-position: -59px -21px;
+    width: 14px;
+    height: 14px;
+}
+.dxPivotGrid_pgFilterResizer_KetoSavage
+{
+    background-position: -44px -21px;
+    width: 14px;
+    height: 14px;
+}
+.dxPivotGrid_pgGroupSeparator_KetoSavage
+{
+    background-position: -23px -21px;
+    width: 20px;
+    height: 13px;
+}
+.dxPivotGrid_pgPrefilterButton_KetoSavage
+{
+    background-position: 0px -121px;
+    width: 14px;
+    height: 14px;
+}
+.dxPivotGrid_pgSortByColumn_KetoSavage
+{
+    background-position: -72px 0px;
+    width: 15px;
+    height: 14px;
+}
+.dxPivotGrid_pgSortDownButton_KetoSavage
+{
+    background-position: -15px -121px;
+    width: 12px;
+    height: 12px;
+}
+.dxPivotGrid_pgSortUpButton_KetoSavage
+{
+    background-position: -74px -21px;
+    width: 12px;
+    height: 12px;
+}
+.dxtv-ndSel .dxPivotGrid_CTNCalculatedMeasure
+{
+    background-position: 0px -53px;
+    width: 16px;
+    height: 16px;
+}
+.dxtv-ndSel .dxPivotGrid_CTNDimension
+{
+    background-position: -55px 0px;
+    width: 16px;
+    height: 16px;
+}
+.dxtv-ndSel .dxPivotGrid_CTNFolderClosed
+{
+    background-position: -17px -53px;
+    width: 16px;
+    height: 16px;
+}
+.dxtv-ndSel .dxPivotGrid_CTNFolderOpen
+{
+    background-position: -17px -104px;
+    width: 16px;
+    height: 16px;
+}
+.dxtv-ndSel .dxPivotGrid_CTNHierarchy
+{
+    background-position: -17px -36px;
+    width: 16px;
+    height: 16px;
+}
+.dxtv-ndSel .dxPivotGrid_CTNKpi
+{
+    background-position: -51px -70px;
+    width: 16px;
+    height: 16px;
+}
+.dxtv-ndSel .dxPivotGrid_CTNMeasure
+{
+    background-position: -68px -53px;
+    width: 16px;
+    height: 16px;
+}
+.dxPivotGrid_pgCustomizationFormCloseButton_KetoSavage,
+.dxPivotGrid_FLButton_KetoSavage
+{
+    display:block;
+}
+.dxPivotGrid_pgGroupSeparator_KetoSavage
+{
+    width: 20px!important;
+    height: 13px!important;
+}
+

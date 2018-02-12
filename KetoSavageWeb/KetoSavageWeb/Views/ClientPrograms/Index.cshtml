@@ -1,0 +1,38 @@
+﻿
+@{
+    ViewBag.Title = "Client Progams";
+}
+
+<h2>Client Programs</h2>
+
+@Html.DevExpress().Splitter(settings =>
+{
+    settings.Name = "ClientSplitter";
+    settings.FullscreenMode = true;
+    settings.Theme = "KetoSavage";
+    settings.Panes.Add(nav =>
+    {
+
+        nav.Size = 300;
+        nav.SetContent(() =>
+        {
+            ViewContext.Writer.Write(
+                "List of active clients"
+                );
+        });
+
+    });
+    settings.Panes.Add(c =>
+    {
+        c.SetContent(() =>
+        {
+            ViewContext.Writer.Write(
+                "<div>GridView of details</div>"
+                );
+        });
+    });
+}).GetHtml()
+
+
+
+

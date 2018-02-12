@@ -1,0 +1,105 @@
+.dxRichEdit_CenterTabDragHandle_KetoSavage,
+.dxRichEdit_ColumnSeparatorDragHandle_KetoSavage,
+.dxRichEdit_DecimalTabDragHandle_KetoSavage,
+.dxRichEdit_FirstLineIdentDragHandle_KetoSavage,
+.dxRichEdit_LeftIdentDragHandle_KetoSavage,
+.dxRichEdit_LeftTabDragHandle_KetoSavage,
+.dxRichEdit_QuickSearchCloseButton_KetoSavage,
+.dxRichEdit_QuickSearchCollapseButton_KetoSavage,
+.dxRichEdit_QuickSearchNextButton_KetoSavage,
+.dxRichEdit_QuickSearchPrevButton_KetoSavage,
+.dxRichEdit_RightIdentDragHandle_KetoSavage,
+.dxRichEdit_RightTabDragHandle_KetoSavage
+{
+    background-image: url('sprite.svg');
+    background-repeat: no-repeat;
+    background-color: transparent;
+}
+.dxIE .dx-acc-r .dxRichEdit_CenterTabDragHandle_KetoSavage::before,
+.dxIE .dx-acc-r .dxRichEdit_ColumnSeparatorDragHandle_KetoSavage::before,
+.dxIE .dx-acc-r .dxRichEdit_DecimalTabDragHandle_KetoSavage::before,
+.dxIE .dx-acc-r .dxRichEdit_FirstLineIdentDragHandle_KetoSavage::before,
+.dxIE .dx-acc-r .dxRichEdit_LeftIdentDragHandle_KetoSavage::before,
+.dxIE .dx-acc-r .dxRichEdit_LeftTabDragHandle_KetoSavage::before,
+.dxIE .dx-acc-r .dxRichEdit_QuickSearchCloseButton_KetoSavage::before,
+.dxIE .dx-acc-r .dxRichEdit_QuickSearchCollapseButton_KetoSavage::before,
+.dxIE .dx-acc-r .dxRichEdit_QuickSearchNextButton_KetoSavage::before,
+.dxIE .dx-acc-r .dxRichEdit_QuickSearchPrevButton_KetoSavage::before,
+.dxIE .dx-acc-r .dxRichEdit_RightIdentDragHandle_KetoSavage::before,
+.dxIE .dx-acc-r .dxRichEdit_RightTabDragHandle_KetoSavage::before{
+    width: 42px;
+}
+.dxRichEdit_CenterTabDragHandle_KetoSavage
+{
+    background-position: -24px -14px;
+    width: 8px;
+    height: 6px;
+}
+.dxRichEdit_ColumnSeparatorDragHandle_KetoSavage
+{
+    background-position: -26px -21px;
+    width: 11px;
+    height: 12px;
+}
+.dxRichEdit_DecimalTabDragHandle_KetoSavage
+{
+    background-position: -33px -14px;
+    width: 8px;
+    height: 6px;
+}
+.dxRichEdit_FirstLineIdentDragHandle_KetoSavage
+{
+    background-position: -10px -34px;
+    width: 9px;
+    height: 8px;
+}
+.dxRichEdit_LeftIdentDragHandle_KetoSavage
+{
+    background-position: 0px -34px;
+    width: 9px;
+    height: 8px;
+}
+.dxRichEdit_LeftTabDragHandle_KetoSavage
+{
+    background-position: -34px -7px;
+    width: 6px;
+    height: 6px;
+}
+.dxRichEdit_QuickSearchCloseButton_KetoSavage
+{
+    background-position: 0px 0px;
+    width: 20px;
+    height: 20px;
+}
+.dxRichEdit_QuickSearchCollapseButton_KetoSavage
+{
+    background-position: 0px -21px;
+    width: 12px;
+    height: 12px;
+}
+.dxRichEdit_QuickSearchNextButton_KetoSavage
+{
+    background-position: -13px -21px;
+    width: 12px;
+    height: 12px;
+}
+.dxRichEdit_QuickSearchPrevButton_KetoSavage
+{
+    background-position: -21px 0px;
+    width: 12px;
+    height: 12px;
+}
+.dxRichEdit_RightIdentDragHandle_KetoSavage
+{
+    background-position: -20px -34px;
+    width: 9px;
+    height: 8px;
+}
+.dxRichEdit_RightTabDragHandle_KetoSavage
+{
+    background-position: -34px 0px;
+    width: 6px;
+    height: 6px;
+}
+
+

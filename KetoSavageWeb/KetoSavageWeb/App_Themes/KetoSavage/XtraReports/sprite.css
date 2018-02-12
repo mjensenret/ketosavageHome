@@ -1,0 +1,292 @@
+.dxm-hovered .dxXtraReports_BtnFirstPage_KetoSavage,
+.dxm-hovered .dxXtraReports_BtnLastPage_KetoSavage,
+.dxm-hovered .dxXtraReports_BtnNextPage_KetoSavage,
+.dxm-hovered .dxXtraReports_BtnPrevPage_KetoSavage,
+.dxm-hovered .dxXtraReports_BtnPrint_KetoSavage,
+.dxm-hovered .dxXtraReports_BtnPrintPage_KetoSavage,
+.dxm-hovered .dxXtraReports_BtnSave_KetoSavage,
+.dxm-hovered .dxXtraReports_BtnSaveWindow_KetoSavage,
+.dxm-hovered .dxXtraReports_BtnSearch_KetoSavage,
+.dxXtraReports_BtnFirstPage_KetoSavage,
+.dxXtraReports_BtnFirstPageDisabled_KetoSavage,
+.dxXtraReports_BtnLastPage_KetoSavage,
+.dxXtraReports_BtnLastPageDisabled_KetoSavage,
+.dxXtraReports_BtnNextPage_KetoSavage,
+.dxXtraReports_BtnNextPageDisabled_KetoSavage,
+.dxXtraReports_BtnPrevPage_KetoSavage,
+.dxXtraReports_BtnPrevPageDisabled_KetoSavage,
+.dxXtraReports_BtnPrint_KetoSavage,
+.dxXtraReports_BtnPrintDisabled_KetoSavage,
+.dxXtraReports_BtnPrintPage_KetoSavage,
+.dxXtraReports_BtnPrintPageDisabled_KetoSavage,
+.dxXtraReports_BtnSave_KetoSavage,
+.dxXtraReports_BtnSaveDisabled_KetoSavage,
+.dxXtraReports_BtnSaveWindow_KetoSavage,
+.dxXtraReports_BtnSaveWindowDisabled_KetoSavage,
+.dxXtraReports_BtnSearch_KetoSavage,
+.dxXtraReports_BtnSearchDisabled_KetoSavage,
+.dxXtraReports_PageBorder_blc_KetoSavage,
+.dxXtraReports_PageBorder_brc_KetoSavage,
+.dxXtraReports_PageBorder_tlc_KetoSavage,
+.dxXtraReports_PageBorder_trc_KetoSavage
+{
+    background-image: url('sprite.svg');
+    background-repeat: no-repeat;
+    background-color: transparent;
+}
+.dxIE .dx-acc-r .dxm-hovered .dxXtraReports_BtnFirstPage_KetoSavage::before,
+.dxIE .dx-acc-r .dxm-hovered .dxXtraReports_BtnLastPage_KetoSavage::before,
+.dxIE .dx-acc-r .dxm-hovered .dxXtraReports_BtnNextPage_KetoSavage::before,
+.dxIE .dx-acc-r .dxm-hovered .dxXtraReports_BtnPrevPage_KetoSavage::before,
+.dxIE .dx-acc-r .dxm-hovered .dxXtraReports_BtnPrint_KetoSavage::before,
+.dxIE .dx-acc-r .dxm-hovered .dxXtraReports_BtnPrintPage_KetoSavage::before,
+.dxIE .dx-acc-r .dxm-hovered .dxXtraReports_BtnSave_KetoSavage::before,
+.dxIE .dx-acc-r .dxm-hovered .dxXtraReports_BtnSaveWindow_KetoSavage::before,
+.dxIE .dx-acc-r .dxm-hovered .dxXtraReports_BtnSearch_KetoSavage::before,
+.dxIE .dx-acc-r .dxXtraReports_BtnFirstPage_KetoSavage::before,
+.dxIE .dx-acc-r .dxXtraReports_BtnFirstPageDisabled_KetoSavage::before,
+.dxIE .dx-acc-r .dxXtraReports_BtnLastPage_KetoSavage::before,
+.dxIE .dx-acc-r .dxXtraReports_BtnLastPageDisabled_KetoSavage::before,
+.dxIE .dx-acc-r .dxXtraReports_BtnNextPage_KetoSavage::before,
+.dxIE .dx-acc-r .dxXtraReports_BtnNextPageDisabled_KetoSavage::before,
+.dxIE .dx-acc-r .dxXtraReports_BtnPrevPage_KetoSavage::before,
+.dxIE .dx-acc-r .dxXtraReports_BtnPrevPageDisabled_KetoSavage::before,
+.dxIE .dx-acc-r .dxXtraReports_BtnPrint_KetoSavage::before,
+.dxIE .dx-acc-r .dxXtraReports_BtnPrintDisabled_KetoSavage::before,
+.dxIE .dx-acc-r .dxXtraReports_BtnPrintPage_KetoSavage::before,
+.dxIE .dx-acc-r .dxXtraReports_BtnPrintPageDisabled_KetoSavage::before,
+.dxIE .dx-acc-r .dxXtraReports_BtnSave_KetoSavage::before,
+.dxIE .dx-acc-r .dxXtraReports_BtnSaveDisabled_KetoSavage::before,
+.dxIE .dx-acc-r .dxXtraReports_BtnSaveWindow_KetoSavage::before,
+.dxIE .dx-acc-r .dxXtraReports_BtnSaveWindowDisabled_KetoSavage::before,
+.dxIE .dx-acc-r .dxXtraReports_BtnSearch_KetoSavage::before,
+.dxIE .dx-acc-r .dxXtraReports_BtnSearchDisabled_KetoSavage::before,
+.dxIE .dx-acc-r .dxXtraReports_PageBorder_blc_KetoSavage::before,
+.dxIE .dx-acc-r .dxXtraReports_PageBorder_brc_KetoSavage::before,
+.dxIE .dx-acc-r .dxXtraReports_PageBorder_tlc_KetoSavage::before,
+.dxIE .dx-acc-r .dxXtraReports_PageBorder_trc_KetoSavage::before{
+    width: 107px;
+}
+.dxm-hovered .dxXtraReports_BtnFirstPage_KetoSavage
+{
+    background-position: -19px -38px;
+    width: 18px;
+    height: 18px;
+}
+.dxm-hovered .dxXtraReports_BtnLastPage_KetoSavage
+{
+    background-position: -76px -19px;
+    width: 18px;
+    height: 18px;
+}
+.dxm-hovered .dxXtraReports_BtnNextPage_KetoSavage
+{
+    background-position: -38px 0px;
+    width: 18px;
+    height: 18px;
+}
+.dxm-hovered .dxXtraReports_BtnPrevPage_KetoSavage
+{
+    background-position: -57px -19px;
+    width: 18px;
+    height: 18px;
+}
+.dxm-hovered .dxXtraReports_BtnPrint_KetoSavage
+{
+    background-position: -51px -57px;
+    width: 16px;
+    height: 16px;
+}
+.dxm-hovered .dxXtraReports_BtnPrintPage_KetoSavage
+{
+    background-position: -17px -74px;
+    width: 16px;
+    height: 16px;
+}
+.dxm-hovered .dxXtraReports_BtnSave_KetoSavage
+{
+    background-position: -85px -57px;
+    width: 16px;
+    height: 16px;
+}
+.dxm-hovered .dxXtraReports_BtnSaveWindow_KetoSavage
+{
+    background-position: -51px -74px;
+    width: 16px;
+    height: 16px;
+}
+.dxm-hovered .dxXtraReports_BtnSearch_KetoSavage
+{
+    background-position: 0px -57px;
+    width: 16px;
+    height: 16px;
+}
+.dxXtraReports_BtnFirstPage_KetoSavage
+{
+    background-position: 0px -38px;
+    width: 18px;
+    height: 18px;
+}
+.dxXtraReports_BtnFirstPageDisabled_KetoSavage
+{
+    background-position: -57px 0px;
+    width: 18px;
+    height: 18px;
+}
+.dxXtraReports_BtnLastPage_KetoSavage
+{
+    background-position: -76px 0px;
+    width: 18px;
+    height: 18px;
+}
+.dxXtraReports_BtnLastPageDisabled_KetoSavage
+{
+    background-position: 0px 0px;
+    width: 18px;
+    height: 18px;
+}
+.dxXtraReports_BtnNextPage_KetoSavage
+{
+    background-position: -19px 0px;
+    width: 18px;
+    height: 18px;
+}
+.dxXtraReports_BtnNextPageDisabled_KetoSavage
+{
+    background-position: 0px -19px;
+    width: 18px;
+    height: 18px;
+}
+.dxXtraReports_BtnPrevPage_KetoSavage
+{
+    background-position: -38px -19px;
+    width: 18px;
+    height: 18px;
+}
+.dxXtraReports_BtnPrevPageDisabled_KetoSavage
+{
+    background-position: -19px -19px;
+    width: 18px;
+    height: 18px;
+}
+.dxXtraReports_BtnPrint_KetoSavage
+{
+    background-position: -72px -38px;
+    width: 16px;
+    height: 16px;
+}
+.dxXtraReports_BtnPrintDisabled_KetoSavage
+{
+    background-position: -89px -38px;
+    width: 16px;
+    height: 16px;
+}
+.dxXtraReports_BtnPrintPage_KetoSavage
+{
+    background-position: 0px -74px;
+    width: 16px;
+    height: 16px;
+}
+.dxXtraReports_BtnPrintPageDisabled_KetoSavage
+{
+    background-position: -55px -38px;
+    width: 16px;
+    height: 16px;
+}
+.dxXtraReports_BtnSave_KetoSavage
+{
+    background-position: -34px -57px;
+    width: 16px;
+    height: 16px;
+}
+.dxXtraReports_BtnSaveDisabled_KetoSavage
+{
+    background-position: -68px -74px;
+    width: 16px;
+    height: 16px;
+}
+.dxXtraReports_BtnSaveWindow_KetoSavage
+{
+    background-position: -68px -57px;
+    width: 16px;
+    height: 16px;
+}
+.dxXtraReports_BtnSaveWindowDisabled_KetoSavage
+{
+    background-position: -34px -74px;
+    width: 16px;
+    height: 16px;
+}
+.dxXtraReports_BtnSearch_KetoSavage
+{
+    background-position: -38px -38px;
+    width: 16px;
+    height: 16px;
+}
+.dxXtraReports_BtnSearchDisabled_KetoSavage
+{
+    background-position: -17px -57px;
+    width: 16px;
+    height: 16px;
+}
+.dxXtraReports_PageBorder_blc_KetoSavage
+{
+    background-position: -95px -19px;
+    width: 10px;
+    height: 10px;
+}
+.dxXtraReports_PageBorder_brc_KetoSavage
+{
+    background-position: -85px -74px;
+    width: 10px;
+    height: 10px;
+}
+.dxXtraReports_PageBorder_tlc_KetoSavage
+{
+    background-position: -95px 0px;
+    width: 10px;
+    height: 10px;
+}
+.dxXtraReports_PageBorder_trc_KetoSavage
+{
+    background-position: -96px -74px;
+    width: 10px;
+    height: 10px;
+}
+.dxXtraReports_PageBorder_t_KetoSavage,
+.dxXtraReports_PageBorder_l_KetoSavage,
+.dxXtraReports_PageBorder_r_KetoSavage,
+.dxXtraReports_PageBorder_b_KetoSavage {
+    padding: 0px;
+    background-color: transparent;
+}
+
+.dxXtraReports_PageBorder_t_KetoSavage {
+    background-image: url('pageTopBorder.svg');
+    background-repeat: repeat-x;
+    width: 1px;
+    height: 10px;
+}
+
+.dxXtraReports_PageBorder_l_KetoSavage {
+    background-image: url('pageLeftBorder.svg');
+    background-repeat: repeat-y;
+    width: 10px;
+    height: 1px;
+}
+
+.dxXtraReports_PageBorder_r_KetoSavage {
+    background-image: url('pageRightBorder.svg');
+    background-repeat: repeat-y;
+    width: 10px;
+    height: 1px;
+}
+
+.dxXtraReports_PageBorder_b_KetoSavage {
+    background-image: url('pageBottomBorder.svg');
+    background-repeat: repeat-x;
+    width: 1px;
+    height: 10px;
+}
+
+

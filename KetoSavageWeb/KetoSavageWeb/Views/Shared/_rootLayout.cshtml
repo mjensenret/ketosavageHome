@@ -8,16 +8,16 @@
 
     
     @Html.DevExpress().GetStyleSheets(
-        new StyleSheet { ExtensionSuite = ExtensionSuite.NavigationAndLayout },
-        new StyleSheet { ExtensionSuite = ExtensionSuite.CardView },
-        new StyleSheet { ExtensionSuite = ExtensionSuite.PivotGrid },
-        new StyleSheet { ExtensionSuite = ExtensionSuite.VerticalGrid },
-        new StyleSheet { ExtensionSuite = ExtensionSuite.Spreadsheet },
-        new StyleSheet { ExtensionSuite = ExtensionSuite.Scheduler },
-        new StyleSheet { ExtensionSuite = ExtensionSuite.Chart },
-        new StyleSheet { ExtensionSuite = ExtensionSuite.Report },
-        new StyleSheet { ExtensionSuite = ExtensionSuite.GridView },
-        new StyleSheet { ExtensionSuite = ExtensionSuite.Dashboard }
+        new StyleSheet { ExtensionSuite = ExtensionSuite.NavigationAndLayout, Theme="KetoSavage" },
+        new StyleSheet { ExtensionSuite = ExtensionSuite.CardView, Theme = "KetoSavage" },
+        new StyleSheet { ExtensionSuite = ExtensionSuite.PivotGrid, Theme = "KetoSavage" },
+        new StyleSheet { ExtensionSuite = ExtensionSuite.VerticalGrid, Theme = "KetoSavage" },
+        new StyleSheet { ExtensionSuite = ExtensionSuite.Spreadsheet, Theme = "KetoSavage" },
+        new StyleSheet { ExtensionSuite = ExtensionSuite.Scheduler, Theme = "KetoSavage" },
+        new StyleSheet { ExtensionSuite = ExtensionSuite.Chart, Theme = "KetoSavage" },
+        new StyleSheet { ExtensionSuite = ExtensionSuite.Report, Theme = "KetoSavage" },
+        new StyleSheet { ExtensionSuite = ExtensionSuite.GridView, Theme = "KetoSavage" },
+        new StyleSheet { ExtensionSuite = ExtensionSuite.Dashboard, Theme = "KetoSavage" }
     )
     @Html.DevExpress().GetScripts( 
         new Script { ExtensionSuite = ExtensionSuite.NavigationAndLayout },
@@ -55,6 +55,8 @@
                 Html.RenderPartial("HeaderPartialView", HeaderViewRenderMode.Title);
             });
         }).GetHtml();
+
+        @Html.Partial("_menuPartial")
     }
      
     <script type="text/javascript">

@@ -222,6 +222,7 @@
     </Content>
     <Content Include="App_Data\SideMenu.xml" />
     <Content Include="App_Data\TopMenu.xml" />
+    <Content Include="App_Themes\KetoSavage\KetoSavageThemeAssembly.dll" />
     <Content Include="Content\generic.dark.custom.css" />
     <Content Include="Content\Images\AquaHeader.jpg" />
     <Content Include="Content\Images\BlackGlassHeader.jpg" />
@@ -314,7 +315,9 @@
     <Content Include="App_Themes\KetoSavage\ASPxSiteMapControl.skin" />
     <Content Include="App_Themes\KetoSavage\ASPxSpellChecker.skin" />
     <Content Include="App_Themes\KetoSavage\ASPxSpinEdit.skin" />
-    <Content Include="App_Themes\KetoSavage\ASPxSplitter.skin" />
+    <Content Include="App_Themes\KetoSavage\ASPxSplitter.skin">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="App_Themes\KetoSavage\ASPxSpreadsheet.skin" />
     <Content Include="App_Themes\KetoSavage\ASPxTabControl.skin" />
     <Content Include="App_Themes\KetoSavage\ASPxTextBox.skin" />
@@ -336,6 +339,68 @@
     <Content Include="App_Themes\KetoSavage\WebChartControl.skin" />
     <Content Include="App_Themes\KetoSavage\WeekDaysEdit.skin" />
     <Content Include="App_Themes\KetoSavage\WeekOfMonthEdit.skin" />
+    <Content Include="App_Themes\KetoSavage\MVCxButton.skin" />
+    <Content Include="App_Themes\KetoSavage\MVCxButtonEdit.skin" />
+    <Content Include="App_Themes\KetoSavage\MVCxCalendar.skin" />
+    <Content Include="App_Themes\KetoSavage\MVCxCallbackPanel.skin" />
+    <Content Include="App_Themes\KetoSavage\MVCxCaptcha.skin" />
+    <Content Include="App_Themes\KetoSavage\MVCxCardView.skin" />
+    <Content Include="App_Themes\KetoSavage\MVCxChartControl.skin" />
+    <Content Include="App_Themes\KetoSavage\MVCxCheckBox.skin" />
+    <Content Include="App_Themes\KetoSavage\MVCxCheckBoxList.skin" />
+    <Content Include="App_Themes\KetoSavage\MVCxColorEdit.skin" />
+    <Content Include="App_Themes\KetoSavage\MVCxComboBox.skin" />
+    <Content Include="App_Themes\KetoSavage\MVCxDataView.skin" />
+    <Content Include="App_Themes\KetoSavage\MVCxDateEdit.skin" />
+    <Content Include="App_Themes\KetoSavage\MVCxDockPanel.skin" />
+    <Content Include="App_Themes\KetoSavage\MVCxDocumentViewer.skin" />
+    <Content Include="App_Themes\KetoSavage\MVCxDropDownEdit.skin" />
+    <Content Include="App_Themes\KetoSavage\MVCxFileManager.skin" />
+    <Content Include="App_Themes\KetoSavage\MVCxFormLayout.skin" />
+    <Content Include="App_Themes\KetoSavage\MVCxGridLookup.skin" />
+    <Content Include="App_Themes\KetoSavage\MVCxGridView.skin" />
+    <Content Include="App_Themes\KetoSavage\MVCxHint.skin" />
+    <Content Include="App_Themes\KetoSavage\MVCxHtmlEditor.skin" />
+    <Content Include="App_Themes\KetoSavage\MVCxHyperLink.skin" />
+    <Content Include="App_Themes\KetoSavage\MVCxImageGallery.skin" />
+    <Content Include="App_Themes\KetoSavage\MVCxImageSlider.skin" />
+    <Content Include="App_Themes\KetoSavage\MVCxImageZoom.skin" />
+    <Content Include="App_Themes\KetoSavage\MVCxImageZoomNavigator.skin" />
+    <Content Include="App_Themes\KetoSavage\MVCxLabel.skin" />
+    <Content Include="App_Themes\KetoSavage\MVCxListBox.skin" />
+    <Content Include="App_Themes\KetoSavage\MVCxLoadingPanel.skin" />
+    <Content Include="App_Themes\KetoSavage\MVCxMemo.skin" />
+    <Content Include="App_Themes\KetoSavage\MVCxMenu.skin" />
+    <Content Include="App_Themes\KetoSavage\MVCxNavBar.skin" />
+    <Content Include="App_Themes\KetoSavage\MVCxPageControl.skin" />
+    <Content Include="App_Themes\KetoSavage\MVCxPanel.skin" />
+    <Content Include="App_Themes\KetoSavage\MVCxPivotGrid.skin" />
+    <Content Include="App_Themes\KetoSavage\MVCxPopupControl.skin" />
+    <Content Include="App_Themes\KetoSavage\MVCxPopupMenu.skin" />
+    <Content Include="App_Themes\KetoSavage\MVCxProgressBar.skin" />
+    <Content Include="App_Themes\KetoSavage\MVCxRadioButton.skin" />
+    <Content Include="App_Themes\KetoSavage\MVCxRadioButtonList.skin" />
+    <Content Include="App_Themes\KetoSavage\MVCxRatingControl.skin" />
+    <Content Include="App_Themes\KetoSavage\MVCxReportToolbar.skin" />
+    <Content Include="App_Themes\KetoSavage\MVCxReportViewer.skin" />
+    <Content Include="App_Themes\KetoSavage\MVCxRibbon.skin" />
+    <Content Include="App_Themes\KetoSavage\MVCxRichEdit.skin" />
+    <Content Include="App_Themes\KetoSavage\MVCxRoundPanel.skin" />
+    <Content Include="App_Themes\KetoSavage\MVCxScheduler.skin" />
+    <Content Include="App_Themes\KetoSavage\MVCxSpellChecker.skin" />
+    <Content Include="App_Themes\KetoSavage\MVCxSpinEdit.skin" />
+    <Content Include="App_Themes\KetoSavage\MVCxSplitter.skin" />
+    <Content Include="App_Themes\KetoSavage\MVCxSpreadsheet.skin" />
+    <Content Include="App_Themes\KetoSavage\MVCxTabControl.skin" />
+    <Content Include="App_Themes\KetoSavage\MVCxTextBox.skin" />
+    <Content Include="App_Themes\KetoSavage\MVCxTimeEdit.skin" />
+    <Content Include="App_Themes\KetoSavage\MVCxTokenBox.skin" />
+    <Content Include="App_Themes\KetoSavage\MVCxTrackBar.skin" />
+    <Content Include="App_Themes\KetoSavage\MVCxTreeList.skin" />
+    <Content Include="App_Themes\KetoSavage\MVCxTreeView.skin" />
+    <Content Include="App_Themes\KetoSavage\MVCxUploadControl.skin" />
+    <Content Include="App_Themes\KetoSavage\MVCxValidationSummary.skin" />
+    <Content Include="App_Themes\KetoSavage\MVCxVerticalGrid.skin" />
     <None Include="Properties\PublishProfiles\file.pubxml" />
     <None Include="Properties\PublishProfiles\TestServer.pubxml" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
@@ -384,7 +449,7 @@
     <Content Include="Views\Account\VerifyCode.cshtml" />
     <Content Include="Views\Manage\SetPassword.cshtml" />
     <Content Include="Views\Home\GridViewPartialView.cshtml" />
-    <Content Include="Views\Account\_loginPartial.cshtml" />
+    <Content Include="Views\Account\_loginPartial_orig.cshtml" />
     <Content Include="Views\Account\ManageUsers.cshtml" />
     <Content Include="Views\UsersAdmin\AddUser.cshtml" />
     <Content Include="Views\UsersAdmin\Index.cshtml" />
@@ -396,6 +461,8 @@
     <Content Include="Views\ManageUsers\Index.cshtml" />
     <Content Include="Views\ManageUsers\_GridViewPartial.cshtml" />
     <Content Include="Views\Shared\_menuPartial.cshtml" />
+    <Content Include="Views\Account\_loginPartial.cshtml" />
+    <Content Include="Views\ClientPrograms\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -410,6 +477,7 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\ClientProgramsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\ManageUsersController.cs" />

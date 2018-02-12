@@ -1,0 +1,17 @@
+.dxSpreadsheet_TouchResize_KetoSavage
+{
+    background-image: url('sprite.svg');
+    background-repeat: no-repeat;
+    background-color: transparent;
+}
+.dxIE .dx-acc-r .dxSpreadsheet_TouchResize_KetoSavage::before{
+    width: 21px;
+}
+.dxSpreadsheet_TouchResize_KetoSavage
+{
+    background-position: 0px 0px;
+    width: 20px;
+    height: 20px;
+}
+
+

@@ -1,0 +1,870 @@
+.dx-acc-r .dxeButtonEditButtonHover_KetoSavage .dxEditors_edtClear_KetoSavage:before,
+.dx-acc-r .dxeButtonEditButtonHover_KetoSavage .dxEditors_edtDropDown_KetoSavage:before,
+.dx-acc-r .dxeButtonEditButtonHover_KetoSavage .dxEditors_edtEllipsis_KetoSavage:before,
+.dx-acc-r .dxeButtonEditButtonPressed_KetoSavage .dxEditors_edtDropDown_KetoSavage:before,
+.dx-acc-r .dxeButtonEditButtonPressed_KetoSavage .dxEditors_edtEllipsis_KetoSavage:before,
+.dx-acc-r .dxEditors_caRefresh_KetoSavage:before,
+.dx-acc-r .dxEditors_edtBinaryImageDelete_KetoSavage:before,
+.dx-acc-r .dxEditors_edtBinaryImageOpenDialog_KetoSavage:before,
+.dx-acc-r .dxEditors_edtCalendarFastNavBackToPrevMode_KetoSavage:before,
+.dx-acc-r .dxEditors_edtCalendarFastNavBackToPrevModeRtl_KetoSavage:before,
+.dx-acc-r .dxEditors_edtCalendarFNNextPeriod_KetoSavage:before,
+.dx-acc-r .dxEditors_edtCalendarFNNextYear_KetoSavage:before,
+.dx-acc-r .dxEditors_edtCalendarFNPrevPeriod_KetoSavage:before,
+.dx-acc-r .dxEditors_edtCalendarFNPrevYear_KetoSavage:before,
+.dx-acc-r .dxEditors_edtCalendarNextMonth_KetoSavage:before,
+.dx-acc-r .dxEditors_edtCalendarNextMonthDisabled_KetoSavage:before,
+.dx-acc-r .dxEditors_edtCalendarNextYear_KetoSavage:before,
+.dx-acc-r .dxEditors_edtCalendarNextYearDisabled_KetoSavage:before,
+.dx-acc-r .dxEditors_edtCalendarPrevMonth_KetoSavage:before,
+.dx-acc-r .dxEditors_edtCalendarPrevMonthDisabled_KetoSavage:before,
+.dx-acc-r .dxEditors_edtCalendarPrevYear_KetoSavage:before,
+.dx-acc-r .dxEditors_edtCalendarPrevYearDisabled_KetoSavage:before,
+.dx-acc-r .dxEditors_edtClear_KetoSavage:before,
+.dx-acc-r .dxEditors_edtDETSClockFace_KetoSavage:before,
+.dx-acc-r .dxEditors_edtDETSHourHand_KetoSavage:before,
+.dx-acc-r .dxEditors_edtDETSMinuteHand_KetoSavage:before,
+.dx-acc-r .dxEditors_edtDETSSecondHand_KetoSavage:before,
+.dx-acc-r .dxEditors_edtDropDown_KetoSavage:before,
+.dx-acc-r .dxEditors_edtDropDownDisabled_KetoSavage:before,
+.dx-acc-r .dxEditors_edtEllipsis_KetoSavage:before,
+.dx-acc-r .dxEditors_edtEllipsisDisabled_KetoSavage:before,
+.dx-acc-r .dxEditors_edtError_KetoSavage:before,
+.dx-acc-r .dxEditors_edtListBoxFilterBtn_KetoSavage:before,
+.dx-acc-r .dxEditors_edtListBoxFilterBtnDisabled_KetoSavage:before,
+.dx-acc-r .dxEditors_edtListBoxHideFilterBtn_KetoSavage:before,
+.dx-acc-r .dxEditors_edtListBoxHideFilterBtnDisabled_KetoSavage:before,
+.dx-acc-r .dxEditors_edtListBoxHideFilterBtnRtl_KetoSavage:before,
+.dx-acc-r .dxEditors_edtListBoxHideFilterBtnRtlDisabled_KetoSavage:before,
+.dx-acc-r .dxEditors_edtRadioButtonChecked_KetoSavage:before,
+.dx-acc-r .dxEditors_edtRadioButtonCheckedDisabled_KetoSavage:before,
+.dx-acc-r .dxEditors_edtRadioButtonUnchecked_KetoSavage:before,
+.dx-acc-r .dxEditors_edtRadioButtonUncheckedDisabled_KetoSavage:before,
+.dx-acc-r .dxEditors_edtSpinEditDecrementImage_KetoSavage:before,
+.dx-acc-r .dxEditors_edtSpinEditDecrementImageDisabled_KetoSavage:before,
+.dx-acc-r .dxEditors_edtSpinEditIncrementImage_KetoSavage:before,
+.dx-acc-r .dxEditors_edtSpinEditIncrementImageDisabled_KetoSavage:before,
+.dx-acc-r .dxEditors_edtSpinEditLargeDecImage_KetoSavage:before,
+.dx-acc-r .dxEditors_edtSpinEditLargeDecImageDisabled_KetoSavage:before,
+.dx-acc-r .dxEditors_edtSpinEditLargeIncImage_KetoSavage:before,
+.dx-acc-r .dxEditors_edtSpinEditLargeIncImageDisabled_KetoSavage:before,
+.dx-acc-r .dxEditors_edtTBDecBtn_KetoSavage:before,
+.dx-acc-r .dxEditors_edtTBIncBtn_KetoSavage:before,
+.dx-acc-r .dxEditors_edtTokenBoxTokenRemoveButton_KetoSavage:before,
+.dx-acc-r .dxEditors_edtTokenBoxTokenRemoveButtonDisabled_KetoSavage:before,
+.dx-acc-r .dxEditors_fcadd_KetoSavage:before,
+.dx-acc-r .dxEditors_fcaddhot_KetoSavage:before,
+.dx-acc-r .dxEditors_fcgroupaddcondition_KetoSavage:before,
+.dx-acc-r .dxEditors_fcgroupaddgroup_KetoSavage:before,
+.dx-acc-r .dxEditors_fcgroupand_KetoSavage:before,
+.dx-acc-r .dxEditors_fcgroupnotand_KetoSavage:before,
+.dx-acc-r .dxEditors_fcgroupnotor_KetoSavage:before,
+.dx-acc-r .dxEditors_fcgroupor_KetoSavage:before,
+.dx-acc-r .dxEditors_fcgroupremove_KetoSavage:before,
+.dx-acc-r .dxEditors_fcopany_KetoSavage:before,
+.dx-acc-r .dxEditors_fcopavg_KetoSavage:before,
+.dx-acc-r .dxEditors_fcopbegin_KetoSavage:before,
+.dx-acc-r .dxEditors_fcopbetween_KetoSavage:before,
+.dx-acc-r .dxEditors_fcopblank_KetoSavage:before,
+.dx-acc-r .dxEditors_fcopcontain_KetoSavage:before,
+.dx-acc-r .dxEditors_fcopcount_KetoSavage:before,
+.dx-acc-r .dxEditors_fcopend_KetoSavage:before,
+.dx-acc-r .dxEditors_fcopequal_KetoSavage:before,
+.dx-acc-r .dxEditors_fcopexists_KetoSavage:before,
+.dx-acc-r .dxEditors_fcopgreater_KetoSavage:before,
+.dx-acc-r .dxEditors_fcopgreaterorequal_KetoSavage:before,
+.dx-acc-r .dxEditors_fcopless_KetoSavage:before,
+.dx-acc-r .dxEditors_fcoplessorequal_KetoSavage:before,
+.dx-acc-r .dxEditors_fcoplike_KetoSavage:before,
+.dx-acc-r .dxEditors_fcopmax_KetoSavage:before,
+.dx-acc-r .dxEditors_fcopmin_KetoSavage:before,
+.dx-acc-r .dxEditors_fcopnotany_KetoSavage:before,
+.dx-acc-r .dxEditors_fcopnotbetween_KetoSavage:before,
+.dx-acc-r .dxEditors_fcopnotblank_KetoSavage:before,
+.dx-acc-r .dxEditors_fcopnotcontain_KetoSavage:before,
+.dx-acc-r .dxEditors_fcopnotequal_KetoSavage:before,
+.dx-acc-r .dxEditors_fcopnotlike_KetoSavage:before,
+.dx-acc-r .dxEditors_fcopsum_KetoSavage:before,
+.dx-acc-r .dxEditors_fcoptypefield_KetoSavage:before,
+.dx-acc-r .dxEditors_fcoptypefieldhot_KetoSavage:before,
+.dx-acc-r .dxEditors_fcoptypevalue_KetoSavage:before,
+.dx-acc-r .dxEditors_fcoptypevaluehot_KetoSavage:before,
+.dx-acc-r .dxEditors_fcremove_KetoSavage:before,
+.dx-acc-r .dxEditors_fcremovehot_KetoSavage:before,
+.dx-acc-r .dxeSpinDecButtonHover_KetoSavage .dxEditors_edtSpinEditDecrementImage_KetoSavage:before,
+.dx-acc-r .dxeSpinDecButtonPressed_KetoSavage .dxEditors_edtSpinEditDecrementImage_KetoSavage:before,
+.dx-acc-r .dxeSpinIncButtonHover_KetoSavage .dxEditors_edtSpinEditIncrementImage_KetoSavage:before,
+.dx-acc-r .dxeSpinIncButtonPressed_KetoSavage .dxEditors_edtSpinEditIncrementImage_KetoSavage:before,
+.dx-acc-r .dxeSpinLargeDecButtonHover_KetoSavage .dxEditors_edtSpinEditLargeDecImage_KetoSavage:before,
+.dx-acc-r .dxeSpinLargeDecButtonPressed_KetoSavage .dxEditors_edtSpinEditLargeDecImage_KetoSavage:before,
+.dx-acc-r .dxeSpinLargeIncButtonHover_KetoSavage .dxEditors_edtSpinEditLargeIncImage_KetoSavage:before,
+.dx-acc-r .dxeSpinLargeIncButtonPressed_KetoSavage .dxEditors_edtSpinEditLargeIncImage_KetoSavage:before,
+.dx-acc-r .dxeTBDecBtnHover_KetoSavage.dxEditors_edtTBDecBtn_KetoSavage:before,
+.dx-acc-r .dxeTBDecBtnPressed_KetoSavage.dxEditors_edtTBDecBtn_KetoSavage:before,
+.dx-acc-r .dxeTBIncBtnHover_KetoSavage.dxEditors_edtTBIncBtn_KetoSavage:before,
+.dx-acc-r .dxeTBIncBtnPressed_KetoSavage.dxEditors_edtTBIncBtn_KetoSavage:before,
+.dx-acc-r .dxeTrackBar_KetoSavage.dxeDisabled_KetoSavage .dxEditors_edtTBDecBtn_KetoSavage:before,
+.dx-acc-r .dxeTrackBar_KetoSavage.dxeDisabled_KetoSavage .dxEditors_edtTBIncBtn_KetoSavage:before,
+.dx-acc-r .dxgvFocusedRow_KetoSavage .dxEditors_edtRadioButtonChecked_KetoSavage:before
+
+{
+    content: url('sprite.svg');
+
+}
+.dx-acc-r .dxeButtonEditButtonHover_KetoSavage .dxEditors_edtClear_KetoSavage:before
+
+{
+    left: -394px;
+    top: -31px;
+
+}
+.dx-acc-r .dxeButtonEditButtonHover_KetoSavage .dxEditors_edtDropDown_KetoSavage:before
+
+{
+    left: -411px;
+    top: -234px;
+
+}
+.dx-acc-r .dxeButtonEditButtonHover_KetoSavage .dxEditors_edtEllipsis_KetoSavage:before
+
+{
+    left: -34px;
+    top: -394px;
+
+}
+.dx-acc-r .dxeButtonEditButtonPressed_KetoSavage .dxEditors_edtDropDown_KetoSavage:before
+
+{
+    left: -423px;
+    top: -217px;
+
+}
+.dx-acc-r .dxeButtonEditButtonPressed_KetoSavage .dxEditors_edtEllipsis_KetoSavage:before
+
+{
+    left: -102px;
+    top: -394px;
+
+}
+.dx-acc-r .dxEditors_caRefresh_KetoSavage:before
+
+{
+    left: -394px;
+    top: -110px;
+
+}
+.dx-acc-r .dxEditors_edtBinaryImageDelete_KetoSavage:before
+
+{
+    left: -425px;
+    top: -394px;
+
+}
+.dx-acc-r .dxEditors_edtBinaryImageOpenDialog_KetoSavage:before
+
+{
+    left: -423px;
+    top: -21px;
+
+}
+.dx-acc-r .dxEditors_edtCalendarFastNavBackToPrevMode_KetoSavage:before
+
+{
+    left: -413px;
+    top: -298px;
+
+}
+.dx-acc-r .dxEditors_edtCalendarFastNavBackToPrevModeRtl_KetoSavage:before
+
+{
+    left: -413px;
+    top: -317px;
+
+}
+.dx-acc-r .dxEditors_edtCalendarFNNextPeriod_KetoSavage:before
+
+{
+    left: -433px;
+    top: -333px;
+
+}
+.dx-acc-r .dxEditors_edtCalendarFNNextYear_KetoSavage:before
+
+{
+    left: -166px;
+    top: -411px;
+
+}
+.dx-acc-r .dxEditors_edtCalendarFNPrevPeriod_KetoSavage:before
+
+{
+    left: -432px;
+    top: -320px;
+
+}
+.dx-acc-r .dxEditors_edtCalendarFNPrevYear_KetoSavage:before
+
+{
+    left: -205px;
+    top: -411px;
+
+}
+.dx-acc-r .dxEditors_edtCalendarNextMonth_KetoSavage:before
+
+{
+    left: -218px;
+    top: -411px;
+
+}
+.dx-acc-r .dxEditors_edtCalendarNextMonthDisabled_KetoSavage:before
+
+{
+    left: -244px;
+    top: -411px;
+
+}
+.dx-acc-r .dxEditors_edtCalendarNextYear_KetoSavage:before
+
+{
+    left: -432px;
+    top: -307px;
+
+}
+.dx-acc-r .dxEditors_edtCalendarNextYearDisabled_KetoSavage:before
+
+{
+    left: -192px;
+    top: -411px;
+
+}
+.dx-acc-r .dxEditors_edtCalendarPrevMonth_KetoSavage:before
+
+{
+    left: -257px;
+    top: -411px;
+
+}
+.dx-acc-r .dxEditors_edtCalendarPrevMonthDisabled_KetoSavage:before
+
+{
+    left: -231px;
+    top: -411px;
+
+}
+.dx-acc-r .dxEditors_edtCalendarPrevYear_KetoSavage:before
+
+{
+    left: -153px;
+    top: -411px;
+
+}
+.dx-acc-r .dxEditors_edtCalendarPrevYearDisabled_KetoSavage:before
+
+{
+    left: -179px;
+    top: -411px;
+
+}
+.dx-acc-r .dxEditors_edtClear_KetoSavage:before
+
+{
+    left: -423px;
+    top: -42px;
+
+}
+.dx-acc-r .dxEditors_edtDETSClockFace_KetoSavage:before
+
+{
+    left: -197px;
+    top: -197px;
+
+}
+.dx-acc-r .dxEditors_edtDETSHourHand_KetoSavage:before
+
+{
+    left: 0px;
+    top: 0px;
+
+}
+.dx-acc-r .dxEditors_edtDETSMinuteHand_KetoSavage:before
+
+{
+    left: -197px;
+    top: 0px;
+
+}
+.dx-acc-r .dxEditors_edtDETSSecondHand_KetoSavage:before
+
+{
+    left: 0px;
+    top: -197px;
+
+}
+.dx-acc-r .dxEditors_edtDropDown_KetoSavage:before
+
+{
+    left: -281px;
+    top: -411px;
+
+}
+.dx-acc-r .dxEditors_edtDropDownDisabled_KetoSavage:before
+
+{
+    left: -270px;
+    top: -411px;
+
+}
+.dx-acc-r .dxEditors_edtEllipsis_KetoSavage:before
+
+{
+    left: -394px;
+    top: -228px;
+
+}
+.dx-acc-r .dxEditors_edtEllipsisDisabled_KetoSavage:before
+
+{
+    left: -306px;
+    top: -394px;
+
+}
+.dx-acc-r .dxEditors_edtError_KetoSavage:before
+
+{
+    left: -17px;
+    top: -411px;
+
+}
+.dx-acc-r .dxEditors_edtListBoxFilterBtn_KetoSavage:before
+
+{
+    left: -394px;
+    top: -279px;
+
+}
+.dx-acc-r .dxEditors_edtListBoxFilterBtnDisabled_KetoSavage:before
+
+{
+    left: -394px;
+    top: -317px;
+
+}
+.dx-acc-r .dxEditors_edtListBoxHideFilterBtn_KetoSavage:before
+
+{
+    left: -394px;
+    top: -298px;
+
+}
+.dx-acc-r .dxEditors_edtListBoxHideFilterBtnDisabled_KetoSavage:before
+
+{
+    left: -423px;
+    top: -197px;
+
+}
+.dx-acc-r .dxEditors_edtListBoxHideFilterBtnRtl_KetoSavage:before
+
+{
+    left: -423px;
+    top: -346px;
+
+}
+.dx-acc-r .dxEditors_edtListBoxHideFilterBtnRtlDisabled_KetoSavage:before
+
+{
+    left: -399px;
+    top: -375px;
+
+}
+.dx-acc-r .dxEditors_edtRadioButtonChecked_KetoSavage:before
+
+{
+    left: -423px;
+    top: -126px;
+
+}
+.dx-acc-r .dxEditors_edtRadioButtonCheckedDisabled_KetoSavage:before
+
+{
+    left: -397px;
+    top: -176px;
+
+}
+.dx-acc-r .dxEditors_edtRadioButtonUnchecked_KetoSavage:before
+
+{
+    left: -423px;
+    top: -105px;
+
+}
+.dx-acc-r .dxEditors_edtRadioButtonUncheckedDisabled_KetoSavage:before
+
+{
+    left: -423px;
+    top: 0px;
+
+}
+.dx-acc-r .dxEditors_edtSpinEditDecrementImage_KetoSavage:before
+
+{
+    left: -332px;
+    top: -411px;
+
+}
+.dx-acc-r .dxEditors_edtSpinEditDecrementImageDisabled_KetoSavage:before
+
+{
+    left: -312px;
+    top: -411px;
+
+}
+.dx-acc-r .dxEditors_edtSpinEditIncrementImage_KetoSavage:before
+
+{
+    left: -322px;
+    top: -411px;
+
+}
+.dx-acc-r .dxEditors_edtSpinEditIncrementImageDisabled_KetoSavage:before
+
+{
+    left: -382px;
+    top: -411px;
+
+}
+.dx-acc-r .dxEditors_edtSpinEditLargeDecImage_KetoSavage:before
+
+{
+    left: -352px;
+    top: -411px;
+
+}
+.dx-acc-r .dxEditors_edtSpinEditLargeDecImageDisabled_KetoSavage:before
+
+{
+    left: -292px;
+    top: -411px;
+
+}
+.dx-acc-r .dxEditors_edtSpinEditLargeIncImage_KetoSavage:before
+
+{
+    left: -362px;
+    top: -411px;
+
+}
+.dx-acc-r .dxEditors_edtSpinEditLargeIncImageDisabled_KetoSavage:before
+
+{
+    left: -372px;
+    top: -411px;
+
+}
+.dx-acc-r .dxEditors_edtTBDecBtn_KetoSavage:before
+
+{
+    left: -418px;
+    top: -365px;
+
+}
+.dx-acc-r .dxEditors_edtTBIncBtn_KetoSavage:before
+
+{
+    left: -418px;
+    top: -168px;
+
+}
+.dx-acc-r .dxEditors_edtTokenBoxTokenRemoveButton_KetoSavage:before
+
+{
+    left: -423px;
+    top: -84px;
+
+}
+.dx-acc-r .dxEditors_edtTokenBoxTokenRemoveButtonDisabled_KetoSavage:before
+
+{
+    left: -423px;
+    top: -147px;
+
+}
+.dx-acc-r .dxEditors_fcadd_KetoSavage:before
+
+{
+    left: -85px;
+    top: -394px;
+
+}
+.dx-acc-r .dxEditors_fcaddhot_KetoSavage:before
+
+{
+    left: -323px;
+    top: -394px;
+
+}
+.dx-acc-r .dxEditors_fcgroupaddcondition_KetoSavage:before
+
+{
+    left: -187px;
+    top: -394px;
+
+}
+.dx-acc-r .dxEditors_fcgroupaddgroup_KetoSavage:before
+
+{
+    left: -374px;
+    top: -394px;
+
+}
+.dx-acc-r .dxEditors_fcgroupand_KetoSavage:before
+
+{
+    left: -17px;
+    top: -394px;
+
+}
+.dx-acc-r .dxEditors_fcgroupnotand_KetoSavage:before
+
+{
+    left: -51px;
+    top: -411px;
+
+}
+.dx-acc-r .dxEditors_fcgroupnotor_KetoSavage:before
+
+{
+    left: -394px;
+    top: -262px;
+
+}
+.dx-acc-r .dxEditors_fcgroupor_KetoSavage:before
+
+{
+    left: -34px;
+    top: -411px;
+
+}
+.dx-acc-r .dxEditors_fcgroupremove_KetoSavage:before
+
+{
+    left: -408px;
+    top: -394px;
+
+}
+.dx-acc-r .dxEditors_fcopany_KetoSavage:before
+
+{
+    left: -413px;
+    top: -281px;
+
+}
+.dx-acc-r .dxEditors_fcopavg_KetoSavage:before
+
+{
+    left: -238px;
+    top: -394px;
+
+}
+.dx-acc-r .dxEditors_fcopbegin_KetoSavage:before
+
+{
+    left: -68px;
+    top: -411px;
+
+}
+.dx-acc-r .dxEditors_fcopbetween_KetoSavage:before
+
+{
+    left: -391px;
+    top: -394px;
+
+}
+.dx-acc-r .dxEditors_fcopblank_KetoSavage:before
+
+{
+    left: -423px;
+    top: -228px;
+
+}
+.dx-acc-r .dxEditors_fcopcontain_KetoSavage:before
+
+{
+    left: -204px;
+    top: -394px;
+
+}
+.dx-acc-r .dxEditors_fcopcount_KetoSavage:before
+
+{
+    left: -221px;
+    top: -394px;
+
+}
+.dx-acc-r .dxEditors_fcopend_KetoSavage:before
+
+{
+    left: -394px;
+    top: -245px;
+
+}
+.dx-acc-r .dxEditors_fcopequal_KetoSavage:before
+
+{
+    left: 0px;
+    top: -411px;
+
+}
+.dx-acc-r .dxEditors_fcopexists_KetoSavage:before
+
+{
+    left: -428px;
+    top: -262px;
+
+}
+.dx-acc-r .dxEditors_fcopgreater_KetoSavage:before
+
+{
+    left: -119px;
+    top: -411px;
+
+}
+.dx-acc-r .dxEditors_fcopgreaterorequal_KetoSavage:before
+
+{
+    left: 0px;
+    top: -394px;
+
+}
+.dx-acc-r .dxEditors_fcopless_KetoSavage:before
+
+{
+    left: -68px;
+    top: -394px;
+
+}
+.dx-acc-r .dxEditors_fcoplessorequal_KetoSavage:before
+
+{
+    left: -411px;
+    top: -245px;
+
+}
+.dx-acc-r .dxEditors_fcoplike_KetoSavage:before
+
+{
+    left: -136px;
+    top: -411px;
+
+}
+.dx-acc-r .dxEditors_fcopmax_KetoSavage:before
+
+{
+    left: -272px;
+    top: -394px;
+
+}
+.dx-acc-r .dxEditors_fcopmin_KetoSavage:before
+
+{
+    left: -340px;
+    top: -394px;
+
+}
+.dx-acc-r .dxEditors_fcopnotany_KetoSavage:before
+
+{
+    left: -85px;
+    top: -411px;
+
+}
+.dx-acc-r .dxEditors_fcopnotbetween_KetoSavage:before
+
+{
+    left: -289px;
+    top: -394px;
+
+}
+.dx-acc-r .dxEditors_fcopnotblank_KetoSavage:before
+
+{
+    left: -102px;
+    top: -411px;
+
+}
+.dx-acc-r .dxEditors_fcopnotcontain_KetoSavage:before
+
+{
+    left: -411px;
+    top: -262px;
+
+}
+.dx-acc-r .dxEditors_fcopnotequal_KetoSavage:before
+
+{
+    left: -428px;
+    top: -245px;
+
+}
+.dx-acc-r .dxEditors_fcopnotlike_KetoSavage:before
+
+{
+    left: -430px;
+    top: -281px;
+
+}
+.dx-acc-r .dxEditors_fcopsum_KetoSavage:before
+
+{
+    left: -255px;
+    top: -394px;
+
+}
+.dx-acc-r .dxEditors_fcoptypefield_KetoSavage:before
+
+{
+    left: -51px;
+    top: -394px;
+
+}
+.dx-acc-r .dxEditors_fcoptypefieldhot_KetoSavage:before
+
+{
+    left: -153px;
+    top: -394px;
+
+}
+.dx-acc-r .dxEditors_fcoptypevalue_KetoSavage:before
+
+{
+    left: -357px;
+    top: -394px;
+
+}
+.dx-acc-r .dxEditors_fcoptypevaluehot_KetoSavage:before
+
+{
+    left: -136px;
+    top: -394px;
+
+}
+.dx-acc-r .dxEditors_fcremove_KetoSavage:before
+
+{
+    left: -119px;
+    top: -394px;
+
+}
+.dx-acc-r .dxEditors_fcremovehot_KetoSavage:before
+
+{
+    left: -170px;
+    top: -394px;
+
+}
+.dx-acc-r .dxeSpinDecButtonHover_KetoSavage .dxEditors_edtSpinEditDecrementImage_KetoSavage:before
+
+{
+    left: -402px;
+    top: -411px;
+
+}
+.dx-acc-r .dxeSpinDecButtonPressed_KetoSavage .dxEditors_edtSpinEditDecrementImage_KetoSavage:before
+
+{
+    left: -394px;
+    top: -365px;
+
+}
+.dx-acc-r .dxeSpinIncButtonHover_KetoSavage .dxEditors_edtSpinEditIncrementImage_KetoSavage:before
+
+{
+    left: -404px;
+    top: -365px;
+
+}
+.dx-acc-r .dxeSpinIncButtonPressed_KetoSavage .dxEditors_edtSpinEditIncrementImage_KetoSavage:before
+
+{
+    left: -342px;
+    top: -411px;
+
+}
+.dx-acc-r .dxeSpinLargeDecButtonHover_KetoSavage .dxEditors_edtSpinEditLargeDecImage_KetoSavage:before
+
+{
+    left: -423px;
+    top: -336px;
+
+}
+.dx-acc-r .dxeSpinLargeDecButtonPressed_KetoSavage .dxEditors_edtSpinEditLargeDecImage_KetoSavage:before
+
+{
+    left: -302px;
+    top: -411px;
+
+}
+.dx-acc-r .dxeSpinLargeIncButtonHover_KetoSavage .dxEditors_edtSpinEditLargeIncImage_KetoSavage:before
+
+{
+    left: -434px;
+    top: -216px;
+
+}
+.dx-acc-r .dxeSpinLargeIncButtonPressed_KetoSavage .dxEditors_edtSpinEditLargeIncImage_KetoSavage:before
+
+{
+    left: -392px;
+    top: -411px;
+
+}
+.dx-acc-r .dxeTBDecBtnHover_KetoSavage.dxEditors_edtTBDecBtn_KetoSavage:before
+
+{
+    left: -394px;
+    top: 0px;
+
+}
+.dx-acc-r .dxeTBDecBtnPressed_KetoSavage.dxEditors_edtTBDecBtn_KetoSavage:before
+
+{
+    left: -394px;
+    top: -52px;
+
+}
+.dx-acc-r .dxeTBIncBtnHover_KetoSavage.dxEditors_edtTBIncBtn_KetoSavage:before
+
+{
+    left: -394px;
+    top: -197px;
+
+}
+.dx-acc-r .dxeTBIncBtnPressed_KetoSavage.dxEditors_edtTBIncBtn_KetoSavage:before
+
+{
+    left: -394px;
+    top: -336px;
+
+}
+.dx-acc-r .dxeTrackBar_KetoSavage.dxeDisabled_KetoSavage .dxEditors_edtTBDecBtn_KetoSavage:before
+
+{
+    left: -394px;
+    top: -139px;
+
+}
+.dx-acc-r .dxeTrackBar_KetoSavage.dxeDisabled_KetoSavage .dxEditors_edtTBIncBtn_KetoSavage:before
+
+{
+    left: -394px;
+    top: -81px;
+
+}
+.dx-acc-r .dxgvFocusedRow_KetoSavage .dxEditors_edtRadioButtonChecked_KetoSavage:before
+
+{
+    left: -423px;
+    top: -63px;
+
+}
+

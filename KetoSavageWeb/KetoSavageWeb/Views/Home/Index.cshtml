@@ -1,7 +1,7 @@
 @model KetoSavageWeb.Models.LoginModel
 
 <div class="center">
-    
+
     @*@Html.DevExpress().FormLayout(settings =>
         {
             settings.Name = "LoginForm";
@@ -83,110 +83,24 @@
     </center>
 
     @Html.DevExpress().PopupControl(settings =>
-       {
-           settings.Name = "modLogin";
-           settings.Width = 320;
-           settings.AllowDragging = true;
-           settings.CloseAction = CloseAction.CloseButton;
-           settings.CloseOnEscape = true;
-           settings.PopupAnimationType = AnimationType.None;
-           settings.ShowHeader = false;
-           settings.Modal = true;
-           settings.AutoUpdatePosition = true;
-           settings.PopupHorizontalAlign = PopupHorizontalAlign.WindowCenter;
-           settings.PopupVerticalAlign = PopupVerticalAlign.WindowCenter;
-           settings.SetContent(() =>
-           {
-               using (Html.BeginForm("Login", "Account", FormMethod.Post, new { id = "popupForm", @class = "edit_form" }))
-               {
-                   ViewContext.Writer.Write(Html.AntiForgeryToken().ToHtmlString());
-
-                   Html.Hidden("UserId");
-
-                   @Html.DevExpress().FormLayout(form =>
-                   {
-                       form.Name = "ModalModeFormLayout";
-                       form.RequiredMarkDisplayMode = RequiredMarkMode.None;
-                       form.SettingsItemCaptions.Location = LayoutItemCaptionLocation.Top;
-                       form.Width = Unit.Percentage(100);
-                       form.Height = Unit.Percentage(100);
-
-                       form.NestedExtensionWidth = Unit.Percentage(100);
-                       form.Items.Add(m => m.UserName, item =>
-                       {
-                           item.HelpText = "";
-                           item.Caption = "Username";
-                           item.NestedExtensionType = FormLayoutNestedExtensionItemType.TextBox;
-                           var tbSettings = (TextBoxSettings)item.NestedExtensionSettings;
-                           tbSettings.Properties.Password = false;
-                       });
-                       form.Items.Add(m => m.Password, item =>
-                       {
-                           item.HelpText = "";
-                           item.Caption = "Password";
-                           item.NestedExtensionType = FormLayoutNestedExtensionItemType.TextBox;
-                           var tbSettings = (TextBoxSettings)item.NestedExtensionSettings;
-                           tbSettings.Properties.Password = true;
-                       });
-
-                       form.Items.Add(m => m.RememberMe, item =>
-                       {
-                           item.HelpText = "";
-                           item.Caption = "Remember Me";
-                           item.NestedExtensionType = FormLayoutNestedExtensionItemType.CheckBox;
-                       });
-
-                       form.Items.AddGroupItem(g =>
-                       {
-                           g.ColCount = 2;
-                           g.GroupBoxDecoration = GroupBoxDecoration.None;
-                           g.ShowCaption = DefaultBoolean.False;
-                           g.Paddings.Padding = 10;
-                           g.Items.Add(i =>
-                           {
-                               i.ShowCaption = DefaultBoolean.False;
-                               i.Paddings.Padding = 0;
-                               //i.Width = Unit.Percentage(100);
-                               i.HorizontalAlign = FormLayoutHorizontalAlign.Left;
-
-                               i.SetNestedContent(() =>
-                               {
-                                   Html.DevExpress().Button(
-                                       buttonSettings =>
-                                       {
-                                           buttonSettings.Name = "btnLogin";
-                                           buttonSettings.ControlStyle.CssClass = "button";
-                                           buttonSettings.Width = 100;
-                                           buttonSettings.Text = "Login";
-                                           buttonSettings.UseSubmitBehavior = true;
-                                       }).Render();
-                               });
-                           });
-
-                           g.Items.Add(i =>
-                           {
-                               i.ShowCaption = DefaultBoolean.False;
-                               i.HorizontalAlign = FormLayoutHorizontalAlign.Right;
-                               i.SetNestedContent(() =>
-                               {
-                                   Html.DevExpress().Button(
-                                   buttonSettings =>
-                                   {
-                                       buttonSettings.Name = "btnCancel";
-                                       buttonSettings.ControlStyle.CssClass = "button";
-                                       buttonSettings.Width = 100;
-                                       buttonSettings.Text = "Cancel";
-                                       buttonSettings.ClientSideEvents.Click = "function(s, e){ modLogin.Hide(); }";
-                                   }).Render();
-                               });
-                           });
-                       }); //group
-
-                   }).Render();
-               }
-           });
-           settings.ClientSideEvents.CloseUp = "function(s, e){ ASPxClientEdit.ClearEditorsInContainer(null, '', true); }";
-       }).GetHtml()
+    {
+        settings.Name = "modLogin";
+        settings.Width = 320;
+        settings.AllowDragging = true;
+        settings.CloseAction = CloseAction.CloseButton;
+        settings.CloseOnEscape = true;
+        settings.PopupAnimationType = AnimationType.None;
+        settings.ShowHeader = false;
+        settings.Modal = true;
+        settings.AutoUpdatePosition = true;
+        settings.PopupHorizontalAlign = PopupHorizontalAlign.WindowCenter;
+        settings.PopupVerticalAlign = PopupVerticalAlign.WindowCenter;
+        settings.SetContent(() =>
+        {
+            Html.RenderPartial("~/Views/Account/_loginPartial.cshtml");
+        }); //End of setContent
+        settings.ClientSideEvents.CloseUp = "function(s, e){ ASPxClientEdit.ClearEditorsInContainer(null, '', true); }";
+    }).GetHtml()
 
     @Html.DevExpress().PopupControl(settings =>
 {
