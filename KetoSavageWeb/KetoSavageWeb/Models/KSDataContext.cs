@@ -15,5 +15,6 @@ namespace KetoSavageWeb.Models
         }
 
         DbSet<UserProfile> UserProfiles { get; set; }
+        DbSet<ProgramModels> Programs { get; set; }
     }
 }

@@ -34,6 +34,9 @@ namespace KetoSavageWeb.Models
         [Display(Name = "Postal Code")]
         public string PostalCode { get; set; }
 
+        public int? ProgramId { get; set; }
+        public virtual ProgramModels Programs { get; set; }
+
         
         // Concatenate the address info for display in tables and such:
         public string DisplayAddress
