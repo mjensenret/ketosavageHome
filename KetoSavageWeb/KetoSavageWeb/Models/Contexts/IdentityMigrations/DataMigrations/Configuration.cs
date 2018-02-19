@@ -1,20 +1,19 @@
-namespace KetoSavageWeb.Migrations
+namespace KetoSavageWeb.Models.Contexts.DataMigrations
 {
-    using Models;
-    using Models.Contexts;
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Migrations;
     using System.Linq;
 
-    internal sealed class Configuration : DbMigrationsConfiguration<KSDataContext>
+    internal sealed class Configuration : DbMigrationsConfiguration<KetoSavageWeb.Models.Contexts.KSDataContext>
     {
         public Configuration()
         {
-            AutomaticMigrationsEnabled = true;
+            AutomaticMigrationsEnabled = false;
+            MigrationsDirectory = @"Models\Contexts\DataMigrations";
         }
 
-        protected override void Seed(KSDataContext context)
+        protected override void Seed(KetoSavageWeb.Models.Contexts.KSDataContext context)
         {
             //  This method will be called after migrating to the latest version.
 
@@ -28,8 +27,6 @@ namespace KetoSavageWeb.Migrations
             //      new Person { FullName = "Rowan Miller" }
             //    );
             //
-
-
         }
     }
 }
