@@ -14,7 +14,7 @@ namespace KetoSavageWeb.Models
         public string programGoal { get; set; }
         public string programNotes { get; set; }
         public int userId { get; set; }
-        public ICollection<ApplicationUser> user { get; set; }
+        //public ICollection<ApplicationUser> user { get; set; }
     }
 
     [Table("CoachedPrograms")]
@@ -22,7 +22,7 @@ namespace KetoSavageWeb.Models
     {
         public DateTime renewalDate { get; set; }
         public int coachId { get; set; }
-        public ICollection<ApplicationUser> coach { get; set; }
+        //public ICollection<ApplicationUser> coach { get; set; }
     }
 
     [Table("SelfGuidedPrograms")]
