@@ -33,9 +33,9 @@ namespace KetoSavageWeb.Models
         // Use a sensible display name for views:
         [Display(Name = "Postal Code")]
         public string PostalCode { get; set; }
-        [Display(Name = "Notes")]
-        [StringLength(255)]
-        public string Notes { get; set; }
+
+        public int? ProgramId { get; set; }
+        public virtual ProgramModels Programs { get; set; }
 
         
         // Concatenate the address info for display in tables and such:
@@ -62,21 +62,21 @@ namespace KetoSavageWeb.Models
     }
 
 
-    //public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
-    //{
-    //    public ApplicationDbContext()
-    //        : base("KSDataContext", throwIfV1Schema: false)
-    //    {
-    //    }
+    public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
+    {
+        public ApplicationDbContext()
+            : base("KSDataContext", throwIfV1Schema: false)
+        {
+        }
 
-    //    static ApplicationDbContext()
-    //    {
-    //        Database.SetInitializer<ApplicationDbContext>(new ApplicationDbInitializer());
-    //    }
+        static ApplicationDbContext()
+        {
+            Database.SetInitializer<ApplicationDbContext>(new ApplicationDbInitializer());
+        }
 
-    //    public static ApplicationDbContext Create()
-    //    {
-    //        return new ApplicationDbContext();
-    //    }
-    //}
+        public static ApplicationDbContext Create()
+        {
+            return new ApplicationDbContext();
+        }
+    }
 }

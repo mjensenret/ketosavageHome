@@ -1,7 +1,6 @@
 namespace KetoSavageWeb.Migrations
 {
     using Models;
-    using Models.Contexts;
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Migrations;
@@ -11,7 +10,7 @@ namespace KetoSavageWeb.Migrations
     {
         public Configuration()
         {
-            AutomaticMigrationsEnabled = true;
+            AutomaticMigrationsEnabled = false;
         }
 
         protected override void Seed(KSDataContext context)
