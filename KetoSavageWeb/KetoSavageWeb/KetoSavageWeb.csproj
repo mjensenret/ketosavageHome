@@ -53,6 +53,26 @@
       <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="Glimpse.Ado, Version=1.7.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Glimpse.Ado.1.7.3\lib\net45\Glimpse.Ado.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Glimpse.AspNet, Version=1.8.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Glimpse.AspNet.1.8.0\lib\net45\Glimpse.AspNet.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Glimpse.Core, Version=1.8.6.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Glimpse.1.8.6\lib\net45\Glimpse.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Glimpse.EF6, Version=1.6.5.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Glimpse.EF6.1.6.5\lib\net45\Glimpse.EF6.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Glimpse.Mvc5, Version=1.5.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Glimpse.Mvc5.1.5.3\lib\net45\Glimpse.Mvc5.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="KetoSavageThemeAssembly">
       <HintPath>App_Themes\KetoSavage\KetoSavageThemeAssembly.dll</HintPath>
     </Reference>
@@ -223,17 +243,17 @@
     <Content Include="App_Data\SideMenu.xml" />
     <Content Include="App_Data\TopMenu.xml" />
     <Content Include="App_Themes\KetoSavage\KetoSavageThemeAssembly.dll" />
-    <Content Include="Content\generic.dark.custom.css" />
-    <Content Include="Content\Images\AquaHeader.jpg" />
-    <Content Include="Content\Images\BlackGlassHeader.jpg" />
-    <Content Include="Content\Images\GlassHeader.jpg" />
-    <Content Include="Content\Images\KSHeaderLogo_white.png" />
-    <Content Include="Content\Images\KSLogo_white.png" />
-    <Content Include="Content\Images\PlasticBlueHeader.jpg" />
-    <Content Include="Content\Images\RedWineHeader.jpg" />
-    <Content Include="Content\jquery-ui.css" />
-    <Content Include="Content\jquery-ui.min.css" />
-    <Content Include="Content\Site.css" />
+    <Content Include="bin\Content\generic.dark.custom.css" />
+    <Content Include="bin\Content\Images\AquaHeader.jpg" />
+    <Content Include="bin\Content\Images\BlackGlassHeader.jpg" />
+    <Content Include="bin\Content\Images\GlassHeader.jpg" />
+    <Content Include="bin\Content\Images\KSHeaderLogo_white.png" />
+    <Content Include="bin\Content\Images\KSLogo_white.png" />
+    <Content Include="bin\Content\Images\PlasticBlueHeader.jpg" />
+    <Content Include="bin\Content\Images\RedWineHeader.jpg" />
+    <Content Include="bin\Content\jquery-ui.css" />
+    <Content Include="bin\Content\jquery-ui.min.css" />
+    <Content Include="bin\Content\Site.css" />
     <Content Include="Global.asax" />
     <Content Include="Scripts\ace.js" />
     <Content Include="Scripts\cldr.event.js" />
@@ -481,6 +501,7 @@
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\ManageUsersController.cs" />
     <Compile Include="Controllers\UsersAdminController.cs" />
+    <Compile Include="GlimpseSecurityPolicy.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -494,10 +515,25 @@
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountModels.cs" />
+    <Compile Include="Models\Contexts\DataMigrations\201802190102006_UpdatingProgram.cs" />
+    <Compile Include="Models\Contexts\DataMigrations\201802190102006_UpdatingProgram.Designer.cs">
+      <DependentUpon>201802190102006_UpdatingProgram.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Contexts\IdentityMigrations\DataMigrations\201802180503049_InitialCreate.cs" />
+    <Compile Include="Models\Contexts\IdentityMigrations\DataMigrations\201802180503049_InitialCreate.Designer.cs">
+      <DependentUpon>201802180503049_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Contexts\IdentityMigrations\DataMigrations\Configuration.cs" />
+    <Compile Include="Models\Contexts\IdentityMigrations\201802180348079_InitialCreate.cs" />
+    <Compile Include="Models\Contexts\IdentityMigrations\201802180348079_InitialCreate.Designer.cs">
+      <DependentUpon>201802180348079_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Contexts\IdentityMigrations\Configuration.cs" />
+    <Compile Include="Models\Contexts\KSIdentityContext.cs" />
     <Compile Include="Models\IdentityModels.cs" />
-    <Compile Include="Models\KSDataContext.cs" />
+    <Compile Include="Models\Contexts\KSDataContext.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
-    <Compile Include="Models\NorthwindContext.cs" />
+    <Compile Include="Models\Contexts\NorthwindContext.cs" />
     <Compile Include="Models\NorthwindDataProvider.cs" />
     <Compile Include="Models\ProgramModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -513,6 +549,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201801261801225_addUserNotes.resx">
       <DependentUpon>201801261801225_addUserNotes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Models\Contexts\DataMigrations\201802190102006_UpdatingProgram.resx">
+      <DependentUpon>201802190102006_UpdatingProgram.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Models\Contexts\IdentityMigrations\DataMigrations\201802180503049_InitialCreate.resx">
+      <DependentUpon>201802180503049_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Models\Contexts\IdentityMigrations\201802180348079_InitialCreate.resx">
+      <DependentUpon>201802180348079_InitialCreate.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup />
