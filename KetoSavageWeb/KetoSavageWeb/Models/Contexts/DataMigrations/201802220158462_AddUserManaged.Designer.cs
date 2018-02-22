@@ -7,13 +7,13 @@ namespace KetoSavageWeb.Models.Contexts.DataMigrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.3-40302")]
-    public sealed partial class InitialCreate : IMigrationMetadata
+    public sealed partial class AddUserManaged : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(InitialCreate));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(AddUserManaged));
         
         string IMigrationMetadata.Id
         {
-            get { return "201802180503049_InitialCreate"; }
+            get { return "201802220158462_AddUserManaged"; }
         }
         
         string IMigrationMetadata.Source

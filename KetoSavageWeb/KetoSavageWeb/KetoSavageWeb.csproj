@@ -254,6 +254,17 @@
     <Content Include="bin\Content\jquery-ui.css" />
     <Content Include="bin\Content\jquery-ui.min.css" />
     <Content Include="bin\Content\Site.css" />
+    <Content Include="Content\generic.dark.custom.css" />
+    <Content Include="Content\Images\AquaHeader.jpg" />
+    <Content Include="Content\Images\BlackGlassHeader.jpg" />
+    <Content Include="Content\Images\GlassHeader.jpg" />
+    <Content Include="Content\Images\KSHeaderLogo_white.png" />
+    <Content Include="Content\Images\KSLogo_white.png" />
+    <Content Include="Content\Images\PlasticBlueHeader.jpg" />
+    <Content Include="Content\Images\RedWineHeader.jpg" />
+    <Content Include="Content\jquery-ui.css" />
+    <Content Include="Content\jquery-ui.min.css" />
+    <Content Include="Content\Site.css" />
     <Content Include="Global.asax" />
     <Content Include="Scripts\ace.js" />
     <Content Include="Scripts\cldr.event.js" />
@@ -496,11 +507,20 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\Abstract\KSBaseController.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\ManageUsersController.cs" />
+    <Compile Include="Controllers\ProgramsController.cs" />
     <Compile Include="Controllers\UsersAdminController.cs" />
+    <Compile Include="Domain\Infrastructure\IEntityContext.cs" />
+    <Compile Include="Domain\Infrastructure\ListEntityContext.cs" />
+    <Compile Include="Domain\Models\EntityBase.cs" />
+    <Compile Include="Domain\Models\IKeyedEntity.cs" />
+    <Compile Include="Domain\Models\IUserManaged.cs" />
+    <Compile Include="Domain\Repositories\GenericRepository.cs" />
+    <Compile Include="Domain\Repositories\UserManagedRepository.cs" />
     <Compile Include="GlimpseSecurityPolicy.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -514,16 +534,21 @@
       <DependentUpon>201801261801225_addUserNotes.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\Abstract\UserManaged.cs" />
     <Compile Include="Models\AccountModels.cs" />
+    <Compile Include="Models\Contexts\DataMigrations\201802180503049_InitialCreate.cs" />
+    <Compile Include="Models\Contexts\DataMigrations\201802180503049_InitialCreate.Designer.cs">
+      <DependentUpon>201802180503049_InitialCreate.cs</DependentUpon>
+    </Compile>
     <Compile Include="Models\Contexts\DataMigrations\201802190102006_UpdatingProgram.cs" />
     <Compile Include="Models\Contexts\DataMigrations\201802190102006_UpdatingProgram.Designer.cs">
       <DependentUpon>201802190102006_UpdatingProgram.cs</DependentUpon>
     </Compile>
-    <Compile Include="Models\Contexts\IdentityMigrations\DataMigrations\201802180503049_InitialCreate.cs" />
-    <Compile Include="Models\Contexts\IdentityMigrations\DataMigrations\201802180503049_InitialCreate.Designer.cs">
-      <DependentUpon>201802180503049_InitialCreate.cs</DependentUpon>
+    <Compile Include="Models\Contexts\DataMigrations\201802220158462_AddUserManaged.cs" />
+    <Compile Include="Models\Contexts\DataMigrations\201802220158462_AddUserManaged.Designer.cs">
+      <DependentUpon>201802220158462_AddUserManaged.cs</DependentUpon>
     </Compile>
-    <Compile Include="Models\Contexts\IdentityMigrations\DataMigrations\Configuration.cs" />
+    <Compile Include="Models\Contexts\DataMigrations\Configuration.cs" />
     <Compile Include="Models\Contexts\IdentityMigrations\201802180348079_InitialCreate.cs" />
     <Compile Include="Models\Contexts\IdentityMigrations\201802180348079_InitialCreate.Designer.cs">
       <DependentUpon>201802180348079_InitialCreate.cs</DependentUpon>
@@ -537,9 +562,9 @@
     <Compile Include="Models\NorthwindDataProvider.cs" />
     <Compile Include="Models\ProgramModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Interfaces\IProgramRepository.cs" />
     <Compile Include="Repositories\ProgramRepository.cs" />
     <Compile Include="Repositories\UserProfileRepository.cs" />
-    <Compile Include="Repositories\Abstract\GenericRepository.cs" />
     <Compile Include="Startup.cs" />
     <Compile Include="Util\Interfaces\IDataLayer.cs" />
   </ItemGroup>
@@ -550,17 +575,22 @@
     <EmbeddedResource Include="Migrations\201801261801225_addUserNotes.resx">
       <DependentUpon>201801261801225_addUserNotes.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Models\Contexts\DataMigrations\201802180503049_InitialCreate.resx">
+      <DependentUpon>201802180503049_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Models\Contexts\DataMigrations\201802190102006_UpdatingProgram.resx">
       <DependentUpon>201802190102006_UpdatingProgram.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Models\Contexts\IdentityMigrations\DataMigrations\201802180503049_InitialCreate.resx">
-      <DependentUpon>201802180503049_InitialCreate.cs</DependentUpon>
+    <EmbeddedResource Include="Models\Contexts\DataMigrations\201802220158462_AddUserManaged.resx">
+      <DependentUpon>201802220158462_AddUserManaged.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Models\Contexts\IdentityMigrations\201802180348079_InitialCreate.resx">
       <DependentUpon>201802180348079_InitialCreate.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Views\Programs\" />
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using KetoSavageWeb.Models.Abstract;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
@@ -6,7 +7,7 @@ using System.Web;
 
 namespace KetoSavageWeb.Models
 {
-    public abstract class ProgramModels
+    public abstract class ProgramModels : UserManaged
     {   
         public int Id { get; set; }
         public DateTime startDate { get; set; }
