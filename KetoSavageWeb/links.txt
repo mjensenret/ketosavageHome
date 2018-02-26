@@ -14,3 +14,6 @@ http://johnatten.com/2014/02/13/asp-net-mvc-5-identity-extending-and-modifying-r
 
 	Add-Migration NewMigration -ConfigurationTypeName KetoSavageWeb.Models.Contexts.DataMigrations.Configuration
 	update-database -ConfigurationTypeName KetoSavageWeb.Models.Contexts.DataMigrations.Configuration
+	
+https://demos.devexpress.com/MVCxNavigationAndLayoutDemos/Splitter/Resizing
+

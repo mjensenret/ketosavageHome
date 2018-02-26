@@ -26,8 +26,11 @@ namespace KetoSavageWeb.Controllers
             var roles = (from r in RoleManager.Roles where r.Name.Contains("Client") select r).FirstOrDefault();
             var users = UserManager.Users.Where(x => x.Roles.Select(y => y.RoleId).Contains(roles.Id)).ToList();
 
+            ViewData["Clients"] = users.ToList();
+            string userName = UserManager.Users.First().UserName.ToString();
             var programs = program.GetActive.Where(x => x is CoachedPrograms);
-            return View();
+
+            return View("Index", userName);
         }
 
         public ActionResult ClientList()
