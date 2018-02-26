@@ -514,6 +514,7 @@
     <Content Include="Views\Shared\_menuPartial.cshtml" />
     <Content Include="Views\Account\_loginPartial.cshtml" />
     <Content Include="Views\ClientPrograms\Index.cshtml" />
+    <Content Include="Views\ClientPrograms\_clientList.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -558,6 +559,7 @@
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Abstract\UserManaged.cs" />
     <Compile Include="Models\AccountModels.cs" />
+    <Compile Include="Models\ClientProgramViewModel.cs" />
     <Compile Include="Models\Contexts\DataMigrations\201802180503049_InitialCreate.cs" />
     <Compile Include="Models\Contexts\DataMigrations\201802180503049_InitialCreate.Designer.cs">
       <DependentUpon>201802180503049_InitialCreate.cs</DependentUpon>

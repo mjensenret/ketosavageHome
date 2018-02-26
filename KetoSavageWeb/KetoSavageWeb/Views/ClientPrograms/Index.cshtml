@@ -17,11 +17,11 @@
         nav.SetContent(() =>
         {
             ViewContext.Writer.Write(
-                "List of active clients"
-                );
-        });
-
+                Html.Action("ClientList")
+            );
     });
+
+});
     settings.Panes.Add(c =>
     {
         c.SetContent(() =>

@@ -1,0 +1,14 @@
+﻿
+@{ 
+    var grid = Html.DevExpress().GridView(clientList =>
+    {
+        clientList.Name = "ClientList";
+        clientList.KeyFieldName = "UserName";
+
+        clientList.Columns.Add(c =>
+        {
+            c.FieldName = "UserName";
+        });
+    });
+}
+@grid.Bind(Model).GetHtml()

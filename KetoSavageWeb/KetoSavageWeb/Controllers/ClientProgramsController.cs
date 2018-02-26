@@ -22,22 +22,47 @@ namespace KetoSavageWeb.Controllers
         // GET: Programs
         public async Task<ActionResult> Index()
         {
-            var users = from user in UserManager.Users
-                        from role in RoleManager.Roles.Where(y => y.Name == "Client")
-                        select new
-                        {
-                            user.UserName,
-                            user.FirstName,
-                            user.LastName,
-                            user.Email,
-                            role.Name
-                        };
-            var model = users.ToList();
+
+            var roles = (from r in RoleManager.Roles where r.Name.Contains("Client") select r).FirstOrDefault();
+            var users = UserManager.Users.Where(x => x.Roles.Select(y => y.RoleId).Contains(roles.Id)).ToList();
 
             var programs = program.GetActive.Where(x => x is CoachedPrograms);
             return View();
         }
 
+        public ActionResult ClientList()
+        {
+            var roles = (from r in RoleManager.Roles where r.Name.Contains("Client") select r).FirstOrDefault();
+            var users = UserManager.Users.Where(x => x.Roles.Select(y => y.RoleId).Contains(roles.Id));
+
+            //var model = new ClientListViewModel
+            //{
+            //    userName = users.User
+            //}
+            //var users = (from user in UserManager.Users
+            //            from role in RoleManager.Roles
+            //            where role.Name.Contains("Client")
+            //            .ToList())
+            //            .Select
+            //            select new ClientListViewModel()
+            //            {
+            //                userName = user.UserName,
+            //                FullName = string.Format("{0} {1}", user.FirstName, user.LastName)
+
+            //            };
+            var items = (users
+                .OrderBy(x => x.UserName)
+                .ToList())
+                .Select(
+                    x => new ClientListViewModel
+                    {
+                        userName = x.UserName,
+                        FullName = string.Format("{0} {1}", x.FirstName, x.LastName)
+                    });
+
+            var model = users.ToList();
+            return PartialView("_clientList", model);
+        }
         public ActionResult ClientPrograms()
         {
             var clientPrograms = program.GetActive.Where(x => x is CoachedPrograms);
