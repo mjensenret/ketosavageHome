@@ -24,11 +24,20 @@ namespace KetoSavageWeb.Models
         public DateTime renewalDate { get; set; }
         public int coachId { get; set; }
         //public ICollection<ApplicationUser> coach { get; set; }
+
+        public CoachedPrograms() : base()
+        {
+
+        }
     }
 
     [Table("SelfGuidedPrograms")]
     public class SelfGuidedPrograms : ProgramModels
     {
+        public SelfGuidedPrograms() : base()
+        {
 
+        }
     }
+
 }
