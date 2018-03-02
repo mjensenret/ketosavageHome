@@ -572,6 +572,10 @@
     <Compile Include="Models\Contexts\DataMigrations\201802220158462_AddUserManaged.Designer.cs">
       <DependentUpon>201802220158462_AddUserManaged.cs</DependentUpon>
     </Compile>
+    <Compile Include="Models\Contexts\DataMigrations\201803021802581_TyingApplicationUser.cs" />
+    <Compile Include="Models\Contexts\DataMigrations\201803021802581_TyingApplicationUser.Designer.cs">
+      <DependentUpon>201803021802581_TyingApplicationUser.cs</DependentUpon>
+    </Compile>
     <Compile Include="Models\Contexts\DataMigrations\Configuration.cs" />
     <Compile Include="Models\Contexts\IdentityMigrations\201802180348079_InitialCreate.cs" />
     <Compile Include="Models\Contexts\IdentityMigrations\201802180348079_InitialCreate.Designer.cs">
@@ -607,6 +611,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Models\Contexts\DataMigrations\201802220158462_AddUserManaged.resx">
       <DependentUpon>201802220158462_AddUserManaged.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Models\Contexts\DataMigrations\201803021802581_TyingApplicationUser.resx">
+      <DependentUpon>201803021802581_TyingApplicationUser.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Models\Contexts\IdentityMigrations\201802180348079_InitialCreate.resx">
       <DependentUpon>201802180348079_InitialCreate.cs</DependentUpon>

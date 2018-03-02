@@ -5,6 +5,7 @@ using System.Security.Claims;
 using System.Threading.Tasks;
 using System.ComponentModel.DataAnnotations;
 using System.Collections;
+using System.Collections.Generic;
 
 namespace KetoSavageWeb.Models
 {
@@ -50,6 +51,7 @@ namespace KetoSavageWeb.Models
                 return string.Format("{0} {1} {2} {3}", dspAddress, dspCity, dspState, dspPostalCode);
             }
         }
+
     }
 
 

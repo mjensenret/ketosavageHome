@@ -14,16 +14,16 @@ namespace KetoSavageWeb.Models
         public DateTime endDate { get; set; }
         public string programGoal { get; set; }
         public string programNotes { get; set; }
-        public int userId { get; set; }
-        //public ICollection<ApplicationUser> user { get; set; }
+        public ApplicationUser ApplicationUser { get; set; }
     }
 
     [Table("CoachedPrograms")]
     public class CoachedPrograms : ProgramModels
     {
         public DateTime renewalDate { get; set; }
-        public int coachId { get; set; }
-        //public ICollection<ApplicationUser> coach { get; set; }
+
+        public int CoachId { get; set; }
+        public ApplicationUser Coach { get; set; }
 
         public CoachedPrograms() : base()
         {

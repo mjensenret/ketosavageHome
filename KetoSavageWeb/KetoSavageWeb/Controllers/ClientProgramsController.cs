@@ -25,10 +25,25 @@ namespace KetoSavageWeb.Controllers
 
             var roles = (from r in RoleManager.Roles where r.Name.Contains("Client") select r).FirstOrDefault();
             var users = UserManager.Users.Where(x => x.Roles.Select(y => y.RoleId).Contains(roles.Id)).ToList();
+            var programs = program.GetActive.Where(z => z is CoachedPrograms);
+
+            var qry = (programs
+                .OrderBy(x => x.ApplicationUser.FirstName)
+                .ToList())
+                .Select(
+                x => new ClientListViewModel()
+                {
+                    FullName = string.Join(" ", x.ApplicationUser.FirstName, x.ApplicationUser.LastName),
+                    currentProgramStartDate = x.startDate,
+                    currentProgramEndDate = x.endDate
+                });
+
+
+            var model = qry;
 
             ViewData["Clients"] = users.ToList();
             string userName = UserManager.Users.First().UserName.ToString();
-            var programs = program.GetActive.Where(x => x is CoachedPrograms);
+            //var programs = program.GetActive.Where(x => x is CoachedPrograms);
 
             return View("Index", userName);
         }

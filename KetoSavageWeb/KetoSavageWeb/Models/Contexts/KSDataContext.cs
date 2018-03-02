@@ -7,7 +7,7 @@ using System.Web;
 
 namespace KetoSavageWeb.Models.Contexts
 {
-    public class KSDataContext : DbContext
+    public class KSDataContext : IdentityDbContext
     {
         public KSDataContext() : base("KSDataConnection")
         {
@@ -15,6 +15,16 @@ namespace KetoSavageWeb.Models.Contexts
         }
 
         //DbSet<UserProfile> UserProfiles { get; set; }
+        //DbSet<ApplicationUser> Users { get; set; }
         DbSet<ProgramModels> Programs { get; set; }
+
+        //protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        //{
+        //    base.OnModelCreating(modelBuilder);
+
+        //    modelBuilder.Entity<ProgramModels>()
+        //        .HasRequired(p => p.user)
+        //        .WithMany(user => user.)
+        //}
     }
 }
