@@ -1,12 +1,13 @@
-namespace KetoSavageWeb.Models.Contexts.DataMigrations
+namespace KetoSavageWeb.Migrations
 {
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class TyingApplicationUser : DbMigration
+    public partial class Initial : DbMigration
     {
         public override void Up()
         {
+           
             //CreateTable(
             //    "dbo.AspNetUsers",
             //    c => new
@@ -84,44 +85,83 @@ namespace KetoSavageWeb.Models.Contexts.DataMigrations
             //        })
             //    .PrimaryKey(t => t.Id)
             //    .Index(t => t.Name, unique: true, name: "RoleNameIndex");
+
+           //CreateTable(
+           //     "dbo.ProgramModels",
+           //     c => new
+           //         {
+           //             Id = c.Int(nullable: false, identity: true),
+           //             startDate = c.DateTime(nullable: false),
+           //             endDate = c.DateTime(nullable: false),
+           //             programGoal = c.String(),
+           //             programNotes = c.String(),
+           //             IsActive = c.Boolean(nullable: false),
+           //             IsDeleted = c.Boolean(nullable: false),
+           //             Created = c.DateTime(nullable: false),
+           //             LastModified = c.DateTime(nullable: false),
+           //             CreatedBy = c.String(maxLength: 50),
+           //             LastModifiedBy = c.String(maxLength: 50),
+           //             ApplicationUser_Id = c.String(maxLength: 128),
+           //         })
+           //     .PrimaryKey(t => t.Id)
+           //     .ForeignKey("dbo.AspNetUsers", t => t.ApplicationUser_Id)
+           //     .Index(t => t.ApplicationUser_Id);
             
-            AddColumn("dbo.ProgramModels", "ApplicationUser_Id", c => c.String(maxLength: 128));
-            AddColumn("dbo.CoachedPrograms", "Coach_Id", c => c.String(maxLength: 128));
-            AddColumn("dbo.CoachedPrograms", "CoachId", c => c.Int(nullable: false));
-            CreateIndex("dbo.ProgramModels", "ApplicationUser_Id");
-            CreateIndex("dbo.CoachedPrograms", "Coach_Id");
-            AddForeignKey("dbo.ProgramModels", "ApplicationUser_Id", "dbo.AspNetUsers", "Id");
-            AddForeignKey("dbo.CoachedPrograms", "Coach_Id", "dbo.AspNetUsers", "Id");
-            DropColumn("dbo.ProgramModels", "userName");
-            DropColumn("dbo.CoachedPrograms", "coachName");
+           // CreateTable(
+           //     "dbo.CoachedPrograms",
+           //     c => new
+           //         {
+           //             Id = c.Int(nullable: false),
+           //             Coach_Id = c.String(maxLength: 128),
+           //             renewalDate = c.DateTime(nullable: false),
+           //             CoachId = c.Int(nullable: false),
+           //         })
+           //     .PrimaryKey(t => t.Id)
+           //     .ForeignKey("dbo.ProgramModels", t => t.Id)
+           //     .ForeignKey("dbo.AspNetUsers", t => t.Coach_Id)
+           //     .Index(t => t.Id)
+           //     .Index(t => t.Coach_Id);
+            
+           // CreateTable(
+           //     "dbo.SelfGuidedPrograms",
+           //     c => new
+           //         {
+           //             Id = c.Int(nullable: false),
+           //         })
+           //     .PrimaryKey(t => t.Id)
+           //     .ForeignKey("dbo.ProgramModels", t => t.Id)
+           //     .Index(t => t.Id);
+            
         }
         
         public override void Down()
         {
-            AddColumn("dbo.CoachedPrograms", "coachName", c => c.String());
-            AddColumn("dbo.ProgramModels", "userName", c => c.String());
-            DropForeignKey("dbo.CoachedPrograms", "Coach_Id", "dbo.AspNetUsers");
+            //DropForeignKey("dbo.SelfGuidedPrograms", "Id", "dbo.ProgramModels");
+            //DropForeignKey("dbo.CoachedPrograms", "Coach_Id", "dbo.AspNetUsers");
+            //DropForeignKey("dbo.CoachedPrograms", "Id", "dbo.ProgramModels");
             //DropForeignKey("dbo.AspNetUserRoles", "UserId", "dbo.AspNetUsers");
             //DropForeignKey("dbo.AspNetUserLogins", "UserId", "dbo.AspNetUsers");
             //DropForeignKey("dbo.AspNetUserClaims", "UserId", "dbo.AspNetUsers");
             //DropForeignKey("dbo.AspNetUserRoles", "RoleId", "dbo.AspNetRoles");
-            DropForeignKey("dbo.ProgramModels", "ApplicationUser_Id", "dbo.AspNetUsers");
-            DropIndex("dbo.CoachedPrograms", new[] { "Coach_Id" });
+            //DropForeignKey("dbo.ProgramModels", "ApplicationUser_Id", "dbo.AspNetUsers");
+            //DropIndex("dbo.SelfGuidedPrograms", new[] { "Id" });
+            //DropIndex("dbo.CoachedPrograms", new[] { "Coach_Id" });
+            //DropIndex("dbo.CoachedPrograms", new[] { "Id" });
             //DropIndex("dbo.AspNetRoles", "RoleNameIndex");
             //DropIndex("dbo.AspNetUserRoles", new[] { "RoleId" });
             //DropIndex("dbo.AspNetUserRoles", new[] { "UserId" });
             //DropIndex("dbo.AspNetUserLogins", new[] { "UserId" });
             //DropIndex("dbo.AspNetUserClaims", new[] { "UserId" });
             //DropIndex("dbo.AspNetUsers", "UserNameIndex");
-            DropIndex("dbo.ProgramModels", new[] { "ApplicationUser_Id" });
-            DropColumn("dbo.CoachedPrograms", "CoachId");
-            DropColumn("dbo.CoachedPrograms", "Coach_Id");
-            DropColumn("dbo.ProgramModels", "ApplicationUser_Id");
+            //DropIndex("dbo.ProgramModels", new[] { "ApplicationUser_Id" });
+            //DropTable("dbo.SelfGuidedPrograms");
+            //DropTable("dbo.CoachedPrograms");
             //DropTable("dbo.AspNetRoles");
             //DropTable("dbo.AspNetUserRoles");
             //DropTable("dbo.AspNetUserLogins");
             //DropTable("dbo.AspNetUserClaims");
             //DropTable("dbo.AspNetUsers");
+            //DropTable("dbo.ProgramModels");
         }
     }
 }

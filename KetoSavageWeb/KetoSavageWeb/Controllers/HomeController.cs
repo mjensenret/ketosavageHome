@@ -17,11 +17,11 @@ namespace KetoSavageWeb.Controllers
             return View();
         }
         
-        public ActionResult GridViewPartialView() 
-        {
-            // DXCOMMENT: Pass a data model for GridView in the PartialView method's second parameter
-            return PartialView("GridViewPartialView", NorthwindDataProvider.GetCustomers());
-        }
+        //public ActionResult GridViewPartialView() 
+        //{
+        //    // DXCOMMENT: Pass a data model for GridView in the PartialView method's second parameter
+        //    return PartialView("GridViewPartialView", NorthwindDataProvider.GetCustomers());
+        //}
     
     }
 }

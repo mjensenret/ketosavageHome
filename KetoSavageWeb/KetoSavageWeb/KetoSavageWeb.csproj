@@ -548,46 +548,17 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201801202225138_Initial.cs" />
-    <Compile Include="Migrations\201801202225138_Initial.Designer.cs">
-      <DependentUpon>201801202225138_Initial.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201801261801225_addUserNotes.cs" />
-    <Compile Include="Migrations\201801261801225_addUserNotes.Designer.cs">
-      <DependentUpon>201801261801225_addUserNotes.cs</DependentUpon>
+    <Compile Include="Migrations\201803040308591_Initial.cs" />
+    <Compile Include="Migrations\201803040308591_Initial.Designer.cs">
+      <DependentUpon>201803040308591_Initial.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Abstract\UserManaged.cs" />
     <Compile Include="Models\AccountModels.cs" />
     <Compile Include="Models\ClientProgramViewModel.cs" />
-    <Compile Include="Models\Contexts\DataMigrations\201802180503049_InitialCreate.cs" />
-    <Compile Include="Models\Contexts\DataMigrations\201802180503049_InitialCreate.Designer.cs">
-      <DependentUpon>201802180503049_InitialCreate.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Contexts\DataMigrations\201802190102006_UpdatingProgram.cs" />
-    <Compile Include="Models\Contexts\DataMigrations\201802190102006_UpdatingProgram.Designer.cs">
-      <DependentUpon>201802190102006_UpdatingProgram.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Contexts\DataMigrations\201802220158462_AddUserManaged.cs" />
-    <Compile Include="Models\Contexts\DataMigrations\201802220158462_AddUserManaged.Designer.cs">
-      <DependentUpon>201802220158462_AddUserManaged.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Contexts\DataMigrations\201803021802581_TyingApplicationUser.cs" />
-    <Compile Include="Models\Contexts\DataMigrations\201803021802581_TyingApplicationUser.Designer.cs">
-      <DependentUpon>201803021802581_TyingApplicationUser.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Contexts\DataMigrations\Configuration.cs" />
-    <Compile Include="Models\Contexts\IdentityMigrations\201802180348079_InitialCreate.cs" />
-    <Compile Include="Models\Contexts\IdentityMigrations\201802180348079_InitialCreate.Designer.cs">
-      <DependentUpon>201802180348079_InitialCreate.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Contexts\IdentityMigrations\Configuration.cs" />
-    <Compile Include="Models\Contexts\KSIdentityContext.cs" />
     <Compile Include="Models\IdentityModels.cs" />
-    <Compile Include="Models\Contexts\KSDataContext.cs" />
+    <Compile Include="Models\KSDataContext.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
-    <Compile Include="Models\Contexts\NorthwindContext.cs" />
-    <Compile Include="Models\NorthwindDataProvider.cs" />
     <Compile Include="Models\ProgramModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Interfaces\IProgramRepository.cs" />
@@ -597,30 +568,12 @@
     <Compile Include="Util\Interfaces\IDataLayer.cs" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201801202225138_Initial.resx">
-      <DependentUpon>201801202225138_Initial.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201801261801225_addUserNotes.resx">
-      <DependentUpon>201801261801225_addUserNotes.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Models\Contexts\DataMigrations\201802180503049_InitialCreate.resx">
-      <DependentUpon>201802180503049_InitialCreate.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Models\Contexts\DataMigrations\201802190102006_UpdatingProgram.resx">
-      <DependentUpon>201802190102006_UpdatingProgram.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Models\Contexts\DataMigrations\201802220158462_AddUserManaged.resx">
-      <DependentUpon>201802220158462_AddUserManaged.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Models\Contexts\DataMigrations\201803021802581_TyingApplicationUser.resx">
-      <DependentUpon>201803021802581_TyingApplicationUser.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Models\Contexts\IdentityMigrations\201802180348079_InitialCreate.resx">
-      <DependentUpon>201802180348079_InitialCreate.cs</DependentUpon>
-    </EmbeddedResource>
+    <Folder Include="Views\Programs\" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Views\Programs\" />
+    <EmbeddedResource Include="Migrations\201803040308591_Initial.resx">
+      <DependentUpon>201803040308591_Initial.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

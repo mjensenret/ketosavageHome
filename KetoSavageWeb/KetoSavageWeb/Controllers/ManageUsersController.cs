@@ -13,6 +13,7 @@ namespace KetoSavageWeb.Controllers
     public class ManageUsersController : Controller
     {
         private UserProfileRepository userRepository;
+        private ProgramRepository programRepository;
 
         ApplicationUserManager _userManager;
         ApplicationRoleManager _roleManager;
@@ -44,10 +45,11 @@ namespace KetoSavageWeb.Controllers
         {
 
         }
-        public ManageUsersController(ApplicationUserManager userManager, ApplicationRoleManager roleManager)
+        public ManageUsersController(ApplicationUserManager userManager, ApplicationRoleManager roleManager, ProgramRepository pr)
         {
             UserManager = userManager;
             RoleManager = roleManager;
+            programRepository = pr;
         }
 
         // GET: ManageUsers
@@ -103,6 +105,15 @@ namespace KetoSavageWeb.Controllers
                 if (result.Succeeded)
                 {
                     await UserManager.AddToRoleAsync(newUser.Id, item.SelectedRoleId);
+                    if (item.SelectedRoleId == "Client")
+                    {
+                        var clientProgram = new CoachedPrograms
+                        {
+                            ApplicationUser = newUser,
+                            startDate = DateTime.Now
+                        };
+                        programRepository.Create(clientProgram);
+                    }
                     return RedirectToAction("Index");
                 }
                 ViewBag.ErrorMessage = result.Errors.First();

@@ -52,6 +52,8 @@ namespace KetoSavageWeb.Models
             }
         }
 
+        public virtual ICollection<ProgramModels> UserPrograms { get; set; }
+
     }
 
 
@@ -64,21 +66,21 @@ namespace KetoSavageWeb.Models
     }
 
 
-    //public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
-    //{
-    //    public ApplicationDbContext()
-    //        : base("KSDataContext", throwIfV1Schema: false)
-    //    {
-    //    }
+    public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
+    {
+        public ApplicationDbContext()
+            : base("KSDataConnection", throwIfV1Schema: false)
+        {
+        }
 
-    //    static ApplicationDbContext()
-    //    {
-    //        Database.SetInitializer<ApplicationDbContext>(new ApplicationDbInitializer());
-    //    }
+        static ApplicationDbContext()
+        {
+            Database.SetInitializer<ApplicationDbContext>(new ApplicationDbInitializer());
+        }
 
-    //    public static ApplicationDbContext Create()
-    //    {
-    //        return new ApplicationDbContext();
-    //    }
-    //}
+        public static ApplicationDbContext Create()
+        {
+            return new ApplicationDbContext();
+        }
+    }
 }

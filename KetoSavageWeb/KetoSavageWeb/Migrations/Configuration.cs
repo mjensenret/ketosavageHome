@@ -1,17 +1,19 @@
 namespace KetoSavageWeb.Migrations
 {
+    using Microsoft.AspNet.Identity;
+    using Microsoft.AspNet.Identity.Owin;
     using Models;
-    using Models.Contexts;
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Migrations;
     using System.Linq;
+    using System.Web;
 
     internal sealed class Configuration : DbMigrationsConfiguration<KSDataContext>
     {
         public Configuration()
         {
-            AutomaticMigrationsEnabled = true;
+            AutomaticMigrationsEnabled = false;
         }
 
         protected override void Seed(KSDataContext context)
@@ -28,8 +30,9 @@ namespace KetoSavageWeb.Migrations
             //      new Person { FullName = "Rowan Miller" }
             //    );
             //
-
+            
 
         }
+ 
     }
 }

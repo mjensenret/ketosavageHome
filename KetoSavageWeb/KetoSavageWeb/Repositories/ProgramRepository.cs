@@ -1,5 +1,4 @@
 ﻿using KetoSavageWeb.Models;
-using KetoSavageWeb.Models.Contexts;
 using KetoSavageWeb.Interfaces;
 using System;
 using System.Collections.Generic;
@@ -14,6 +13,11 @@ namespace KetoSavageWeb.Repositories
     {
         public ProgramRepository(IEntityContext<ProgramModels> entityContext) : base(entityContext)
         {
+        }
+
+        public IQueryable<ProgramModels> FindActiveProgramByUser(string userName)
+        {
+            return GetActive.Where(x => x.ApplicationUser.UserName == userName);
         }
     }
 }

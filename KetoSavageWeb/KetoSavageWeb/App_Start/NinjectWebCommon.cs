@@ -4,14 +4,15 @@
 namespace KetoSavageWeb.App_Start
 {
     using KetoSavageWeb.Domain.Infrastructure;
-using Microsoft.Web.Infrastructure.DynamicModuleHelper;
-using Ninject;
-using Ninject.Web.Common;
-using Ninject.Web.Common.WebHost;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+    using Microsoft.Web.Infrastructure.DynamicModuleHelper;
+    using Models;
+    using Ninject;
+    using Ninject.Web.Common;
+    using Ninject.Web.Common.WebHost;
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+    using System.Web;
 
 
     public class NinjectWebCommon
@@ -64,7 +65,7 @@ using System.Web;
         /// <param name="kernel">The kernel.</param>
         private static void RegisterServices(IKernel kernel)
         {
-            kernel.Bind<System.Data.Entity.DbContext>().To<KetoSavageWeb.Models.Contexts.KSDataContext>().InRequestScope();
+            kernel.Bind<System.Data.Entity.DbContext>().To<KSDataContext>().InRequestScope();
             kernel.Bind(typeof(IEntityContext<>)).To(typeof(EfEntityContext<>));
             //kernel.Bind<IMailHelper>().To<SmtpMailHelper>();
             //kernel.Bind<IMessageTemplateService>().To<MessageTemplateService>();

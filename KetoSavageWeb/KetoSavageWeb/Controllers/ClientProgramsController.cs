@@ -1,6 +1,5 @@
 ﻿using KetoSavageWeb.Interfaces;
 using KetoSavageWeb.Models;
-using KetoSavageWeb.Models.Contexts;
 using KetoSavageWeb.Repositories;
 using System;
 using System.Collections.Generic;
