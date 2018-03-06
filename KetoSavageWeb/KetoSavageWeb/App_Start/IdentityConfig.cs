@@ -103,7 +103,7 @@ namespace KetoSavageWeb.Models
     // This is useful if you do not want to tear down the database each time you run the application.
     // public class ApplicationDbInitializer : DropCreateDatabaseAlways<ApplicationDbContext>
     // This example shows you how to create a new database if the Model changes
-    public class ApplicationDbInitializer : DropCreateDatabaseIfModelChanges<ApplicationDbContext>
+    public class ApplicationDbInitializer : DropCreateDatabaseAlways<ApplicationDbContext>
     {
         protected override void Seed(ApplicationDbContext context)
         {
@@ -160,8 +160,8 @@ namespace KetoSavageWeb.Models
                 var roleresult = roleManager.Create(role);
             }
 
-            var coachRole = roleManager.FindByName("Coach");
-            if (coachRole == null)
+            var coachUserRole = roleManager.FindByName("Coach");
+            if (coachUserRole == null)
             {
                 role = new ApplicationRole("Coach");
                 var roleresult = roleManager.Create(role);
@@ -174,6 +174,15 @@ namespace KetoSavageWeb.Models
                 var result = userManager.Create(clientUser, adminPassword);
                 result = userManager.SetLockoutEnabled(clientUser.Id, false);
                 var clientRole = userManager.AddToRole(clientUser.Id, "Client");
+            }
+
+            var coachUser = userManager.FindByName("RobertSikes");
+            if (coachUser == null)
+            {
+                coachUser = new ApplicationUser { UserName = "RobertSikes", Email = "chief@ketosavage.com", FirstName = "Robert", LastName = "Sikes" };
+                var result = userManager.Create(coachUser, adminPassword);
+                result = userManager.SetLockoutEnabled(coachUser.Id, false);
+                var coachRole = userManager.AddToRole(coachUser.Id, "Coach");
             }
 
         }

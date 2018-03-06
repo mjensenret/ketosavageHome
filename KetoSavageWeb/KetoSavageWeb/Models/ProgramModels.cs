@@ -22,7 +22,7 @@ namespace KetoSavageWeb.Models
     {
         public DateTime renewalDate { get; set; }
 
-        public int CoachId { get; set; }
+        public string CoachId { get; set; }
         public ApplicationUser Coach { get; set; }
 
         public CoachedPrograms() : base()

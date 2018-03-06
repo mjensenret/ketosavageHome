@@ -552,6 +552,10 @@
     <Compile Include="Migrations\201803040308591_Initial.Designer.cs">
       <DependentUpon>201803040308591_Initial.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201803060001146_UpdateCoachId.cs" />
+    <Compile Include="Migrations\201803060001146_UpdateCoachId.Designer.cs">
+      <DependentUpon>201803060001146_UpdateCoachId.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Abstract\UserManaged.cs" />
     <Compile Include="Models\AccountModels.cs" />
@@ -573,6 +577,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201803040308591_Initial.resx">
       <DependentUpon>201803040308591_Initial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201803060001146_UpdateCoachId.resx">
+      <DependentUpon>201803060001146_UpdateCoachId.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
