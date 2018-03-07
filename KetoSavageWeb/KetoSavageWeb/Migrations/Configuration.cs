@@ -1,22 +1,19 @@
 namespace KetoSavageWeb.Migrations
 {
-    using Microsoft.AspNet.Identity;
-    using Microsoft.AspNet.Identity.Owin;
     using Models;
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Migrations;
     using System.Linq;
-    using System.Web;
 
-    internal sealed class Configuration : DbMigrationsConfiguration<KSDataContext>
+    internal sealed class Configuration : DbMigrationsConfiguration<KetoSavageWeb.Models.KSDataContext>
     {
         public Configuration()
         {
-            AutomaticMigrationsEnabled = true;
+            AutomaticMigrationsEnabled = false;
         }
 
-        protected override void Seed(KSDataContext context)
+        protected override void Seed(KetoSavageWeb.Models.KSDataContext context)
         {
             //  This method will be called after migrating to the latest version.
 
@@ -30,9 +27,17 @@ namespace KetoSavageWeb.Migrations
             //      new Person { FullName = "Rowan Miller" }
             //    );
             //
-            
 
+            context.CreateDefaultRoles();
+
+            var adminRole = context.Roles.Where(x => x.Name == "Administrator").FirstOrDefault();
+            if (adminRole == null)
+            {
+                adminRole = new Role { Name = "Administrator" };
+                context.Roles.Add(adminRole);
+            }
+            var manager = ApplicationUserManager.Create(context);
+            manager.CreateAdminAccount(adminRole);
         }
- 
     }
 }

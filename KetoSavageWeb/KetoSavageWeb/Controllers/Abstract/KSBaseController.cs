@@ -11,7 +11,7 @@ namespace KetoSavageWeb.Controllers
     public abstract class KSBaseController : Controller
     {
         ApplicationUserManager _userManager;
-        ApplicationRoleManager _roleManager;
+        //ApplicationRoleManager _roleManager;
 
         public ApplicationUserManager UserManager
         {
@@ -25,17 +25,17 @@ namespace KetoSavageWeb.Controllers
             }
         }
 
-        public ApplicationRoleManager RoleManager
-        {
-            get
-            {
-                return _roleManager ?? HttpContext.GetOwinContext().Get<ApplicationRoleManager>();
-            }
-            private set
-            {
-                _roleManager = value;
-            }
-        }
+        //public ApplicationRoleManager RoleManager
+        //{
+        //    get
+        //    {
+        //        return _roleManager ?? HttpContext.GetOwinContext().Get<ApplicationRoleManager>();
+        //    }
+        //    private set
+        //    {
+        //        _roleManager = value;
+        //    }
+        //}
 
         public KSBaseController()
         {

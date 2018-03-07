@@ -16,9 +16,9 @@ namespace KetoSavageWeb.Controllers
     public class UsersAdminController : Controller
     {
         private UserProfileRepository userRepository;
+        private RoleRepository roleRepository;
 
         ApplicationUserManager _userManager;
-        ApplicationRoleManager _roleManager;
         public ApplicationUserManager UserManager
         {
             get
@@ -31,26 +31,26 @@ namespace KetoSavageWeb.Controllers
             }
         }
 
-        public ApplicationRoleManager RoleManager
-        {
-            get
-            {
-                return _roleManager ?? HttpContext.GetOwinContext().Get<ApplicationRoleManager>();
-            }
-            private set
-            {
-                _roleManager = value;
-            }
-        }
+        //public ApplicationRoleManager RoleManager
+        //{
+        //    get
+        //    {
+        //        return _roleManager ?? HttpContext.GetOwinContext().Get<ApplicationRoleManager>();
+        //    }
+        //    private set
+        //    {
+        //        _roleManager = value;
+        //    }
+        //}
 
         public UsersAdminController()
         {
 
         }
-        public UsersAdminController(ApplicationUserManager userManager, ApplicationRoleManager roleManager)
+        public UsersAdminController(ApplicationUserManager userManager, RoleRepository rr)
         {
             UserManager = userManager;
-            RoleManager = roleManager;
+            roleRepository = rr;
         }
 
 
@@ -59,7 +59,7 @@ namespace KetoSavageWeb.Controllers
         public async Task<ActionResult> Index(ListModel<UserListViewModel> model)
         {
             var userQuery = UserManager.Users;
-            var systemRoles = RoleManager.Roles.ToList();
+            var systemRoles = new HashSet<Role>();
 
             var items = (await userQuery
                 .OrderBy(x => x.UserName)
@@ -94,7 +94,7 @@ namespace KetoSavageWeb.Controllers
         public ActionResult userGridPartialView(ListModel<UserListViewModel> model)
         {
             var userQuery = UserManager.Users;
-            var systemRoles = RoleManager.Roles.ToList();
+            var systemRoles = new HashSet<Role>();
 
             var items = (userQuery
                 .OrderBy(x => x.UserName)
@@ -148,7 +148,8 @@ namespace KetoSavageWeb.Controllers
                         if (!roleResult.Succeeded)
                         {
                             ModelState.AddModelError("", roleResult.Errors.First());
-                            ViewBag.RoleId = new SelectList(await RoleManager.Roles.ToListAsync(), "Name", "Name");
+                            //ViewBag.RoleId = new SelectList(await RoleManager.Roles.ToListAsync(), "Name", "Name");
+                            ViewBag.RoleId = new SelectList(roleRepository.Get.ToList(), "Name", "Name");
                             return View();
                         }
                     }
@@ -156,12 +157,14 @@ namespace KetoSavageWeb.Controllers
                 else
                 {
                     ModelState.AddModelError("", result.Errors.First());
-                    ViewBag.RoleId = new SelectList(await RoleManager.Roles.ToListAsync(), "Name", "Name");
+
+                    ViewBag.RoleId = new SelectList(roleRepository.Get.ToList(), "Name", "Name");
                     return View(model);
                 }
                 return RedirectToAction("Index");
             }
-            ViewBag.RoleId = new SelectList(await RoleManager.Roles.ToListAsync(), "Name", "Name");
+
+            ViewBag.RoleId = new SelectList(roleRepository.Get.ToList(), "Name", "Name");
 
             // If we got this far, something failed, redisplay form
             return View(model);
@@ -170,7 +173,7 @@ namespace KetoSavageWeb.Controllers
         public async Task<ActionResult> UpdateUserPartial(string userName)
         {
             var user = await UserManager.FindByNameAsync(userName);
-            var systemRoles = RoleManager.Roles.ToList();
+            var systemRoles = new HashSet<Role>();
 
 
             EditUserViewModel model = new EditUserViewModel
@@ -221,7 +224,7 @@ namespace KetoSavageWeb.Controllers
         public ActionResult testUpdate(string userName)
         {
             var user = UserManager.Users.Where(x => x.UserName == userName).FirstOrDefault();
-            var systemRoles = RoleManager.Roles.ToArray();
+            var systemRoles = new HashSet<Role>();
             var userRoles = UserManager.GetRolesAsync(user.Id).Result.ToList();
 
             EditUserViewModel upd = new EditUserViewModel()
@@ -232,7 +235,7 @@ namespace KetoSavageWeb.Controllers
                 Email = user.Email,
                 //Roles = string.Join(", ", systemRoles.Where(userRole => user.Roles.Select(r => r.RoleId).Contains(userRole.Id)).Select(r => r.Name).ToList()),
                 SelectedRoleId = userRoles.FirstOrDefault(),
-                RolesList = RoleManager.Roles.ToList().Select(x => new SelectListItem()
+                RolesList = roleRepository.Get.ToList().Select(x => new SelectListItem()
                 {
                     Selected = userRoles.Contains(x.Name),
                     Text = x.Name,

@@ -119,7 +119,7 @@ namespace KetoSavageWeb.Models {
 
     public class RegisterModel {
 
-        public string Id { get; set; }
+        public int Id { get; set; }
 
         [Required]
         [Display(Name = "User Name")]
@@ -156,7 +156,7 @@ namespace KetoSavageWeb.Models {
     }
     public class UserListViewModel
     {
-        public string Id { get; set; }
+        public int Id { get; set; }
 
         [Display(Name = "User name")]
         public string UserName { get; set; }
@@ -168,7 +168,7 @@ namespace KetoSavageWeb.Models {
     }
     public class EditUserViewModel
     {
-        public string Id { get; set; }
+        public int Id { get; set; }
 
         [Required]
         [Display(Name = "User Name")]

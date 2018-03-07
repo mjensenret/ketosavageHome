@@ -17,7 +17,7 @@ namespace KetoSavageWeb.Repositories
 
         public IQueryable<ProgramModels> FindActiveProgramByUser(string userName)
         {
-            return GetActive.Where(x => x.ApplicationUser.UserName == userName);
+            return GetActive.Where(x => x.ProgramUser.UserName == userName);
         }
     }
 }

@@ -14,7 +14,8 @@ namespace KetoSavageWeb.Models
         public DateTime endDate { get; set; }
         public string programGoal { get; set; }
         public string programNotes { get; set; }
-        public ApplicationUser ApplicationUser { get; set; }
+        public string UserId { get; set; }
+        public UserProfiles ProgramUser { get; set; }
     }
 
     [Table("CoachedPrograms")]
@@ -23,7 +24,7 @@ namespace KetoSavageWeb.Models
         public DateTime renewalDate { get; set; }
 
         public string CoachId { get; set; }
-        public ApplicationUser Coach { get; set; }
+        public UserProfiles CoachUser { get; set; }
 
         public CoachedPrograms() : base()
         {

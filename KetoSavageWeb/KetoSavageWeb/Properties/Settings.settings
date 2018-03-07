@@ -1,0 +1,15 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="KetoSavageWeb.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="DefaultPassword" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">S4v4g3!</Value>
+    </Setting>
+    <Setting Name="DefaultAdminAccount" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">SuperUser</Value>
+    </Setting>
+    <Setting Name="DefaultAdminEmail" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">mjensen@razoredgetech.com</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

@@ -14,9 +14,10 @@ namespace KetoSavageWeb.Controllers
     {
         private UserProfileRepository userRepository;
         private ProgramRepository programRepository;
+        private RoleRepository roleRepository;
 
         ApplicationUserManager _userManager;
-        ApplicationRoleManager _roleManager;
+        //ApplicationRoleManager _roleManager;
         public ApplicationUserManager UserManager
         {
             get
@@ -29,27 +30,28 @@ namespace KetoSavageWeb.Controllers
             }
         }
 
-        public ApplicationRoleManager RoleManager
-        {
-            get
-            {
-                return _roleManager ?? HttpContext.GetOwinContext().Get<ApplicationRoleManager>();
-            }
-            private set
-            {
-                _roleManager = value;
-            }
-        }
+        //public ApplicationRoleManager RoleManager
+        //{
+        //    get
+        //    {
+        //        return _roleManager ?? HttpContext.GetOwinContext().Get<ApplicationRoleManager>();
+        //    }
+        //    private set
+        //    {
+        //        _roleManager = value;
+        //    }
+        //}
 
         public ManageUsersController()
         {
 
         }
-        public ManageUsersController(ApplicationUserManager userManager, ApplicationRoleManager roleManager, ProgramRepository pr)
+        public ManageUsersController(ApplicationUserManager userManager, ProgramRepository pr, RoleRepository rr)
         {
             UserManager = userManager;
-            RoleManager = roleManager;
+            //RoleManager = roleManager;
             programRepository = pr;
+            roleRepository = rr;
         }
 
         // GET: ManageUsers
@@ -60,28 +62,56 @@ namespace KetoSavageWeb.Controllers
 
         public ActionResult GridViewPartial()
         {
-            var users = from user in UserManager.Users
-                        from role in RoleManager.Roles
-                        where role.Users.Any(r => r.UserId == user.Id)
-                        select new RegisterModel()
-                        {
-                            Id = user.Id,
-                            UserName = user.UserName,
-                            FirstName = user.FirstName,
-                            LastName = user.LastName,
-                            Email = user.Email,
-                            Roles = role.Name,
-                            SelectedRoleId = role.Name,
-                            //RolesList = RoleManager.Roles.ToList().Select(x => new SelectListItem()
-                            //{
-                            //    Selected = role.Name.Contains(x.Name),
-                            //    Text = x.Name,
-                            //    Value = x.Name
-                            //})
+            var userQuery = UserManager.Users.Where(x => x.IsActive == true);
+            var items = (userQuery
+                .OrderBy(x => x.UserName)
+                .Select(x => new
+                {
+                    x.Id,
+                    x.UserName,
+                    x.FirstName,
+                    x.LastName,
+                    x.Email,
+                    Roles = x.Roles.Select(y => y.Role.Name),
+                    x.IsActive
+                })
+                .ToList())
+                .Select(x => new RegisterModel()
+                {
+                    Id = x.Id,
+                    UserName = x.UserName,
+                    FirstName = x.FirstName,
+                    LastName = x.LastName,
+                    Email = x.Email,
+                    Roles = string.Join(", ", x.Roles),
+                    SelectedRoleId = x.Roles.First()
+                });
+
+            //var users = from user in UserManager.Users
+            //            //from role in RoleManager.Roles
+            //            //where role.Users.Any(r => r.UserId == user.Id)
+            //            select new RegisterModel()
+            //            {
+            //                Id = user.Id,
+            //                UserName = user.UserName,
+            //                FirstName = user.FirstName,
+            //                LastName = user.LastName,
+            //                Email = user.Email,
+            //                //Roles = role.Name,
+            //                SelectedRoleId = role.Name,
+            //                //RolesList = RoleManager.Roles.ToList().Select(x => new SelectListItem()
+            //                //{
+            //                //    Selected = role.Name.Contains(x.Name),
+            //                //    Text = x.Name,
+            //                //    Value = x.Name
+            //                //})
                             
-                        };
-            var model = users.ToList();
-            ViewBag.RoleId = new SelectList(RoleManager.Roles.ToList(), "Name", "Name");
+            //            };
+
+            var model = items.ToList();
+            //ViewBag.RoleId = new SelectList(RoleManager.Roles.ToList(), "Name", "Name");
+            ViewBag.RoleId = new SelectList(roleRepository.Get.ToList(), "Name", "Name");
+
 
 
             return PartialView("_GridViewPartial", model);
@@ -107,15 +137,15 @@ namespace KetoSavageWeb.Controllers
                     await UserManager.AddToRoleAsync(newUser.Id, item.SelectedRoleId);
                     if (item.SelectedRoleId == "Client")
                     {
-                        var defaultCoach = UserManager.Users.Where(x => x.Roles.Select(y => y.RoleId).Contains("Coach")).First();
-                        var clientProgram = new CoachedPrograms
-                        {
-                            ApplicationUser = newUser,
-                            startDate = DateTime.Now,
-                            Coach = defaultCoach,
-                            CoachId = defaultCoach.Id
-                        };
-                        programRepository.Create(clientProgram);
+                        var defaultCoach = UserManager.Users.Where(x => x.Roles.Select(y => y.Role.Name.Contains("Coach")).First()); /*UserManager.Users.Where(x => x.Roles.Select(y => y.RoleId).Contains("Coach")).First();*/
+                        //var clientProgram = new CoachedPrograms
+                        //{
+                        //    ProgramUser = newUser,
+                        //    startDate = DateTime.Now,
+                        //    Coach = defaultCoach,
+                        //    CoachId = defaultCoach.Id
+                        //};
+                        //programRepository.Create(clientProgram);
                     }
                     return RedirectToAction("Index");
                 }
@@ -132,7 +162,7 @@ namespace KetoSavageWeb.Controllers
         {
             if(ModelState.IsValid)
             {
-                var systemRoles = RoleManager.Roles.ToList();
+                var systemRoles = new HashSet<Role>();
                 var userEdit = await UserManager.FindByNameAsync(model.UserName);
 
                 if(userEdit == null)

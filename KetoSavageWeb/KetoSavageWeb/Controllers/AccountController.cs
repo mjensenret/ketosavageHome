@@ -149,10 +149,12 @@ namespace KetoSavageWeb.Controllers {
                 {
                     return View(model);
                 }
-                var result = await UserManager.ChangePasswordAsync(User.Identity.GetUserId(), model.OldPassword, model.NewPassword);
+                var passwordUser = UserManager.FindByNameAsync(User.Identity.GetUserName());
+                var result = await UserManager.ChangePasswordAsync(passwordUser.Id, model.OldPassword, model.NewPassword);
                 if (result.Succeeded)
                 {
-                    var user = await UserManager.FindByIdAsync(User.Identity.GetUserId());
+                    //var user = await UserManager.FindByIdAsync(User.Identity.GetUserId());
+                    var user = await UserManager.FindByNameAsync(User.Identity.GetUserName());
                     if (user != null)
                     {
                         await SignInManager.SignInAsync(user, isPersistent: false, rememberBrowser: false);
@@ -342,7 +344,7 @@ namespace KetoSavageWeb.Controllers {
         //
         // GET: /Account/ConfirmEmail
         [AllowAnonymous]
-        public async Task<ActionResult> ConfirmEmail(string userId, string code)
+        public async Task<ActionResult> ConfirmEmail(int userId, string code)
         {
             if (userId == null || code == null)
             {
