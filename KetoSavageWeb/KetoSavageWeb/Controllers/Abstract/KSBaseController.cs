@@ -1,4 +1,5 @@
 ﻿using KetoSavageWeb.Models;
+using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using System;
 using System.Collections.Generic;
@@ -10,8 +11,29 @@ namespace KetoSavageWeb.Controllers
 {
     public abstract class KSBaseController : Controller
     {
-        ApplicationUserManager _userManager;
-        //ApplicationRoleManager _roleManager;
+        public static ApplicationUser GetCurrentUser(int userId, HttpSessionStateBase session, ApplicationUserManager userManager)
+        {
+            // Make sure currently logged in user is the same user in the session
+            if (session["currentUser"] == null || ((ApplicationUser)session["currentUser"]).Id != userId)
+            {
+                session["currentUser"] = userManager.FindById(userId);
+            }
+
+            return (ApplicationUser)session["currentUser"];
+        }
+
+
+        private ApplicationUserManager _userManager = null;
+        private ApplicationUser _currentUser = null;
+
+        public KSBaseController()
+        {
+        }
+
+        public KSBaseController(ApplicationUserManager userManager)
+        {
+            this._userManager = userManager;
+        }
 
         public ApplicationUserManager UserManager
         {
@@ -22,6 +44,18 @@ namespace KetoSavageWeb.Controllers
             private set
             {
                 _userManager = value;
+            }
+        }
+
+        public ApplicationUser CurrentUser
+        {
+            get
+            {
+                if (_currentUser == null && User.Identity.IsAuthenticated)
+                {
+                    _currentUser = GetCurrentUser(Convert.ToInt32(User.Identity.GetUserId()), Session, UserManager);
+                }
+                return _currentUser;
             }
         }
 
@@ -37,24 +71,20 @@ namespace KetoSavageWeb.Controllers
         //    }
         //}
 
-        public KSBaseController()
+        protected override void Dispose(bool disposing)
         {
-
+            if (disposing)
+            {
+                if (_userManager != null)
+                {
+                    _userManager.Dispose();
+                    _userManager = null;
+                }
+            }
+            base.Dispose(disposing);
         }
 
-        public KSBaseController(ApplicationUserManager userManager)
-        {
-            this._userManager = userManager;
-        }
-        //public static ApplicationUser GetCurrentUser(string userName, HttpSessionStateBase session, ApplicationUserManager userManager)
-        //{
-        //    // Make sure currently logged in user is the same user in the session
-        //    if (session["currentUser"] == null || ((ApplicationUser)session["currentUser"]).UserName != userName)
-        //    {
-        //        session["currentUser"] = userManager.FindByNameAsync(userName);
-        //    }
 
-        //    return (ApplicationUser)session["currentUser"];
-        //}
+
     }
 }

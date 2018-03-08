@@ -10,25 +10,25 @@ using System.Web.Mvc;
 
 namespace KetoSavageWeb.Controllers
 {
-    public class ManageUsersController : Controller
+    public class ManageUsersController : KSBaseController
     {
-        private UserProfileRepository userRepository;
+
         private ProgramRepository programRepository;
         private RoleRepository roleRepository;
 
         ApplicationUserManager _userManager;
         //ApplicationRoleManager _roleManager;
-        public ApplicationUserManager UserManager
-        {
-            get
-            {
-                return _userManager ?? HttpContext.GetOwinContext().GetUserManager<ApplicationUserManager>();
-            }
-            private set
-            {
-                _userManager = value;
-            }
-        }
+        //public ApplicationUserManager UserManager
+        //{
+        //    get
+        //    {
+        //        return _userManager ?? HttpContext.GetOwinContext().GetUserManager<ApplicationUserManager>();
+        //    }
+        //    private set
+        //    {
+        //        _userManager = value;
+        //    }
+        //}
 
         //public ApplicationRoleManager RoleManager
         //{
@@ -42,14 +42,12 @@ namespace KetoSavageWeb.Controllers
         //    }
         //}
 
-        public ManageUsersController()
-        {
+        //public ManageUsersController()
+        //{
 
-        }
-        public ManageUsersController(ApplicationUserManager userManager, ProgramRepository pr, RoleRepository rr)
+        //}
+        public ManageUsersController(ProgramRepository pr, RoleRepository rr)
         {
-            UserManager = userManager;
-            //RoleManager = roleManager;
             programRepository = pr;
             roleRepository = rr;
         }
@@ -87,29 +85,7 @@ namespace KetoSavageWeb.Controllers
                     SelectedRoleId = x.Roles.First()
                 });
 
-            //var users = from user in UserManager.Users
-            //            //from role in RoleManager.Roles
-            //            //where role.Users.Any(r => r.UserId == user.Id)
-            //            select new RegisterModel()
-            //            {
-            //                Id = user.Id,
-            //                UserName = user.UserName,
-            //                FirstName = user.FirstName,
-            //                LastName = user.LastName,
-            //                Email = user.Email,
-            //                //Roles = role.Name,
-            //                SelectedRoleId = role.Name,
-            //                //RolesList = RoleManager.Roles.ToList().Select(x => new SelectListItem()
-            //                //{
-            //                //    Selected = role.Name.Contains(x.Name),
-            //                //    Text = x.Name,
-            //                //    Value = x.Name
-            //                //})
-                            
-            //            };
-
             var model = items.ToList();
-            //ViewBag.RoleId = new SelectList(RoleManager.Roles.ToList(), "Name", "Name");
             ViewBag.RoleId = new SelectList(roleRepository.Get.ToList(), "Name", "Name");
 
 
@@ -137,15 +113,24 @@ namespace KetoSavageWeb.Controllers
                     await UserManager.AddToRoleAsync(newUser.Id, item.SelectedRoleId);
                     if (item.SelectedRoleId == "Client")
                     {
-                        var defaultCoach = UserManager.Users.Where(x => x.Roles.Select(y => y.Role.Name.Contains("Coach")).First()); /*UserManager.Users.Where(x => x.Roles.Select(y => y.RoleId).Contains("Coach")).First();*/
+                        //var defaultCoach = await UserManager.FindByNameAsync("RobertSikes");
+
+                        //var coachedProgram = new CoachedPrograms();
+                        //coachedProgram.CoachUser = defaultCoach;
+                        //coachedProgram.ProgramUser = newUser;
+                        //coachedProgram.startDate = DateTime.Now;
+                        //coachedProgram.renewalDate = DateTime.Now.AddDays(30);
+
+                        //programRepository.Create(coachedProgram, "Test");
+
+
                         //var clientProgram = new CoachedPrograms
                         //{
                         //    ProgramUser = newUser,
                         //    startDate = DateTime.Now,
-                        //    Coach = defaultCoach,
-                        //    CoachId = defaultCoach.Id
+                        //    CoachUserId = defaultCoach.Id
                         //};
-                        //programRepository.Create(clientProgram);
+
                     }
                     return RedirectToAction("Index");
                 }

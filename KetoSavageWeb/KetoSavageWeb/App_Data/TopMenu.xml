@@ -4,7 +4,7 @@
   <item Text="Stats" NavigateUrl="#"  />
   <item Text="Macros" NavigateUrl="#"  />
   <item Text="Workouts" NavigateUrl="#"  />
-  <item Text="Admin" NavigateUrl="#" Roles="Admin;Manager;Coach">
+  <item Text="Admin" NavigateUrl="#" Roles="Administrator;Manager;Coach">
     <item Text="Manage Users" NavigateUrl="~/ManageUsers" />
     <item Text="Client Programs" NavigateUrl="~/ClientPrograms" />
   </item>

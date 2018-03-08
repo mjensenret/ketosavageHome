@@ -154,7 +154,7 @@ namespace KetoSavageWeb.Models
 
         public void CreateAdminAccount(Role adminRole)
         {
-            var task1 = this.Store.FindByNameAsync("admin");
+            var task1 = this.Store.FindByNameAsync("SuperUser");
             task1.Wait();
             var admin = task1.Result;
             if (admin == null)

@@ -21,7 +21,7 @@ namespace KetoSavageWeb.Models
 
         static KSDataContext()
         {
-            //Database.SetInitializer<KSDataContext>(new ApplicationDbInitializer());
+            Database.SetInitializer<KSDataContext>(new CreateDatabaseIfNotExists<KSDataContext>());
         }
 
         public static KSDataContext Create()
@@ -83,6 +83,9 @@ namespace KetoSavageWeb.Models
                 .WithMany(u => u.CoachPrograms);
 
             // AspNet.Identity models
+            modelBuilder.Entity<IdentityUserLogin>().HasKey(l => l.UserId);
+            modelBuilder.Entity<IdentityRole>().HasKey(r => r.Id);
+            modelBuilder.Entity<IdentityUserRole>().HasKey(r => new { r.RoleId, r.UserId });
 
             var user = modelBuilder.Entity<ApplicationUser>();     //.ToTable("AspNetUsers");
             user.HasMany(u => u.Roles).WithRequired().HasForeignKey(ur => ur.UserId);
