@@ -152,7 +152,7 @@ namespace KetoSavageWeb.Models
         //    return q.Any(ur => ur.Role.Permissions.Any(y => y.Permission == Permission));
         //}
 
-        public void CreateAdminAccount(Role adminRole)
+        public void CreateAdminAccount(Role adminRole, Role coachRole)
         {
             var task1 = this.Store.FindByNameAsync("SuperUser");
             task1.Wait();
@@ -160,12 +160,47 @@ namespace KetoSavageWeb.Models
             if (admin == null)
             {
                 // Create admin account
-                var user = new ApplicationUser { UserName = Settings.Default.DefaultAdminAccount, Email = Settings.Default.DefaultAdminEmail, EmailConfirmed = true };
+                var user = new ApplicationUser {
+                    UserName = Settings.Default.DefaultAdminAccount,
+                    Email = Settings.Default.DefaultAdminEmail,
+                    EmailConfirmed = true,
+                    FirstName = "Admin",
+                    LastName = "Account",
+                    LastModified = DateTime.Now,
+                    Created = DateTime.Now,
+                    LastModifiedBy = "SeedFunction",
+                    CreatedBy = "SeedFunction",
+                };
                 user.Roles.Add(new UserRole { RoleId = adminRole.Id, Role = adminRole });
                 var result = this.Create(user, Settings.Default.DefaultPassword);
 
                 if (!result.Succeeded)
                     throw new ApplicationException(string.Format("Error creating admin user: {0}", string.Join(", ", result.Errors)));
+            }
+
+            var task2 = this.Store.FindByNameAsync("RobertSikes");
+            task2.Wait();
+            var coach = task2.Result;
+            if (coach == null)
+            {
+                //Create default coach account
+                var coachUser = new ApplicationUser
+                {
+                    UserName = "RobertSikes",
+                    Email = "chief@ketosavage.com",
+                    EmailConfirmed = true,
+                    FirstName = "Robert",
+                    LastName = "Sikes",
+                    LastModified = DateTime.Now,
+                    Created = DateTime.Now,
+                    LastModifiedBy = "SeedFunction",
+                    CreatedBy = "SeedFunction"
+                };
+                coachUser.Roles.Add(new UserRole { RoleId = coachRole.Id, Role = coachRole });
+                var coachResult = this.Create(coachUser, Settings.Default.DefaultPassword);
+                if (!coachResult.Succeeded)
+                    throw new ApplicationException(string.Format("Error creating coach user: {0}", string.Join(", ", coachResult.Errors)));
+                
             }
         }
 

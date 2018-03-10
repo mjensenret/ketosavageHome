@@ -113,7 +113,9 @@ namespace KetoSavageWeb.Controllers
                     await UserManager.AddToRoleAsync(newUser.Id, item.SelectedRoleId);
                     if (item.SelectedRoleId == "Client")
                     {
-                        //var defaultCoach = await UserManager.FindByNameAsync("RobertSikes");
+                        var defaultCoach = await UserManager.FindByNameAsync("RobertSikes");
+
+                        programRepository.CreateDefaulClientProgram(newUser.UserName, defaultCoach.UserName);
 
                         //var coachedProgram = new CoachedPrograms();
                         //coachedProgram.CoachUser = defaultCoach;

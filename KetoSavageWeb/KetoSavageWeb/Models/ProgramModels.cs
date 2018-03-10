@@ -25,7 +25,7 @@ namespace KetoSavageWeb.Models
         }
 
         public DateTime startDate { get; set; }
-        public DateTime endDate { get; set; }
+        public DateTime? endDate { get; set; }
         public string programGoal { get; set; }
         public string programNotes { get; set; }
         public int ApplicationUserId { get; set; }

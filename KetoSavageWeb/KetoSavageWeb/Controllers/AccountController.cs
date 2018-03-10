@@ -11,6 +11,7 @@ using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using KetoSavageWeb.Repositories;
+using System.Data.Entity;
 
 namespace KetoSavageWeb.Controllers {
     public class AccountController : Controller
@@ -32,6 +33,7 @@ namespace KetoSavageWeb.Controllers {
         ApplicationUserManager _userManager;
         public ApplicationUserManager UserManager {
             get {
+
                 if(_userManager == null) {
                     _userManager = HttpContext.GetOwinContext().GetUserManager<ApplicationUserManager>();
                 }

@@ -31,13 +31,14 @@ namespace KetoSavageWeb.Migrations
             context.CreateDefaultRoles();
 
             var adminRole = context.Roles.Where(x => x.Name == "Administrator").FirstOrDefault();
-            if (adminRole == null)
-            {
-                adminRole = new Role { Name = "Administrator" };
-                context.Roles.Add(adminRole);
-            }
+            var coachRole = context.Roles.Where(x => x.Name == "Coach").FirstOrDefault();
+            //if (adminRole == null)
+            //{
+            //    adminRole = new Role { Name = "Administrator" };
+            //    context.Roles.Add(adminRole);
+            //}
             var manager = ApplicationUserManager.Create(context);
-            manager.CreateAdminAccount(adminRole);
+            manager.CreateAdminAccount(adminRole, coachRole);
         }
     }
 }

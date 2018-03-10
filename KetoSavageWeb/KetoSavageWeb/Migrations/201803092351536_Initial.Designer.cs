@@ -13,7 +13,7 @@ namespace KetoSavageWeb.Migrations
         
         string IMigrationMetadata.Id
         {
-            get { return "201803082123265_Initial"; }
+            get { return "201803092351536_Initial"; }
         }
         
         string IMigrationMetadata.Source

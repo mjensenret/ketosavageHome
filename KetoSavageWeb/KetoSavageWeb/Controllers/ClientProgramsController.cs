@@ -13,10 +13,12 @@ namespace KetoSavageWeb.Controllers
     public class ClientProgramsController : KSBaseController
     {
         private ProgramRepository program;
+        private RoleRepository roleRepository;
 
-        public ClientProgramsController(ProgramRepository pr)
+        public ClientProgramsController(ProgramRepository pr, RoleRepository rr)
         {
             this.program = pr;
+            this.roleRepository = rr;
         }
         // GET: Programs
         public async Task<ActionResult> Index()
@@ -24,28 +26,56 @@ namespace KetoSavageWeb.Controllers
 
             //var roles = (from r in RoleManager.Roles where r.Name.Contains("Client") select r).FirstOrDefault();
             //var users = UserManager.Users.Where(x => x.Roles.Select(y => y.Role.Name.Contains("Coach")).ToList());
-            var programs = program.GetActive.Where(z => z is CoachedPrograms);
+            var clients = from c in UserManager.Users
+                          join p in program.GetByType(ProgramType.Coached) on c.Id equals p.ApplicationUserId
+                          where c.Roles.Select(x => x.Role.Name).Contains("Client")
+                            select new
+                            {
+                                c.UserName,
+                                c.FirstName,
+                                c.LastName,
+                                p.startDate,
+                                p.endDate
+                            }
+                            
+                          ;
             
-
-            var qry = (programs
-                .OrderBy(x => x.ProgramUser.UserName)
+            var qry = (clients
+                .OrderBy(x => x.UserName)
                 .ToList())
                 .Select(
-                x => new ClientListViewModel()
+                x => new ClientListViewModel
                 {
-                    FullName = string.Join(" ", x.ProgramUser.FirstName, x.ProgramUser.LastName),
+                    FullName = string.Join(" ", x.FirstName, x.LastName),
+                    userName = x.UserName,
                     currentProgramStartDate = x.startDate,
                     currentProgramEndDate = x.endDate
+
                 });
 
+            var model = qry.ToList();
 
-            var model = qry;
 
-            //ViewData["Clients"] = users.ToList();
-            string userName = UserManager.Users.First().UserName.ToString();
+            //var qry = (programs
+            //    .OrderBy(x => x.ProgramUser.UserName)
+            //    .ToList())
+            //    .Select(
+            //    x => new ClientListViewModel()
+            //    {
+            //        FullName = string.Join(" ", x.ProgramUser.FirstName, x.ProgramUser.LastName),
+            //        currentProgramStartDate = x.startDate,
+            //        currentProgramEndDate = x.endDate
+            //    });
+
+
+            //var model = qry;
+
+            ////ViewData["Clients"] = users.ToList();
+            //string userName = UserManager.Users.First().UserName.ToString();
             //var programs = program.GetActive.Where(x => x is CoachedPrograms);
 
-            return View("Index", userName);
+            //return View("Index", userName);
+            return PartialView("_clientGridViewPartial", model);
         }
 
         public ActionResult ClientList()

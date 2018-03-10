@@ -16,12 +16,13 @@ namespace KetoSavageWeb.Models
     {
         public KSDataContext() : base("KSDataConnection")
         {
-
+            //Configuration.ProxyCreationEnabled = false;
         }
 
         static KSDataContext()
         {
             Database.SetInitializer<KSDataContext>(new CreateDatabaseIfNotExists<KSDataContext>());
+            
         }
 
         public static KSDataContext Create()
@@ -63,8 +64,10 @@ namespace KetoSavageWeb.Models
 
             base.OnModelCreating(modelBuilder);
 
+
             //Setup conventions
             modelBuilder.Conventions.Remove<OneToManyCascadeDeleteConvention>();
+            modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
 
             //Relationships
             modelBuilder.Entity<ApplicationUser>()

@@ -518,7 +518,7 @@
     <Content Include="Views\Shared\_menuPartial.cshtml" />
     <Content Include="Views\Account\_loginPartial.cshtml" />
     <Content Include="Views\ClientPrograms\Index.cshtml" />
-    <Content Include="Views\ClientPrograms\_clientList.cshtml" />
+    <Content Include="Views\ClientPrograms\_clientGridViewPartial.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -537,8 +537,8 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
-    <Compile Include="Controllers\ManageUsersController.cs" />
     <Compile Include="Controllers\ClientProgramsController.cs" />
+    <Compile Include="Controllers\ManageUsersController.cs" />
     <Compile Include="Controllers\UsersAdminController.cs" />
     <Compile Include="Domain\Infrastructure\EfEntityContext.cs" />
     <Compile Include="Domain\Infrastructure\IEntityContext.cs" />
@@ -552,9 +552,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201803082123265_Initial.cs" />
-    <Compile Include="Migrations\201803082123265_Initial.Designer.cs">
-      <DependentUpon>201803082123265_Initial.cs</DependentUpon>
+    <Compile Include="Migrations\201803092351536_Initial.cs" />
+    <Compile Include="Migrations\201803092351536_Initial.Designer.cs">
+      <DependentUpon>201803092351536_Initial.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Abstract\UserManaged.cs" />
@@ -566,7 +566,6 @@
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\ProgramModels.cs" />
     <Compile Include="Models\Role.cs" />
-    <Compile Include="Models\UserProfiles.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Interfaces\IProgramRepository.cs" />
     <Compile Include="Properties\Settings.Designer.cs">
@@ -581,11 +580,12 @@
     <Compile Include="Util\Interfaces\IDataLayer.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Controllers\Infrastructure\" />
     <Folder Include="Views\Programs\" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201803082123265_Initial.resx">
-      <DependentUpon>201803082123265_Initial.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201803092351536_Initial.resx">
+      <DependentUpon>201803092351536_Initial.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

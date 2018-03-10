@@ -25,6 +25,7 @@ namespace KetoSavageWeb.Controllers
 
         private ApplicationUserManager _userManager = null;
         private ApplicationUser _currentUser = null;
+        //private KSDataContext
 
         public KSBaseController()
         {
