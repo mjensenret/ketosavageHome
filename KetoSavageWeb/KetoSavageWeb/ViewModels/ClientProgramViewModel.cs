@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
-namespace KetoSavageWeb.Models
+namespace KetoSavageWeb.ViewModels
 {
     public class ClientListViewModel
     {
@@ -12,8 +12,6 @@ namespace KetoSavageWeb.Models
         public DateTime? currentProgramStartDate { get; set; }
         public DateTime? currentProgramEndDate { get; set; }
         public DateTime? currentProgramRenewalDate { get; set; }
-
-        public virtual ProgramModels program { get; set; }
 
     }
 }

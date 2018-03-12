@@ -7,6 +7,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
+using System.Data.Entity;
 
 namespace KetoSavageWeb.Controllers
 {
@@ -30,17 +31,7 @@ namespace KetoSavageWeb.Controllers
         //    }
         //}
 
-        //public ApplicationRoleManager RoleManager
-        //{
-        //    get
-        //    {
-        //        return _roleManager ?? HttpContext.GetOwinContext().Get<ApplicationRoleManager>();
-        //    }
-        //    private set
-        //    {
-        //        _roleManager = value;
-        //    }
-        //}
+
 
         //public ManageUsersController()
         //{
@@ -60,7 +51,8 @@ namespace KetoSavageWeb.Controllers
 
         public ActionResult GridViewPartial()
         {
-            var userQuery = UserManager.Users.Where(x => x.IsActive == true);
+
+            var userQuery = UserManager.Users.Where(x => x.IsActive == true).Include(r => r.Roles);
             var items = (userQuery
                 .OrderBy(x => x.UserName)
                 .Select(x => new
@@ -77,10 +69,10 @@ namespace KetoSavageWeb.Controllers
                 .Select(x => new RegisterModel()
                 {
                     Id = x.Id,
-                    UserName = x.UserName,
-                    FirstName = x.FirstName,
-                    LastName = x.LastName,
-                    Email = x.Email,
+                    regUserName = x.UserName,
+                    regFirstName = x.FirstName,
+                    regLastName = x.LastName,
+                    regEmail = x.Email,
                     Roles = string.Join(", ", x.Roles),
                     SelectedRoleId = x.Roles.First()
                 });
@@ -101,13 +93,13 @@ namespace KetoSavageWeb.Controllers
             {
                 var newUser = new ApplicationUser
                 {
-                    UserName = item.UserName,
-                    FirstName = item.FirstName,
-                    LastName = item.LastName,
-                    Email = item.Email
+                    UserName = item.regUserName,
+                    FirstName = item.regFirstName,
+                    LastName = item.regLastName,
+                    Email = item.regEmail
 
                 };
-                var result = await UserManager.CreateAsync(newUser, item.Password);
+                var result = await UserManager.CreateAsync(newUser, item.regPassword);
                 if (result.Succeeded)
                 {
                     await UserManager.AddToRoleAsync(newUser.Id, item.SelectedRoleId);
@@ -115,7 +107,7 @@ namespace KetoSavageWeb.Controllers
                     {
                         var defaultCoach = await UserManager.FindByNameAsync("RobertSikes");
 
-                        programRepository.CreateDefaulClientProgram(newUser.UserName, defaultCoach.UserName);
+                        //programRepository.CreateDefaulClientProgram(newUser.UserName, defaultCoach.UserName);
 
                         //var coachedProgram = new CoachedPrograms();
                         //coachedProgram.CoachUser = defaultCoach;

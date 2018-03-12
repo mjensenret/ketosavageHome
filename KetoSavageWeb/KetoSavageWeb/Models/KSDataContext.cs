@@ -19,11 +19,11 @@ namespace KetoSavageWeb.Models
             //Configuration.ProxyCreationEnabled = false;
         }
 
-        static KSDataContext()
-        {
-            Database.SetInitializer<KSDataContext>(new CreateDatabaseIfNotExists<KSDataContext>());
+        //static KSDataContext()
+        //{
+        //    Database.SetInitializer<KSDataContext>(new CreateDatabaseIfNotExists<KSDataContext>());
             
-        }
+        //}
 
         public static KSDataContext Create()
         {
@@ -31,9 +31,10 @@ namespace KetoSavageWeb.Models
         }
 
         public DbSet<ApplicationUser> Users { get; set; }
+        //public DbSet<Role> Roles { get; set; }
         public DbSet<Role> Roles { get; set; }
-
         public DbSet<ProgramModels> Programs { get; set; }
+        public DbSet<UserPrograms> UserPrograms { get; set; }
 
         public bool RequireUniqueEmail { get; set; }
 
@@ -76,14 +77,12 @@ namespace KetoSavageWeb.Models
                 .HasForeignKey(x => x.UserId)
                 .WillCascadeOnDelete(true);
 
-
-            modelBuilder.Entity<ProgramModels>()
-                .HasRequired(p => p.ProgramUser)
+            modelBuilder.Entity<UserPrograms>()
+                .HasRequired(c => c.ProgramUser)
                 .WithMany(u => u.UserPrograms);
 
-            modelBuilder.Entity<CoachedPrograms>()
-                .HasRequired(c => c.CoachUser)
-                .WithMany(u => u.CoachPrograms);
+            modelBuilder.Entity<UserPrograms>()
+                .HasOptional(c => c.CoachUser);
 
             // AspNet.Identity models
             modelBuilder.Entity<IdentityUserLogin>().HasKey(l => l.UserId);

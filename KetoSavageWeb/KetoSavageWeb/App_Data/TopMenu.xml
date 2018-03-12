@@ -6,6 +6,8 @@
   <item Text="Workouts" NavigateUrl="#"  />
   <item Text="Admin" NavigateUrl="#" Roles="Administrator;Manager;Coach">
     <item Text="Manage Users" NavigateUrl="~/ManageUsers" />
-    <item Text="Client Programs" NavigateUrl="~/ClientPrograms" />
+    <item Text="Manage Programs" NavigateUrl="~/ClientPrograms">
+      <item Text="Testing Sub Menu" NavigateUrl="#" />
+    </item>
   </item>
 </items>

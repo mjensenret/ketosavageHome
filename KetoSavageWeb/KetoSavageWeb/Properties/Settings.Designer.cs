@@ -49,5 +49,23 @@ namespace KetoSavageWeb.Properties {
                 return ((string)(this["DefaultAdminEmail"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("RobertSikes")]
+        public string DefaultCoach {
+            get {
+                return ((string)(this["DefaultCoach"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("chief@ketosavage.com")]
+        public string DefaultCoachEmail {
+            get {
+                return ((string)(this["DefaultCoachEmail"]));
+            }
+        }
     }
 }

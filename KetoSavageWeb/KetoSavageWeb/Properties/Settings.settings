@@ -11,5 +11,11 @@
     <Setting Name="DefaultAdminEmail" Type="System.String" Scope="Application">
       <Value Profile="(Default)">mjensen@razoredgetech.com</Value>
     </Setting>
+    <Setting Name="DefaultCoach" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">RobertSikes</Value>
+    </Setting>
+    <Setting Name="DefaultCoachEmail" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">chief@ketosavage.com</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

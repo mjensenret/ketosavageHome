@@ -1,6 +1,7 @@
 ﻿using KetoSavageWeb.Interfaces;
 using KetoSavageWeb.Models;
 using KetoSavageWeb.Repositories;
+using System.Data.Entity;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -25,35 +26,41 @@ namespace KetoSavageWeb.Controllers
         {
 
             //var roles = (from r in RoleManager.Roles where r.Name.Contains("Client") select r).FirstOrDefault();
-            //var users = UserManager.Users.Where(x => x.Roles.Select(y => y.Role.Name.Contains("Coach")).ToList());
-            var clients = from c in UserManager.Users
-                          join p in program.GetByType(ProgramType.Coached) on c.Id equals p.ApplicationUserId
-                          where c.Roles.Select(x => x.Role.Name).Contains("Client")
-                            select new
-                            {
-                                c.UserName,
-                                c.FirstName,
-                                c.LastName,
-                                p.startDate,
-                                p.endDate
-                            }
-                            
-                          ;
-            
-            var qry = (clients
-                .OrderBy(x => x.UserName)
-                .ToList())
-                .Select(
-                x => new ClientListViewModel
-                {
-                    FullName = string.Join(" ", x.FirstName, x.LastName),
-                    userName = x.UserName,
-                    currentProgramStartDate = x.startDate,
-                    currentProgramEndDate = x.endDate
+            //var clientList = UserManager
+            //    .Users
+            //    .Where(r => r.Roles.Select(n => n.Role.Name == "Client").FirstOrDefault())
+            //    .ToList();
+            //var programs = program.GetByType(ProgramType.Coached).ToList();
 
-                });
 
-            var model = qry.ToList();
+            //var cp = (from c in clientList
+            //          from p in programs
+            //               .Where(m => m.ApplicationUserId == c.Id)
+            //               .DefaultIfEmpty()
+            //          select new
+            //          {
+            //              c.UserName,
+            //              c.FirstName,
+            //              c.LastName,
+            //              p.startDate,
+            //              p.endDate
+
+            //          });
+
+            //var qry = (cp
+            //    .OrderBy(x => x.UserName)
+            //    .ToList())
+            //    .Select(
+            //    x => new ClientListViewModel
+            //    {
+            //        FullName = string.Join(" ", x.FirstName, x.LastName),
+            //        userName = x.UserName
+            //        //currentProgramStartDate = x.startDate,
+            //        //currentProgramEndDate = x.endDate
+
+            //    });
+
+            //var model = qry.ToList();
 
 
             //var qry = (programs
@@ -75,7 +82,8 @@ namespace KetoSavageWeb.Controllers
             //var programs = program.GetActive.Where(x => x is CoachedPrograms);
 
             //return View("Index", userName);
-            return PartialView("_clientGridViewPartial", model);
+            //return PartialView("_clientGridViewPartial", model);
+            return View();
         }
 
         public ActionResult ClientList()
@@ -112,10 +120,10 @@ namespace KetoSavageWeb.Controllers
             //return PartialView("_clientList", model);
             return View();
         }
-        public ActionResult ClientPrograms()
-        {
-            var clientPrograms = program.GetActive.Where(x => x is CoachedPrograms);
-            return View();
-        }
+        //public ActionResult ClientPrograms()
+        //{
+        //    var clientPrograms = program.GetActive.Where(x => x is CoachedPrograms);
+        //    return View();
+        //}
     }
 }

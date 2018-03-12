@@ -7,6 +7,7 @@ using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using KetoSavageWeb.Models;
+using KetoSavageWeb.ViewModels;
 
 namespace KetoSavageWeb.Controllers
 {

@@ -22,7 +22,7 @@ namespace KetoSavageWeb.Controllers
             return (ApplicationUser)session["currentUser"];
         }
 
-
+        private ApplicationRoleManager _roleManager = null;
         private ApplicationUserManager _userManager = null;
         private ApplicationUser _currentUser = null;
         //private KSDataContext
@@ -40,11 +40,25 @@ namespace KetoSavageWeb.Controllers
         {
             get
             {
-                return _userManager ?? HttpContext.GetOwinContext().GetUserManager<ApplicationUserManager>();
+                if (_userManager == null)
+                    _userManager = HttpContext.GetOwinContext().GetUserManager<ApplicationUserManager>();
+                return _userManager;
             }
             private set
             {
                 _userManager = value;
+            }
+        }
+
+        public ApplicationRoleManager RoleManager
+        {
+            get
+            {
+                return _roleManager ?? HttpContext.GetOwinContext().Get<ApplicationRoleManager>();
+            }
+            private set
+            {
+                _roleManager = value;
             }
         }
 

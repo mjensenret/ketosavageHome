@@ -1,25 +1,6 @@
 @model KetoSavageWeb.Models.LoginModel
 
 <div class="center">
-
-    @*@Html.DevExpress().FormLayout(settings =>
-        {
-            settings.Name = "LoginForm";
-
-            var groupItem = settings.Items.AddGroupItem(groupSettings =>
-            {
-                groupSettings.ShowCaption = DefaultBoolean.False;
-                groupSettings.GroupBoxDecoration = GroupBoxDecoration.Box;
-            });
-
-            groupItem.SettingsItems.ShowCaption = DefaultBoolean.True;
-            groupItem.SettingsItemCaptions.Location = LayoutItemCaptionLocation.Left;
-
-
-            groupItem.Items.Add(m => m.UserName);
-            groupItem.Items.Add(m => m.Password);
-            groupItem.Items.Add(m => m.RememberMe);
-        }).GetHtml()*@
     <center>
         <div class="loginForm">
             @if (!Request.IsAuthenticated)
@@ -49,9 +30,9 @@
                                 Html.DevExpress().Button(
                                     register =>
                                     {
-                                        register.Name = "btnRegister";
+                                        register.Name = "btnShowRegisterModal";
                                         register.Text = "Register";
-                                        register.ClientSideEvents.Click = "function(s, e) { redirectToRegister(); }";
+                                        register.ClientSideEvents.Click = "function(s, e) { modRegister.Show(); }";
                                     }).Render();
                             });
 
@@ -117,8 +98,8 @@
     settings.PopupVerticalAlign = PopupVerticalAlign.WindowCenter;
     settings.SetContent(() =>
     {
-        //Html.RenderPartial("~/Views/Account/Register.cshtml");
-        ViewContext.Writer.Write("Test");
+        Html.RenderPartial("~/Views/Account/_registerPartial.cshtml");
+        //ViewContext.Writer.Write("Test");
         //Html.RenderAction("Register");
 
     });

@@ -12,34 +12,56 @@ using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using KetoSavageWeb.Repositories;
 using System.Data.Entity;
+using KetoSavageWeb.Domain.Infrastructure;
 
 namespace KetoSavageWeb.Controllers {
-    public class AccountController : Controller
+    public class AccountController : KSBaseController
     {
 
         private UserProfileRepository profileRepository;
-        //private RoleRepository roleRepository;
+        private RoleRepository _roleRepository;
 
         ApplicationSignInManager _signInManager;
-        public ApplicationSignInManager SignInManager {
-            get {
-                if(_signInManager == null) {
-                    _signInManager = HttpContext.GetOwinContext().Get<ApplicationSignInManager>();
-                }
-                return _signInManager;
-            }
-        }
-
         ApplicationUserManager _userManager;
-        public ApplicationUserManager UserManager {
-            get {
 
-                if(_userManager == null) {
-                    _userManager = HttpContext.GetOwinContext().GetUserManager<ApplicationUserManager>();
-                }
-                return _userManager;
+        //private KSDataContext _context { get { return HttpContext.GetOwinContext().Get<KSDataContext>(); } }
+    
+
+        public AccountController()
+        {
+
+        }
+
+        public AccountController(ApplicationUserManager userManager, ApplicationSignInManager signInManager)
+            : base(userManager)
+        {
+            SignInManager = signInManager;
+
+        }
+
+        public ApplicationSignInManager SignInManager {
+            get
+            {
+                return _signInManager ?? HttpContext.GetOwinContext().Get<ApplicationSignInManager>();
+            }
+            private set
+            {
+                _signInManager = value;
             }
         }
+
+        //public RoleRepository RoleRepository
+        //{
+        //    get
+        //    {
+        //        if (_roleRepository == null) _roleRepository = new RoleRepository(new EfEntityContext<Role>(_context));
+        //        return _roleRepository;
+        //    }
+        //    private set
+        //    {
+        //        _roleRepository = value;
+        //    }
+        //}
 
         //
         // GET: /Account/Login
@@ -106,12 +128,12 @@ namespace KetoSavageWeb.Controllers {
                 // Attempt to register the user
                 var user = new ApplicationUser
                 {
-                    UserName = model.UserName
-                    , Email = model.Email
-                    , FirstName = model.FirstName
-                    , LastName = model.LastName
+                    UserName = model.regUserName
+                    , Email = model.regEmail
+                    , FirstName = model.regFirstName
+                    , LastName = model.regLastName
                 };
-                var result = await UserManager.CreateAsync(user, model.Password);
+                var result = await UserManager.CreateAsync(user, model.regPassword);
                 if (result.Succeeded)
                 {
                     await SignInManager.SignInAsync(user, isPersistent:false, rememberBrowser:false);

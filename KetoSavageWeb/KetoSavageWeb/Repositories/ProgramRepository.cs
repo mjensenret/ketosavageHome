@@ -15,48 +15,31 @@ namespace KetoSavageWeb.Repositories
         {
         }
 
-        public IQueryable<ProgramModels> FindActiveProgramByUser(string userName)
-        {
-            return GetActive.Where(x => x.ProgramUser.UserName == userName);
-        }
-
-        public IQueryable<ProgramModels> GetByType(ProgramType type)
-        {
-            if (type == ProgramType.Coached)
-            { 
-                return GetActive.Where(x => x is CoachedPrograms);
-            }
-            else
-            {
-                return GetActive.Where(x => x is SelfGuidedPrograms);
-            }
-        }
-
-        public void CreateDefaulClientProgram(string clientName, string coachName)
-        {
-            //var manager = ApplicationUserManager.Create(new KSDataContext());
-            var updContext = new KSDataContext();
+        //public void CreateDefaulClientProgram(string clientName, string coachName)
+        //{
+        //    //var manager = ApplicationUserManager.Create(new KSDataContext());
+        //    var updContext = new KSDataContext();
             
-            var client = updContext.Users.Where(x => x.UserName == clientName).First();
-            var coach = updContext.Users.Where(y => y.UserName == coachName).First();
+        //    var client = updContext.Users.Where(x => x.UserName == clientName).First();
+        //    var coach = updContext.Users.Where(y => y.UserName == coachName).First();
 
-            CoachedPrograms program = new CoachedPrograms
-            {
-                CoachUser = coach,
-                ProgramUser = client,
-                startDate = DateTime.Now,
-                renewalDate = DateTime.Now.AddDays(30)
-            };
-            updContext.Programs.Add(program);
-            try
-            {
-                updContext.SaveChanges();
-            }
-            catch (Exception e)
-            {
-                throw e;
-            }
+        //    CoachedPrograms program = new CoachedPrograms
+        //    {
+        //        CoachUser = coach,
+        //        ProgramUser = client,
+        //        startDate = DateTime.Now,
+        //        renewalDate = DateTime.Now.AddDays(30)
+        //    };
+        //    updContext.Programs.Add(program);
+        //    try
+        //    {
+        //        updContext.SaveChanges();
+        //    }
+        //    catch (Exception e)
+        //    {
+        //        throw e;
+        //    }
 
-        }
+        //}
     }
 }

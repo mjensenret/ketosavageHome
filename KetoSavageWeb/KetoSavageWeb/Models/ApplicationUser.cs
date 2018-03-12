@@ -40,8 +40,7 @@ namespace KetoSavageWeb.Models
         public string LastModifiedBy { get; set; }
 
         //Navigation Properties
-        public virtual ICollection<ProgramModels> UserPrograms { get; set; }
-        public virtual ICollection<CoachedPrograms> CoachPrograms { get; set; }
+        public virtual ICollection<UserPrograms> UserPrograms { get; set; }
 
         public ApplicationUser()
             : base()
@@ -76,133 +75,20 @@ namespace KetoSavageWeb.Models
 
     public class UserClaim : IdentityUserClaim<int> { }
 
-    public class ApplicationUserManager : UserManager<ApplicationUser, int>
+    public class Role : IdentityRole<int, UserRole>, IRole<int>
     {
-        public ApplicationUserManager(IUserStore<ApplicationUser, int> store)
-            : base(store)
+        public Role() : base () { }
+        public Role(string name)
+            : this()
         {
+            this.Name = name;
         }
 
-        public static ApplicationUserManager Create(KSDataContext context)
+        public Role(string name, string description)
+            : this(name)
         {
-            return Create(new UserStore<ApplicationUser, Role, int, UserLogin, UserRole, UserClaim>(context));
-
+            this.Description = description;
         }
-
-        public static ApplicationUserManager Create(IUserStore<ApplicationUser, int> userStore)
-        {
-            var manager = new ApplicationUserManager(userStore);
-
-            // Configure validation logic for usernames
-            manager.UserValidator = new UserValidator<ApplicationUser, int>(manager)
-            {
-                AllowOnlyAlphanumericUserNames = false,
-                RequireUniqueEmail = true
-            };
-
-            // Configure validation logic for passwords
-            manager.PasswordValidator = new PasswordValidator
-            {
-                RequiredLength = 6,
-                RequireNonLetterOrDigit = true,
-                RequireDigit = true,
-                RequireLowercase = true,
-                RequireUppercase = true,
-            };
-
-            // Configure user lockout defaults
-            manager.UserLockoutEnabledByDefault = true;
-            manager.DefaultAccountLockoutTimeSpan = TimeSpan.FromMinutes(5);
-            manager.MaxFailedAccessAttemptsBeforeLockout = 5;
-
-            // Register two factor authentication providers. This application uses Phone and Emails as a step of receiving a code for verifying the user
-            // You can write your own provider and plug it in here.
-            manager.RegisterTwoFactorProvider("Phone Code", new PhoneNumberTokenProvider<ApplicationUser, int>
-            {
-                MessageFormat = "Your security code is {0}"
-            });
-            manager.RegisterTwoFactorProvider("Email Code", new EmailTokenProvider<ApplicationUser, int>
-            {
-                Subject = "Security Code",
-                BodyFormat = "Your security code is {0}"
-            });
-
-            return manager;
-        }
-
-        /// <summary>
-        /// Check if the specified user belongs to a role that has the requested permission.
-        /// </summary>
-        /// <param name="UserId"></param>
-        /// <param name="Permission"></param>
-        /// <returns></returns>
-        //public bool HasPermission(int UserId, SFVPermission Permission)
-        //{
-        //    if (UserId == 0)
-        //        return false;
-
-        //    // Build role query
-        //    var q = this.Users.Where(u => u.Id == UserId).SelectMany(x => x.Roles);
-
-        //    // Check if user has all permissions
-        //    if (q.Any(ur => ur.Role.HasAllPermissions))
-        //        return true;
-
-        //    // Check if user has permission
-        //    return q.Any(ur => ur.Role.Permissions.Any(y => y.Permission == Permission));
-        //}
-
-        public void CreateAdminAccount(Role adminRole, Role coachRole)
-        {
-            var task1 = this.Store.FindByNameAsync("SuperUser");
-            task1.Wait();
-            var admin = task1.Result;
-            if (admin == null)
-            {
-                // Create admin account
-                var user = new ApplicationUser {
-                    UserName = Settings.Default.DefaultAdminAccount,
-                    Email = Settings.Default.DefaultAdminEmail,
-                    EmailConfirmed = true,
-                    FirstName = "Admin",
-                    LastName = "Account",
-                    LastModified = DateTime.Now,
-                    Created = DateTime.Now,
-                    LastModifiedBy = "SeedFunction",
-                    CreatedBy = "SeedFunction",
-                };
-                user.Roles.Add(new UserRole { RoleId = adminRole.Id, Role = adminRole });
-                var result = this.Create(user, Settings.Default.DefaultPassword);
-
-                if (!result.Succeeded)
-                    throw new ApplicationException(string.Format("Error creating admin user: {0}", string.Join(", ", result.Errors)));
-            }
-
-            var task2 = this.Store.FindByNameAsync("RobertSikes");
-            task2.Wait();
-            var coach = task2.Result;
-            if (coach == null)
-            {
-                //Create default coach account
-                var coachUser = new ApplicationUser
-                {
-                    UserName = "RobertSikes",
-                    Email = "chief@ketosavage.com",
-                    EmailConfirmed = true,
-                    FirstName = "Robert",
-                    LastName = "Sikes",
-                    LastModified = DateTime.Now,
-                    Created = DateTime.Now,
-                    LastModifiedBy = "SeedFunction",
-                    CreatedBy = "SeedFunction"
-                };
-                coachUser.Roles.Add(new UserRole { RoleId = coachRole.Id, Role = coachRole });
-                var coachResult = this.Create(coachUser, Settings.Default.DefaultPassword);
-                if (!coachResult.Succeeded)
-                    throw new ApplicationException(string.Format("Error creating coach user: {0}", string.Join(", ", coachResult.Errors)));
-                
-            }
-        }
-
+        public string Description { get; set; }
     }
 }

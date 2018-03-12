@@ -15,8 +15,8 @@ namespace KetoSavageWeb
         {
             // Configure the db context, user manager and role manager to use a single instance per request
             app.CreatePerOwinContext(KSDataContext.Create);
-            app.CreatePerOwinContext<ApplicationUserManager>(ApplicationUserManagerFactory.Create);
-            //app.CreatePerOwinContext<ApplicationRoleManager>(ApplicationRoleManager.Create);
+            app.CreatePerOwinContext<ApplicationUserManager>(ApplicationUserManager.Create);
+            app.CreatePerOwinContext<ApplicationRoleManager>(ApplicationRoleManager.Create);
             app.CreatePerOwinContext<ApplicationSignInManager>(ApplicationSignInManager.Create);
 
             // Enable the application to use a cookie to store information for the signed in user
