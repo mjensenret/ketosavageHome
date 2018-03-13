@@ -558,6 +558,14 @@
     <Compile Include="Migrations\201803111631012_Initial.Designer.cs">
       <DependentUpon>201803111631012_Initial.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201803132315484_AddProgramTemplates.cs" />
+    <Compile Include="Migrations\201803132315484_AddProgramTemplates.Designer.cs">
+      <DependentUpon>201803132315484_AddProgramTemplates.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201803132321324_RenameProgramTemplate.cs" />
+    <Compile Include="Migrations\201803132321324_RenameProgramTemplate.Designer.cs">
+      <DependentUpon>201803132321324_RenameProgramTemplate.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Abstract\UserManaged.cs" />
     <Compile Include="Models\AccountModels.cs" />
@@ -567,7 +575,7 @@
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\KSDataContext.cs" />
     <Compile Include="ViewModels\ManageViewModels.cs" />
-    <Compile Include="Models\ProgramModels.cs" />
+    <Compile Include="Models\ProgramTemplate.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Interfaces\IProgramRepository.cs" />
     <Compile Include="Properties\Settings.Designer.cs">
@@ -589,6 +597,12 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201803111631012_Initial.resx">
       <DependentUpon>201803111631012_Initial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201803132315484_AddProgramTemplates.resx">
+      <DependentUpon>201803132315484_AddProgramTemplates.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201803132321324_RenameProgramTemplate.resx">
+      <DependentUpon>201803132321324_RenameProgramTemplate.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

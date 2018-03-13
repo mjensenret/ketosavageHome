@@ -9,9 +9,9 @@ using KetoSavageWeb.Domain.Infrastructure;
 
 namespace KetoSavageWeb.Repositories
 {
-    public class ProgramRepository : UserManagedRepository<ProgramModels>
+    public class ProgramRepository : UserManagedRepository<ProgramTemplate>
     {
-        public ProgramRepository(IEntityContext<ProgramModels> entityContext) : base(entityContext)
+        public ProgramRepository(IEntityContext<ProgramTemplate> entityContext) : base(entityContext)
         {
         }
 

@@ -123,32 +123,32 @@ namespace KetoSavageWeb.Models {
 
         [Required]
         [Display(Name = "User Name")]
-        public string regUserName { get; set; }
+        public string UserName { get; set; }
 
         [Required]
         [RegularExpression("\\w+([-+.']\\w+)*@\\w+([-.]\\w+)*\\.\\w+([-.]\\w+)*", ErrorMessage = "Please enter a valid email address.")]
         [DataType(DataType.EmailAddress)]
         [Display(Name = "Email Address")]
-        public string regEmail { get; set; }
+        public string Email { get; set; }
 
         [Required]
         [Display(Name = "First Name")]
-        public string regFirstName { get; set; }
+        public string FirstName { get; set; }
 
         [Required]
         [Display(Name = "Last Name")]
-        public string regLastName { get; set; }
+        public string LastName { get; set; }
 
         [Required]
         [StringLength(100, ErrorMessage = "The {0} must be at least {2} characters long.", MinimumLength = 6)]
         [DataType(DataType.Password)]
         [Display(Name = "Password")]
-        public string regPassword { get; set; }
+        public string Password { get; set; }
 
         [DataType(DataType.Password)]
         [Display(Name = "Confirm Password")]
         [System.ComponentModel.DataAnnotations.Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
-        public string regConfirmPassword { get; set; }
+        public string ConfirmPassword { get; set; }
 
         public string Roles { get; set; }
         public string SelectedRoleId { get; set; }

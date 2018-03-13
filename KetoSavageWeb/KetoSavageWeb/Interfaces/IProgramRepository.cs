@@ -8,10 +8,10 @@ namespace KetoSavageWeb.Interfaces
 {
     public interface IProgramRepository
     {
-        IEnumerable<ProgramModels> SelectAll();
-        ProgramModels SelectByUserId(int userId);
-        void Insert(ProgramModels obj);
-        void Update(ProgramModels obj);
+        IEnumerable<ProgramTemplate> SelectAll();
+        ProgramTemplate SelectByUserId(int userId);
+        void Insert(ProgramTemplate obj);
+        void Update(ProgramTemplate obj);
         void Delete(string Id);
         void Save();
 

@@ -30,10 +30,11 @@ namespace KetoSavageWeb.Models
             return new KSDataContext();
         }
 
+
         public DbSet<ApplicationUser> Users { get; set; }
         //public DbSet<Role> Roles { get; set; }
         public DbSet<Role> Roles { get; set; }
-        public DbSet<ProgramModels> Programs { get; set; }
+        public DbSet<ProgramTemplate> Programs { get; set; }
         public DbSet<UserPrograms> UserPrograms { get; set; }
 
         public bool RequireUniqueEmail { get; set; }

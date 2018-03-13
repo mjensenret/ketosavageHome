@@ -14,7 +14,7 @@
         form.Height = Unit.Percentage(100);
 
         form.NestedExtensionWidth = Unit.Percentage(100);
-        form.Items.Add(m => m.regUserName, item =>
+        form.Items.Add(m => m.UserName, item =>
         {
             item.Caption = "Username";
             item.NestedExtensionType = FormLayoutNestedExtensionItemType.TextBox;
@@ -25,7 +25,7 @@
             tbSettings.Properties.ValidationSettings.ErrorDisplayMode = ErrorDisplayMode.Text;
             tbSettings.Properties.ValidationSettings.ErrorTextPosition = ErrorTextPosition.Bottom;
         });
-        form.Items.Add(m => m.regEmail, item =>
+        form.Items.Add(m => m.Email, item =>
         {
             item.Caption = "Email Address";
             item.NestedExtensionType = FormLayoutNestedExtensionItemType.TextBox;
@@ -36,21 +36,21 @@
             tbSettings.Properties.ValidationSettings.ErrorDisplayMode = ErrorDisplayMode.Text;
             tbSettings.Properties.ValidationSettings.ErrorTextPosition = ErrorTextPosition.Bottom;
         });
-        form.Items.Add(m => m.regFirstName, item =>
+        form.Items.Add(m => m.FirstName, item =>
         {
             item.Caption = "First Name";
             item.NestedExtensionType = FormLayoutNestedExtensionItemType.TextBox;
             var tbSettings = (TextBoxSettings)item.NestedExtensionSettings;
             tbSettings.Properties.Password = false;
         });
-        form.Items.Add(m => m.regLastName, item =>
+        form.Items.Add(m => m.LastName, item =>
         {
             item.Caption = "Last Name";
             item.NestedExtensionType = FormLayoutNestedExtensionItemType.TextBox;
             var tbSettings = (TextBoxSettings)item.NestedExtensionSettings;
             tbSettings.Properties.Password = false;
         });
-        form.Items.Add(m => m.regPassword, item =>
+        form.Items.Add(m => m.Password, item =>
         {
             item.Caption = "Password";
             item.NestedExtensionType = FormLayoutNestedExtensionItemType.TextBox;
@@ -61,7 +61,7 @@
             tbSettings.Properties.ValidationSettings.ErrorDisplayMode = ErrorDisplayMode.Text;
             tbSettings.Properties.ValidationSettings.ErrorTextPosition = ErrorTextPosition.Bottom;
         });
-        form.Items.Add(m => m.regConfirmPassword, item =>
+        form.Items.Add(m => m.ConfirmPassword, item =>
         {
             item.Caption = "Confirm Password";
             item.NestedExtensionType = FormLayoutNestedExtensionItemType.TextBox;
@@ -113,7 +113,7 @@
                         buttonSettings.ControlStyle.CssClass = "button";
                         buttonSettings.Width = 100;
                         buttonSettings.Text = "Cancel";
-                        buttonSettings.ClientSideEvents.Click = "function(s, e){ modRegister.Hide(); }";
+                        buttonSettings.ClientSideEvents.Click = "function(s, e){ popupControl.Hide(); }";
                     }).Render();
                 });
             });

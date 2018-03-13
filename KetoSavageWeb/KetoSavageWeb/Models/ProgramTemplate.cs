@@ -9,17 +9,20 @@ using System.Web;
 
 namespace KetoSavageWeb.Models
 {
-    public class ProgramModels : UserManaged
+    public class ProgramTemplate : UserManaged
     {
-        public string programGoal { get; set; }
         public string programDescription { get; set; }
+
+
+        public virtual ProgramGoals goals { get; set; }
         public ICollection<UserPrograms> UserPrograms { get; set; }
     }
 
-    public enum ProgramGoal
+    public class ProgramGoals
     {
-        Cut,
-        Build
+        public int Id { get; set; }
+        public string Name { get; set; }
+        public string Description { get; set; }
     }
 
 }

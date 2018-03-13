@@ -30,9 +30,9 @@
                                 Html.DevExpress().Button(
                                     register =>
                                     {
-                                        register.Name = "btnShowRegisterModal";
+                                        register.Name = "btnShowRegister";
                                         register.Text = "Register";
-                                        register.ClientSideEvents.Click = "function(s, e) { modRegister.Show(); }";
+                                        register.ClientSideEvents.Click = "function(s, e) { openWindow('Register'); }";
                                     }).Render();
                             });
 
@@ -48,9 +48,9 @@
                                 Html.DevExpress().Button(
                                     settings =>
                                     {
-                                        settings.Name = "btnShowLoginModal";
+                                        settings.Name = "btnShowLogin";
                                         settings.Text = "Login";
-                                        settings.ClientSideEvents.Click = "function(s, e) { modLogin.Show(); }";
+                                        settings.ClientSideEvents.Click = "function(s, e) { openWindow('Login'); }";
                                     }
                                 ).Render();
                             });
@@ -65,55 +65,46 @@
 
     @Html.DevExpress().PopupControl(settings =>
     {
-        settings.Name = "modLogin";
-        settings.Width = 320;
+        settings.Name = "popupControl";
+        settings.Width = 400;
         settings.AllowDragging = true;
         settings.CloseAction = CloseAction.CloseButton;
         settings.CloseOnEscape = true;
-        settings.PopupAnimationType = AnimationType.None;
+        settings.PopupAnimationType = AnimationType.Fade;
         settings.ShowHeader = false;
         settings.Modal = true;
         settings.AutoUpdatePosition = true;
         settings.PopupHorizontalAlign = PopupHorizontalAlign.WindowCenter;
         settings.PopupVerticalAlign = PopupVerticalAlign.WindowCenter;
-        settings.SetContent(() =>
-        {
-            Html.RenderPartial("~/Views/Account/_loginPartial.cshtml");
-        }); //End of setContent
         settings.ClientSideEvents.CloseUp = "function(s, e){ ASPxClientEdit.ClearEditorsInContainer(null, '', true); }";
     }).GetHtml()
-
-    @Html.DevExpress().PopupControl(settings =>
-{
-    settings.Name = "modRegister";
-    settings.Width = 400;
-    settings.AllowDragging = true;
-    settings.CloseAction = CloseAction.CloseButton;
-    settings.CloseOnEscape = true;
-    settings.PopupAnimationType = AnimationType.None;
-    settings.ShowHeader = false;
-    settings.Modal = true;
-    settings.AutoUpdatePosition = true;
-    settings.PopupHorizontalAlign = PopupHorizontalAlign.WindowCenter;
-    settings.PopupVerticalAlign = PopupVerticalAlign.WindowCenter;
-    settings.SetContent(() =>
-    {
-        Html.RenderPartial("~/Views/Account/_registerPartial.cshtml");
-        //ViewContext.Writer.Write("Test");
-        //Html.RenderAction("Register");
-
-    });
-    settings.ClientSideEvents.CloseUp = "function(s, e){ ASPxClientEdit.ClearEditorsInContainer(null, '', true); }";
-}).GetHtml()
 
 
 </div>
 
 <script type="text/javascript">
-    function redirectToRegister() {
-        console.log('made it here!');
-        var url = '@Url.Action("Register", "Account")';
-        // do something with the url client side variable, for example redirect
-        window.location.href = url;
+        function redirectToRegister() {
+            console.log('made it here!');
+            var url = '@Url.Action("Register", "Account")';
+            // do something with the url client side variable, for example redirect
+            window.location.href = url;
+        }
+    //debugger;
+    function openWindow(action) {
+        $.ajax({
+            type: "POST",
+            url: "@Url.Action("LoginScreenPopup", "Account")",
+            data: { buttonName: action },
+            traditional: true,
+            success: function (response) {
+                popupControl.SetContentHtml(response);
+                MVCxClientUtils.FinalizeCallback();
+            },
+            error: function (XMLHttpRequest, textStatus, errorThrown) {
+                alert('oops, something bad happened');
+            }
+        });
+        window['popupControl'].Show();
     }
+
 </script>

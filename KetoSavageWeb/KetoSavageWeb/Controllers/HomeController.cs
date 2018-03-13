@@ -24,6 +24,7 @@ namespace KetoSavageWeb.Controllers
         //}
     
     }
+
 }
 
 public enum HeaderViewRenderMode { Full, Title }

@@ -15,7 +15,7 @@ namespace KetoSavageWeb.Models
         public int ProgramUserId { get; set; }
         public virtual ApplicationUser ProgramUser { get; set; }
         public int MasterProgramId { get; set; }
-        public virtual ProgramModels MasterProgram { get; set; }
+        public virtual ProgramTemplate MasterProgram { get; set; }
         public int? CoachUserId { get; set; }
         public virtual ApplicationUser CoachUser { get; set; }
 

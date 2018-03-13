@@ -133,13 +133,13 @@ namespace KetoSavageWeb.Controllers
                 // Attempt to register the user
                 var user = new ApplicationUser
                 {
-                    UserName = model.regUserName
-                    , Email = model.regEmail
-                    , FirstName = model.regFirstName
-                    , LastName = model.regLastName
+                    UserName = model.UserName
+                    , Email = model.Email
+                    , FirstName = model.FirstName
+                    , LastName = model.LastName
 
                 };
-                var result = await UserManager.CreateAsync(user, model.regPassword);
+                var result = await UserManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)
                 {
                     if (model.SelectedRoleId != null)

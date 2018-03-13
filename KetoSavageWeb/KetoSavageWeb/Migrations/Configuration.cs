@@ -73,10 +73,26 @@ namespace KetoSavageWeb.Migrations
                 {
                     userMgr.AddToRole(defaultCoach.Id, "Coach");
                 }
-
-                var cutProgram = new ProgramModels
+                var cutGoal = new ProgramGoals
                 {
-                    programGoal = "Cut",
+                    Name = "Cut",
+                    Description = "Standard cut"
+                };
+                var buildGoal = new ProgramGoals
+                {
+                    Name = "Build",
+                    Description = "Standard bulking program"
+                };
+                var competitionPrep = new ProgramGoals
+                {
+                    Name = "CompPrep",
+                    Description = "Competition Prep"
+                };
+                
+
+                var cutProgram = new ProgramTemplate
+                {
+                    goals = cutGoal,
                     programDescription = "Reduce bodyfat",
                     CreatedBy = "Seed Method",
                     LastModifiedBy = "Seed Method"
@@ -84,14 +100,22 @@ namespace KetoSavageWeb.Migrations
                 };
                 context.Programs.AddOrUpdate(cutProgram);
 
-                var buildProgram = new ProgramModels
+                var buildProgram = new ProgramTemplate
                 {
-                    programGoal = "Build",
+                    goals = buildGoal,
                     programDescription = "Build Muscle",
                     CreatedBy = "Seed Method",
                     LastModifiedBy = "Seed Method"
                 };
                 context.Programs.AddOrUpdate(buildProgram);
+
+                var compProgram = new ProgramTemplate
+                {
+                    goals = competitionPrep,
+                    programDescription = "Competition Prep"
+                };
+
+                context.Programs.AddOrUpdate(compProgram);
 
                 context.SaveChanges();
             }

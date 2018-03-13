@@ -69,10 +69,10 @@ namespace KetoSavageWeb.Controllers
                 .Select(x => new RegisterModel()
                 {
                     Id = x.Id,
-                    regUserName = x.UserName,
-                    regFirstName = x.FirstName,
-                    regLastName = x.LastName,
-                    regEmail = x.Email,
+                    UserName = x.UserName,
+                    FirstName = x.FirstName,
+                    LastName = x.LastName,
+                    Email = x.Email,
                     Roles = string.Join(", ", x.Roles),
                     SelectedRoleId = x.Roles.First()
                 });
@@ -93,13 +93,13 @@ namespace KetoSavageWeb.Controllers
             {
                 var newUser = new ApplicationUser
                 {
-                    UserName = item.regUserName,
-                    FirstName = item.regFirstName,
-                    LastName = item.regLastName,
-                    Email = item.regEmail
+                    UserName = item.UserName,
+                    FirstName = item.FirstName,
+                    LastName = item.LastName,
+                    Email = item.Email
 
                 };
-                var result = await UserManager.CreateAsync(newUser, item.regPassword);
+                var result = await UserManager.CreateAsync(newUser, item.Password);
                 if (result.Succeeded)
                 {
                     await UserManager.AddToRoleAsync(newUser.Id, item.SelectedRoleId);
