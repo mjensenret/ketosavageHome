@@ -93,29 +93,34 @@ namespace KetoSavageWeb.Migrations
                 var cutProgram = new ProgramTemplate
                 {
                     goals = cutGoal,
+                    Name = "Cut",
                     programDescription = "Reduce bodyfat",
                     CreatedBy = "Seed Method",
                     LastModifiedBy = "Seed Method"
 
                 };
-                context.Programs.AddOrUpdate(cutProgram);
+                context.Programs.AddOrUpdate(p => new { p.programDescription }, cutProgram);
 
                 var buildProgram = new ProgramTemplate
                 {
                     goals = buildGoal,
+                    Name = "Build",
                     programDescription = "Build Muscle",
                     CreatedBy = "Seed Method",
                     LastModifiedBy = "Seed Method"
                 };
-                context.Programs.AddOrUpdate(buildProgram);
+                context.Programs.AddOrUpdate(p => new { p.programDescription }, buildProgram);
 
                 var compProgram = new ProgramTemplate
                 {
                     goals = competitionPrep,
-                    programDescription = "Competition Prep"
+                    Name = "CompetitionPrep",
+                    programDescription = "Competition Prep",
+                    CreatedBy = "Seed Method",
+                    LastModifiedBy = "Seed Method"
                 };
 
-                context.Programs.AddOrUpdate(compProgram);
+                context.Programs.AddOrUpdate(p => new { p.programDescription }, compProgram);
 
                 context.SaveChanges();
             }

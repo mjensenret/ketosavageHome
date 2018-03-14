@@ -520,6 +520,7 @@
     <Content Include="Views\ClientPrograms\Index.cshtml" />
     <Content Include="Views\ClientPrograms\_clientGridViewPartial.cshtml" />
     <Content Include="Views\Account\_registerPartial.cshtml" />
+    <Content Include="Views\Programs\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -541,6 +542,7 @@
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\ClientProgramsController.cs" />
     <Compile Include="Controllers\ManageUsersController.cs" />
+    <Compile Include="Controllers\ProgramsController.cs" />
     <Compile Include="Controllers\UsersAdminController.cs" />
     <Compile Include="Domain\Infrastructure\EfEntityContext.cs" />
     <Compile Include="Domain\Infrastructure\IEntityContext.cs" />
@@ -566,6 +568,10 @@
     <Compile Include="Migrations\201803132321324_RenameProgramTemplate.Designer.cs">
       <DependentUpon>201803132321324_RenameProgramTemplate.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201803140313351_AddingNameToProgram.cs" />
+    <Compile Include="Migrations\201803140313351_AddingNameToProgram.Designer.cs">
+      <DependentUpon>201803140313351_AddingNameToProgram.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Abstract\UserManaged.cs" />
     <Compile Include="Models\AccountModels.cs" />
@@ -589,10 +595,10 @@
     <Compile Include="Startup.cs" />
     <Compile Include="Util\Controllers\UserManagedController.cs" />
     <Compile Include="Util\Interfaces\IDataLayer.cs" />
+    <Compile Include="ViewModels\ProgramsViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Controllers\Infrastructure\" />
-    <Folder Include="Views\Programs\" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201803111631012_Initial.resx">
@@ -603,6 +609,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201803132321324_RenameProgramTemplate.resx">
       <DependentUpon>201803132321324_RenameProgramTemplate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201803140313351_AddingNameToProgram.resx">
+      <DependentUpon>201803140313351_AddingNameToProgram.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

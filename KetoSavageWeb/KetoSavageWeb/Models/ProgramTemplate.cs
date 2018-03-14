@@ -11,8 +11,8 @@ namespace KetoSavageWeb.Models
 {
     public class ProgramTemplate : UserManaged
     {
+        public string Name { get; set; }
         public string programDescription { get; set; }
-
 
         public virtual ProgramGoals goals { get; set; }
         public ICollection<UserPrograms> UserPrograms { get; set; }
