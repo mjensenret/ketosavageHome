@@ -521,6 +521,7 @@
     <Content Include="Views\ClientPrograms\_clientGridViewPartial.cshtml" />
     <Content Include="Views\Account\_registerPartial.cshtml" />
     <Content Include="Views\Programs\Index.cshtml" />
+    <Content Include="Views\Programs\_programGridViewPartial.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

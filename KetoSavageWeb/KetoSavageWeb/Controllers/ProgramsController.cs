@@ -1,8 +1,10 @@
-﻿using KetoSavageWeb.Repositories;
+﻿using KetoSavageWeb.Models;
+using KetoSavageWeb.Repositories;
 using KetoSavageWeb.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
 
@@ -19,6 +21,11 @@ namespace KetoSavageWeb.Controllers
         // GET: Programs
         public ActionResult Index()
         {
+            return View();
+        }
+
+        public ActionResult programGridView()
+        {
             var programQuery = programRepository.GetActive;
             var items = (programQuery
                 .OrderBy(x => x.Name)
@@ -31,7 +38,7 @@ namespace KetoSavageWeb.Controllers
                     x.CreatedBy,
                     x.LastModified,
                     x.LastModifiedBy,
-                    x.goals
+                    goalName = x.goals.Name
                 })
                 .ToList()
                 .Select(x => new ProgramListViewModel()
@@ -39,12 +46,35 @@ namespace KetoSavageWeb.Controllers
                     Id = x.Id,
                     Name = x.Name,
                     Description = x.programDescription,
-                    ProgramGoal = x.goals.ToString()
+                    ProgramGoal = x.goalName
 
                 }
                 ));
             var model = items.ToList();
-            return View();
+            return PartialView("_programGridViewPartial", model);
+        }
+
+        public async Task<ActionResult> programGridAdd(ProgramEditViewModel item)
+        {
+            if (ModelState.IsValid)
+            {
+                var newProgram = new ProgramTemplate
+                {
+                    Name = item.Name,
+                    programDescription = item.Description,
+                    goals = item.Goal
+                };
+
+                var result = await programRepository.CreateAsync(newProgram);
+                return RedirectToAction("Index");
+            }
+            else
+            {
+                RedirectToAction("programGridView");
+            };
+            RedirectToAction("programGridView");
         }
     }
+
+
 }
