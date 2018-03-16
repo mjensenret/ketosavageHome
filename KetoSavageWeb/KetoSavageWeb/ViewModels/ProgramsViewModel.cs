@@ -17,6 +17,7 @@ namespace KetoSavageWeb.ViewModels
         public DateTime LastModified { get; set; }
         public string LastModifiedBy { get; set; }
         public string ProgramGoal { get; set; }
+        public string SelectedGoalId { get; set; }
     }
 
     public class ProgramEditViewModel
@@ -29,6 +30,7 @@ namespace KetoSavageWeb.ViewModels
         public DateTime LastModified { get; set; }
         public string LastModifiedBy { get; set; }
         public virtual ProgramGoals Goal { get; internal set; }
+        public string SelectGoalId { get; set; }
         public SelectList ProgramGoal { get; set; }
     }
 }

@@ -35,6 +35,7 @@ namespace KetoSavageWeb.Models
         //public DbSet<Role> Roles { get; set; }
         public DbSet<Role> Roles { get; set; }
         public DbSet<ProgramTemplate> Programs { get; set; }
+        public DbSet<ProgramGoals> ProgramGoals { get; set; }
         public DbSet<UserPrograms> UserPrograms { get; set; }
 
         public bool RequireUniqueEmail { get; set; }

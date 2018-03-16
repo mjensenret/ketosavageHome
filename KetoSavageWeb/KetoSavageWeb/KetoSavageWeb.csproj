@@ -557,6 +557,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Infrastructure\UserManagedExtensions.cs" />
     <Compile Include="Migrations\201803111631012_Initial.cs" />
     <Compile Include="Migrations\201803111631012_Initial.Designer.cs">
       <DependentUpon>201803111631012_Initial.cs</DependentUpon>

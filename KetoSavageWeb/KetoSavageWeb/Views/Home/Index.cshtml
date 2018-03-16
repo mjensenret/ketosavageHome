@@ -60,10 +60,14 @@
 
 
             }
+            else
+            {
+                <div>
+                    Dashboard section here.
+                </div>
+            }
         </div>
-        <div>
-            Dashboard section here.
-        </div>
+
     </center>
 
     @Html.DevExpress().PopupControl(settings =>
@@ -86,12 +90,12 @@
 </div>
 
 <script type="text/javascript">
-        function redirectToRegister() {
-            console.log('made it here!');
-            var url = '@Url.Action("Register", "Account")';
-            // do something with the url client side variable, for example redirect
-            window.location.href = url;
-        }
+    function redirectToRegister() {
+        console.log('made it here!');
+        var url = '@Url.Action("Register", "Account")';
+        // do something with the url client side variable, for example redirect
+        window.location.href = url;
+    }
     //debugger;
     function openWindow(action) {
         $.ajax({

@@ -41,8 +41,20 @@
         {
             c.FieldName = "ProgramGoal";
             c.VisibleIndex = 3;
+            c.EditFormSettings.Visible = DefaultBoolean.False;
         });
+        settings.Columns.Add(g =>
+        {
+            g.Visible = false;
+            g.VisibleIndex = 4;
+            g.FieldName = "SelectedGoalId";
+            g.Caption = "Goal";
+            g.EditFormSettings.Visible = DefaultBoolean.True;
+            g.ColumnType = MVCxGridViewColumnType.ComboBox;
+            var combo = g.PropertiesEdit as ComboBoxProperties;
+            combo.DataSource = ViewBag.Goals;
 
+        });
 
 
 

@@ -41,5 +41,11 @@ namespace KetoSavageWeb.Repositories
         //    }
 
         //}
+
+        public List<ProgramGoals> getGoals()
+        {
+            var goals = entityContext.Get.Select(m => m.goals).ToList();
+            return goals;
+        }
     }
 }
