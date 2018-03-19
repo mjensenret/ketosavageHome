@@ -11,41 +11,24 @@ namespace KetoSavageWeb.Repositories
 {
     public class ProgramRepository : UserManagedRepository<ProgramTemplate>
     {
+        private KSDataContext _context = new KSDataContext();
         public ProgramRepository(IEntityContext<ProgramTemplate> entityContext) : base(entityContext)
         {
         }
 
-        //public void CreateDefaulClientProgram(string clientName, string coachName)
-        //{
-        //    //var manager = ApplicationUserManager.Create(new KSDataContext());
-        //    var updContext = new KSDataContext();
-            
-        //    var client = updContext.Users.Where(x => x.UserName == clientName).First();
-        //    var coach = updContext.Users.Where(y => y.UserName == coachName).First();
-
-        //    CoachedPrograms program = new CoachedPrograms
-        //    {
-        //        CoachUser = coach,
-        //        ProgramUser = client,
-        //        startDate = DateTime.Now,
-        //        renewalDate = DateTime.Now.AddDays(30)
-        //    };
-        //    updContext.Programs.Add(program);
-        //    try
-        //    {
-        //        updContext.SaveChanges();
-        //    }
-        //    catch (Exception e)
-        //    {
-        //        throw e;
-        //    }
-
-        //}
-
-        public List<ProgramGoals> getGoals()
+        public IEnumerable<ProgramGoals> getGoals()
         {
-            var goals = entityContext.Get.Select(m => m.goals).ToList();
+            var goals = _context.ProgramGoals;
             return goals;
         }
+
+        public ProgramGoals getGoalById(int goalId)
+        {
+            var selectedGoal = _context.ProgramGoals.Where(g => g.Id == goalId).FirstOrDefault();
+            return selectedGoal;
+
+        }
+
+
     }
 }

@@ -1,0 +1,100 @@
+﻿
+@{ 
+    var grid = Html.DevExpress().GridView(userList =>
+    {
+        userList.Name = "UserList";
+        userList.CallbackRouteValues = new { Controller = "UserPrograms", Action = "UserProgramList" };
+        //userList.SettingsEditing.AddNewRowRouteValues = new { Controller = "UserPrograms", Action = "userProgramGridAdd" };
+        userList.SettingsEditing.UpdateRowRouteValues = new { Controller = "UserPrograms", Action = "userProgramGridEdit" };
+        userList.Styles.AlternatingRow.Enabled = DefaultBoolean.True;
+        userList.SettingsBehavior.AllowFixedGroups = true;
+        userList.Settings.ShowGroupPanel = true;
+        userList.SettingsBehavior.AllowFocusedRow = true;
+        userList.SettingsEditing.Mode = GridViewEditingMode.EditFormAndDisplayRow;
+        userList.SettingsBehavior.ConfirmDelete = true;
+        userList.SettingsPager.FirstPageButton.Visible = true;
+        userList.SettingsPager.LastPageButton.Visible = true;
+        userList.SettingsPager.PageSizeItemSettings.Visible = true;
+        userList.SettingsPager.PageSizeItemSettings.Items = new string[] { "10", "20", "50" };
+
+        userList.CommandColumn.Visible = true;
+        userList.CommandColumn.ShowNewButtonInHeader = true;
+        userList.CommandColumn.ShowEditButton = true;
+
+        userList.KeyFieldName = "UserId";
+
+        userList.Columns.Add(c =>
+        {
+            c.FieldName = "UserId";
+            c.Visible = false;
+        });
+        userList.Columns.Add(c =>
+        {
+            c.FieldName = "UserName";
+            c.ReadOnly = true;
+        });
+        userList.Columns.Add(c =>
+        {
+            c.FieldName = "FullName";
+            c.Caption = "Name";
+            c.ReadOnly = true;
+        });
+        userList.Columns.Add(c =>
+        {
+            c.FieldName = "UserType";
+            c.Caption = "User Type";
+            c.ReadOnly = true;
+        });
+        userList.Columns.Add(c =>
+        {
+            c.FieldName = "ProgramName";
+            c.Caption = "Program";
+            c.EditFormSettings.Visible = DefaultBoolean.False;
+        });
+        userList.Columns.Add(g =>
+        {
+            g.Visible = false;
+            g.FieldName = "ProgramId";
+            g.Caption = "Program";
+            g.EditFormSettings.Visible = DefaultBoolean.True;
+            g.ColumnType = MVCxGridViewColumnType.ComboBox;
+            var combo = g.PropertiesEdit as ComboBoxProperties;
+            combo.DataSource = ViewBag.ProgramList;
+        });
+        userList.Columns.Add(c =>
+        {
+            c.FieldName = "currentProgramStartDate";
+            c.Caption = "Start Date";
+            c.ColumnType = MVCxGridViewColumnType.DateEdit;
+        });
+        userList.Columns.Add(c =>
+        {
+            c.FieldName = "currentProgramRenewalDate";
+            c.Caption = "Renewal Date";
+            c.ColumnType = MVCxGridViewColumnType.DateEdit;
+        });
+        userList.Columns.Add(c =>
+        {
+            c.FieldName = "currentProgramEndDate";
+            c.Caption = "End Date";
+            c.ColumnType = MVCxGridViewColumnType.DateEdit;
+        });
+        userList.Columns.Add(c =>
+        {
+            c.FieldName = "Notes";
+            c.Visible = false;
+            c.EditFormSettings.Visible = DefaultBoolean.True;
+        });
+        userList.Columns.Add(c =>
+        {
+            c.FieldName = "CoachId";
+            c.ColumnType = MVCxGridViewColumnType.ComboBox;
+            c.Visible = false;
+            c.Caption = "Coach";
+            c.EditFormSettings.Visible = DefaultBoolean.True;
+            var combo = c.PropertiesEdit as ComboBoxProperties;
+            combo.DataSource = ViewBag.CoachList;
+        });
+    });
+}
+@grid.Bind(Model).GetHtml()

@@ -10,14 +10,16 @@ using System.Web;
 using System.Web.Mvc;
 using KetoSavageWeb.Infrastructure;
 using System.Collections;
+using System.Data.Entity;
 
 namespace KetoSavageWeb.Controllers
 {
-    public class ProgramsController : KSBaseController
+    public class ProgramsController : KSUserManagedController<ProgramTemplate,ProgramRepository,ProgramEditViewModel>
     {
         private ProgramRepository programRepository;
 
         public ProgramsController(ProgramRepository pr)
+            : base(pr, x => x.Name)
         {
             programRepository = pr;
         }
@@ -27,11 +29,11 @@ namespace KetoSavageWeb.Controllers
             return View();
         }
 
-        public ActionResult programGridView()
+        public ActionResult programGridView(ProgramListViewModel model)
         {
-            
-            var programQuery = programRepository.GetActive;
-            var items = (programQuery
+            var query = model.ShowInactive ? this.programRepository.Get : this.programRepository.GetActive;
+
+            var items = (query
                 .OrderBy(x => x.Name)
                 .Select(x => new
                 {
@@ -42,39 +44,45 @@ namespace KetoSavageWeb.Controllers
                     x.CreatedBy,
                     x.LastModified,
                     x.LastModifiedBy,
-                    x.goals,
-                    GoalName = x.goals.Name
+                    Goal = x.Goal,
+                    GoalName = x.Goal.Name
                 })
                 .ToList()
-                .Select(x => new ProgramListViewModel()
+                .Select(x => new ProgramViewModel()
                 {
                     Id = x.Id,
                     Name = x.Name,
                     Description = x.programDescription,
-                    SelectedGoalId = Convert.ToString(x.goals),
-                    ProgramGoal = x.GoalName
+                    GoalName = x.Goal.Name,
+                    GoalId = x.Goal.Id
+
                 }
                 ));
 
-            //ViewBag.Goals = programRepository.GetAll.ToSelectList(
-            //    items.Pro
-            //    s => new SelectListData { Id = s.Id, Name = s.Name, IsActive = s.IsActive, IsDeleted = s.IsDeleted }
-            //);
-            ViewBag.Goals = new SelectList(programRepository.Get.ToList(), "Name", "Name");
-            var model = items.ToList();
+            model.Items = items;
+
+            ViewBag.Goals = new SelectList(programRepository.getGoals(), "Id", "Name");
 
             return PartialView("_programGridViewPartial", model);
         }
 
-        public async Task<ActionResult> programGridAdd(ProgramEditViewModel item)
+        public async Task<ActionResult> programGridAdd(ProgramViewModel item)
         {
             if (ModelState.IsValid)
             {
+                //var goal = programRepository.getGoalById(Convert.ToInt32(item.SelectedGoalId));
+                
                 var newProgram = new ProgramTemplate
                 {
                     Name = item.Name,
                     programDescription = item.Description,
-                    goals = item.Goal
+                    GoalId = item.GoalId,
+                    IsActive = true,
+                    IsDeleted = false,
+                    Created = DateTime.Now,
+                    LastModified = DateTime.Now,
+                    CreatedBy = CurrentUser.UserName,
+                    LastModifiedBy = CurrentUser.UserName
                 };
 
                 var result = await programRepository.CreateAsync(newProgram);
@@ -84,6 +92,49 @@ namespace KetoSavageWeb.Controllers
             {
                 return RedirectToAction("programGridView");
             };
+        }
+
+        public async Task<ActionResult> programGridEdit(ProgramViewModel model)
+        {
+            if (ModelState.IsValid)
+            {
+                var editProgram = await programRepository.FindAsync(model.Id);
+                if (editProgram == null)
+                {
+                    return HttpNotFound();
+                }
+
+                editProgram.Name = model.Name;
+                editProgram.programDescription = model.Description;
+                editProgram.LastModified = DateTime.Now;
+                editProgram.LastModifiedBy = CurrentUser.UserName;
+
+                try
+                {
+                    programRepository.Update(editProgram);
+                    return RedirectToAction("Index");
+                }
+                catch (Exception e)
+                {
+                    ModelState.AddModelError("", e.Message.ToString());
+                }
+                return RedirectToAction("Index");
+            }
+            ModelState.AddModelError("", "Something failed editing the program template!");
+            return RedirectToAction("Index");
+        }
+
+        protected override ProgramEditViewModel createViewModel(ProgramTemplate entity)
+        {
+            return new ProgramEditViewModel { Program = entity };
+        }
+
+        protected override void updateEntity(ProgramTemplate entity, ProgramEditViewModel model)
+        {
+            entity.Name = model.Name;
+            entity.programDescription = model.Description;
+            entity.GoalId = model.GoalId;
+            entity.IsActive = model.IsActive;
         }
 
         //protected override void updateEntity(ProgramTemplate entity, ProgramTemplate model)

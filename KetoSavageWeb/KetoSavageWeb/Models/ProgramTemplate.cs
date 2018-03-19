@@ -13,8 +13,8 @@ namespace KetoSavageWeb.Models
     {
         public string Name { get; set; }
         public string programDescription { get; set; }
-
-        public virtual ProgramGoals goals { get; set; }
+        public int GoalId { get; set; }
+        public virtual ProgramGoals Goal { get; set; }
         public ICollection<UserPrograms> UserPrograms { get; set; }
     }
 
@@ -23,6 +23,7 @@ namespace KetoSavageWeb.Models
         public int Id { get; set; }
         public string Name { get; set; }
         public string Description { get; set; }
+        public ICollection<ProgramTemplate> Programs { get; set; }
     }
 
 }

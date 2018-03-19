@@ -8,6 +8,7 @@ namespace KetoSavageWeb.Models
 {
     public class UserPrograms : UserManaged
     {
+        public string ProgramType { get; set; }
         public DateTime? StartDate { get; set; }
         public DateTime? EndDate { get; set; }
         public DateTime? RenewalDate { get; set; }

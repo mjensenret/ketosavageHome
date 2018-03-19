@@ -88,11 +88,17 @@ namespace KetoSavageWeb.Migrations
                     Name = "CompPrep",
                     Description = "Competition Prep"
                 };
+                var maintGoal = new ProgramGoals
+                {
+                    Name = "Maint",
+                    Description = "Maintenance Goal"
+
+                };
                 
 
                 var cutProgram = new ProgramTemplate
                 {
-                    goals = cutGoal,
+                    Goal = cutGoal,
                     Name = "Cut",
                     programDescription = "Reduce bodyfat",
                     CreatedBy = "Seed Method",
@@ -103,7 +109,7 @@ namespace KetoSavageWeb.Migrations
 
                 var buildProgram = new ProgramTemplate
                 {
-                    goals = buildGoal,
+                    Goal = buildGoal,
                     Name = "Build",
                     programDescription = "Build Muscle",
                     CreatedBy = "Seed Method",
@@ -113,7 +119,7 @@ namespace KetoSavageWeb.Migrations
 
                 var compProgram = new ProgramTemplate
                 {
-                    goals = competitionPrep,
+                    Goal = competitionPrep,
                     Name = "CompetitionPrep",
                     programDescription = "Competition Prep",
                     CreatedBy = "Seed Method",
@@ -121,6 +127,17 @@ namespace KetoSavageWeb.Migrations
                 };
 
                 context.Programs.AddOrUpdate(p => new { p.programDescription }, compProgram);
+
+                var maintProgram = new ProgramTemplate
+                {
+                    Goal = maintGoal,
+                    Name = "Maintenance",
+                    programDescription = "Maintenance Program",
+                    CreatedBy = "Seed Method",
+                    LastModifiedBy = "Seed Method"
+                };
+
+                context.Programs.AddOrUpdate(p => new { p.programDescription }, maintProgram);
 
                 context.SaveChanges();
             }

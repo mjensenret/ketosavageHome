@@ -517,8 +517,8 @@
     <Content Include="Views\ManageUsers\_GridViewPartial.cshtml" />
     <Content Include="Views\Shared\_menuPartial.cshtml" />
     <Content Include="Views\Account\_loginPartial.cshtml" />
-    <Content Include="Views\ClientPrograms\Index.cshtml" />
-    <Content Include="Views\ClientPrograms\_clientGridViewPartial.cshtml" />
+    <Content Include="Views\UserPrograms\Index.cshtml" />
+    <Content Include="Views\UserPrograms\_userGridViewPartial.cshtml" />
     <Content Include="Views\Account\_registerPartial.cshtml" />
     <Content Include="Views\Programs\Index.cshtml" />
     <Content Include="Views\Programs\_programGridViewPartial.cshtml" />
@@ -541,7 +541,7 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
-    <Compile Include="Controllers\ClientProgramsController.cs" />
+    <Compile Include="Controllers\UserProgramsController.cs" />
     <Compile Include="Controllers\ManageUsersController.cs" />
     <Compile Include="Controllers\ProgramsController.cs" />
     <Compile Include="Controllers\UsersAdminController.cs" />
@@ -557,6 +557,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Infrastructure\ListModel.cs" />
     <Compile Include="Infrastructure\UserManagedExtensions.cs" />
     <Compile Include="Migrations\201803111631012_Initial.cs" />
     <Compile Include="Migrations\201803111631012_Initial.Designer.cs">
@@ -574,12 +575,25 @@
     <Compile Include="Migrations\201803140313351_AddingNameToProgram.Designer.cs">
       <DependentUpon>201803140313351_AddingNameToProgram.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201803171601416_updateProgramTemplate.cs" />
+    <Compile Include="Migrations\201803171601416_updateProgramTemplate.Designer.cs">
+      <DependentUpon>201803171601416_updateProgramTemplate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201803172200137_ModifyingGoals.cs" />
+    <Compile Include="Migrations\201803172200137_ModifyingGoals.Designer.cs">
+      <DependentUpon>201803172200137_ModifyingGoals.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201803181613488_AddingProgramType.cs" />
+    <Compile Include="Migrations\201803181613488_AddingProgramType.Designer.cs">
+      <DependentUpon>201803181613488_AddingProgramType.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Abstract\UserManaged.cs" />
     <Compile Include="Models\AccountModels.cs" />
     <Compile Include="Models\ApplicationUser.cs" />
     <Compile Include="Models\UserPrograms.cs" />
-    <Compile Include="ViewModels\ClientProgramViewModel.cs" />
+    <Compile Include="Repositories\UserProgramRepository.cs" />
+    <Compile Include="ViewModels\UserProgramViewModel.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\KSDataContext.cs" />
     <Compile Include="ViewModels\ManageViewModels.cs" />
@@ -614,6 +628,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201803140313351_AddingNameToProgram.resx">
       <DependentUpon>201803140313351_AddingNameToProgram.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201803171601416_updateProgramTemplate.resx">
+      <DependentUpon>201803171601416_updateProgramTemplate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201803172200137_ModifyingGoals.resx">
+      <DependentUpon>201803172200137_ModifyingGoals.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201803181613488_AddingProgramType.resx">
+      <DependentUpon>201803181613488_AddingProgramType.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

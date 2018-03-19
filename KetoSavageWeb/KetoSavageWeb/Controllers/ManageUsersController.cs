@@ -18,25 +18,7 @@ namespace KetoSavageWeb.Controllers
         private RoleRepository roleRepository;
 
         ApplicationUserManager _userManager;
-        //ApplicationRoleManager _roleManager;
-        //public ApplicationUserManager UserManager
-        //{
-        //    get
-        //    {
-        //        return _userManager ?? HttpContext.GetOwinContext().GetUserManager<ApplicationUserManager>();
-        //    }
-        //    private set
-        //    {
-        //        _userManager = value;
-        //    }
-        //}
 
-
-
-        //public ManageUsersController()
-        //{
-
-        //}
         public ManageUsersController(ProgramRepository pr, RoleRepository rr)
         {
             programRepository = pr;
@@ -106,24 +88,6 @@ namespace KetoSavageWeb.Controllers
                     if (item.SelectedRoleId == "Client")
                     {
                         var defaultCoach = await UserManager.FindByNameAsync("RobertSikes");
-
-                        //programRepository.CreateDefaulClientProgram(newUser.UserName, defaultCoach.UserName);
-
-                        //var coachedProgram = new CoachedPrograms();
-                        //coachedProgram.CoachUser = defaultCoach;
-                        //coachedProgram.ProgramUser = newUser;
-                        //coachedProgram.startDate = DateTime.Now;
-                        //coachedProgram.renewalDate = DateTime.Now.AddDays(30);
-
-                        //programRepository.Create(coachedProgram, "Test");
-
-
-                        //var clientProgram = new CoachedPrograms
-                        //{
-                        //    ProgramUser = newUser,
-                        //    startDate = DateTime.Now,
-                        //    CoachUserId = defaultCoach.Id
-                        //};
 
                     }
                     return RedirectToAction("Index");
