@@ -66,7 +66,8 @@ namespace KetoSavageWeb.Controllers
                     CoachName = x.UserPrograms.Select(y => y.CoachUser.FirstName).FirstOrDefault(),
                     Notes = x.UserPrograms.Select(y => y.Notes).FirstOrDefault(),
                     UserId = x.UserId,
-                    ProgramId = x.UserPrograms.Select(y => y.MasterProgramId).FirstOrDefault()
+                    ProgramId = x.UserPrograms.Select(y => y.MasterProgramId).FirstOrDefault(),
+                    CoachId = x.UserPrograms.Select(y => y.CoachUserId).FirstOrDefault()
                     
                 }
                 ));
@@ -82,7 +83,7 @@ namespace KetoSavageWeb.Controllers
             {
                 var newUserProgram = new UserPrograms
                 {
-                    ProgramType = model.ProgramType,
+                    ProgramType = model.UserType,
                     StartDate = model.currentProgramStartDate,
                     EndDate = model.currentProgramEndDate,
                     RenewalDate = model.currentProgramRenewalDate,
@@ -111,7 +112,7 @@ namespace KetoSavageWeb.Controllers
                 {
                     newOrModify = new UserPrograms()
                     {
-                        ProgramType = model.ProgramType,
+                        ProgramType = model.UserType,
                         StartDate = model.currentProgramStartDate,
                         RenewalDate = model.currentProgramRenewalDate,
                         EndDate = model.currentProgramEndDate,
@@ -133,6 +134,8 @@ namespace KetoSavageWeb.Controllers
                     newOrModify.EndDate = model.currentProgramEndDate;
                     newOrModify.RenewalDate = model.currentProgramRenewalDate;
                     newOrModify.MasterProgramId = model.ProgramId;
+                    newOrModify.CoachUserId = model.CoachId;
+                    newOrModify.Notes = model.Notes;
                     newOrModify.LastModified = DateTime.Now;
                     newOrModify.LastModifiedBy = CurrentUser.UserName;
 
