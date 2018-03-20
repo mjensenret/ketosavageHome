@@ -148,5 +148,11 @@ namespace KetoSavageWeb.Controllers
             return RedirectToAction("Index");
         }
 
+        [HttpPost]
+        public PartialViewResult UserProgramDetails(string _userId)
+        {
+            return PartialView("_userProgramDetails", null);
+        }
+
     }
 }

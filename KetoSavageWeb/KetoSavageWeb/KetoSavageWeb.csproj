@@ -307,6 +307,7 @@
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\JSCustom.js" />
     <Content Include="Scripts\knockout-3.3.0.debug.js" />
     <Content Include="Scripts\knockout-3.3.0.js" />
     <Content Include="packages.config" />
@@ -522,6 +523,7 @@
     <Content Include="Views\Account\_registerPartial.cshtml" />
     <Content Include="Views\Programs\Index.cshtml" />
     <Content Include="Views\Programs\_programGridViewPartial.cshtml" />
+    <Content Include="Views\UserPrograms\_userProgramDetails.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

@@ -1,0 +1,11 @@
+﻿<div class="center">
+    Possibly a detailed popup so that the coach can modify users?
+    @Html.DevExpress().GridView(settings =>
+    {
+        settings.Name = "userDetailGrid";
+        settings.CallbackRouteValues = new { Controller = "UserPrograms", Action = "UserProgramDetails" };
+        settings.ClientSideEvents.BeginCallback = "OnDetailGridBeginCallback";
+        settings.ClientSideEvents.EndCallback = "OnDetailGridEndCallback";
+
+    }).Bind(Model).GetHtml()
+</div>

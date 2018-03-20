@@ -4,3 +4,15 @@
 }
 
 @Html.Action("UserProgramList")
+
+@Html.DevExpress().PopupControl(settings =>
+{
+    settings.Name = "UserProgramDetails";
+    settings.ShowMaximizeButton = true;
+    settings.Width = Unit.Pixel(800);
+    settings.Height = Unit.Percentage(50);
+    settings.SetContent(() =>
+    {
+        Html.RenderPartial("_userProgramDetails", null);
+    });
+}).GetHtml()

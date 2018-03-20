@@ -93,12 +93,45 @@ namespace KetoSavageWeb.Controllers
                     return RedirectToAction("Index");
                 }
                 ViewBag.ErrorMessage = result.Errors.First();
+                ViewData["EditError"] = result.Errors.First();
             }
             else
             {
                 ViewData["EditError"] = "Please correct all errors";
             }
-            return RedirectToAction("GridViewPartial");
+
+            //TODO: Testing theory about the errors.  Trying to resolve this.
+            var userQuery = UserManager.Users.Where(x => x.IsActive == true).Include(r => r.Roles);
+            var items = (userQuery
+                .OrderBy(x => x.UserName)
+                .Select(x => new
+                {
+                    x.Id,
+                    x.UserName,
+                    x.FirstName,
+                    x.LastName,
+                    x.Email,
+                    Roles = x.Roles.Select(y => y.Role.Name),
+                    x.IsActive
+                })
+                .ToList())
+                .Select(x => new RegisterModel()
+                {
+                    Id = x.Id,
+                    UserName = x.UserName,
+                    FirstName = x.FirstName,
+                    LastName = x.LastName,
+                    Email = x.Email,
+                    Roles = string.Join(", ", x.Roles),
+                    SelectedRoleId = x.Roles.First()
+                });
+
+            var model = items.ToList();
+            ViewBag.RoleId = new SelectList(roleRepository.Get.ToList(), "Name", "Name");
+
+
+
+            return PartialView("_GridViewPartial", model);
         }
 
         public async Task<ActionResult> GridViewPartialEdit(EditUserViewModel model)
@@ -133,7 +166,39 @@ namespace KetoSavageWeb.Controllers
 
             }
             ModelState.AddModelError("", "Something failed!");
-            return View(model);
+
+            //TODO: Testing theory about the errors.  Trying to resolve this.
+            var userQuery = UserManager.Users.Where(x => x.IsActive == true).Include(r => r.Roles);
+            var items = (userQuery
+                .OrderBy(x => x.UserName)
+                .Select(x => new
+                {
+                    x.Id,
+                    x.UserName,
+                    x.FirstName,
+                    x.LastName,
+                    x.Email,
+                    Roles = x.Roles.Select(y => y.Role.Name),
+                    x.IsActive
+                })
+                .ToList())
+                .Select(x => new RegisterModel()
+                {
+                    Id = x.Id,
+                    UserName = x.UserName,
+                    FirstName = x.FirstName,
+                    LastName = x.LastName,
+                    Email = x.Email,
+                    Roles = string.Join(", ", x.Roles),
+                    SelectedRoleId = x.Roles.First()
+                });
+
+            var users = items.ToList();
+            ViewBag.RoleId = new SelectList(roleRepository.Get.ToList(), "Name", "Name");
+
+            return PartialView("_GridViewPartial", users);
         }
+
+
     }
 }

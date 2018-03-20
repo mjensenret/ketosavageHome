@@ -27,7 +27,7 @@
         {
             c.FieldName = "Id";
             c.Visible = false;
-            
+
         });
         userList.Columns.Add(c =>
         {
@@ -111,6 +111,22 @@
             c.VisibleIndex = 10;
             var combo = c.PropertiesEdit as ComboBoxProperties;
             combo.DataSource = ViewBag.CoachList;
+        });
+        userList.Columns.Add(c =>
+        {
+            c.FieldName = "ProgramUserId";
+            c.Caption = "Macros";
+            c.SetDataItemTemplateContent(container =>
+            {
+                Html.DevExpress().HyperLink(hlSettings =>
+                {
+                    hlSettings.Name = string.Format("hl_{0}", (container as GridViewDataItemTemplateContainer).VisibleIndex);
+                    hlSettings.NavigateUrl = "javascript:void(0)";
+                    hlSettings.Properties.ClientSideEvents.Click = string.Format("function(s, e) {{ OnHyperLinkClick('{0}'); }}", (container as GridViewDataItemTemplateContainer).KeyValue.ToString());
+                    hlSettings.Properties.Text = "Edit Macros";
+                }).Render();
+            });
+
         });
     });
 }
