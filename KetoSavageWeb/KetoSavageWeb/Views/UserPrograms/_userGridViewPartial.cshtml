@@ -21,7 +21,7 @@
         userList.CommandColumn.ShowNewButtonInHeader = false;
         userList.CommandColumn.ShowEditButton = true;
 
-        userList.KeyFieldName = "Id";
+        userList.KeyFieldName = "UserId";
 
         userList.Columns.Add(c =>
         {
@@ -120,6 +120,13 @@
             {
                 Html.DevExpress().HyperLink(hlSettings =>
                 {
+                    //var visibleIndex = container.VisibleIndex;
+                    //var keyValue = container.KeyValue;
+                    ////var userName = DataBinder.Eval(container.DataItem, "UserName");
+
+                    //hlSettings.Name = "hl" + keyValue.ToString();
+                    //hlSettings.Properties.Text = "Edit Macros";
+                    //hlSettings.NavigateUrl = Url.Action("UserProgramDetails", "UserPrograms", new { _userId = keyValue });
                     hlSettings.Name = string.Format("hl_{0}", (container as GridViewDataItemTemplateContainer).VisibleIndex);
                     hlSettings.NavigateUrl = "javascript:void(0)";
                     hlSettings.Properties.ClientSideEvents.Click = string.Format("function(s, e) {{ OnHyperLinkClick('{0}'); }}", (container as GridViewDataItemTemplateContainer).KeyValue.ToString());
