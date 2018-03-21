@@ -151,7 +151,35 @@ namespace KetoSavageWeb.Controllers
         [HttpPost]
         public PartialViewResult UserProgramDetails(string _userId)
         {
-            return PartialView("_userProgramDetails", null);
+            var programId = Convert.ToInt32(_userId);
+
+            var userProgram = userProgramRepository.GetActive.Where(x => x.Id == programId);
+
+            var item = (userProgram
+                .Select(up => new
+                {
+                    up.Id,
+                    up.ProgramUserId,
+                    up.ProgramUser.FirstName,
+                    up.ProgramUser.LastName,
+
+                })
+                .ToList()
+                .Select(x => new UserProgramDetails()
+                {
+                    ProgramUserId = x.ProgramUserId,
+                    FullName = string.Join(" ", x.FirstName, x.LastName),
+                    Notes = "Test Notes",
+                    ProgramName = "ProgramName"
+
+                }
+                ));
+
+            var model = item;
+                        
+
+
+            return PartialView("_userProgramDetails", model);
         }
 
     }
