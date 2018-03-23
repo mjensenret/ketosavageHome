@@ -4,10 +4,11 @@
 }
 
 @Html.Action("UserProgramList")
+@*@Html.Partial("_userGridViewPartial")*@
 
 @Html.DevExpress().PopupControl(settings =>
 {
-    settings.Name = "UserProgramDetails";
+    settings.Name = "popup";
     settings.ShowMaximizeButton = true;
     settings.PopupHorizontalAlign = PopupHorizontalAlign.WindowCenter;
     settings.PopupVerticalAlign = PopupVerticalAlign.WindowCenter;

@@ -67,7 +67,8 @@ namespace KetoSavageWeb.Controllers
                     Notes = x.UserPrograms.Select(y => y.Notes).FirstOrDefault(),
                     UserId = x.UserId,
                     ProgramId = x.UserPrograms.Select(y => y.MasterProgramId).FirstOrDefault(),
-                    CoachId = x.UserPrograms.Select(y => y.CoachUserId).FirstOrDefault()
+                    CoachId = x.UserPrograms.Select(y => y.CoachUserId).FirstOrDefault(),
+                    ProgramUserId = x.UserId
                     
                 }
                 ));
@@ -129,6 +130,7 @@ namespace KetoSavageWeb.Controllers
                 }
                 else
                 {
+                    newOrModify.ProgramUserId = model.UserId;
                     newOrModify.ProgramType = model.ProgramType;
                     newOrModify.StartDate = model.currentProgramStartDate;
                     newOrModify.EndDate = model.currentProgramEndDate;
@@ -151,9 +153,9 @@ namespace KetoSavageWeb.Controllers
         [HttpPost]
         public PartialViewResult UserProgramDetails(string _userId)
         {
-            var programId = Convert.ToInt32(_userId);
+            var userId = Convert.ToInt32(_userId);
 
-            var userProgram = userProgramRepository.GetActive.Where(x => x.Id == programId);
+            var userProgram = userProgramRepository.GetActive.Where(x => x.ProgramUserId == userId);
 
             var item = (userProgram
                 .Select(up => new
@@ -169,7 +171,7 @@ namespace KetoSavageWeb.Controllers
                 {
                     ProgramUserId = x.ProgramUserId,
                     FullName = string.Join(" ", x.FirstName, x.LastName),
-                    Notes = "Test Notes",
+                    Notes = "Some information about their program progress and you can update macros here?",
                     ProgramName = "ProgramName"
 
                 }

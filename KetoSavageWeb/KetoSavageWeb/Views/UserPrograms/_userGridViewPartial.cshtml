@@ -116,6 +116,8 @@
         {
             c.FieldName = "ProgramUserId";
             c.Caption = "Macros";
+            c.Visible = true;
+            c.EditFormSettings.Visible = DefaultBoolean.False;
             c.SetDataItemTemplateContent(container =>
             {
                 Html.DevExpress().HyperLink(hlSettings =>
