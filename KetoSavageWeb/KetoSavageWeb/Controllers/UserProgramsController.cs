@@ -17,13 +17,15 @@ namespace KetoSavageWeb.Controllers
         private ProgramRepository program;
         private RoleRepository roleRepository;
         private UserProgramRepository userProgramRepository;
+        private DateRepository dateRepository;
 
 
-        public UserProgramsController(ProgramRepository pr, RoleRepository rr, UserProgramRepository up)
+        public UserProgramsController(ProgramRepository pr, RoleRepository rr, UserProgramRepository up, DateRepository dr)
         {
             this.program = pr;
             this.roleRepository = rr;
             this.userProgramRepository = up;
+            this.dateRepository = dr;
         }
         // GET: Programs
         public async Task<ActionResult> Index()
@@ -33,6 +35,7 @@ namespace KetoSavageWeb.Controllers
 
         public ActionResult UserProgramList()
         {
+            var weekOfYear = dateRepository.GetCurrentWeek(DateTime.Now.Date);
             var coachList = UserManager.Users.Where(x => x.IsActive == true).Where(x => x.Roles.Select(y => y.Role.Name).Contains("Coach")).ToList();
             var userQuery = UserManager.Users.Where(x => x.IsActive == true).Include(x => x.Roles).Include(y => y.UserPrograms);
             userQuery = userQuery.Where(x => x.Roles.Select(y => y.Role.Name).Contains("Client"));
@@ -78,7 +81,7 @@ namespace KetoSavageWeb.Controllers
             return PartialView("_userGridViewPartial", model);
         }
 
-        public ActionResult userProgramGridAdd(UserProgramViewModel model)
+        public ActionResult userProgramAdd(UserProgramViewModel model)
         {
             if (ModelState.IsValid)
             {
@@ -104,7 +107,7 @@ namespace KetoSavageWeb.Controllers
             return RedirectToAction("Index");
         }
 
-        public ActionResult userProgramGridEdit(UserProgramViewModel model)
+        public ActionResult userProgramEdit(UserProgramViewModel model)
         {
             if (ModelState.IsValid)
             {
@@ -150,6 +153,32 @@ namespace KetoSavageWeb.Controllers
             return RedirectToAction("Index");
         }
 
+        public async Task<ActionResult> ShowProgramDetails(string _userId)
+        {
+            var userId = Convert.ToInt32(_userId);
+
+            var userProgram = userProgramRepository.GetActive.Where(x => x.ProgramUserId == userId).FirstOrDefault();
+            var model = new UserProgramViewModel();
+            if (userProgram == null)
+            {
+                var user = await UserManager.FindByIdAsync(userId);
+                model.UserName = user.UserName;
+                model.ProgramUserId = user.Id;
+                ViewBag.IsNew = true;
+
+            }
+            else
+            {
+                model.UserName = userProgram.ProgramUser.UserName;
+                model.Notes = "Some notes about this program";
+                model.ProgramName = "TestProgramName";
+                ViewBag.IsNew = false;
+            };
+
+
+            return View("UserProgramDetails", model);
+        }
+
         [HttpPost]
         public PartialViewResult UserProgramDetails(string _userId)
         {
@@ -167,7 +196,7 @@ namespace KetoSavageWeb.Controllers
 
                 })
                 .ToList()
-                .Select(x => new UserProgramDetails()
+                .Select(x => new UserProgramViewModel()
                 {
                     ProgramUserId = x.ProgramUserId,
                     FullName = string.Join(" ", x.FirstName, x.LastName),

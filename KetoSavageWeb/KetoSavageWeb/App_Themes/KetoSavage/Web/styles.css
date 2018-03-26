@@ -1747,7 +1747,7 @@ html.dxIE.dxBrowserVersion-9 .dxlpLoadingPanelWithContent_KetoSavage .dxlp-loadi
 {
 	color: #FFFFFF;
 	background: #000000;
-	font-size: 1.27em;
+	font-size: 1.15em;
 	padding: 5px;
 	white-space: nowrap;
 	border-bottom-width: 0;
@@ -1819,7 +1819,7 @@ html.dxIE.dxBrowserVersion-9 .dxlpLoadingPanelWithContent_KetoSavage .dxlp-loadi
 {
 	color: #FFFFFF;
 	border-top: 1px solid #EAEAEA;
-	background: #F41111;
+	background: #000000;
 }
 .dxpcLite_KetoSavage .dxpc-footerContent,
 .dxdpLite_KetoSavage .dxpc-footerContent
@@ -5717,3 +5717,4 @@ noindex:-o-prefocus,
 {
     margin-top: -6px;
 }
+

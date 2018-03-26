@@ -129,9 +129,15 @@
                     //hlSettings.Name = "hl" + keyValue.ToString();
                     //hlSettings.Properties.Text = "Edit Macros";
                     //hlSettings.NavigateUrl = Url.Action("UserProgramDetails", "UserPrograms", new { _userId = keyValue });
+
+                    //hlSettings.Name = string.Format("hl_{0}", (container as GridViewDataItemTemplateContainer).VisibleIndex);
+                    //hlSettings.NavigateUrl = "javascript:void(0)";
+                    //hlSettings.Properties.ClientSideEvents.Click = string.Format("function(s, e) {{ OnHyperLinkClick('{0}'); }}", (container as GridViewDataItemTemplateContainer).KeyValue.ToString());
+                    //hlSettings.Properties.Text = "Edit Macros";
+
                     hlSettings.Name = string.Format("hl_{0}", (container as GridViewDataItemTemplateContainer).VisibleIndex);
                     hlSettings.NavigateUrl = "javascript:void(0)";
-                    hlSettings.Properties.ClientSideEvents.Click = string.Format("function(s, e) {{ OnHyperLinkClick('{0}'); }}", (container as GridViewDataItemTemplateContainer).KeyValue.ToString());
+                    hlSettings.Properties.ClientSideEvents.Click = string.Format("function(s, e) {{ ShowUserProgramDetails('{0}'); }}", Url.Action("ShowProgramDetails", "UserPrograms", new { _userId = (container as GridViewDataItemTemplateContainer).KeyValue.ToString() }));
                     hlSettings.Properties.Text = "Edit Macros";
                 }).Render();
             });

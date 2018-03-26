@@ -1,0 +1,51 @@
+﻿@model KetoSavageWeb.ViewModels.UserProgramViewModel
+@{
+    ViewBag.Title = "User Program Details";
+}
+
+@using (Html.BeginForm())
+{
+    Html.DevExpress().FormLayout(userProgram =>
+    {
+        userProgram.Name = "userForm";
+        userProgram.Width = Unit.Percentage(50);
+        userProgram.SettingsItemCaptions.Location = LayoutItemCaptionLocation.Top;
+
+        userProgram.Items.AddGroupItem(g =>
+        {
+            g.GroupBoxDecoration = GroupBoxDecoration.Box;
+            g.Caption = "User Details";
+            g.ColCount = 2;
+            g.Items.Add(m => m.UserName, i =>
+            {
+                i.NestedExtension().TextBox(s =>
+                {
+                    s.ShowModelErrors = true;
+                    s.Properties.ValidationSettings.Display = Display.Dynamic;
+                });
+            });
+            g.Items.Add(m => m.FullName, i =>
+            {
+                i.NestedExtension().TextBox(s =>
+                {
+                    s.ShowModelErrors = true;
+                    s.Properties.ValidationSettings.Display = Display.Dynamic;
+                });
+            });
+        });
+    }).Bind(Model).Render();
+
+    Html.DevExpress().FormLayout(newForm =>
+    {
+        newForm.Name = "PastData";
+        newForm.Width = Unit.Percentage(50);
+        newForm.Items.Add(i =>
+        {
+            i.SetNestedContent(() =>
+            {
+                ViewContext.Writer.Write("Does this actually work?");
+            });
+        });
+    }).Render();
+}
+

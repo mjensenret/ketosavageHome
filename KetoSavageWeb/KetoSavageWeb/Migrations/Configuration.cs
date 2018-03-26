@@ -33,6 +33,11 @@ namespace KetoSavageWeb.Migrations
             //      new Person { FullName = "Rowan Miller" }
             //    );
             //
+            //-----------------Uncomment to debug seed method----------------------------------//
+            //if (System.Diagnostics.Debugger.IsAttached == false)
+            //{
+            //    System.Diagnostics.Debugger.Launch();
+            //}
             try
             {
                 ApplicationUserManager userMgr = new ApplicationUserManager(new UserStore<ApplicationUser, Role, int, UserLogin, UserRole, UserClaim>(context));
@@ -73,32 +78,51 @@ namespace KetoSavageWeb.Migrations
                 {
                     userMgr.AddToRole(defaultCoach.Id, "Coach");
                 }
-                var cutGoal = new ProgramGoals
+                
+                var cutGoal = context.ProgramGoals.Where(cg => cg.Name == "Cut").First();
+                if (cutGoal == null)
                 {
-                    Name = "Cut",
-                    Description = "Standard cut"
-                };
-                var buildGoal = new ProgramGoals
+                    cutGoal = new ProgramGoals
+                    {
+                        Name = "Cut",
+                        Description = "Standard cut"
+                    };
+                }
+                var buildGoal = context.ProgramGoals.Where(cg => cg.Name == "Build").First();
+                if (buildGoal == null)
                 {
-                    Name = "Build",
-                    Description = "Standard bulking program"
-                };
-                var competitionPrep = new ProgramGoals
-                {
-                    Name = "CompPrep",
-                    Description = "Competition Prep"
-                };
-                var maintGoal = new ProgramGoals
-                {
-                    Name = "Maint",
-                    Description = "Maintenance Goal"
+                    buildGoal = new ProgramGoals
+                    {
+                        Name = "Build",
+                        Description = "Standard bulking program"
+                    };
+                }
 
-                };
+                var competitionPrep = context.ProgramGoals.Where(cg => cg.Name == "CompPrep").First();
+                if (competitionPrep == null)
+                {
+                    competitionPrep = new ProgramGoals
+                    {
+                        Name = "CompPrep",
+                        Description = "Competition Prep"
+                    };
+                }
+
+                var maintGoal = context.ProgramGoals.Where(cg => cg.Name == "Maint").First();
+                if (maintGoal == null)
+                {
+                    maintGoal = new ProgramGoals
+                    {
+                        Name = "Maint",
+                        Description = "Maintenance Goal"
+
+                    };
+                }
                 
 
                 var cutProgram = new ProgramTemplate
                 {
-                    Goal = cutGoal,
+                    GoalId = cutGoal.Id,
                     Name = "Cut",
                     programDescription = "Reduce bodyfat",
                     CreatedBy = "Seed Method",
@@ -109,7 +133,7 @@ namespace KetoSavageWeb.Migrations
 
                 var buildProgram = new ProgramTemplate
                 {
-                    Goal = buildGoal,
+                    GoalId = buildGoal.Id,
                     Name = "Build",
                     programDescription = "Build Muscle",
                     CreatedBy = "Seed Method",
@@ -119,7 +143,7 @@ namespace KetoSavageWeb.Migrations
 
                 var compProgram = new ProgramTemplate
                 {
-                    Goal = competitionPrep,
+                    GoalId = competitionPrep.Id,
                     Name = "CompetitionPrep",
                     programDescription = "Competition Prep",
                     CreatedBy = "Seed Method",
@@ -130,7 +154,7 @@ namespace KetoSavageWeb.Migrations
 
                 var maintProgram = new ProgramTemplate
                 {
-                    Goal = maintGoal,
+                    GoalId = maintGoal.Id,
                     Name = "Maintenance",
                     programDescription = "Maintenance Program",
                     CreatedBy = "Seed Method",

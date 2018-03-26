@@ -524,6 +524,9 @@
     <Content Include="Views\Programs\Index.cshtml" />
     <Content Include="Views\Programs\_programGridViewPartial.cshtml" />
     <Content Include="Views\UserPrograms\_userProgramDetails.cshtml" />
+    <Content Include="Views\UserPrograms\_userProgramHeader.cshtml" />
+    <Content Include="Views\ManageUsers\_userContactCardPartial.cshtml" />
+    <Content Include="Views\UserPrograms\UserProgramDetails.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -589,11 +592,22 @@
     <Compile Include="Migrations\201803181613488_AddingProgramType.Designer.cs">
       <DependentUpon>201803181613488_AddingProgramType.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201803241326226_AddCalendar.cs" />
+    <Compile Include="Migrations\201803241326226_AddCalendar.Designer.cs">
+      <DependentUpon>201803241326226_AddCalendar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201803250337186_AddDailyProgress.cs" />
+    <Compile Include="Migrations\201803250337186_AddDailyProgress.Designer.cs">
+      <DependentUpon>201803250337186_AddDailyProgress.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Abstract\UserManaged.cs" />
     <Compile Include="Models\AccountModels.cs" />
     <Compile Include="Models\ApplicationUser.cs" />
+    <Compile Include="Models\DailyProgressModel.cs" />
+    <Compile Include="Models\DateModels.cs" />
     <Compile Include="Models\UserPrograms.cs" />
+    <Compile Include="Repositories\DateRepository.cs" />
     <Compile Include="Repositories\UserProgramRepository.cs" />
     <Compile Include="ViewModels\UserProgramViewModel.cs" />
     <Compile Include="Models\IdentityModels.cs" />
@@ -639,6 +653,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201803181613488_AddingProgramType.resx">
       <DependentUpon>201803181613488_AddingProgramType.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201803241326226_AddCalendar.resx">
+      <DependentUpon>201803241326226_AddCalendar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201803250337186_AddDailyProgress.resx">
+      <DependentUpon>201803250337186_AddDailyProgress.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
