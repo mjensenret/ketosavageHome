@@ -23,6 +23,7 @@ namespace KetoSavageWeb.ViewModels
         public int ProgramId { get; set; }
         public bool ShowAllActive { get; set; }
         public int ProgramUserId { get; set; }
+        public bool IsNew { get; set; }
 
     }
 

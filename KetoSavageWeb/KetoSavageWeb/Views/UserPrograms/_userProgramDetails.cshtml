@@ -1,6 +1,7 @@
 ﻿@model IEnumerable<KetoSavageWeb.ViewModels.UserProgramDetails>
+@using (Html.BeginForm("updateProgram", "UserPrograms", FormMethod.Post))
+{
 
-@{ 
     var detailsGrid = Html.DevExpress().GridView(settings =>
     {
         settings.Name = "userDetailGrid";
@@ -25,8 +26,8 @@
             c.FieldName = "Notes";
 
         });
-    });
+    }).Bind(Model).GetHtml();
 }
-@detailsGrid.Bind(Model).GetHtml()
+
 
 

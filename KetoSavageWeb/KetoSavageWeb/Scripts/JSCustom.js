@@ -1,10 +1,11 @@
-﻿debugger;
-var currentUserID;
-function OnHyperLinkClick(userId) {
-    currentUserID = userId;
-    //userDetailGrid.PerformCallback();
-    userProgramHeader.PerformCallback();
-}
+﻿//debugger;
+//var currentUserID;
+//function ShowUserProgramDetails(userId) {
+//    currentUserID = userId;
+//    var url = '@Url.Content("~/UserProgramsController/ShowProgramDetails/' + currentUserID + '")';
+//    //userDetailGrid.PerformCallback();
+//    window.location.href(url);
+//}
 function OnDetailGridBeginCallback(s, e) {
     e.customArgs["_userId"] = currentUserID;
 }

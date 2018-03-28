@@ -3,12 +3,12 @@
     ViewBag.Title = "User Program Details";
 }
 
-@using (Html.BeginForm())
+@using (Html.BeginForm("updateProgram", "UserPrograms", FormMethod.Post))
 {
     Html.DevExpress().FormLayout(userProgram =>
     {
         userProgram.Name = "userForm";
-        userProgram.Width = Unit.Percentage(50);
+        userProgram.Width = Unit.Percentage(75);
         userProgram.SettingsItemCaptions.Location = LayoutItemCaptionLocation.Top;
 
         userProgram.Items.AddGroupItem(g =>
@@ -18,18 +18,65 @@
             g.ColCount = 2;
             g.Items.Add(m => m.UserName, i =>
             {
-                i.NestedExtension().TextBox(s =>
+                i.NestedExtension().Label(s =>
                 {
-                    s.ShowModelErrors = true;
-                    s.Properties.ValidationSettings.Display = Display.Dynamic;
+
                 });
             });
             g.Items.Add(m => m.FullName, i =>
             {
+                i.NestedExtension().Label(s =>
+                {
+
+                });
+            });
+            g.Items.Add(m => m.currentProgramStartDate, i =>
+            {
+                i.NestedExtension().DateEdit(s =>
+                {
+
+                });
+            });
+            g.Items.Add(m => m.currentProgramEndDate, i =>
+            {
+                i.NestedExtension().DateEdit(s =>
+                {
+
+                });
+            });
+            g.Items.Add(m => m.currentProgramRenewalDate, i =>
+            {
+                i.NestedExtension().DateEdit(s =>
+                {
+
+                });
+            });
+            g.Items.Add(m => m.UserType, i =>
+            {
                 i.NestedExtension().TextBox(s =>
                 {
-                    s.ShowModelErrors = true;
-                    s.Properties.ValidationSettings.Display = Display.Dynamic;
+
+                });
+            });
+            g.Items.Add(m => m.CoachName, i =>
+            {
+                i.NestedExtension().TextBox(s =>
+                {
+
+                });
+            });
+            g.Items.Add(m => m.IsNew, i =>
+            {
+                i.NestedExtension().CheckBox(s =>
+                {
+
+                });
+            });
+            g.Items.Add(m => m.CoachId, i =>
+            {
+                i.NestedExtension().ComboBox(s =>
+                {
+                    s.Properties.DataSource = ViewBag.CoachList;
                 });
             });
         });
@@ -38,7 +85,7 @@
     Html.DevExpress().FormLayout(newForm =>
     {
         newForm.Name = "PastData";
-        newForm.Width = Unit.Percentage(50);
+        newForm.Width = Unit.Percentage(75);
         newForm.Items.Add(i =>
         {
             i.SetNestedContent(() =>
@@ -47,5 +94,57 @@
             });
         });
     }).Render();
+
+    Html.DevExpress().FormLayout(buttons =>
+    {
+        buttons.Name = "SubmitData";
+        buttons.Items.Add(i =>
+        {
+            i.ShowCaption = DefaultBoolean.False;
+            i.Paddings.Padding = 0;
+            //i.Width = Unit.Percentage(100);
+            i.HorizontalAlign = FormLayoutHorizontalAlign.Left;
+
+            i.SetNestedContent(() =>
+            {
+                Html.DevExpress().Button(
+                    buttonSettings =>
+                    {
+                        buttonSettings.Name = "btnSave";
+                        buttonSettings.ControlStyle.CssClass = "button";
+                        buttonSettings.Width = 100;
+                        buttonSettings.Text = "Save";
+                        buttonSettings.UseSubmitBehavior = true;
+                    }).Render();
+            });
+        });
+        buttons.Items.Add(i =>
+        {
+            i.ShowCaption = DefaultBoolean.False;
+            i.HorizontalAlign = FormLayoutHorizontalAlign.Right;
+            i.SetNestedContent(() =>
+            {
+                Html.DevExpress().Button(
+                buttonSettings =>
+                {
+                    buttonSettings.Name = "btnCancel";
+                    buttonSettings.ControlStyle.CssClass = "button";
+                    buttonSettings.Width = 100;
+                    buttonSettings.Text = "Cancel";
+                    buttonSettings.ClientSideEvents.Click = "function(s, e){ redirectToClientList(); }";
+                }).Render();
+            });
+        });
+
+    }).Render();
 }
+
+<script type="text/javascript">
+    function redirectToClientList() {
+        var url = '@Url.Action("Index")';
+        console.log(url);
+        window.location.href(url);
+    }
+
+</script>
 

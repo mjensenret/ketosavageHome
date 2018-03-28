@@ -152,33 +152,89 @@ namespace KetoSavageWeb.Controllers
             }
             return RedirectToAction("Index");
         }
-
+        
         public async Task<ActionResult> ShowProgramDetails(string _userId)
         {
             var userId = Convert.ToInt32(_userId);
 
+            var weekOfYear = dateRepository.GetCurrentWeek(DateTime.Now.Date);
+            var coachList = UserManager.Users.Where(x => x.IsActive == true).Where(x => x.Roles.Select(y => y.Role.Name).Contains("Coach")).ToList();
+
             var userProgram = userProgramRepository.GetActive.Where(x => x.ProgramUserId == userId).FirstOrDefault();
+            var user = await UserManager.FindByIdAsync(userId);
+
             var model = new UserProgramViewModel();
             if (userProgram == null)
             {
-                var user = await UserManager.FindByIdAsync(userId);
                 model.UserName = user.UserName;
+                model.ProgramId = 1;
                 model.ProgramUserId = user.Id;
+                model.FullName = string.Join(" ", user.FirstName, user.LastName);
+                model.currentProgramStartDate = DateTime.Now.Date;
+                model.currentProgramRenewalDate = DateTime.Now.Date.AddDays(30);
+                model.currentProgramEndDate = DateTime.Now.Date.AddMonths(3);
+                model.CoachId = 2;
+                model.UserType = "Client";
+                model.IsNew = true;
                 ViewBag.IsNew = true;
-
             }
             else
             {
                 model.UserName = userProgram.ProgramUser.UserName;
-                model.Notes = "Some notes about this program";
-                model.ProgramName = "TestProgramName";
+                model.CoachId = userProgram.CoachUserId;
+                model.ProgramId = userProgram.MasterProgramId;
+                model.Notes = userProgram.Notes;
+                model.ProgramName = userProgram.MasterProgram.Name;
+                model.currentProgramStartDate = userProgram.StartDate;
+                model.currentProgramRenewalDate = userProgram.RenewalDate;
+                model.currentProgramEndDate = userProgram.EndDate;
+                model.UserType = userProgram.ProgramType;
+                model.IsNew = false;
                 ViewBag.IsNew = false;
             };
 
+            ViewBag.ProgramList = new SelectList(program.GetActive, "Id", "programDescription");
+            ViewBag.CoachList = new SelectList(coachList, "Id", "UserName");
 
             return View("UserProgramDetails", model);
         }
 
+        [HttpPost]
+        public ActionResult updateProgram(UserProgramViewModel model)
+        {
+            if (ModelState.IsValid)
+            {
+                if (model.IsNew)
+                {
+                    var newProgram = new UserPrograms()
+                    {
+                        MasterProgramId = model.ProgramId,
+                        ProgramType = model.ProgramType,
+                        ProgramUserId = model.ProgramUserId,
+                        StartDate = model.currentProgramStartDate,
+                        EndDate = model.currentProgramEndDate,
+                        RenewalDate = model.currentProgramRenewalDate,
+                        Notes = model.Notes,
+                        CoachUserId = model.CoachId,
+                        Created = DateTime.Now,
+                        CreatedBy = CurrentUser.UserName,
+                        LastModified = DateTime.Now,
+                        LastModifiedBy = CurrentUser.UserName
+                    };
+                    userProgramRepository.Create(newProgram);
+
+                }
+                else
+                {
+
+                }
+            }
+            else
+            {
+                return null;
+            }
+            return null;
+        }
         [HttpPost]
         public PartialViewResult UserProgramDetails(string _userId)
         {
