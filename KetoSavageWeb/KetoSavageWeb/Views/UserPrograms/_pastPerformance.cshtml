@@ -1,0 +1,46 @@
+﻿
+@{
+    var grid = Html.DevExpress().GridView(g =>
+    {
+        g.Name = "pastPerformanceGrid";
+        g.CallbackRouteValues = new { Controller = "UserPrograms", Action = "pastPerformance",  userId = "ProgramUserId"};
+        g.KeyFieldName = "Id";
+
+        g.Columns.Add(c =>
+        {
+            c.FieldName = "Date";
+            c.PropertiesEdit.DisplayFormatString = "d";
+        });
+        g.Columns.Add(c =>
+        {
+            c.FieldName = "UserId";
+            //c.Visible = false;
+        });
+        g.Columns.Add(c =>
+        {
+            c.FieldName = "PlannedWeight";
+        });
+        g.Columns.Add(c =>
+        {
+            c.FieldName = "ActualWeight";
+        });
+        g.Columns.Add(c =>
+        {
+            c.FieldName = "PlannedFat";
+        });
+        g.Columns.Add(c =>
+        {
+            c.FieldName = "ActualFat";
+        });
+        g.Columns.Add(c =>
+        {
+            c.FieldName = "PlannedCarbohydrates";
+        });
+        g.Columns.Add(c =>
+        {
+            c.FieldName = "ActualCarbohydrates";
+        });
+
+    });
+}
+@grid.Bind(Model).GetHtml()

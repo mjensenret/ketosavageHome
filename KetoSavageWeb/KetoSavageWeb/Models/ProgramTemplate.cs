@@ -3,6 +3,7 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Web;
@@ -13,6 +14,8 @@ namespace KetoSavageWeb.Models
     {
         public string Name { get; set; }
         public string programDescription { get; set; }
+        [Display(Name="Weight Factor")]
+        public double? WeightWeek { get; set; }
         public int GoalId { get; set; }
         public virtual ProgramGoals Goal { get; set; }
         public ICollection<UserPrograms> UserPrograms { get; set; }

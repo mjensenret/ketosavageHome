@@ -8,7 +8,7 @@
     Html.DevExpress().FormLayout(userProgram =>
     {
         userProgram.Name = "userForm";
-        userProgram.Width = Unit.Percentage(75);
+        //userProgram.Width = Unit.Percentage(75);
         userProgram.SettingsItemCaptions.Location = LayoutItemCaptionLocation.Top;
 
         userProgram.Items.AddGroupItem(g =>
@@ -16,6 +16,13 @@
             g.GroupBoxDecoration = GroupBoxDecoration.Box;
             g.Caption = "User Details";
             g.ColCount = 2;
+            g.Items.Add(m => m.ProgramUserId, i =>
+            {
+                i.NestedExtension().TextBox(s =>
+                {
+
+                });
+            });
             g.Items.Add(m => m.UserName, i =>
             {
                 i.NestedExtension().Label(s =>
@@ -30,10 +37,18 @@
 
                 });
             });
+            g.Items.Add(m => m.ProgramId, i =>
+            {
+                i.NestedExtension().ComboBox(c =>
+                {
+                    c.Properties.DataSource = ViewBag.ProgramList;
+                });
+            });
             g.Items.Add(m => m.currentProgramStartDate, i =>
             {
                 i.NestedExtension().DateEdit(s =>
                 {
+                    i.Caption = "Start Date";
 
                 });
             });
@@ -41,24 +56,17 @@
             {
                 i.NestedExtension().DateEdit(s =>
                 {
-
+                    i.Caption = "End Date";
                 });
             });
             g.Items.Add(m => m.currentProgramRenewalDate, i =>
             {
                 i.NestedExtension().DateEdit(s =>
                 {
-
+                    i.Caption = "Renewal Date";
                 });
             });
             g.Items.Add(m => m.UserType, i =>
-            {
-                i.NestedExtension().TextBox(s =>
-                {
-
-                });
-            });
-            g.Items.Add(m => m.CoachName, i =>
             {
                 i.NestedExtension().TextBox(s =>
                 {
@@ -79,6 +87,22 @@
                     s.Properties.DataSource = ViewBag.CoachList;
                 });
             });
+            g.Items.Add(m => m.StartWeight, i =>
+            {
+                i.NestedExtension().TextBox(s =>
+                {
+
+                });
+                i.Caption = "Start Weight";
+            });
+            g.Items.Add(m => m.GoalWeight, i =>
+            {
+                i.NestedExtension().TextBox(s =>
+                {
+
+                });
+                i.Caption = "Goal Weight";
+            });
         });
     }).Bind(Model).Render();
 
@@ -86,11 +110,14 @@
     {
         newForm.Name = "PastData";
         newForm.Width = Unit.Percentage(75);
+
         newForm.Items.Add(i =>
         {
+            i.ShowCaption = DefaultBoolean.False;
             i.SetNestedContent(() =>
             {
-                ViewContext.Writer.Write("Does this actually work?");
+                //Html.RenderPartial("_pastPerformance");
+                Html.RenderAction("pastPerformance", Model.UserId);
             });
         });
     }).Render();

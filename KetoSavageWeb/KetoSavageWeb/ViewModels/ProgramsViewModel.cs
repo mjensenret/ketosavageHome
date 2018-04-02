@@ -15,6 +15,7 @@ namespace KetoSavageWeb.ViewModels
         public string Name { get; set; }
         public string Description { get; set; }
         public bool Active { get; set; }
+        public double? WeightFactor { get; set; }
         public string GoalName { get; set; }
         public int GoalId { get; set; }
     }
@@ -43,6 +44,11 @@ namespace KetoSavageWeb.ViewModels
         {
             get { return this.Program.Id; }
             set { this.Program.Id = value; }
+        }
+        public double? WeightFactor
+        {
+            get { return this.Program.WeightWeek; }
+            set { this.Program.WeightWeek = value; }
         }
 
         public string Description

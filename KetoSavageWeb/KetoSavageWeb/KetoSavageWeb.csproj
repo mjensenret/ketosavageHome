@@ -527,6 +527,8 @@
     <Content Include="Views\UserPrograms\_userProgramHeader.cshtml" />
     <Content Include="Views\ManageUsers\_userContactCardPartial.cshtml" />
     <Content Include="Views\UserPrograms\UserProgramDetails.cshtml" />
+    <Content Include="Views\UserPrograms\_pastPerformance.cshtml" />
+    <Content Include="Views\UserPrograms\_dailyMacros.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -600,11 +602,27 @@
     <Compile Include="Migrations\201803250337186_AddDailyProgress.Designer.cs">
       <DependentUpon>201803250337186_AddDailyProgress.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201803281057068_UpdatingDailyProgress.cs" />
+    <Compile Include="Migrations\201803281057068_UpdatingDailyProgress.Designer.cs">
+      <DependentUpon>201803281057068_UpdatingDailyProgress.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201803290223419_UpdatingDailyProgress_2.cs" />
+    <Compile Include="Migrations\201803290223419_UpdatingDailyProgress_2.Designer.cs">
+      <DependentUpon>201803290223419_UpdatingDailyProgress_2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201804010131218_switchToDouble.cs" />
+    <Compile Include="Migrations\201804010131218_switchToDouble.Designer.cs">
+      <DependentUpon>201804010131218_switchToDouble.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201804011612465_addWeightChange.cs" />
+    <Compile Include="Migrations\201804011612465_addWeightChange.Designer.cs">
+      <DependentUpon>201804011612465_addWeightChange.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Abstract\UserManaged.cs" />
     <Compile Include="Models\AccountModels.cs" />
     <Compile Include="Models\ApplicationUser.cs" />
-    <Compile Include="Models\DailyProgressModel.cs" />
+    <Compile Include="Models\DailyProgress.cs" />
     <Compile Include="Models\DateModels.cs" />
     <Compile Include="Models\UserPrograms.cs" />
     <Compile Include="Repositories\DateRepository.cs" />
@@ -659,6 +677,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201803250337186_AddDailyProgress.resx">
       <DependentUpon>201803250337186_AddDailyProgress.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201803281057068_UpdatingDailyProgress.resx">
+      <DependentUpon>201803281057068_UpdatingDailyProgress.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201803290223419_UpdatingDailyProgress_2.resx">
+      <DependentUpon>201803290223419_UpdatingDailyProgress_2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201804010131218_switchToDouble.resx">
+      <DependentUpon>201804010131218_switchToDouble.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201804011612465_addWeightChange.resx">
+      <DependentUpon>201804011612465_addWeightChange.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

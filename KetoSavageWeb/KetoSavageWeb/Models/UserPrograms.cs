@@ -13,15 +13,15 @@ namespace KetoSavageWeb.Models
         public DateTime? EndDate { get; set; }
         public DateTime? RenewalDate { get; set; }
         public string Notes { get; set; }
-        public decimal StartWeight { get; set; }
-        public decimal GoalWeight { get; set; }
+        public double StartWeight { get; set; }
+        public double GoalWeight { get; set; }
         public int ProgramUserId { get; set; }
         public virtual ApplicationUser ProgramUser { get; set; }
         public int MasterProgramId { get; set; }
         public virtual ProgramTemplate MasterProgram { get; set; }
         public int? CoachUserId { get; set; }
         public virtual ApplicationUser CoachUser { get; set; }
-        public ICollection<DailyProgressModel> DailyProgress { get; set; }
+        public ICollection<DailyProgress> DailyProgress { get; set; }
         
     }
 

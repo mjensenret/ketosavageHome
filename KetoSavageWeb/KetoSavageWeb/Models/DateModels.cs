@@ -66,5 +66,7 @@ namespace KetoSavageWeb.Models
         public DateTime FirstDayOfNextMonth { get; set; }
         [Required]
         public DateTime FirstDayOfNextYear { get; set; }
+
+        public ICollection<DailyProgress> DailyProgress { get; set; }
     }
 }

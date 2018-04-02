@@ -96,6 +96,17 @@
         });
         userList.Columns.Add(c =>
         {
+            c.FieldName = "LastModified";
+            c.Caption = "Last Modified";
+            c.ReadOnly = true;
+        });
+        userList.Columns.Add(c =>
+        {
+            c.FieldName = "StartWeight";
+            c.Caption = "Start Weight";
+        });
+        userList.Columns.Add(c =>
+        {
             c.FieldName = "Notes";
             c.Visible = false;
             c.EditFormSettings.Visible = DefaultBoolean.True;

@@ -44,6 +44,7 @@ namespace KetoSavageWeb.Controllers
                     x.CreatedBy,
                     x.LastModified,
                     x.LastModifiedBy,
+                    x.WeightWeek,
                     Goal = x.Goal,
                     GoalName = x.Goal.Name
                 })
@@ -53,6 +54,7 @@ namespace KetoSavageWeb.Controllers
                     Id = x.Id,
                     Name = x.Name,
                     Description = x.programDescription,
+                    WeightFactor = x.WeightWeek,
                     GoalName = x.Goal.Name,
                     GoalId = x.Goal.Id
 
@@ -77,6 +79,7 @@ namespace KetoSavageWeb.Controllers
                     Name = item.Name,
                     programDescription = item.Description,
                     GoalId = item.GoalId,
+                    WeightWeek = item.WeightFactor,
                     IsActive = true,
                     IsDeleted = false,
                     Created = DateTime.Now,
@@ -105,6 +108,7 @@ namespace KetoSavageWeb.Controllers
                 }
 
                 editProgram.Name = model.Name;
+                editProgram.WeightWeek = model.WeightFactor;
                 editProgram.programDescription = model.Description;
                 editProgram.LastModified = DateTime.Now;
                 editProgram.LastModifiedBy = CurrentUser.UserName;
@@ -135,6 +139,7 @@ namespace KetoSavageWeb.Controllers
             entity.programDescription = model.Description;
             entity.GoalId = model.GoalId;
             entity.IsActive = model.IsActive;
+            entity.WeightWeek = model.WeightFactor;
         }
 
         //protected override void updateEntity(ProgramTemplate entity, ProgramTemplate model)
