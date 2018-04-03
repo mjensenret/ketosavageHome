@@ -338,7 +338,7 @@ namespace KetoSavageWeb.Controllers
         public PartialViewResult pastPerformance(int _userId)
         {
             var currentDate = DateTime.Now;
-            
+            ViewData["userId"] = _userId;
             var programDetails = userProgramRepository.GetPastProgressByUser(_userId, currentDate);
             
 
@@ -365,6 +365,7 @@ namespace KetoSavageWeb.Controllers
                         Id = y.Id,
                         UserId = y.ProgramUserId,
                         Date = y.Dates.Date,
+                        WeekDay = y.Dates.WeekDayName,
                         PlannedWeight = y.PlannedWeight,
                         ActualWeight = y.ActualWeight,
                         PlannedFat = y.PlannedFat,

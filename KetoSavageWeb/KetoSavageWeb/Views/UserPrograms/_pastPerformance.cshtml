@@ -1,9 +1,12 @@
-﻿
-@{
+﻿@{
     var grid = Html.DevExpress().GridView(g =>
     {
         g.Name = "pastPerformanceGrid";
-        g.CallbackRouteValues = new { Controller = "UserPrograms", Action = "pastPerformance",  userId = "ProgramUserId"};
+        g.CallbackRouteValues = new { Controller = "UserPrograms", Action = "pastPerformance",  _userId = ViewData["UserId"]};
+        g.SettingsPager.Mode = GridViewPagerMode.ShowPager;
+        g.SettingsPager.PageSize = 7;
+        g.SettingsPager.FirstPageButton.Visible = true;
+        g.SettingsPager.LastPageButton.Visible = true;
         g.KeyFieldName = "Id";
 
         g.Columns.Add(c =>
@@ -13,7 +16,7 @@
         });
         g.Columns.Add(c =>
         {
-            c.FieldName = "UserId";
+            c.FieldName = "WeekDay";
             //c.Visible = false;
         });
         g.Columns.Add(c =>

@@ -1,6 +1,7 @@
 ﻿@model KetoSavageWeb.ViewModels.UserProgramViewModel
 @{
     ViewBag.Title = "User Program Details";
+    
 }
 
 @using (Html.BeginForm("updateProgram", "UserPrograms", FormMethod.Post))
@@ -18,9 +19,10 @@
             g.ColCount = 2;
             g.Items.Add(m => m.ProgramUserId, i =>
             {
+                i.Visible = false;
                 i.NestedExtension().TextBox(s =>
                 {
-
+                    
                 });
             });
             g.Items.Add(m => m.UserName, i =>
@@ -66,15 +68,16 @@
                     i.Caption = "Renewal Date";
                 });
             });
-            g.Items.Add(m => m.UserType, i =>
-            {
-                i.NestedExtension().TextBox(s =>
-                {
+            //g.Items.Add(m => m.UserType, i =>
+            //{
+            //    i.NestedExtension().TextBox(s =>
+            //    {
 
-                });
-            });
+            //    });
+            //});
             g.Items.Add(m => m.IsNew, i =>
             {
+                i.Visible = false;
                 i.NestedExtension().CheckBox(s =>
                 {
 

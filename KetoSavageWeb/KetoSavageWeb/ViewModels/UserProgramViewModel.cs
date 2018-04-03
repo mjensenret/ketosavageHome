@@ -47,6 +47,7 @@ namespace KetoSavageWeb.ViewModels
         public int Id { get; set; }
         public int UserId { get; set; }
         public int DateId { get; set; }
+        public string WeekDay { get; set; }
         public DateTime Date { get; set; }
         public double? PlannedWeight { get; set; }
         public double? ActualWeight { get; set; }
