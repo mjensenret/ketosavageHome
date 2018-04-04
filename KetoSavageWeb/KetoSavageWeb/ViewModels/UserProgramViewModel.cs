@@ -73,4 +73,19 @@ namespace KetoSavageWeb.ViewModels
         public virtual DateModels Dates { get; set; }
 
     }
+
+    public class UpdateMacrosViewModel
+    {
+        public int Id { get; set; }
+        public int WeekNum { get; set; }
+        public DateTime Date { get; set; }
+        public string WeekdayName { get; set; }
+        public double PlannedProtein { get; set; }
+        public double PlannedFat { get; set; }
+        public double PlannedCarbs { get; set; }
+        public int UserProgramId { get; set; }
+        public virtual UserPrograms UserProgram { get; set; }
+        public int DateKey { get; set; }
+        public virtual DateModels Dates { get; set; }
+    }
 }

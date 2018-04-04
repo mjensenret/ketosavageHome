@@ -22,7 +22,7 @@
                 i.Visible = false;
                 i.NestedExtension().TextBox(s =>
                 {
-                    
+
                 });
             });
             g.Items.Add(m => m.UserName, i =>
@@ -121,6 +121,22 @@
             {
                 //Html.RenderPartial("_pastPerformance");
                 Html.RenderAction("pastPerformance", Model.UserId);
+            });
+        });
+    }).Render();
+
+    Html.DevExpress().FormLayout(mForm =>
+    {
+        mForm.Name = "EditMacro";
+        mForm.Width = Unit.Percentage(75);
+
+        mForm.Items.Add(i =>
+        {
+            i.ShowCaption = DefaultBoolean.False;
+            i.SetNestedContent(() =>
+            {
+                //Html.RenderPartial("_pastPerformance");
+                Html.RenderAction("updateMacros", Model.UserId);
             });
         });
     }).Render();

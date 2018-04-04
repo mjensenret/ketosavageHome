@@ -161,6 +161,7 @@ namespace KetoSavageWeb.Controllers
         public async Task<ActionResult> ShowProgramDetails(string _userId)
         {
             var userId = Convert.ToInt32(_userId);
+            Session["UserId"] = userId;
             
             var coachList = UserManager.Users.Where(x => x.IsActive == true).Where(x => x.Roles.Select(y => y.Role.Name).Contains("Coach")).ToList();
 
@@ -386,6 +387,44 @@ namespace KetoSavageWeb.Controllers
                 //TODO: Add progress
                 return PartialView("_pastPerformance");
             }
+        }
+        public PartialViewResult updateMacros()
+        {
+            var userId = Session["UserId"];
+            var currentWeek = dateRepository.GetWeekNum(DateTime.Now.Date);
+            var userProgramDetails = userProgramRepository.GetDailyProgressByUser(Convert.ToInt32(userId));
+            userProgramDetails.Where(x => x.Dates.WeekOfYear == currentWeek || x.Dates.WeekOfYear == (currentWeek - 1));
+
+
+            var q = (userProgramDetails
+                .Where(x => x.Dates.WeekOfYear == currentWeek || x.Dates.WeekOfYear == (currentWeek - 1))
+                .OrderByDescending(x => x.Dates.Date)
+                .Select(x => new
+                {
+                    x.DateId,
+                    x.Dates,
+                    x.Id,
+                    x.UserProgram.ProgramUserId,
+                    x.PlannedFat,
+                    x.PlannedProtein,
+                    x.PlannedCarbohydrate,
+                    x.PlannedWeight
+                })
+                .ToList()
+                .Select(y => new UpdateMacrosViewModel()
+                {
+                    Id = y.Id,
+                    DateKey = y.Dates.DateKey,
+                    Date = y.Dates.Date,
+                    WeekNum = y.Dates.WeekOfYear,
+                    WeekdayName = y.Dates.WeekDayName,
+                    PlannedFat = Convert.ToDouble(y.PlannedFat),
+                    PlannedProtein = Convert.ToDouble(y.PlannedProtein),
+                    PlannedCarbs = Convert.ToDouble(y.PlannedCarbohydrate)
+                })
+                );
+
+            return PartialView("_dailyMacros", q);
         }
     }
 }

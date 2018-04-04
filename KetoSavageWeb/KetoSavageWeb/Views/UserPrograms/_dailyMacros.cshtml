@@ -1,1 +1,50 @@
-﻿
+﻿@model IEnumerable<KetoSavageWeb.ViewModels.UpdateMacrosViewModel>
+
+@*@{ Html.BeginForm();}*@
+@Html.DevExpress().GridView(s =>
+{
+    s.Name = "UpdateMacroGrid";
+    s.CallbackRouteValues = new { Controller = "UserPrograms", Action = "UpdateMacros" };
+
+
+    s.KeyFieldName = "Id";
+
+    s.Columns.Add(c =>
+    {
+        c.FieldName = "Id";
+        c.Visible = false;
+    });
+    s.Columns.Add(c =>
+    {
+        c.FieldName = "Date";
+        c.PropertiesEdit.DisplayFormatString = "d";
+    });
+    s.Columns.Add(c =>
+    {
+        c.FieldName = "WeekNum";
+    });
+    s.Columns.Add(c =>
+    {
+        c.FieldName = "WeekdayName";
+    });
+    s.Columns.Add(c =>
+    {
+        c.FieldName = "DateKey";
+        c.Visible = false;
+    });
+    s.Columns.Add(c =>
+    {
+        c.FieldName = "PlannedFat";
+    });
+    s.Columns.Add(c =>
+    {
+        c.FieldName = "PlannedProtein";
+    });
+    s.Columns.Add(c =>
+    {
+        c.FieldName = "PlannedCarbs";
+    });
+}).Bind(Model).GetHtml()
+
+@*@{ Html.EndForm();}*@
+
