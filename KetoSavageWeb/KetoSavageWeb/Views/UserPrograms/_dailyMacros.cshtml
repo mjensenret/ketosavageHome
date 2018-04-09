@@ -1,50 +1,69 @@
 ﻿@model IEnumerable<KetoSavageWeb.ViewModels.UpdateMacrosViewModel>
 
-@*@{ Html.BeginForm();}*@
-@Html.DevExpress().GridView(s =>
-{
-    s.Name = "UpdateMacroGrid";
-    s.CallbackRouteValues = new { Controller = "UserPrograms", Action = "UpdateMacros" };
+@{ 
+    var grid = Html.DevExpress().GridView(s =>
+    {
+        s.Name = "UpdateMacroGrid";
+        s.CallbackRouteValues = new { Controller = "UserPrograms", Action = "NewMacrosGridview" };
+        s.SettingsEditing.BatchUpdateRouteValues = new { Controller = "UserPrograms", Action = "BatchUpdateMacros" };
+        s.SettingsEditing.Mode = GridViewEditingMode.Batch;
 
+        s.SettingsPager.Mode = GridViewPagerMode.ShowPager;
+        s.SettingsPager.PageSize = 7;
 
-    s.KeyFieldName = "Id";
+        s.KeyFieldName = "Id";
 
-    s.Columns.Add(c =>
-    {
-        c.FieldName = "Id";
-        c.Visible = false;
+        s.Columns.Add(c =>
+        {
+            c.FieldName = "Id";
+            c.Visible = false;
+        });
+        s.Columns.Add(c =>
+        {
+            c.FieldName = "Date";
+            c.PropertiesEdit.DisplayFormatString = "d";
+            c.ReadOnly = true;
+        });
+        s.Columns.Add(c =>
+        {
+            c.FieldName = "WeekNum";
+            c.ReadOnly = true;
+        });
+        s.Columns.Add(c =>
+        {
+            c.FieldName = "WeekdayName";
+            c.ReadOnly = true;
+        });
+        s.Columns.Add(c =>
+        {
+            c.FieldName = "DateKey";
+            c.Visible = false;
+        });
+        s.Columns.Add(c =>
+        {
+            c.FieldName = "PlannedFat";
+        });
+        s.Columns.Add(c =>
+        {
+            c.FieldName = "PlannedProtein";
+        });
+        s.Columns.Add(c =>
+        {
+            c.FieldName = "PlannedCarbs";
+        });
+        s.Columns.Add(c =>
+        {
+            c.FieldName = "IsRefeed";
+            c.Caption = "Refeed";
+            c.ColumnType = MVCxGridViewColumnType.CheckBox;
+        });
+        s.CellEditorInitialize = (sender, e) =>
+        {
+            ASPxEdit editor = (ASPxEdit)e.Editor;
+            editor.ValidationSettings.Display = Display.Dynamic;
+        };
     });
-    s.Columns.Add(c =>
-    {
-        c.FieldName = "Date";
-        c.PropertiesEdit.DisplayFormatString = "d";
-    });
-    s.Columns.Add(c =>
-    {
-        c.FieldName = "WeekNum";
-    });
-    s.Columns.Add(c =>
-    {
-        c.FieldName = "WeekdayName";
-    });
-    s.Columns.Add(c =>
-    {
-        c.FieldName = "DateKey";
-        c.Visible = false;
-    });
-    s.Columns.Add(c =>
-    {
-        c.FieldName = "PlannedFat";
-    });
-    s.Columns.Add(c =>
-    {
-        c.FieldName = "PlannedProtein";
-    });
-    s.Columns.Add(c =>
-    {
-        c.FieldName = "PlannedCarbs";
-    });
-}).Bind(Model).GetHtml()
+}
+@grid.Bind(Model).GetHtml()
 
-@*@{ Html.EndForm();}*@
 

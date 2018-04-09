@@ -13,6 +13,7 @@ namespace KetoSavageWeb.ViewModels
         public string FullName { get; set; }
         public double StartWeight { get; set; }
         public double GoalWeight { get; set; }
+        public double CurrentWeight { get; set; }
         public string ProgramType { get; set; }
         public DateTime? currentProgramStartDate { get; set; }
         public DateTime? currentProgramEndDate { get; set; }
@@ -24,9 +25,8 @@ namespace KetoSavageWeb.ViewModels
         public int? CoachId { get; set; }
         public string CoachName { get; set; }
         public string ProgramName { get; set; }
-        public int ProgramId { get; set; }
         public bool ShowAllActive { get; set; }
-        public int ProgramUserId { get; set; }
+        public int MasterProgramId { get; set; }
         public bool IsNew { get; set; }
 
     }
@@ -34,11 +34,11 @@ namespace KetoSavageWeb.ViewModels
     public class UserProgramDetails
     {
         public int Id { get; set; }
-        public int ProgramUserId { get; set; }
+        public int UserId { get; set; }
         public string FullName { get; set; }
         public string Notes { get; set; }
         public string ProgramName { get; set; }
-        public string ProgramId { get; set; }
+        public string UserProgramId { get; set; }
 
     }
 
@@ -83,9 +83,19 @@ namespace KetoSavageWeb.ViewModels
         public double PlannedProtein { get; set; }
         public double PlannedFat { get; set; }
         public double PlannedCarbs { get; set; }
+        public bool IsRefeed { get; set; }
         public int UserProgramId { get; set; }
         public virtual UserPrograms UserProgram { get; set; }
         public int DateKey { get; set; }
         public virtual DateModels Dates { get; set; }
+    }
+
+    public class DailyMacroUpdate
+    {
+        public int Id { get; set; }
+        public int Fat { get; set; }
+        public int Protein { get; set; }
+        public int Carbohydrates { get; set; }
+        public bool Refeed { get; set; }
     }
 }

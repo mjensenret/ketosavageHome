@@ -17,9 +17,17 @@
             g.GroupBoxDecoration = GroupBoxDecoration.Box;
             g.Caption = "User Details";
             g.ColCount = 2;
-            g.Items.Add(m => m.ProgramUserId, i =>
+            g.Items.Add(m => m.Id, i =>
             {
-                i.Visible = false;
+                i.Visible = true;
+                i.NestedExtension().TextBox(s =>
+                {
+                    s.ReadOnly = true;
+                });
+            });
+            g.Items.Add(m => m.UserId, i =>
+            {
+                i.Visible = true;
                 i.NestedExtension().TextBox(s =>
                 {
 
@@ -39,7 +47,7 @@
 
                 });
             });
-            g.Items.Add(m => m.ProgramId, i =>
+            g.Items.Add(m => m.MasterProgramId, i =>
             {
                 i.NestedExtension().ComboBox(c =>
                 {
@@ -68,16 +76,9 @@
                     i.Caption = "Renewal Date";
                 });
             });
-            //g.Items.Add(m => m.UserType, i =>
-            //{
-            //    i.NestedExtension().TextBox(s =>
-            //    {
-
-            //    });
-            //});
             g.Items.Add(m => m.IsNew, i =>
             {
-                i.Visible = false;
+                i.Visible = true;
                 i.NestedExtension().CheckBox(s =>
                 {
 
@@ -105,6 +106,13 @@
 
                 });
                 i.Caption = "Goal Weight";
+            });
+            g.Items.Add(m => m.CurrentWeight, i =>
+            {
+                i.NestedExtension().TextBox(s =>
+                {
+                    s.ReadOnly = true;
+                });
             });
         });
     }).Bind(Model).Render();
@@ -136,7 +144,7 @@
             i.SetNestedContent(() =>
             {
                 //Html.RenderPartial("_pastPerformance");
-                Html.RenderAction("updateMacros", Model.UserId);
+                Html.RenderAction("NewMacrosGridview", Model.UserId);
             });
         });
     }).Render();

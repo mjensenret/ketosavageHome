@@ -618,6 +618,10 @@
     <Compile Include="Migrations\201804011612465_addWeightChange.Designer.cs">
       <DependentUpon>201804011612465_addWeightChange.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201804080021558_AddRefeedBool.cs" />
+    <Compile Include="Migrations\201804080021558_AddRefeedBool.Designer.cs">
+      <DependentUpon>201804080021558_AddRefeedBool.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Abstract\UserManaged.cs" />
     <Compile Include="Models\AccountModels.cs" />
@@ -689,6 +693,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201804011612465_addWeightChange.resx">
       <DependentUpon>201804011612465_addWeightChange.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201804080021558_AddRefeedBool.resx">
+      <DependentUpon>201804080021558_AddRefeedBool.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

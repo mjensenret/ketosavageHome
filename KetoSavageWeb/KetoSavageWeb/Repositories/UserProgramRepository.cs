@@ -1,6 +1,8 @@
-﻿using KetoSavageWeb.Domain.Infrastructure;
+﻿using DevExpress.Web.Mvc;
+using KetoSavageWeb.Domain.Infrastructure;
 using KetoSavageWeb.Domain.Repositories;
 using KetoSavageWeb.Models;
+using KetoSavageWeb.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
@@ -32,11 +34,66 @@ namespace KetoSavageWeb.Repositories
             var startWeek = currentWeek - 4;
             var up = this.GetActive.Where(x => x.ProgramUserId == userId).Include(x => x.DailyProgress).SelectMany(x => x.DailyProgress);
             var pastProgress = (up
-                .Where(x => x.Dates.WeekOfYear >= startWeek && x.Dates.WeekOfYear <= currentWeek)
+                .Where(x => x.Dates.WeekOfYear >= startWeek && x.Dates.WeekOfYear < currentWeek)
                 .OrderByDescending(x => x.DateId)
                 );
 
             return pastProgress;
+        }
+
+        //public static void InsertNewItem(DailyMacroUpdate postedItem, MVCxGridViewBatchUpdateValues<DailyMacroUpdate, int> batchValues)
+        //{
+        //    try
+        //    {
+
+        //        var newItem = new DailyProgress();
+        //        LoadNewValues(newItem, postedItem);
+        //        GridData.Add(newItem);
+
+        //    }
+        //    catch (Exception e)
+        //    {
+        //        batchValues.SetErrorText(postedItem, e.Message);
+        //    }
+        //}
+
+        public List<DailyProgress> GetDailyProgressList()
+        {
+            var dp = db.DailyProgress.ToList();
+            return dp;
+        }
+        public void UpdateItem(UpdateMacrosViewModel postedItem, MVCxGridViewBatchUpdateValues<UpdateMacrosViewModel, int> batchValues)
+        {
+            try
+            {
+                var editedItem = db.DailyProgress.First(i => i.Id == postedItem.Id);
+                LoadNewValues(editedItem, postedItem);
+                db.SaveChanges();
+            }
+            catch (Exception e)
+            {
+                batchValues.SetErrorText(postedItem, e.Message);
+            }
+        }
+        //public static void DeleteItem(int itemKey, MVCxGridViewBatchUpdateValues<GridDataItem, int> batchValues)
+        //{
+        //    try
+        //    {
+        //        var item = GridData.First(i => i.ID == itemKey);
+        //        GridData.Remove(item);
+        //    }
+        //    catch (Exception e)
+        //    {
+        //        batchValues.SetErrorText(itemKey, e.Message);
+        //    }
+
+        //}
+        protected static void LoadNewValues(DailyProgress newItem, UpdateMacrosViewModel postedItem)
+        {
+            newItem.PlannedFat = postedItem.PlannedFat;
+            newItem.PlannedProtein = postedItem.PlannedProtein;
+            newItem.PlannedCarbohydrate = postedItem.PlannedCarbs;
+            newItem.IsRefeed = postedItem.IsRefeed;
         }
 
     }

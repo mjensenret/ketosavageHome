@@ -107,6 +107,11 @@
         });
         userList.Columns.Add(c =>
         {
+            c.FieldName = "CurrentWeight";
+            c.Caption = "Current Weight";
+        });
+        userList.Columns.Add(c =>
+        {
             c.FieldName = "Notes";
             c.Visible = false;
             c.EditFormSettings.Visible = DefaultBoolean.True;

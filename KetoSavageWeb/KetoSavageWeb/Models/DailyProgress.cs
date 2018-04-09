@@ -19,6 +19,7 @@ namespace KetoSavageWeb.Models
         public double? ActualProtein { get; set; }
         public double? PlannedCarbohydrate { get; set; }
         public double? ActualCarbohydrate { get; set; }
+        public bool IsRefeed { get; set; }
         [ForeignKey("UserProgram")]
         public int UserProgramId { get; set; }
         public virtual UserPrograms UserProgram { get; set; }
