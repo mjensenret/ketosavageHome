@@ -7,6 +7,18 @@
         s.CallbackRouteValues = new { Controller = "UserPrograms", Action = "NewMacrosGridview" };
         s.SettingsEditing.BatchUpdateRouteValues = new { Controller = "UserPrograms", Action = "BatchUpdateMacros" };
         s.SettingsEditing.Mode = GridViewEditingMode.Batch;
+        s.SettingsEditing.BatchEditSettings.EditMode = GridViewBatchEditMode.Cell;
+        s.SettingsEditing.BatchEditSettings.StartEditAction = GridViewBatchStartEditAction.Click;
+
+        s.SettingsBehavior.AllowSelectByRowClick = true;
+        s.SettingsEditing.ShowModelErrorsForEditors = true;
+        s.SettingsEditing.BatchEditSettings.ShowConfirmOnLosingChanges = true;
+        s.SettingsBehavior.AllowFocusedRow = true;
+
+        s.ClientSideEvents.BatchEditStartEditing = "OnStartEdit";
+        s.ClientSideEvents.BatchEditEndEditing = "OnEndEdit";
+        s.ClientSideEvents.BatchEditRowValidating = "OnValidateEdit";
+        s.ClientSideEvents.SelectionChanged = "OnSelectionChanged";
 
         s.SettingsPager.Mode = GridViewPagerMode.ShowPager;
         s.SettingsPager.PageSize = 7;

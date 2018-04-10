@@ -186,6 +186,7 @@ namespace KetoSavageWeb.Controllers
             var model = new UserProgramViewModel();
             if (userProgram == null)
             {
+                model.UserId = user.Id;
                 model.UserName = user.UserName;
                 model.MasterProgramId = 1;
                 model.FullName = string.Join(" ", user.FirstName, user.LastName);
@@ -193,6 +194,8 @@ namespace KetoSavageWeb.Controllers
                 model.currentProgramRenewalDate = DateTime.Now.Date.AddDays(30);
                 model.currentProgramEndDate = DateTime.Now.Date.AddMonths(3);
                 model.CoachId = 2;
+                model.StartWeight = 0;
+                model.GoalWeight = 0;
                 model.UserType = "Client";
                 model.IsNew = true;
                 ViewBag.IsNew = true;

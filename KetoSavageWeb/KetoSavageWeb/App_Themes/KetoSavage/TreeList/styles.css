@@ -80,11 +80,11 @@
 }
 .dxtlSelectedNode_KetoSavage
 {
-    background: #f1f1f1 none;
+    background: #000000 none;
 }
 .dxtlFocusedNode_KetoSavage
 {
-    background: #DEDEDE none;
+    background: #000000 none;
     color: white;
 }
 .dxtlInlineEditNode_KetoSavage
@@ -186,7 +186,7 @@
 .dxtlError_KetoSavage
 {
     background: #FFC8C8 none;
-    color: #DEDEDE;
+    color: #000000;
     padding: 6px 10px;
     border: 1px solid #DFDFDF;
 }
@@ -219,7 +219,7 @@
 /* Links */
 .dxtlControl_KetoSavage a
 {
-    color: #DEDEDE;
+    color: #000000;
 }
 .dxtlFocusedNode_KetoSavage a
 {
@@ -267,7 +267,7 @@
     -khtml-border-radius: 50%;
     border-radius: 50%;
     animation: dxLoadSpinSys 1s linear infinite;
-    border: 4px solid #DEDEDE;
+    border: 4px solid #000000;
     border-top: 4px solid #EEE;
     width: 24px;
     height: 24px;
@@ -383,7 +383,7 @@ html.dxIE.dxBrowserVersion-9 .dxtlLoadingPanel_KetoSavage .dxlp-loadingImage
 }
 .dxtlFilterBar_KetoSavage a
 {
-    color: #DEDEDE;
+    color: #000000;
     text-decoration: none;
 }
 .dxtlFilterBar_KetoSavage a:hover

@@ -3,7 +3,7 @@
 {
     font: 14px 'Roboto Regular', Helvetica, 'Droid Sans', Tahoma, Geneva, sans-serif;
     background-color: White;
-    color: #DEDEDE;
+    color: #000000;
     cursor: default;
 }
 .dxcvDisabled_KetoSavage
@@ -12,7 +12,7 @@
 }
 .dxcvControl_KetoSavage a
 {
-    color: #DEDEDE;
+    color: #000000;
     text-decoration: none;
 }
 .dxcvControl_KetoSavage a:hover
@@ -21,7 +21,7 @@
 }
 .dxcvControl_KetoSavage a:hover.dxbDisabled_KetoSavage
 {
-    color: #BBBBBB;
+    color: #000000;
     text-decoration: none;
 }
 .dxcvDisabled_KetoSavage a
@@ -52,7 +52,7 @@
     -khtml-border-radius: 50%;
     border-radius: 50%;
     animation: dxLoadSpinSys 1s linear infinite;
-    border: 4px solid #DEDEDE;
+    border: 4px solid #000000;
     border-top: 4px solid #EEE;
     width: 24px;
     height: 24px;
@@ -76,7 +76,7 @@ html.dxIE.dxBrowserVersion-9 .dxcvLoadingPanel_KetoSavage .dxlp-loadingImage
     -khtml-border-radius: 50%;
     border-radius: 50%;
     animation: dxLoadSpinSys 1s linear infinite;
-    border: 2px solid #DEDEDE;
+    border: 2px solid #000000;
     border-top: 2px solid #EEE;
     width: 16px;
     height: 16px;
@@ -145,12 +145,12 @@ html.dxIE.dxBrowserVersion-9 .dxcvLoadingPanelStatusBar_KetoSavage .dxlp-loading
 }
 .dxcvHeader_KetoSavage a
 {
-    color: #DEDEDE;
+    color: #000000;
 }
 .dxcvHeader_KetoSavage a.dxcvCommandItem_KetoSavage
 {
     margin: 0 5px 0 0;
-    color: #DEDEDE;
+    color: #000000;
 }
 .dxcvCard_KetoSavage .dxflHARSys.dxflGroupCell_KetoSavage .dxflCommandItemSys,
 .dxcvFlowCard_KetoSavage .dxflHARSys.dxflGroupCell_KetoSavage .dxflCommandItemSys
@@ -234,7 +234,7 @@ html.dxIE.dxBrowserVersion-9 .dxcvLoadingPanelStatusBar_KetoSavage .dxlp-loading
 a.dxcvCommandItem_KetoSavage
 {
     margin: 0 5px 0 0;
-    color: #DEDEDE;
+    color: #000000;
 }
 .dxbButton_KetoSavage[class~="dxcvCommandItem_KetoSavage"],
 .dxcvEditFormTable_KetoSavage div.dxbButton_KetoSavage
@@ -277,7 +277,7 @@ a.dxcvCommandItem_KetoSavage
 }
 .dxcvFilterBar_KetoSavage a
 {
-    color: #DEDEDE;
+    color: #000000;
     text-decoration: none;
 }
 .dxcvFilterBar_KetoSavage a:hover
@@ -415,7 +415,7 @@ a.dxcvCommandItem_KetoSavage
 }
 .dxcvControl_KetoSavage .dxcvHL
 {
-    background: #DEDEDE;
+    background: #000000;
     color: white;
     font-weight: bold;
     font-style: normal;
@@ -465,7 +465,7 @@ div.dxcvEmptyCard_KetoSavage
 .dxcvSelectedCard_KetoSavage,
 .dxcvFocusedCard_KetoSavage
 {
-    box-shadow: inset 0 -3px 0 #DEDEDE, 0 2px 4px 0 rgba(0,0,0,0.16), 0 2px 8px 0 rgba(0,0,0,0.12);
+    box-shadow: inset 0 -3px 0 #000000, 0 2px 4px 0 rgba(0,0,0,0.16), 0 2px 8px 0 rgba(0,0,0,0.12);
     border-bottom-left-radius: 0;
     border-bottom-right-radius: 0;
 }
@@ -579,7 +579,7 @@ div.dxcvHeader_KetoSavage
 {
     background-color: #FFC8C8;
     border-top: 1px solid #C0C0C0;
-    color: #DEDEDE;
+    color: #000000;
     padding: 6px 13px;
 }
 .dxcvFocusedCell_KetoSavage

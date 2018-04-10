@@ -6,6 +6,6 @@
 
 <PagerStyle ItemSpacing="0px" Spacing="0px"></PagerStyle>
 
-<PagerCurrentPageNumberStyle BackColor="#DEDEDE" Font-Bold="True"></PagerCurrentPageNumberStyle>
+<PagerCurrentPageNumberStyle BackColor="#000000" Font-Bold="True"></PagerCurrentPageNumberStyle>
 </dx:ASPxDataView>
 

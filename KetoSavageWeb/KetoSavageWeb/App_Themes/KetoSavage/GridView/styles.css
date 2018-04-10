@@ -21,7 +21,7 @@
 }
 .dxgvControl_KetoSavage a:hover.dxbDisabled_KetoSavage
 {
-    color: #BBBBBB;
+    color: #000000;
     text-decoration: none;
 }
 .dxgvDisabled_KetoSavage a
@@ -50,7 +50,7 @@
 {
     background-color: #000000;
     font: 14px 'Roboto Regular', Helvetica, 'Droid Sans', Tahoma, Geneva, sans-serif;
-    color: #dedede;
+    color: #000000;
     -moz-box-shadow: 0 2px 4px 0 rgba(0,0,0,0.16), 0 2px 8px 0 rgba(0,0,0,0.12);
     -webkit-box-shadow: 0 2px 4px 0 rgba(0,0,0,0.16), 0 2px 8px 0 rgba(0,0,0,0.12);
     box-shadow: 0 2px 4px 0 rgba(0,0,0,0.16), 0 2px 8px 0 rgba(0,0,0,0.12);
@@ -201,12 +201,12 @@ html.dxIE.dxBrowserVersion-9 .dxgvLoadingPanelStatusBar_KetoSavage .dxlp-loading
 {
     background-color: #444444;
     border: 1px red;
-    color: #dedede;
+    color: #000000;
 }
 .dxgvControl_KetoSavage .dxgvTable_KetoSavage .dxgvFocusedRow_KetoSavage a,
 .dxgvControl_KetoSavage .dxgvTable_KetoSavage .dxgvFocusedGroupRow_KetoSavage a
 {
-    color: #dedede;
+    color: #000000;
 }
 .dxgvControl_KetoSavage .dxgvAIC
 {
@@ -403,7 +403,7 @@ html.dxIE.dxBrowserVersion-9 .dxgvLoadingPanelStatusBar_KetoSavage .dxlp-loading
 }
 .dxgvHeaderPanel_KetoSavage
 {
-    background-color: #ffffff;
+    background-color: #000000;
     padding: 21px 10px 17px;
     border-bottom: 1px solid #DFDFDF;
 }
@@ -586,7 +586,7 @@ html.dxIE.dxBrowserVersion-9 .dxgvLoadingPanelStatusBar_KetoSavage .dxlp-loading
 	font-weight: bold;
 	padding: 0px;
 	text-align: center;
-	color: #FFFFFF;
+	color: #000000;
 }
 .dxgvStatusBar_KetoSavage
 {
@@ -1065,7 +1065,7 @@ html.dxIE.dxBrowserVersion-9 .dxgvLoadingPanelStatusBar_KetoSavage .dxlp-loading
 .dxgvCustDialogHeader_KetoSavage
 {
     background-color: #FF0000;
-    color: #FFFFFF;
+    color: #000000;
     font-size: 22px;
     padding: 10px;
     padding-bottom: 25px;
@@ -1183,7 +1183,7 @@ html.dxIE.dxBrowserVersion-9 .dxgvLoadingPanelStatusBar_KetoSavage .dxlp-loading
 }
 .dxgvCustDialogColumnItem_KetoSavage
 {
-    background-color: #FFFFFF;
+    background-color: #000000;
     color: rgba(0,0,0,0.64);
     min-height: 48px;
     transition: all 0.2s;

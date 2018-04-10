@@ -3,8 +3,8 @@
 <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 	 viewBox="0 0 32 32" style="enable-background:new 0 0 32 32;" xml:space="preserve">
 <g>
-	<polygon fill="#DEDEDE" points="9,8 1,16 9,24 13,24 5,16 13,8 	"/>
-	<polygon fill="#DEDEDE" points="23,8 19,8 27,16 19,24 23,24 31,16 	"/>
+	<polygon fill="#000000" points="9,8 1,16 9,24 13,24 5,16 13,8 	"/>
+	<polygon fill="#000000" points="23,8 19,8 27,16 19,24 23,24 31,16 	"/>
 </g>
 </svg>
 

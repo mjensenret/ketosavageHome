@@ -3,7 +3,7 @@
 <svg version="1.1" id="Слой_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 	 viewBox="0 0 40 40" style="enable-background:new 0 0 40 40;" xml:space="preserve">
 <circle fill="#D9D9D9" cx="20" cy="20" r="20"/>
-<circle fill="#F1F1F1" cx="20" cy="20" r="18"/>
+<circle fill="#000000" cx="20" cy="20" r="18"/>
 </svg>
 
 

@@ -12,7 +12,7 @@
 }
 .dxvgControl_KetoSavage a
 {
-    color: #DEDEDE;
+    color: #000000;
     text-decoration: none;
 }
 .dxvgControl_KetoSavage a:hover
@@ -21,7 +21,7 @@
 }
 .dxvgControl_KetoSavage a:hover.dxbDisabled_KetoSavage
 {
-    color: #BBBBBB;
+    color: #000000;
     text-decoration: none;
 }
 .dxvgDisabled_KetoSavage a
@@ -154,7 +154,7 @@
 .dxvgSelectedRecord_KetoSavage,
 .dxvgSelectedRecord_KetoSavage.dxvgDataRowHover_KetoSavage
 {
-    background-color: #F1F1F1;
+    background-color: #000000;
 }
 .dxvgDataRowHover_KetoSavage .dxvgRecord_KetoSavage
 {
@@ -173,7 +173,7 @@
 .dxvgHeader_KetoSavage a,
 .dxvgCommandCell_KetoSavage a
 {
-    color: #DEDEDE;
+    color: #000000;
 }
 .dxbButton_KetoSavage[class~="dxvgCommandItem_KetoSavage"]
 {
@@ -285,7 +285,7 @@
 }
 .dxvgFilterBar_KetoSavage a
 {
-    color: #DEDEDE;
+    color: #000000;
     text-decoration: none;
 }
 .dxvgFilterBar_KetoSavage a:hover
@@ -439,7 +439,7 @@ td.dxvgBatchEditDeletedItem_KetoSavage:not(.dxvgCommandColumn_KetoSavage)
 .dxvgRecordError_KetoSavage
 {
     background-color: #FFC8C8;
-    color: #DEDEDE;
+    color: #000000;
     padding: 6px 10px;
     height: 100%;
 }
@@ -481,7 +481,7 @@ td.dxvgBatchEditDeletedItem_KetoSavage:not(.dxvgCommandColumn_KetoSavage)
     -khtml-border-radius: 50%;
     border-radius: 50%;
     animation: dxLoadSpinSys 1s linear infinite;
-    border: 4px solid #DEDEDE;
+    border: 4px solid #000000;
     border-top: 4px solid #EEE;
     width: 24px;
     height: 24px;
@@ -557,7 +557,7 @@ html.dxIE.dxBrowserVersion-9 .dxvgLoadingPanel_KetoSavage .dxlp-loadingImage
 }
 .dxvgControl_KetoSavage .dxvgHL
 {
-    background: #DEDEDE;
+    background: #000000;
     color: white;
     font-weight: bold;
     font-style: normal;

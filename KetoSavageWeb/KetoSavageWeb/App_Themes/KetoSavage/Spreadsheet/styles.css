@@ -20,36 +20,36 @@
 }
 .dxssControl_KetoSavage .dxss-crse
 {
-    background-color: #DEDEDE;
+    background-color: #000000;
     opacity: .20;
 }
 .dxssControl_KetoSavage .dxss-trbe
 {
-    border-top-color: #DEDEDE;
+    border-top-color: #000000;
 }
 .dxssControl_KetoSavage .dxss-rrbe
 {
-    border-right-color: #DEDEDE;
+    border-right-color: #000000;
 }
 .dxssControl_KetoSavage .dxss-brbe
 {
-    border-bottom-color: #DEDEDE;
+    border-bottom-color: #000000;
 }
 .dxssControl_KetoSavage .dxss-lrbe
 {
-    border-left-color: #DEDEDE;
+    border-left-color: #000000;
 }
 .dxssControl_KetoSavage .dxss-fh
 {
-    background-color: #DEDEDE;
+    background-color: #000000;
 }
 .dxssControl_KetoSavage .dxss-sbe
 {
-    border-color: #DEDEDE;
+    border-color: #000000;
 }
 .dxssControl_KetoSavage .dxss-sbe
 {
-    border-color: #DEDEDE;
+    border-color: #000000;
 }
 .dxssControl_KetoSavage .dxtcLite_KetoSavage.dxtc-bottom > .dxtc-stripContainer .dxtc-rightIndent,
 .dxssControl_KetoSavage .dxtcLite_KetoSavage.dxtc-bottom > .dxtc-stripContainer .dxtc-leftIndent
@@ -67,7 +67,7 @@
 .dxssControl_KetoSavage .dxss-hrg,
 .dxssControl_KetoSavage .dxss-vrg
 {
-    background-color: #DEDEDE;
+    background-color: #000000;
 }
 .dxssControl_KetoSavage .dxss-md
 {
@@ -87,7 +87,7 @@
 }
 .dxssControl_KetoSavage .dxss-tse
 {
-    border-color: #DEDEDE;
+    border-color: #000000;
 }
 .dxssControl_KetoSavage .dxss-tre
 {
@@ -133,7 +133,7 @@
     -khtml-border-radius: 50%;
     border-radius: 50%;
     animation: dxLoadSpinSys 1s linear infinite;
-    border: 4px solid #DEDEDE;
+    border: 4px solid #000000;
     border-top: 4px solid #EEE;
     width: 24px;
     height: 24px;
@@ -152,7 +152,7 @@ html.dxIE.dxBrowserVersion-9 .dxssLoadingPanel_KetoSavage .dxlp-loadingImage
 /* DX Spreadsheet Cell Editor Element, Formula Bar, IntelliSense elements */
 .dxssControl_KetoSavage .dxss-ctve
 {
-    border: 2px solid #DEDEDE;
+    border: 2px solid #000000;
     /*the same -dxss-cfe */
 }
 .dxssControl_KetoSavage .dxss-fb
@@ -188,8 +188,8 @@ html.dxIE.dxBrowserVersion-9 .dxssLoadingPanel_KetoSavage .dxlp-loadingImage
 }
 .dxssControl_KetoSavage .dxss-Hint
 {
-    border: 1px solid #dedede;
-    background-color: #FFFFFF;
+    border: 1px solid #000000;
+    background-color: #000000;
     padding: 3px 8px 4px 8px;
     -webkit-border-radius: 3px;
     -moz-border-radius: 3px;
@@ -302,12 +302,12 @@ html.dxIE.dxBrowserVersion-9 .dxssLoadingPanel_KetoSavage .dxlp-loadingImage
 /* Cell Editing */
 .dxssControl_KetoSavage.icbem .dxss-inputTarget
 {
-    border: 2px solid #DEDEDE;
+    border: 2px solid #000000;
 }
 /*Cell position hint*/
 .dxssControl_KetoSavage .dxss-cell-pos-hint
 {
-    background-color: #DEDEDE;
+    background-color: #000000;
     color: white;
 }
 .dxrControl_KetoSavage .dxssRibbonCBSmall
@@ -401,8 +401,8 @@ html.dxIE.dxBrowserVersion-9 .dxssLoadingPanel_KetoSavage .dxlp-loadingImage
 .dxss-modifyChartStyleContent .dxbButtonHover_KetoSavage
 {
     color: white;
-    background-color: #DEDEDE;
-    border: 1px solid #DEDEDE;
+    background-color: #000000;
+    border: 1px solid #000000;
 }
 .dxss-modifyChartStyleContent .dxbButtonChecked_KetoSavage
 {

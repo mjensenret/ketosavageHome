@@ -190,7 +190,7 @@
 .dxdvControl_KetoSavage
 {
 	font: 14px 'Roboto Regular',Helvetica,'Droid Sans',Tahoma,Geneva,sans-serif;
-	color: #FF0000;
+	color: #DCDCDC;
 	background: #000000;
 	border-color: #000000;
 }
@@ -394,7 +394,7 @@ html.dxIE.dxBrowserVersion-9 .dxlpLoadingPanelWithContent_KetoSavage .dxlp-loadi
 }
 .dxmLite_KetoSavage .dxm-popup
 {
-	color: #808080;
+	color: #C0C0C0;
 	background: #000000;
 	border: 1px solid #4d4d4d;
 }
@@ -1511,7 +1511,7 @@ html.dxIE.dxBrowserVersion-9 .dxlpLoadingPanelWithContent_KetoSavage .dxlp-loadi
 {
 	display: block;
 	float: left;
-	//background: #fff;
+	background: #fff;
        border: 1px;
        border-color: #4d4d4d;
 	padding: 0 0 0 12px;
@@ -1533,7 +1533,7 @@ html.dxIE.dxBrowserVersion-9 .dxlpLoadingPanelWithContent_KetoSavage .dxlp-loadi
 {
 	border: 1px;
 	border-color: #4d4d4d;
-	//background: #8e8e93;
+	background: #8e8e93;
 	padding: 7px 5px 9px;
 }
 .dxpLite_KetoSavage .dxp-pressedDropDownButton,

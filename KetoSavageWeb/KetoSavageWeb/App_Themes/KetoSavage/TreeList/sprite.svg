@@ -2,13 +2,13 @@
 
 <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="17" height="617">
 <g transform="translate(0, 408)">
-<path fill="#FFFFFF" d="M12,0H0v10h4h1l0,0V9l0,0V7l0,0V6l0,0V4h8V3V0H12z M1,1h3v2H1V1z M4,9H1V7h3V9z M4,6H1V4h3V6z M5,3V1h3v2H5z&#xD;&#xA;	 M9,3V1h3v2H9z" xmlns="http://www.w3.org/2000/svg" />
+<path fill="#000000" d="M12,0H0v10h4h1l0,0V9l0,0V7l0,0V6l0,0V4h8V3V0H12z M1,1h3v2H1V1z M4,9H1V7h3V9z M4,6H1V4h3V6z M5,3V1h3v2H5z&#xD;&#xA;	 M9,3V1h3v2H9z" xmlns="http://www.w3.org/2000/svg" />
 <g xmlns="http://www.w3.org/2000/svg">
-	<path fill="#FFFFFF" d="M4,3v13h12V3H4z M15,15H5V4h10V15z" />
-	<rect x="6" y="8" fill="#FFFFFF" width="8" height="1" />
-	<rect x="6" y="10" fill="#FFFFFF" width="8" height="1" />
-	<rect x="6" y="12" fill="#FFFFFF" width="8" height="1" />
-	<rect x="6" y="6" fill="#FFFFFF" width="8" height="1" />
+	<path fill="#000000" d="M4,3v13h12V3H4z M15,15H5V4h10V15z" />
+	<rect x="6" y="8" fill="#000000" width="8" height="1" />
+	<rect x="6" y="10" fill="#000000" width="8" height="1" />
+	<rect x="6" y="12" fill="#000000" width="8" height="1" />
+	<rect x="6" y="6" fill="#000000" width="8" height="1" />
 </g>
 </g>
 
@@ -259,7 +259,7 @@
 </g>
 
 <g transform="translate(0, 540)">
-<polygon fill="#DEDEDE" points="2,1 12,1 12,3 8,6 8,11 6,13 6,6 2,3 " xmlns="http://www.w3.org/2000/svg" />
+<polygon fill="#000000" points="2,1 12,1 12,3 8,6 8,11 6,13 6,6 2,3 " xmlns="http://www.w3.org/2000/svg" />
 </g>
 
 <g transform="translate(0, 568)">

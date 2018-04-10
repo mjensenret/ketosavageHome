@@ -3,6 +3,74 @@
     ViewBag.Title = "User Program Details";
     
 }
+<script language="javascript">
+
+    //var inEditMode = false;
+    //var currentVisibleIndex = -1;
+    //var currentFileNameValue;
+    //var currentFileNameText;
+    //var currentRowKey;
+    //var currentNewRowIndex = 0;
+    //var currentControl;
+
+
+
+
+    function LoadMyGrid() {
+
+    }
+
+
+
+    function OnStartEdit(s,e)
+    {
+
+    }
+
+    function OnEndEdit(s,e)
+    {
+
+    }
+
+    function OnValidateEdit(s,e)
+    {
+
+    }
+
+    function AddNewRow()
+    {
+
+    }
+
+    function OnSelectionChanged(s,e)
+    {
+    }
+
+    function GotFocus(s,e)
+    {
+        //currentControl = s;
+        //setTimeout(FocusControl, 100);
+    }
+
+    function FocusControl()
+    {
+
+        //currentControl.SelectAll();
+    }
+
+    function SubmitGrid()
+    {
+        if (UpdateMacroGrid.batchEditApi.ValidateRows())
+        {
+            UpdateMacroGrid.UpdateEdit();
+        }
+
+    }
+
+    function myFunction() {
+        UpdateMacroGrid.batchEditApi.MoveFocusForward();
+    }
+</script>
 
 @using (Html.BeginForm("updateProgram", "UserPrograms", FormMethod.Post))
 {

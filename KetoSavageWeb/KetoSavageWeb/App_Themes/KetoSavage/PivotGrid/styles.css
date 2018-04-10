@@ -314,7 +314,7 @@ tr:first-child > .dxpgFilterItem_KetoSavage
 }
 .dxpgPrefilterPanelLink_KetoSavage
 {
-    color: #DEDEDE;
+    color: #000000;
     text-decoration: none;
 }
 .dxpgPrefilterPanelLink_KetoSavage:hover
@@ -457,7 +457,7 @@ tr:first-child > .dxpgFilterItem_KetoSavage
     display: block;
     height: 100%;
     padding: 1px;
-    background: #FFFFFF;
+    background: #000000;
     overflow: hidden;
     -webkit-user-select: none;
     -khtml-user-select: none;
@@ -470,7 +470,7 @@ tr:first-child > .dxpgFilterItem_KetoSavage
 {
     position: relative;
     display: block;
-    background: #FFFFFF;
+    background: #000000;
     height: 100%;
     padding: 0px;
     overflow-x: hidden;
@@ -592,7 +592,7 @@ div.dxpgFLTextImgDiv_KetoSavage
     -khtml-border-radius: 50%;
     border-radius: 50%;
     animation: dxLoadSpinSys 1s linear infinite;
-    border: 4px solid #DEDEDE;
+    border: 4px solid #000000;
     border-top: 4px solid #EEE;
     width: 24px;
     height: 24px;
