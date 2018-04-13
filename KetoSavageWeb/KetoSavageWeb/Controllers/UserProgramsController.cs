@@ -232,7 +232,7 @@ namespace KetoSavageWeb.Controllers
         {
             if (ModelState.IsValid)
             {
-                if (model.IsNew)
+                if (model.IsNew || model.Id == 0)
                 {
                     UserPrograms newProgram = new UserPrograms()
                     {

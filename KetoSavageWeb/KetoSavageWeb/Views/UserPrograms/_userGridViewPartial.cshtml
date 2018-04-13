@@ -5,7 +5,7 @@
         userList.Name = "UserList";
         userList.CallbackRouteValues = new { Controller = "UserPrograms", Action = "UserProgramList" };
         //userList.SettingsEditing.AddNewRowRouteValues = new { Controller = "UserPrograms", Action = "userProgramGridAdd" };
-        userList.SettingsEditing.UpdateRowRouteValues = new { Controller = "UserPrograms", Action = "userProgramGridEdit" };
+        userList.SettingsEditing.UpdateRowRouteValues = new { Controller = "UserPrograms", Action = "updateProgram" };
         userList.Styles.AlternatingRow.Enabled = DefaultBoolean.True;
         userList.SettingsBehavior.AllowFixedGroups = true;
         userList.Settings.ShowGroupPanel = true;
@@ -64,7 +64,7 @@
         userList.Columns.Add(g =>
         {
             g.Visible = false;
-            g.FieldName = "ProgramId";
+            g.FieldName = "MasterProgramId";
             g.Caption = "Program";
             g.EditFormSettings.Visible = DefaultBoolean.True;
             g.ColumnType = MVCxGridViewColumnType.ComboBox;
@@ -99,6 +99,8 @@
             c.FieldName = "LastModified";
             c.Caption = "Last Modified";
             c.ReadOnly = true;
+            c.Visible = true;
+            c.EditFormSettings.Visible = DefaultBoolean.False;
         });
         userList.Columns.Add(c =>
         {
@@ -109,6 +111,11 @@
         {
             c.FieldName = "CurrentWeight";
             c.Caption = "Current Weight";
+        });
+        userList.Columns.Add(c =>
+        {
+            c.FieldName = "GoalWeight";
+            c.Caption = "Goal Weight";
         });
         userList.Columns.Add(c =>
         {
