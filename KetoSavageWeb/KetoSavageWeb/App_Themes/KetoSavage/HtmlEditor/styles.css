@@ -9,7 +9,7 @@
 .dxheLoadingPanel_KetoSavage
 {
     background-color: white;
-    font: 14px 'Roboto Regular', Helvetica, 'Droid Sans', Tahoma, Geneva, sans-serif;
+    font: 14px 'Open Sans', Helvetica, 'Droid Sans', Tahoma, Geneva, sans-serif;
     color: #484848;
     -moz-box-shadow: 0 2px 4px 0 rgba(0,0,0,0.16), 0 2px 8px 0 rgba(0,0,0,0.12);
     -webkit-box-shadow: 0 2px 4px 0 rgba(0,0,0,0.16), 0 2px 8px 0 rgba(0,0,0,0.12);
@@ -76,7 +76,7 @@ html.dxIE.dxBrowserVersion-9 .dxheDesignViewArea_KetoSavage .dx-base64img-wrappe
 }
 .dxheControl_KetoSavage
 {
-    font: 14px 'Roboto Regular', Helvetica, 'Droid Sans', Tahoma, Geneva, sans-serif;
+    font: 14px 'Open Sans', Helvetica, 'Droid Sans', Tahoma, Geneva, sans-serif;
     border: 1px solid #E5E5E5;
     -webkit-border-radius: 3px;
     -moz-border-radius: 3px;
@@ -87,7 +87,7 @@ html.dxIE.dxBrowserVersion-9 .dxheDesignViewArea_KetoSavage .dx-base64img-wrappe
 /* Area */
 .dxheErrorFrame_KetoSavage
 {
-    font: 14px 'Roboto Regular', Helvetica, 'Droid Sans', Tahoma, Geneva, sans-serif;
+    font: 14px 'Open Sans', Helvetica, 'Droid Sans', Tahoma, Geneva, sans-serif;
     color: #D00707;
     background-color: #FBC7C7;
     margin-bottom: 6px;

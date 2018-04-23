@@ -1,7 +1,7 @@
 .dxvgControl_KetoSavage,
 .dxvgDisabled_KetoSavage
 {
-    font: 14px 'Roboto Regular', Helvetica, 'Droid Sans', Tahoma, Geneva, sans-serif;
+    font: 14px 'Open Sans', Helvetica, 'Droid Sans', Tahoma, Geneva, sans-serif;
     background-color: White;
     color: #484848;
     cursor: default;
@@ -78,7 +78,7 @@
 {
     cursor: pointer;
     color: black;
-    font: 14px 'Roboto Medium', Helvetica, 'Droid Sans', Tahoma, Geneva, sans-serif;
+    font: 14px 'Open Sans', Helvetica, 'Droid Sans', Tahoma, Geneva, sans-serif;font-weight:bold;
     text-align: left;
     background-color: white;
     padding: 10px 10px 8px;
@@ -90,7 +90,7 @@
 .dxvgCategory_KetoSavage
 {
     color: #939393;
-    font: 14px 'Roboto Medium', Helvetica, 'Droid Sans', Tahoma, Geneva, sans-serif;
+    font: 14px 'Open Sans', Helvetica, 'Droid Sans', Tahoma, Geneva, sans-serif;font-weight:bold;
     background-color: #f4f4f4;
     padding: 9px 10px 10px;
     border-bottom: 1px solid #DFDFDF;
@@ -460,7 +460,7 @@ td.dxvgBatchEditDeletedItem_KetoSavage:not(.dxvgCommandColumn_KetoSavage)
 .dxvgLoadingPanel_KetoSavage
 {
     background-color: white;
-    font: 14px 'Roboto Regular', Helvetica, 'Droid Sans', Tahoma, Geneva, sans-serif;
+    font: 14px 'Open Sans', Helvetica, 'Droid Sans', Tahoma, Geneva, sans-serif;
     color: #484848;
     -moz-box-shadow: 0 2px 4px 0 rgba(0,0,0,0.16), 0 2px 8px 0 rgba(0,0,0,0.12);
     -webkit-box-shadow: 0 2px 4px 0 rgba(0,0,0,0.16), 0 2px 8px 0 rgba(0,0,0,0.12);

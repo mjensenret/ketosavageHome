@@ -50,7 +50,7 @@ namespace KetoSavageWeb.Controllers
                 .Select(x => new
                 {
                     UserId = x.Id,
-                    ProgramId = x.UserPrograms.Select(y => y.Id),
+                    ProgramId = x.UserPrograms.Select(y => y.Id).FirstOrDefault(),
                     x.FirstName,
                     x.LastName,
                     x.Roles,
@@ -61,7 +61,7 @@ namespace KetoSavageWeb.Controllers
                 .ToList()
                 .Select(x => new UserProgramViewModel()
                 {
-                    Id = x.UserPrograms.Select(y => y.Id).FirstOrDefault(),
+                    Id = x.ProgramId,
                     UserId = x.UserId,
                     UserName = x.UserName,
                     FullName = string.Join(" ", x.FirstName, x.LastName),

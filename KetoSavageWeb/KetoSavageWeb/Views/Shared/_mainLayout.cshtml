@@ -12,6 +12,17 @@
         });
     }).GetHtml()*@
 
+    @Html.DevExpress().Panel(settings =>
+    {
+        settings.Name = "MenuPanel";
+        settings.EnableClientSideAPI = true;
+        settings.Styles.Panel.CssClass = "panel";
+        settings.SetContent(() =>
+        {
+            Html.RenderPartial("_menuPartial");
+        });
+    }).GetHtml()
+
     <div class="contentPane">
         @RenderBody()
     </div>

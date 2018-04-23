@@ -1,0 +1,51 @@
+﻿@model KetoSavageWeb.ViewModels.EnterMeasurementViewModel
+
+@{ Html.BeginForm("UpdateMeasurements", "UserProgress", FormMethod.Post);}
+@Html.DevExpress().FormLayout(settings =>
+{
+    settings.Name = "dailyWeight";
+
+
+    settings.SettingsItems.ShowCaption = DefaultBoolean.True;
+    settings.SettingsItemCaptions.Location = LayoutItemCaptionLocation.Top;
+
+    settings.SettingsItemHelpTexts.Position = HelpTextPosition.Auto;
+
+    settings.Items.Add(m => m.measurementUserId, u =>
+    {
+        u.NestedExtension().TextBox(un =>
+        {
+            un.ReadOnly = true;
+        });
+    });
+    settings.Items.Add(m => m.measurementDate, f =>
+    {
+        f.NestedExtension().DateEdit(d =>
+        {
+
+        });
+    });
+    settings.Items.Add(m => m.actualWeight, a =>
+    {
+        a.NestedExtension().TextBox(f =>
+        {
+
+        });
+    });
+    settings.Items.Add(s =>
+    {
+        s.SetNestedContent(() =>
+        {
+            Html.DevExpress().Button(b =>
+            {
+                b.Name = "btnWeightSubmit";
+                b.ControlStyle.CssClass = "button";
+                b.Text = "Save";
+                b.UseSubmitBehavior = true;
+            }).Render();
+        });
+    });
+
+}).GetHtml()
+@{ Html.EndForm();}
+

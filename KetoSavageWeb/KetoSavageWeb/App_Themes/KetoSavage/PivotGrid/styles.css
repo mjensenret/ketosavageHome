@@ -1,7 +1,7 @@
 .dxpgControl_KetoSavage, .dxpgCustForm_KetoSavage
 {
     color: #484848;
-    font: 14px 'Roboto Regular', Helvetica, 'Droid Sans', Tahoma, Geneva, sans-serif;
+    font: 14px 'Open Sans', Helvetica, 'Droid Sans', Tahoma, Geneva, sans-serif;
     background-color: white;
 }
 .dxpgCustForm_KetoSavage
@@ -41,7 +41,7 @@ div.dxpgMainTable_KetoSavage
     cursor: pointer;
     white-space: nowrap;
     text-align: left;
-    font: 14px 'Roboto Medium', Helvetica, 'Droid Sans', Tahoma, Geneva, sans-serif;
+    font: 14px 'Open Sans', Helvetica, 'Droid Sans', Tahoma, Geneva, sans-serif;font-weight:bold;
     font-size: 1em;
 }
 .dxpgHeaderTable_KetoSavage,
@@ -571,7 +571,7 @@ div.dxpgFLTextImgDiv_KetoSavage
 .dxpgLoadingPanel_KetoSavage
 {
     background-color: white;
-    font: 14px 'Roboto Regular', Helvetica, 'Droid Sans', Tahoma, Geneva, sans-serif;
+    font: 14px 'Open Sans', Helvetica, 'Droid Sans', Tahoma, Geneva, sans-serif;
     color: #484848;
     -moz-box-shadow: 0 2px 4px 0 rgba(0,0,0,0.16), 0 2px 8px 0 rgba(0,0,0,0.12);
     -webkit-box-shadow: 0 2px 4px 0 rgba(0,0,0,0.16), 0 2px 8px 0 rgba(0,0,0,0.12);

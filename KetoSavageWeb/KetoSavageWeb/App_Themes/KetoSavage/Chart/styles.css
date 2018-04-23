@@ -8,7 +8,7 @@
 .dxchartsuiLoadingPanel_KetoSavage
 {
     background-color: white;
-    font: 14px 'Roboto Regular', Helvetica, 'Droid Sans', Tahoma, Geneva, sans-serif;
+    font: 14px 'Open Sans', Helvetica, 'Droid Sans', Tahoma, Geneva, sans-serif;
     color: #484848;
     -moz-box-shadow: 0 2px 4px 0 rgba(0,0,0,0.16), 0 2px 8px 0 rgba(0,0,0,0.12);
     -webkit-box-shadow: 0 2px 4px 0 rgba(0,0,0,0.16), 0 2px 8px 0 rgba(0,0,0,0.12);
@@ -39,7 +39,7 @@
 {
     background-color: #de39cd;
     color: White;
-    font: 14px 'Roboto Regular', Helvetica, 'Droid Sans', Tahoma, Geneva, sans-serif;
+    font: 14px 'Open Sans', Helvetica, 'Droid Sans', Tahoma, Geneva, sans-serif;
     padding: 1px 4px 1px 4px;
     white-space: nowrap;
 }
@@ -58,7 +58,7 @@
 .dxchartsuiTooltip_BottomLeft_KetoSavage,
 .dxchartsuiTooltip_BottomRight_KetoSavage
 {
-    font: 14px 'Roboto Regular', Helvetica, 'Droid Sans', Tahoma, Geneva, sans-serif;
+    font: 14px 'Open Sans', Helvetica, 'Droid Sans', Tahoma, Geneva, sans-serif;
     color: #201f35;
     background-color: White;
     border: 1px solid rgba(0,0,0,0.35);

@@ -1,7 +1,7 @@
 .dxtlControl_KetoSavage
 {
     cursor: default;
-    font: 14px 'Roboto Regular', Helvetica, 'Droid Sans', Tahoma, Geneva, sans-serif;
+    font: 14px 'Open Sans', Helvetica, 'Droid Sans', Tahoma, Geneva, sans-serif;
     color: #484848;
     border: 1px #dfdfdf;
 }
@@ -50,7 +50,7 @@
     overflow: hidden;
     font-weight: normal;
     text-align: left;
-    font: 14px 'Roboto Medium', Helvetica, 'Droid Sans', Tahoma, Geneva, sans-serif;
+    font: 14px 'Open Sans', Helvetica, 'Droid Sans', Tahoma, Geneva, sans-serif;font-weight:bold;
     font-size: 1em;
 }
 .dxtlHeader_KetoSavage table.dxtl
@@ -246,7 +246,7 @@
 .dxtlLoadingPanel_KetoSavage
 {
     background-color: white;
-    font: 14px 'Roboto Regular', Helvetica, 'Droid Sans', Tahoma, Geneva, sans-serif;
+    font: 14px 'Open Sans', Helvetica, 'Droid Sans', Tahoma, Geneva, sans-serif;
     color: #484848;
     -moz-box-shadow: 0 2px 4px 0 rgba(0,0,0,0.16), 0 2px 8px 0 rgba(0,0,0,0.12);
     -webkit-box-shadow: 0 2px 4px 0 rgba(0,0,0,0.16), 0 2px 8px 0 rgba(0,0,0,0.12);

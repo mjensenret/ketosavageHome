@@ -1,0 +1,163 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+<style>
+    .zone {
+        background-color: #FFFFFF;
+        border-color: #4d4d4d;
+        border-width: thick;
+        border-style: solid;
+        margin: 3px 3px 3px 3px;
+    }
+    .zone.vertical {
+        float: left;
+    }
+    .zone.vertical.first {
+        float: left;
+        margin: 0;
+        margin: 3px 3px 3px 3px;
+    }
+    .zone.horizontal {
+        float: left;
+        margin-top: 0px;
+    }
+
+    .zone.allowed {
+        background-color: #D6F0CE;
+        border-color: #AECDA7;
+    }
+
+    .zone.forbidden {
+        background-color: #FADADA;
+        border-color: #EDBFBF;
+    }
+
+    .zoneContainer {
+        height: 800px;
+        width: 800px;
+        background-color: #FF00FF;
+        border-style: solid;
+        border-width: 1px;
+    }
+</style>
+@functions{
+    void SetContentStyleOnPreRender(MVCxDockPanel panel)
+    {
+        panel.Styles.Content.HorizontalAlign = HorizontalAlign.Center;
+        panel.Styles.Content.Paddings.PaddingLeft = 31;
+        panel.Styles.Content.Paddings.PaddingRight = 31;
+        panel.Styles.Content.Paddings.PaddingTop = 24;
+    }
+
+}
+<script type="text/javascript">
+    function OnPanel1Init(s, e) {
+        var zoneContainer = document.getElementById('zoneContainer'),
+            x = ASPxClientUtils.GetAbsoluteX(zoneContainer),
+            y = ASPxClientUtils.GetAbsoluteY(zoneContainer);
+        s.ShowAtPos(x + 320, y + 430);
+    }
+</script>
+
+<div id="zoneContainer" class="zoneContainer horizontal-center-aligned">
+    @Html.DevExpress().DockZone(
+        settings =>
+        {
+            settings.Name = "dockZone1";
+            settings.ZoneUID = "zone1";
+            settings.PanelSpacing = 3;
+            settings.Paddings.Padding = 3;
+            settings.Height = 600;
+            settings.Width = 280;
+            settings.ControlStyle.CssClass = "zone vertical first";
+            settings.Styles.DockingAllowedStyle.CssClass = "zone allowed";
+            settings.Styles.DockingForbiddenStyle.CssClass = "zone forbidden";
+        }
+    ).GetHtml()
+    @Html.DevExpress().DockZone(
+        settings =>
+        {
+            settings.Name = "dockZone2";
+            settings.ZoneUID = "zone2";
+            settings.PanelSpacing = 3;
+            settings.Paddings.Padding = 3;
+            settings.Height = 600;
+            settings.Width = 280;
+            settings.ControlStyle.CssClass = "zone vertical";
+            settings.Styles.DockingAllowedStyle.CssClass = "zone allowed";
+            settings.Styles.DockingForbiddenStyle.CssClass = "zone forbidden";
+        }
+    ).GetHtml()
+
+    @Html.DevExpress().DockZone(
+        settings =>
+        {
+            settings.Name = "dockZone3";
+            settings.ZoneUID = "zone3";
+            settings.PanelSpacing = 11;
+            settings.Paddings.Padding = 3;
+            settings.Height = 200;
+            settings.Width = 583;
+            settings.ControlStyle.CssClass = "zone horizontal";
+            settings.Styles.DockingAllowedStyle.CssClass = "zone allowed";
+            settings.Styles.DockingForbiddenStyle.CssClass = "zone forbidden";
+        }
+    ).GetHtml()
+</div>
+<div>
+    @Html.DevExpress().DockPanel(settings =>
+{
+    settings.Name = "frmMacros";
+    settings.PanelUID = "frmMacros";
+    settings.HeaderText = "Enter Macros";
+    settings.VisibleIndex = 0;
+    settings.Styles.Content.Paddings.Padding = 0;
+    settings.ShowCloseButton = false;
+    settings.ShowHeader = true;
+    settings.AllowResize = true;
+    //settings.Width = 300;
+    settings.OwnerZoneUID = "zone1";
+    settings.Styles.Content.Border.BorderStyle = BorderStyle.Solid;
+    settings.SetContent(() =>
+    {
+        Html.RenderAction("EnterMacroForm");
+    });
+    settings.PreRender = (sender, e) =>
+    {
+        SetContentStyleOnPreRender((MVCxDockPanel)sender);
+    };
+    //settings.ClientSideEvents.Init = "OnPanel1Init";
+}).GetHtml()
+    @Html.DevExpress().DockPanel(settings =>
+{
+    settings.Name = "frmMeasurements";
+    settings.PanelUID = "frmMeasurements";
+    settings.HeaderText = "Enter Measurements";
+    settings.VisibleIndex = 1;
+    settings.ShowCloseButton = false;
+    settings.ShowHeader = true;
+    settings.AllowResize = true;
+    settings.OwnerZoneUID = "zone2";
+    settings.Styles.Content.Border.BorderStyle = BorderStyle.Solid;
+    settings.SetContent(() =>
+    {
+        Html.RenderAction("EnterMeasurementsForm");
+    });
+    settings.PreRender = (sender, e) =>
+    {
+        SetContentStyleOnPreRender((MVCxDockPanel)sender);
+    };
+}).GetHtml()
+
+</div>
+<script type="text/javascript">
+    //debugger;
+    $("#btnSubmit").click(function () {
+        //TODO: add submit functionality
+    });
+</script>
+
+
+
+

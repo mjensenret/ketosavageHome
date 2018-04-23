@@ -17,7 +17,7 @@ function ShowUserProgramPopup(url) {
     popup.SetContentUrl(url);
     popup.Show();
 }
-
+//debugger;
 function ShowUserProgramDetails(url) {
-    window.location.href(url);
+    window.location.replace(url);
 }

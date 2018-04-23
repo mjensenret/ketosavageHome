@@ -79,15 +79,17 @@
         userProgram.Name = "userForm";
         //userProgram.Width = Unit.Percentage(75);
         userProgram.SettingsItemCaptions.Location = LayoutItemCaptionLocation.Top;
+        
 
         userProgram.Items.AddGroupItem(g =>
         {
             g.GroupBoxDecoration = GroupBoxDecoration.Box;
             g.Caption = "User Details";
             g.ColCount = 2;
+            
             g.Items.Add(m => m.Id, i =>
             {
-                i.Visible = true;
+                i.ClientVisible = false;
                 i.NestedExtension().TextBox(s =>
                 {
                     s.ReadOnly = true;
@@ -95,7 +97,7 @@
             });
             g.Items.Add(m => m.UserId, i =>
             {
-                i.Visible = true;
+                i.Visible = false;
                 i.NestedExtension().TextBox(s =>
                 {
 
@@ -177,9 +179,9 @@
             });
             g.Items.Add(m => m.CurrentWeight, i =>
             {
-                i.NestedExtension().TextBox(s =>
+                i.NestedExtension().Label(s =>
                 {
-                    s.ReadOnly = true;
+                    
                 });
             });
         });
@@ -265,7 +267,7 @@
     function redirectToClientList() {
         var url = '@Url.Action("Index")';
         console.log(url);
-        window.location.href(url);
+        window.location.replace(url);
     }
 
 </script>

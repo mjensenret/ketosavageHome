@@ -150,6 +150,12 @@ namespace KetoSavageWeb.Controllers
                 userEdit.LastName = model.LastName;
                 userEdit.Email = model.Email;
 
+
+                if (model.Password != "" && model.Password == model.ConfirmPassword)
+                {
+                    userEdit.PasswordHash = UserManager.PasswordHasher.HashPassword(model.Password);
+                }
+                
                 var userRole = await UserManager.GetRolesAsync(userEdit.Id);
 
                 if(userRole.Count() > 0)

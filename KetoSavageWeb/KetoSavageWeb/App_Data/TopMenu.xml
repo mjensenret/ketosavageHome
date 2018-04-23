@@ -2,7 +2,8 @@
 <items>
   <item Text="Home" NavigateUrl="~/" />
   <item Text="Stats" NavigateUrl="#"  />
-  <item Text="Macros" NavigateUrl="#"  />
+  <item Text="Progress" NavigateUrl="~/UserProgress">
+  </item>
   <item Text="Workouts" NavigateUrl="#"  />
   <item Text="Admin" NavigateUrl="#" Roles="Administrator;Manager;Coach">
     <item Text="Manage Users" NavigateUrl="~/ManageUsers" />

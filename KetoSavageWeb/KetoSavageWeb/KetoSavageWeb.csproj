@@ -695,6 +695,11 @@
     <Content Include="Views\UserPrograms\UserProgramDetails.cshtml" />
     <Content Include="Views\UserPrograms\_pastPerformance.cshtml" />
     <Content Include="Views\UserPrograms\_dailyMacros.cshtml" />
+    <Content Include="Views\UserProgress\Index.cshtml" />
+    <Content Include="Views\UserProgress\Macros.cshtml" />
+    <Content Include="Views\UserProgress\Weight.cshtml" />
+    <Content Include="Views\UserProgress\_enterDailyMacros.cshtml" />
+    <Content Include="Views\UserProgress\_enterDailyMeasurements.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -703,6 +708,7 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="App_Start\DashboardConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\IdentityConfig.cs" />
     <Compile Include="App_Start\NinjectWebCommon.cs" />
@@ -717,6 +723,7 @@
     <Compile Include="Controllers\UserProgramsController.cs" />
     <Compile Include="Controllers\ManageUsersController.cs" />
     <Compile Include="Controllers\ProgramsController.cs" />
+    <Compile Include="Controllers\UserProgressController.cs" />
     <Compile Include="Controllers\UsersAdminController.cs" />
     <Compile Include="Domain\Infrastructure\EfEntityContext.cs" />
     <Compile Include="Domain\Infrastructure\IEntityContext.cs" />
@@ -797,6 +804,7 @@
     <Compile Include="Models\UserPrograms.cs" />
     <Compile Include="Repositories\DateRepository.cs" />
     <Compile Include="Repositories\UserProgramRepository.cs" />
+    <Compile Include="ViewModels\ProgressViewModel.cs" />
     <Compile Include="ViewModels\UserProgramViewModel.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\KSDataContext.cs" />

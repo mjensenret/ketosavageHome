@@ -3,16 +3,16 @@
 {
 	font: 14px 'Roboto Regular',Helvetica,'Droid Sans',Tahoma,Geneva,sans-serif;
 	background: #000000;
-	color: #858585;
+	color: #787878;
 	cursor: default;
 }
 .dxgvDisabled_KetoSavage
 {
-    color: #b8b8b8;
+    color: #787878;
 }
 .dxgvControl_KetoSavage a
 {
-    color: #4d4d4d;
+    color: #dedede;
     text-decoration: none;
 }
 .dxgvControl_KetoSavage a:hover
@@ -26,7 +26,7 @@
 }
 .dxgvDisabled_KetoSavage a
 {
-    color: #b8b8b8;
+    color: #787878;
 }
 .dxgvEmptyDataRow_KetoSavage.dxgvLVR > td.dxgv,
 .dxgvDataRow_KetoSavage.dxgvLVR > td.dxgv,
@@ -49,7 +49,7 @@
 .dxgvLoadingPanel_KetoSavage
 {
     background-color: #000000;
-    font: 14px 'Roboto Regular', Helvetica, 'Droid Sans', Tahoma, Geneva, sans-serif;
+    font: 14px 'Open Sans', Helvetica, 'Droid Sans', Tahoma, Geneva, sans-serif;
     color: #000000;
     -moz-box-shadow: 0 2px 4px 0 rgba(0,0,0,0.16), 0 2px 8px 0 rgba(0,0,0,0.12);
     -webkit-box-shadow: 0 2px 4px 0 rgba(0,0,0,0.16), 0 2px 8px 0 rgba(0,0,0,0.12);
@@ -206,7 +206,6 @@ html.dxIE.dxBrowserVersion-9 .dxgvLoadingPanelStatusBar_KetoSavage .dxlp-loading
 .dxgvControl_KetoSavage .dxgvTable_KetoSavage .dxgvFocusedRow_KetoSavage a,
 .dxgvControl_KetoSavage .dxgvTable_KetoSavage .dxgvFocusedGroupRow_KetoSavage a
 {
-    color: #000000;
 }
 .dxgvControl_KetoSavage .dxgvAIC
 {
@@ -380,13 +379,13 @@ html.dxIE.dxBrowserVersion-9 .dxgvLoadingPanelStatusBar_KetoSavage .dxlp-loading
 }
 .dxgvGroupRow_KetoSavage
 {
-    background-color: #323232;
-    color: #7c7c7c;
+    background-color: #080808;
+    color: #dedede;
 }
 .dxgvFocusedGroupRow_KetoSavage
 {
-    background-color: #FF0000;
-    color: white;
+    background-color: #080808;
+    color: #dedede;
 }
 .dxgvGroupRow_KetoSavage td.dxgv,
 .dxgvFocusedGroupRow_KetoSavage td.dxgv
@@ -395,7 +394,7 @@ html.dxIE.dxBrowserVersion-9 .dxgvLoadingPanelStatusBar_KetoSavage .dxlp-loading
     vertical-align: middle;
     border-bottom: 1px solid #4d4d4d !important;
     padding: 3px;
-    background-color: #323232;
+    background-color: #080808;
 }
 .dxgvFocusedGroupRow_KetoSavage td.dxgvIndentCell
 {
@@ -424,7 +423,7 @@ html.dxIE.dxBrowserVersion-9 .dxgvLoadingPanelStatusBar_KetoSavage .dxlp-loading
 	padding: 3px;
 	border: 1px solid #4d4d4d;
 	background: Black;
-	color: White;
+	color: #dedede;
 	overflow: hidden;
 	text-align: left;
 	font: normal 1em 'Roboto Medium',Helvetica,'Droid Sans',Tahoma,Geneva,sans-serif;
@@ -586,7 +585,7 @@ html.dxIE.dxBrowserVersion-9 .dxgvLoadingPanelStatusBar_KetoSavage .dxlp-loading
 	font-weight: bold;
 	padding: 0px;
 	text-align: center;
-	color: #000000;
+	color: #dedede;
 }
 .dxgvStatusBar_KetoSavage
 {

@@ -7,8 +7,8 @@
         s.CallbackRouteValues = new { Controller = "UserPrograms", Action = "NewMacrosGridview" };
         s.SettingsEditing.BatchUpdateRouteValues = new { Controller = "UserPrograms", Action = "BatchUpdateMacros" };
         s.SettingsEditing.Mode = GridViewEditingMode.Batch;
-        s.SettingsEditing.BatchEditSettings.EditMode = GridViewBatchEditMode.Cell;
-        s.SettingsEditing.BatchEditSettings.StartEditAction = GridViewBatchStartEditAction.Click;
+        s.SettingsEditing.BatchEditSettings.EditMode = GridViewBatchEditMode.Row;
+        s.SettingsEditing.BatchEditSettings.StartEditAction = GridViewBatchStartEditAction.FocusedCellClick;
 
         s.SettingsBehavior.AllowSelectByRowClick = true;
         s.SettingsEditing.ShowModelErrorsForEditors = true;
