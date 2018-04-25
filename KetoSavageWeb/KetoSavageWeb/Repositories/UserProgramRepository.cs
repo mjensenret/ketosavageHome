@@ -34,7 +34,7 @@ namespace KetoSavageWeb.Repositories
             var startWeek = currentWeek - 4;
             var up = this.GetActive.Where(x => x.ProgramUserId == userId).Include(x => x.DailyProgress).SelectMany(x => x.DailyProgress);
             var pastProgress = (up
-                .Where(x => x.Dates.WeekOfYear >= startWeek && x.Dates.WeekOfYear < currentWeek)
+                .Where(x => x.Dates.WeekOfYear >= startWeek && x.Dates.WeekOfYear <= currentWeek)
                 .OrderByDescending(x => x.DateId)
                 );
 

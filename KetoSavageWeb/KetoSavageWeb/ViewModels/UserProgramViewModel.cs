@@ -28,6 +28,7 @@ namespace KetoSavageWeb.ViewModels
         public bool ShowAllActive { get; set; }
         public int MasterProgramId { get; set; }
         public bool IsNew { get; set; }
+        public ICollection<DailyProgress> dailyProgress { get; set; }
 
     }
 

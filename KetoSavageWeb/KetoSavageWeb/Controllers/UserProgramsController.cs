@@ -217,6 +217,7 @@ namespace KetoSavageWeb.Controllers
                 model.GoalWeight = userProgram.GoalWeight;
                 model.CurrentWeight = getCurrentWeight(userProgram.ProgramUserId).HasValue ? getCurrentWeight(userProgram.ProgramUserId).Value : userProgram.StartWeight;
                 model.UserType = userProgram.ProgramType;
+                model.dailyProgress = userProgram.DailyProgress;
                 model.IsNew = false;
                 ViewBag.IsNew = false;
             };
@@ -234,22 +235,24 @@ namespace KetoSavageWeb.Controllers
             {
                 if (model.IsNew || model.Id == 0)
                 {
+                    var masterProgram = program.GetActive.Where(x => x.Id == model.MasterProgramId).First();
+                    var currentUserName = CurrentUser.UserName;
                     UserPrograms newProgram = new UserPrograms()
                     {
-                        ProgramType = model.ProgramType,
+                        ProgramType = masterProgram.Name,
                         ProgramUserId = model.UserId,
                         StartDate = model.currentProgramStartDate,
                         EndDate = model.currentProgramEndDate,
                         RenewalDate = model.currentProgramRenewalDate,
                         StartWeight = model.StartWeight,
                         GoalWeight = model.GoalWeight,
-                        MasterProgramId = model.MasterProgramId,
+                        MasterProgramId = masterProgram.Id,
                         Notes = model.Notes,
                         CoachUserId = model.CoachId,
                         Created = DateTime.Now,
-                        CreatedBy = CurrentUser.UserName,
+                        CreatedBy = currentUserName,
                         LastModified = DateTime.Now,
-                        LastModifiedBy = CurrentUser.UserName
+                        LastModifiedBy = currentUserName
                     };
                     
                     _context.UserPrograms.Add(newProgram);
@@ -283,9 +286,9 @@ namespace KetoSavageWeb.Controllers
 
                         //dailyProgress.UserProgramId = newProgramId;
                         dailyProgress.Created = DateTime.Now;
-                        dailyProgress.CreatedBy = CurrentUser.UserName;
+                        dailyProgress.CreatedBy = currentUserName;
                         dailyProgress.LastModified = DateTime.Now;
-                        dailyProgress.LastModifiedBy = CurrentUser.UserName;
+                        dailyProgress.LastModifiedBy = currentUserName;
 
                         _context.DailyProgress.Add(dailyProgress);
                         numberOfDays--;

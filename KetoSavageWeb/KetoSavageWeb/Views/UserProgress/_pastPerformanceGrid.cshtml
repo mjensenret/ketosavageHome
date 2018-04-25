@@ -2,11 +2,13 @@
     var grid = Html.DevExpress().GridView(g =>
     {
         g.Name = "pastPerformanceGrid";
-        g.CallbackRouteValues = new { Controller = "UserPrograms", Action = "pastPerformance",  _userId = ViewData["UserId"]};
+        g.CallbackRouteValues = new { Controller = "UserProgress", Action = "PastPerformanceGrid" };
         g.SettingsPager.Mode = GridViewPagerMode.ShowPager;
-        g.SettingsPager.PageSize = 7;
+        g.SettingsPager.PageSize = 14;
+        g.SettingsPager.AlwaysShowPager = true;
         g.SettingsPager.FirstPageButton.Visible = true;
         g.SettingsPager.LastPageButton.Visible = true;
+
         g.KeyFieldName = "Id";
 
         g.Columns.Add(c =>
@@ -21,8 +23,8 @@
         });
         g.Columns.AddBand(b =>
         {
-            b.Caption = "Weight";
             b.HeaderStyle.HorizontalAlign = HorizontalAlign.Center;
+            b.Caption = "Weight";
             b.HeaderStyle.Font.Bold = true;
             b.Columns.Add(c =>
             {
@@ -36,17 +38,17 @@
             });
             b.Columns.Add(c =>
             {
+                c.FieldName = "weightDiff";
                 c.Caption = "Variance";
-                c.FieldName = "Diff";
                 c.UnboundType = DevExpress.Data.UnboundColumnType.Decimal;
-                c.UnboundExpression = "ROUND([ActualWeight] - [PlannedWeight], 2)";
+                c.UnboundExpression = "ROUND([ActualWeight] - [PlannedWeight],2)";
+
             });
         });
         g.Columns.AddBand(b =>
         {
-            b.Caption = "Fat";
             b.HeaderStyle.HorizontalAlign = HorizontalAlign.Center;
-            b.HeaderStyle.Font.Bold = true;
+            b.Caption = "Fat";
             b.Columns.Add(c =>
             {
                 c.Caption = "Planned";
@@ -59,17 +61,17 @@
             });
             b.Columns.Add(c =>
             {
-                c.Caption = "Variance";
                 c.FieldName = "fatDiff";
+                c.Caption = "Variance";
                 c.UnboundType = DevExpress.Data.UnboundColumnType.Decimal;
-                c.UnboundExpression = "ROUND([ActualFat] - [PlannedFat], 2)";
+                c.UnboundExpression = "ROUND([ActualFat] - [PlannedFat],2)";
+
             });
         });
         g.Columns.AddBand(b =>
         {
-            b.Caption = "Protein";
             b.HeaderStyle.HorizontalAlign = HorizontalAlign.Center;
-            b.HeaderStyle.Font.Bold = true;
+            b.Caption = "Protein";
             b.Columns.Add(c =>
             {
                 c.Caption = "Planned";
@@ -82,17 +84,17 @@
             });
             b.Columns.Add(c =>
             {
-                c.Caption = "Variance";
                 c.FieldName = "protDiff";
+                c.Caption = "Variance";
                 c.UnboundType = DevExpress.Data.UnboundColumnType.Decimal;
                 c.UnboundExpression = "ROUND([ActualProtein] - [PlannedProtein],2)";
+
             });
         });
         g.Columns.AddBand(b =>
         {
-            b.Caption = "Carbohydrates";
             b.HeaderStyle.HorizontalAlign = HorizontalAlign.Center;
-            b.HeaderStyle.Font.Bold = true;
+            b.Caption = "Carbohydrates";
             b.Columns.Add(c =>
             {
                 c.Caption = "Planned";
@@ -105,10 +107,11 @@
             });
             b.Columns.Add(c =>
             {
-                c.Caption = "Variance";
                 c.FieldName = "carbDiff";
+                c.Caption = "Variance";
                 c.UnboundType = DevExpress.Data.UnboundColumnType.Decimal;
                 c.UnboundExpression = "ROUND([ActualCarbohydrates] - [PlannedCarbohydrates],2)";
+
             });
         });
 
@@ -117,3 +120,4 @@
     });
 }
 @grid.Bind(Model).GetHtml()
+

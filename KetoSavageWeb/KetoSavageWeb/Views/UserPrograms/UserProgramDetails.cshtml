@@ -97,10 +97,10 @@
             });
             g.Items.Add(m => m.UserId, i =>
             {
-                i.Visible = false;
+                i.ClientVisible = false;
                 i.NestedExtension().TextBox(s =>
                 {
-
+                    s.ReadOnly = true;
                 });
             });
             g.Items.Add(m => m.UserName, i =>

@@ -700,6 +700,8 @@
     <Content Include="Views\UserProgress\Weight.cshtml" />
     <Content Include="Views\UserProgress\_enterDailyMacros.cshtml" />
     <Content Include="Views\UserProgress\_enterDailyMeasurements.cshtml" />
+    <Content Include="Views\UserProgress\_entryForms.cshtml" />
+    <Content Include="Views\UserProgress\_pastPerformanceGrid.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

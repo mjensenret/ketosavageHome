@@ -49,7 +49,7 @@ namespace KetoSavageWeb.Controllers
                 var dailyProgress = userProgram.DailyProgress.Where(dp => dp.Dates.Date == model.macroDate.Date).First();
                 dailyProgress.ActualFat = model.actualFat;
                 dailyProgress.ActualProtein = model.actualProtein;
-                dailyProgress.ActualCarbohydrate = model.actualProtein;
+                dailyProgress.ActualCarbohydrate = model.actualCarb;
                 dailyProgress.LastModified = DateTime.Now;
                 dailyProgress.LastModifiedBy = CurrentUser.UserName;
 
@@ -84,9 +84,70 @@ namespace KetoSavageWeb.Controllers
             return RedirectToAction("Index");
 
         }
-        public ActionResult Weight()
+
+        public ActionResult PastPerformanceGrid()
         {
-            return View();
+            var currentDate = DateTime.Now;
+            var _userId = CurrentUser.Id;
+            //var programDetails = userProgramRepository.GetPastProgressByUser(_userId, currentDate);
+            var programDetails = userProgramRepository.GetDailyProgressByUser(_userId);
+
+
+            if (programDetails.Count() > 0)
+            {
+                var q = (programDetails
+                    .Select(x => new
+                    {
+                        x.Id,
+                        x.UserProgram.ProgramUserId,
+                        x.Dates,
+                        x.PlannedWeight,
+                        x.ActualWeight,
+                        x.PlannedFat,
+                        x.ActualFat,
+                        x.PlannedProtein,
+                        x.ActualProtein,
+                        x.PlannedCarbohydrate,
+                        x.ActualCarbohydrate
+                    })
+                    .ToList()
+                    .Select(y => new UserProgramProgress
+                    {
+                        Id = y.Id,
+                        UserId = y.ProgramUserId,
+                        Date = y.Dates.Date,
+                        WeekDay = y.Dates.WeekDayName,
+                        PlannedWeight = y.PlannedWeight,
+                        ActualWeight = y.ActualWeight,
+                        PlannedFat = y.PlannedFat,
+                        ActualFat = y.ActualFat,
+                        PlannedCarbohydrates = y.PlannedCarbohydrate,
+                        ActualCarbohydrates = y.ActualCarbohydrate,
+                        PlannedProtein = y.PlannedProtein,
+                        ActualProtein = y.ActualProtein,
+
+                    })
+                    );
+
+                return PartialView("_pastPerformanceGrid", q);
+            }
+            else
+            {
+                return PartialView("_pastPerformanceGrid");
+            }
+        }
+
+        public ActionResult EntryPopup(string buttonName)
+        {
+            if (buttonName == "Macros")
+            {
+                return RedirectToAction("EnterMacroForm");
+            }
+            else
+            {
+                return RedirectToAction("EnterMeasurementsForm");
+            }
+
         }
     }
 }
