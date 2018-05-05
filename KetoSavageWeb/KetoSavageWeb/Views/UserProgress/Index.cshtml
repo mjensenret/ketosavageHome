@@ -16,12 +16,12 @@
             padding: 3px;
         }
 
-        .zone.vertical.first {
-            float: left;
-            margin: 0;
-            padding: 3px;
-            /*margin: 3px 3px 3px 3px;*/
-        }
+            .zone.vertical.first {
+                float: left;
+                margin: 0;
+                padding: 3px;
+                /*margin: 3px 3px 3px 3px;*/
+            }
 
         .zone.horizontal {
             float: left;
@@ -70,53 +70,8 @@
     }
 </script>
 <center>
-    <div class="zoneContainer">
-        @Html.DevExpress().DockZone(
-     settings =>
-     {
-         settings.Name = "dockZone1";
-         settings.ZoneUID = "zone1";
-         settings.PanelSpacing = 3;
-         settings.Paddings.Padding = 3;
-         settings.Height = 100;
-         settings.Width = Unit.Percentage(100);
-         settings.ControlStyle.CssClass = "zone vertical first";
-         settings.Styles.DockingAllowedStyle.CssClass = "zone allowed";
-         settings.Styles.DockingForbiddenStyle.CssClass = "zone forbidden";
-     }
- ).GetHtml()
-        @Html.DevExpress().DockZone(
-     settings =>
-     {
-         settings.Name = "dockZone2";
-         settings.ZoneUID = "zone2";
-         settings.PanelSpacing = 3;
-         settings.Paddings.Padding = 3;
-         //settings.Height = 600;
-         settings.Width = Unit.Percentage(100);
-         settings.ControlStyle.CssClass = "zone vertical";
-         settings.Styles.DockingAllowedStyle.CssClass = "zone allowed";
-         settings.Styles.DockingForbiddenStyle.CssClass = "zone forbidden";
-     }
- ).GetHtml()
 
-        @Html.DevExpress().DockZone(
-     settings =>
-     {
-         settings.Name = "dockZone3";
-         settings.ZoneUID = "zone3";
-         settings.PanelSpacing = 11;
-         settings.Paddings.Padding = 3;
-         settings.Height = 200;
-         settings.Width = 583;
-         settings.ControlStyle.CssClass = "zone horizontal";
-         settings.Styles.DockingAllowedStyle.CssClass = "zone allowed";
-         settings.Styles.DockingForbiddenStyle.CssClass = "zone forbidden";
-     }
- ).GetHtml()
-
-
-        @Html.DevExpress().DockPanel(settings =>
+    @Html.DevExpress().DockPanel(settings =>
 {
     settings.Name = "entryButtons";
     settings.PanelUID = "pnlEntryButtons";
@@ -177,57 +132,67 @@
             });
         }).GetHtml();
     });
-}).GetHtml();
+}).GetHtml()
 
-
-        @Html.DevExpress().DockPanel(settings =>
+    @Html.DevExpress().DockPanel(settings =>
 {
-    settings.Name = "pnlPastPerf";
-    settings.PanelUID = "pnlPastPerformance";
-    settings.HeaderText = "Past Performance";
-    settings.VisibleIndex = 0;
-    settings.Styles.Content.Paddings.Padding = 0;
-    settings.ShowCloseButton = false;
-    settings.ShowHeader = true;
-    settings.AllowResize = true;
-    //settings.Width = 300;
-    settings.OwnerZoneUID = "zone2";
-    settings.Styles.Content.Border.BorderStyle = BorderStyle.Solid;
+    
+    settings.Name = "pnlWeightGraph";
+    settings.PanelUID = "pnlWeightGraph";
+    settings.HeaderText = "Weight Graph";
+    settings.ShowHeader = false;
+    settings.ShowMaximizeButton = true;
+    settings.OwnerZoneUID = "zone1";
     settings.SetContent(() =>
     {
-        Html.RenderAction("PastPerformanceGrid");
-    });
-    //settings.PreRender = (sender, e) =>
-    //{
-    //    SetContentStyleOnPreRender((MVCxDockPanel)sender);
-    //};
-    //settings.ClientSideEvents.Init = "OnPanel1Init";
-}).GetHtml()
-        @*
-                @Html.DevExpress().DockPanel(settings =>
-            {
-                settings.Name = "frmMeasurements";
-                settings.PanelUID = "frmMeasurements";
-                settings.HeaderText = "Enter Measurements";
-                settings.VisibleIndex = 1;
-                settings.ShowCloseButton = false;
-                settings.ShowHeader = true;
-                settings.AllowResize = true;
-                settings.OwnerZoneUID = "zone2";
-                settings.Styles.Content.Border.BorderStyle = BorderStyle.Solid;
-                settings.SetContent(() =>
-                {
-                    Html.RenderAction("EnterMeasurementsForm");
-                });
-                settings.PreRender = (sender, e) =>
-                {
-                    SetContentStyleOnPreRender((MVCxDockPanel)sender);
-                };
-            }).GetHtml()*@
-    </div>
-</center>
+        var userId = Session["UserId"];
+        Html.RenderAction("ClientWeightGraph", "ClientCharts", new { userId = userId });
 
-@Html.DevExpress().PopupControl(settings =>
+    });
+
+
+}).GetHtml()
+    @Html.DevExpress().DockPanel(settings =>
+    {
+        settings.Name = "pnlPastPerf";
+        settings.PanelUID = "pnlPastPerformance";
+        settings.HeaderText = "Past Performance";
+        settings.VisibleIndex = 0;
+        settings.Styles.Content.Paddings.Padding = 0;
+        settings.ShowCloseButton = false;
+        settings.ShowHeader = true;
+        settings.AllowResize = true;
+        settings.OwnerZoneUID = "zone2";
+        settings.Styles.Content.Border.BorderStyle = BorderStyle.Solid;
+        settings.SetContent(() =>
+        {
+            Html.RenderAction("PastPerformanceGrid");
+        });
+    }).GetHtml()
+    @*
+            @Html.DevExpress().DockPanel(settings =>
+        {
+            settings.Name = "frmMeasurements";
+            settings.PanelUID = "frmMeasurements";
+            settings.HeaderText = "Enter Measurements";
+            settings.VisibleIndex = 1;
+            settings.ShowCloseButton = false;
+            settings.ShowHeader = true;
+            settings.AllowResize = true;
+            settings.OwnerZoneUID = "zone2";
+            settings.Styles.Content.Border.BorderStyle = BorderStyle.Solid;
+            settings.SetContent(() =>
+            {
+                Html.RenderAction("EnterMeasurementsForm");
+            });
+            settings.PreRender = (sender, e) =>
+            {
+                SetContentStyleOnPreRender((MVCxDockPanel)sender);
+            };
+        }).GetHtml()*@
+
+
+    @Html.DevExpress().PopupControl(settings =>
     {
         settings.Name = "popupControl";
         settings.Width = 400;
@@ -243,25 +208,71 @@
         settings.ClientSideEvents.CloseUp = "function(s, e){ ASPxClientEdit.ClearEditorsInContainer(null, '', true); }";
     }).GetHtml()
 
+    <div class="zoneContainer">
+        @Html.DevExpress().DockZone(
+            settings =>
+            {
+                settings.Name = "dockZone1";
+                settings.ZoneUID = "zone1";
+                settings.PanelSpacing = 3;
+                settings.Paddings.Padding = 3;
+                //settings.Height = 100;
+                settings.Width = Unit.Percentage(100);
+                settings.ControlStyle.CssClass = "zone vertical first";
+                settings.Styles.DockingAllowedStyle.CssClass = "zone allowed";
+                settings.Styles.DockingForbiddenStyle.CssClass = "zone forbidden";
+            }
+        ).GetHtml()
+        @Html.DevExpress().DockZone(
+        settings =>
+        {
+            settings.Name = "dockZone2";
+            settings.ZoneUID = "zone2";
+            settings.PanelSpacing = 3;
+            settings.Paddings.Padding = 3;
+            //settings.Height = 600;
+            settings.Width = Unit.Percentage(100);
+            settings.ControlStyle.CssClass = "zone vertical";
+            settings.Styles.DockingAllowedStyle.CssClass = "zone allowed";
+            settings.Styles.DockingForbiddenStyle.CssClass = "zone forbidden";
+        }
+        ).GetHtml()
+
+        @Html.DevExpress().DockZone(
+        settings =>
+        {
+            settings.Name = "dockZone3";
+            settings.ZoneUID = "zone3";
+            settings.PanelSpacing = 11;
+            settings.Paddings.Padding = 3;
+            settings.Height = 200;
+            settings.Width = 583;
+            settings.ControlStyle.CssClass = "zone horizontal";
+            settings.Styles.DockingAllowedStyle.CssClass = "zone allowed";
+            settings.Styles.DockingForbiddenStyle.CssClass = "zone forbidden";
+        }
+        ).GetHtml()
+    </div>
+</center>
 
 <script type="text/javascript">
 
-    //debugger;
-    function openWindow(action) {
-        $.ajax({
-            type: "POST",
-            url: "@Url.Action("EntryPopup", "UserProgress")",
-            data: { buttonName: action },
-            traditional: true,
-            success: function (response) {
-                popupControl.SetContentHtml(response);
-                MVCxClientUtils.FinalizeCallback();
-            },
-            error: function (XMLHttpRequest, textStatus, errorThrown) {
-                alert('oops, something bad happened');
-            }
-        });
-        window['popupControl'].Show();
-    }
+        //debugger;
+        function openWindow(action) {
+            $.ajax({
+                type: "POST",
+                url: "@Url.Action("EntryPopup", "UserProgress")",
+                data: { buttonName: action },
+                traditional: true,
+                success: function (response) {
+                    popupControl.SetContentHtml(response);
+                    MVCxClientUtils.FinalizeCallback();
+                },
+                error: function (XMLHttpRequest, textStatus, errorThrown) {
+                    alert('oops, something bad happened');
+                }
+            });
+            window['popupControl'].Show();
+        }
 
 </script>

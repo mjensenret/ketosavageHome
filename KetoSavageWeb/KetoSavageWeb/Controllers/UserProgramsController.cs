@@ -465,6 +465,42 @@ namespace KetoSavageWeb.Controllers
 
             return RedirectToAction("ShowProgramDetails", new { @_userId = Session["UserId"] });
         }
+
+
+        public ActionResult EnterMacroForm()
+        {
+            DailyMacroUpdate model = new DailyMacroUpdate();
+            model.userId = Convert.ToInt32(Session["userId"]);
+            
+
+            return PartialView("_enterNewMacroForm",model);
+        }
+        [HttpPost]
+        public ActionResult SetWeeklyMacros(DailyMacroUpdate model)
+        {
+            var userProgram = userProgramRepository.GetActive.Where(p => p.ProgramUserId == model.userId).Include(d => d.DailyProgress).FirstOrDefault();
+            var updWeekNum = dateRepository.GetWeekNum(model.week);
+            var dailyProgress = userProgram.DailyProgress.Where(d => d.Dates.WeekOfYear == updWeekNum);
+
+            foreach (var d in dailyProgress)
+            {
+                d.PlannedFat = model.Fat;
+                d.PlannedProtein = model.Protein;
+                d.PlannedCarbohydrate = model.Carbohydrates;
+                d.LastModified = DateTime.Now;
+                d.LastModifiedBy = CurrentUser.UserName;
+
+            }
+            userProgram.LastModifiedBy = CurrentUser.UserName;
+            userProgram.LastModified = DateTime.Now;
+
+            userProgramRepository.Update(userProgram);
+
+            return RedirectToAction("ShowProgramDetails", new { @_userId = Session["UserId"] });
+            //return null;
+        }
+
+
         public double? getCurrentWeight(int userId)
         {
             double? currentWeight = null;
@@ -483,6 +519,19 @@ namespace KetoSavageWeb.Controllers
             }
 
             return currentWeight;
+        }
+
+        public ActionResult EntryPopup(string buttonName)
+        {
+            if (buttonName == "Macros")
+            {
+                return RedirectToAction("EnterMacroForm");
+            }
+            else
+            {
+                return RedirectToAction("EnterMeasurementsForm");
+            }
+
         }
     }
 

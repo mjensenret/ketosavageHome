@@ -115,6 +115,8 @@ namespace KetoSavageWeb.Models {
             get { return rememberMe ?? false; }
             set { rememberMe = value; }
         }
+
+        public string errorMessage { get; set; }
     }
 
     public class RegisterModel {

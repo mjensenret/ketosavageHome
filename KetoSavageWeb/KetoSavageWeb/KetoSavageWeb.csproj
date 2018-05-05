@@ -702,6 +702,10 @@
     <Content Include="Views\UserProgress\_enterDailyMeasurements.cshtml" />
     <Content Include="Views\UserProgress\_entryForms.cshtml" />
     <Content Include="Views\UserProgress\_pastPerformanceGrid.cshtml" />
+    <Content Include="Views\UserPrograms\Index - orig.cshtml" />
+    <Content Include="Views\UserPrograms\UserProgramDetails - Orig.cshtml" />
+    <Content Include="Views\UserPrograms\_enterNewMacroForm.cshtml" />
+    <Content Include="Views\ClientCharts\_clientWeightGraph.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -725,6 +729,7 @@
     <Compile Include="Controllers\UserProgramsController.cs" />
     <Compile Include="Controllers\ManageUsersController.cs" />
     <Compile Include="Controllers\ProgramsController.cs" />
+    <Compile Include="Controllers\ClientChartsController.cs" />
     <Compile Include="Controllers\UserProgressController.cs" />
     <Compile Include="Controllers\UsersAdminController.cs" />
     <Compile Include="Domain\Infrastructure\EfEntityContext.cs" />
@@ -806,6 +811,7 @@
     <Compile Include="Models\UserPrograms.cs" />
     <Compile Include="Repositories\DateRepository.cs" />
     <Compile Include="Repositories\UserProgramRepository.cs" />
+    <Compile Include="ViewModels\ChartViewModel.cs" />
     <Compile Include="ViewModels\ProgressViewModel.cs" />
     <Compile Include="ViewModels\UserProgramViewModel.cs" />
     <Compile Include="Models\IdentityModels.cs" />

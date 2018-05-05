@@ -3,6 +3,55 @@
     ViewBag.Title = "User Program Details";
     
 }
+<style>
+    .zone {
+        background-color: #FFFFFF;
+        border-color: #4d4d4d;
+        border-width: thick;
+        border-style: solid;
+        /*margin: 3px 3px 3px 3px;*/
+    }
+
+    .zone.vertical {
+        float: left;
+        padding: 3px;
+    }
+
+        .zone.vertical.first {
+            float: left;
+            margin: 0;
+            padding: 3px;
+            /*margin: 3px 3px 3px 3px;*/
+        }
+
+    .zone.horizontal {
+        float: left;
+        margin-top: 0px;
+    }
+
+    .zone.allowed {
+        background-color: #D6F0CE;
+        border-color: #AECDA7;
+    }
+
+    .zone.forbidden {
+        background-color: #FADADA;
+        border-color: #EDBFBF;
+    }
+
+    .zoneContainer {
+        height: 800px;
+        max-width: 1200px;
+        min-width: 300px;
+        width: 75%;
+        align-content: center;
+        align-self: center;
+        background-color: #FF00FF;
+        border-style: solid;
+        border-width: 1px;
+        padding: 3px;
+        }
+</style>
 <script language="javascript">
 
     //var inEditMode = false;
@@ -72,202 +121,211 @@
     }
 </script>
 
-@using (Html.BeginForm("updateProgram", "UserPrograms", FormMethod.Post))
+
+@Html.DevExpress().DockPanel(settings =>
 {
-    Html.DevExpress().FormLayout(userProgram =>
+    settings.Name = "controlButtons";
+    settings.PanelUID = "pnlControlButtons";
+    settings.OwnerZoneUID = "zone1";
+    settings.ShowCloseButton = false;
+    settings.ShowHeader = false;
+    settings.Styles.Content.Border.BorderStyle = BorderStyle.Inset;
+    settings.SetContent(() =>
     {
-        userProgram.Name = "userForm";
-        //userProgram.Width = Unit.Percentage(75);
-        userProgram.SettingsItemCaptions.Location = LayoutItemCaptionLocation.Top;
-        
-
-        userProgram.Items.AddGroupItem(g =>
+        Html.DevExpress().FormLayout(form =>
         {
-            g.GroupBoxDecoration = GroupBoxDecoration.Box;
-            g.Caption = "User Details";
-            g.ColCount = 2;
-            
-            g.Items.Add(m => m.Id, i =>
-            {
-                i.ClientVisible = false;
-                i.NestedExtension().TextBox(s =>
-                {
-                    s.ReadOnly = true;
-                });
-            });
-            g.Items.Add(m => m.UserId, i =>
-            {
-                i.ClientVisible = false;
-                i.NestedExtension().TextBox(s =>
-                {
-                    s.ReadOnly = true;
-                });
-            });
-            g.Items.Add(m => m.UserName, i =>
-            {
-                i.NestedExtension().Label(s =>
-                {
+            form.Name = "frmUpdateControls";
+            form.SettingsAdaptivity.AdaptivityMode = FormLayoutAdaptivityMode.SingleColumnWindowLimit;
+            form.SettingsAdaptivity.SwitchToSingleColumnAtWindowInnerWidth = 500;
+            form.NestedExtensionWidth = Unit.Percentage(100);
+            //form.Styles.Style.CssClass = "loginForm";
 
-                });
-            });
-            g.Items.Add(m => m.FullName, i =>
+            form.Items.AddGroupItem(i =>
             {
-                i.NestedExtension().Label(s =>
+                i.ColCount = 2;
+                i.ShowCaption = DefaultBoolean.False;
+                i.GroupBoxDecoration = GroupBoxDecoration.None;
+                i.Items.Add(b =>
                 {
-
-                });
-            });
-            g.Items.Add(m => m.MasterProgramId, i =>
-            {
-                i.NestedExtension().ComboBox(c =>
-                {
-                    c.Properties.DataSource = ViewBag.ProgramList;
-                });
-            });
-            g.Items.Add(m => m.currentProgramStartDate, i =>
-            {
-                i.NestedExtension().DateEdit(s =>
-                {
-                    i.Caption = "Start Date";
-
-                });
-            });
-            g.Items.Add(m => m.currentProgramEndDate, i =>
-            {
-                i.NestedExtension().DateEdit(s =>
-                {
-                    i.Caption = "End Date";
-                });
-            });
-            g.Items.Add(m => m.currentProgramRenewalDate, i =>
-            {
-                i.NestedExtension().DateEdit(s =>
-                {
-                    i.Caption = "Renewal Date";
-                });
-            });
-            g.Items.Add(m => m.IsNew, i =>
-            {
-                i.Visible = true;
-                i.NestedExtension().CheckBox(s =>
-                {
-
-                });
-            });
-            g.Items.Add(m => m.CoachId, i =>
-            {
-                i.NestedExtension().ComboBox(s =>
-                {
-                    s.Properties.DataSource = ViewBag.CoachList;
-                });
-            });
-            g.Items.Add(m => m.StartWeight, i =>
-            {
-                i.NestedExtension().TextBox(s =>
-                {
-
-                });
-                i.Caption = "Start Weight";
-            });
-            g.Items.Add(m => m.GoalWeight, i =>
-            {
-                i.NestedExtension().TextBox(s =>
-                {
-
-                });
-                i.Caption = "Goal Weight";
-            });
-            g.Items.Add(m => m.CurrentWeight, i =>
-            {
-                i.NestedExtension().Label(s =>
-                {
-                    
-                });
-            });
-        });
-    }).Bind(Model).Render();
-
-    Html.DevExpress().FormLayout(newForm =>
-    {
-        newForm.Name = "PastData";
-        newForm.Width = Unit.Percentage(75);
-
-        newForm.Items.Add(i =>
-        {
-            i.ShowCaption = DefaultBoolean.False;
-            i.SetNestedContent(() =>
-            {
-                //Html.RenderPartial("_pastPerformance");
-                Html.RenderAction("pastPerformance", Model.UserId);
-            });
-        });
-    }).Render();
-
-    Html.DevExpress().FormLayout(mForm =>
-    {
-        mForm.Name = "EditMacro";
-        mForm.Width = Unit.Percentage(75);
-
-        mForm.Items.Add(i =>
-        {
-            i.ShowCaption = DefaultBoolean.False;
-            i.SetNestedContent(() =>
-            {
-                //Html.RenderPartial("_pastPerformance");
-                Html.RenderAction("NewMacrosGridview", Model.UserId);
-            });
-        });
-    }).Render();
-
-    Html.DevExpress().FormLayout(buttons =>
-    {
-        buttons.Name = "SubmitData";
-        buttons.Items.Add(i =>
-        {
-            i.ShowCaption = DefaultBoolean.False;
-            i.Paddings.Padding = 0;
-            //i.Width = Unit.Percentage(100);
-            i.HorizontalAlign = FormLayoutHorizontalAlign.Left;
-
-            i.SetNestedContent(() =>
-            {
-                Html.DevExpress().Button(
-                    buttonSettings =>
+                    b.HorizontalAlign = FormLayoutHorizontalAlign.Center;
+                    b.ShowCaption = DefaultBoolean.False;
+                    //b.Width = Unit.Percentage(100);
+                    b.SetNestedContent(() =>
                     {
-                        buttonSettings.Name = "btnSave";
-                        buttonSettings.ControlStyle.CssClass = "button";
-                        buttonSettings.Width = 100;
-                        buttonSettings.Text = "Save";
-                        buttonSettings.UseSubmitBehavior = true;
-                    }).Render();
+                        Html.DevExpress().Button(
+                            register =>
+                            {
+                                register.Name = "btnShowMacros";
+                                register.Text = "Update Macros";
+                                register.ClientSideEvents.Click = "function(s, e) { openWindow('Macros'); }";
+                            }).Render();
+                    });
+
+                });
+
+                //i.Items.Add(b =>
+                //{
+                //    b.HorizontalAlign = FormLayoutHorizontalAlign.Center;
+                //    b.ShowCaption = DefaultBoolean.False;
+                //    //b.Width = Unit.Percentage(100);
+                //    b.SetNestedContent(() =>
+                //    {
+                //        Html.DevExpress().Button(
+                //            btnMeasure =>
+                //            {
+                //                btnMeasure.Name = "btnShowMeasurements";
+                //                btnMeasure.Text = "Enter Measurements";
+                //                btnMeasure.ClientSideEvents.Click = "function(s, e) { openWindow('Measurements'); }";
+                //            }
+                //        ).Render();
+                //    });
+                //});
             });
-        });
-        buttons.Items.Add(i =>
+        }).GetHtml();
+    });
+}).GetHtml()
+@Html.DevExpress().DockPanel(settings =>
+{
+    settings.Name = "pnlPastPerf";
+    settings.PanelUID = "pnlPastPerformance";
+    settings.HeaderText = "Past Performance";
+    settings.VisibleIndex = 0;
+    settings.Styles.Content.Paddings.Padding = 0;
+    settings.ShowCloseButton = false;
+    settings.ShowHeader = true;
+    settings.AllowResize = true;
+    settings.Width = 300;
+    settings.OwnerZoneUID = "zone1";
+    settings.Styles.Content.Border.BorderStyle = BorderStyle.Solid;
+    settings.SetContent(() =>
+    {
+        Html.RenderAction("pastPerformance");
+    });
+    //settings.PreRender = (sender, e) =>
+    //{
+    //    SetContentStyleOnPreRender((MVCxDockPanel)sender);
+    //};
+    //settings.ClientSideEvents.Init = "OnPanel1Init";
+}).GetHtml()
+@Html.DevExpress().DockPanel(settings =>
+{
+
+    settings.Name = "pnlWeightGraph";
+    settings.PanelUID = "pnlWeightGraph";
+    settings.HeaderText = "Weight Graph";
+    settings.ShowHeader = false;
+    settings.ShowMaximizeButton = true;
+    settings.OwnerZoneUID = "zone2";
+    settings.SetContent(() =>
+    {
+        var userId = Session["UserId"];
+        Html.RenderAction("ClientWeightGraph", "ClientCharts", new { userId = userId });
+
+    });
+
+
+}).GetHtml()
+@Html.DevExpress().DockPanel(settings =>
+    {
+        settings.Name = "pnlNewMacros";
+        settings.PanelUID = "pnlNewMacros";
+        settings.HeaderText = "Planned Macros";
+        settings.VisibleIndex = 0;
+        settings.Styles.Content.Paddings.Padding = 0;
+        settings.ShowCloseButton = false;
+        settings.ShowHeader = true;
+        settings.AllowResize = true;
+        //settings.Width = 300;
+        settings.OwnerZoneUID = "zone1";
+        settings.Styles.Content.Border.BorderStyle = BorderStyle.Solid;
+        settings.SetContent(() =>
         {
-            i.ShowCaption = DefaultBoolean.False;
-            i.HorizontalAlign = FormLayoutHorizontalAlign.Right;
-            i.SetNestedContent(() =>
-            {
-                Html.DevExpress().Button(
-                buttonSettings =>
-                {
-                    buttonSettings.Name = "btnCancel";
-                    buttonSettings.ControlStyle.CssClass = "button";
-                    buttonSettings.Width = 100;
-                    buttonSettings.Text = "Cancel";
-                    buttonSettings.ClientSideEvents.Click = "function(s, e){ redirectToClientList(); }";
-                }).Render();
-            });
+            Html.RenderAction("NewMacrosGridView");
         });
+        //settings.PreRender = (sender, e) =>
+        //{
+        //    SetContentStyleOnPreRender((MVCxDockPanel)sender);
+        //};
+        //settings.ClientSideEvents.Init = "OnPanel1Init";
+    }).GetHtml()
 
-    }).Render();
-}
 
+
+@Html.DevExpress().PopupControl(settings =>
+    {
+        settings.Name = "popupControl";
+        settings.Width = 400;
+        settings.AllowDragging = true;
+        settings.CloseAction = CloseAction.CloseButton;
+        settings.CloseOnEscape = true;
+        settings.PopupAnimationType = AnimationType.Fade;
+        settings.ShowHeader = false;
+        settings.Modal = true;
+        settings.AutoUpdatePosition = true;
+        settings.PopupHorizontalAlign = PopupHorizontalAlign.WindowCenter;
+        settings.PopupVerticalAlign = PopupVerticalAlign.WindowCenter;
+        settings.ClientSideEvents.CloseUp = "function(s, e){ ASPxClientEdit.ClearEditorsInContainer(null, '', true); }";
+    }).GetHtml()
+@Html.DevExpress().DockZone(
+            settings =>
+            {
+                settings.Name = "dockZone1";
+                settings.ZoneUID = "zone1";
+                settings.PanelSpacing = 3;
+                settings.Paddings.Padding = 3;
+                settings.Width = Unit.Percentage(75);
+                settings.ControlStyle.CssClass = "zone vertical first";
+                settings.Styles.DockingAllowedStyle.CssClass = "zone allowed";
+                settings.Styles.DockingForbiddenStyle.CssClass = "zone forbidden";
+            }
+        ).GetHtml()
+@Html.DevExpress().DockZone(
+        settings =>
+        {
+            settings.Name = "dockZone2";
+            settings.ZoneUID = "zone2";
+            settings.PanelSpacing = 3;
+            settings.Paddings.Padding = 3;
+            //settings.Height = 600;
+            settings.Width = Unit.Percentage(100);
+            settings.ControlStyle.CssClass = "zone vertical";
+            settings.Styles.DockingAllowedStyle.CssClass = "zone allowed";
+            settings.Styles.DockingForbiddenStyle.CssClass = "zone forbidden";
+        }
+        ).GetHtml()
+
+@Html.DevExpress().DockZone(
+        settings =>
+        {
+            settings.Name = "dockZone3";
+            settings.ZoneUID = "zone3";
+            settings.PanelSpacing = 11;
+            settings.Paddings.Padding = 3;
+            settings.Height = 200;
+            settings.Width = 583;
+            settings.ControlStyle.CssClass = "zone horizontal";
+            settings.Styles.DockingAllowedStyle.CssClass = "zone allowed";
+            settings.Styles.DockingForbiddenStyle.CssClass = "zone forbidden";
+        }
+        ).GetHtml()
 <script type="text/javascript">
-    function redirectToClientList() {
-        var url = '@Url.Action("Index")';
-        console.log(url);
-        window.location.replace(url);
+
+    //debugger;
+    function openWindow(action) {
+        $.ajax({
+            type: "POST",
+            url: "@Url.Action("EntryPopup", "UserPrograms")",
+            data: { buttonName: action },
+            traditional: true,
+            success: function (response) {
+                popupControl.SetContentHtml(response);
+                MVCxClientUtils.FinalizeCallback();
+            },
+            error: function (XMLHttpRequest, textStatus, errorThrown) {
+                alert('oops, something bad happened');
+            }
+        });
+        window['popupControl'].Show();
     }
 
 </script>

@@ -1,6 +1,6 @@
 @model KetoSavageWeb.Models.LoginModel
 
-@using (Html.BeginForm("Login", "Account", FormMethod.Post, new { id = "popupForm", @class = "edit_form" }))
+@using (Html.BeginForm("Login", "Account", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { id = "popupForm", @class = "edit_form"}))
 {
     ViewContext.Writer.Write(Html.AntiForgeryToken().ToHtmlString());
 

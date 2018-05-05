@@ -1,0 +1,57 @@
+﻿@model IEnumerable<KetoSavageWeb.ViewModels.WeightViewModel>
+@Html.DevExpress().Chart(settings =>
+{
+    settings.Name = "ClientWeightGraph";
+    settings.Height = 250;
+    settings.Width = 900;
+    settings.BorderOptions.Visibility = DefaultBoolean.False;
+    settings.CrosshairEnabled = DefaultBoolean.True;
+    settings.AppearanceName = "Dark";
+
+    settings.Legends.Default(l =>
+    {
+        l.AlignmentHorizontal = LegendAlignmentHorizontal.Center;
+        l.AlignmentVertical = LegendAlignmentVertical.BottomOutside;
+        l.Direction = LegendDirection.LeftToRight;
+        l.Border.Visibility = DefaultBoolean.False;
+        l.HorizontalIndent = 12;
+    });
+
+    settings.Series.Template(t =>
+    {
+        t.ArgumentDataMember = "date";
+        t.ValueDataMembers[0] = "weight";
+        t.LabelsVisibility = DefaultBoolean.False;
+        t.Views().LineSeriesView(v =>
+        {
+            v.PointMarkerOptions.Size = 1;
+            v.PointMarkerOptions.Kind = MarkerKind.Circle;
+            v.SeriesLabel(l =>
+            {
+                l.ResolveOverlappingMode = ResolveOverlappingMode.Default;
+            });
+        });
+    });
+
+    settings.XYDiagram(d =>
+    {
+        d.AxisX.Interlaced = false;
+        d.AxisX.Title.Text = "Days";
+        d.AxisX.WholeRange.Auto = true;
+        d.AxisX.WholeRange.AutoSideMargins = true;
+        d.AxisX.WholeRange.AlwaysShowZeroLevel = false;
+        d.AxisY.Title.Visibility = DefaultBoolean.True;
+        d.AxisY.Title.Text = "Weight";
+        d.AxisY.VisualRange.Auto = true;
+        d.AxisY.WholeRange.Auto = true;
+        d.AxisY.WholeRange.AlwaysShowZeroLevel = false;
+        d.AxisY.WholeRange.AutoSideMargins = true;
+
+    });
+
+    settings.Titles.Add(new ChartTitle()
+    {
+        Text = "Client Weigh-in"
+    });
+
+}).Bind(Model, "type").GetHtml()

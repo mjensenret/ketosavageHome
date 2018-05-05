@@ -1,4 +1,5 @@
 ﻿using KetoSavageWeb.Domain.Infrastructure;
+using KetoSavageWeb.Domain.Repositories;
 using KetoSavageWeb.Models;
 using System;
 using System.Collections.Generic;
@@ -33,6 +34,11 @@ namespace KetoSavageWeb.Repositories
         public int getDateKey(DateTime date)
         {
             return _context.DateModels.Where(x => x.Date == date).Select(y => y.DateKey).First();
+        }
+
+        public IQueryable<DateModels> GetDatesByRange(DateTime startDate, DateTime endDate)
+        {
+            return _context.DateModels.Where(x => x.Date >= startDate.Date && x.Date <= endDate);
         }
     }
 }

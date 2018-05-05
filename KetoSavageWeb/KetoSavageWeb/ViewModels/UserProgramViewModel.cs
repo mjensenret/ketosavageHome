@@ -61,6 +61,7 @@ namespace KetoSavageWeb.ViewModels
         public int UserProgramId { get; set; }
         public virtual UserPrograms UserProgram { get; set; }
         public virtual DateModels Dates { get; set; }
+        public int currentId { get; set; }
     }
     public class UserProgramPerformance
     {
@@ -93,10 +94,12 @@ namespace KetoSavageWeb.ViewModels
 
     public class DailyMacroUpdate
     {
-        public int Id { get; set; }
+        public int userId { get; set; }
+        public DateTime week { get; set; }
         public int Fat { get; set; }
         public int Protein { get; set; }
         public int Carbohydrates { get; set; }
         public bool Refeed { get; set; }
+        public virtual DateModels dates { get; set; }
     }
 }

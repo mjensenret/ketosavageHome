@@ -1,0 +1,64 @@
+﻿@model KetoSavageWeb.ViewModels.DailyMacroUpdate
+
+@{ Html.BeginForm("SetWeeklyMacros", "UserPrograms", FormMethod.Post);}
+@Html.DevExpress().FormLayout(settings =>
+{
+    settings.Name = "dailyMacros";
+
+
+    settings.SettingsItems.ShowCaption = DefaultBoolean.True;
+    settings.SettingsItemCaptions.Location = LayoutItemCaptionLocation.Top;
+
+    settings.SettingsItemHelpTexts.Position = HelpTextPosition.Auto;
+
+    settings.Items.Add(m => m.userId, u =>
+    {
+        u.NestedExtension().TextBox(un =>
+        {
+            un.ReadOnly = true;
+        });
+    });
+    settings.Items.Add(m => m.week, f =>
+    {
+        f.NestedExtension().DateEdit(d =>
+        {
+
+        });
+    });
+    settings.Items.Add(m => m.Fat, a =>
+    {
+        a.NestedExtension().TextBox(f =>
+        {
+
+        });
+    });
+    settings.Items.Add(m => m.Protein, p =>
+    {
+        p.NestedExtension().TextBox(t =>
+        {
+
+        });
+    });
+    settings.Items.Add(m => m.Carbohydrates, c =>
+    {
+        c.NestedExtension().TextBox(ac =>
+        {
+
+        });
+    });
+    settings.Items.Add(s =>
+    {
+        s.SetNestedContent(() =>
+        {
+            Html.DevExpress().Button(b =>
+            {
+                b.Name = "btnMacroSubmit";
+                b.ControlStyle.CssClass = "button";
+                b.Text = "Save";
+                b.UseSubmitBehavior = true;
+            }).Render();
+        });
+    });
+
+}).GetHtml()
+@{ Html.EndForm();}

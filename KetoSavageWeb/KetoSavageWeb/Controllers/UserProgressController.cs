@@ -29,6 +29,8 @@ namespace KetoSavageWeb.Controllers
         // GET: UserProgress
         public ActionResult Index()
         {
+            var userId = CurrentUser.Id;
+            Session["UserId"] = userId;
             return View();
         }
         public PartialViewResult EnterMacroForm()
@@ -87,10 +89,12 @@ namespace KetoSavageWeb.Controllers
 
         public ActionResult PastPerformanceGrid()
         {
+            
             var currentDate = DateTime.Now;
+            
             var _userId = CurrentUser.Id;
             //var programDetails = userProgramRepository.GetPastProgressByUser(_userId, currentDate);
-            var programDetails = userProgramRepository.GetDailyProgressByUser(_userId);
+            var programDetails = userProgramRepository.GetPastProgressByUser(_userId, currentDate);
 
 
             if (programDetails.Count() > 0)
@@ -124,8 +128,7 @@ namespace KetoSavageWeb.Controllers
                         PlannedCarbohydrates = y.PlannedCarbohydrate,
                         ActualCarbohydrates = y.ActualCarbohydrate,
                         PlannedProtein = y.PlannedProtein,
-                        ActualProtein = y.ActualProtein,
-
+                        ActualProtein = y.ActualProtein
                     })
                     );
 
