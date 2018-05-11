@@ -1,0 +1,6 @@
+<%@ Register TagPrefix="dx" Namespace="DevExpress.Data" Assembly="DevExpress.Data.v17.2, Version=17.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" %>
+<%@ Register TagPrefix="dx" Namespace="DevExpress.Web" Assembly="DevExpress.Web.v17.2, Version=17.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" %>
+<%@ Register TagPrefix="dxmvc" Namespace="DevExpress.Web.Mvc" Assembly="DevExpress.Web.Mvc.v17.2, Version=17.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" %>
+
+<dxmvc:MVCxMenu runat="server" AutoSeparators="RootOnly" ItemSpacing="0px" SeparatorColor="#000000" BorderBetweenItemAndSubMenu="HideAll" SpriteCssFilePath="{0}/sprite.css" CssPostfix="KetoSavage" CssFilePath="{0}/styles.css" BackColor="#000000"></dxmvc:MVCxMenu>
+

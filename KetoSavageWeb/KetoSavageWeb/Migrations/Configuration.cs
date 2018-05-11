@@ -34,10 +34,10 @@ namespace KetoSavageWeb.Migrations
             //    );
             //
             //-----------------Uncomment to debug seed method----------------------------------//
-            //if (System.Diagnostics.Debugger.IsAttached == false)
-            //{
-            //    System.Diagnostics.Debugger.Launch();
-            //}
+            if (System.Diagnostics.Debugger.IsAttached == false)
+            {
+                System.Diagnostics.Debugger.Launch();
+            }
             try
             {
                 ApplicationUserManager userMgr = new ApplicationUserManager(new UserStore<ApplicationUser, Role, int, UserLogin, UserRole, UserClaim>(context));
@@ -79,7 +79,7 @@ namespace KetoSavageWeb.Migrations
                     userMgr.AddToRole(defaultCoach.Id, "Coach");
                 }
                 
-                var cutGoal = context.ProgramGoals.Where(cg => cg.Name == "Cut").First();
+                var cutGoal = context.ProgramGoals.Where(cg => cg.Name == "Cut").FirstOrDefault();
                 if (cutGoal == null)
                 {
                     cutGoal = new ProgramGoals
@@ -88,7 +88,9 @@ namespace KetoSavageWeb.Migrations
                         Description = "Standard cut"
                     };
                 }
-                var buildGoal = context.ProgramGoals.Where(cg => cg.Name == "Build").First();
+                context.ProgramGoals.AddOrUpdate(g => new { g.Name }, cutGoal);
+
+                var buildGoal = context.ProgramGoals.Where(cg => cg.Name == "Build").FirstOrDefault();
                 if (buildGoal == null)
                 {
                     buildGoal = new ProgramGoals
@@ -97,8 +99,9 @@ namespace KetoSavageWeb.Migrations
                         Description = "Standard bulking program"
                     };
                 }
+                context.ProgramGoals.AddOrUpdate(g => new { g.Name }, buildGoal);
 
-                var competitionPrep = context.ProgramGoals.Where(cg => cg.Name == "CompPrep").First();
+                var competitionPrep = context.ProgramGoals.Where(cg => cg.Name == "CompPrep").FirstOrDefault();
                 if (competitionPrep == null)
                 {
                     competitionPrep = new ProgramGoals
@@ -107,8 +110,9 @@ namespace KetoSavageWeb.Migrations
                         Description = "Competition Prep"
                     };
                 }
+                context.ProgramGoals.AddOrUpdate(g => new { g.Name }, competitionPrep);
 
-                var maintGoal = context.ProgramGoals.Where(cg => cg.Name == "Maint").First();
+                var maintGoal = context.ProgramGoals.Where(cg => cg.Name == "Maint").FirstOrDefault();
                 if (maintGoal == null)
                 {
                     maintGoal = new ProgramGoals
@@ -118,7 +122,9 @@ namespace KetoSavageWeb.Migrations
 
                     };
                 }
-                
+                context.ProgramGoals.AddOrUpdate(g => new { g.Name }, maintGoal);
+
+                context.SaveChanges();
 
                 var cutProgram = new ProgramTemplate
                 {
