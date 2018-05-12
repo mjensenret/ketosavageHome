@@ -62,8 +62,23 @@
             }
             else
             {
-                <div>
-                    Dashboard section here.
+                <div class="container-fluid">
+                    <div class="row">
+                       @Html.DevExpress().ImageSlider(s =>
+                       {
+                           s.Name = "ImageSlider";
+                           s.Width = Unit.Percentage(100);
+                           s.Height = Unit.Pixel(400);
+
+                           s.SettingsImageArea.ImageSizeMode = ImageSizeMode.FillAndCrop;
+                           s.SettingsImageArea.NavigationButtonVisibility = ElementVisibilityMode.Always;
+                           s.SettingsImageArea.EnableLoopNavigation = true;
+                           s.SettingsNavigationBar.Mode = NavigationBarMode.Dots;
+
+                           s.SettingsSlideShow.AutoPlay = true;
+                           s.SettingsSlideShow.PlayPauseButtonVisibility = ElementVisibilityMode.OnMouseOver;
+                       }).BindToFolder("~/Content/Images/Components").GetHtml()
+                    </div>
                 </div>
             }
         </div>

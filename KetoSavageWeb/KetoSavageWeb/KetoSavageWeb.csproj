@@ -438,9 +438,13 @@
     <Content Include="bin\Content\jquery-ui.css" />
     <Content Include="bin\Content\jquery-ui.min.css" />
     <Content Include="bin\Content\Site.css" />
+    <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\generic.dark.custom.css" />
     <Content Include="Content\Images\AquaHeader.jpg" />
     <Content Include="Content\Images\BlackGlassHeader.jpg" />
+    <Content Include="Content\Images\Components\Changes.jpg" />
+    <Content Include="Content\Images\Components\DSKBanner.jpg" />
+    <Content Include="Content\Images\Components\Plate.jpg" />
     <Content Include="Content\Images\GlassHeader.jpg" />
     <Content Include="Content\Images\KSHeaderLogo_white.png" />
     <Content Include="Content\Images\KSLogo_white.png" />
@@ -451,6 +455,7 @@
     <Content Include="Content\Site.css" />
     <Content Include="Global.asax" />
     <Content Include="Scripts\ace.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\cldr.event.js" />
     <Content Include="Scripts\cldr.js" />
     <Content Include="Scripts\cldr.supplemental.js" />
@@ -627,6 +632,7 @@
     </None>
     <None Include="Scripts\jquery.validate-vsdoc.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="Scripts\site.js" />
     <Content Include="Views\Shared\DisplayTemplates\Boolean.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\Boolean.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\DateTime.cshtml" />
@@ -706,6 +712,7 @@
     <Content Include="Views\UserPrograms\UserProgramDetails - Orig.cshtml" />
     <Content Include="Views\UserPrograms\_enterNewMacroForm.cshtml" />
     <Content Include="Views\ClientCharts\_clientWeightGraph.cshtml" />
+    <Content Include="Views\Shared\HeaderPanelContentPartial.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
