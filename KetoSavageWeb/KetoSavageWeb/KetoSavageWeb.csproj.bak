@@ -1,0 +1,919 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{BBE23F28-4C88-467C-801F-392CA819A00F}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>KetoSavageWeb</RootNamespace>
+    <AssemblyName>KetoSavageWeb</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>4.0</OldToolsVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <UpgradeBackupLocation />
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Glimpse.Ado, Version=1.7.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Glimpse.Ado.1.7.3\lib\net45\Glimpse.Ado.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Glimpse.AspNet, Version=1.8.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Glimpse.AspNet.1.8.0\lib\net45\Glimpse.AspNet.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Glimpse.Core, Version=1.8.6.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Glimpse.1.8.6\lib\net45\Glimpse.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Glimpse.EF6, Version=1.6.5.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Glimpse.EF6.1.6.5\lib\net45\Glimpse.EF6.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Glimpse.Mvc5, Version=1.5.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Glimpse.Mvc5.1.5.3\lib\net45\Glimpse.Mvc5.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="KetoSavageThemeAssembly">
+      <HintPath>App_Themes\KetoSavage\KetoSavageThemeAssembly.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Core, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Core.2.2.1\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.EntityFramework, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.EntityFramework.2.2.1\lib\net45\Microsoft.AspNet.Identity.EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Owin, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Owin.2.2.1\lib\net45\Microsoft.AspNet.Identity.Owin.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Owin, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.3.0.1\lib\net45\Microsoft.Owin.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Host.SystemWeb, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Host.SystemWeb.3.0.1\lib\net45\Microsoft.Owin.Host.SystemWeb.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Security.3.0.1\lib\net45\Microsoft.Owin.Security.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Cookies, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Security.Cookies.3.0.1\lib\net45\Microsoft.Owin.Security.Cookies.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Facebook, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Security.Facebook.3.0.1\lib\net45\Microsoft.Owin.Security.Facebook.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Google, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Security.Google.3.0.1\lib\net45\Microsoft.Owin.Security.Google.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.MicrosoftAccount, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Security.MicrosoftAccount.3.0.1\lib\net45\Microsoft.Owin.Security.MicrosoftAccount.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.OAuth, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Security.OAuth.3.0.1\lib\net45\Microsoft.Owin.Security.OAuth.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Twitter, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Security.Twitter.3.0.1\lib\net45\Microsoft.Owin.Security.Twitter.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.6.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Ninject, Version=3.3.3.0, Culture=neutral, PublicKeyToken=c7192dc5380945e7, processorArchitecture=MSIL">
+      <HintPath>..\packages\Ninject.3.3.3\lib\net45\Ninject.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Ninject.Web.Common, Version=3.3.0.0, Culture=neutral, PublicKeyToken=c7192dc5380945e7, processorArchitecture=MSIL">
+      <HintPath>..\packages\Ninject.Web.Common.3.3.0\lib\net45\Ninject.Web.Common.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Ninject.Web.Common.WebHost, Version=3.3.0.0, Culture=neutral, PublicKeyToken=c7192dc5380945e7, processorArchitecture=MSIL">
+      <HintPath>..\packages\Ninject.Web.Common.WebHost.3.3.0\lib\net45\Ninject.Web.Common.WebHost.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Ninject.Web.Mvc, Version=3.3.0.0, Culture=neutral, PublicKeyToken=c7192dc5380945e7, processorArchitecture=MSIL">
+      <HintPath>..\packages\Ninject.MVC5.3.3.0\lib\net45\Ninject.Web.Mvc.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Owin, Version=1.0.0.0, Culture=neutral, PublicKeyToken=f0ebd12fd5e55cc5, processorArchitecture=MSIL">
+      <HintPath>..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Net.Http.Formatting, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.3\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.Helpers.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Http, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.5.2.3\lib\net45\System.Web.Http.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.5.2.3\lib\net45\System.Web.Http.WebHost.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.3\lib\net45\System.Web.Mvc.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.3\lib\net45\System.Web.Razor.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="DevExpress.Utils.v17.2, Version=17.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Data.v17.2, Version=17.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Web.ASPxThemes.v17.2, Version=17.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.RichEdit.v17.2.Core, Version=17.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.RichEdit.v17.2.Export, Version=17.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Printing.v17.2.Core, Version=17.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Web.v17.2, Version=17.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Web.Mvc5.v17.2, Version=17.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Web.ASPxPivotGrid.v17.2, Version=17.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.PivotGrid.v17.2.Core, Version=17.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Spreadsheet.v17.2.Core, Version=17.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Web.ASPxSpreadsheet.v17.2, Version=17.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraScheduler.v17.2.Core, Version=17.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Web.ASPxScheduler.v17.2, Version=17.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Charts.v17.2.Core, Version=17.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraCharts.v17.2, Version=17.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraCharts.v17.2.Web, Version=17.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Web.Resources.v17.2, Version=17.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraReports.v17.2, Version=17.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraReports.v17.2.Web, Version=17.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Pdf.v17.2.Core, Version=17.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.CodeParser.v17.2, Version=17.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.DataAccess.v17.2, Version=17.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Office.v17.2.Core, Version=17.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Sparkline.v17.2.Core, Version=17.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Xpo.v17.2, Version=17.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraGauges.v17.2.Core, Version=17.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Dashboard.v17.2.Core, Version=17.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Dashboard.v17.2.Web, Version=17.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Dashboard.v17.2.Web.Mvc5, Version=17.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.TreeMap.v17.2.Core, Version=17.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Map.v17.2.Core, Version=17.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraTreeMap.v17.2, Version=17.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraGauges.v17.2.Presets, Version=17.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraGauges.v17.2.Win, Version=17.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraMap.v17.2, Version=17.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraEditors.v17.2, Version=17.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraPrinting.v17.2, Version=17.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="WebActivatorEx, Version=2.0.0.0, Culture=neutral, PublicKeyToken=7b26dc2a43f6a0d4, processorArchitecture=MSIL">
+      <HintPath>..\packages\WebActivatorEx.2.2.0\lib\net40\WebActivatorEx.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="WebMatrix.Data, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.Data.3.2.3\lib\net45\WebMatrix.Data.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_Data\NWind.mdf" />
+    <Content Include="App_Data\NWind_log.ldf">
+      <DependentUpon>NWind.mdf</DependentUpon>
+    </Content>
+    <Content Include="App_Data\SideMenu.xml" />
+    <Content Include="App_Data\TopMenu.xml" />
+    <Content Include="App_Themes\KetoSavage\CardView\cvLoadingOnStatusBar.gif" />
+    <Content Include="App_Themes\KetoSavage\CardView\dt_sprite.png" />
+    <Content Include="App_Themes\KetoSavage\CardView\dt_spriteAccessible.png" />
+    <Content Include="App_Themes\KetoSavage\CardView\sprite.css" />
+    <Content Include="App_Themes\KetoSavage\CardView\sprite.svg" />
+    <Content Include="App_Themes\KetoSavage\CardView\spriteAccessible.css" />
+    <Content Include="App_Themes\KetoSavage\CardView\styles.css" />
+    <Content Include="App_Themes\KetoSavage\CardView\stylesCompact.css" />
+    <Content Include="App_Themes\KetoSavage\Chart\Loading.gif" />
+    <Content Include="App_Themes\KetoSavage\Chart\styles.css" />
+    <Content Include="App_Themes\KetoSavage\Editors\dt_sprite.png" />
+    <Content Include="App_Themes\KetoSavage\Editors\dt_spriteAccessible.png" />
+    <Content Include="App_Themes\KetoSavage\Editors\edtBinaryImageDesign.gif" />
+    <Content Include="App_Themes\KetoSavage\Editors\edtButtonBack.gif" />
+    <Content Include="App_Themes\KetoSavage\Editors\edtButtonHoverBack.gif" />
+    <Content Include="App_Themes\KetoSavage\Editors\edtCalendarButtonBack.gif" />
+    <Content Include="App_Themes\KetoSavage\Editors\edtCalendarButtonHBack.gif" />
+    <Content Include="App_Themes\KetoSavage\Editors\edtCalendarDayInRange.svg" />
+    <Content Include="App_Themes\KetoSavage\Editors\edtCalendarSelected.svg" />
+    <Content Include="App_Themes\KetoSavage\Editors\edtCalendarToday.svg" />
+    <Content Include="App_Themes\KetoSavage\Editors\edtCalendarTodayInRange.svg" />
+    <Content Include="App_Themes\KetoSavage\Editors\edtCalendarTodaySelected.svg" />
+    <Content Include="App_Themes\KetoSavage\Editors\edtDropDownBack.gif" />
+    <Content Include="App_Themes\KetoSavage\Editors\edtDropDownButtonHoverBack.gif" />
+    <Content Include="App_Themes\KetoSavage\Editors\edtSpinDecBtnBack.gif" />
+    <Content Include="App_Themes\KetoSavage\Editors\edtSpinIncBtnBack.gif" />
+    <Content Include="App_Themes\KetoSavage\Editors\edtTrackBarDoubleLargeTickH.svg" />
+    <Content Include="App_Themes\KetoSavage\Editors\edtTrackBarDoubleLargeTickV.svg" />
+    <Content Include="App_Themes\KetoSavage\Editors\edtTrackBarDoubleSmallTickH.svg" />
+    <Content Include="App_Themes\KetoSavage\Editors\edtTrackBarDoubleSmallTickV.svg" />
+    <Content Include="App_Themes\KetoSavage\Editors\edtTrackBarLargeTickH.svg" />
+    <Content Include="App_Themes\KetoSavage\Editors\edtTrackBarLargeTickV.svg" />
+    <Content Include="App_Themes\KetoSavage\Editors\edtTrackBarSmallTickH.svg" />
+    <Content Include="App_Themes\KetoSavage\Editors\edtTrackBarSmallTickV.svg" />
+    <Content Include="App_Themes\KetoSavage\Editors\edtTrackBarTrackH.svg" />
+    <Content Include="App_Themes\KetoSavage\Editors\edtTrackBarTrackV.svg" />
+    <Content Include="App_Themes\KetoSavage\Editors\sprite.css" />
+    <Content Include="App_Themes\KetoSavage\Editors\sprite.svg" />
+    <Content Include="App_Themes\KetoSavage\Editors\spriteAccessible.css" />
+    <Content Include="App_Themes\KetoSavage\Editors\styles.css" />
+    <Content Include="App_Themes\KetoSavage\Editors\stylesCompact.css" />
+    <Content Include="App_Themes\KetoSavage\GridView\dt_sprite.png" />
+    <Content Include="App_Themes\KetoSavage\GridView\dt_spriteAccessible.png" />
+    <Content Include="App_Themes\KetoSavage\GridView\gvLoadingOnStatusBar.gif" />
+    <Content Include="App_Themes\KetoSavage\GridView\sprite.css" />
+    <Content Include="App_Themes\KetoSavage\GridView\sprite.svg" />
+    <Content Include="App_Themes\KetoSavage\GridView\spriteAccessible.css" />
+    <Content Include="App_Themes\KetoSavage\GridView\styles.css" />
+    <Content Include="App_Themes\KetoSavage\GridView\stylesCompact.css" />
+    <Content Include="App_Themes\KetoSavage\HtmlEditor\dt_sprite.png" />
+    <Content Include="App_Themes\KetoSavage\HtmlEditor\dt_spriteAccessible.png" />
+    <Content Include="App_Themes\KetoSavage\HtmlEditor\dxheAudio.svg" />
+    <Content Include="App_Themes\KetoSavage\HtmlEditor\dxheFlash.svg" />
+    <Content Include="App_Themes\KetoSavage\HtmlEditor\dxheFoldMarker.png" />
+    <Content Include="App_Themes\KetoSavage\HtmlEditor\dxheNotSupported.svg" />
+    <Content Include="App_Themes\KetoSavage\HtmlEditor\dxheVideo.svg" />
+    <Content Include="App_Themes\KetoSavage\HtmlEditor\dxheYoutube.svg" />
+    <Content Include="App_Themes\KetoSavage\HtmlEditor\heFoldGutterFolded.svg" />
+    <Content Include="App_Themes\KetoSavage\HtmlEditor\heFoldGutterOpen.svg" />
+    <Content Include="App_Themes\KetoSavage\HtmlEditor\sprite.css" />
+    <Content Include="App_Themes\KetoSavage\HtmlEditor\sprite.svg" />
+    <Content Include="App_Themes\KetoSavage\HtmlEditor\spriteAccessible.css" />
+    <Content Include="App_Themes\KetoSavage\HtmlEditor\styles.css" />
+    <Content Include="App_Themes\KetoSavage\KetoSavageThemeAssembly.dll" />
+    <Content Include="App_Themes\KetoSavage\PivotGrid\-1.png" />
+    <Content Include="App_Themes\KetoSavage\PivotGrid\0.png" />
+    <Content Include="App_Themes\KetoSavage\PivotGrid\1.png" />
+    <Content Include="App_Themes\KetoSavage\PivotGrid\dt_sprite.png" />
+    <Content Include="App_Themes\KetoSavage\PivotGrid\dt_spriteAccessible.png" />
+    <Content Include="App_Themes\KetoSavage\PivotGrid\pgCustomizationFormBackground.gif" />
+    <Content Include="App_Themes\KetoSavage\PivotGrid\pgTVNodeLoading.gif" />
+    <Content Include="App_Themes\KetoSavage\PivotGrid\sprite.css" />
+    <Content Include="App_Themes\KetoSavage\PivotGrid\sprite.svg" />
+    <Content Include="App_Themes\KetoSavage\PivotGrid\spriteAccessible.css" />
+    <Content Include="App_Themes\KetoSavage\PivotGrid\styles.css" />
+    <Content Include="App_Themes\KetoSavage\RichEdit\dt_sprite.png" />
+    <Content Include="App_Themes\KetoSavage\RichEdit\dt_spriteAccessible.png" />
+    <Content Include="App_Themes\KetoSavage\RichEdit\reLoadingOnStatusBar.gif" />
+    <Content Include="App_Themes\KetoSavage\RichEdit\sprite.css" />
+    <Content Include="App_Themes\KetoSavage\RichEdit\sprite.svg" />
+    <Content Include="App_Themes\KetoSavage\RichEdit\spriteAccessible.css" />
+    <Content Include="App_Themes\KetoSavage\RichEdit\styles.css" />
+    <Content Include="App_Themes\KetoSavage\Scheduler\ButtonBack.gif" />
+    <Content Include="App_Themes\KetoSavage\Scheduler\ButtonBackHover.gif" />
+    <Content Include="App_Themes\KetoSavage\Scheduler\dt_sprite.png" />
+    <Content Include="App_Themes\KetoSavage\Scheduler\dt_spriteAccessible.png" />
+    <Content Include="App_Themes\KetoSavage\Scheduler\sprite.css" />
+    <Content Include="App_Themes\KetoSavage\Scheduler\sprite.svg" />
+    <Content Include="App_Themes\KetoSavage\Scheduler\spriteAccessible.css" />
+    <Content Include="App_Themes\KetoSavage\Scheduler\styles.css" />
+    <Content Include="App_Themes\KetoSavage\Scheduler\stylesCompact.css" />
+    <Content Include="App_Themes\KetoSavage\Scheduler\ViewSelectorButtonBack.gif" />
+    <Content Include="App_Themes\KetoSavage\Scheduler\ViewSelectorButtonBackHover.gif" />
+    <Content Include="App_Themes\KetoSavage\SpellChecker\scErrorUnderline.gif" />
+    <Content Include="App_Themes\KetoSavage\SpellChecker\styles.css" />
+    <Content Include="App_Themes\KetoSavage\Spreadsheet\dt_sprite.png" />
+    <Content Include="App_Themes\KetoSavage\Spreadsheet\dt_spriteAccessible.png" />
+    <Content Include="App_Themes\KetoSavage\Spreadsheet\sprite.css" />
+    <Content Include="App_Themes\KetoSavage\Spreadsheet\sprite.svg" />
+    <Content Include="App_Themes\KetoSavage\Spreadsheet\spriteAccessible.css" />
+    <Content Include="App_Themes\KetoSavage\Spreadsheet\styles.css" />
+    <Content Include="App_Themes\KetoSavage\Spreadsheet\TouchResize.svg" />
+    <Content Include="App_Themes\KetoSavage\TreeList\dt_sprite.png" />
+    <Content Include="App_Themes\KetoSavage\TreeList\dt_spriteAccessible.png" />
+    <Content Include="App_Themes\KetoSavage\TreeList\sprite.css" />
+    <Content Include="App_Themes\KetoSavage\TreeList\sprite.svg" />
+    <Content Include="App_Themes\KetoSavage\TreeList\spriteAccessible.css" />
+    <Content Include="App_Themes\KetoSavage\TreeList\styles.css" />
+    <Content Include="App_Themes\KetoSavage\VerticalGrid\dt_sprite.png" />
+    <Content Include="App_Themes\KetoSavage\VerticalGrid\dt_spriteAccessible.png" />
+    <Content Include="App_Themes\KetoSavage\VerticalGrid\sprite.css" />
+    <Content Include="App_Themes\KetoSavage\VerticalGrid\sprite.svg" />
+    <Content Include="App_Themes\KetoSavage\VerticalGrid\spriteAccessible.css" />
+    <Content Include="App_Themes\KetoSavage\VerticalGrid\styles.css" />
+    <Content Include="App_Themes\KetoSavage\Web\1x1.gif" />
+    <Content Include="App_Themes\KetoSavage\Web\currentPage.svg" />
+    <Content Include="App_Themes\KetoSavage\Web\dt_sprite.png" />
+    <Content Include="App_Themes\KetoSavage\Web\dt_spriteAccessible.png" />
+    <Content Include="App_Themes\KetoSavage\Web\fmFile.png" />
+    <Content Include="App_Themes\KetoSavage\Web\fmFileCheck.png" />
+    <Content Include="App_Themes\KetoSavage\Web\fmFilePdf.png" />
+    <Content Include="App_Themes\KetoSavage\Web\fmFilePlainText.png" />
+    <Content Include="App_Themes\KetoSavage\Web\fmFilePresentation.png" />
+    <Content Include="App_Themes\KetoSavage\Web\fmFileRichText.png" />
+    <Content Include="App_Themes\KetoSavage\Web\fmFileSpreadsheet.png" />
+    <Content Include="App_Themes\KetoSavage\Web\fmSplitterSeparator.gif" />
+    <Content Include="App_Themes\KetoSavage\Web\igLoading.gif" />
+    <Content Include="App_Themes\KetoSavage\Web\igNavBtnsBack.png" />
+    <Content Include="App_Themes\KetoSavage\Web\isLoading.gif" />
+    <Content Include="App_Themes\KetoSavage\Web\Loading.gif" />
+    <Content Include="App_Themes\KetoSavage\Web\mPopupBack.gif" />
+    <Content Include="App_Themes\KetoSavage\Web\ncGotoBack.svg" />
+    <Content Include="App_Themes\KetoSavage\Web\pcModalBack.gif" />
+    <Content Include="App_Themes\KetoSavage\Web\pDropDownButtonBack.gif" />
+    <Content Include="App_Themes\KetoSavage\Web\pDropDownButtonHoverBack.gif" />
+    <Content Include="App_Themes\KetoSavage\Web\rcMapImage.svg" />
+    <Content Include="App_Themes\KetoSavage\Web\splResizingPointer.gif" />
+    <Content Include="App_Themes\KetoSavage\Web\sprite.css" />
+    <Content Include="App_Themes\KetoSavage\Web\sprite.svg" />
+    <Content Include="App_Themes\KetoSavage\Web\spriteAccessible.css" />
+    <Content Include="App_Themes\KetoSavage\Web\styles.css" />
+    <Content Include="App_Themes\KetoSavage\Web\stylesCompact.css" />
+    <Content Include="App_Themes\KetoSavage\Web\tcScrollBtnBack.gif" />
+    <Content Include="App_Themes\KetoSavage\Web\tcScrollBtnDisabledBack.gif" />
+    <Content Include="App_Themes\KetoSavage\Web\tcScrollBtnHoverBack.gif" />
+    <Content Include="App_Themes\KetoSavage\Web\tcTabBack.gif" />
+    <Content Include="App_Themes\KetoSavage\Web\tiGotoBack.svg" />
+    <Content Include="App_Themes\KetoSavage\Web\tvElbow.gif" />
+    <Content Include="App_Themes\KetoSavage\Web\tvElbowRtl.gif" />
+    <Content Include="App_Themes\KetoSavage\Web\tvLine.gif" />
+    <Content Include="App_Themes\KetoSavage\Web\tvNodeLoading.gif" />
+    <Content Include="App_Themes\KetoSavage\Web\ucButtonBack.gif" />
+    <Content Include="App_Themes\KetoSavage\Web\ucButtonHoverBack.gif" />
+    <Content Include="App_Themes\KetoSavage\Web\ucSlLogo.png" />
+    <Content Include="App_Themes\KetoSavage\XtraReports\dt_sprite.png" />
+    <Content Include="App_Themes\KetoSavage\XtraReports\dt_spriteAccessible.png" />
+    <Content Include="App_Themes\KetoSavage\XtraReports\Loading.gif" />
+    <Content Include="App_Themes\KetoSavage\XtraReports\pageBottomBorder.svg" />
+    <Content Include="App_Themes\KetoSavage\XtraReports\pageLeftBorder.svg" />
+    <Content Include="App_Themes\KetoSavage\XtraReports\pageRightBorder.svg" />
+    <Content Include="App_Themes\KetoSavage\XtraReports\pageTopBorder.svg" />
+    <Content Include="App_Themes\KetoSavage\XtraReports\sprite.css" />
+    <Content Include="App_Themes\KetoSavage\XtraReports\sprite.svg" />
+    <Content Include="App_Themes\KetoSavage\XtraReports\spriteAccessible.css" />
+    <Content Include="App_Themes\KetoSavage\XtraReports\styles.css" />
+    <Content Include="bin\Content\generic.dark.custom.css" />
+    <Content Include="bin\Content\Images\AquaHeader.jpg" />
+    <Content Include="bin\Content\Images\BlackGlassHeader.jpg" />
+    <Content Include="bin\Content\Images\GlassHeader.jpg" />
+    <Content Include="bin\Content\Images\KSHeaderLogo_white.png" />
+    <Content Include="bin\Content\Images\KSLogo_white.png" />
+    <Content Include="bin\Content\Images\PlasticBlueHeader.jpg" />
+    <Content Include="bin\Content\Images\RedWineHeader.jpg" />
+    <Content Include="bin\Content\jquery-ui.css" />
+    <Content Include="bin\Content\jquery-ui.min.css" />
+    <Content Include="bin\Content\Site.css" />
+    <Content Include="Content\generic.dark.custom.css" />
+    <Content Include="Content\Images\AquaHeader.jpg" />
+    <Content Include="Content\Images\BlackGlassHeader.jpg" />
+    <Content Include="Content\Images\GlassHeader.jpg" />
+    <Content Include="Content\Images\KSHeaderLogo_white.png" />
+    <Content Include="Content\Images\KSLogo_white.png" />
+    <Content Include="Content\Images\PlasticBlueHeader.jpg" />
+    <Content Include="Content\Images\RedWineHeader.jpg" />
+    <Content Include="Content\jquery-ui.css" />
+    <Content Include="Content\jquery-ui.min.css" />
+    <Content Include="Content\Site.css" />
+    <Content Include="Global.asax" />
+    <Content Include="Scripts\ace.js" />
+    <Content Include="Scripts\cldr.event.js" />
+    <Content Include="Scripts\cldr.js" />
+    <Content Include="Scripts\cldr.supplemental.js" />
+    <Content Include="Scripts\cldr.unresolved.js" />
+    <Content Include="Scripts\ext-language_tools.js" />
+    <Content Include="Scripts\globalize.currency.js" />
+    <Content Include="Scripts\globalize.date.js" />
+    <Content Include="Scripts\globalize.js" />
+    <Content Include="Scripts\globalize.message.js" />
+    <Content Include="Scripts\globalize.number.js" />
+    <Content Include="Scripts\jquery-1.11.3.js" />
+    <Content Include="Scripts\jquery-1.11.3.min.js" />
+    <Content Include="Scripts\jquery-ui-1.11.4.js" />
+    <Content Include="Scripts\jquery-ui-1.11.4.min.js" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.js" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.min.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\JSCustom.js" />
+    <Content Include="Scripts\knockout-3.3.0.debug.js" />
+    <Content Include="Scripts\knockout-3.3.0.js" />
+    <Content Include="packages.config" />
+    <Content Include="App_Themes\KetoSavage\ASPxBinaryImage.skin" />
+    <Content Include="App_Themes\KetoSavage\ASPxButton.skin" />
+    <Content Include="App_Themes\KetoSavage\ASPxButtonEdit.skin" />
+    <Content Include="App_Themes\KetoSavage\ASPxCalendar.skin" />
+    <Content Include="App_Themes\KetoSavage\ASPxCallbackPanel.skin" />
+    <Content Include="App_Themes\KetoSavage\ASPxCaptcha.skin" />
+    <Content Include="App_Themes\KetoSavage\ASPxCardView.skin" />
+    <Content Include="App_Themes\KetoSavage\ASPxCheckBox.skin" />
+    <Content Include="App_Themes\KetoSavage\ASPxCheckBoxList.skin" />
+    <Content Include="App_Themes\KetoSavage\ASPxCloudControl.skin" />
+    <Content Include="App_Themes\KetoSavage\ASPxColorEdit.skin" />
+    <Content Include="App_Themes\KetoSavage\ASPxComboBox.skin" />
+    <Content Include="App_Themes\KetoSavage\ASPxDataView.skin" />
+    <Content Include="App_Themes\KetoSavage\ASPxDateEdit.skin" />
+    <Content Include="App_Themes\KetoSavage\ASPxDateNavigator.skin" />
+    <Content Include="App_Themes\KetoSavage\ASPxDockPanel.skin" />
+    <Content Include="App_Themes\KetoSavage\ASPxDocumentViewer.skin" />
+    <Content Include="App_Themes\KetoSavage\ASPxDropDownEdit.skin" />
+    <Content Include="App_Themes\KetoSavage\ASPxFileManager.skin" />
+    <Content Include="App_Themes\KetoSavage\ASPxFilterControl.skin" />
+    <Content Include="App_Themes\KetoSavage\ASPxFormLayout.skin" />
+    <Content Include="App_Themes\KetoSavage\ASPxGridLookup.skin" />
+    <Content Include="App_Themes\KetoSavage\ASPxGridView.skin" />
+    <Content Include="App_Themes\KetoSavage\ASPxHeadline.skin" />
+    <Content Include="App_Themes\KetoSavage\ASPxHint.skin" />
+    <Content Include="App_Themes\KetoSavage\ASPxHtmlEditor.skin" />
+    <Content Include="App_Themes\KetoSavage\ASPxHyperLink.skin" />
+    <Content Include="App_Themes\KetoSavage\ASPxImage.skin" />
+    <Content Include="App_Themes\KetoSavage\ASPxImageGallery.skin" />
+    <Content Include="App_Themes\KetoSavage\ASPxImageSlider.skin" />
+    <Content Include="App_Themes\KetoSavage\ASPxImageZoom.skin" />
+    <Content Include="App_Themes\KetoSavage\ASPxImageZoomNavigator.skin" />
+    <Content Include="App_Themes\KetoSavage\ASPxLabel.skin" />
+    <Content Include="App_Themes\KetoSavage\ASPxListBox.skin" />
+    <Content Include="App_Themes\KetoSavage\ASPxLoadingPanel.skin" />
+    <Content Include="App_Themes\KetoSavage\ASPxMemo.skin" />
+    <Content Include="App_Themes\KetoSavage\ASPxMenu.skin" />
+    <Content Include="App_Themes\KetoSavage\ASPxNavBar.skin" />
+    <Content Include="App_Themes\KetoSavage\ASPxNewsControl.skin" />
+    <Content Include="App_Themes\KetoSavage\ASPxPageControl.skin" />
+    <Content Include="App_Themes\KetoSavage\ASPxPager.skin" />
+    <Content Include="App_Themes\KetoSavage\ASPxPanel.skin" />
+    <Content Include="App_Themes\KetoSavage\ASPxPivotGrid.skin" />
+    <Content Include="App_Themes\KetoSavage\ASPxPopupControl.skin" />
+    <Content Include="App_Themes\KetoSavage\ASPxPopupMenu.skin" />
+    <Content Include="App_Themes\KetoSavage\ASPxProgressBar.skin" />
+    <Content Include="App_Themes\KetoSavage\ASPxRadioButton.skin" />
+    <Content Include="App_Themes\KetoSavage\ASPxRadioButtonList.skin" />
+    <Content Include="App_Themes\KetoSavage\ASPxRatingControl.skin" />
+    <Content Include="App_Themes\KetoSavage\ASPxRibbon.skin" />
+    <Content Include="App_Themes\KetoSavage\ASPxRichEdit.skin" />
+    <Content Include="App_Themes\KetoSavage\ASPxRoundPanel.skin" />
+    <Content Include="App_Themes\KetoSavage\ASPxScheduler.skin" />
+    <Content Include="App_Themes\KetoSavage\ASPxSiteMapControl.skin" />
+    <Content Include="App_Themes\KetoSavage\ASPxSpellChecker.skin" />
+    <Content Include="App_Themes\KetoSavage\ASPxSpinEdit.skin" />
+    <Content Include="App_Themes\KetoSavage\ASPxSplitter.skin">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_Themes\KetoSavage\ASPxSpreadsheet.skin" />
+    <Content Include="App_Themes\KetoSavage\ASPxTabControl.skin" />
+    <Content Include="App_Themes\KetoSavage\ASPxTextBox.skin" />
+    <Content Include="App_Themes\KetoSavage\ASPxTimeEdit.skin" />
+    <Content Include="App_Themes\KetoSavage\ASPxTitleIndex.skin" />
+    <Content Include="App_Themes\KetoSavage\ASPxTokenBox.skin" />
+    <Content Include="App_Themes\KetoSavage\ASPxTrackBar.skin" />
+    <Content Include="App_Themes\KetoSavage\ASPxTreeList.skin" />
+    <Content Include="App_Themes\KetoSavage\ASPxTreeView.skin" />
+    <Content Include="App_Themes\KetoSavage\ASPxUploadControl.skin" />
+    <Content Include="App_Themes\KetoSavage\ASPxValidationSummary.skin" />
+    <Content Include="App_Themes\KetoSavage\ASPxVerticalGrid.skin" />
+    <Content Include="App_Themes\KetoSavage\MonthEdit.skin" />
+    <Content Include="App_Themes\KetoSavage\RecurrenceTypeEdit.skin" />
+    <Content Include="App_Themes\KetoSavage\ReportDocumentMap.skin" />
+    <Content Include="App_Themes\KetoSavage\ReportParametersPanel.skin" />
+    <Content Include="App_Themes\KetoSavage\ReportToolbar.skin" />
+    <Content Include="App_Themes\KetoSavage\ReportViewer.skin" />
+    <Content Include="App_Themes\KetoSavage\WebChartControl.skin" />
+    <Content Include="App_Themes\KetoSavage\WeekDaysEdit.skin" />
+    <Content Include="App_Themes\KetoSavage\WeekOfMonthEdit.skin" />
+    <Content Include="App_Themes\KetoSavage\MVCxButton.skin" />
+    <Content Include="App_Themes\KetoSavage\MVCxButtonEdit.skin" />
+    <Content Include="App_Themes\KetoSavage\MVCxCalendar.skin" />
+    <Content Include="App_Themes\KetoSavage\MVCxCallbackPanel.skin" />
+    <Content Include="App_Themes\KetoSavage\MVCxCaptcha.skin" />
+    <Content Include="App_Themes\KetoSavage\MVCxCardView.skin" />
+    <Content Include="App_Themes\KetoSavage\MVCxChartControl.skin" />
+    <Content Include="App_Themes\KetoSavage\MVCxCheckBox.skin" />
+    <Content Include="App_Themes\KetoSavage\MVCxCheckBoxList.skin" />
+    <Content Include="App_Themes\KetoSavage\MVCxColorEdit.skin" />
+    <Content Include="App_Themes\KetoSavage\MVCxComboBox.skin" />
+    <Content Include="App_Themes\KetoSavage\MVCxDataView.skin" />
+    <Content Include="App_Themes\KetoSavage\MVCxDateEdit.skin" />
+    <Content Include="App_Themes\KetoSavage\MVCxDockPanel.skin" />
+    <Content Include="App_Themes\KetoSavage\MVCxDocumentViewer.skin" />
+    <Content Include="App_Themes\KetoSavage\MVCxDropDownEdit.skin" />
+    <Content Include="App_Themes\KetoSavage\MVCxFileManager.skin" />
+    <Content Include="App_Themes\KetoSavage\MVCxFormLayout.skin" />
+    <Content Include="App_Themes\KetoSavage\MVCxGridLookup.skin" />
+    <Content Include="App_Themes\KetoSavage\MVCxGridView.skin" />
+    <Content Include="App_Themes\KetoSavage\MVCxHint.skin" />
+    <Content Include="App_Themes\KetoSavage\MVCxHtmlEditor.skin" />
+    <Content Include="App_Themes\KetoSavage\MVCxHyperLink.skin" />
+    <Content Include="App_Themes\KetoSavage\MVCxImageGallery.skin" />
+    <Content Include="App_Themes\KetoSavage\MVCxImageSlider.skin" />
+    <Content Include="App_Themes\KetoSavage\MVCxImageZoom.skin" />
+    <Content Include="App_Themes\KetoSavage\MVCxImageZoomNavigator.skin" />
+    <Content Include="App_Themes\KetoSavage\MVCxLabel.skin" />
+    <Content Include="App_Themes\KetoSavage\MVCxListBox.skin" />
+    <Content Include="App_Themes\KetoSavage\MVCxLoadingPanel.skin" />
+    <Content Include="App_Themes\KetoSavage\MVCxMemo.skin" />
+    <Content Include="App_Themes\KetoSavage\MVCxMenu.skin" />
+    <Content Include="App_Themes\KetoSavage\MVCxNavBar.skin" />
+    <Content Include="App_Themes\KetoSavage\MVCxPageControl.skin" />
+    <Content Include="App_Themes\KetoSavage\MVCxPanel.skin" />
+    <Content Include="App_Themes\KetoSavage\MVCxPivotGrid.skin" />
+    <Content Include="App_Themes\KetoSavage\MVCxPopupControl.skin" />
+    <Content Include="App_Themes\KetoSavage\MVCxPopupMenu.skin" />
+    <Content Include="App_Themes\KetoSavage\MVCxProgressBar.skin" />
+    <Content Include="App_Themes\KetoSavage\MVCxRadioButton.skin" />
+    <Content Include="App_Themes\KetoSavage\MVCxRadioButtonList.skin" />
+    <Content Include="App_Themes\KetoSavage\MVCxRatingControl.skin" />
+    <Content Include="App_Themes\KetoSavage\MVCxReportToolbar.skin" />
+    <Content Include="App_Themes\KetoSavage\MVCxReportViewer.skin" />
+    <Content Include="App_Themes\KetoSavage\MVCxRibbon.skin" />
+    <Content Include="App_Themes\KetoSavage\MVCxRichEdit.skin" />
+    <Content Include="App_Themes\KetoSavage\MVCxRoundPanel.skin" />
+    <Content Include="App_Themes\KetoSavage\MVCxScheduler.skin" />
+    <Content Include="App_Themes\KetoSavage\MVCxSpellChecker.skin" />
+    <Content Include="App_Themes\KetoSavage\MVCxSpinEdit.skin" />
+    <Content Include="App_Themes\KetoSavage\MVCxSplitter.skin" />
+    <Content Include="App_Themes\KetoSavage\MVCxSpreadsheet.skin" />
+    <Content Include="App_Themes\KetoSavage\MVCxTabControl.skin" />
+    <Content Include="App_Themes\KetoSavage\MVCxTextBox.skin" />
+    <Content Include="App_Themes\KetoSavage\MVCxTimeEdit.skin" />
+    <Content Include="App_Themes\KetoSavage\MVCxTokenBox.skin" />
+    <Content Include="App_Themes\KetoSavage\MVCxTrackBar.skin" />
+    <Content Include="App_Themes\KetoSavage\MVCxTreeList.skin" />
+    <Content Include="App_Themes\KetoSavage\MVCxTreeView.skin" />
+    <Content Include="App_Themes\KetoSavage\MVCxUploadControl.skin" />
+    <Content Include="App_Themes\KetoSavage\MVCxValidationSummary.skin" />
+    <Content Include="App_Themes\KetoSavage\MVCxVerticalGrid.skin" />
+    <Content Include="App_Themes\KetoSavage\Fonts\Roboto-Medium.ttf" />
+    <Content Include="App_Themes\KetoSavage\Fonts\Roboto-Regular.ttf" />
+    <None Include="Properties\PublishProfiles\file.pubxml" />
+    <None Include="Properties\PublishProfiles\ks.razoredgetech.com - Web Deploy.pubxml" />
+    <None Include="Properties\PublishProfiles\TestServer.pubxml" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="Views\Shared\DisplayTemplates\Boolean.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\Boolean.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\DateTime.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\Decimal.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\MultilineText.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\Password.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\String.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\EmailAddress.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Web.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Account\ChangePassword.cshtml" />
+    <Content Include="Views\Account\ChangePasswordSuccess.cshtml" />
+    <Content Include="Views\Account\Login.cshtml" />
+    <Content Include="Views\Account\Register.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Shared\_lightLayout.cshtml" />
+    <Content Include="Views\Shared\_mainLayout.cshtml" />
+    <Content Include="Views\Shared\_rootLayout.cshtml" />
+    <Content Include="Views\Shared\ContentLeftPartialView.cshtml" />
+    <Content Include="Views\Shared\FooterPartialView.cshtml" />
+    <Content Include="Views\Shared\HeaderPartialView.cshtml" />
+    <Content Include="Views\Shared\LogOnPartialView.cshtml" />
+    <Content Include="Views\Shared\Lockout.cshtml" />
+    <Content Include="Views\Manage\Index.cshtml" />
+    <Content Include="Views\Manage\AddPhoneNumber.cshtml" />
+    <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
+    <Content Include="Views\Account\_ExternalLoginsListPartial.cshtml" />
+    <Content Include="Views\Manage\ManageLogins.cshtml" />
+    <Content Include="Views\Account\ExternalLoginConfirmation.cshtml" />
+    <Content Include="Views\Account\ConfirmEmail.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Account\ForgotPassword.cshtml" />
+    <Content Include="Views\Account\ForgotPasswordConfirmation.cshtml" />
+    <Content Include="Views\Account\ResetPassword.cshtml" />
+    <Content Include="Views\Account\ResetPasswordConfirmation.cshtml" />
+    <Content Include="Views\Account\SendCode.cshtml" />
+    <Content Include="Views\Account\VerifyCode.cshtml" />
+    <Content Include="Views\Manage\SetPassword.cshtml" />
+    <Content Include="Views\Home\GridViewPartialView.cshtml" />
+    <Content Include="Views\Account\_loginPartial_orig.cshtml" />
+    <Content Include="Views\Account\ManageUsers.cshtml" />
+    <Content Include="Views\UsersAdmin\AddUser.cshtml" />
+    <Content Include="Views\UsersAdmin\Index.cshtml" />
+    <Content Include="Views\UsersAdmin\UserGridPartialView.cshtml" />
+    <Content Include="Views\UsersAdmin\AddNewUserPartial.cshtml" />
+    <Content Include="Views\UsersAdmin\UpdateUserPartial.cshtml" />
+    <Content Include="Views\UsersAdmin\DeleteUserPartial.cshtml" />
+    <Content Include="Views\UsersAdmin\UpdateUser.cshtml" />
+    <Content Include="Views\ManageUsers\Index.cshtml" />
+    <Content Include="Views\ManageUsers\_GridViewPartial.cshtml" />
+    <Content Include="Views\Shared\_menuPartial.cshtml" />
+    <Content Include="Views\Account\_loginPartial.cshtml" />
+    <Content Include="Views\UserPrograms\Index.cshtml" />
+    <Content Include="Views\UserPrograms\_userGridViewPartial.cshtml" />
+    <Content Include="Views\Account\_registerPartial.cshtml" />
+    <Content Include="Views\Programs\Index.cshtml" />
+    <Content Include="Views\Programs\_programGridViewPartial.cshtml" />
+    <Content Include="Views\UserPrograms\_userProgramDetails.cshtml" />
+    <Content Include="Views\UserPrograms\_userProgramHeader.cshtml" />
+    <Content Include="Views\ManageUsers\_userContactCardPartial.cshtml" />
+    <Content Include="Views\UserPrograms\UserProgramDetails.cshtml" />
+    <Content Include="Views\UserPrograms\_pastPerformance.cshtml" />
+    <Content Include="Views\UserPrograms\_dailyMacros.cshtml" />
+    <Content Include="Views\UserProgress\Index.cshtml" />
+    <Content Include="Views\UserProgress\Macros.cshtml" />
+    <Content Include="Views\UserProgress\Weight.cshtml" />
+    <Content Include="Views\UserProgress\_enterDailyMacros.cshtml" />
+    <Content Include="Views\UserProgress\_enterDailyMeasurements.cshtml" />
+    <Content Include="Views\UserProgress\_entryForms.cshtml" />
+    <Content Include="Views\UserProgress\_pastPerformanceGrid.cshtml" />
+    <Content Include="Views\UserPrograms\Index - orig.cshtml" />
+    <Content Include="Views\UserPrograms\UserProgramDetails - Orig.cshtml" />
+    <Content Include="Views\UserPrograms\_enterNewMacroForm.cshtml" />
+    <Content Include="Views\ClientCharts\_clientWeightGraph.cshtml" />
+    <Content Include="Views\Shared\_ksRootLayout.cshtml" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\DashboardConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\IdentityConfig.cs" />
+    <Compile Include="App_Start\NinjectWebCommon.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\Startup.Auth.cs" />
+    <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\Abstract\KSBaseController.cs" />
+    <Compile Include="Controllers\Abstract\KSUserManagedController.cs" />
+    <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\UserProgramsController.cs" />
+    <Compile Include="Controllers\ManageUsersController.cs" />
+    <Compile Include="Controllers\ProgramsController.cs" />
+    <Compile Include="Controllers\ClientChartsController.cs" />
+    <Compile Include="Controllers\UserProgressController.cs" />
+    <Compile Include="Controllers\UsersAdminController.cs" />
+    <Compile Include="Domain\Infrastructure\EfEntityContext.cs" />
+    <Compile Include="Domain\Infrastructure\IEntityContext.cs" />
+    <Compile Include="Domain\Infrastructure\ListEntityContext.cs" />
+    <Compile Include="Domain\Models\EntityBase.cs" />
+    <Compile Include="Domain\Models\IKeyedEntity.cs" />
+    <Compile Include="Domain\Models\IUserManaged.cs" />
+    <Compile Include="Domain\Repositories\GenericRepository.cs" />
+    <Compile Include="Domain\Repositories\UserManagedRepository.cs" />
+    <Compile Include="GlimpseSecurityPolicy.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Infrastructure\ListModel.cs" />
+    <Compile Include="Infrastructure\UserManagedExtensions.cs" />
+    <Compile Include="Migrations\201803111631012_Initial.cs" />
+    <Compile Include="Migrations\201803111631012_Initial.Designer.cs">
+      <DependentUpon>201803111631012_Initial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201803132315484_AddProgramTemplates.cs" />
+    <Compile Include="Migrations\201803132315484_AddProgramTemplates.Designer.cs">
+      <DependentUpon>201803132315484_AddProgramTemplates.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201803132321324_RenameProgramTemplate.cs" />
+    <Compile Include="Migrations\201803132321324_RenameProgramTemplate.Designer.cs">
+      <DependentUpon>201803132321324_RenameProgramTemplate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201803140313351_AddingNameToProgram.cs" />
+    <Compile Include="Migrations\201803140313351_AddingNameToProgram.Designer.cs">
+      <DependentUpon>201803140313351_AddingNameToProgram.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201803171601416_updateProgramTemplate.cs" />
+    <Compile Include="Migrations\201803171601416_updateProgramTemplate.Designer.cs">
+      <DependentUpon>201803171601416_updateProgramTemplate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201803172200137_ModifyingGoals.cs" />
+    <Compile Include="Migrations\201803172200137_ModifyingGoals.Designer.cs">
+      <DependentUpon>201803172200137_ModifyingGoals.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201803181613488_AddingProgramType.cs" />
+    <Compile Include="Migrations\201803181613488_AddingProgramType.Designer.cs">
+      <DependentUpon>201803181613488_AddingProgramType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201803241326226_AddCalendar.cs" />
+    <Compile Include="Migrations\201803241326226_AddCalendar.Designer.cs">
+      <DependentUpon>201803241326226_AddCalendar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201803250337186_AddDailyProgress.cs" />
+    <Compile Include="Migrations\201803250337186_AddDailyProgress.Designer.cs">
+      <DependentUpon>201803250337186_AddDailyProgress.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201803281057068_UpdatingDailyProgress.cs" />
+    <Compile Include="Migrations\201803281057068_UpdatingDailyProgress.Designer.cs">
+      <DependentUpon>201803281057068_UpdatingDailyProgress.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201803290223419_UpdatingDailyProgress_2.cs" />
+    <Compile Include="Migrations\201803290223419_UpdatingDailyProgress_2.Designer.cs">
+      <DependentUpon>201803290223419_UpdatingDailyProgress_2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201804010131218_switchToDouble.cs" />
+    <Compile Include="Migrations\201804010131218_switchToDouble.Designer.cs">
+      <DependentUpon>201804010131218_switchToDouble.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201804011612465_addWeightChange.cs" />
+    <Compile Include="Migrations\201804011612465_addWeightChange.Designer.cs">
+      <DependentUpon>201804011612465_addWeightChange.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201804080021558_AddRefeedBool.cs" />
+    <Compile Include="Migrations\201804080021558_AddRefeedBool.Designer.cs">
+      <DependentUpon>201804080021558_AddRefeedBool.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\Abstract\UserManaged.cs" />
+    <Compile Include="Models\AccountModels.cs" />
+    <Compile Include="Models\ApplicationUser.cs" />
+    <Compile Include="Models\DailyProgress.cs" />
+    <Compile Include="Models\DateModels.cs" />
+    <Compile Include="Models\UserPrograms.cs" />
+    <Compile Include="Repositories\DateRepository.cs" />
+    <Compile Include="Repositories\UserProgramRepository.cs" />
+    <Compile Include="ViewModels\ChartViewModel.cs" />
+    <Compile Include="ViewModels\ProgressViewModel.cs" />
+    <Compile Include="ViewModels\UserProgramViewModel.cs" />
+    <Compile Include="Models\IdentityModels.cs" />
+    <Compile Include="Models\KSDataContext.cs" />
+    <Compile Include="ViewModels\ManageViewModels.cs" />
+    <Compile Include="Models\ProgramTemplate.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Interfaces\IProgramRepository.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="Repositories\ProgramRepository.cs" />
+    <Compile Include="Repositories\RoleRepository.cs" />
+    <Compile Include="Repositories\UserProfileRepository.cs" />
+    <Compile Include="Startup.cs" />
+    <Compile Include="Util\Controllers\UserManagedController.cs" />
+    <Compile Include="Util\Interfaces\IDataLayer.cs" />
+    <Compile Include="ViewModels\ProgramsViewModel.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Controllers\Infrastructure\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201803111631012_Initial.resx">
+      <DependentUpon>201803111631012_Initial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201803132315484_AddProgramTemplates.resx">
+      <DependentUpon>201803132315484_AddProgramTemplates.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201803132321324_RenameProgramTemplate.resx">
+      <DependentUpon>201803132321324_RenameProgramTemplate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201803140313351_AddingNameToProgram.resx">
+      <DependentUpon>201803140313351_AddingNameToProgram.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201803171601416_updateProgramTemplate.resx">
+      <DependentUpon>201803171601416_updateProgramTemplate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201803172200137_ModifyingGoals.resx">
+      <DependentUpon>201803172200137_ModifyingGoals.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201803181613488_AddingProgramType.resx">
+      <DependentUpon>201803181613488_AddingProgramType.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201803241326226_AddCalendar.resx">
+      <DependentUpon>201803241326226_AddCalendar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201803250337186_AddDailyProgress.resx">
+      <DependentUpon>201803250337186_AddDailyProgress.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201803281057068_UpdatingDailyProgress.resx">
+      <DependentUpon>201803281057068_UpdatingDailyProgress.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201803290223419_UpdatingDailyProgress_2.resx">
+      <DependentUpon>201803290223419_UpdatingDailyProgress_2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201804010131218_switchToDouble.resx">
+      <DependentUpon>201804010131218_switchToDouble.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201804011612465_addWeightChange.resx">
+      <DependentUpon>201804011612465_addWeightChange.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201804080021558_AddRefeedBool.resx">
+      <DependentUpon>201804080021558_AddRefeedBool.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>59559</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:59559/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>

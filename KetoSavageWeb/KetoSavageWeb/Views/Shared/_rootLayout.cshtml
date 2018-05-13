@@ -120,7 +120,7 @@
         {
             settings.Name = "HeaderPane";
             settings.FixedPosition = PanelFixedPosition.WindowTop;
-            settings.Collapsible = false;
+            settings.Collapsible = true;
             settings.SettingsAdaptivity.CollapseAtWindowInnerWidth = 500;
             settings.ControlStyle.CssClass = "headerPane";
             settings.Styles.Panel.CssClass = "panel";
@@ -136,25 +136,7 @@
             });
         }).GetHtml();
 
-        //Html.DevExpress().Panel(settings =>
-        //{
-        //    settings.Name = "LeftPanel";
-        //    settings.ClientVisible = true;
-        //    settings.FixedPosition = PanelFixedPosition.WindowLeft;
-        //    settings.Collapsible = false;
-        //    settings.ControlStyle.CssClass = "leftPanel";
-        //}).GetHtml();
 
-        //Html.DevExpress().Panel(settings =>
-        //{
-        //    settings.Name = "MenuPanel";
-        //    settings.EnableClientSideAPI = true;
-        //    settings.Styles.Panel.CssClass = "panel";
-        //    settings.SetContent(() =>
-        //    {
-        //        Html.RenderPartial("_menuPartial");
-        //    });
-        //}).GetHtml();
     }
 
     <script type="text/javascript">
