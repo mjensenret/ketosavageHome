@@ -1,132 +1,33 @@
-@model KetoSavageWeb.Models.LoginModel
-
-<div class="center">
-    <center>
-        <div class="loginForm">
-            @if (!Request.IsAuthenticated)
-            {
-                <img src="~/Content/Images/KSLogo_white.png" />
-
-                Html.DevExpress().FormLayout(form =>
-                {
-                    form.Name = "frmLoginControls";
-                    form.SettingsAdaptivity.AdaptivityMode = FormLayoutAdaptivityMode.SingleColumnWindowLimit;
-                    form.SettingsAdaptivity.SwitchToSingleColumnAtWindowInnerWidth = 500;
-                    form.NestedExtensionWidth = Unit.Percentage(100);
-                    form.Styles.Style.CssClass = "loginForm";
-
-                    form.Items.AddGroupItem(i =>
-                    {
-                        i.ColCount = 2;
-                        i.ShowCaption = DefaultBoolean.False;
-                        i.GroupBoxDecoration = GroupBoxDecoration.Box;
-                        i.Items.Add(b =>
-                        {
-                            b.HorizontalAlign = FormLayoutHorizontalAlign.Center;
-                            b.ShowCaption = DefaultBoolean.False;
-                            //b.Width = Unit.Percentage(100);
-                            b.SetNestedContent(() =>
-                            {
-                                Html.DevExpress().Button(
-                                    register =>
-                                    {
-                                        register.Name = "btnShowRegister";
-                                        register.Text = "Register";
-                                        register.ClientSideEvents.Click = "function(s, e) { openWindow('Register'); }";
-                                    }).Render();
-                            });
-
-                        });
-
-                        i.Items.Add(b =>
-                        {
-                            b.HorizontalAlign = FormLayoutHorizontalAlign.Center;
-                            b.ShowCaption = DefaultBoolean.False;
-                            //b.Width = Unit.Percentage(100);
-                            b.SetNestedContent(() =>
-                            {
-                                Html.DevExpress().Button(
-                                    settings =>
-                                    {
-                                        settings.Name = "btnShowLogin";
-                                        settings.Text = "Login";
-                                        settings.ClientSideEvents.Click = "function(s, e) { openWindow('Login'); }";
-                                    }
-                                ).Render();
-                            });
-                        });
-                    });
-                }).GetHtml();
-
-
-            }
-            else
-            {
-                <div class="container-fluid">
-                    <div class="row">
-                       @Html.DevExpress().ImageSlider(s =>
-                       {
-                           s.Name = "ImageSlider";
-                           s.Width = Unit.Percentage(100);
-                           s.Height = Unit.Pixel(400);
-
-                           s.SettingsImageArea.ImageSizeMode = ImageSizeMode.FillAndCrop;
-                           s.SettingsImageArea.NavigationButtonVisibility = ElementVisibilityMode.Always;
-                           s.SettingsImageArea.EnableLoopNavigation = true;
-                           s.SettingsNavigationBar.Mode = NavigationBarMode.Dots;
-
-                           s.SettingsSlideShow.AutoPlay = true;
-                           s.SettingsSlideShow.PlayPauseButtonVisibility = ElementVisibilityMode.OnMouseOver;
-                       }).BindToFolder("~/Content/Images/Components").GetHtml()
-                    </div>
-                </div>
-            }
-        </div>
-
-    </center>
-
-    @Html.DevExpress().PopupControl(settings =>
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+@Html.DevExpress().Panel(p =>
+{
+    p.Name = "mainContentPanel";
+    p.ControlStyle.BackColor = System.Drawing.Color.IndianRed;
+    p.SetContent(() =>
     {
-        settings.Name = "popupControl";
-        settings.Width = 400;
-        settings.AllowDragging = true;
-        settings.CloseAction = CloseAction.CloseButton;
-        settings.CloseOnEscape = true;
-        settings.PopupAnimationType = AnimationType.Fade;
-        settings.ShowHeader = false;
-        settings.Modal = true;
-        settings.AutoUpdatePosition = true;
-        settings.PopupHorizontalAlign = PopupHorizontalAlign.WindowCenter;
-        settings.PopupVerticalAlign = PopupVerticalAlign.WindowCenter;
-        settings.ClientSideEvents.CloseUp = "function(s, e){ ASPxClientEdit.ClearEditorsInContainer(null, '', true); }";
-    }).GetHtml()
+        if(Request.IsAuthenticated)
+        {
+            //Html.RenderPartial("_mainMenuButtons");
+            //if(ViewBag.IsCoachOrAdmin)
+            //{
+            //    Html.RenderAction("mainMenuButtons", "admin");
+            //}
+            //else
+            //{
+            //    Html.RenderAction("mainMenuButtons", "user");
+            //}
+
+            //ViewContext.Writer.Write("What happens if I put this panel in here? - Home/Index page");
+        }
+        else
+        {
+            ViewContext.Writer.Write("Not logged in - Home/Index page");
+            Html.RenderPartial("_userLoginForm");
+        }
+    });
+}).GetHtml()
 
 
-</div>
-
-<script type="text/javascript">
-    function redirectToRegister() {
-        console.log('made it here!');
-        var url = '@Url.Action("Register", "Account")';
-        // do something with the url client side variable, for example redirect
-        window.location.replace(url);
-    }
-    //debugger;
-    function openWindow(action) {
-        $.ajax({
-            type: "POST",
-            url: "@Url.Action("LoginScreenPopup", "Account")",
-            data: { buttonName: action },
-            traditional: true,
-            success: function (response) {
-                popupControl.SetContentHtml(response);
-                MVCxClientUtils.FinalizeCallback();
-            },
-            error: function (XMLHttpRequest, textStatus, errorThrown) {
-                alert('oops, something bad happened');
-            }
-        });
-        window['popupControl'].Show();
-    }
-
-</script>

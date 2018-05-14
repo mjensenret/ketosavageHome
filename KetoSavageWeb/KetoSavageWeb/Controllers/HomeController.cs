@@ -7,21 +7,43 @@ using KetoSavageWeb.Models;
 
 namespace KetoSavageWeb.Controllers
 {
-    public class HomeController : Controller
+    public class HomeController : KSBaseController
     {
         public ActionResult Index()
         {
-            // DXCOMMENT: Pass a data model for GridView
+            if(Request.IsAuthenticated)
+            {
+                var coachOrAdmin = CurrentUser.Roles.Where(x => x.Role.Name == "Coach" || x.Role.Name == "Administrator").FirstOrDefault();
 
-            //return View(NorthwindDataProvider.GetCustomers());
+                if (coachOrAdmin != null)
+                {
+                    ViewBag.IsCoachOrAdmin = true;
+                }
+                else
+                {
+                    ViewBag.IsCoachOrAdmin = false;
+                }
+            }
+
+
             return View();
         }
         
-        //public ActionResult GridViewPartialView() 
-        //{
-        //    // DXCOMMENT: Pass a data model for GridView in the PartialView method's second parameter
-        //    return PartialView("GridViewPartialView", NorthwindDataProvider.GetCustomers());
-        //}
+        public PartialViewResult mainMenuButtons()
+        {
+            var coachOrAdmin = CurrentUser.Roles.Where(x => x.Role.Name == "Coach" || x.Role.Name == "Administrator").FirstOrDefault();
+
+            if (coachOrAdmin != null)
+            {
+                ViewBag.IsCoachOrAdmin = true;
+            }
+            else
+            {
+                ViewBag.IsCoachOrAdmin = false;
+            }
+
+            return PartialView("_mainMenuButtons");
+        }
     
     }
 

@@ -2,25 +2,25 @@
 
 @if (Model == HeaderViewRenderMode.Title)
 {
-    <div class="templateTitle">
-        @Html.ActionLink("KetoSavage Client Portal", "Index", "Home")
-    </div>
+<div class="templateTitle">
+    @Html.ActionLink("ClientPortal", "Index", "Home")
+</div>
 }
 else
 {
     if (Model == HeaderViewRenderMode.Full)
     {
-        <div class="headerTop">
+    <div class="headerTop">
 
-            <div class="templateTitle">
-                <a href='@Url.Action("Index", "Home")'>
-                    <img src="~/Content/Images/KSHeaderLogo_white.png" />
-                </a>
-            </div>
-            <div class="loginControl">
-                @Html.Partial("LogOnPartialView")
-            </div>
+        <div class="templateTitle">
+            <a href='@Url.Action("Index", "Home")'>
+                <img src="~/Content/Images/KSHeaderLogo_white.png" />
+            </a>
         </div>
+        <div class="loginControl">
+            @Html.Partial("LogOnPartialView")
+        </div>
+    </div>
     }
 
 }

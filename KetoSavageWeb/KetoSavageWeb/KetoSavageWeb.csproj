@@ -438,6 +438,7 @@
     <Content Include="bin\Content\jquery-ui.css" />
     <Content Include="bin\Content\jquery-ui.min.css" />
     <Content Include="bin\Content\Site.css" />
+    <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\generic.dark.custom.css" />
     <Content Include="Content\Images\AquaHeader.jpg" />
     <Content Include="Content\Images\BlackGlassHeader.jpg" />
@@ -647,7 +648,7 @@
     <Content Include="Views\Account\ChangePasswordSuccess.cshtml" />
     <Content Include="Views\Account\Login.cshtml" />
     <Content Include="Views\Account\Register.cshtml" />
-    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Home\Index_orig.cshtml" />
     <Content Include="Views\Shared\_lightLayout.cshtml" />
     <Content Include="Views\Shared\_mainLayout.cshtml" />
     <Content Include="Views\Shared\_rootLayout.cshtml" />
@@ -708,6 +709,11 @@
     <Content Include="Views\UserPrograms\_enterNewMacroForm.cshtml" />
     <Content Include="Views\ClientCharts\_clientWeightGraph.cshtml" />
     <Content Include="Views\Shared\_ksRootLayout.cshtml" />
+    <Content Include="Views\Shared\HeaderPanelContentPartial.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Home\_userLoginForm.cshtml" />
+    <Content Include="Views\Shared\_menuButtons.cshtml" />
+    <Content Include="Views\Home\_mainMenuButtons.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

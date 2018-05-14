@@ -1,0 +1,112 @@
+﻿
+<center>
+    @Html.DevExpress().Panel(p =>
+{
+    p.Name = "pnlLoginRegisterForm";
+    p.Width = Unit.Percentage(50);
+    p.SettingsAdaptivity.CollapseAtWindowInnerWidth = 580;
+    p.SetContent(() =>
+    {
+        Html.DevExpress().Image(img =>
+        {
+            img.Name = "loginImage";
+            img.ImageUrl = string.Format("~/Content/Images/KSLogo_NotLoggedIn.png");
+            img.Width = Unit.Percentage(75);
+        }).Render();
+
+        Html.DevExpress().FormLayout(form =>
+        {
+            form.Name = "frmLoginControls";
+            form.SettingsAdaptivity.AdaptivityMode = FormLayoutAdaptivityMode.SingleColumnWindowLimit;
+            form.SettingsAdaptivity.SwitchToSingleColumnAtWindowInnerWidth = 580;
+            form.NestedExtensionWidth = Unit.Percentage(100);
+            form.Styles.Style.CssClass = "loginForm";
+
+            form.Items.AddGroupItem(i =>
+            {
+                i.ColCount = 2;
+                i.ShowCaption = DefaultBoolean.False;
+                i.GroupBoxDecoration = GroupBoxDecoration.Box;
+                i.Items.Add(b =>
+                {
+                    b.HorizontalAlign = FormLayoutHorizontalAlign.Center;
+                    b.ShowCaption = DefaultBoolean.False;
+                    //b.Width = Unit.Percentage(100);
+                    b.SetNestedContent(() =>
+                    {
+                        Html.DevExpress().Button(
+                            register =>
+                            {
+                                register.Name = "btnShowRegister";
+                                register.Text = "Register";
+                                register.ClientSideEvents.Click = "function(s, e) { openWindow('Register'); }";
+                            }).Render();
+                    });
+
+                });
+
+                i.Items.Add(b =>
+                {
+                    b.HorizontalAlign = FormLayoutHorizontalAlign.Center;
+                    b.ShowCaption = DefaultBoolean.False;
+                    //b.Width = Unit.Percentage(100);
+                    b.SetNestedContent(() =>
+                    {
+                        Html.DevExpress().Button(
+                            settings =>
+                            {
+                                settings.Name = "btnShowLogin";
+                                settings.Text = "Login";
+                                settings.ClientSideEvents.Click = "function(s, e) { openWindow('Login'); }";
+                            }
+                        ).Render();
+                    });
+                });
+            });
+        }).GetHtml();
+
+    });
+}).GetHtml()
+
+@Html.DevExpress().PopupControl(settings =>
+{
+    settings.Name = "popupControl";
+    settings.Width = 400;
+    settings.AllowDragging = true;
+    settings.CloseAction = CloseAction.CloseButton;
+    settings.CloseOnEscape = true;
+    settings.PopupAnimationType = AnimationType.Fade;
+    settings.ShowHeader = false;
+    settings.Modal = true;
+    settings.AutoUpdatePosition = true;
+    settings.PopupHorizontalAlign = PopupHorizontalAlign.WindowCenter;
+    settings.PopupVerticalAlign = PopupVerticalAlign.Middle;
+    settings.ClientSideEvents.CloseUp = "function(s, e){ ASPxClientEdit.ClearEditorsInContainer(null, '', true); }";
+}).GetHtml()
+</center>
+<script type="text/javascript">
+    function redirectToRegister() {
+        console.log('made it here!');
+        var url = '@Url.Action("Register", "Account")';
+        // do something with the url client side variable, for example redirect
+        window.location.replace(url);
+    }
+    //debugger;
+    function openWindow(action) {
+        $.ajax({
+            type: "POST",
+            url: "@Url.Action("LoginScreenPopup", "Account")",
+            data: { buttonName: action },
+            traditional: true,
+            success: function (response) {
+                popupControl.SetContentHtml(response);
+                MVCxClientUtils.FinalizeCallback();
+            },
+            error: function (XMLHttpRequest, textStatus, errorThrown) {
+                alert('oops, something bad happened');
+            }
+        });
+        window['popupControl'].Show();
+    }
+
+</script>
