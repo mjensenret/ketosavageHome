@@ -44,7 +44,29 @@ namespace KetoSavageWeb.Controllers
 
             return PartialView("_mainMenuButtons");
         }
-    
+
+        [HttpPost]
+        public ActionResult RedirectToPage (string buttonName)
+        {
+            var button = buttonName;
+
+            switch (button)
+            {
+                case "btnEditUser":
+                    //url = string.Format("\"Index\", \"ManageUsers\")");
+                    RedirectToAction("Index", "ManageUsers");
+                    break;
+                case "btnAdminUpdateMacros":
+                    RedirectToAction("Index", "ManageUsers");
+                    break;
+            }
+            return null;
+
+
+            
+        }
+
+
     }
 
 }

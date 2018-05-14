@@ -25,6 +25,7 @@
                         bu.Width = 300;
                         bu.Name = "btnEditUser";
                         bu.Text = "Manage Users";
+                        bu.RouteValues = new { Controller = "ManageUsers", Action = "Index" };
                     }).Render();
                 });
             });
@@ -36,8 +37,9 @@
                     Html.DevExpress().Button(bu =>
                     {
                         bu.Width = 300;
-                        bu.Name = "btnUpdateMacros";
+                        bu.Name = "btnAdminUpdateMacros";
                         bu.Text = "Update User Macros";
+                        bu.RouteValues = new { Controller = "UserPrograms", Action = "Index" };
                     }).Render();
                 });
             });
@@ -51,6 +53,7 @@
                         bu.Width = 300;
                         bu.Name = "btnManagePrograms";
                         bu.Text = "Manage Programs";
+                        bu.RouteValues = new { Controller = "Programs", Action = "Index" };
                     }).Render();
                 });
             });
@@ -66,23 +69,8 @@
                     {
                         bu.Width = 300;
                         bu.Name = "btnMacros";
-                        bu.Text = "Macros";
-                        bu.ClientSideEvents.Click = "function(s, e) {redirectToMacros(); }";
-                    }).Render();
-                });
-            });
-
-            i.Items.Add(b =>
-            {
-                b.ShowCaption = DefaultBoolean.False;
-                b.SetNestedContent(() =>
-                {
-                    Html.DevExpress().Button(bu =>
-                    {
-                        bu.Width = 300;
-                        bu.Name = "btnWeighIn";
-                        bu.Text = "Weigh In";
-                        bu.ClientSideEvents.Click = "function(s, e) { redirectToWeighIn(); }";
+                        bu.Text = "Dashboard";
+                        bu.RouteValues = new { Controller = "UserProgress", Action = "Index" };
                     }).Render();
                 });
             });
@@ -94,7 +82,6 @@
 
 <script type="text/javascript">
     function redirectToMacros() {
-        console.log("You've definitely hit the macros button");
         var url = "@Url.Action("Index", "UserProgress")";
         window.location.replace(url);
     }
@@ -102,4 +89,5 @@
     function redirectToWeighIn() {
         console.log("You hit the weigh in button");
     }
+
 </script>

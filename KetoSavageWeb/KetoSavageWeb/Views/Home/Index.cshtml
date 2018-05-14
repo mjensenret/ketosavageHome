@@ -5,7 +5,6 @@
 @Html.DevExpress().Panel(p =>
 {
     p.Name = "mainContentPanel";
-    p.ControlStyle.BackColor = System.Drawing.Color.IndianRed;
     p.SetContent(() =>
     {
         if(Request.IsAuthenticated)
@@ -24,7 +23,7 @@
         }
         else
         {
-            ViewContext.Writer.Write("Not logged in - Home/Index page");
+            //ViewContext.Writer.Write("Not logged in - Home/Index page");
             Html.RenderPartial("_userLoginForm");
         }
     });

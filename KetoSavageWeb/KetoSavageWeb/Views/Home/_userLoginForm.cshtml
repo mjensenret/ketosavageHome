@@ -11,8 +11,9 @@
         {
             img.Name = "loginImage";
             img.ImageUrl = string.Format("~/Content/Images/KSLogo_NotLoggedIn.png");
-            img.Width = Unit.Percentage(75);
+            //img.Width = Unit.Percentage(75);
         }).Render();
+        //ViewContext.Writer.Write("<div class=\"col-md-12 text-center\" ><img src\"@Url.Content(\"~/Content/Images/KSLogo_NotLoggedIn.png\"))
 
         Html.DevExpress().FormLayout(form =>
         {
@@ -26,7 +27,7 @@
             {
                 i.ColCount = 2;
                 i.ShowCaption = DefaultBoolean.False;
-                i.GroupBoxDecoration = GroupBoxDecoration.Box;
+                i.GroupBoxDecoration = GroupBoxDecoration.None;
                 i.Items.Add(b =>
                 {
                     b.HorizontalAlign = FormLayoutHorizontalAlign.Center;
@@ -39,6 +40,7 @@
                             {
                                 register.Name = "btnShowRegister";
                                 register.Text = "Register";
+                                register.Width = 150;
                                 register.ClientSideEvents.Click = "function(s, e) { openWindow('Register'); }";
                             }).Render();
                     });
@@ -57,6 +59,7 @@
                             {
                                 settings.Name = "btnShowLogin";
                                 settings.Text = "Login";
+                                settings.Width = 150;
                                 settings.ClientSideEvents.Click = "function(s, e) { openWindow('Login'); }";
                             }
                         ).Render();
@@ -71,7 +74,7 @@
 @Html.DevExpress().PopupControl(settings =>
 {
     settings.Name = "popupControl";
-    settings.Width = 400;
+    settings.Width = 250;
     settings.AllowDragging = true;
     settings.CloseAction = CloseAction.CloseButton;
     settings.CloseOnEscape = true;

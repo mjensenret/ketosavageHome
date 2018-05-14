@@ -438,18 +438,45 @@
     <Content Include="bin\Content\jquery-ui.css" />
     <Content Include="bin\Content\jquery-ui.min.css" />
     <Content Include="bin\Content\Site.css" />
-    <Content Include="Content\bootstrap.min.css" />
-    <Content Include="Content\generic.dark.custom.css" />
-    <Content Include="Content\Images\AquaHeader.jpg" />
-    <Content Include="Content\Images\BlackGlassHeader.jpg" />
-    <Content Include="Content\Images\GlassHeader.jpg" />
-    <Content Include="Content\Images\KSHeaderLogo_white.png" />
-    <Content Include="Content\Images\KSLogo_white.png" />
-    <Content Include="Content\Images\PlasticBlueHeader.jpg" />
-    <Content Include="Content\Images\RedWineHeader.jpg" />
-    <Content Include="Content\jquery-ui.css" />
-    <Content Include="Content\jquery-ui.min.css" />
-    <Content Include="Content\Site.css" />
+    <Content Include="Content\bootstrap.min.css">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\generic.dark.custom.css">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Images\AquaHeader.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Images\BlackGlassHeader.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Images\GlassHeader.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Images\KSHeaderLogo_white.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Images\KSLogo_NotLoggedIn.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Images\KSLogo_white.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Images\PlasticBlueHeader.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Images\RedWineHeader.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\jquery-ui.css">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\jquery-ui.min.css">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Site.css">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Global.asax" />
     <Content Include="Scripts\ace.js" />
     <Content Include="Scripts\cldr.event.js" />
