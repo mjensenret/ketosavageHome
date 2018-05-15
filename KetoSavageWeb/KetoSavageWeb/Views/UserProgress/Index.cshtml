@@ -69,6 +69,18 @@
         s.ShowAtPos(x + 320, y + 430);
     }
 </script>
+@Html.DevExpress().Panel(p =>
+{
+    p.Name = "pnlWeightGraphNew";
+    p.ControlStyle.BackColor = System.Drawing.Color.Red;
+    p.SetContent(() =>
+    {
+        ViewContext.Writer.Write("This is where I'm going to put the weight graph now");
+        var userId = Session["UserId"];
+        Html.RenderAction("ClientWeightGraph", "ClientCharts", new { userId = userId });
+    });
+}).GetHtml()
+
 <center>
 
     @Html.DevExpress().DockPanel(settings =>
@@ -134,7 +146,7 @@
     });
 }).GetHtml()
 
-    @Html.DevExpress().DockPanel(settings =>
+    @*@Html.DevExpress().DockPanel(settings =>
 {
     
     settings.Name = "pnlWeightGraph";
@@ -151,7 +163,7 @@
     });
 
 
-}).GetHtml()
+}).GetHtml()*@
     @Html.DevExpress().DockPanel(settings =>
     {
         settings.Name = "pnlPastPerf";
@@ -199,7 +211,7 @@
         settings.AllowDragging = true;
         settings.CloseAction = CloseAction.CloseButton;
         settings.CloseOnEscape = true;
-        settings.PopupAnimationType = AnimationType.Fade;
+        settings.PopupAnimationType = DevExpress.Web.AnimationType.Fade;
         settings.ShowHeader = false;
         settings.Modal = true;
         settings.AutoUpdatePosition = true;
