@@ -5,7 +5,7 @@
 {
     settings.Name = "dailyWeight";
 
-
+    
     settings.SettingsItems.ShowCaption = DefaultBoolean.True;
     settings.SettingsItemCaptions.Location = LayoutItemCaptionLocation.Top;
 
@@ -13,6 +13,7 @@
 
     settings.Items.Add(m => m.measurementUserId, u =>
     {
+        u.ClientVisible = false;
         u.NestedExtension().TextBox(un =>
         {
             un.ReadOnly = true;
@@ -20,13 +21,15 @@
     });
     settings.Items.Add(m => m.measurementDate, f =>
     {
+        f.Caption = "Date";
         f.NestedExtension().DateEdit(d =>
         {
-
+            d.Width = Unit.Percentage(100);
         });
     });
     settings.Items.Add(m => m.actualWeight, a =>
     {
+        a.Caption = "Weight";
         a.NestedExtension().TextBox(f =>
         {
 
@@ -34,6 +37,7 @@
     });
     settings.Items.Add(s =>
     {
+        s.ShowCaption = DefaultBoolean.False;
         s.SetNestedContent(() =>
         {
             Html.DevExpress().Button(b =>

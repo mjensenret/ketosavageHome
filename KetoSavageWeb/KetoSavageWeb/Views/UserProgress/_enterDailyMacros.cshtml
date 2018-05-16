@@ -15,11 +15,13 @@
     {
         u.NestedExtension().TextBox(un =>
         {
+            un.ClientVisible = false;
             un.ReadOnly = true;
         });
     });
     settings.Items.Add(m => m.macroDate, f =>
     {
+        f.Caption = "Date";
         f.NestedExtension().DateEdit(d =>
         {
 
@@ -27,6 +29,7 @@
     });
     settings.Items.Add(m => m.actualFat, a =>
     {
+        a.Caption = "Fat";
         a.NestedExtension().TextBox(f =>
         {
 
@@ -34,6 +37,7 @@
     });
     settings.Items.Add(m => m.actualProtein, p =>
     {
+        p.Caption = "Protein";
         p.NestedExtension().TextBox(t =>
         {
 
@@ -41,6 +45,7 @@
     });
     settings.Items.Add(m => m.actualCarb, c =>
     {
+        c.Caption = "Carbohydrates";
         c.NestedExtension().TextBox(ac =>
         {
 
@@ -48,10 +53,11 @@
     });
     settings.Items.Add(s =>
     {
+        s.ShowCaption = DefaultBoolean.False;
         s.SetNestedContent(() =>
         {
             Html.DevExpress().Button(b =>
-            {
+            {                
                 b.Name = "btnMacroSubmit";
                 b.ControlStyle.CssClass = "button";
                 b.Text = "Save";
