@@ -791,7 +791,7 @@
     <Content Include="Views\Shared\_lightLayout.cshtml" />
     <Content Include="Views\Shared\_mainLayout.cshtml" />
     <Content Include="Views\Shared\_rootLayout.cshtml" />
-    <Content Include="Views\Shared\ContentLeftPartialView.cshtml" />
+    <Content Include="Views\Shared\_leftMenuPartialView.cshtml" />
     <Content Include="Views\Shared\FooterPartialView.cshtml" />
     <Content Include="Views\Shared\HeaderPartialView.cshtml" />
     <Content Include="Views\Shared\LogOnPartialView.cshtml" />

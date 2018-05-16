@@ -109,7 +109,7 @@
     });
 }).GetHtml()
 
-@Html.DevExpress().PopupControl(settings =>
+@*@Html.DevExpress().PopupControl(settings =>
     {
         settings.Name = "popupControl";
         settings.Width = 300;
@@ -123,9 +123,9 @@
         settings.PopupHorizontalAlign = PopupHorizontalAlign.WindowCenter;
         settings.PopupVerticalAlign = PopupVerticalAlign.Middle;
         settings.ClientSideEvents.CloseUp = "function(s, e){ ASPxClientEdit.ClearEditorsInContainer(null, '', true); }";
-    }).GetHtml()
+    }).GetHtml()*@
 
-<script type="text/javascript">
+@*<script type="text/javascript">
     function redirectToMacros() {
         var url = "@Url.Action("Index", "UserProgress")";
         window.location.replace(url);
@@ -148,4 +148,4 @@
     });
     window['popupControl'].Show();
     }
-</script>
+</script>*@

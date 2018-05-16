@@ -142,7 +142,7 @@ namespace KetoSavageWeb.Controllers
 
         public ActionResult EntryPopup(string buttonName)
         {
-            if (buttonName == "Macros")
+            if (buttonName == "macros")
             {
                 return RedirectToAction("EnterMacroForm");
             }

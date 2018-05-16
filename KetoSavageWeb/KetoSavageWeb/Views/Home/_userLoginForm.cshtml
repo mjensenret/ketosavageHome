@@ -41,7 +41,7 @@
                                 register.Name = "btnShowRegister";
                                 register.Text = "Register";
                                 register.Width = 150;
-                                register.ClientSideEvents.Click = "function(s, e) { openWindow('Register'); }";
+                                register.ClientSideEvents.Click = "function(s, e) { openLoginWindow('Register'); }";
                             }).Render();
                     });
 
@@ -60,7 +60,7 @@
                                 settings.Name = "btnShowLogin";
                                 settings.Text = "Login";
                                 settings.Width = 150;
-                                settings.ClientSideEvents.Click = "function(s, e) { openWindow('Login'); }";
+                                settings.ClientSideEvents.Click = "function(s, e) { openLoginWindow('Login'); }";
                             }
                         ).Render();
                     });
@@ -71,7 +71,7 @@
     });
 }).GetHtml()
 
-@Html.DevExpress().PopupControl(settings =>
+@*@Html.DevExpress().PopupControl(settings =>
 {
     settings.Name = "popupControl";
     settings.Width = 250;
@@ -85,7 +85,7 @@
     settings.PopupHorizontalAlign = PopupHorizontalAlign.WindowCenter;
     settings.PopupVerticalAlign = PopupVerticalAlign.Middle;
     settings.ClientSideEvents.CloseUp = "function(s, e){ ASPxClientEdit.ClearEditorsInContainer(null, '', true); }";
-}).GetHtml()
+}).GetHtml()*@
 </center>
 <script type="text/javascript">
     function redirectToRegister() {
@@ -95,7 +95,7 @@
         window.location.replace(url);
     }
     //debugger;
-    function openWindow(action) {
+    function openLoginWindow(action) {
         $.ajax({
             type: "POST",
             url: "@Url.Action("LoginScreenPopup", "Account")",

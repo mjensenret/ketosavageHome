@@ -17,7 +17,7 @@
 
     @Scripts.Render("~/Scripts/bundle")
     @Scripts.Render("~/Scripts/DevExtremeBundle")
-    @Scripts.Render("~/bundles/jquery")
+    @*@Scripts.Render("~/bundles/jquery")*@
     <script src="@Url.Content("~/Scripts/bootstrap.min.js")" type="text/javascript"></script>
     <script src="@Url.Content("~/Scripts/site.js")" type="text/javascript"></script>
     <script src="@Url.Content("~/Scripts/JSCustom.js")" type="text/javascript"></script>
@@ -65,30 +65,32 @@
 
             });
         }).GetHtml();
-        //Html.DevExpress().Panel(p =>
-        //{
-        //    p.Name = "leftPanel";
-        //    p.Collapsible = true;
-        //    p.SettingsAdaptivity.CollapseAtWindowInnerWidth = 580;
-        //    p.ControlStyle.BackColor = System.Drawing.Color.Blue;
-        //    p.FixedPosition = PanelFixedPosition.WindowLeft;
-        //    p.SetContent(() =>
-        //    {
-        //        ViewContext.Writer.Write("This should be the left menu");
-        //    });
-        //}).GetHtml();
-
         Html.DevExpress().Panel(p =>
         {
-            p.Name = "newPanelSelector";
-            p.ControlStyle.BackColor = System.Drawing.Color.Gray;
+            p.Name = "leftPanel";
+            p.EnableClientSideAPI = true;
+            p.Collapsible = true;
+            p.SettingsAdaptivity.CollapseAtWindowInnerWidth = 580;
+            p.ControlStyle.BackColor = System.Drawing.Color.Blue;
+            p.FixedPosition = PanelFixedPosition.WindowLeft;
             p.SetContent(() =>
             {
-                ViewContext.Writer.Write("Possibly the menu?");
-                
-                Html.RenderAction("mainMenuButtons", "Home");
+                Html.RenderPartial("_leftMenuPartialView");
+
             });
         }).GetHtml();
+
+        //Html.DevExpress().Panel(p =>
+        //{
+        //    p.Name = "newPanelSelector";
+        //    p.ControlStyle.BackColor = System.Drawing.Color.Gray;
+        //    p.SetContent(() =>
+        //    {
+        //        ViewContext.Writer.Write("Possibly the menu?");
+
+        //        Html.RenderAction("mainMenuButtons", "Home");
+        //    });
+        //}).GetHtml();
     }
     @RenderBody()
 
@@ -104,7 +106,21 @@
             });
         }).GetHtml();
     }
-
+@Html.DevExpress().PopupControl(settings =>
+{
+    settings.Name = "popupControl";
+    settings.Width = 250;
+    settings.AllowDragging = true;
+    settings.CloseAction = CloseAction.CloseButton;
+    settings.CloseOnEscape = true;
+    settings.PopupAnimationType = DevExpress.Web.AnimationType.Fade;
+    settings.ShowHeader = false;
+    settings.Modal = true;
+    settings.AutoUpdatePosition = true;
+    settings.PopupHorizontalAlign = PopupHorizontalAlign.WindowCenter;
+    settings.PopupVerticalAlign = PopupVerticalAlign.Middle;
+    settings.ClientSideEvents.CloseUp = "function(s, e){ ASPxClientEdit.ClearEditorsInContainer(null, '', true); }";
+}).GetHtml()
 </body>
 
 

@@ -1,0 +1,81 @@
+<script type="text/javascript">
+    debugger;
+    function OnItemClick(s, e) {
+        openWindow(e.item.name);
+    }
+
+    function redirectToMacros() {
+        var url = "@Url.Action("Index", "UserProgress")";
+        window.location.replace(url);
+    }
+
+    function openWindow(action) {
+        $.ajax({
+            type: "POST",
+            url: "@Url.Action("EntryPopup", "UserProgress")",
+            data: { buttonName: action },
+        traditional: true,
+        success: function (response) {
+            popupControl.SetContentHtml(response);
+            MVCxClientUtils.FinalizeCallback();
+
+        },
+        error: function (XMLHttpRequest, textStatus, errorThrown) {
+            alert('oops, something bad happened');
+        }
+    });
+    window['popupControl'].Show();
+    }
+</script>
+
+@if (Request.IsAuthenticated)
+{
+<div class="leftPanel">
+    @* DXCOMMENT: Configure the left panel's menu *@
+    @Html.DevExpress().Menu(settings =>
+{
+    settings.Name = "LeftNavBar";
+    //settings.AutoCollapse = true;
+    settings.EnableAnimation = true;
+    settings.Orientation = System.Web.UI.WebControls.Orientation.Vertical;
+    settings.Width = System.Web.UI.WebControls.Unit.Percentage(100);
+    settings.ControlStyle.Border.BorderWidth = System.Web.UI.WebControls.Unit.Pixel(0);
+    settings.ControlStyle.Paddings.Padding = System.Web.UI.WebControls.Unit.Pixel(0);
+    settings.EnableClientSideAPI = true;
+
+    settings.ItemDataBound = (sender, e) =>
+    {
+        var node = e.Item.DataItem as IHierarchyData;
+        var item = node.Item as System.Xml.XmlElement;
+        if (item != null)
+        {
+            string itemText = item.GetAttribute("Text");
+            if (!String.IsNullOrEmpty(itemText))
+            {
+                string allowedRoles = item.GetAttribute("Roles");
+                if (String.IsNullOrEmpty(allowedRoles))
+                {
+                    e.Item.Visible = true;
+
+                }
+                else if (HttpContext.Current.User != null)
+                {
+                    e.Item.Visible = false;
+                    string[] roles = allowedRoles.Split(';');
+                    foreach (var role in roles)
+                    {
+                        if (HttpContext.Current.User.IsInRole(role))
+                        {
+                            e.Item.Visible = true;
+                            break;
+                        }
+                    }
+                }
+            }
+        }
+    };
+    settings.ClientSideEvents.ItemClick = "OnItemClick";
+
+}).BindToXML(HttpContext.Current.Server.MapPath("~/App_Data/SideMenu.xml"), "/items/*").GetHtml()
+</div>
+}

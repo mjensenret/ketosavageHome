@@ -15,8 +15,8 @@ namespace KetoSavageWeb
             var styleBundle = new StyleBundle("~/Content/bundle");
 
             // jQuery
-            scriptBundle
-                .Include("~/Scripts/jquery-3.1.0.js");
+            //scriptBundle
+            //    .Include("~/Scripts/jquery-3.1.0.js");
 
             // Bootstrap
             scriptBundle
