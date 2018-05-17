@@ -46,7 +46,7 @@ namespace KetoSavageWeb.Controllers
         }
 
         [HttpPost]
-        public ActionResult RedirectToPage (string buttonName)
+        public ActionResult RedirectToPage(string buttonName)
         {
             var button = buttonName;
 

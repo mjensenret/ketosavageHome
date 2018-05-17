@@ -1,32 +1,4 @@
-<script type="text/javascript">
-    debugger;
-    function OnItemClick(s, e) {
-        openWindow(e.item.name);
-    }
 
-    function redirectToMacros() {
-        var url = "@Url.Action("Index", "UserProgress")";
-        window.location.replace(url);
-    }
-
-    function openWindow(action) {
-        $.ajax({
-            type: "POST",
-            url: "@Url.Action("EntryPopup", "UserProgress")",
-            data: { buttonName: action },
-        traditional: true,
-        success: function (response) {
-            popupControl.SetContentHtml(response);
-            MVCxClientUtils.FinalizeCallback();
-
-        },
-        error: function (XMLHttpRequest, textStatus, errorThrown) {
-            alert('oops, something bad happened');
-        }
-    });
-    window['popupControl'].Show();
-    }
-</script>
 
 @if (Request.IsAuthenticated)
 {
@@ -74,7 +46,7 @@
             }
         }
     };
-    settings.ClientSideEvents.ItemClick = "OnItemClick";
+    settings.ClientSideEvents.ItemClick = "LeftMenuClick";
 
 }).BindToXML(HttpContext.Current.Server.MapPath("~/App_Data/SideMenu.xml"), "/items/*").GetHtml()
 </div>

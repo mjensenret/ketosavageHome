@@ -106,21 +106,22 @@
             });
         }).GetHtml();
     }
-@Html.DevExpress().PopupControl(settings =>
-{
-    settings.Name = "popupControl";
-    settings.Width = 250;
-    settings.AllowDragging = true;
-    settings.CloseAction = CloseAction.CloseButton;
-    settings.CloseOnEscape = true;
-    settings.PopupAnimationType = DevExpress.Web.AnimationType.Fade;
-    settings.ShowHeader = false;
-    settings.Modal = true;
-    settings.AutoUpdatePosition = true;
-    settings.PopupHorizontalAlign = PopupHorizontalAlign.WindowCenter;
-    settings.PopupVerticalAlign = PopupVerticalAlign.Middle;
-    settings.ClientSideEvents.CloseUp = "function(s, e){ ASPxClientEdit.ClearEditorsInContainer(null, '', true); }";
-}).GetHtml()
+
+    @Html.DevExpress().PopupControl(settings =>
+    {
+        settings.Name = "mainPopupControl";
+        settings.Width = 300;
+        settings.AllowDragging = true;
+        settings.CloseAction = CloseAction.CloseButton;
+        settings.CloseOnEscape = true;
+        settings.PopupAnimationType = DevExpress.Web.AnimationType.Fade;
+        settings.ShowHeader = false;
+        settings.Modal = true;
+        settings.AutoUpdatePosition = true;
+        settings.PopupHorizontalAlign = PopupHorizontalAlign.WindowCenter;
+        settings.PopupVerticalAlign = PopupVerticalAlign.Middle;
+        settings.ClientSideEvents.CloseUp = "function(s, e){ ASPxClientEdit.ClearEditorsInContainer(null, '', true); }";
+    }).GetHtml()
 </body>
 
 

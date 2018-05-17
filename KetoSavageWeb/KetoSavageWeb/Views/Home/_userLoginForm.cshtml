@@ -71,7 +71,7 @@
     });
 }).GetHtml()
 
-@*@Html.DevExpress().PopupControl(settings =>
+@Html.DevExpress().PopupControl(settings =>
 {
     settings.Name = "popupControl";
     settings.Width = 250;
@@ -85,7 +85,7 @@
     settings.PopupHorizontalAlign = PopupHorizontalAlign.WindowCenter;
     settings.PopupVerticalAlign = PopupVerticalAlign.Middle;
     settings.ClientSideEvents.CloseUp = "function(s, e){ ASPxClientEdit.ClearEditorsInContainer(null, '', true); }";
-}).GetHtml()*@
+}).GetHtml()
 </center>
 <script type="text/javascript">
     function redirectToRegister() {
