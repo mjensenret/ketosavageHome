@@ -1,11 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <items>
-  <item Text="Dashboard" NavigateUrl="~/" />
-  <item Text="Progress" NavigateUrl="~/UserProgress">
-    <item Text="Enter Macros" Name="macros" NavigateUrl="~/UserProgress" />
-    <item Text="Enter Measurements" Name="measurements" NavigateUrl="~/UserProgress" />
-    <item />
-  </item>
+  <item Text="Dashboard" Name="Dashboard" NavigateUrl="~/UserProgress" />
+  <item Text="Enter Macros" Name="macros" NavigateUrl="#" ActionUrl="~/UserProgress"/>
+  <item Text="Enter Measurements" Name="measurements" NavigateUrl="#" />
+
   <item Text="Admin" NavigateUrl="#" Roles="Administrator;Manager;Coach">
     <item Text="Manage Users" NavigateUrl="~/ManageUsers" />
     <item Text="Manage Programs" NavigateUrl="#">

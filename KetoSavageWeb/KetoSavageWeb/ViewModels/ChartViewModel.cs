@@ -15,4 +15,9 @@ namespace KetoSavageWeb.ViewModels
         public string type { get; set; }
         public double? weight { get; set; }
     }
+
+    public class ProgressGaugeViewModel
+    {
+        public double value { get; set; }
+    }
 }

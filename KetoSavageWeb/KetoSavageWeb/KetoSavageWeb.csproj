@@ -855,6 +855,7 @@
     <Content Include="Views\Home\_mainMenuButtons.cshtml" />
     <Content Include="Views\ClientCharts\_clientPlannedMacros.cshtml" />
     <Content Include="Views\ClientCharts\_clientActualMacros.cshtml" />
+    <Content Include="Views\ClientCharts\_clientPerformanceGauge.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

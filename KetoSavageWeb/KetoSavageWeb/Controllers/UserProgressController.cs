@@ -139,7 +139,7 @@ namespace KetoSavageWeb.Controllers
                 return PartialView("_pastPerformanceGrid");
             }
         }
-
+        [HttpPost]
         public ActionResult EntryPopup(string buttonName)
         {
             if (buttonName == "macros")

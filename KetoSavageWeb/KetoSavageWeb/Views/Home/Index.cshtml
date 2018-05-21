@@ -1,6 +1,6 @@
 ﻿
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "KetoSavage Client Portal";
 }
 @Html.DevExpress().Panel(p =>
 {
@@ -9,21 +9,10 @@
     {
         if(Request.IsAuthenticated)
         {
-            //Html.RenderPartial("_mainMenuButtons");
-            //if(ViewBag.IsCoachOrAdmin)
-            //{
-            //    Html.RenderAction("mainMenuButtons", "admin");
-            //}
-            //else
-            //{
-            //    Html.RenderAction("mainMenuButtons", "user");
-            //}
-
-            //ViewContext.Writer.Write("What happens if I put this panel in here? - Home/Index page");
+            ViewContext.Writer.Write("Home/Index landing page");
         }
         else
         {
-            //ViewContext.Writer.Write("Not logged in - Home/Index page");
             Html.RenderPartial("_userLoginForm");
         }
     });

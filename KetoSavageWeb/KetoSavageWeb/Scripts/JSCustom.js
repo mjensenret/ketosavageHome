@@ -30,7 +30,8 @@ function LeftMenuClick(s, e) {
     }
     else
     {
-        openWindow(e.item.name);
+        var pageUrl = $("#enterMacros").val();
+        openEntryWindow(e.item.name, pageUrl);
     }
 
 }
@@ -40,10 +41,11 @@ function LeftMenuClick(s, e) {
         window.location.replace(url);
     }
 
-    function openWindow(action) {
+    function openEntryWindow(action, pageUrl) {
+        var url = pageUrl;
         $.ajax({
             type: "POST",
-            url: '@Url.Action("EntryPopup", "UserProgress")',
+            url: url,
             data: { buttonName: action },
         traditional: true,
         success: function (response) {

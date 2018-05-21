@@ -1,0 +1,29 @@
+﻿@model KetoSavageWeb.ViewModels.ProgressGaugeViewModel
+
+@(Html.DevExtreme().CircularGauge()
+    .ID("progressGauge")
+    .ValueIndicator(i => i
+        .Type(GaugeIndicatorType.TriangleNeedle)
+        .Color("#FF1111")
+    )
+    .Scale(s => s
+        .StartValue(-10)
+        .EndValue(10)
+        .TickInterval(2)
+        .Label(l => l.UseRangeColors(false))
+    )
+    .RangeContainer(c => c
+        .Ranges(r =>
+        {
+            r.Add().StartValue(-10).EndValue(-5).Color("Red");
+            r.Add().StartValue(-5).EndValue(5).Color("Green");
+            r.Add().StartValue(5).EndValue(10).Color("Red");
+        })
+    )
+    .Title(t => t
+        .Text("Weigh-in Progress")
+        .Font(f => f.Size(14).Color("White"))
+    )
+    .Export(e => e.Enabled(false))
+    .Value(Model)
+)

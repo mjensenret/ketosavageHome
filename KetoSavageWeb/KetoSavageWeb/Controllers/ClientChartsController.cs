@@ -30,7 +30,7 @@ namespace KetoSavageWeb.Controllers
         // GET: UserProgress
         public PartialViewResult WeightGraph()
         {
-            
+               
             return PartialView("_clientWeightGraph");
         }
 
@@ -179,6 +179,21 @@ namespace KetoSavageWeb.Controllers
             var weightChart = plannedWeight.Union(actualWeight).ToList();
             
             return PartialView("_clientWeightGraph", weightChart);
+        }
+
+        public ActionResult ClientPerformanceGauge(int userId)
+        {
+            var startWeight = userProgramRepository.GetDailyProgressByUser(userId).Select(x => x.ActualWeight).FirstOrDefault();
+            var recentWeight = userProgramRepository.GetDailyProgressByUser(userId).Select(x => x.ActualWeight).LastOrDefault();
+            var weightChange = ((startWeight ?? 0) - (recentWeight ?? 0));
+
+            ProgressGaugeViewModel model = new ProgressGaugeViewModel()
+            {
+                value = weightChange
+            };
+
+
+            return PartialView("_clientPerformanceGauge", model);
         }
     }
 }
