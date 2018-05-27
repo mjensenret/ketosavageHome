@@ -2,7 +2,48 @@
 @{
     ViewBag.Title = "User Progress";
 }
+<style>
+    #gauges {
+        /*height: 400px;*/
+    }
+    #gaugeContainer{
+        text-align: left;
+        margin: 20px auto;
+        background-color: #4d4d4d;
+        /*width: 786px;*/
+        /*height: 250px;*/
+    }
+    #gaugeContainer div {
+        display: inline-block;
+        vertical-align: bottom;
+        position: relative;
+    }
+    #progressGauge {
+        height: 250px;
+    }
 
+    #actualMacroPie {
+        height: 250px;
+    }
+
+    #currentWeekGauge {
+        /*width: 80%;
+        height: 100%;
+        margin-top: 20px;*/
+        float: left;
+    }
+    #panel {
+        width: 150px;
+        text-align: left;
+        margin-top: 100px;
+        float: left;
+    }
+    .left-gauge {
+        top: 0px;
+        left: 0px;
+    }
+
+</style>
 @Html.DevExpress().Panel(p =>
 {
     p.Name = "pnlWeightGraphNew";
@@ -13,16 +54,28 @@
         Html.RenderAction("ClientWeightGraph", "ClientCharts", new { userId = userId });
     });
 }).GetHtml()
+<div id="gauges">
+    <div id="gaugeContainer">
+        @Html.DevExpress().Panel(p =>
+        {
+            p.Name = "pnlGauges";
+            p.SetContent(() =>
+            {
+                ViewContext.Writer.Write("<div class=\"left-gauge\">");
+                Html.RenderAction("ClientPerformanceGauge", "ClientCharts", new { userId = Session["UserId"] });
+                ViewContext.Writer.Write("</div>");
+                ViewContext.Writer.Write("<div class=\"center-gauge\">");
+                Html.RenderAction("ClientPastWeekMacroChart", "ClientCharts", new { userId = Session["UserId"] });
+                ViewContext.Writer.Write("</div>");
+                ViewContext.Writer.Write("<div class\"right-gauge\">");
+                Html.RenderAction("ClientCurrentWeekMacroGauge", "ClientCharts", new { userId = Session["UserId"] });
+                ViewContext.Writer.Write("</div>");
+            });
+        }).GetHtml()
+    </div>
 
-@Html.DevExpress().Panel(p =>
-{
-    p.Name = "pnlGauges";
-    p.SetContent(() =>
-    {
-        ViewContext.Writer.Write("Gauges here");
-        Html.RenderAction("ClientPerformanceGauge", "ClientCharts", new { userId = Session["UserId"] });
-    });
-}).GetHtml()
+</div>
+
 
 @Html.DevExpress().Panel(p =>
 {

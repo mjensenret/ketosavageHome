@@ -40,5 +40,16 @@ namespace KetoSavageWeb.Repositories
         {
             return _context.DateModels.Where(x => x.Date >= startDate.Date && x.Date <= endDate);
         }
+
+        public int getLastWeekNumber(DateTime currentDate)
+        {
+            var model = _context.DateModels.Where(x => x.Date == currentDate.Date).FirstOrDefault().WeekOfYear - 1;
+            return model;
+        }
+        public int getCurrentWeekNumber(DateTime currentDate)
+        {
+            var model = _context.DateModels.Where(x => x.Date == currentDate.Date).FirstOrDefault().WeekOfYear;
+            return model;
+        }
     }
 }

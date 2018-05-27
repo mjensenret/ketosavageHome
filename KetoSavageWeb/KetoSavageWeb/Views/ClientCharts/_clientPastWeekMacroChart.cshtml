@@ -1,21 +1,33 @@
-﻿@(Html.DevExtreme().PieChart()
-    .ID("pie")
-    .Size(s => s.Width(500))
+﻿@model IEnumerable<KetoSavageWeb.ViewModels.WeeklyMacroPieChart>
+@(Html.DevExtreme().PieChart()
+    .ID("actualMacroPie")
+    //.Size(s => s.Width(300))
     .Palette(VizPalette.Bright)
     .Series(s => s
         .Add()
-        .ArgumentField("Country")
-        .ValueField("Area")
+        .ArgumentField("macro")
+        .ValueField("value")
         .Label(l => l
             .Visible(true)
             .Connector(c => c
                 .Visible(true)
                 .Width(1)
             )
+            .Format(Format.Percent)
         )
     )
-    .Title("Area of Countries")
-    .Export(e => e.Enabled(true))
+    .Legend(l => l
+        .Orientation(DevExtreme.AspNet.Mvc.Orientation.Horizontal)
+        .ItemTextPosition(Position.Bottom)
+        .HorizontalAlignment(HorizontalAlignment.Center)
+        .VerticalAlignment(VerticalEdge.Bottom)
+    )
+    .Title(t => t
+        .Text("Actual Macros - Last week")
+        .Font(f => f.Size(14).Color("White")
+        )
+    )
+    .Export(e => e.Enabled(false))
     .OnPointClick(@<text>
         function (e) {
         var point = e.target;
@@ -28,16 +40,7 @@
             toggleVisibility(this.getAllSeries()[0].getPointsByArg(arg)[0]);
             }
     </text>)
-    .DataSource(new List<object> {
-        new { Country = "Russia", Area = 12 },
-        new { Country = "Canada", Area = 7 },
-        new { Country = "USA", Area = 7 },
-        new { Country = "China", Area = 7 },
-        new { Country = "Brazil", Area = 6 },
-        new { Country = "Australia", Area = 5 },
-        new { Country = "India", Area = 2 },
-        new { Country = "Others", Area = 55 }
-    })
+    .DataSource(Model)
 )
 
 <script>
@@ -49,4 +52,3 @@
         }
     }
 </script>
-

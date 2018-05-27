@@ -854,8 +854,9 @@
     <Content Include="Views\Shared\_menuButtons.cshtml" />
     <Content Include="Views\Home\_mainMenuButtons.cshtml" />
     <Content Include="Views\ClientCharts\_clientPlannedMacros.cshtml" />
-    <Content Include="Views\ClientCharts\_clientActualMacros.cshtml" />
     <Content Include="Views\ClientCharts\_clientPerformanceGauge.cshtml" />
+    <Content Include="Views\ClientCharts\_clientPastWeekMacroChart.cshtml" />
+    <Content Include="Views\ClientCharts\_clientCurrentWeekBarGauge.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

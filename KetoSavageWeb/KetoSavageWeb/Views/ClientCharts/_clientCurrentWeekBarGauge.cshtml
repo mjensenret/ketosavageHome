@@ -1,0 +1,47 @@
+﻿@model IEnumerable<KetoSavageWeb.ViewModels.CurrentWeekMacroGauge>
+
+<div id="currentMacroGauge">
+    @(Html.DevExtreme().BarGauge()
+        .ID("currentWeekGauge")
+        .StartValue(0)
+        .EndValue(1)
+        .Values(new JS("macrosToValues()"))
+        .Label(l => l.Format(f => f
+            .Type(Format.Percent)
+            .Precision(0)
+        ))
+        .Title(t => t
+            .Text("Current Week")
+            .Font(f => f.Color("White").Size(14))
+        )
+    )
+
+    <div id="panel">
+        @foreach (var macro in Model)
+        {
+            @(Html.DevExtreme().CheckBox()
+                .Value(macro.active)
+                .Text(macro.macro)
+                .OnValueChanged("checkBox_valueChanged")
+            )
+        }
+    </div>
+</div>
+
+<script>
+    var macros = @Html.Raw(Newtonsoft.Json.JsonConvert.SerializeObject(Model));
+
+    var macrosToValues = function() {
+        return $.map(macros, function(item) {
+            return item.active ? item.value : null;
+        });
+    };
+
+    var checkBox_valueChanged = function(e) {
+        var currentMacro = macros.filter(function(macro) {
+            return macro.macro === e.component.option("text");
+        })[0];
+        currentMacro.active = e.value;
+        $("#currentWeekGauge").dxBarGauge("option", "values", macrosToValues());
+    };
+</script>

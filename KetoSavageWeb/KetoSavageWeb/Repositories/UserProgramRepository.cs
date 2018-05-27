@@ -40,22 +40,55 @@ namespace KetoSavageWeb.Repositories
 
             return pastProgress;
         }
+        public IQueryable<DailyProgress> GetCurrentProgressByUser(int userId, DateTime currentDate)
+        {
+            //var currentWeek = db.DateModels.Where(x => x.Date == currentDate.Date).Select(y => y.WeekOfYear).First();
+            var currentWeek = db.DateModels.Where(x => x.Date == currentDate.Date).First();
+            var startWeek = currentWeek.WeekOfYear;
+            if (currentWeek.WeekDayName == "Sunday")
+            {
+                startWeek = currentWeek.WeekOfYear - 1;
+            }
 
-        //public static void InsertNewItem(DailyMacroUpdate postedItem, MVCxGridViewBatchUpdateValues<DailyMacroUpdate, int> batchValues)
-        //{
-        //    try
-        //    {
+            var up = this.GetActive.Where(x => x.ProgramUserId == userId).Include(x => x.DailyProgress).SelectMany(x => x.DailyProgress);
+            var currentProgress = (up
+                .Where(x => x.Dates.WeekOfYear == startWeek)
+                .OrderByDescending(x => x.DateId)
+                );
 
-        //        var newItem = new DailyProgress();
-        //        LoadNewValues(newItem, postedItem);
-        //        GridData.Add(newItem);
+            return currentProgress;
+        }
+        public ProgressGaugeViewModel calcWeightChangeByUser(int userId)
+        {
+            var userProgress = this.GetActive.Where(x => x.ProgramUserId == userId).Include(x => x.DailyProgress).SelectMany(x => x.DailyProgress);
+            var actualProgress = userProgress.Where(x => x.ActualWeight != null);
 
-        //    }
-        //    catch (Exception e)
-        //    {
-        //        batchValues.SetErrorText(postedItem, e.Message);
-        //    }
-        //}
+            var startWeight = (from w in userProgress
+                                  let minProgress = userProgress.Min(r => r.DateId)
+                                  where w.DateId == minProgress
+                                  select w.UserProgram.StartWeight).Sum();
+
+            var currentProgress = (from w in actualProgress
+                                    let maxProgress = actualProgress.Max(r => r.DateId)
+                                    where w.DateId == maxProgress
+                                    select w.ActualWeight.Value).Sum();
+
+            var plannedProgress = (from w in actualProgress
+                                   let maxProgress = actualProgress.Max(r => r.DateId)
+                                   where w.DateId == maxProgress
+                                   select w.PlannedWeight.Value).Sum();
+
+            ProgressGaugeViewModel model = new ProgressGaugeViewModel()
+            {
+                actualWeight = currentProgress - startWeight,
+                plannedWeight = plannedProgress - startWeight
+            };
+            
+            return model;
+                                   
+        }
+
+
 
         public List<DailyProgress> GetDailyProgressList()
         {

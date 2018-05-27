@@ -183,17 +183,127 @@ namespace KetoSavageWeb.Controllers
 
         public ActionResult ClientPerformanceGauge(int userId)
         {
-            var startWeight = userProgramRepository.GetDailyProgressByUser(userId).Select(x => x.ActualWeight).FirstOrDefault();
-            var recentWeight = userProgramRepository.GetDailyProgressByUser(userId).Select(x => x.ActualWeight).LastOrDefault();
-            var weightChange = ((startWeight ?? 0) - (recentWeight ?? 0));
+            var model = userProgramRepository.calcWeightChangeByUser(userId);
 
-            ProgressGaugeViewModel model = new ProgressGaugeViewModel()
+            return PartialView("_clientPerformanceGauge", model);
+        }
+
+        public ActionResult ClientPastWeekMacroChart(int userId)
+        {
+            var currentDate = DateTime.Now;
+            var previousWeekNumber = dateRepository.getLastWeekNumber(currentDate);
+
+            var pastProgress = userProgramRepository.GetPastProgressByUser(userId, currentDate);
+
+
+            var q = (pastProgress
+                    .Where(x => x.Dates.WeekOfYear == previousWeekNumber)
+                    .GroupBy(x => x.Dates.WeekOfYear))
+                    .Select(x => new
+                    {
+                        avgActFat = x.Average(y => y.ActualFat),
+                        avgActProt = x.Average(y => y.ActualProtein),
+                        avgActCarb = x.Average(y => y.ActualCarbohydrate)
+                    })
+                    .ToArray();
+
+            var fatCalories = ((q.First().avgActFat * 9));
+            var protCalories = ((q.First().avgActProt * 4));
+            var carbCalories = ((q.First().avgActCarb * 4));
+
+            var totalCalories = (fatCalories + protCalories + carbCalories);
+
+            //TODO: Move this to the repository, add string for current/past/future
+            List<WeeklyMacroPieChart> model = new List<WeeklyMacroPieChart>()
             {
-                value = weightChange
+                new WeeklyMacroPieChart
+                {
+                    macro = "Fat", value = Convert.ToDouble(fatCalories / totalCalories)
+                },
+                new WeeklyMacroPieChart
+                {
+                    macro = "Protein", value = Convert.ToDouble(protCalories / totalCalories)
+                },
+                new WeeklyMacroPieChart
+                {
+                    macro = "Carbs", value = Convert.ToDouble(carbCalories / totalCalories)
+                }
+
             };
 
 
-            return PartialView("_clientPerformanceGauge", model);
+            return PartialView("_clientPastWeekMacroChart", model);
+
+
+        }
+
+        public ActionResult ClientCurrentWeekMacroGauge(int userId)
+        {
+            var currentDate = DateTime.Now;
+            var currentWeekNumber = dateRepository.getCurrentWeekNumber(currentDate);
+
+            var currentProgress = userProgramRepository.GetCurrentProgressByUser(userId, currentDate);
+
+
+            var q = (currentProgress
+                    .GroupBy(x => x.Dates.WeekOfYear))
+                    .Select(x => new
+                    {
+                        avgPlannedFat = x.Average(y => y.PlannedFat),
+                        avgPlannedProt = x.Average(y => y.PlannedProtein),
+                        avgPlannedCarb = x.Average(y => y.PlannedCarbohydrate),
+                        avgActualFat = x.Average(y => y.ActualFat),
+                        avgActualProt = x.Average(y => y.ActualProtein),
+                        avgActualCarb = x.Average(y => y.ActualCarbohydrate)
+                    })
+                    .ToArray();
+
+            var plannedFatCalories = ((q.First().avgPlannedFat * 9));
+            var plannedProtCalories = ((q.First().avgPlannedProt * 4));
+            var plannedCarbCalories = ((q.First().avgPlannedCarb * 4));
+            var actualFatCalories = ((q.First().avgActualFat * 9));
+            var actualProtCalories = ((q.First().avgActualProt * 4));
+            var actualCarbCalories = ((q.First().avgActualCarb * 4));
+
+
+            var totalPlannedCalories = (plannedFatCalories + plannedProtCalories + plannedCarbCalories);
+            var totalActualCalories = (actualFatCalories + actualProtCalories + actualCarbCalories);
+
+            //TODO: Move this to the repository, add string for current/past/future
+            List<CurrentWeekMacroGauge> model = new List<CurrentWeekMacroGauge>()
+            {
+                new CurrentWeekMacroGauge
+                {
+                    macro = "Actual Fat", value = Convert.ToDouble(actualFatCalories / totalActualCalories), active = true
+                },
+                new CurrentWeekMacroGauge
+                {
+                    macro = "Planned Fat", value = Convert.ToDouble(plannedFatCalories / totalPlannedCalories), active = true
+                },
+                new CurrentWeekMacroGauge
+                {
+                    macro = "Actual Protein", value = Convert.ToDouble(actualProtCalories / totalActualCalories), active = true
+                },
+                new CurrentWeekMacroGauge
+                {
+                    macro = "Planned Protein", value = Convert.ToDouble(plannedProtCalories / totalPlannedCalories), active = true
+                },
+                new CurrentWeekMacroGauge
+                {
+                    macro = "Actual Carbs", value = Convert.ToDouble(actualCarbCalories / totalActualCalories), active = true
+                },
+                new CurrentWeekMacroGauge
+                {
+                    macro = "Planned Carbs", value = Convert.ToDouble(plannedCarbCalories / totalPlannedCalories), active = true
+                }
+
+
+            };
+
+
+            return PartialView("_clientCurrentWeekBarGauge", model);
+
+
         }
     }
 }
