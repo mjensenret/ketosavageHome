@@ -1,15 +1,6 @@
-       html, body {
+html, body {
 	background-color: #000000;
 	margin: 0;
-	/*padding: 0;*/
-	/*display: block;
-	margin-left: auto;
-	margin-right: auto;
-	width: 100%;*/
-	/*margin: auto;
-	width: 50%;
-	border: 3px solid green;
-	padding: 10px;*/
 }
 
 /* Header */
@@ -733,4 +724,58 @@
 .dxpnlControl_Mulberry .contentPane .dxgvControl_Mulberry .dxgvHeader_Mulberry
 {
 	border-top: 0!important;
+}
+
+/*Beginning of Chart CSS declarations*/
+
+/*Coach-specific controls*/
+#controlPanel, #weightGraph, #gaugeContainer, #gridContainer {
+        padding: 5px;
+        width: 88%;
+        border: ridge;
+        background-color: #ff2;
+        /*display: inline-block;*/
+        /*float: left;*/
+}
+/*User's progress weight chart*/
+/*#weightGraph {
+    padding: 10px;
+    display:inline-block;
+    width: 88%;
+    border: ridge;
+}*/
+
+/*User's progress gauges and pie charts*/
+
+#progressGauge {
+    height: 250px;
+    display:inline-block;
+    border: inset;
+}
+
+#actualMacroPie {
+    display: inline-block;
+    height: 250px;
+    border: inset;
+}
+
+#currentMacroGauge {
+    display: inline-block;
+    border: inset;
+    height: 250px;
+    position: relative;
+}
+#currentWeekGauge {
+    float: left;
+    height: 245px;
+}
+#panel {
+    width: 150px;
+    text-align: left;
+    display: inline-block;
+    float: left;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+
 }

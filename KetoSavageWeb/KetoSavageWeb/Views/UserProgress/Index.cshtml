@@ -2,90 +2,93 @@
 @{
     ViewBag.Title = "User Progress";
 }
-<style>
-    #gauges {
-        /*height: 400px;*/
-    }
-    #gaugeContainer{
-        text-align: left;
-        margin: 20px auto;
-        background-color: #4d4d4d;
-        /*width: 786px;*/
-        /*height: 250px;*/
-    }
-    #gaugeContainer div {
-        display: inline-block;
-        vertical-align: bottom;
-        position: relative;
-    }
-    #progressGauge {
-        height: 250px;
-    }
+@*
+    <style>
+        #gauges {
+            /*height: 400px;
+            display:inline-block;
+            float: left;
+        }
+        #gaugeContainer{
+            text-align: left;
+            margin: 20px auto;
+            background-color: #4d4d4d;
+            width: 786px;
+            height: 250px;
+            display:inline-block;
+            float: left;
+        }
+        #gaugeContainer div {
+            display: inline-block;
+            float:left;
+            vertical-align: bottom;
+            position: relative;
+        }
+        #progressGauge {
+            height: 250px;
+            display:inline-block;
+        }
 
-    #actualMacroPie {
-        height: 250px;
-    }
+        #actualMacroPie {
+            height: 250px;
+        }
 
-    #currentWeekGauge {
-        /*width: 80%;
-        height: 100%;
-        margin-top: 20px;*/
-        float: left;
-    }
-    #panel {
-        width: 150px;
-        text-align: left;
-        margin-top: 100px;
-        float: left;
-    }
-    .left-gauge {
-        top: 0px;
-        left: 0px;
-    }
+        #currentWeekGauge {
+            width: 80%;
+            height: 100%;
+            margin-top: 20px;
+            float: left;
+        }
+        #panel {
+            width: 150px;
+            text-align: left;
+            margin-top: 100px;
+            float: left;
+        }
+        .left-gauge {
+            top: 0px;
+            left: 0px;
+        }*/
 
-</style>
-@Html.DevExpress().Panel(p =>
-{
-    p.Name = "pnlWeightGraphNew";
-    //p.ControlStyle.BackColor = System.Drawing.Color.Red;
-    p.SetContent(() =>
+    </style>
+*@
+<div id="weightGraph">
+    @Html.DevExpress().Panel(p =>
     {
-        var userId = Session["UserId"];
-        Html.RenderAction("ClientWeightGraph", "ClientCharts", new { userId = userId });
-    });
-}).GetHtml()
-<div id="gauges">
-    <div id="gaugeContainer">
-        @Html.DevExpress().Panel(p =>
+        p.Name = "pnlWeightGraph";
+        //p.ControlStyle.BackColor = System.Drawing.Color.Red;
+        p.SetContent(() =>
         {
-            p.Name = "pnlGauges";
-            p.SetContent(() =>
-            {
-                ViewContext.Writer.Write("<div class=\"left-gauge\">");
-                Html.RenderAction("ClientPerformanceGauge", "ClientCharts", new { userId = Session["UserId"] });
-                ViewContext.Writer.Write("</div>");
-                ViewContext.Writer.Write("<div class=\"center-gauge\">");
-                Html.RenderAction("ClientPastWeekMacroChart", "ClientCharts", new { userId = Session["UserId"] });
-                ViewContext.Writer.Write("</div>");
-                ViewContext.Writer.Write("<div class\"right-gauge\">");
-                Html.RenderAction("ClientCurrentWeekMacroGauge", "ClientCharts", new { userId = Session["UserId"] });
-                ViewContext.Writer.Write("</div>");
-            });
-        }).GetHtml()
-    </div>
-
+            var userId = Session["UserId"];
+            Html.RenderAction("ClientWeightGraph", "ClientCharts", new { userId = userId });
+        });
+    }).GetHtml()
+</div>
+<div id="gaugeContainer">
+    @Html.DevExpress().Panel(p =>
+    {
+        p.Name = "pnlCharts";
+        p.SetContent(() =>
+        {
+            Html.RenderAction("ClientPerformanceGauge", "ClientCharts", new { userId = Session["UserId"] });
+            Html.RenderAction("ClientPastWeekMacroChart", "ClientCharts", new { userId = Session["UserId"] });
+            Html.RenderAction("ClientCurrentWeekMacroGauge", "ClientCharts", new { userId = Session["UserId"] });
+        });
+    }).GetHtml()
 </div>
 
-
-@Html.DevExpress().Panel(p =>
-{
-    p.Name = "pnlPastProgress";
-    p.ControlStyle.BackColor = System.Drawing.Color.IndianRed;
-    p.SetContent(() =>
+<div id="gridContainer">
+    @Html.DevExpress().Panel(p =>
     {
-        ViewContext.Writer.Write("Past progress stuff here");
-        Html.RenderAction("PastPerformanceGrid");
-    });
-}).GetHtml()
+        p.Name = "pnlPastProgress";
+        p.ControlStyle.BackColor = System.Drawing.Color.IndianRed;
+        p.SetContent(() =>
+        {
+            ViewContext.Writer.Write("Past progress stuff here");
+            Html.RenderAction("PastPerformanceGrid");
+        });
+    }).GetHtml()
+</div>
+
 
 

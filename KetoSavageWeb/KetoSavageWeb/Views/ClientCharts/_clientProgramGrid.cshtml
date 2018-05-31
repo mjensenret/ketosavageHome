@@ -1,0 +1,73 @@
+﻿@model
+
+<div id="devExtremeProgramGrid">
+    @(Html.DevExtreme().DataGrid()
+                        .ID("gridClientProgram")
+                        .DataSource(Model)
+                        .RowAlternationEnabled(true)
+                        .Paging(p => p.PageSize(10))
+                        .Pager(p => p
+                            .AllowedPageSizes(new int[] { 10, 20, 30, 40 })
+                            .ShowPageSizeSelector(true)
+                        )
+                        .Columns(c =>
+                        {
+                        c.Add()
+            .DataField("Date");
+                        c.Add()
+            .Caption("Weight")
+            .Columns(a =>
+            {
+                a.Add()
+                    .Caption("Planned")
+                    .DataField("PlannedWeight");
+                a.Add()
+                    .Caption("Actual")
+                    .DataField("ActualWeight");
+            });
+                        c.Add()
+            .Caption("Fat")
+            .Columns(a =>
+            {
+                a.Add()
+                    .Caption("Planned")
+                    .DataField("PlannedFat");
+                a.Add()
+                    .Caption("Actual")
+                    .DataField("ActualFat");
+            });
+                        c.Add()
+            .Caption("Protein")
+            .Columns(a =>
+            {
+                a.Add()
+                    .Caption("Planned")
+                    .DataField("PlannedProtein");
+                a.Add()
+                    .Caption("Actual")
+                    .DataField("ActualProtein");
+            });
+                        c.Add()
+            .Caption("Carbohydrates")
+            .Columns(a =>
+            {
+            a.Add()
+                    .Caption("Planned")
+                    .DataField("PlannedCarbohydrates");
+            a.Add()
+                    .Caption("Actual")
+                    .DataField("ActualCarbohydrates");
+            a.Add()
+                    .Caption("Variance")
+                    .CalculateCellValue(@<text>
+                            function(data) {
+                                return [data.PlannedCarbohydrates, data.ActualCarbohydrates]
+                                   .join(" ");
+                            }
+                        </text>);
+                });
+
+        })
+
+    )
+</div>

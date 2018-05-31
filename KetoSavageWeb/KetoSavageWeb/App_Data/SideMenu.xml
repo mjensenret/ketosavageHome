@@ -2,7 +2,7 @@
 <items>
   <item Text="Dashboard" Name="Dashboard" NavigateUrl="~/UserProgress" />
   <item Text="Enter Macros" Name="macros" NavigateUrl="#" ActionUrl="~/UserProgress"/>
-  <item Text="Enter Measurements" Name="measurements" NavigateUrl="#" />
+  <item Text="Enter Measurements" Name="measurements" NavigateUrl="#" ActionUrl="/UserProgress"/>
 
   <item Text="Admin" NavigateUrl="#" Roles="Administrator;Manager;Coach">
     <item Text="Manage Users" NavigateUrl="~/ManageUsers" />

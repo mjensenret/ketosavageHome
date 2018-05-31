@@ -11,17 +11,27 @@
         g.SettingsBehavior.AllowFocusedRow = true;
         g.SettingsBehavior.AllowSelectByRowClick = false;
 
+        g.SettingsAdaptivity.AdaptiveDetailColumnCount = 2;
+        g.SettingsAdaptivity.AdaptivityMode = GridViewAdaptivityMode.HideDataCellsWindowLimit;
+        g.SettingsAdaptivity.HideDataCellsAtWindowInnerWidth = 800;
+        g.SettingsAdaptivity.AllowOnlyOneAdaptiveDetailExpanded = true;
+        g.EditFormLayoutProperties.SettingsAdaptivity.AdaptivityMode = FormLayoutAdaptivityMode.SingleColumnWindowLimit;
+        g.EditFormLayoutProperties.SettingsAdaptivity.SwitchToSingleColumnAtWindowInnerWidth = 600;
+
+
         g.KeyFieldName = "Id";
 
         g.Columns.Add(c =>
         {
             c.FieldName = "Date";
             c.PropertiesEdit.DisplayFormatString = "d";
+            c.AdaptivePriority = 1;
         });
         g.Columns.Add(c =>
         {
             c.FieldName = "WeekDay";
-            //c.Visible = false;
+            c.AdaptivePriority = 10;
+            c.Visible = false;
         });
         g.Columns.AddBand(b =>
         {
@@ -32,11 +42,13 @@
             {
                 c.Caption = "Planned";
                 c.FieldName = "PlannedWeight";
+                //c.AdaptivePriority = 1;
             });
             b.Columns.Add(c =>
             {
                 c.Caption = "Actual";
                 c.FieldName = "ActualWeight";
+                c.AdaptivePriority = 1;
             });
             b.Columns.Add(c =>
             {
@@ -60,6 +72,7 @@
             {
                 c.Caption = "Actual";
                 c.FieldName = "ActualFat";
+                c.AdaptivePriority = 1;
             });
             b.Columns.Add(c =>
             {
@@ -83,6 +96,7 @@
             {
                 c.Caption = "Actual";
                 c.FieldName = "ActualProtein";
+                c.AdaptivePriority = 1;
             });
             b.Columns.Add(c =>
             {
@@ -106,6 +120,7 @@
             {
                 c.Caption = "Actual";
                 c.FieldName = "ActualCarbohydrates";
+                c.AdaptivePriority = 1;
             });
             b.Columns.Add(c =>
             {
@@ -117,6 +132,10 @@
             });
         });
 
+        g.CellEditorInitialize = (s, e) =>
+         {
+             ((ASPxEdit)e.Editor).ValidationSettings.Display = Display.Dynamic;
+         };
     });
 }
 @grid.Bind(Model).GetHtml()

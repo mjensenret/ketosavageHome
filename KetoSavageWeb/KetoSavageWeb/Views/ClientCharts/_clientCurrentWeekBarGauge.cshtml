@@ -6,9 +6,11 @@
         .StartValue(0)
         .EndValue(1)
         .Values(new JS("macrosToValues()"))
-        .Label(l => l.Format(f => f
-            .Type(Format.Percent)
-            .Precision(0)
+        .Label(l => l
+            .Indent(10)
+            .Format(f => f
+                .Type(Format.Percent)
+                .Precision(0)
         ))
         .Title(t => t
             .Text("Current Week")

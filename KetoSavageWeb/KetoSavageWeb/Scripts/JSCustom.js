@@ -28,10 +28,15 @@ function LeftMenuClick(s, e) {
         var url = '@Url.Action("Index", "UserProgress")';   
         window.location.replace(url);
     }
-    else
+    else if (e.item.name === "macros")
     {
-        var pageUrl = $("#enterMacros").val();
-        openEntryWindow(e.item.name, pageUrl);
+        var macroUrl = $("#enterMacros").val();
+        openEntryWindow(e.item.name, macroUrl);
+    }
+    else if (e.item.name === "measurements")
+    {
+        var measurementUrl = $("#enterMeasurements").val();
+        openEntryWindow(e.item.name, measurementUrl);
     }
 
 }
