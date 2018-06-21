@@ -1,14 +1,14 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <items>
-  <item Text="Dashboard" Name="Dashboard" NavigateUrl="~/UserProgress" />
-  <item Text="Enter Macros" Name="macros" NavigateUrl="#" ActionUrl="~/UserProgress"/>
-  <item Text="Enter Measurements" Name="measurements" NavigateUrl="#" ActionUrl="/UserProgress"/>
+  <item Text="Dashboard" Name="Dashboard" NavigateUrl="~/UserProgress" Roles="Client" />
+  <item Text="Enter Macros" Name="macros" NavigateUrl="#" ActionUrl="~/UserProgress" Roles="Client"/>
+  <item Text="Enter Measurements" Name="measurements" NavigateUrl="#" ActionUrl="/UserProgress" Roles="Client"/>
 
-  <item Text="Admin" NavigateUrl="#" Roles="Administrator;Manager;Coach">
-    <item Text="Manage Users" NavigateUrl="~/ManageUsers" />
-    <item Text="Manage Programs" NavigateUrl="#">
-      <item Text="Manage Program Templates" NavigateUrl="~/Programs" />
-      <item Text="Manage Client Programs" NavigateUrl="~/UserPrograms" />
-    </item>
-  </item>
+  <item Text="Client Dashboard" NavigateUrl="~/" Roles="Administrator;Manager;Coach" />
+  <item Text="Manage Client Programs" NavigateUrl="~/UserPrograms" Roles="Administrator;Manager;Coach" />
+  <item Text="Manage Users" NavigateUrl="~/ManageUsers" Roles="Administrator;Manager;Coach" />
+  
+
+  <item Text="Manage Program Templates" NavigateUrl="~/Programs" Roles="Administrator;Manager;Coach"  />
+
 </items>

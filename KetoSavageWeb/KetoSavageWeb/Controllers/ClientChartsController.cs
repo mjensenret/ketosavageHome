@@ -207,9 +207,9 @@ namespace KetoSavageWeb.Controllers
                     })
                     .ToArray();
 
-            var fatCalories = ((q.First().avgActFat * 9));
-            var protCalories = ((q.First().avgActProt * 4));
-            var carbCalories = ((q.First().avgActCarb * 4));
+            var fatCalories = q.Length > 0 ? ((q.First().avgActFat * 9)) : 0;
+            var protCalories = q.Length > 0 ? ((q.First().avgActProt * 4)) : 0;
+            var carbCalories = q.Length > 0 ? ((q.First().avgActCarb * 4)) : 0;
 
             var totalCalories = (fatCalories + protCalories + carbCalories);
 
@@ -256,14 +256,14 @@ namespace KetoSavageWeb.Controllers
                         avgActualProt = x.Average(y => y.ActualProtein),
                         avgActualCarb = x.Average(y => y.ActualCarbohydrate)
                     })
-                    .ToArray();
+                    .ToList();
 
-            var plannedFatCalories = ((q.First().avgPlannedFat * 9));
-            var plannedProtCalories = ((q.First().avgPlannedProt * 4));
-            var plannedCarbCalories = ((q.First().avgPlannedCarb * 4));
-            var actualFatCalories = ((q.First().avgActualFat * 9));
-            var actualProtCalories = ((q.First().avgActualProt * 4));
-            var actualCarbCalories = ((q.First().avgActualCarb * 4));
+            var plannedFatCalories = q.Count > 0 ? ((q.First().avgPlannedFat * 9)) : 0;
+            var plannedProtCalories = q.Count > 0 ? ((q.First().avgPlannedProt * 4)) : 0;
+            var plannedCarbCalories = q.Count > 0 ? ((q.First().avgPlannedCarb * 4)) : 0;
+            var actualFatCalories = q.Count > 0 ? ((q.First().avgActualFat * 9)) : 0;
+            var actualProtCalories = q.Count > 0 ? ((q.First().avgActualProt * 4)) : 0;
+            var actualCarbCalories = q.Count > 0 ? ((q.First().avgActualCarb * 4)) : 0;
 
 
             var totalPlannedCalories = (plannedFatCalories + plannedProtCalories + plannedCarbCalories);

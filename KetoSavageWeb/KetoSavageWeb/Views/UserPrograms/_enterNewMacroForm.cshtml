@@ -13,6 +13,7 @@
 
     settings.Items.Add(m => m.userId, u =>
     {
+        u.ClientVisible = false;
         u.NestedExtension().TextBox(un =>
         {
             un.ReadOnly = true;
@@ -20,6 +21,7 @@
     });
     settings.Items.Add(m => m.week, f =>
     {
+        f.Caption = "Date:";
         f.NestedExtension().DateEdit(d =>
         {
 
@@ -48,10 +50,12 @@
     });
     settings.Items.Add(s =>
     {
+        s.ShowCaption = DefaultBoolean.False;
         s.SetNestedContent(() =>
         {
             Html.DevExpress().Button(b =>
             {
+
                 b.Name = "btnMacroSubmit";
                 b.ControlStyle.CssClass = "button";
                 b.Text = "Save";

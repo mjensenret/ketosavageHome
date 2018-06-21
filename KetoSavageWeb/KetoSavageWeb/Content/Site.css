@@ -725,7 +725,21 @@ html, body {
 {
 	border-top: 0!important;
 }
+/*Index CSS declarations*/
+#loginPage {
+    /*border: inset;
+    background: #ff1111;*/
+    margin: auto;
+    width: 90%;
+}
 
+.responsive {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
 /*Beginning of Chart CSS declarations*/
 
 /*Coach-specific controls*/
@@ -733,7 +747,6 @@ html, body {
         padding: 5px;
         width: 88%;
         border: ridge;
-        background-color: #ff2;
         /*display: inline-block;*/
         /*float: left;*/
 }
@@ -744,6 +757,15 @@ html, body {
     width: 88%;
     border: ridge;
 }*/
+.buttons {
+    float: left;
+}
+
+.pnlButtons {
+    display: inline-block;
+}
+
+
 
 /*User's progress gauges and pie charts*/
 

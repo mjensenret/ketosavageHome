@@ -1,26 +1,28 @@
-﻿
-<center>
+﻿<div id="loginPage">
+    <img src="~/Content/Images/KSLogo_NotLoggedIn.png" alt="KetoSavage" class="responsive" />
+</div>
+
     @Html.DevExpress().Panel(p =>
 {
     p.Name = "pnlLoginRegisterForm";
-    p.Width = Unit.Percentage(50);
-    p.SettingsAdaptivity.CollapseAtWindowInnerWidth = 580;
+    //p.Width = Unit.Percentage(50);
+    //p.SettingsAdaptivity.CollapseAtWindowInnerWidth = 300;
+
     p.SetContent(() =>
     {
-        Html.DevExpress().Image(img =>
-        {
-            img.Name = "loginImage";
-            img.ImageUrl = string.Format("~/Content/Images/KSLogo_NotLoggedIn.png");
-            //img.Width = Unit.Percentage(75);
-        }).Render();
+        //Html.DevExpress().Image(img =>
+        //{
+        //    img.Name = "loginImage";
+        //    img.ImageUrl = string.Format("~/Content/Images/KSLogo_NotLoggedIn.png");
+        //}).Render();
         //ViewContext.Writer.Write("<div class=\"col-md-12 text-center\" ><img src\"@Url.Content(\"~/Content/Images/KSLogo_NotLoggedIn.png\"))
 
         Html.DevExpress().FormLayout(form =>
         {
             form.Name = "frmLoginControls";
             form.SettingsAdaptivity.AdaptivityMode = FormLayoutAdaptivityMode.SingleColumnWindowLimit;
-            form.SettingsAdaptivity.SwitchToSingleColumnAtWindowInnerWidth = 580;
-            form.NestedExtensionWidth = Unit.Percentage(100);
+            //form.SettingsAdaptivity.SwitchToSingleColumnAtWindowInnerWidth = 200;
+            //form.NestedExtensionWidth = Unit.Percentage(100);
             form.Styles.Style.CssClass = "loginForm";
 
             form.Items.AddGroupItem(i =>
@@ -74,7 +76,7 @@
 @Html.DevExpress().PopupControl(settings =>
 {
     settings.Name = "popupControl";
-    settings.Width = 250;
+    //settings.Width = 250;
     settings.AllowDragging = true;
     settings.CloseAction = CloseAction.CloseButton;
     settings.CloseOnEscape = true;
@@ -86,7 +88,7 @@
     settings.PopupVerticalAlign = PopupVerticalAlign.Middle;
     settings.ClientSideEvents.CloseUp = "function(s, e){ ASPxClientEdit.ClearEditorsInContainer(null, '', true); }";
 }).GetHtml()
-</center>
+
 <script type="text/javascript">
     function redirectToRegister() {
         console.log('made it here!');

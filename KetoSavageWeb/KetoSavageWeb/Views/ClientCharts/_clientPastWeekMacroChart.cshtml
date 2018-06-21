@@ -1,7 +1,7 @@
 ﻿@model IEnumerable<KetoSavageWeb.ViewModels.WeeklyMacroPieChart>
 @(Html.DevExtreme().PieChart()
     .ID("actualMacroPie")
-    //.Size(s => s.Width(300))
+    .Size(s => s.Width(300))
     .Palette(VizPalette.Bright)
     .Series(s => s
         .Add()

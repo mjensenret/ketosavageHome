@@ -3,24 +3,6 @@
     ViewBag.Title = "User Program Details";
 
 }
-<style>
-    .buttons {
-        padding: 10px;
-        border: solid;
-        border-width: thin;
-        float: left;
-        background-color: blue;
-    }
-
-    .pnlButtons {
-        padding: 10px;
-        border: solid;
-        border-bottom-width: thick;
-        background-color: aqua;
-        /*float: left;*/
-        display: inline-block;
-    }
-</style>
 <script language="javascript">
 
     function LoadMyGrid() {
@@ -131,131 +113,21 @@
 </div>
 
 
-        @*@Html.DevExpress().DockPanel(settings =>
-            {
-                settings.Name = "pnlPastPerf";
-                settings.PanelUID = "pnlPastPerformance";
-                settings.HeaderText = "Past Performance";
-                settings.VisibleIndex = 0;
-                settings.Styles.Content.Paddings.Padding = 0;
-                settings.ShowCloseButton = false;
-                settings.ShowHeader = true;
-                settings.AllowResize = true;
-                settings.Width = 300;
-                settings.OwnerZoneUID = "zone1";
-                settings.Styles.Content.Border.BorderStyle = BorderStyle.Solid;
-                settings.SetContent(() =>
-                {
-                    Html.RenderAction("pastPerformance");
-                });
-                //settings.PreRender = (sender, e) =>
-                //{
-                //    SetContentStyleOnPreRender((MVCxDockPanel)sender);
-                //};
-                //settings.ClientSideEvents.Init = "OnPanel1Init";
-            }).GetHtml()
-            @Html.DevExpress().DockPanel(settings =>
-            {
-
-                settings.Name = "pnlWeightGraph";
-                settings.PanelUID = "pnlWeightGraph";
-                settings.HeaderText = "Weight Graph";
-                settings.ShowHeader = false;
-                settings.ShowMaximizeButton = true;
-                settings.OwnerZoneUID = "zone2";
-                settings.SetContent(() =>
-                {
-                    var userId = Session["UserId"];
-                    Html.RenderAction("ClientWeightGraph", "ClientCharts", new { userId = userId });
-
-                });
-
-
-            }).GetHtml()
-            @Html.DevExpress().DockPanel(settings =>
-                {
-                    settings.Name = "pnlNewMacros";
-                    settings.PanelUID = "pnlNewMacros";
-                    settings.HeaderText = "Planned Macros";
-                    settings.VisibleIndex = 0;
-                    settings.Styles.Content.Paddings.Padding = 0;
-                    settings.ShowCloseButton = false;
-                    settings.ShowHeader = true;
-                    settings.AllowResize = true;
-                    //settings.Width = 300;
-                    settings.OwnerZoneUID = "zone1";
-                    settings.Styles.Content.Border.BorderStyle = BorderStyle.Solid;
-                    settings.SetContent(() =>
-                    {
-                        Html.RenderAction("NewMacrosGridView");
-                    });
-                    //settings.PreRender = (sender, e) =>
-                    //{
-                    //    SetContentStyleOnPreRender((MVCxDockPanel)sender);
-                    //};
-                    //settings.ClientSideEvents.Init = "OnPanel1Init";
-                }).GetHtml()
-
-
-
             @Html.DevExpress().PopupControl(settings =>
-                {
-                    settings.Name = "popupControl";
-                    settings.Width = 400;
-                    settings.AllowDragging = true;
-                    settings.CloseAction = CloseAction.CloseButton;
-                    settings.CloseOnEscape = true;
-                    settings.PopupAnimationType = DevExpress.Web.AnimationType.Fade;
-                    settings.ShowHeader = false;
-                    settings.Modal = true;
-                    settings.AutoUpdatePosition = true;
-                    settings.PopupHorizontalAlign = PopupHorizontalAlign.WindowCenter;
-                    settings.PopupVerticalAlign = PopupVerticalAlign.WindowCenter;
-                    settings.ClientSideEvents.CloseUp = "function(s, e){ ASPxClientEdit.ClearEditorsInContainer(null, '', true); }";
-                }).GetHtml()
-            @Html.DevExpress().DockZone(
-                        settings =>
-                        {
-                            settings.Name = "dockZone1";
-                            settings.ZoneUID = "zone1";
-                            settings.PanelSpacing = 3;
-                            settings.Paddings.Padding = 3;
-                            settings.Width = Unit.Percentage(75);
-                            settings.ControlStyle.CssClass = "zone vertical first";
-                            settings.Styles.DockingAllowedStyle.CssClass = "zone allowed";
-                            settings.Styles.DockingForbiddenStyle.CssClass = "zone forbidden";
-                        }
-                    ).GetHtml()
-            @Html.DevExpress().DockZone(
-                    settings =>
-                    {
-                        settings.Name = "dockZone2";
-                        settings.ZoneUID = "zone2";
-                        settings.PanelSpacing = 3;
-                        settings.Paddings.Padding = 3;
-                        //settings.Height = 600;
-                        settings.Width = Unit.Percentage(100);
-                        settings.ControlStyle.CssClass = "zone vertical";
-                        settings.Styles.DockingAllowedStyle.CssClass = "zone allowed";
-                        settings.Styles.DockingForbiddenStyle.CssClass = "zone forbidden";
-                    }
-                    ).GetHtml()
-
-            @Html.DevExpress().DockZone(
-                    settings =>
-                    {
-                        settings.Name = "dockZone3";
-                        settings.ZoneUID = "zone3";
-                        settings.PanelSpacing = 11;
-                        settings.Paddings.Padding = 3;
-                        settings.Height = 200;
-                        settings.Width = 583;
-                        settings.ControlStyle.CssClass = "zone horizontal";
-                        settings.Styles.DockingAllowedStyle.CssClass = "zone allowed";
-                        settings.Styles.DockingForbiddenStyle.CssClass = "zone forbidden";
-                    }
-                    ).GetHtml()*@
-
+       {
+           settings.Name = "popupControl";
+           //settings.Width = 400;
+           settings.AllowDragging = true;
+           settings.CloseAction = CloseAction.CloseButton;
+           settings.CloseOnEscape = true;
+           settings.PopupAnimationType = DevExpress.Web.AnimationType.Fade;
+           settings.ShowHeader = false;
+           settings.Modal = true;
+           settings.AutoUpdatePosition = true;
+           settings.PopupHorizontalAlign = PopupHorizontalAlign.WindowCenter;
+           settings.PopupVerticalAlign = PopupVerticalAlign.TopSides;
+           settings.ClientSideEvents.CloseUp = "function(s, e){ ASPxClientEdit.ClearEditorsInContainer(null, '', true); }";
+       }).GetHtml()
 
 
     <script type="text/javascript">

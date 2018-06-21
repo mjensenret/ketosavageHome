@@ -471,6 +471,7 @@ namespace KetoSavageWeb.Controllers
         {
             DailyMacroUpdate model = new DailyMacroUpdate();
             model.userId = Convert.ToInt32(Session["userId"]);
+            model.week = DateTime.Now;
             
 
             return PartialView("_enterNewMacroForm",model);

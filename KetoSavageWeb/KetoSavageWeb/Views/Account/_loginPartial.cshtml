@@ -11,8 +11,8 @@
         form.Name = "ModalModeFormLayout";
         form.RequiredMarkDisplayMode = RequiredMarkMode.None;
         form.SettingsItemCaptions.Location = LayoutItemCaptionLocation.Top;
-        form.Width = Unit.Percentage(100);
-        form.Height = Unit.Percentage(100);
+        //form.Width = Unit.Percentage(100);
+        //form.Height = Unit.Percentage(100);
 
         form.NestedExtensionWidth = Unit.Percentage(100);
         form.Items.Add(m => m.UserName, item =>
@@ -49,7 +49,7 @@
             {
                 i.ShowCaption = DefaultBoolean.False;
                 i.Paddings.Padding = 0;
-                //i.Width = Unit.Percentage(100);
+                i.Width = Unit.Percentage(100);
                 i.HorizontalAlign = FormLayoutHorizontalAlign.Left;
 
                 i.SetNestedContent(() =>
