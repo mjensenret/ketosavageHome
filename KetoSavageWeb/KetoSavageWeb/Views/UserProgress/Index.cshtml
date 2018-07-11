@@ -1,94 +1,56 @@
-﻿
-@{
+﻿@{
     ViewBag.Title = "User Progress";
 }
-@*
-    <style>
-        #gauges {
-            /*height: 400px;
-            display:inline-block;
-            float: left;
-        }
-        #gaugeContainer{
-            text-align: left;
-            margin: 20px auto;
-            background-color: #4d4d4d;
-            width: 786px;
-            height: 250px;
-            display:inline-block;
-            float: left;
-        }
-        #gaugeContainer div {
-            display: inline-block;
-            float:left;
-            vertical-align: bottom;
-            position: relative;
-        }
-        #progressGauge {
-            height: 250px;
-            display:inline-block;
-        }
 
-        #actualMacroPie {
-            height: 250px;
-        }
+<div id="newsfeed">
+    @Html.DevExpress().Panel(p =>
+    {
+        p.Name = "pnlNewsCarousel";
+        p.SetContent(() =>
+        {
+            Html.RenderAction("newsCarousel");
+        });
+    }).GetHtml()
+</div>
 
-        #currentWeekGauge {
-            width: 80%;
-            height: 100%;
-            margin-top: 20px;
-            float: left;
-        }
-        #panel {
-            width: 150px;
-            text-align: left;
-            margin-top: 100px;
-            float: left;
-        }
-        .left-gauge {
-            top: 0px;
-            left: 0px;
-        }*/
 
-    </style>
-*@
 <div id="weightGraph">
     @Html.DevExpress().Panel(p =>
     {
-        p.Name = "pnlWeightGraph";
-        //p.ControlStyle.BackColor = System.Drawing.Color.Red;
-        p.SetContent(() =>
-        {
-            var userId = Session["UserId"];
-            Html.RenderAction("ClientWeightGraph", "ClientCharts", new { userId = userId });
-        });
+    p.Name = "pnlWeightGraph";
+    //p.ControlStyle.BackColor = System.Drawing.Color.Red;
+    p.SetContent(() =>
+    {
+    var userId = Session["UserId"];
+    Html.RenderAction("ClientWeightGraph", "ClientCharts", new { userId = userId });
+    });
     }).GetHtml()
 </div>
 <div id="gaugeContainer">
     @Html.DevExpress().Panel(p =>
     {
-        p.Name = "pnlCharts";
-        p.SetContent(() =>
-        {
-            Html.RenderAction("ClientPerformanceGauge", "ClientCharts", new { userId = Session["UserId"] });
-            Html.RenderAction("ClientPastWeekMacroChart", "ClientCharts", new { userId = Session["UserId"] });
-            Html.RenderAction("ClientCurrentWeekMacroGauge", "ClientCharts", new { userId = Session["UserId"] });
-        });
+    p.Name = "pnlCharts";
+    p.SetContent(() =>
+    {
+    Html.RenderAction("ClientPerformanceGauge", "ClientCharts", new { userId = Session["UserId"] });
+    Html.RenderAction("ClientPastWeekMacroChart", "ClientCharts", new { userId = Session["UserId"] });
+    Html.RenderAction("ClientCurrentWeekMacroGauge", "ClientCharts", new { userId = Session["UserId"] });
+    });
     }).GetHtml()
 </div>
 
 <div id="gridContainer">
     @Html.DevExpress().Panel(p =>
     {
-        p.Name = "pnlPastProgress";
-        p.ControlStyle.BackColor = System.Drawing.Color.IndianRed;
-        p.SetContent(() =>
-        {
-            ViewContext.Writer.Write("Past progress stuff here");
-            Html.RenderAction("PastPerformanceGrid");
-        });
+    p.Name = "pnlPastProgress";
+    p.SetContent(() =>
+    {
+        Html.RenderAction("PastPerformanceGrid");
+    });
     }).GetHtml()
 </div>
+
+
 
 
 

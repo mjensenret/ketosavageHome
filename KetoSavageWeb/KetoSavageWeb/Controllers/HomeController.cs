@@ -18,10 +18,12 @@ namespace KetoSavageWeb.Controllers
                 if (coachOrAdmin != null)
                 {
                     ViewBag.IsCoachOrAdmin = true;
+                    return RedirectToAction("Index", "ClientDashboard");
                 }
                 else
                 {
                     ViewBag.IsCoachOrAdmin = false;
+                    return RedirectToAction("Index", "UserProgress");
                 }
             }
 

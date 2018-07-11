@@ -1,0 +1,12 @@
+﻿
+<div id="newsGrid">
+    @Html.DevExpress().Panel(settings =>
+    {
+        settings.Name = "pnlNewsGrid";
+        settings.SetContent(() =>
+        {
+            Html.RenderAction("NewsGridPartial");
+        });
+
+    }).GetHtml()
+</div>

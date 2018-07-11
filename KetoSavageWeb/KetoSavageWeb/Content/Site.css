@@ -1,5 +1,6 @@
 html, body {
 	background-color: #000000;
+    color: #DEDEDE;
 	margin: 0;
 }
 
@@ -743,10 +744,10 @@ html, body {
 /*Beginning of Chart CSS declarations*/
 
 /*Coach-specific controls*/
-#controlPanel, #weightGraph, #gaugeContainer, #gridContainer {
+#controlPanel, #weightGraph, #gaugeContainer, #gridContainer, #newsfeed, #newsGrid{
         padding: 5px;
-        width: 88%;
-        border: ridge;
+        width: 95%;
+        /*border: ridge;*/
         /*display: inline-block;*/
         /*float: left;*/
 }
@@ -767,31 +768,35 @@ html, body {
 
 
 
-/*User's progress gauges and pie charts*/
+/*User's progress gauges and charts*/
 
 #progressGauge {
     height: 250px;
     display:inline-block;
-    border: inset;
+    background-color: #0a0a0a;
 }
 
 #actualMacroPie {
     display: inline-block;
     height: 250px;
-    border: inset;
+    background-color: #0a0a0a;
+
 }
 
 #currentMacroGauge {
     display: inline-block;
-    border: inset;
+    background-color: #0a0a0a;
     height: 250px;
     position: relative;
 }
 #currentWeekGauge {
     float: left;
     height: 245px;
+    background-color: #0a0a0a;
 }
 #panel {
+    /*border:solid;*/
+    color: #dedede;
     width: 150px;
     text-align: left;
     display: inline-block;
@@ -801,3 +806,136 @@ html, body {
     transform: translateY(-50%);
 
 }
+
+#weight-chart {
+    color: #dedede;
+}
+
+
+/*Quote carousel CSS*/
+
+/* carousel */
+#quote-carousel 
+{
+    padding: 0 10px 30px 10px;
+    background-color: #0a0a0a;
+}
+
+/* Control buttons  */
+#quote-carousel .carousel-control
+{
+  background: none;
+  color: #dedede;
+  font-size: 2.3em;
+  text-shadow: none;
+  width: 50px;
+}
+/* Previous button  */
+#quote-carousel .carousel-control.left 
+{
+  /*left: -10px;*/
+  /*border: solid;*/
+}
+/* Next button  */
+#quote-carousel .carousel-control.right 
+{
+  /*right: 10px !important;*/
+}
+/* Changes the position of the indicators */
+#quote-carousel .carousel-indicators 
+{
+  right: 50%;
+  top: auto;
+  bottom: 0px;
+  margin-right: -5px;
+}
+/* Changes the color of the indicators */
+#quote-carousel .carousel-indicators li 
+{
+  background: #DEDEDE;
+}
+#quote-carousel .carousel-indicators .active 
+{
+  background: #ff1111;
+}
+#quote-carousel img
+{
+  width: auto;
+  height: 100px;
+  border: solid;
+}
+/* End carousel */
+
+.item blockquote {
+    border-left: none; 
+    margin: 10px;
+}
+
+.item blockquote img {
+    margin-bottom: 10px;
+}
+
+/*.item blockquote p:before  {
+    content: "\f10d";
+    font-family: 'Fontawesome';
+    float: left;
+    margin-right: 10px;
+}*/
+
+.news p:before {
+    content: "KetoSavage Says - ";
+    font-weight: bold;
+}
+
+.quote {
+    font-family: Georgia, serif;
+    font-style: italic;
+}
+
+
+.quote p:before  {
+    content: "\f10d";
+    font-family: 'Fontawesome';
+    float: left;
+    margin-right: 10px;
+}
+
+
+
+
+/**
+  MEDIA QUERIES
+*/
+
+/* Small devices (tablets, 768px and up) */
+@media (min-width: 768px) { 
+    #quote-carousel 
+    {
+      margin-bottom: 0px;
+      padding: 0 40px 30px 40px;
+    }
+    
+}
+
+/* Small devices (tablets, up to 768px) */
+@media (max-width: 768px) { 
+    
+    /* Make the indicators larger for easier clicking with fingers/thumb on mobile */
+    
+    #quote-carousel .carousel-indicators {
+        bottom: 0px !important;  
+    }
+    #quote-carousel .carousel-indicators li {
+        display: inline-block;
+        margin: -10px 5px;
+        width: 7px;
+        height: 7px;
+    }
+    #quote-carousel .carousel-indicators li.active {
+        margin: -10px 5px;
+        width: 10px;
+        height: 10px;
+    }
+}
+
+/*End of quote carousel CSS*/

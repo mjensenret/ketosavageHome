@@ -1,0 +1,70 @@
+﻿@{
+    var grid = Html.DevExpress().GridView(settings =>
+    {
+        settings.Name = "ManageNewsGrid";
+        settings.CallbackRouteValues = new { Controller = "ManageNews", Action = "NewsGridPartial" };
+        settings.SettingsEditing.AddNewRowRouteValues = new { Controller = "ManageNews", Action = "NewsGridPartialAddNew" };
+        settings.SettingsEditing.UpdateRowRouteValues = new { Controller = "ManageNews", Action = "NewsGridPartialEdit" };
+        settings.Styles.AlternatingRow.Enabled = DefaultBoolean.True;
+        settings.SettingsBehavior.AllowFixedGroups = true;
+        settings.Settings.ShowGroupPanel = true;
+        settings.SettingsBehavior.AllowFocusedRow = true;
+        settings.SettingsEditing.Mode = GridViewEditingMode.EditFormAndDisplayRow;
+        settings.SettingsBehavior.ConfirmDelete = true;
+        settings.SettingsPager.FirstPageButton.Visible = true;
+        settings.SettingsPager.LastPageButton.Visible = true;
+        settings.SettingsPager.PageSizeItemSettings.Visible = true;
+        settings.SettingsPager.PageSizeItemSettings.Items = new string[] { "10", "20", "50" };
+
+        settings.CommandColumn.Visible = true;
+        settings.CommandColumn.ShowNewButtonInHeader = true;
+        settings.CommandColumn.ShowEditButton = true;
+        settings.Settings.ShowFilterRow = false;
+        settings.Settings.ShowFilterRowMenu = true;
+        settings.CommandColumn.ShowClearFilterButton = true;
+
+        settings.KeyFieldName = "Id";
+
+        settings.Columns.Add(c =>
+        {
+            c.FieldName = "Id";
+            c.Visible = false;
+        });
+        settings.Columns.Add(c =>
+        {
+            c.FieldName = "Type";
+            c.VisibleIndex = 1;
+            c.ColumnType = MVCxGridViewColumnType.ComboBox;
+            var combo = c.PropertiesEdit as ComboBoxProperties;
+            combo.DataSource = ViewBag.NewsType;
+        });
+        settings.Columns.Add(c =>
+        {
+            c.FieldName = "Headline";
+            c.VisibleIndex = 2;
+        });
+        settings.Columns.Add(c =>
+        {
+            c.FieldName = "Author";
+            c.VisibleIndex = 3;
+        });
+        settings.Columns.Add(c =>
+        {
+            c.FieldName = "IsActive";
+            c.EditFormSettings.Visible = DefaultBoolean.False;
+            c.VisibleIndex = 4;
+            c.ColumnType = MVCxGridViewColumnType.CheckBox;
+            c.Width = Unit.Pixel(100);
+        });
+        settings.Columns.Add(c =>
+        {
+            c.FieldName = "Expires";
+            c.VisibleIndex = 5;
+        });
+    });
+    if (ViewData["EditError"] != null)
+    {
+        grid.SetEditErrorText((string)ViewData["EditError"]);
+    }
+}
+@grid.Bind(Model).GetHtml()

@@ -1,0 +1,14 @@
+﻿@{
+    ViewBag.Title = "Dashboard";
+}
+
+<div id="newsfeed">
+    @Html.DevExpress().Panel(p =>
+    {
+        p.Name = "pnlNewsCarousel";
+        p.SetContent(() =>
+        {
+            Html.RenderAction("newsCarousel", "UserProgress");
+        });
+    }).GetHtml()
+</div>

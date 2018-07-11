@@ -33,6 +33,16 @@ namespace KetoSavageWeb.Controllers
             Session["UserId"] = userId;
             return View();
         }
+
+        public PartialViewResult newsCarousel()
+        {
+            var activeNews = _context.NewsModel.Where(x => x.IsActive);
+
+            var test = activeNews.Count();
+
+            return PartialView("_newsCarousel", activeNews);
+        }
+
         public PartialViewResult EnterMacroForm()
         {
             EnterMacroViewModel model = new EnterMacroViewModel();

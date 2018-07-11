@@ -561,6 +561,11 @@
     <Content Include="Scripts\globalize\message.min.js" />
     <Content Include="Scripts\globalize\number.js" />
     <Content Include="Scripts\globalize\number.min.js" />
+    <None Include="Scripts\jquery-3.3.1.intellisense.js" />
+    <Content Include="Scripts\jquery-3.3.1.js" />
+    <Content Include="Scripts\jquery-3.3.1.min.js" />
+    <Content Include="Scripts\jquery-3.3.1.slim.js" />
+    <Content Include="Scripts\jquery-3.3.1.slim.min.js" />
     <Content Include="Scripts\jquery.unobtrusive-ajax.js" />
     <Content Include="Scripts\jquery.unobtrusive-ajax.min.js" />
     <Content Include="Scripts\jquery.validate.js" />
@@ -728,6 +733,8 @@
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
+    <Content Include="Scripts\jquery-3.3.1.slim.min.map" />
+    <Content Include="Scripts\jquery-3.3.1.min.map" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
     <Content Include="Scripts\localization\dx.all.de.js" />
     <Content Include="Scripts\localization\dx.all.ja.js" />
@@ -850,6 +857,11 @@
     <Content Include="Views\ClientCharts\_clientPastWeekMacroChart.cshtml" />
     <Content Include="Views\ClientCharts\_clientCurrentWeekBarGauge.cshtml" />
     <Content Include="Views\ClientCharts\_clientProgramGrid.cshtml" />
+    <Content Include="Views\UserProgress\_newsCarousel.cshtml" />
+    <Content Include="Views\UserPrograms\_manageNewsfeed.cshtml" />
+    <Content Include="Views\ManageNews\Index.cshtml" />
+    <Content Include="Views\ManageNews\_newsGrid.cshtml" />
+    <Content Include="Views\ClientDashboard\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -870,8 +882,10 @@
     <Compile Include="Controllers\Abstract\KSBaseController.cs" />
     <Compile Include="Controllers\Abstract\KSUserManagedController.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\ClientDashboardController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\ManageNewsController.cs" />
     <Compile Include="Controllers\UserProgramsController.cs" />
     <Compile Include="Controllers\ManageUsersController.cs" />
     <Compile Include="Controllers\ProgramsController.cs" />
@@ -948,12 +962,21 @@
     <Compile Include="Migrations\201804080021558_AddRefeedBool.Designer.cs">
       <DependentUpon>201804080021558_AddRefeedBool.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201807092103241_addNewsFeed.cs" />
+    <Compile Include="Migrations\201807092103241_addNewsFeed.Designer.cs">
+      <DependentUpon>201807092103241_addNewsFeed.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201807092123340_modifyNewsfeed.cs" />
+    <Compile Include="Migrations\201807092123340_modifyNewsfeed.Designer.cs">
+      <DependentUpon>201807092123340_modifyNewsfeed.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Abstract\UserManaged.cs" />
     <Compile Include="Models\AccountModels.cs" />
     <Compile Include="Models\ApplicationUser.cs" />
     <Compile Include="Models\DailyProgress.cs" />
     <Compile Include="Models\DateModels.cs" />
+    <Compile Include="Models\NewsModel.cs" />
     <Compile Include="Models\UserPrograms.cs" />
     <Compile Include="Repositories\DateRepository.cs" />
     <Compile Include="Repositories\UserProgramRepository.cs" />
@@ -1024,6 +1047,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201804080021558_AddRefeedBool.resx">
       <DependentUpon>201804080021558_AddRefeedBool.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201807092103241_addNewsFeed.resx">
+      <DependentUpon>201807092103241_addNewsFeed.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201807092123340_modifyNewsfeed.resx">
+      <DependentUpon>201807092123340_modifyNewsfeed.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

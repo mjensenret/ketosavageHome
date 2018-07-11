@@ -7,6 +7,7 @@
   <item Text="Client Dashboard" NavigateUrl="~/" Roles="Administrator;Manager;Coach" />
   <item Text="Manage Client Programs" NavigateUrl="~/UserPrograms" Roles="Administrator;Manager;Coach" />
   <item Text="Manage Users" NavigateUrl="~/ManageUsers" Roles="Administrator;Manager;Coach" />
+  <item Text="Manage News" NavigateUrl="~/ManageNews" Roles="Administrator;Manager;Coach" />
   
 
   <item Text="Manage Program Templates" NavigateUrl="~/Programs" Roles="Administrator;Manager;Coach"  />
