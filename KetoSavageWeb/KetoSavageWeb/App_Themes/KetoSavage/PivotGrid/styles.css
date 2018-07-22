@@ -1,7 +1,7 @@
 .dxpgControl_KetoSavage, .dxpgCustForm_KetoSavage
 {
     color: #484848;
-    font: 14px 'Open Sans', Helvetica, 'Droid Sans', Tahoma, Geneva, sans-serif;
+    font: 14px 'Roboto Regular', Helvetica, 'Droid Sans', Tahoma, Geneva, sans-serif;
     background-color: white;
 }
 .dxpgCustForm_KetoSavage
@@ -41,7 +41,7 @@ div.dxpgMainTable_KetoSavage
     cursor: pointer;
     white-space: nowrap;
     text-align: left;
-    font: 14px 'Open Sans', Helvetica, 'Droid Sans', Tahoma, Geneva, sans-serif;font-weight:bold;
+    font: 14px 'Roboto Medium', Helvetica, 'Droid Sans', Tahoma, Geneva, sans-serif;
     font-size: 1em;
 }
 .dxpgHeaderTable_KetoSavage,
@@ -51,7 +51,7 @@ div.dxpgMainTable_KetoSavage
     color: black;
     font-weight: normal;
     border: 1px solid #dfdfdf;
-    padding: 4px 8px;
+    padding: 4px 18px;
     width: 100%;
     border-collapse: separate !important;
     box-shadow: none;
@@ -256,7 +256,7 @@ tr:first-child > .dxpgFilterItem_KetoSavage
 .dxpgTopPager_KetoSavage,
 .dxpgBottomPager_KetoSavage
 {
-    padding: 3px 0 1px;
+    padding: 9px 0 9px;
 }
 .dxpgBottomPager_KetoSavage
 {
@@ -314,7 +314,7 @@ tr:first-child > .dxpgFilterItem_KetoSavage
 }
 .dxpgPrefilterPanelLink_KetoSavage
 {
-    color: #000000;
+    color: #DEDEDE;
     text-decoration: none;
 }
 .dxpgPrefilterPanelLink_KetoSavage:hover
@@ -457,7 +457,7 @@ tr:first-child > .dxpgFilterItem_KetoSavage
     display: block;
     height: 100%;
     padding: 1px;
-    background: #000000;
+    background: #FFFFFF;
     overflow: hidden;
     -webkit-user-select: none;
     -khtml-user-select: none;
@@ -470,7 +470,7 @@ tr:first-child > .dxpgFilterItem_KetoSavage
 {
     position: relative;
     display: block;
-    background: #000000;
+    background: #FFFFFF;
     height: 100%;
     padding: 0px;
     overflow-x: hidden;
@@ -571,7 +571,7 @@ div.dxpgFLTextImgDiv_KetoSavage
 .dxpgLoadingPanel_KetoSavage
 {
     background-color: white;
-    font: 14px 'Open Sans', Helvetica, 'Droid Sans', Tahoma, Geneva, sans-serif;
+    font: 14px 'Roboto Regular', Helvetica, 'Droid Sans', Tahoma, Geneva, sans-serif;
     color: #484848;
     -moz-box-shadow: 0 2px 4px 0 rgba(0,0,0,0.16), 0 2px 8px 0 rgba(0,0,0,0.12);
     -webkit-box-shadow: 0 2px 4px 0 rgba(0,0,0,0.16), 0 2px 8px 0 rgba(0,0,0,0.12);
@@ -592,7 +592,7 @@ div.dxpgFLTextImgDiv_KetoSavage
     -khtml-border-radius: 50%;
     border-radius: 50%;
     animation: dxLoadSpinSys 1s linear infinite;
-    border: 4px solid #000000;
+    border: 4px solid #DEDEDE;
     border-top: 4px solid #EEE;
     width: 24px;
     height: 24px;
@@ -630,9 +630,5 @@ html.dxIE.dxBrowserVersion-9 .dxpgLoadingPanel_KetoSavage .dxlp-loadingImage
 {
     content: "dxRippleTarget";
     display: none;
-}
-.dxPivotGrid_pgGroupSeparator_KetoSavage
-{
-    width: 8px !important;
 }
 

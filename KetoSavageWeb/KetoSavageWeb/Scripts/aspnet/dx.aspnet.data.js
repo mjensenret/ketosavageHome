@@ -1,9 +1,9 @@
-// Version: 1.4.5
+// Version: 1.4.7
 // https://github.com/DevExpress/DevExtreme.AspNet.Data
 // Copyright (c) Developer Express Inc.
 
 // jshint strict: true, undef: true, unused: true, eqeqeq: true
-/* global DevExpress, jQuery, define */
+/* global DevExpress, jQuery, define, module, require */
 
 (function(factory) {
     "use strict";
@@ -16,6 +16,12 @@
                 require("devextreme/data/utils")
             );
         });
+    } else if (typeof module === "object" && module.exports) {
+        module.exports = factory(
+            require("jquery"),
+            require("devextreme/data/custom_store"),
+            require("devextreme/data/utils")
+        );
     } else {
         DevExpress.data.AspNet = factory(
             jQuery,

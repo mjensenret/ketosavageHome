@@ -77,6 +77,56 @@ namespace KetoSavageWeb.Controllers
             return PartialView("_newsGrid", model);
         }
 
+        
+        public async Task<ActionResult> NewsGridPartialEdit(NewsModel item)
+        {
+            if (ModelState.IsValid)
+            {
+                var editNews = _context.NewsModel.Where(x => x.Id == item.Id).FirstOrDefault();
+
+                if(editNews == null)
+                {
+                    return HttpNotFound();
+                }
+
+                try
+                {
+                    editNews.Headline = item.Headline;
+                    editNews.IsActive = item.IsActive;
+                    editNews.Author = item.Author;
+                    editNews.Expires = item.Expires;
+
+                    _context.SaveChanges();
+
+                    return RedirectToAction("Index");
+                }
+                catch (Exception e)
+                {
+                    ViewBag.ErrorMessage = e.Message.First();
+                    ViewData["EditError"] = e.Message.First();
+                }
+            }
+            else
+            {
+                ViewData["EditError"] = "Please correct all errors";
+            }
+
+            ViewBag.NewsType = getTypeList();
+
+            var model = _context.NewsModel.Where(x => x.IsActive);
+
+            return PartialView("_newsGrid", model);
+        }
+
+        public PartialViewResult newsCarousel()
+        {
+            var activeNews = _context.NewsModel.Where(x => x.IsActive);
+
+            var test = activeNews.Count();
+
+            return PartialView("_newsCarousel", activeNews);
+        }
+
         private SelectList getTypeList()
         {
             var types = new SelectList(

@@ -1,1646 +1,210 @@
-.dx-acc-r .dxGridView_CTClearFilter_KetoSavage:before,
-.dx-acc-r .dxGridView_CTClearFilterDisabled_KetoSavage:before,
-.dx-acc-r .dxGridView_CTClearGrouping_KetoSavage:before,
-.dx-acc-r .dxGridView_CTClearGroupingDisabled_KetoSavage:before,
-.dx-acc-r .dxGridView_CTCollapseDetailRow_KetoSavage:before,
-.dx-acc-r .dxGridView_CTCollapseDetailRowDisabled_KetoSavage:before,
-.dx-acc-r .dxGridView_CTCollapseRow_KetoSavage:before,
-.dx-acc-r .dxGridView_CTCollapseRowDisabled_KetoSavage:before,
-.dx-acc-r .dxGridView_CTDeleteRow_KetoSavage:before,
-.dx-acc-r .dxGridView_CTDeleteRowDisabled_KetoSavage:before,
-.dx-acc-r .dxGridView_CTEditRow_KetoSavage:before,
-.dx-acc-r .dxGridView_CTEditRowDisabled_KetoSavage:before,
-.dx-acc-r .dxGridView_CTExpandDetailRow_KetoSavage:before,
-.dx-acc-r .dxGridView_CTExpandDetailRowDisabled_KetoSavage:before,
-.dx-acc-r .dxGridView_CTExpandRow_KetoSavage:before,
-.dx-acc-r .dxGridView_CTExpandRowDisabled_KetoSavage:before,
-.dx-acc-r .dxGridView_CTExportCsv_KetoSavage:before,
-.dx-acc-r .dxGridView_CTExportCsvDisabled_KetoSavage:before,
-.dx-acc-r .dxGridView_CTExportDocx_KetoSavage:before,
-.dx-acc-r .dxGridView_CTExportDocxDisabled_KetoSavage:before,
-.dx-acc-r .dxGridView_CTExportPdf_KetoSavage:before,
-.dx-acc-r .dxGridView_CTExportPdfDisabled_KetoSavage:before,
-.dx-acc-r .dxGridView_CTExportRtf_KetoSavage:before,
-.dx-acc-r .dxGridView_CTExportRtfDisabled_KetoSavage:before,
-.dx-acc-r .dxGridView_CTExportXls_KetoSavage:before,
-.dx-acc-r .dxGridView_CTExportXlsDisabled_KetoSavage:before,
-.dx-acc-r .dxGridView_CTExportXlsx_KetoSavage:before,
-.dx-acc-r .dxGridView_CTExportXlsxDisabled_KetoSavage:before,
-.dx-acc-r .dxGridView_CTFullCollapse_KetoSavage:before,
-.dx-acc-r .dxGridView_CTFullCollapseDisabled_KetoSavage:before,
-.dx-acc-r .dxGridView_CTFullExpand_KetoSavage:before,
-.dx-acc-r .dxGridView_CTFullExpandDisabled_KetoSavage:before,
-.dx-acc-r .dxGridView_CTNewRow_KetoSavage:before,
-.dx-acc-r .dxGridView_CTNewRowDisabled_KetoSavage:before,
-.dx-acc-r .dxGridView_CTRefresh_KetoSavage:before,
-.dx-acc-r .dxGridView_CTRefreshDisabled_KetoSavage:before,
-.dx-acc-r .dxGridView_CTShowCustDialog_KetoSavage:before,
-.dx-acc-r .dxGridView_CTShowCustDialogDisabled_KetoSavage:before,
-.dx-acc-r .dxGridView_CTShowCustomizationWindow_KetoSavage:before,
-.dx-acc-r .dxGridView_CTShowCustomizationWindowDisabled_KetoSavage:before,
-.dx-acc-r .dxGridView_CTShowFilterEditor_KetoSavage:before,
-.dx-acc-r .dxGridView_CTShowFilterEditorDisabled_KetoSavage:before,
-.dx-acc-r .dxGridView_CTShowGroupPanel_KetoSavage:before,
-.dx-acc-r .dxGridView_CTShowGroupPanelDisabled_KetoSavage:before,
-.dx-acc-r .dxGridView_CTShowSearchPanel_KetoSavage:before,
-.dx-acc-r .dxGridView_CTShowSearchPanelDisabled_KetoSavage:before,
-.dx-acc-r .dxGridView_gvCellError_KetoSavage:before,
-.dx-acc-r .dxGridView_gvCMClearFilter_KetoSavage:before,
-.dx-acc-r .dxGridView_gvCMClearFilterDisabled_KetoSavage:before,
-.dx-acc-r .dxGridView_gvCMClearGrouping_KetoSavage:before,
-.dx-acc-r .dxGridView_gvCMClearGroupingDisabled_KetoSavage:before,
-.dx-acc-r .dxGridView_gvCMCollapseDetailRow_KetoSavage:before,
-.dx-acc-r .dxGridView_gvCMCollapseDetailRowDisabled_KetoSavage:before,
-.dx-acc-r .dxGridView_gvCMCollapseRow_KetoSavage:before,
-.dx-acc-r .dxGridView_gvCMCollapseRowDisabled_KetoSavage:before,
-.dx-acc-r .dxGridView_gvCMDeleteRow_KetoSavage:before,
-.dx-acc-r .dxGridView_gvCMDeleteRowDisabled_KetoSavage:before,
-.dx-acc-r .dxGridView_gvCMEditRow_KetoSavage:before,
-.dx-acc-r .dxGridView_gvCMEditRowDisabled_KetoSavage:before,
-.dx-acc-r .dxGridView_gvCMExpandDetailRow_KetoSavage:before,
-.dx-acc-r .dxGridView_gvCMExpandDetailRowDisabled_KetoSavage:before,
-.dx-acc-r .dxGridView_gvCMExpandRow_KetoSavage:before,
-.dx-acc-r .dxGridView_gvCMExpandRowDisabled_KetoSavage:before,
-.dx-acc-r .dxGridView_gvCMExportCsv_KetoSavage:before,
-.dx-acc-r .dxGridView_gvCMExportCsvDisabled_KetoSavage:before,
-.dx-acc-r .dxGridView_gvCMExportDocx_KetoSavage:before,
-.dx-acc-r .dxGridView_gvCMExportDocxDisabled_KetoSavage:before,
-.dx-acc-r .dxGridView_gvCMExportPdf_KetoSavage:before,
-.dx-acc-r .dxGridView_gvCMExportPdfDisabled_KetoSavage:before,
-.dx-acc-r .dxGridView_gvCMExportRtf_KetoSavage:before,
-.dx-acc-r .dxGridView_gvCMExportRtfDisabled_KetoSavage:before,
-.dx-acc-r .dxGridView_gvCMExportXls_KetoSavage:before,
-.dx-acc-r .dxGridView_gvCMExportXlsDisabled_KetoSavage:before,
-.dx-acc-r .dxGridView_gvCMExportXlsx_KetoSavage:before,
-.dx-acc-r .dxGridView_gvCMExportXlsxDisabled_KetoSavage:before,
-.dx-acc-r .dxGridView_gvCMFullCollapse_KetoSavage:before,
-.dx-acc-r .dxGridView_gvCMFullCollapseDisabled_KetoSavage:before,
-.dx-acc-r .dxGridView_gvCMFullExpand_KetoSavage:before,
-.dx-acc-r .dxGridView_gvCMFullExpandDisabled_KetoSavage:before,
-.dx-acc-r .dxGridView_gvCMGroupByColumn_KetoSavage:before,
-.dx-acc-r .dxGridView_gvCMGroupByColumnDisabled_KetoSavage:before,
-.dx-acc-r .dxGridView_gvCMNewRow_KetoSavage:before,
-.dx-acc-r .dxGridView_gvCMNewRowDisabled_KetoSavage:before,
-.dx-acc-r .dxGridView_gvCMRefresh_KetoSavage:before,
-.dx-acc-r .dxGridView_gvCMRefreshDisabled_KetoSavage:before,
-.dx-acc-r .dxGridView_gvCMSearchPanel_KetoSavage:before,
-.dx-acc-r .dxGridView_gvCMSearchPanelDisabled_KetoSavage:before,
-.dx-acc-r .dxGridView_gvCMShowCustDialog_KetoSavage:before,
-.dx-acc-r .dxGridView_gvCMShowCustDialogDisabled_KetoSavage:before,
-.dx-acc-r .dxGridView_gvCMShowCustomizationWindow_KetoSavage:before,
-.dx-acc-r .dxGridView_gvCMShowCustomizationWindowDisabled_KetoSavage:before,
-.dx-acc-r .dxGridView_gvCMShowFilterEditor_KetoSavage:before,
-.dx-acc-r .dxGridView_gvCMShowFilterEditorDisabled_KetoSavage:before,
-.dx-acc-r .dxGridView_gvCMShowGroupPanel_KetoSavage:before,
-.dx-acc-r .dxGridView_gvCMShowGroupPanelDisabled_KetoSavage:before,
-.dx-acc-r .dxGridView_gvCMShowSearchPanel_KetoSavage:before,
-.dx-acc-r .dxGridView_gvCMShowSearchPanelDisabled_KetoSavage:before,
-.dx-acc-r .dxGridView_gvCMSortAscending_KetoSavage:before,
-.dx-acc-r .dxGridView_gvCMSortAscendingDisabled_KetoSavage:before,
-.dx-acc-r .dxGridView_gvCMSortDescending_KetoSavage:before,
-.dx-acc-r .dxGridView_gvCMSortDescendingDisabled_KetoSavage:before,
-.dx-acc-r .dxGridView_gvCMSummaryAverage_KetoSavage:before,
-.dx-acc-r .dxGridView_gvCMSummaryAverageDisabled_KetoSavage:before,
-.dx-acc-r .dxGridView_gvCMSummaryCount_KetoSavage:before,
-.dx-acc-r .dxGridView_gvCMSummaryCountDisabled_KetoSavage:before,
-.dx-acc-r .dxGridView_gvCMSummaryMax_KetoSavage:before,
-.dx-acc-r .dxGridView_gvCMSummaryMaxDisabled_KetoSavage:before,
-.dx-acc-r .dxGridView_gvCMSummaryMin_KetoSavage:before,
-.dx-acc-r .dxGridView_gvCMSummaryMinDisabled_KetoSavage:before,
-.dx-acc-r .dxGridView_gvCMSummarySum_KetoSavage:before,
-.dx-acc-r .dxGridView_gvCMSummarySumDisabled_KetoSavage:before,
-.dx-acc-r .dxGridView_gvCMUngroupColumn_KetoSavage:before,
-.dx-acc-r .dxGridView_gvCOApply_KetoSavage:before,
-.dx-acc-r .dxGridView_gvCOApplyDisabled_KetoSavage:before,
-.dx-acc-r .dxGridView_gvCOClearFilter_KetoSavage:before,
-.dx-acc-r .dxGridView_gvCOClearFilterDisabled_KetoSavage:before,
-.dx-acc-r .dxGridView_gvCOClose_KetoSavage:before,
-.dx-acc-r .dxGridView_gvCOColumnDrag_KetoSavage:before,
-.dx-acc-r .dxGridView_gvCOColumnDragDisabled_KetoSavage:before,
-.dx-acc-r .dxGridView_gvCOColumnGroup_KetoSavage:before,
-.dx-acc-r .dxGridView_gvCOColumnGroupDisabled_KetoSavage:before,
-.dx-acc-r .dxGridView_gvCOColumnHide_KetoSavage:before,
-.dx-acc-r .dxGridView_gvCOColumnHideDisabled_KetoSavage:before,
-.dx-acc-r .dxGridView_gvCOColumnRemove_KetoSavage:before,
-.dx-acc-r .dxGridView_gvCOColumnRemoveDisabled_KetoSavage:before,
-.dx-acc-r .dxGridView_gvCOColumnShow_KetoSavage:before,
-.dx-acc-r .dxGridView_gvCOColumnShowDisabled_KetoSavage:before,
-.dx-acc-r .dxGridView_gvCOColumnSort_KetoSavage:before,
-.dx-acc-r .dxGridView_gvCOColumnSortDisabled_KetoSavage:before,
-.dx-acc-r .dxGridView_gvCOColumnSortDown_KetoSavage:before,
-.dx-acc-r .dxGridView_gvCOColumnSortDownDisabled_KetoSavage:before,
-.dx-acc-r .dxGridView_gvCOColumnSortUp_KetoSavage:before,
-.dx-acc-r .dxGridView_gvCOColumnSortUpDisabled_KetoSavage:before,
-.dx-acc-r .dxGridView_gvCOColumnUngroup_KetoSavage:before,
-.dx-acc-r .dxGridView_gvCOColumnUngroupDisabled_KetoSavage:before,
-.dx-acc-r .dxGridView_gvCOColumnUnsort_KetoSavage:before,
-.dx-acc-r .dxGridView_gvCOColumnUnsortDisabled_KetoSavage:before,
-.dx-acc-r .dxGridView_gvCODragAreaCollapse_KetoSavage:before,
-.dx-acc-r .dxGridView_gvCODragAreaExpand_KetoSavage:before,
-.dx-acc-r .dxGridView_gvCOFilterCollapse_KetoSavage:before,
-.dx-acc-r .dxGridView_gvCOFilterExpand_KetoSavage:before,
-.dx-acc-r .dxGridView_gvCollapsedButton_KetoSavage:before,
-.dx-acc-r .dxGridView_gvCollapsedButtonRtl_KetoSavage:before,
-.dx-acc-r .dxGridView_gvDetailCollapsedButton_KetoSavage:before,
-.dx-acc-r .dxGridView_gvDetailCollapsedButtonRtl_KetoSavage:before,
-.dx-acc-r .dxGridView_gvDetailExpandedButton_KetoSavage:before,
-.dx-acc-r .dxGridView_gvDetailExpandedButtonRtl_KetoSavage:before,
-.dx-acc-r .dxGridView_gvDragAndDropArrowDown_KetoSavage:before,
-.dx-acc-r .dxGridView_gvDragAndDropArrowLeft_KetoSavage:before,
-.dx-acc-r .dxGridView_gvDragAndDropArrowRight_KetoSavage:before,
-.dx-acc-r .dxGridView_gvDragAndDropArrowUp_KetoSavage:before,
-.dx-acc-r .dxGridView_gvDragAndDropHideColumn_KetoSavage:before,
-.dx-acc-r .dxGridView_gvExpandedButton_KetoSavage:before,
-.dx-acc-r .dxGridView_gvExpandedButtonRtl_KetoSavage:before,
-.dx-acc-r .dxGridView_gvFilterRowButton_KetoSavage:before,
-.dx-acc-r .dxGridView_gvFixedGroupRow_KetoSavage:before,
-.dx-acc-r .dxGridView_gvHeaderFilter_KetoSavage:before,
-.dx-acc-r .dxGridView_gvHeaderFilterActive_KetoSavage:before,
-.dx-acc-r .dxGridView_gvHeaderSortDown_KetoSavage:before,
-.dx-acc-r .dxGridView_gvHeaderSortUp_KetoSavage:before,
-.dx-acc-r .dxGridView_gvHideAdaptiveDetailButton_KetoSavage:before,
-.dx-acc-r .dxGridView_gvParentGroupRows_KetoSavage:before,
-.dx-acc-r .dxGridView_gvShowAdaptiveDetailButton_KetoSavage:before,
-.dx-acc-r .dxGridView_WindowResizer_KetoSavage:before,
-.dx-acc-r .dxGridView_WindowResizerRtl_KetoSavage:before,
-.dx-acc-r .dxgvADSB:hover .dxGridView_gvShowAdaptiveDetailButton_KetoSavage:before,
-.dx-acc-r .dxgvFocusedGroupRow_KetoSavage .dxGridView_gvCollapsedButton_KetoSavage:before,
-.dx-acc-r .dxgvFocusedGroupRow_KetoSavage .dxGridView_gvCollapsedButtonRtl_KetoSavage:before,
-.dx-acc-r .dxgvFocusedGroupRow_KetoSavage .dxGridView_gvDetailCollapsedButton_KetoSavage:before,
-.dx-acc-r .dxgvFocusedGroupRow_KetoSavage .dxGridView_gvDetailCollapsedButtonRtl_KetoSavage:before,
-.dx-acc-r .dxgvFocusedGroupRow_KetoSavage .dxGridView_gvDetailExpandedButton_KetoSavage:before,
-.dx-acc-r .dxgvFocusedGroupRow_KetoSavage .dxGridView_gvDetailExpandedButtonRtl_KetoSavage:before,
-.dx-acc-r .dxgvFocusedGroupRow_KetoSavage .dxGridView_gvExpandedButton_KetoSavage:before,
-.dx-acc-r .dxgvFocusedGroupRow_KetoSavage .dxGridView_gvExpandedButtonRtl_KetoSavage:before,
-.dx-acc-r .dxgvFocusedRow_KetoSavage .dxGridView_gvShowAdaptiveDetailButton_KetoSavage:before,
-.dx-acc-r .dxgvFocusedRow_KetoSavage .dxgvADSB:hover [class^='dxGridView_gvShowAdaptiveDeta']:before,
-.dx-acc-r .dxm-checked .dxGridView_CTShowCustomizationWindow_KetoSavage:before,
-.dx-acc-r .dxm-checked .dxGridView_CTShowGroupPanel_KetoSavage:before,
-.dx-acc-r .dxm-checked .dxGridView_CTShowSearchPanel_KetoSavage:before,
-.dx-acc-r .dxm-checked .dxGridView_gvCMClearFilter_KetoSavage:before,
-.dx-acc-r .dxm-checked .dxGridView_gvCMClearGrouping_KetoSavage:before,
-.dx-acc-r .dxm-checked .dxGridView_gvCMCollapseDetailRow_KetoSavage:before,
-.dx-acc-r .dxm-checked .dxGridView_gvCMCollapseRow_KetoSavage:before,
-.dx-acc-r .dxm-checked .dxGridView_gvCMDeleteRow_KetoSavage:before,
-.dx-acc-r .dxm-checked .dxGridView_gvCMEditRow_KetoSavage:before,
-.dx-acc-r .dxm-checked .dxGridView_gvCMExpandDetailRow_KetoSavage:before,
-.dx-acc-r .dxm-checked .dxGridView_gvCMExpandRow_KetoSavage:before,
-.dx-acc-r .dxm-checked .dxGridView_gvCMFullCollapse_KetoSavage:before,
-.dx-acc-r .dxm-checked .dxGridView_gvCMFullExpand_KetoSavage:before,
-.dx-acc-r .dxm-checked .dxGridView_gvCMGroupByColumn_KetoSavage:before,
-.dx-acc-r .dxm-checked .dxGridView_gvCMNewRow_KetoSavage:before,
-.dx-acc-r .dxm-checked .dxGridView_gvCMRefresh_KetoSavage:before,
-.dx-acc-r .dxm-checked .dxGridView_gvCMSearchPanel_KetoSavage:before,
-.dx-acc-r .dxm-checked .dxGridView_gvCMShowCustomizationWindow_KetoSavage:before,
-.dx-acc-r .dxm-checked .dxGridView_gvCMShowFilterEditor_KetoSavage:before,
-.dx-acc-r .dxm-checked .dxGridView_gvCMShowGroupPanel_KetoSavage:before,
-.dx-acc-r .dxm-checked .dxGridView_gvCMShowSearchPanel_KetoSavage:before,
-.dx-acc-r .dxm-checked .dxGridView_gvCMSortAscending_KetoSavage:before,
-.dx-acc-r .dxm-checked .dxGridView_gvCMSortDescending_KetoSavage:before,
-.dx-acc-r .dxm-checked .dxGridView_gvCMSummaryAverage_KetoSavage:before,
-.dx-acc-r .dxm-checked .dxGridView_gvCMSummaryCount_KetoSavage:before,
-.dx-acc-r .dxm-checked .dxGridView_gvCMSummaryMax_KetoSavage:before,
-.dx-acc-r .dxm-checked .dxGridView_gvCMSummaryMin_KetoSavage:before,
-.dx-acc-r .dxm-checked .dxGridView_gvCMSummarySum_KetoSavage:before,
-.dx-acc-r .dxm-checked .dxGridView_gvCMUngroupColumn_KetoSavage:before
-
-{
-    content: url('sprite.svg');
-
-}
-.dx-acc-r .dxGridView_CTClearFilter_KetoSavage:before
-
-{
-    left: -136px;
-    top: -84px;
-
-}
-.dx-acc-r .dxGridView_CTClearFilterDisabled_KetoSavage:before
-
-{
-    left: -85px;
-    top: -118px;
-
-}
-.dx-acc-r .dxGridView_CTClearGrouping_KetoSavage:before
-
-{
-    left: -204px;
-    top: -84px;
-
-}
-.dx-acc-r .dxGridView_CTClearGroupingDisabled_KetoSavage:before
-
-{
-    left: -68px;
-    top: -152px;
-
-}
-.dx-acc-r .dxGridView_CTCollapseDetailRow_KetoSavage:before
-
-{
-    left: -85px;
-    top: -101px;
-
-}
-.dx-acc-r .dxGridView_CTCollapseDetailRowDisabled_KetoSavage:before
-
-{
-    left: -204px;
-    top: -152px;
-
-}
-.dx-acc-r .dxGridView_CTCollapseRow_KetoSavage:before
-
-{
-    left: -143px;
-    top: -46px;
-
-}
-.dx-acc-r .dxGridView_CTCollapseRowDisabled_KetoSavage:before
-
-{
-    left: -17px;
-    top: -84px;
-
-}
-.dx-acc-r .dxGridView_CTDeleteRow_KetoSavage:before
-
-{
-    left: -255px;
-    top: -152px;
-
-}
-.dx-acc-r .dxGridView_CTDeleteRowDisabled_KetoSavage:before
-
-{
-    left: -170px;
-    top: -135px;
-
-}
-.dx-acc-r .dxGridView_CTEditRow_KetoSavage:before
-
-{
-    left: -17px;
-    top: -169px;
-
-}
-.dx-acc-r .dxGridView_CTEditRowDisabled_KetoSavage:before
-
-{
-    left: -102px;
-    top: -186px;
-
-}
-.dx-acc-r .dxGridView_CTExpandDetailRow_KetoSavage:before
-
-{
-    left: -187px;
-    top: -152px;
-
-}
-.dx-acc-r .dxGridView_CTExpandDetailRowDisabled_KetoSavage:before
-
-{
-    left: -51px;
-    top: -118px;
-
-}
-.dx-acc-r .dxGridView_CTExpandRow_KetoSavage:before
-
-{
-    left: -255px;
-    top: -186px;
-
-}
-.dx-acc-r .dxGridView_CTExpandRowDisabled_KetoSavage:before
-
-{
-    left: -109px;
-    top: -46px;
-
-}
-.dx-acc-r .dxGridView_CTExportCsv_KetoSavage:before
-
-{
-    left: 0px;
-    top: -118px;
-
-}
-.dx-acc-r .dxGridView_CTExportCsvDisabled_KetoSavage:before
-
-{
-    left: -170px;
-    top: -169px;
-
-}
-.dx-acc-r .dxGridView_CTExportDocx_KetoSavage:before
-
-{
-    left: -255px;
-    top: -84px;
-
-}
-.dx-acc-r .dxGridView_CTExportDocxDisabled_KetoSavage:before
-
-{
-    left: -34px;
-    top: -135px;
-
-}
-.dx-acc-r .dxGridView_CTExportPdf_KetoSavage:before
-
-{
-    left: -187px;
-    top: -118px;
-
-}
-.dx-acc-r .dxGridView_CTExportPdfDisabled_KetoSavage:before
-
-{
-    left: -34px;
-    top: -169px;
-
-}
-.dx-acc-r .dxGridView_CTExportRtf_KetoSavage:before
-
-{
-    left: -187px;
-    top: -186px;
-
-}
-.dx-acc-r .dxGridView_CTExportRtfDisabled_KetoSavage:before
-
-{
-    left: -119px;
-    top: -169px;
-
-}
-.dx-acc-r .dxGridView_CTExportXls_KetoSavage:before
-
-{
-    left: -34px;
-    top: -152px;
-
-}
-.dx-acc-r .dxGridView_CTExportXlsDisabled_KetoSavage:before
-
-{
-    left: -92px;
-    top: -46px;
-
-}
-.dx-acc-r .dxGridView_CTExportXlsx_KetoSavage:before
-
-{
-    left: -187px;
-    top: -135px;
-
-}
-.dx-acc-r .dxGridView_CTExportXlsxDisabled_KetoSavage:before
-
-{
-    left: -228px;
-    top: -46px;
-
-}
-.dx-acc-r .dxGridView_CTFullCollapse_KetoSavage:before
-
-{
-    left: -204px;
-    top: -169px;
-
-}
-.dx-acc-r .dxGridView_CTFullCollapseDisabled_KetoSavage:before
-
-{
-    left: 0px;
-    top: -169px;
-
-}
-.dx-acc-r .dxGridView_CTFullExpand_KetoSavage:before
-
-{
-    left: -238px;
-    top: -135px;
-
-}
-.dx-acc-r .dxGridView_CTFullExpandDisabled_KetoSavage:before
-
-{
-    left: -153px;
-    top: -135px;
-
-}
-.dx-acc-r .dxGridView_CTNewRow_KetoSavage:before
-
-{
-    left: -136px;
-    top: -203px;
-
-}
-.dx-acc-r .dxGridView_CTNewRowDisabled_KetoSavage:before
-
-{
-    left: -255px;
-    top: -101px;
-
-}
-.dx-acc-r .dxGridView_CTRefresh_KetoSavage:before
-
-{
-    left: -34px;
-    top: -203px;
-
-}
-.dx-acc-r .dxGridView_CTRefreshDisabled_KetoSavage:before
-
-{
-    left: -102px;
-    top: -135px;
-
-}
-.dx-acc-r .dxGridView_CTShowCustDialog_KetoSavage:before
-
-{
-    left: -119px;
-    top: -203px;
-
-}
-.dx-acc-r .dxGridView_CTShowCustDialogDisabled_KetoSavage:before
-
-{
-    left: -194px;
-    top: -46px;
-
-}
-.dx-acc-r .dxGridView_CTShowCustomizationWindow_KetoSavage:before
-
-{
-    left: -238px;
-    top: -101px;
-
-}
-.dx-acc-r .dxGridView_CTShowCustomizationWindowDisabled_KetoSavage:before
-
-{
-    left: -68px;
-    top: -135px;
-
-}
-.dx-acc-r .dxGridView_CTShowFilterEditor_KetoSavage:before
-
-{
-    left: -203px;
-    top: -69px;
-
-}
-.dx-acc-r .dxGridView_CTShowFilterEditorDisabled_KetoSavage:before
-
-{
-    left: -38px;
-    top: -69px;
-
-}
-.dx-acc-r .dxGridView_CTShowGroupPanel_KetoSavage:before
-
-{
-    left: -34px;
-    top: -118px;
-
-}
-.dx-acc-r .dxGridView_CTShowGroupPanelDisabled_KetoSavage:before
-
-{
-    left: 0px;
-    top: -203px;
-
-}
-.dx-acc-r .dxGridView_CTShowSearchPanel_KetoSavage:before
-
-{
-    left: -248px;
-    top: -69px;
-
-}
-.dx-acc-r .dxGridView_CTShowSearchPanelDisabled_KetoSavage:before
-
-{
-    left: -221px;
-    top: -118px;
-
-}
-.dx-acc-r .dxGridView_gvCellError_KetoSavage:before
-
-{
-    left: -23px;
-    top: -69px;
-
-}
-.dx-acc-r .dxGridView_gvCMClearFilter_KetoSavage:before
-
-{
-    left: -68px;
-    top: -203px;
-
-}
-.dx-acc-r .dxGridView_gvCMClearFilterDisabled_KetoSavage:before
-
-{
-    left: -153px;
-    top: -101px;
-
-}
-.dx-acc-r .dxGridView_gvCMClearGrouping_KetoSavage:before
-
-{
-    left: -17px;
-    top: -203px;
-
-}
-.dx-acc-r .dxGridView_gvCMClearGroupingDisabled_KetoSavage:before
-
-{
-    left: -51px;
-    top: -186px;
-
-}
-.dx-acc-r .dxGridView_gvCMCollapseDetailRow_KetoSavage:before
-
-{
-    left: -238px;
-    top: -186px;
-
-}
-.dx-acc-r .dxGridView_gvCMCollapseDetailRowDisabled_KetoSavage:before
-
-{
-    left: -51px;
-    top: -203px;
-
-}
-.dx-acc-r .dxGridView_gvCMCollapseRow_KetoSavage:before
-
-{
-    left: -153px;
-    top: -169px;
-
-}
-.dx-acc-r .dxGridView_gvCMCollapseRowDisabled_KetoSavage:before
-
-{
-    left: -102px;
-    top: -118px;
-
-}
-.dx-acc-r .dxGridView_gvCMDeleteRow_KetoSavage:before
-
-{
-    left: -119px;
-    top: -118px;
-
-}
-.dx-acc-r .dxGridView_gvCMDeleteRowDisabled_KetoSavage:before
-
-{
-    left: -102px;
-    top: -101px;
-
-}
-.dx-acc-r .dxGridView_gvCMEditRow_KetoSavage:before
-
-{
-    left: -85px;
-    top: -203px;
-
-}
-.dx-acc-r .dxGridView_gvCMEditRowDisabled_KetoSavage:before
-
-{
-    left: -51px;
-    top: -152px;
-
-}
-.dx-acc-r .dxGridView_gvCMExpandDetailRow_KetoSavage:before
-
-{
-    left: -136px;
-    top: -169px;
-
-}
-.dx-acc-r .dxGridView_gvCMExpandDetailRowDisabled_KetoSavage:before
-
-{
-    left: -221px;
-    top: -84px;
-
-}
-.dx-acc-r .dxGridView_gvCMExpandRow_KetoSavage:before
-
-{
-    left: -68px;
-    top: -101px;
-
-}
-.dx-acc-r .dxGridView_gvCMExpandRowDisabled_KetoSavage:before
-
-{
-    left: -221px;
-    top: -101px;
-
-}
-.dx-acc-r .dxGridView_gvCMExportCsv_KetoSavage:before
-
-{
-    left: -17px;
-    top: -118px;
-
-}
-.dx-acc-r .dxGridView_gvCMExportCsvDisabled_KetoSavage:before
-
-{
-    left: -85px;
-    top: -152px;
-
-}
-.dx-acc-r .dxGridView_gvCMExportDocx_KetoSavage:before
-
-{
-    left: -136px;
-    top: -152px;
-
-}
-.dx-acc-r .dxGridView_gvCMExportDocxDisabled_KetoSavage:before
-
-{
-    left: -153px;
-    top: -186px;
-
-}
-.dx-acc-r .dxGridView_gvCMExportPdf_KetoSavage:before
-
-{
-    left: 0px;
-    top: -135px;
-
-}
-.dx-acc-r .dxGridView_gvCMExportPdfDisabled_KetoSavage:before
-
-{
-    left: -136px;
-    top: -135px;
-
-}
-.dx-acc-r .dxGridView_gvCMExportRtf_KetoSavage:before
-
-{
-    left: -85px;
-    top: -135px;
-
-}
-.dx-acc-r .dxGridView_gvCMExportRtfDisabled_KetoSavage:before
-
-{
-    left: -211px;
-    top: -46px;
-
-}
-.dx-acc-r .dxGridView_gvCMExportXls_KetoSavage:before
-
-{
-    left: 0px;
-    top: -84px;
-
-}
-.dx-acc-r .dxGridView_gvCMExportXlsDisabled_KetoSavage:before
-
-{
-    left: 0px;
-    top: -101px;
-
-}
-.dx-acc-r .dxGridView_gvCMExportXlsx_KetoSavage:before
-
-{
-    left: -136px;
-    top: -118px;
-
-}
-.dx-acc-r .dxGridView_gvCMExportXlsxDisabled_KetoSavage:before
-
-{
-    left: -34px;
-    top: -186px;
-
-}
-.dx-acc-r .dxGridView_gvCMFullCollapse_KetoSavage:before
-
-{
-    left: 0px;
-    top: -152px;
-
-}
-.dx-acc-r .dxGridView_gvCMFullCollapseDisabled_KetoSavage:before
-
-{
-    left: -204px;
-    top: -101px;
-
-}
-.dx-acc-r .dxGridView_gvCMFullExpand_KetoSavage:before
-
-{
-    left: -119px;
-    top: -152px;
-
-}
-.dx-acc-r .dxGridView_gvCMFullExpandDisabled_KetoSavage:before
-
-{
-    left: -238px;
-    top: -118px;
-
-}
-.dx-acc-r .dxGridView_gvCMGroupByColumn_KetoSavage:before
-
-{
-    left: -170px;
-    top: -118px;
-
-}
-.dx-acc-r .dxGridView_gvCMGroupByColumnDisabled_KetoSavage:before
-
-{
-    left: -34px;
-    top: -84px;
-
-}
-.dx-acc-r .dxGridView_gvCMNewRow_KetoSavage:before
-
-{
-    left: -170px;
-    top: -203px;
-
-}
-.dx-acc-r .dxGridView_gvCMNewRowDisabled_KetoSavage:before
-
-{
-    left: -255px;
-    top: -118px;
-
-}
-.dx-acc-r .dxGridView_gvCMRefresh_KetoSavage:before
-
-{
-    left: -119px;
-    top: -135px;
-
-}
-.dx-acc-r .dxGridView_gvCMRefreshDisabled_KetoSavage:before
-
-{
-    left: -51px;
-    top: -169px;
-
-}
-.dx-acc-r .dxGridView_gvCMSearchPanel_KetoSavage:before
-
-{
-    left: -218px;
-    top: -69px;
-
-}
-.dx-acc-r .dxGridView_gvCMSearchPanelDisabled_KetoSavage:before
-
-{
-    left: -85px;
-    top: -169px;
-
-}
-.dx-acc-r .dxGridView_gvCMShowCustDialog_KetoSavage:before
-
-{
-    left: -136px;
-    top: -186px;
-
-}
-.dx-acc-r .dxGridView_gvCMShowCustDialogDisabled_KetoSavage:before
-
-{
-    left: -221px;
-    top: -169px;
-
-}
-.dx-acc-r .dxGridView_gvCMShowCustomizationWindow_KetoSavage:before
-
-{
-    left: -126px;
-    top: -46px;
-
-}
-.dx-acc-r .dxGridView_gvCMShowCustomizationWindowDisabled_KetoSavage:before
-
-{
-    left: -221px;
-    top: -186px;
-
-}
-.dx-acc-r .dxGridView_gvCMShowFilterEditor_KetoSavage:before
-
-{
-    left: -53px;
-    top: -69px;
-
-}
-.dx-acc-r .dxGridView_gvCMShowFilterEditorDisabled_KetoSavage:before
-
-{
-    left: -221px;
-    top: -203px;
-
-}
-.dx-acc-r .dxGridView_gvCMShowGroupPanel_KetoSavage:before
-
-{
-    left: -136px;
-    top: -101px;
-
-}
-.dx-acc-r .dxGridView_gvCMShowGroupPanelDisabled_KetoSavage:before
-
-{
-    left: -221px;
-    top: -135px;
-
-}
-.dx-acc-r .dxGridView_gvCMShowSearchPanel_KetoSavage:before
-
-{
-    left: -83px;
-    top: -69px;
-
-}
-.dx-acc-r .dxGridView_gvCMShowSearchPanelDisabled_KetoSavage:before
-
-{
-    left: -68px;
-    top: -118px;
-
-}
-.dx-acc-r .dxGridView_gvCMSortAscending_KetoSavage:before
-
-{
-    left: -102px;
-    top: -84px;
-
-}
-.dx-acc-r .dxGridView_gvCMSortAscendingDisabled_KetoSavage:before
-
-{
-    left: -51px;
-    top: -84px;
-
-}
-.dx-acc-r .dxGridView_gvCMSortDescending_KetoSavage:before
-
-{
-    left: -51px;
-    top: -135px;
-
-}
-.dx-acc-r .dxGridView_gvCMSortDescendingDisabled_KetoSavage:before
-
-{
-    left: -51px;
-    top: -101px;
-
-}
-.dx-acc-r .dxGridView_gvCMSummaryAverage_KetoSavage:before
-
-{
-    left: -17px;
-    top: -186px;
-
-}
-.dx-acc-r .dxGridView_gvCMSummaryAverageDisabled_KetoSavage:before
-
-{
-    left: -187px;
-    top: -169px;
-
-}
-.dx-acc-r .dxGridView_gvCMSummaryCount_KetoSavage:before
-
-{
-    left: -68px;
-    top: -84px;
-
-}
-.dx-acc-r .dxGridView_gvCMSummaryCountDisabled_KetoSavage:before
-
-{
-    left: -102px;
-    top: -169px;
-
-}
-.dx-acc-r .dxGridView_gvCMSummaryMax_KetoSavage:before
-
-{
-    left: -153px;
-    top: -84px;
-
-}
-.dx-acc-r .dxGridView_gvCMSummaryMaxDisabled_KetoSavage:before
-
-{
-    left: -170px;
-    top: -84px;
-
-}
-.dx-acc-r .dxGridView_gvCMSummaryMin_KetoSavage:before
-
-{
-    left: -170px;
-    top: -101px;
-
-}
-.dx-acc-r .dxGridView_gvCMSummaryMinDisabled_KetoSavage:before
-
-{
-    left: -187px;
-    top: -101px;
-
-}
-.dx-acc-r .dxGridView_gvCMSummarySum_KetoSavage:before
-
-{
-    left: -170px;
-    top: -152px;
-
-}
-.dx-acc-r .dxGridView_gvCMSummarySumDisabled_KetoSavage:before
-
-{
-    left: -102px;
-    top: -152px;
-
-}
-.dx-acc-r .dxGridView_gvCMUngroupColumn_KetoSavage:before
-
-{
-    left: -245px;
-    top: -46px;
-
-}
-.dx-acc-r .dxGridView_gvCOApply_KetoSavage:before
-
-{
-    left: -46px;
-    top: -46px;
-
-}
-.dx-acc-r .dxGridView_gvCOApplyDisabled_KetoSavage:before
-
-{
-    left: -184px;
-    top: -23px;
-
-}
-.dx-acc-r .dxGridView_gvCOClearFilter_KetoSavage:before
-
-{
-    left: 0px;
-    top: -46px;
-
-}
-.dx-acc-r .dxGridView_gvCOClearFilterDisabled_KetoSavage:before
-
-{
-    left: -69px;
-    top: -46px;
-
-}
-.dx-acc-r .dxGridView_gvCOClose_KetoSavage:before
-
-{
-    left: -115px;
-    top: -23px;
-
-}
-.dx-acc-r .dxGridView_gvCOColumnDrag_KetoSavage:before
-
-{
-    left: -253px;
-    top: -23px;
-
-}
-.dx-acc-r .dxGridView_gvCOColumnDragDisabled_KetoSavage:before
-
-{
-    left: -253px;
-    top: 0px;
-
-}
-.dx-acc-r .dxGridView_gvCOColumnGroup_KetoSavage:before
-
-{
-    left: -161px;
-    top: -23px;
-
-}
-.dx-acc-r .dxGridView_gvCOColumnGroupDisabled_KetoSavage:before
-
-{
-    left: 0px;
-    top: -23px;
-
-}
-.dx-acc-r .dxGridView_gvCOColumnHide_KetoSavage:before
-
-{
-    left: -69px;
-    top: -23px;
-
-}
-.dx-acc-r .dxGridView_gvCOColumnHideDisabled_KetoSavage:before
-
-{
-    left: -46px;
-    top: 0px;
-
-}
-.dx-acc-r .dxGridView_gvCOColumnRemove_KetoSavage:before
-
-{
-    left: 0px;
-    top: 0px;
-
-}
-.dx-acc-r .dxGridView_gvCOColumnRemoveDisabled_KetoSavage:before
-
-{
-    left: -230px;
-    top: -23px;
-
-}
-.dx-acc-r .dxGridView_gvCOColumnShow_KetoSavage:before
-
-{
-    left: -92px;
-    top: 0px;
-
-}
-.dx-acc-r .dxGridView_gvCOColumnShowDisabled_KetoSavage:before
-
-{
-    left: -207px;
-    top: -23px;
-
-}
-.dx-acc-r .dxGridView_gvCOColumnSort_KetoSavage:before
-
-{
-    left: -23px;
-    top: -46px;
-
-}
-.dx-acc-r .dxGridView_gvCOColumnSortDisabled_KetoSavage:before
-
-{
-    left: -92px;
-    top: -23px;
-
-}
-.dx-acc-r .dxGridView_gvCOColumnSortDown_KetoSavage:before
-
-{
-    left: -161px;
-    top: 0px;
-
-}
-.dx-acc-r .dxGridView_gvCOColumnSortDownDisabled_KetoSavage:before
-
-{
-    left: -69px;
-    top: 0px;
-
-}
-.dx-acc-r .dxGridView_gvCOColumnSortUp_KetoSavage:before
-
-{
-    left: -138px;
-    top: -23px;
-
-}
-.dx-acc-r .dxGridView_gvCOColumnSortUpDisabled_KetoSavage:before
-
-{
-    left: -115px;
-    top: 0px;
-
-}
-.dx-acc-r .dxGridView_gvCOColumnUngroup_KetoSavage:before
-
-{
-    left: -184px;
-    top: 0px;
-
-}
-.dx-acc-r .dxGridView_gvCOColumnUngroupDisabled_KetoSavage:before
-
-{
-    left: -138px;
-    top: 0px;
-
-}
-.dx-acc-r .dxGridView_gvCOColumnUnsort_KetoSavage:before
-
-{
-    left: -23px;
-    top: 0px;
-
-}
-.dx-acc-r .dxGridView_gvCOColumnUnsortDisabled_KetoSavage:before
-
-{
-    left: -230px;
-    top: 0px;
-
-}
-.dx-acc-r .dxGridView_gvCODragAreaCollapse_KetoSavage:before
-
-{
-    left: -250px;
-    top: -203px;
-
-}
-.dx-acc-r .dxGridView_gvCODragAreaExpand_KetoSavage:before
-
-{
-    left: -236px;
-    top: -203px;
-
-}
-.dx-acc-r .dxGridView_gvCOFilterCollapse_KetoSavage:before
-
-{
-    left: -23px;
-    top: -23px;
-
-}
-.dx-acc-r .dxGridView_gvCOFilterExpand_KetoSavage:before
-
-{
-    left: -46px;
-    top: -23px;
-
-}
-.dx-acc-r .dxGridView_gvCollapsedButton_KetoSavage:before
-
-{
-    left: -143px;
-    top: -220px;
-
-}
-.dx-acc-r .dxGridView_gvCollapsedButtonRtl_KetoSavage:before
-
-{
-    left: -91px;
-    top: -220px;
-
-}
-.dx-acc-r .dxGridView_gvDetailCollapsedButton_KetoSavage:before
-
-{
-    left: 0px;
-    top: -220px;
-
-}
-.dx-acc-r .dxGridView_gvDetailCollapsedButtonRtl_KetoSavage:before
-
-{
-    left: -52px;
-    top: -220px;
-
-}
-.dx-acc-r .dxGridView_gvDetailExpandedButton_KetoSavage:before
-
-{
-    left: -156px;
-    top: -220px;
-
-}
-.dx-acc-r .dxGridView_gvDetailExpandedButtonRtl_KetoSavage:before
-
-{
-    left: -39px;
-    top: -220px;
-
-}
-.dx-acc-r .dxGridView_gvDragAndDropArrowDown_KetoSavage:before
-
-{
-    left: -246px;
-    top: -220px;
-
-}
-.dx-acc-r .dxGridView_gvDragAndDropArrowLeft_KetoSavage:before
-
-{
-    left: -262px;
-    top: -46px;
-
-}
-.dx-acc-r .dxGridView_gvDragAndDropArrowRight_KetoSavage:before
-
-{
-    left: -263px;
-    top: -58px;
-
-}
-.dx-acc-r .dxGridView_gvDragAndDropArrowUp_KetoSavage:before
-
-{
-    left: -234px;
-    top: -220px;
-
-}
-.dx-acc-r .dxGridView_gvDragAndDropHideColumn_KetoSavage:before
-
-{
-    left: -17px;
-    top: -101px;
-
-}
-.dx-acc-r .dxGridView_gvExpandedButton_KetoSavage:before
-
-{
-    left: -117px;
-    top: -220px;
-
-}
-.dx-acc-r .dxGridView_gvExpandedButtonRtl_KetoSavage:before
-
-{
-    left: -26px;
-    top: -220px;
-
-}
-.dx-acc-r .dxGridView_gvFilterRowButton_KetoSavage:before
-
-{
-    left: -113px;
-    top: -69px;
-
-}
-.dx-acc-r .dxGridView_gvFixedGroupRow_KetoSavage:before
-
-{
-    left: 0px;
-    top: -69px;
-
-}
-.dx-acc-r .dxGridView_gvHeaderFilter_KetoSavage:before
-
-{
-    left: -98px;
-    top: -69px;
-
-}
-.dx-acc-r .dxGridView_gvHeaderFilterActive_KetoSavage:before
-
-{
-    left: -173px;
-    top: -69px;
-
-}
-.dx-acc-r .dxGridView_gvHeaderSortDown_KetoSavage:before
-
-{
-    left: -78px;
-    top: -220px;
-
-}
-.dx-acc-r .dxGridView_gvHeaderSortUp_KetoSavage:before
-
-{
-    left: -65px;
-    top: -220px;
-
-}
-.dx-acc-r .dxGridView_gvHideAdaptiveDetailButton_KetoSavage:before
-
-{
-    left: -68px;
-    top: -186px;
-
-}
-.dx-acc-r .dxGridView_gvParentGroupRows_KetoSavage:before
-
-{
-    left: -207px;
-    top: 0px;
-
-}
-.dx-acc-r .dxGridView_gvShowAdaptiveDetailButton_KetoSavage:before
-
-{
-    left: -153px;
-    top: -152px;
-
-}
-.dx-acc-r .dxGridView_WindowResizer_KetoSavage:before
-
-{
-    left: -128px;
-    top: -69px;
-
-}
-.dx-acc-r .dxGridView_WindowResizerRtl_KetoSavage:before
-
-{
-    left: -233px;
-    top: -69px;
-
-}
-.dx-acc-r .dxgvADSB:hover .dxGridView_gvShowAdaptiveDetailButton_KetoSavage:before
-
-{
-    left: 0px;
-    top: -186px;
-
-}
-.dx-acc-r .dxgvFocusedGroupRow_KetoSavage .dxGridView_gvCollapsedButton_KetoSavage:before
-
-{
-    left: -104px;
-    top: -220px;
-
-}
-.dx-acc-r .dxgvFocusedGroupRow_KetoSavage .dxGridView_gvCollapsedButtonRtl_KetoSavage:before
-
-{
-    left: -208px;
-    top: -220px;
-
-}
-.dx-acc-r .dxgvFocusedGroupRow_KetoSavage .dxGridView_gvDetailCollapsedButton_KetoSavage:before
-
-{
-    left: -13px;
-    top: -220px;
-
-}
-.dx-acc-r .dxgvFocusedGroupRow_KetoSavage .dxGridView_gvDetailCollapsedButtonRtl_KetoSavage:before
-
-{
-    left: -182px;
-    top: -220px;
-
-}
-.dx-acc-r .dxgvFocusedGroupRow_KetoSavage .dxGridView_gvDetailExpandedButton_KetoSavage:before
-
-{
-    left: -169px;
-    top: -220px;
-
-}
-.dx-acc-r .dxgvFocusedGroupRow_KetoSavage .dxGridView_gvDetailExpandedButtonRtl_KetoSavage:before
-
-{
-    left: -195px;
-    top: -220px;
-
-}
-.dx-acc-r .dxgvFocusedGroupRow_KetoSavage .dxGridView_gvExpandedButton_KetoSavage:before
-
-{
-    left: -130px;
-    top: -220px;
-
-}
-.dx-acc-r .dxgvFocusedGroupRow_KetoSavage .dxGridView_gvExpandedButtonRtl_KetoSavage:before
-
-{
-    left: -221px;
-    top: -220px;
-
-}
-.dx-acc-r .dxgvFocusedRow_KetoSavage .dxGridView_gvShowAdaptiveDetailButton_KetoSavage:before
-
-{
-    left: -238px;
-    top: -84px;
-
-}
-.dx-acc-r .dxgvFocusedRow_KetoSavage .dxgvADSB:hover [class^='dxGridView_gvShowAdaptiveDeta']:before
-
-{
-    left: -238px;
-    top: -169px;
-
-}
-.dx-acc-r .dxm-checked .dxGridView_CTShowCustomizationWindow_KetoSavage:before
-
-{
-    left: -119px;
-    top: -101px;
-
-}
-.dx-acc-r .dxm-checked .dxGridView_CTShowGroupPanel_KetoSavage:before
-
-{
-    left: -85px;
-    top: -186px;
-
-}
-.dx-acc-r .dxm-checked .dxGridView_CTShowSearchPanel_KetoSavage:before
-
-{
-    left: -158px;
-    top: -69px;
-
-}
-.dx-acc-r .dxm-checked .dxGridView_gvCMClearFilter_KetoSavage:before
-
-{
-    left: -204px;
-    top: -135px;
-
-}
-.dx-acc-r .dxm-checked .dxGridView_gvCMClearGrouping_KetoSavage:before
-
-{
-    left: -119px;
-    top: -186px;
-
-}
-.dx-acc-r .dxm-checked .dxGridView_gvCMCollapseDetailRow_KetoSavage:before
-
-{
-    left: -17px;
-    top: -135px;
-
-}
-.dx-acc-r .dxm-checked .dxGridView_gvCMCollapseRow_KetoSavage:before
-
-{
-    left: -255px;
-    top: -169px;
-
-}
-.dx-acc-r .dxm-checked .dxGridView_gvCMDeleteRow_KetoSavage:before
-
-{
-    left: -238px;
-    top: -152px;
-
-}
-.dx-acc-r .dxm-checked .dxGridView_gvCMEditRow_KetoSavage:before
-
-{
-    left: -153px;
-    top: -118px;
-
-}
-.dx-acc-r .dxm-checked .dxGridView_gvCMExpandDetailRow_KetoSavage:before
-
-{
-    left: -17px;
-    top: -152px;
-
-}
-.dx-acc-r .dxm-checked .dxGridView_gvCMExpandRow_KetoSavage:before
-
-{
-    left: -177px;
-    top: -46px;
-
-}
-.dx-acc-r .dxm-checked .dxGridView_gvCMFullCollapse_KetoSavage:before
-
-{
-    left: -187px;
-    top: -84px;
-
-}
-.dx-acc-r .dxm-checked .dxGridView_gvCMFullExpand_KetoSavage:before
-
-{
-    left: -119px;
-    top: -84px;
-
-}
-.dx-acc-r .dxm-checked .dxGridView_gvCMGroupByColumn_KetoSavage:before
-
-{
-    left: -34px;
-    top: -101px;
-
-}
-.dx-acc-r .dxm-checked .dxGridView_gvCMNewRow_KetoSavage:before
-
-{
-    left: -170px;
-    top: -186px;
-
-}
-.dx-acc-r .dxm-checked .dxGridView_gvCMRefresh_KetoSavage:before
-
-{
-    left: -187px;
-    top: -203px;
-
-}
-.dx-acc-r .dxm-checked .dxGridView_gvCMSearchPanel_KetoSavage:before
-
-{
-    left: -188px;
-    top: -69px;
-
-}
-.dx-acc-r .dxm-checked .dxGridView_gvCMShowCustomizationWindow_KetoSavage:before
-
-{
-    left: -68px;
-    top: -169px;
-
-}
-.dx-acc-r .dxm-checked .dxGridView_gvCMShowFilterEditor_KetoSavage:before
-
-{
-    left: -68px;
-    top: -69px;
-
-}
-.dx-acc-r .dxm-checked .dxGridView_gvCMShowGroupPanel_KetoSavage:before
-
-{
-    left: -221px;
-    top: -152px;
-
-}
-.dx-acc-r .dxm-checked .dxGridView_gvCMShowSearchPanel_KetoSavage:before
-
-{
-    left: -143px;
-    top: -69px;
-
-}
-.dx-acc-r .dxm-checked .dxGridView_gvCMSortAscending_KetoSavage:before
-
-{
-    left: -204px;
-    top: -118px;
-
-}
-.dx-acc-r .dxm-checked .dxGridView_gvCMSortDescending_KetoSavage:before
-
-{
-    left: -153px;
-    top: -203px;
-
-}
-.dx-acc-r .dxm-checked .dxGridView_gvCMSummaryAverage_KetoSavage:before
-
-{
-    left: -255px;
-    top: -135px;
-
-}
-.dx-acc-r .dxm-checked .dxGridView_gvCMSummaryCount_KetoSavage:before
-
-{
-    left: -160px;
-    top: -46px;
-
-}
-.dx-acc-r .dxm-checked .dxGridView_gvCMSummaryMax_KetoSavage:before
-
-{
-    left: -204px;
-    top: -186px;
-
-}
-.dx-acc-r .dxm-checked .dxGridView_gvCMSummaryMin_KetoSavage:before
-
-{
-    left: -85px;
-    top: -84px;
-
-}
-.dx-acc-r .dxm-checked .dxGridView_gvCMSummarySum_KetoSavage:before
-
-{
-    left: -102px;
-    top: -203px;
-
-}
-.dx-acc-r .dxm-checked .dxGridView_gvCMUngroupColumn_KetoSavage:before
-
-{
-    left: -204px;
-    top: -203px;
-
-}
+.dx-acc-r .dxGridView_CTClearFilter_KetoSavage:before, .dx-acc-r .dxGridView_CTClearFilterDisabled_KetoSavage:before, .dx-acc-r .dxGridView_CTClearGrouping_KetoSavage:before, .dx-acc-r .dxGridView_CTClearGroupingDisabled_KetoSavage:before, .dx-acc-r .dxGridView_CTCollapseDetailRow_KetoSavage:before, .dx-acc-r .dxGridView_CTCollapseDetailRowDisabled_KetoSavage:before, .dx-acc-r .dxGridView_CTCollapseRow_KetoSavage:before, .dx-acc-r .dxGridView_CTCollapseRowDisabled_KetoSavage:before, .dx-acc-r .dxGridView_CTDeleteRow_KetoSavage:before, .dx-acc-r .dxGridView_CTDeleteRowDisabled_KetoSavage:before, .dx-acc-r .dxGridView_CTEditRow_KetoSavage:before, .dx-acc-r .dxGridView_CTEditRowDisabled_KetoSavage:before, .dx-acc-r .dxGridView_CTExpandDetailRow_KetoSavage:before, .dx-acc-r .dxGridView_CTExpandDetailRowDisabled_KetoSavage:before, .dx-acc-r .dxGridView_CTExpandRow_KetoSavage:before, .dx-acc-r .dxGridView_CTExpandRowDisabled_KetoSavage:before, .dx-acc-r .dxGridView_CTExportCsv_KetoSavage:before, .dx-acc-r .dxGridView_CTExportCsvDisabled_KetoSavage:before, .dx-acc-r .dxGridView_CTExportDocx_KetoSavage:before, .dx-acc-r .dxGridView_CTExportDocxDisabled_KetoSavage:before, .dx-acc-r .dxGridView_CTExportPdf_KetoSavage:before, .dx-acc-r .dxGridView_CTExportPdfDisabled_KetoSavage:before, .dx-acc-r .dxGridView_CTExportRtf_KetoSavage:before, .dx-acc-r .dxGridView_CTExportRtfDisabled_KetoSavage:before, .dx-acc-r .dxGridView_CTExportXls_KetoSavage:before, .dx-acc-r .dxGridView_CTExportXlsDisabled_KetoSavage:before, .dx-acc-r .dxGridView_CTExportXlsx_KetoSavage:before, .dx-acc-r .dxGridView_CTExportXlsxDisabled_KetoSavage:before, .dx-acc-r .dxGridView_CTFullCollapse_KetoSavage:before, .dx-acc-r .dxGridView_CTFullCollapseDisabled_KetoSavage:before, .dx-acc-r .dxGridView_CTFullExpand_KetoSavage:before, .dx-acc-r .dxGridView_CTFullExpandDisabled_KetoSavage:before, .dx-acc-r .dxGridView_CTNewRow_KetoSavage:before, .dx-acc-r .dxGridView_CTNewRowDisabled_KetoSavage:before, .dx-acc-r .dxGridView_CTRefresh_KetoSavage:before, .dx-acc-r .dxGridView_CTRefreshDisabled_KetoSavage:before, .dx-acc-r .dxGridView_CTShowCustDialog_KetoSavage:before, .dx-acc-r .dxGridView_CTShowCustDialogDisabled_KetoSavage:before, .dx-acc-r .dxGridView_CTShowCustomizationWindow_KetoSavage:before, .dx-acc-r .dxGridView_CTShowCustomizationWindowDisabled_KetoSavage:before, .dx-acc-r .dxGridView_CTShowFilterEditor_KetoSavage:before, .dx-acc-r .dxGridView_CTShowFilterEditorDisabled_KetoSavage:before, .dx-acc-r .dxGridView_CTShowFilterRow_KetoSavage:before, .dx-acc-r .dxGridView_CTShowFilterRowDisabled_KetoSavage:before, .dx-acc-r .dxGridView_CTShowGroupPanel_KetoSavage:before, .dx-acc-r .dxGridView_CTShowGroupPanelDisabled_KetoSavage:before, .dx-acc-r .dxGridView_CTShowSearchPanel_KetoSavage:before, .dx-acc-r .dxGridView_CTShowSearchPanelDisabled_KetoSavage:before, .dx-acc-r .dxGridView_gvCellError_KetoSavage:before, .dx-acc-r .dxGridView_gvCMClearFilter_KetoSavage:before, .dx-acc-r .dxGridView_gvCMClearFilterDisabled_KetoSavage:before, .dx-acc-r .dxGridView_gvCMClearGrouping_KetoSavage:before, .dx-acc-r .dxGridView_gvCMClearGroupingDisabled_KetoSavage:before, .dx-acc-r .dxGridView_gvCMCollapseDetailRow_KetoSavage:before, .dx-acc-r .dxGridView_gvCMCollapseDetailRowDisabled_KetoSavage:before, .dx-acc-r .dxGridView_gvCMCollapseRow_KetoSavage:before, .dx-acc-r .dxGridView_gvCMCollapseRowDisabled_KetoSavage:before, .dx-acc-r .dxGridView_gvCMDeleteRow_KetoSavage:before, .dx-acc-r .dxGridView_gvCMDeleteRowDisabled_KetoSavage:before, .dx-acc-r .dxGridView_gvCMEditRow_KetoSavage:before, .dx-acc-r .dxGridView_gvCMEditRowDisabled_KetoSavage:before, .dx-acc-r .dxGridView_gvCMExpandDetailRow_KetoSavage:before, .dx-acc-r .dxGridView_gvCMExpandDetailRowDisabled_KetoSavage:before, .dx-acc-r .dxGridView_gvCMExpandRow_KetoSavage:before, .dx-acc-r .dxGridView_gvCMExpandRowDisabled_KetoSavage:before, .dx-acc-r .dxGridView_gvCMExportCsv_KetoSavage:before, .dx-acc-r .dxGridView_gvCMExportCsvDisabled_KetoSavage:before, .dx-acc-r .dxGridView_gvCMExportDocx_KetoSavage:before, .dx-acc-r .dxGridView_gvCMExportDocxDisabled_KetoSavage:before, .dx-acc-r .dxGridView_gvCMExportPdf_KetoSavage:before, .dx-acc-r .dxGridView_gvCMExportPdfDisabled_KetoSavage:before, .dx-acc-r .dxGridView_gvCMExportRtf_KetoSavage:before, .dx-acc-r .dxGridView_gvCMExportRtfDisabled_KetoSavage:before, .dx-acc-r .dxGridView_gvCMExportXls_KetoSavage:before, .dx-acc-r .dxGridView_gvCMExportXlsDisabled_KetoSavage:before, .dx-acc-r .dxGridView_gvCMExportXlsx_KetoSavage:before, .dx-acc-r .dxGridView_gvCMExportXlsxDisabled_KetoSavage:before, .dx-acc-r .dxGridView_gvCMFullCollapse_KetoSavage:before, .dx-acc-r .dxGridView_gvCMFullCollapseDisabled_KetoSavage:before, .dx-acc-r .dxGridView_gvCMFullExpand_KetoSavage:before, .dx-acc-r .dxGridView_gvCMFullExpandDisabled_KetoSavage:before, .dx-acc-r .dxGridView_gvCMGroupByColumn_KetoSavage:before, .dx-acc-r .dxGridView_gvCMGroupByColumnDisabled_KetoSavage:before, .dx-acc-r .dxGridView_gvCMNewRow_KetoSavage:before, .dx-acc-r .dxGridView_gvCMNewRowDisabled_KetoSavage:before, .dx-acc-r .dxGridView_gvCMRefresh_KetoSavage:before, .dx-acc-r .dxGridView_gvCMRefreshDisabled_KetoSavage:before, .dx-acc-r .dxGridView_gvCMSearchPanel_KetoSavage:before, .dx-acc-r .dxGridView_gvCMSearchPanelDisabled_KetoSavage:before, .dx-acc-r .dxGridView_gvCMShowCustDialog_KetoSavage:before, .dx-acc-r .dxGridView_gvCMShowCustDialogDisabled_KetoSavage:before, .dx-acc-r .dxGridView_gvCMShowCustomizationWindow_KetoSavage:before, .dx-acc-r .dxGridView_gvCMShowCustomizationWindowDisabled_KetoSavage:before, .dx-acc-r .dxGridView_gvCMShowFilterEditor_KetoSavage:before, .dx-acc-r .dxGridView_gvCMShowFilterEditorDisabled_KetoSavage:before, .dx-acc-r .dxGridView_gvCMShowGroupPanel_KetoSavage:before, .dx-acc-r .dxGridView_gvCMShowGroupPanelDisabled_KetoSavage:before, .dx-acc-r .dxGridView_gvCMShowSearchPanel_KetoSavage:before, .dx-acc-r .dxGridView_gvCMShowSearchPanelDisabled_KetoSavage:before, .dx-acc-r .dxGridView_gvCMSortAscending_KetoSavage:before, .dx-acc-r .dxGridView_gvCMSortAscendingDisabled_KetoSavage:before, .dx-acc-r .dxGridView_gvCMSortDescending_KetoSavage:before, .dx-acc-r .dxGridView_gvCMSortDescendingDisabled_KetoSavage:before, .dx-acc-r .dxGridView_gvCMSummaryAverage_KetoSavage:before, .dx-acc-r .dxGridView_gvCMSummaryAverageDisabled_KetoSavage:before, .dx-acc-r .dxGridView_gvCMSummaryCount_KetoSavage:before, .dx-acc-r .dxGridView_gvCMSummaryCountDisabled_KetoSavage:before, .dx-acc-r .dxGridView_gvCMSummaryMax_KetoSavage:before, .dx-acc-r .dxGridView_gvCMSummaryMaxDisabled_KetoSavage:before, .dx-acc-r .dxGridView_gvCMSummaryMin_KetoSavage:before, .dx-acc-r .dxGridView_gvCMSummaryMinDisabled_KetoSavage:before, .dx-acc-r .dxGridView_gvCMSummarySum_KetoSavage:before, .dx-acc-r .dxGridView_gvCMSummarySumDisabled_KetoSavage:before, .dx-acc-r .dxGridView_gvCMUngroupColumn_KetoSavage:before, .dx-acc-r .dxGridView_gvCOApply_KetoSavage:before, .dx-acc-r .dxGridView_gvCOApplyDisabled_KetoSavage:before, .dx-acc-r .dxGridView_gvCOClearFilter_KetoSavage:before, .dx-acc-r .dxGridView_gvCOClearFilterDisabled_KetoSavage:before, .dx-acc-r .dxGridView_gvCOClose_KetoSavage:before, .dx-acc-r .dxGridView_gvCOColumnDrag_KetoSavage:before, .dx-acc-r .dxGridView_gvCOColumnDragDisabled_KetoSavage:before, .dx-acc-r .dxGridView_gvCOColumnGroup_KetoSavage:before, .dx-acc-r .dxGridView_gvCOColumnGroupDisabled_KetoSavage:before, .dx-acc-r .dxGridView_gvCOColumnHide_KetoSavage:before, .dx-acc-r .dxGridView_gvCOColumnHideDisabled_KetoSavage:before, .dx-acc-r .dxGridView_gvCOColumnRemove_KetoSavage:before, .dx-acc-r .dxGridView_gvCOColumnRemoveDisabled_KetoSavage:before, .dx-acc-r .dxGridView_gvCOColumnShow_KetoSavage:before, .dx-acc-r .dxGridView_gvCOColumnShowDisabled_KetoSavage:before, .dx-acc-r .dxGridView_gvCOColumnSort_KetoSavage:before, .dx-acc-r .dxGridView_gvCOColumnSortDisabled_KetoSavage:before, .dx-acc-r .dxGridView_gvCOColumnSortDown_KetoSavage:before, .dx-acc-r .dxGridView_gvCOColumnSortDownDisabled_KetoSavage:before, .dx-acc-r .dxGridView_gvCOColumnSortUp_KetoSavage:before, .dx-acc-r .dxGridView_gvCOColumnSortUpDisabled_KetoSavage:before, .dx-acc-r .dxGridView_gvCOColumnUngroup_KetoSavage:before, .dx-acc-r .dxGridView_gvCOColumnUngroupDisabled_KetoSavage:before, .dx-acc-r .dxGridView_gvCOColumnUnsort_KetoSavage:before, .dx-acc-r .dxGridView_gvCOColumnUnsortDisabled_KetoSavage:before, .dx-acc-r .dxGridView_gvCODragAreaCollapse_KetoSavage:before, .dx-acc-r .dxGridView_gvCODragAreaExpand_KetoSavage:before, .dx-acc-r .dxGridView_gvCOFilterCollapse_KetoSavage:before, .dx-acc-r .dxGridView_gvCOFilterExpand_KetoSavage:before, .dx-acc-r .dxGridView_gvCollapsedButton_KetoSavage:before, .dx-acc-r .dxGridView_gvCollapsedButtonRtl_KetoSavage:before, .dx-acc-r .dxGridView_gvDetailCollapsedButton_KetoSavage:before, .dx-acc-r .dxGridView_gvDetailCollapsedButtonRtl_KetoSavage:before, .dx-acc-r .dxGridView_gvDetailExpandedButton_KetoSavage:before, .dx-acc-r .dxGridView_gvDetailExpandedButtonRtl_KetoSavage:before, .dx-acc-r .dxGridView_gvDragAndDropArrowDown_KetoSavage:before, .dx-acc-r .dxGridView_gvDragAndDropArrowLeft_KetoSavage:before, .dx-acc-r .dxGridView_gvDragAndDropArrowRight_KetoSavage:before, .dx-acc-r .dxGridView_gvDragAndDropArrowUp_KetoSavage:before, .dx-acc-r .dxGridView_gvDragAndDropHideColumn_KetoSavage:before, .dx-acc-r .dxGridView_gvExpandedButton_KetoSavage:before, .dx-acc-r .dxGridView_gvExpandedButtonRtl_KetoSavage:before, .dx-acc-r .dxGridView_gvFilterRowButton_KetoSavage:before, .dx-acc-r .dxGridView_gvFixedGroupRow_KetoSavage:before, .dx-acc-r .dxGridView_gvHeaderFilter_KetoSavage:before, .dx-acc-r .dxGridView_gvHeaderFilterActive_KetoSavage:before, .dx-acc-r .dxGridView_gvHeaderSortDown_KetoSavage:before, .dx-acc-r .dxGridView_gvHeaderSortUp_KetoSavage:before, .dx-acc-r .dxGridView_gvHideAdaptiveDetailButton_KetoSavage:before, .dx-acc-r .dxGridView_gvParentGroupRows_KetoSavage:before, .dx-acc-r .dxGridView_gvShowAdaptiveDetailButton_KetoSavage:before, .dx-acc-r .dxGridView_WindowResizer_KetoSavage:before, .dx-acc-r .dxGridView_WindowResizerRtl_KetoSavage:before, .dx-acc-r .dxgvADSB:hover .dxGridView_gvShowAdaptiveDetailButton_KetoSavage:before, .dx-acc-r .dxgvFocusedGroupRow_KetoSavage .dxGridView_gvCollapsedButton_KetoSavage:before, .dx-acc-r .dxgvFocusedGroupRow_KetoSavage .dxGridView_gvCollapsedButtonRtl_KetoSavage:before, .dx-acc-r .dxgvFocusedGroupRow_KetoSavage .dxGridView_gvDetailCollapsedButton_KetoSavage:before, .dx-acc-r .dxgvFocusedGroupRow_KetoSavage .dxGridView_gvDetailCollapsedButtonRtl_KetoSavage:before, .dx-acc-r .dxgvFocusedGroupRow_KetoSavage .dxGridView_gvDetailExpandedButton_KetoSavage:before, .dx-acc-r .dxgvFocusedGroupRow_KetoSavage .dxGridView_gvDetailExpandedButtonRtl_KetoSavage:before, .dx-acc-r .dxgvFocusedGroupRow_KetoSavage .dxGridView_gvExpandedButton_KetoSavage:before, .dx-acc-r .dxgvFocusedGroupRow_KetoSavage .dxGridView_gvExpandedButtonRtl_KetoSavage:before, .dx-acc-r .dxgvFocusedRow_KetoSavage .dxGridView_gvShowAdaptiveDetailButton_KetoSavage:before, .dx-acc-r .dxgvFocusedRow_KetoSavage .dxgvADSB:hover .dxGridView_gvShowAdaptiveDetailButton_KetoSavage:before, .dx-acc-r .dxm-checked .dxGridView_CTShowCustomizationWindow_KetoSavage:before, .dx-acc-r .dxm-checked .dxGridView_CTShowFilterRow_KetoSavage:before, .dx-acc-r .dxm-checked .dxGridView_CTShowGroupPanel_KetoSavage:before, .dx-acc-r .dxm-checked .dxGridView_CTShowSearchPanel_KetoSavage:before, .dx-acc-r .dxm-checked .dxGridView_gvCMClearFilter_KetoSavage:before, .dx-acc-r .dxm-checked .dxGridView_gvCMClearGrouping_KetoSavage:before, .dx-acc-r .dxm-checked .dxGridView_gvCMCollapseDetailRow_KetoSavage:before, .dx-acc-r .dxm-checked .dxGridView_gvCMCollapseRow_KetoSavage:before, .dx-acc-r .dxm-checked .dxGridView_gvCMDeleteRow_KetoSavage:before, .dx-acc-r .dxm-checked .dxGridView_gvCMEditRow_KetoSavage:before, .dx-acc-r .dxm-checked .dxGridView_gvCMExpandDetailRow_KetoSavage:before, .dx-acc-r .dxm-checked .dxGridView_gvCMExpandRow_KetoSavage:before, .dx-acc-r .dxm-checked .dxGridView_gvCMFullCollapse_KetoSavage:before, .dx-acc-r .dxm-checked .dxGridView_gvCMFullExpand_KetoSavage:before, .dx-acc-r .dxm-checked .dxGridView_gvCMGroupByColumn_KetoSavage:before, .dx-acc-r .dxm-checked .dxGridView_gvCMNewRow_KetoSavage:before, .dx-acc-r .dxm-checked .dxGridView_gvCMRefresh_KetoSavage:before, .dx-acc-r .dxm-checked .dxGridView_gvCMSearchPanel_KetoSavage:before, .dx-acc-r .dxm-checked .dxGridView_gvCMShowCustomizationWindow_KetoSavage:before, .dx-acc-r .dxm-checked .dxGridView_gvCMShowFilterEditor_KetoSavage:before, .dx-acc-r .dxm-checked .dxGridView_gvCMShowGroupPanel_KetoSavage:before, .dx-acc-r .dxm-checked .dxGridView_gvCMShowSearchPanel_KetoSavage:before, .dx-acc-r .dxm-checked .dxGridView_gvCMSortAscending_KetoSavage:before, .dx-acc-r .dxm-checked .dxGridView_gvCMSortDescending_KetoSavage:before, .dx-acc-r .dxm-checked .dxGridView_gvCMSummaryAverage_KetoSavage:before, .dx-acc-r .dxm-checked .dxGridView_gvCMSummaryCount_KetoSavage:before, .dx-acc-r .dxm-checked .dxGridView_gvCMSummaryMax_KetoSavage:before, .dx-acc-r .dxm-checked .dxGridView_gvCMSummaryMin_KetoSavage:before, .dx-acc-r .dxm-checked .dxGridView_gvCMSummarySum_KetoSavage:before, .dx-acc-r .dxm-checked .dxGridView_gvCMUngroupColumn_KetoSavage:before { content: url('sprite.svg'); }
+.dx-acc-r .dxGridView_CTClearFilter_KetoSavage:before { left: -102px; top: -92px; }
+.dx-acc-r .dxGridView_CTClearFilterDisabled_KetoSavage:before { left: -102px; top: -194px; }
+.dx-acc-r .dxGridView_CTClearGrouping_KetoSavage:before { left: -85px; top: -245px; }
+.dx-acc-r .dxGridView_CTClearGroupingDisabled_KetoSavage:before { left: -153px; top: -194px; }
+.dx-acc-r .dxGridView_CTCollapseDetailRow_KetoSavage:before { left: -119px; top: -160px; }
+.dx-acc-r .dxGridView_CTCollapseDetailRowDisabled_KetoSavage:before { left: -153px; top: -245px; }
+.dx-acc-r .dxGridView_CTCollapseRow_KetoSavage:before { left: -119px; top: -126px; }
+.dx-acc-r .dxGridView_CTCollapseRowDisabled_KetoSavage:before { left: -85px; top: -228px; }
+.dx-acc-r .dxGridView_CTDeleteRow_KetoSavage:before { left: 0px; top: -194px; }
+.dx-acc-r .dxGridView_CTDeleteRowDisabled_KetoSavage:before { left: -17px; top: -296px; }
+.dx-acc-r .dxGridView_CTEditRow_KetoSavage:before { left: 0px; top: -211px; }
+.dx-acc-r .dxGridView_CTEditRowDisabled_KetoSavage:before { left: -85px; top: -194px; }
+.dx-acc-r .dxGridView_CTExpandDetailRow_KetoSavage:before { left: 0px; top: -228px; }
+.dx-acc-r .dxGridView_CTExpandDetailRowDisabled_KetoSavage:before { left: -17px; top: -109px; }
+.dx-acc-r .dxGridView_CTExpandRow_KetoSavage:before { left: -119px; top: -262px; }
+.dx-acc-r .dxGridView_CTExpandRowDisabled_KetoSavage:before { left: -153px; top: -177px; }
+.dx-acc-r .dxGridView_CTExportCsv_KetoSavage:before { left: -136px; top: -262px; }
+.dx-acc-r .dxGridView_CTExportCsvDisabled_KetoSavage:before { left: -136px; top: -296px; }
+.dx-acc-r .dxGridView_CTExportDocx_KetoSavage:before { left: -34px; top: -194px; }
+.dx-acc-r .dxGridView_CTExportDocxDisabled_KetoSavage:before { left: -119px; top: -143px; }
+.dx-acc-r .dxGridView_CTExportPdf_KetoSavage:before { left: -136px; top: -245px; }
+.dx-acc-r .dxGridView_CTExportPdfDisabled_KetoSavage:before { left: -85px; top: -126px; }
+.dx-acc-r .dxGridView_CTExportRtf_KetoSavage:before { left: -85px; top: -279px; }
+.dx-acc-r .dxGridView_CTExportRtfDisabled_KetoSavage:before { left: -51px; top: -143px; }
+.dx-acc-r .dxGridView_CTExportXls_KetoSavage:before { left: -68px; top: -313px; }
+.dx-acc-r .dxGridView_CTExportXlsDisabled_KetoSavage:before { left: -68px; top: -296px; }
+.dx-acc-r .dxGridView_CTExportXlsx_KetoSavage:before { left: -68px; top: -228px; }
+.dx-acc-r .dxGridView_CTExportXlsxDisabled_KetoSavage:before { left: -85px; top: -143px; }
+.dx-acc-r .dxGridView_CTFullCollapse_KetoSavage:before { left: -68px; top: -262px; }
+.dx-acc-r .dxGridView_CTFullCollapseDisabled_KetoSavage:before { left: -85px; top: -211px; }
+.dx-acc-r .dxGridView_CTFullExpand_KetoSavage:before { left: -68px; top: -109px; }
+.dx-acc-r .dxGridView_CTFullExpandDisabled_KetoSavage:before { left: -153px; top: -211px; }
+.dx-acc-r .dxGridView_CTNewRow_KetoSavage:before { left: -68px; top: -211px; }
+.dx-acc-r .dxGridView_CTNewRowDisabled_KetoSavage:before { left: 0px; top: -296px; }
+.dx-acc-r .dxGridView_CTRefresh_KetoSavage:before { left: -17px; top: -126px; }
+.dx-acc-r .dxGridView_CTRefreshDisabled_KetoSavage:before { left: -85px; top: -313px; }
+.dx-acc-r .dxGridView_CTShowCustDialog_KetoSavage:before { left: -136px; top: -279px; }
+.dx-acc-r .dxGridView_CTShowCustDialogDisabled_KetoSavage:before { left: -85px; top: -177px; }
+.dx-acc-r .dxGridView_CTShowCustomizationWindow_KetoSavage:before { left: -136px; top: -160px; }
+.dx-acc-r .dxGridView_CTShowCustomizationWindowDisabled_KetoSavage:before { left: -51px; top: -296px; }
+.dx-acc-r .dxGridView_CTShowFilterEditor_KetoSavage:before { left: -105px; top: -330px; }
+.dx-acc-r .dxGridView_CTShowFilterEditorDisabled_KetoSavage:before { left: -142px; top: -313px; }
+.dx-acc-r .dxGridView_CTShowFilterRow_KetoSavage:before { left: -136px; top: -92px; }
+.dx-acc-r .dxGridView_CTShowFilterRowDisabled_KetoSavage:before { left: -34px; top: -245px; }
+.dx-acc-r .dxGridView_CTShowGroupPanel_KetoSavage:before { left: -51px; top: -92px; }
+.dx-acc-r .dxGridView_CTShowGroupPanelDisabled_KetoSavage:before { left: -51px; top: -177px; }
+.dx-acc-r .dxGridView_CTShowSearchPanel_KetoSavage:before { left: -60px; top: -330px; }
+.dx-acc-r .dxGridView_CTShowSearchPanelDisabled_KetoSavage:before { left: -136px; top: -177px; }
+.dx-acc-r .dxGridView_gvCellError_KetoSavage:before { left: -45px; top: -345px; }
+.dx-acc-r .dxGridView_gvCMClearFilter_KetoSavage:before { left: 0px; top: -177px; }
+.dx-acc-r .dxGridView_gvCMClearFilterDisabled_KetoSavage:before { left: -34px; top: -211px; }
+.dx-acc-r .dxGridView_gvCMClearGrouping_KetoSavage:before { left: -68px; top: -279px; }
+.dx-acc-r .dxGridView_gvCMClearGroupingDisabled_KetoSavage:before { left: 0px; top: -262px; }
+.dx-acc-r .dxGridView_gvCMCollapseDetailRow_KetoSavage:before { left: -51px; top: -211px; }
+.dx-acc-r .dxGridView_gvCMCollapseDetailRowDisabled_KetoSavage:before { left: -34px; top: -262px; }
+.dx-acc-r .dxGridView_gvCMCollapseRow_KetoSavage:before { left: -34px; top: -313px; }
+.dx-acc-r .dxGridView_gvCMCollapseRowDisabled_KetoSavage:before { left: -136px; top: -228px; }
+.dx-acc-r .dxGridView_gvCMDeleteRow_KetoSavage:before { left: -51px; top: -109px; }
+.dx-acc-r .dxGridView_gvCMDeleteRowDisabled_KetoSavage:before { left: -102px; top: -143px; }
+.dx-acc-r .dxGridView_gvCMEditRow_KetoSavage:before { left: -102px; top: -126px; }
+.dx-acc-r .dxGridView_gvCMEditRowDisabled_KetoSavage:before { left: 0px; top: -160px; }
+.dx-acc-r .dxGridView_gvCMExpandDetailRow_KetoSavage:before { left: -153px; top: -126px; }
+.dx-acc-r .dxGridView_gvCMExpandDetailRowDisabled_KetoSavage:before { left: -102px; top: -245px; }
+.dx-acc-r .dxGridView_gvCMExpandRow_KetoSavage:before { left: -51px; top: -245px; }
+.dx-acc-r .dxGridView_gvCMExpandRowDisabled_KetoSavage:before { left: -153px; top: -92px; }
+.dx-acc-r .dxGridView_gvCMExportCsv_KetoSavage:before { left: -119px; top: -177px; }
+.dx-acc-r .dxGridView_gvCMExportCsvDisabled_KetoSavage:before { left: -153px; top: -143px; }
+.dx-acc-r .dxGridView_gvCMExportDocx_KetoSavage:before { left: -68px; top: -126px; }
+.dx-acc-r .dxGridView_gvCMExportDocxDisabled_KetoSavage:before { left: 0px; top: -109px; }
+.dx-acc-r .dxGridView_gvCMExportPdf_KetoSavage:before { left: -102px; top: -177px; }
+.dx-acc-r .dxGridView_gvCMExportPdfDisabled_KetoSavage:before { left: 0px; top: -92px; }
+.dx-acc-r .dxGridView_gvCMExportRtf_KetoSavage:before { left: -51px; top: -313px; }
+.dx-acc-r .dxGridView_gvCMExportRtfDisabled_KetoSavage:before { left: -17px; top: -143px; }
+.dx-acc-r .dxGridView_gvCMExportXls_KetoSavage:before { left: -119px; top: -296px; }
+.dx-acc-r .dxGridView_gvCMExportXlsDisabled_KetoSavage:before { left: 0px; top: -313px; }
+.dx-acc-r .dxGridView_gvCMExportXlsx_KetoSavage:before { left: -85px; top: -92px; }
+.dx-acc-r .dxGridView_gvCMExportXlsxDisabled_KetoSavage:before { left: -17px; top: -160px; }
+.dx-acc-r .dxGridView_gvCMFullCollapse_KetoSavage:before { left: -17px; top: -177px; }
+.dx-acc-r .dxGridView_gvCMFullCollapseDisabled_KetoSavage:before { left: -85px; top: -160px; }
+.dx-acc-r .dxGridView_gvCMFullExpand_KetoSavage:before { left: -68px; top: -160px; }
+.dx-acc-r .dxGridView_gvCMFullExpandDisabled_KetoSavage:before { left: -17px; top: -245px; }
+.dx-acc-r .dxGridView_gvCMGroupByColumn_KetoSavage:before { left: -119px; top: -92px; }
+.dx-acc-r .dxGridView_gvCMGroupByColumnDisabled_KetoSavage:before { left: -153px; top: -69px; }
+.dx-acc-r .dxGridView_gvCMNewRow_KetoSavage:before { left: -34px; top: -228px; }
+.dx-acc-r .dxGridView_gvCMNewRowDisabled_KetoSavage:before { left: -136px; top: -126px; }
+.dx-acc-r .dxGridView_gvCMRefresh_KetoSavage:before { left: -17px; top: -92px; }
+.dx-acc-r .dxGridView_gvCMRefreshDisabled_KetoSavage:before { left: -34px; top: -126px; }
+.dx-acc-r .dxGridView_gvCMSearchPanel_KetoSavage:before { left: -150px; top: -330px; }
+.dx-acc-r .dxGridView_gvCMSearchPanelDisabled_KetoSavage:before { left: -51px; top: -194px; }
+.dx-acc-r .dxGridView_gvCMShowCustDialog_KetoSavage:before { left: -51px; top: -262px; }
+.dx-acc-r .dxGridView_gvCMShowCustDialogDisabled_KetoSavage:before { left: -153px; top: -228px; }
+.dx-acc-r .dxGridView_gvCMShowCustomizationWindow_KetoSavage:before { left: -17px; top: -279px; }
+.dx-acc-r .dxGridView_gvCMShowCustomizationWindowDisabled_KetoSavage:before { left: -119px; top: -211px; }
+.dx-acc-r .dxGridView_gvCMShowFilterEditor_KetoSavage:before { left: -135px; top: -330px; }
+.dx-acc-r .dxGridView_gvCMShowFilterEditorDisabled_KetoSavage:before { left: -157px; top: -313px; }
+.dx-acc-r .dxGridView_gvCMShowGroupPanel_KetoSavage:before { left: -136px; top: -109px; }
+.dx-acc-r .dxGridView_gvCMShowGroupPanelDisabled_KetoSavage:before { left: -102px; top: -211px; }
+.dx-acc-r .dxGridView_gvCMShowSearchPanel_KetoSavage:before { left: -120px; top: -330px; }
+.dx-acc-r .dxGridView_gvCMShowSearchPanelDisabled_KetoSavage:before { left: -17px; top: -228px; }
+.dx-acc-r .dxGridView_gvCMSortAscending_KetoSavage:before { left: -119px; top: -279px; }
+.dx-acc-r .dxGridView_gvCMSortAscendingDisabled_KetoSavage:before { left: -51px; top: -228px; }
+.dx-acc-r .dxGridView_gvCMSortDescending_KetoSavage:before { left: -34px; top: -92px; }
+.dx-acc-r .dxGridView_gvCMSortDescendingDisabled_KetoSavage:before { left: 0px; top: -143px; }
+.dx-acc-r .dxGridView_gvCMSummaryAverage_KetoSavage:before { left: -34px; top: -177px; }
+.dx-acc-r .dxGridView_gvCMSummaryAverageDisabled_KetoSavage:before { left: -34px; top: -296px; }
+.dx-acc-r .dxGridView_gvCMSummaryCount_KetoSavage:before { left: -102px; top: -296px; }
+.dx-acc-r .dxGridView_gvCMSummaryCountDisabled_KetoSavage:before { left: -153px; top: -160px; }
+.dx-acc-r .dxGridView_gvCMSummaryMax_KetoSavage:before { left: -51px; top: -160px; }
+.dx-acc-r .dxGridView_gvCMSummaryMaxDisabled_KetoSavage:before { left: -119px; top: -109px; }
+.dx-acc-r .dxGridView_gvCMSummaryMin_KetoSavage:before { left: -85px; top: -109px; }
+.dx-acc-r .dxGridView_gvCMSummaryMinDisabled_KetoSavage:before { left: -17px; top: -211px; }
+.dx-acc-r .dxGridView_gvCMSummarySum_KetoSavage:before { left: -102px; top: -262px; }
+.dx-acc-r .dxGridView_gvCMSummarySumDisabled_KetoSavage:before { left: -68px; top: -177px; }
+.dx-acc-r .dxGridView_gvCMUngroupColumn_KetoSavage:before { left: -34px; top: -160px; }
+.dx-acc-r .dxGridView_gvCOApply_KetoSavage:before { left: -92px; top: 0px; }
+.dx-acc-r .dxGridView_gvCOApplyDisabled_KetoSavage:before { left: -46px; top: -46px; }
+.dx-acc-r .dxGridView_gvCOClearFilter_KetoSavage:before { left: 0px; top: -69px; }
+.dx-acc-r .dxGridView_gvCOClearFilterDisabled_KetoSavage:before { left: -23px; top: -23px; }
+.dx-acc-r .dxGridView_gvCOClose_KetoSavage:before { left: -92px; top: -23px; }
+.dx-acc-r .dxGridView_gvCOColumnDrag_KetoSavage:before { left: -134px; top: -69px; }
+.dx-acc-r .dxGridView_gvCOColumnDragDisabled_KetoSavage:before { left: -115px; top: -69px; }
+.dx-acc-r .dxGridView_gvCOColumnGroup_KetoSavage:before { left: -115px; top: 0px; }
+.dx-acc-r .dxGridView_gvCOColumnGroupDisabled_KetoSavage:before { left: -23px; top: -69px; }
+.dx-acc-r .dxGridView_gvCOColumnHide_KetoSavage:before { left: -23px; top: -46px; }
+.dx-acc-r .dxGridView_gvCOColumnHideDisabled_KetoSavage:before { left: -92px; top: -46px; }
+.dx-acc-r .dxGridView_gvCOColumnRemove_KetoSavage:before { left: -115px; top: -23px; }
+.dx-acc-r .dxGridView_gvCOColumnRemoveDisabled_KetoSavage:before { left: -138px; top: -46px; }
+.dx-acc-r .dxGridView_gvCOColumnShow_KetoSavage:before { left: -46px; top: 0px; }
+.dx-acc-r .dxGridView_gvCOColumnShowDisabled_KetoSavage:before { left: -23px; top: 0px; }
+.dx-acc-r .dxGridView_gvCOColumnSort_KetoSavage:before { left: -69px; top: -69px; }
+.dx-acc-r .dxGridView_gvCOColumnSortDisabled_KetoSavage:before { left: -46px; top: -23px; }
+.dx-acc-r .dxGridView_gvCOColumnSortDown_KetoSavage:before { left: -46px; top: -69px; }
+.dx-acc-r .dxGridView_gvCOColumnSortDownDisabled_KetoSavage:before { left: 0px; top: -46px; }
+.dx-acc-r .dxGridView_gvCOColumnSortUp_KetoSavage:before { left: -138px; top: -23px; }
+.dx-acc-r .dxGridView_gvCOColumnSortUpDisabled_KetoSavage:before { left: 0px; top: -23px; }
+.dx-acc-r .dxGridView_gvCOColumnUngroup_KetoSavage:before { left: -69px; top: 0px; }
+.dx-acc-r .dxGridView_gvCOColumnUngroupDisabled_KetoSavage:before { left: -115px; top: -46px; }
+.dx-acc-r .dxGridView_gvCOColumnUnsort_KetoSavage:before { left: -92px; top: -69px; }
+.dx-acc-r .dxGridView_gvCOColumnUnsortDisabled_KetoSavage:before { left: 0px; top: 0px; }
+.dx-acc-r .dxGridView_gvCODragAreaCollapse_KetoSavage:before { left: -74px; top: -345px; }
+.dx-acc-r .dxGridView_gvCODragAreaExpand_KetoSavage:before { left: -60px; top: -345px; }
+.dx-acc-r .dxGridView_gvCOFilterCollapse_KetoSavage:before { left: -69px; top: -23px; }
+.dx-acc-r .dxGridView_gvCOFilterExpand_KetoSavage:before { left: -69px; top: -46px; }
+.dx-acc-r .dxGridView_gvCollapsedButton_KetoSavage:before { left: -104px; top: -360px; }
+.dx-acc-r .dxGridView_gvCollapsedButtonRtl_KetoSavage:before { left: -143px; top: -360px; }
+.dx-acc-r .dxGridView_gvDetailCollapsedButton_KetoSavage:before { left: -91px; top: -360px; }
+.dx-acc-r .dxGridView_gvDetailCollapsedButtonRtl_KetoSavage:before { left: 0px; top: -360px; }
+.dx-acc-r .dxGridView_gvDetailExpandedButton_KetoSavage:before { left: -114px; top: -345px; }
+.dx-acc-r .dxGridView_gvDetailExpandedButtonRtl_KetoSavage:before { left: -127px; top: -345px; }
+.dx-acc-r .dxGridView_gvDragAndDropArrowDown_KetoSavage:before { left: -161px; top: -23px; }
+.dx-acc-r .dxGridView_gvDragAndDropArrowLeft_KetoSavage:before { left: -163px; top: -12px; }
+.dx-acc-r .dxGridView_gvDragAndDropArrowRight_KetoSavage:before { left: -161px; top: 0px; }
+.dx-acc-r .dxGridView_gvDragAndDropArrowUp_KetoSavage:before { left: -161px; top: -36px; }
+.dx-acc-r .dxGridView_gvDragAndDropHideColumn_KetoSavage:before { left: -34px; top: -279px; }
+.dx-acc-r .dxGridView_gvExpandedButton_KetoSavage:before { left: -39px; top: -360px; }
+.dx-acc-r .dxGridView_gvExpandedButtonRtl_KetoSavage:before { left: -65px; top: -360px; }
+.dx-acc-r .dxGridView_gvFilterRowButton_KetoSavage:before { left: -30px; top: -345px; }
+.dx-acc-r .dxGridView_gvFixedGroupRow_KetoSavage:before { left: -119px; top: -313px; }
+.dx-acc-r .dxGridView_gvHeaderFilter_KetoSavage:before { left: 0px; top: -330px; }
+.dx-acc-r .dxGridView_gvHeaderFilterActive_KetoSavage:before { left: -15px; top: -345px; }
+.dx-acc-r .dxGridView_gvHeaderSortDown_KetoSavage:before { left: -101px; top: -345px; }
+.dx-acc-r .dxGridView_gvHeaderSortUp_KetoSavage:before { left: -140px; top: -345px; }
+.dx-acc-r .dxGridView_gvHideAdaptiveDetailButton_KetoSavage:before { left: -68px; top: -245px; }
+.dx-acc-r .dxGridView_gvParentGroupRows_KetoSavage:before { left: -138px; top: 0px; }
+.dx-acc-r .dxGridView_gvShowAdaptiveDetailButton_KetoSavage:before { left: -136px; top: -211px; }
+.dx-acc-r .dxGridView_WindowResizer_KetoSavage:before { left: -45px; top: -330px; }
+.dx-acc-r .dxGridView_WindowResizerRtl_KetoSavage:before { left: 0px; top: -345px; }
+.dx-acc-r .dxgvADSB:hover .dxGridView_gvShowAdaptiveDetailButton_KetoSavage:before { left: -17px; top: -262px; }
+.dx-acc-r .dxgvFocusedGroupRow_KetoSavage .dxGridView_gvCollapsedButton_KetoSavage:before { left: -117px; top: -360px; }
+.dx-acc-r .dxgvFocusedGroupRow_KetoSavage .dxGridView_gvCollapsedButtonRtl_KetoSavage:before { left: -130px; top: -360px; }
+.dx-acc-r .dxgvFocusedGroupRow_KetoSavage .dxGridView_gvDetailCollapsedButton_KetoSavage:before { left: -153px; top: -345px; }
+.dx-acc-r .dxgvFocusedGroupRow_KetoSavage .dxGridView_gvDetailCollapsedButtonRtl_KetoSavage:before { left: -26px; top: -360px; }
+.dx-acc-r .dxgvFocusedGroupRow_KetoSavage .dxGridView_gvDetailExpandedButton_KetoSavage:before { left: -52px; top: -360px; }
+.dx-acc-r .dxgvFocusedGroupRow_KetoSavage .dxGridView_gvDetailExpandedButtonRtl_KetoSavage:before { left: -13px; top: -360px; }
+.dx-acc-r .dxgvFocusedGroupRow_KetoSavage .dxGridView_gvExpandedButton_KetoSavage:before { left: -78px; top: -360px; }
+.dx-acc-r .dxgvFocusedGroupRow_KetoSavage .dxGridView_gvExpandedButtonRtl_KetoSavage:before { left: -88px; top: -345px; }
+.dx-acc-r .dxgvFocusedRow_KetoSavage .dxGridView_gvShowAdaptiveDetailButton_KetoSavage:before { left: -51px; top: -126px; }
+.dx-acc-r .dxgvFocusedRow_KetoSavage .dxgvADSB:hover .dxGridView_gvShowAdaptiveDetailButton_KetoSavage:before { left: -34px; top: -143px; }
+.dx-acc-r .dxm-checked .dxGridView_CTShowCustomizationWindow_KetoSavage:before { left: -102px; top: -313px; }
+.dx-acc-r .dxm-checked .dxGridView_CTShowFilterRow_KetoSavage:before { left: -102px; top: -228px; }
+.dx-acc-r .dxm-checked .dxGridView_CTShowGroupPanel_KetoSavage:before { left: -68px; top: -143px; }
+.dx-acc-r .dxm-checked .dxGridView_CTShowSearchPanel_KetoSavage:before { left: -15px; top: -330px; }
+.dx-acc-r .dxm-checked .dxGridView_gvCMClearFilter_KetoSavage:before { left: -136px; top: -143px; }
+.dx-acc-r .dxm-checked .dxGridView_gvCMClearGrouping_KetoSavage:before { left: 0px; top: -245px; }
+.dx-acc-r .dxm-checked .dxGridView_gvCMCollapseDetailRow_KetoSavage:before { left: -136px; top: -194px; }
+.dx-acc-r .dxm-checked .dxGridView_gvCMCollapseRow_KetoSavage:before { left: -153px; top: -262px; }
+.dx-acc-r .dxm-checked .dxGridView_gvCMDeleteRow_KetoSavage:before { left: -51px; top: -279px; }
+.dx-acc-r .dxm-checked .dxGridView_gvCMEditRow_KetoSavage:before { left: -153px; top: -279px; }
+.dx-acc-r .dxm-checked .dxGridView_gvCMExpandDetailRow_KetoSavage:before { left: -102px; top: -160px; }
+.dx-acc-r .dxm-checked .dxGridView_gvCMExpandRow_KetoSavage:before { left: -85px; top: -262px; }
+.dx-acc-r .dxm-checked .dxGridView_gvCMFullCollapse_KetoSavage:before { left: -68px; top: -92px; }
+.dx-acc-r .dxm-checked .dxGridView_gvCMFullExpand_KetoSavage:before { left: 0px; top: -126px; }
+.dx-acc-r .dxm-checked .dxGridView_gvCMGroupByColumn_KetoSavage:before { left: -119px; top: -245px; }
+.dx-acc-r .dxm-checked .dxGridView_gvCMNewRow_KetoSavage:before { left: -119px; top: -194px; }
+.dx-acc-r .dxm-checked .dxGridView_gvCMRefresh_KetoSavage:before { left: -102px; top: -279px; }
+.dx-acc-r .dxm-checked .dxGridView_gvCMSearchPanel_KetoSavage:before { left: -90px; top: -330px; }
+.dx-acc-r .dxm-checked .dxGridView_gvCMShowCustomizationWindow_KetoSavage:before { left: -153px; top: -109px; }
+.dx-acc-r .dxm-checked .dxGridView_gvCMShowFilterEditor_KetoSavage:before { left: -75px; top: -330px; }
+.dx-acc-r .dxm-checked .dxGridView_gvCMShowGroupPanel_KetoSavage:before { left: -68px; top: -194px; }
+.dx-acc-r .dxm-checked .dxGridView_gvCMShowSearchPanel_KetoSavage:before { left: -30px; top: -330px; }
+.dx-acc-r .dxm-checked .dxGridView_gvCMSortAscending_KetoSavage:before { left: -17px; top: -194px; }
+.dx-acc-r .dxm-checked .dxGridView_gvCMSortDescending_KetoSavage:before { left: -17px; top: -313px; }
+.dx-acc-r .dxm-checked .dxGridView_gvCMSummaryAverage_KetoSavage:before { left: -102px; top: -109px; }
+.dx-acc-r .dxm-checked .dxGridView_gvCMSummaryCount_KetoSavage:before { left: 0px; top: -279px; }
+.dx-acc-r .dxm-checked .dxGridView_gvCMSummaryMax_KetoSavage:before { left: -85px; top: -296px; }
+.dx-acc-r .dxm-checked .dxGridView_gvCMSummaryMin_KetoSavage:before { left: -153px; top: -296px; }
+.dx-acc-r .dxm-checked .dxGridView_gvCMSummarySum_KetoSavage:before { left: -34px; top: -109px; }
+.dx-acc-r .dxm-checked .dxGridView_gvCMUngroupColumn_KetoSavage:before { left: -119px; top: -228px; }
 

@@ -1,3 +1,5 @@
+/*ResourceNavigator*/
+/*ResourceNavigator*/
 .dxscControl_KetoSavage .dxsc-detailed-apt-tooltip .dxsc-dat-container > div
 {
     background: #454545;
@@ -22,9 +24,10 @@
 .dxscControl_KetoSavage
 {
     background-color: #dfdfdf;
-    font: 14px 'Open Sans', Helvetica, 'Droid Sans', Tahoma, Geneva, sans-serif;
+    font: 14px 'Roboto Regular', Helvetica, 'Droid Sans', Tahoma, Geneva, sans-serif;
     color: #484848;
     border-collapse: separate;
+    box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16);
 }
 .dxscControl_KetoSavage .dxscAppointmentForm
 {
@@ -50,7 +53,7 @@
 .dxscLoadingPanel_KetoSavage
 {
     background-color: white;
-    font: 14px 'Open Sans', Helvetica, 'Droid Sans', Tahoma, Geneva, sans-serif;
+    font: 14px 'Roboto Regular', Helvetica, 'Droid Sans', Tahoma, Geneva, sans-serif;
     color: #484848;
     -moz-box-shadow: 0 2px 4px 0 rgba(0,0,0,0.16), 0 2px 8px 0 rgba(0,0,0,0.12);
     -webkit-box-shadow: 0 2px 4px 0 rgba(0,0,0,0.16), 0 2px 8px 0 rgba(0,0,0,0.12);
@@ -71,7 +74,7 @@
     -khtml-border-radius: 50%;
     border-radius: 50%;
     animation: dxLoadSpinSys 1s linear infinite;
-    border: 4px solid #000000;
+    border: 4px solid #DEDEDE;
     border-top: 4px solid #EEE;
     width: 24px;
     height: 24px;
@@ -97,9 +100,10 @@ html.dxIE.dxBrowserVersion-9 .dxscLoadingPanel_KetoSavage .dxlp-loadingImage
 .dxscHorizontalResourceHeader_KetoSavage,
 .dxscVerticalResourceHeader_KetoSavage
 {
-    background: #eeeeee;
     color: black;
-    border: solid 1px #DFDFDF;
+    background: #eeeeee;
+    border-style: solid;
+    border-color: #DFDFDF;
     border-width: 0 1px 1px 0;
     padding: 12px 4px;
     text-align: center;
@@ -107,12 +111,6 @@ html.dxIE.dxBrowserVersion-9 .dxscLoadingPanel_KetoSavage .dxlp-loadingImage
     cursor: default;
     overflow: hidden;
     white-space: nowrap;
-}
-.dxscAlternateTimelineDateHeader_KetoSavage,
-.dxscAlternateDateHeader_KetoSavage
-{
-    background: #000000;
-    color: white;
 }
 .dxscDayHeader_KetoSavage
 {
@@ -122,15 +120,54 @@ html.dxIE.dxBrowserVersion-9 .dxscLoadingPanel_KetoSavage .dxlp-loadingImage
 {
     border-width: 1px;
 }
+.dxscAlternateTimelineDateHeader_KetoSavage,
+.dxscAlternateDateHeader_KetoSavage
+{
+    background: #DEDEDE;
+    color: white;
+}
 .dxscTodayCellHeader_KetoSavage
 {
     border-top-width: 1px;
-    background: #000000;
+    background: #DEDEDE;
     color: white;
 }
 .dxscTimelineDateHeader_KetoSavage
 {
     border-width: 1px 1px 1px 0;
+}
+.dxsc-month-mobile-layout .dxscDayHeader_KetoSavage,
+.dxsc-month-mobile-layout .dxscDateCellHeader_KetoSavage,
+.dxsc-month-mobile-layout .dxscTodayCellHeader_KetoSavage
+{
+    padding: 5px;
+}
+.dxscAgendaView .dxscDateCell_KetoSavage,
+.dxscAgendaView .dxscDateRow_KetoSavage,
+.dxscControl_KetoSavage .dxsc-agenda-header-row,
+.dxscControl_KetoSavage .dxsc-agenda-horizontal-header
+{
+    background-color: #FAFAFA;
+    border-bottom: solid 1px #D6D6D6;
+}
+.dxscControl_KetoSavage .dxscAgendaView .dxscTodayDateCell_KetoSavage,
+.dxscControl_KetoSavage .dxscAgendaView .dxscTodayDateRow_KetoSavage
+{
+    background: #DEDEDE;
+}
+.dxscControl_KetoSavage .dxscAgendaView .dxscTodayDateCell_KetoSavage,
+.dxscControl_KetoSavage .dxscAgendaView .dxscTodayDateCell_KetoSavage .dxsc-agenda-day-cell,
+.dxscControl_KetoSavage .dxscAgendaView .dxscTodayDateCell_KetoSavage .dxsc-agenda-day-of-week-cell,
+.dxscControl_KetoSavage .dxscAgendaView .dxscTodayDateRow_KetoSavage,
+.dxscControl_KetoSavage .dxscAgendaView .dxscTodayDateRow_KetoSavage .dxsc-agenda-day-cell,
+.dxscControl_KetoSavage .dxscAgendaView .dxscTodayDateRow_KetoSavage .dxsc-agenda-day-of-week-cell
+{
+    color: white;
+}
+.dxscControl_KetoSavage .dxscAgendaView .dxscTodayMonthOfYearCell_KetoSavage,
+.dxscControl_KetoSavage .dxscAgendaView .dxscTodayMonthYearCaption_KetoSavage
+{
+    color: #e0e0e0;
 }
 .dxscHorizontalResourceHeader_KetoSavage
 {
@@ -265,7 +302,7 @@ html.dxIE.dxBrowserVersion-9 .dxscLoadingPanel_KetoSavage .dxlp-loadingImage
 .dxscMoreButton_KetoSavage
 {
     font-size: 0.91em;
-    color: #000000;
+    color: #DEDEDE;
     text-decoration: none;
     padding: 0;
 }
@@ -315,18 +352,17 @@ html.dxIE.dxBrowserVersion-9 .dxscLoadingPanel_KetoSavage .dxlp-loadingImage
 /* Control elements */
 .dxscToolbarContainer_KetoSavage
 {
-    padding: 9px 12px 4px;
-    border: 1px solid #DFDFDF;
-    border-top-left-radius: 4px;
-    border-top-right-radius: 4px;
+    padding: 15px 12px 8px;
+    border-color: #DFDFDF;
+    border-style: solid;
+    border-width: 1px 1px 0px 1px;
     background-color: White;
-    box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16);
     position: relative;
 }
 .dxscToolbar_KetoSavage
 {
     border: none;
-    padding: 0px 7px 4px;
+    padding: 4px 7px;
 }
 .dxscControl_KetoSavage .dxscRendererTable
 {
@@ -347,14 +383,76 @@ html.dxIE.dxBrowserVersion-9 .dxscLoadingPanel_KetoSavage .dxlp-loadingImage
 {
     background: white;
     padding: 10px 16px;
-    border-left: 1px solid #DFDFDF !important;
-    border-right: 1px solid #DFDFDF !important;
+    border-color: #DFDFDF;
+    color: #484848;
+    font: 14px 'Roboto Regular', Helvetica, 'Droid Sans', Tahoma, Geneva, sans-serif;
+}
+.dxscControl_KetoSavage .dxscResourceNavigator_KetoSavage
+{
+    border-width: 1px 1px 0 1px;
+}
+.dxscResourceNavigator_KetoSavage.dxsc-resselector-container
+{
+    padding: 8px 12px 8px 12px;
+}
+.dxscResourceNavigator_KetoSavage .dxsc-restoken
+{
+    border: none;
+    background: #EAEAEA;
+    border-radius: 14px;
+    line-height: 100%;
+}
+.dxscResourceNavigator_KetoSavage .dxsc-restoken .dxsc-rh-sys
+{
+    border: none;
+}
+.dxscResourceNavigator_KetoSavage .dxsc-restokens .dxsc-restoken.dxsc-rh-color-mode .dxsc-rc-sys
+{
+    padding-left: 28px;
+}
+.dxscResourceNavigator_KetoSavage .dxsc-restoken .dxsc-rh-sys
+{
+    width: 12px;
+    height: 12px;
+    top: 8px;
+    left: 9px;
+    border-radius: 50%;
+}
+.dxscResourceNavigator_KetoSavage .dxsc-restoken .dxsc-rc-sys
+{
+    padding: 8px 0px 6px 12px;
+}
+.dxscResourceNavigator_KetoSavage .dxsc-restoken .dxsc-restoken-remove
+{
+    margin: 2px 4px 2px 1px;
+    float: right;
+}
+.dxscResourceNavigator_KetoSavage .dxpc-footerContent > div:first-child
+{
+    margin-right: 6px;
+}
+.dxscResourceNavigatorButton_KetoSavage.dxsc-filter-button
+{
+    padding: 7px 7px 6px 7px;
+    background: #EAEAEA;
+    border-radius: 50%;
+}
+.dxscResourceNavigatorButton_KetoSavage.dxsc-more-button
+{
+    padding: 6px 7px 7px 7px;
+    background: #eaeaea;
+    border-radius: 50%;
+}
+.dxscResourceNavigatorButton_KetoSavage.dxsc-filter-button > div,
+.dxscResourceNavigatorButton_KetoSavage.dxsc-more-button > div
+{
+    padding-top: 1px;
 }
 .dxscViewVisibleInterval_KetoSavage
 {
     font-size: 1.17em;
     white-space: nowrap;
-    color: #000000;
+    color: #DEDEDE;
     text-transform: uppercase;
 }
 .dxscToolbarContainer_KetoSavage .dxsc-adaptive-toolbar .dxsc-view-visible-interval-table
@@ -399,7 +497,7 @@ html.dxIE.dxBrowserVersion-9 .dxscLoadingPanel_KetoSavage .dxlp-loadingImage
 .dxscViewNavigatorButton_KetoSavage.dxscViewNavigatorGotoTodayButton
 {
     padding: 0 4px 3px;
-    color: #000000;
+    color: #DEDEDE;
 }
 .dxscViewNavigatorButtonHover_KetoSavage.dxscViewNavigatorGotoTodayButton
 {
@@ -432,11 +530,11 @@ html.dxIE.dxBrowserVersion-9 .dxscLoadingPanel_KetoSavage .dxlp-loadingImage
 }
 .dxscViewSelector_KetoSavage
 {
-    font: 14px 'Open Sans', Helvetica, 'Droid Sans', Tahoma, Geneva, sans-serif;
+    font: 14px 'Roboto Regular', Helvetica, 'Droid Sans', Tahoma, Geneva, sans-serif;
 }
 .dxscViewSelectorButton_KetoSavage
 {
-    padding: 1px 12px 8px 12px;
+    padding: 6px 18px 15px;
     margin-bottom: -8px;
     color: #757575;
     text-transform: uppercase;
@@ -446,7 +544,7 @@ html.dxIE.dxBrowserVersion-9 .dxscLoadingPanel_KetoSavage .dxlp-loadingImage
 .dxscViewSelector_KetoSavage .dxmLite_KetoSavage .dxm-main .dxm-item.dxm-checked.dxm-hovered,
 .dxscViewSelectorButtonChecked_KetoSavage
 {
-    border-bottom: 4px solid #000000;
+    border-bottom: 4px solid #DEDEDE;
     color: black;
 }
 .dxscViewSelector_KetoSavage .dxmLite_KetoSavage .dxm-main .dxm-item.dxm-hovered
@@ -463,7 +561,7 @@ html.dxIE.dxBrowserVersion-9 .dxscLoadingPanel_KetoSavage .dxlp-loadingImage
 .dxscViewSelector_KetoSavage.dxscVSVert .dxmLite_KetoSavage .dxm-main.dxm-vertical .dxm-item .dxm-content,
 .dxscViewSelector_KetoSavage .dxmLite_KetoSavage.dxm-ltr .dxm-main .dxm-image-l .dxm-popOut
 {
-    padding: 1px 12px 8px 12px;
+    padding: 6px 18px 15px;
 }
 .dxscViewSelector_KetoSavage .dxmLite_KetoSavage.dxm-ltr .dxm-main .dxm-image-l div.dxm-popOut
 {
@@ -517,30 +615,30 @@ html.dxIE.dxBrowserVersion-9 .dxscLoadingPanel_KetoSavage .dxlp-loadingImage
     border-top: 1px #757575 solid;
     vertical-align: bottom;
     height: 1px;
-    background-color: #000000;
+    background-color: #FFFFFF;
 }
 .dxscToolTipRoundedCornersLeftSide_KetoSavage
 {
     border-left: 1px #757575 solid;
     vertical-align: bottom;
-    background-color: #000000;
+    background-color: #FFFFFF;
 }
 .dxscToolTipRoundedCornersRightSide_KetoSavage
 {
     border-right: 1px #757575 solid;
     vertical-align: bottom;
-    background-color: #000000;
+    background-color: #FFFFFF;
 }
 .dxscToolTipRoundedCornersBottomSide_KetoSavage
 {
     border-bottom: 1px #757575 solid;
     vertical-align: bottom;
     height: 1px;
-    background-color: #000000;
+    background-color: #FFFFFF;
 }
 .dxscToolTipRoundedCornersContent_KetoSavage
 {
-    background-color: #000000;
+    background-color: #FFFFFF;
     padding: 0;
 }
 .dxscToolTipSquaredCorners_KetoSavage
@@ -566,10 +664,10 @@ html.dxIE.dxBrowserVersion-9 .dxscLoadingPanel_KetoSavage .dxlp-loadingImage
 .dxscTimeMarkerLineV_KetoSavage
 {
     position: absolute;
-    background-color: #000000;
+    background-color: #DEDEDE;
     width: 1px;
     font-size: 0;
-    border: solid 1px #000000;
+    border: solid 1px #FFFFFF;
     border-top-width: 0;
     border-bottom-width: 0;
     box-sizing: content-box;
@@ -578,10 +676,10 @@ html.dxIE.dxBrowserVersion-9 .dxscLoadingPanel_KetoSavage .dxlp-loadingImage
 {
     position: absolute;
     top: -2px;
-    background-color: #000000;
+    background-color: #DEDEDE;
     height: 1px;
     font-size: 0;
-    border: solid 1px #000000;
+    border: solid 1px #FFFFFF;
     border-left-width: 0;
     border-right-width: 0;
 }
@@ -608,9 +706,7 @@ html.dxIE.dxBrowserVersion-9 .dxscLoadingPanel_KetoSavage .dxlp-loadingImage
 {
     border-right-width: 0px;
 }
-.dxscRendererTable.dxscClientRendering td.dxscHorizontalResourceHeader_KetoSavage,
-.dxscClientRendering.dxscDayView td.dxscLeftTopCorner_KetoSavage,
-.dxscClientRendering.dxscWeekView td.dxscLeftTopCorner_KetoSavage
+.dxscRendererTable.dxscClientRendering td.dxscHorizontalResourceHeader_KetoSavage
 {
     border-bottom-width: 0px;
 }
@@ -658,13 +754,6 @@ html.dxIE.dxBrowserVersion-9 .dxscLoadingPanel_KetoSavage .dxlp-loadingImage
     color: #5C5C5C;
     font-size: 14px;
 }
-.dxscAgendaView .dxscDateCell_KetoSavage,
-.dxscAgendaView .dxscDateRow_KetoSavage,
-.dxscControl_KetoSavage .dxsc-agenda-header-row,
-.dxscControl_KetoSavage .dxsc-agenda-horizontal-header
-{
-    background-color: #FAFAFA;
-}
 .dxscDateRow_KetoSavage.dxsc-agenda-horizontal-header
 {
     padding-top: 7px;
@@ -688,7 +777,6 @@ html.dxIE.dxBrowserVersion-9 .dxscLoadingPanel_KetoSavage .dxlp-loadingImage
     border-bottom-color: #D6D6D6;
 }
 .dxscControl_KetoSavage .dxsc-agenda-date-cell,
-.dxscControl_KetoSavage .dxsc-agenda-horizontal-header,
 .dxscControl_KetoSavage .dxscAgendaView .dxsc-apt-status-cell,
 .dxscControl_KetoSavage .dxscAgendaView .dxsc-agenda-apt > table,
 .dxscControl_KetoSavage .dxsc-agenda-compact-time-cell .dxsc-apt-time-table-wrapper,
@@ -742,12 +830,12 @@ html.dxIE.dxBrowserVersion-9 .dxscLoadingPanel_KetoSavage .dxlp-loadingImage
 .dxsc-dialog-reminder .dxflFormLayout_KetoSavage .dialog-item-Subject .dialog-aspxlabel,
 .dxscBorderSpacing .dxeBase_KetoSavage.dxsc-reminder-form-apt-subject
 {
-    color: #000000;
+    color: #DEDEDE;
     font-size: 16px;
 }
 .dxscControl_KetoSavage .dxsc-cell-touch-handle
 {
-    background-color: #000000;
+    background-color: #DEDEDE;
 }
 .dxpcLite_KetoSavage.dxsc-modal.dxsc-modal-appoinment
 {

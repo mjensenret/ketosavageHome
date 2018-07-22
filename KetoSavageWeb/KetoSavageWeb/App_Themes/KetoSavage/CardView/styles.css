@@ -1,7 +1,7 @@
 .dxcvControl_KetoSavage,
 .dxcvDisabled_KetoSavage
 {
-    font: 14px 'Open Sans', Helvetica, 'Droid Sans', Tahoma, Geneva, sans-serif;
+    font: 14px 'Roboto Regular', Helvetica, 'Droid Sans', Tahoma, Geneva, sans-serif;
     background-color: White;
     color: #000000;
     cursor: default;
@@ -10,9 +10,14 @@
 {
     color: #b8b8b8;
 }
-.dxcvControl_KetoSavage a
+.dxcvControl_KetoSavage a.dxeHyperlink:not([href]):not([onclick]):not(.dxbButtonSys)
 {
     color: #000000;
+    text-decoration: none;
+}
+.dxcvControl_KetoSavage a
+{
+    color: #DEDEDE;
     text-decoration: none;
 }
 .dxcvControl_KetoSavage a:hover
@@ -21,7 +26,7 @@
 }
 .dxcvControl_KetoSavage a:hover.dxbDisabled_KetoSavage
 {
-    color: #000000;
+    color: #BBBBBB;
     text-decoration: none;
 }
 .dxcvDisabled_KetoSavage a
@@ -31,7 +36,7 @@
 .dxcvLoadingPanel_KetoSavage
 {
     background-color: white;
-    font: 14px 'Open Sans', Helvetica, 'Droid Sans', Tahoma, Geneva, sans-serif;
+    font: 14px 'Roboto Regular', Helvetica, 'Droid Sans', Tahoma, Geneva, sans-serif;
     color: #484848;
     -moz-box-shadow: 0 2px 4px 0 rgba(0,0,0,0.16), 0 2px 8px 0 rgba(0,0,0,0.12);
     -webkit-box-shadow: 0 2px 4px 0 rgba(0,0,0,0.16), 0 2px 8px 0 rgba(0,0,0,0.12);
@@ -52,7 +57,7 @@
     -khtml-border-radius: 50%;
     border-radius: 50%;
     animation: dxLoadSpinSys 1s linear infinite;
-    border: 4px solid #000000;
+    border: 4px solid #DEDEDE;
     border-top: 4px solid #EEE;
     width: 24px;
     height: 24px;
@@ -76,7 +81,7 @@ html.dxIE.dxBrowserVersion-9 .dxcvLoadingPanel_KetoSavage .dxlp-loadingImage
     -khtml-border-radius: 50%;
     border-radius: 50%;
     animation: dxLoadSpinSys 1s linear infinite;
-    border: 2px solid #000000;
+    border: 2px solid #DEDEDE;
     border-top: 2px solid #EEE;
     width: 16px;
     height: 16px;
@@ -108,7 +113,7 @@ html.dxIE.dxBrowserVersion-9 .dxcvLoadingPanelStatusBar_KetoSavage .dxlp-loading
     border-width: 0;
     border-collapse: separate !important;
     overflow: hidden;
-    padding: 8px 8px 8px 8px;
+    padding: 10px 8px 12px 8px;
     border: 1px solid #DFDFDF;
     border-top-left-radius: 4px;
     border-top-right-radius: 4px;
@@ -131,11 +136,11 @@ html.dxIE.dxBrowserVersion-9 .dxcvLoadingPanelStatusBar_KetoSavage .dxlp-loading
     cursor: pointer;
     border: 1px solid #DFDFDF;
     white-space: nowrap;
-    padding: 7px 12px 7px;
+    padding: 4px 23px 5px;
     background-color: white;
     overflow: hidden;
     font-weight: normal;
-    font: 14px 'Open Sans', Helvetica, 'Droid Sans', Tahoma, Geneva, sans-serif;font-weight:bold;
+    font: 14px 'Roboto Medium', Helvetica, 'Droid Sans', Tahoma, Geneva, sans-serif;
     font-size: 1em;
     text-align: left;
 }
@@ -145,29 +150,31 @@ html.dxIE.dxBrowserVersion-9 .dxcvLoadingPanelStatusBar_KetoSavage .dxlp-loading
 }
 .dxcvHeader_KetoSavage a
 {
-    color: #000000;
+    color: #DEDEDE;
 }
 .dxcvHeader_KetoSavage a.dxcvCommandItem_KetoSavage
 {
     margin: 0 5px 0 0;
-    color: #000000;
+    color: #DEDEDE;
 }
 .dxcvCard_KetoSavage .dxflHARSys.dxflGroupCell_KetoSavage .dxflCommandItemSys,
+.dxcvBreakpointsCard_KetoSavage .dxflHARSys.dxflGroupCell_KetoSavage .dxflCommandItemSys,
 .dxcvFlowCard_KetoSavage .dxflHARSys.dxflGroupCell_KetoSavage .dxflCommandItemSys
 {
     margin-right: -5px;
 }
 .dxcvCard_KetoSavage .dxflViewFormLayoutSys .dxflGroupCell_KetoSavage .dxflCommandItemSys,
+.dxcvBreakpointsCard_KetoSavage .dxflViewFormLayoutSys .dxflGroupCell_KetoSavage .dxflCommandItemSys,
 .dxcvFlowCard_KetoSavage .dxflViewFormLayoutSys .dxflGroupCell_KetoSavage .dxflCommandItemSys
 {
-    padding-top: 10px;
-    padding-bottom: 0;
+    padding-top: 12px;
+    padding-bottom: 12px;
 }
 .dxcvEditForm_KetoSavage .dxflFormLayout_KetoSavage .dxflCommandItemSys,
 .dxcvPopupEditForm_KetoSavage .dxflFormLayout_KetoSavage .dxflCommandItemSys
 {
-    padding-top: 22px;
-    padding-bottom: 0;
+    padding-top: 12px;
+    padding-bottom: 12px;
 }
 .dxcvEditForm_KetoSavage .dxflFormLayout_KetoSavage .dxflCommandItemSys a,
 .dxcvPopupEditForm_KetoSavage .dxflFormLayout_KetoSavage .dxflCommandItemSys a
@@ -188,6 +195,18 @@ html.dxIE.dxBrowserVersion-9 .dxcvLoadingPanelStatusBar_KetoSavage .dxlp-loading
 {
     padding: 4px;
     margin: 0;
+}
+.dxcvControl_KetoSavage .dxpcLite_KetoSavage
+{
+    -moz-box-shadow: 0 2px 4px 0 rgba(0,0,0,0.16), 0 2px 8px 0 rgba(0,0,0,0.12);
+    -webkit-box-shadow: 0 2px 4px 0 rgba(0,0,0,0.16), 0 2px 8px 0 rgba(0,0,0,0.12);
+    box-shadow: 0 2px 4px 0 rgba(0,0,0,0.16), 0 2px 8px 0 rgba(0,0,0,0.12);
+}
+.dxcvControl_KetoSavage .dxpcLite_KetoSavage .dxpc-mainDiv.dxpc-hf
+{
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
 }
 .dxcvCustomization_KetoSavage
 {
@@ -234,7 +253,7 @@ html.dxIE.dxBrowserVersion-9 .dxcvLoadingPanelStatusBar_KetoSavage .dxlp-loading
 a.dxcvCommandItem_KetoSavage
 {
     margin: 0 5px 0 0;
-    color: #000000;
+    color: #DEDEDE;
 }
 .dxbButton_KetoSavage[class~="dxcvCommandItem_KetoSavage"],
 .dxcvEditFormTable_KetoSavage div.dxbButton_KetoSavage
@@ -248,6 +267,7 @@ a.dxcvCommandItem_KetoSavage
     padding-bottom: 0;
 }
 .dxcvCard_KetoSavage .dxflCommandItemSys .dxichSys,
+.dxcvBreakpointsCard_KetoSavage .dxflCommandItemSys .dxichSys,
 .dxcvFlowCard_KetoSavage .dxflCommandItemSys .dxichSys
 {
     margin: -1px 10px 1px 1px;
@@ -255,7 +275,7 @@ a.dxcvCommandItem_KetoSavage
 .dxcvPagerTopPanel_KetoSavage,
 .dxcvPagerBottomPanel_KetoSavage
 {
-    padding: 3px 0 1px;
+    padding: 9px 0 9px;
 }
 .dxcvPagerBottomPanel_KetoSavage
 {
@@ -277,7 +297,7 @@ a.dxcvCommandItem_KetoSavage
 }
 .dxcvFilterBar_KetoSavage a
 {
-    color: #000000;
+    color: #DEDEDE;
     text-decoration: none;
 }
 .dxcvFilterBar_KetoSavage a:hover
@@ -286,16 +306,16 @@ a.dxcvCommandItem_KetoSavage
 }
 .dxcvFilterBar_KetoSavage > tbody > tr > td
 {
-    padding-top: 6px;
-    padding-bottom: 6px;
+    padding-top: 14px;
+    padding-bottom: 14px;
 }
 .dxcvFilterBarCheckBoxCell_KetoSavage
 {
-    padding-left: 8px;
+    padding-left: 20px;
 }
 *[dir="rtl"] .dxcvFilterBarCheckBoxCell_KetoSavage
 {
-    padding-right: 8px;
+    padding-right: 20px;
 }
 .dxcvFilterBarImageCell_KetoSavage
 {
@@ -397,11 +417,11 @@ a.dxcvCommandItem_KetoSavage
 }
 .dxcvSearchPanel_KetoSavage .dxeButtonEdit_KetoSavage td.dxic
 {
-    padding: 13px 8px 14px 12px;
+    padding: 15px 8px 17px 12px;
 }
 *[dir="rtl"] .dxcvSearchPanel_KetoSavage .dxeButtonEdit_KetoSavage td.dxic
 {
-    padding: 13px 12px 14px 8px;
+    padding: 15px 12px 17px 8px;
 }
 .dxcvControl_KetoSavage .dxcvSearchPanel_KetoSavage .dxbButton_KetoSavage
 {
@@ -415,24 +435,26 @@ a.dxcvCommandItem_KetoSavage
 }
 .dxcvControl_KetoSavage .dxcvHL
 {
-    background: #000000;
+    background: #DEDEDE;
     color: white;
     font-weight: bold;
     font-style: normal;
 }
 .dxcvCard_KetoSavage,
 .dxcvFlowCard_KetoSavage,
+.dxcvBreakpointsCard_KetoSavage,
 .dxcvEmptyCard_KetoSavage,
 .dxcvEmptyHiddenCard_KetoSavage
 {
     width: 250px;
-    height: 200px;
-    padding: 0 2px 18px;
+    height: 260px;
+    padding: 12px 2px 48px;
     vertical-align: top;
     box-shadow: 0 2px 4px 0 rgba(0,0,0,0.16), 0 2px 8px 0 rgba(0,0,0,0.12);
 }
 .dxcvCard_KetoSavage,
 .dxcvFlowCard_KetoSavage,
+.dxcvBreakpointsCard_KetoSavage,
 .dxcvEmptyCard_KetoSavage
 {
     -webkit-border-radius: 2px;
@@ -456,16 +478,26 @@ a.dxcvCommandItem_KetoSavage
     box-shadow: none;
 }
 .dxcvFlowCard_KetoSavage,
+.dxcvBreakpointsCard_KetoSavage,
+div.dxcvEmptyCard_KetoSavage
+{
+    margin: 8px 0 0 8px;
+    overflow: hidden;
+}
+.dxcvFlowCard_KetoSavage,
 div.dxcvEmptyCard_KetoSavage
 {
     display: inline-block;
-    margin: 8px 0 0 8px;
-    overflow: hidden;
+}
+.dxcvBreakpointsCard_KetoSavage
+{
+    width: auto;
+    display: block;
 }
 .dxcvSelectedCard_KetoSavage,
 .dxcvFocusedCard_KetoSavage
 {
-    box-shadow: inset 0 -3px 0 #000000, 0 2px 4px 0 rgba(0,0,0,0.16), 0 2px 8px 0 rgba(0,0,0,0.12);
+    box-shadow: inset 0 -3px 0 #DEDEDE, 0 2px 4px 0 rgba(0,0,0,0.16), 0 2px 8px 0 rgba(0,0,0,0.12);
     border-bottom-left-radius: 0;
     border-bottom-right-radius: 0;
 }
@@ -474,11 +506,13 @@ div.dxcvEmptyCard_KetoSavage
     box-shadow: 0 5px 11px 0 rgba(0,0,0,0.18), 0 4px 15px 0 rgba(0,0,0,0.15);
 }
 .dxcvCard_KetoSavage .dxflCaption_KetoSavage,
+.dxcvBreakpointsCard_KetoSavage .dxflCaption_KetoSavage,
 .dxcvFlowCard_KetoSavage .dxflCaption_KetoSavage
 {
     color: #7F7F7F;
 }
 .dxcvCard_KetoSavage .dxflViewFormLayoutSys .dxflCommandItemSys,
+.dxcvBreakpointsCard_KetoSavage .dxflViewFormLayoutSys .dxflCommandItemSys,
 .dxcvFlowCard_KetoSavage .dxflViewFormLayoutSys .dxflCommandItemSys
 {
     padding-top: 2px;
@@ -494,20 +528,20 @@ div.dxcvEmptyCard_KetoSavage
     border-bottom-width: 0;
     border-top-left-radius: 4px;
     border-top-right-radius: 4px;
-    padding: 4px 8px 4px 8px;
+    padding: 2px 20px 8px 20px;
 }
 div.dxcvHeader_KetoSavage
 {
     display: inline-block;
-    margin-right: 8px;
-    margin-top: 4px;
+    margin-right: 10px;
+    margin-top: 8px;
 }
 .dxcvSummaryPanel_KetoSavage
 {
     border: 1px solid #DFDFDF;
     background-color: #f4f4f4;
     color: #8e8e93;
-    padding: 5px 21px 4px;
+    padding: 8px 21px 8px;
     border-top-width: 0;
 }
 .dxcvSummaryItem_KetoSavage
@@ -579,7 +613,7 @@ div.dxcvHeader_KetoSavage
 {
     background-color: #FFC8C8;
     border-top: 1px solid #C0C0C0;
-    color: #000000;
+    color: #FF0000;
     padding: 6px 13px;
 }
 .dxcvFocusedCell_KetoSavage

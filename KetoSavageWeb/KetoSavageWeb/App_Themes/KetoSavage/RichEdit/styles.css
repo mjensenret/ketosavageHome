@@ -1,7 +1,7 @@
 .dxreControl_KetoSavage
 {
     border: solid 0px #DFDFDF;
-    font: 14px 'Open Sans', Helvetica, 'Droid Sans', Tahoma, Geneva, sans-serif;
+    font: 14px 'Roboto Regular', Helvetica, 'Droid Sans', Tahoma, Geneva, sans-serif;
 }
 .dxreControl_KetoSavage .dxreTableBorderLine
 {
@@ -13,7 +13,7 @@
 }
 .dxreControl_KetoSavage .dxreView
 {
-    background-color: #000000;
+    background-color: #FFFFFF;
 }
 .dxreControl_KetoSavage .dxflFormLayout_KetoSavage .dxre-editorsGroupWithPaddings
 {
@@ -43,7 +43,7 @@
 .dxreControl_KetoSavage .dxreRulerWrapper
 {
     padding-top: 2px;
-    background-color: #000000;
+    background-color: #FFFFFF;
 }
 .dxreControl_KetoSavage .dxreRulerWrapper .dxre-rulertabAlignBox
 {
@@ -158,7 +158,7 @@
 }
 .dxreControl_KetoSavage .dxreBar
 {
-    background-color: #000000;
+    background-color: #FFFFFF;
     border-top: 1px solid #DFDFDF;
     height: 22px;
 }
@@ -193,7 +193,7 @@
 }
 .dxreControl_KetoSavage .dxreDlgListBox .dxreDlgListSelected
 {
-    background-color: #000000;
+    background-color: #DEDEDE;
 }
 .dxreControl_KetoSavage .dxre-numberinglistdialog
 {
@@ -735,7 +735,7 @@
     -khtml-border-radius: 50%;
     border-radius: 50%;
     animation: dxLoadSpinSys 1s linear infinite;
-    border: 2px solid #000000;
+    border: 2px solid #DEDEDE;
     border-top: 2px solid #EEE;
     width: 12px;
     height: 12px;

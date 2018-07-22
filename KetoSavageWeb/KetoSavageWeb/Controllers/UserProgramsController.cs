@@ -77,87 +77,297 @@ namespace KetoSavageWeb.Controllers
                     CoachId = x.UserPrograms.Select(y => y.CoachUserId).FirstOrDefault(),
                     StartWeight = x.UserPrograms.Select(y => y.StartWeight).FirstOrDefault(),
                     GoalWeight = x.UserPrograms.Select(y => y.GoalWeight).FirstOrDefault(),
-                    CurrentWeight = getCurrentWeight(x.UserId).HasValue ? getCurrentWeight(x.UserId).Value : 0.00
+                    CurrentWeight = getCurrentWeight(x.UserId).HasValue ? getCurrentWeight(x.UserId).Value : 0.00,
+                    IsActive = x.UserPrograms.Select(y => y.IsActive).FirstOrDefault()
+                }
+                ));
+            ViewBag.ProgramList = new SelectList(program.GetActive, "Id", "programDescription");
+            ViewBag.CoachList = new SelectList(coachList, "Id", "UserName");
+                    
+            var model = items.ToList();
+            return PartialView("_userGridViewPartial", model);
+        }
+
+        public ActionResult ManageClientMacros()
+        {
+            return View();
+        }
+
+        public ActionResult ManageClientMacrosList()
+        {
+            var coachList = UserManager.Users.Where(x => x.IsActive == true).Where(x => x.Roles.Select(y => y.Role.Name).Contains("Coach")).ToList();
+            var userQuery = UserManager.Users.Where(x => x.IsActive == true).Include(x => x.Roles).Include(y => y.UserPrograms);
+            userQuery = userQuery.Where(x => x.Roles.Select(y => y.Role.Name).Contains("Client")).Include(z => z.UserPrograms.Select(p => p.DailyProgress));
+
+            userQuery = userQuery.Where(x => x.UserPrograms.Select(y => y.EndDate >= DateTime.Now).FirstOrDefault());
+
+            var items = (userQuery
+                .OrderBy(x => x.FirstName)
+                .ThenBy(x => x.LastName)
+                .Select(x => new
+                {
+                    UserId = x.Id,
+                    ProgramId = x.UserPrograms.Select(y => y.Id).FirstOrDefault(),
+                    x.FirstName,
+                    x.LastName,
+                    x.Roles,
+                    x.UserName,
+                    x.Email,
+                    x.UserPrograms
+                })
+                .ToList()
+                .Select(x => new UserProgramViewModel()
+                {
+                    Id = x.ProgramId,
+                    UserId = x.UserId,
+                    UserName = x.UserName,
+                    FullName = string.Join(" ", x.FirstName, x.LastName),
+                    ProgramName = x.UserPrograms.Select(y => y.MasterProgram.programDescription).FirstOrDefault(),
+                    UserType = x.Roles.Select(y => y.Role.Name).FirstOrDefault(),
+                    currentProgramStartDate = x.UserPrograms.Select(y => y.StartDate).FirstOrDefault(),
+                    currentProgramRenewalDate = x.UserPrograms.Select(y => y.RenewalDate).FirstOrDefault(),
+                    currentProgramEndDate = x.UserPrograms.Select(y => y.EndDate).FirstOrDefault(),
+                    LastModified = x.UserPrograms.Select(y => y.LastModified).FirstOrDefault(),
+                    CoachName = x.UserPrograms.Select(y => y.CoachUser.FirstName).FirstOrDefault(),
+                    Notes = x.UserPrograms.Select(y => y.Notes).FirstOrDefault(),
+                    MasterProgramId = x.UserPrograms.Select(y => y.MasterProgramId).FirstOrDefault(),
+                    CoachId = x.UserPrograms.Select(y => y.CoachUserId).FirstOrDefault(),
+                    StartWeight = x.UserPrograms.Select(y => y.StartWeight).FirstOrDefault(),
+                    GoalWeight = x.UserPrograms.Select(y => y.GoalWeight).FirstOrDefault(),
+                    CurrentWeight = getCurrentWeight(x.UserId).HasValue ? getCurrentWeight(x.UserId).Value : x.UserPrograms.Select(y => y.StartWeight).FirstOrDefault()
                 }
                 ));
             ViewBag.ProgramList = new SelectList(program.GetActive, "Id", "programDescription");
             ViewBag.CoachList = new SelectList(coachList, "Id", "UserName");
             var model = items.ToList();
-            return PartialView("_userGridViewPartial", model);
+
+            return PartialView("_manageMacroPartial", model);
+
         }
 
         public ActionResult userProgramAdd(UserProgramViewModel model)
         {
             if (ModelState.IsValid)
             {
-                var newUserProgram = new UserPrograms
-                {
-                    ProgramType = model.UserType,
-                    StartDate = model.currentProgramStartDate,
-                    EndDate = model.currentProgramEndDate,
-                    RenewalDate = model.currentProgramRenewalDate,
-                    ProgramUserId = model.UserId,
-                    MasterProgramId = model.MasterProgramId,
-                    CoachUserId = model.CoachId,
-                    Created = DateTime.Now,
-                    CreatedBy = CurrentUser.UserName,
-                    LastModified = DateTime.Now,
-                    LastModifiedBy = CurrentUser.UserName,
-                    IsActive = true,
-                    IsDeleted = false
-                };
+                var activeProgram = userProgramRepository.GetActive.Where(x => x.ProgramUser.UserName == model.UserName).FirstOrDefault();
+
+                if (activeProgram == null) {
+                    var userQuery = UserManager.Users.Where(x => x.UserName == model.UserName).First();
+                    var masterProgram = program.GetActive.Where(x => x.Id == model.MasterProgramId).First();
+                    var currentUserName = CurrentUser.UserName;
+                    UserPrograms newProgram = new UserPrograms()
+                    {
+                        ProgramType = masterProgram.Name,
+                        ProgramUserId = userQuery.Id,
+                        StartDate = model.currentProgramStartDate,
+                        EndDate = model.currentProgramEndDate,
+                        RenewalDate = model.currentProgramRenewalDate,
+                        StartWeight = model.StartWeight,
+                        GoalWeight = model.GoalWeight,
+                        MasterProgramId = masterProgram.Id,
+                        IsActive = true,
+                        Notes = model.Notes,
+                        CoachUserId = model.CoachId,
+                        Created = DateTime.Now,
+                        CreatedBy = currentUserName,
+                        LastModified = DateTime.Now,
+                        LastModifiedBy = currentUserName
+                    };
+
+                    _context.UserPrograms.Add(newProgram);
+
+                    DateTime startDate = Convert.ToDateTime(newProgram.StartDate);
+                    var numberOfDays = (newProgram.EndDate.Value.Date - newProgram.StartDate.Value.Date).TotalDays;
+                    double lbsPerDay = Math.Round((newProgram.StartWeight - newProgram.GoalWeight) / numberOfDays, 2);
+
+                    double newWeight = 0;
+
+                    //var dailyProgress = new DailyProgress();
+                    while (numberOfDays > 0)
+                    {
+                        DailyProgress dailyProgress = new DailyProgress();
+                        dailyProgress.UserProgram = newProgram;
+                        if (startDate == newProgram.StartDate)
+                        {
+
+                            dailyProgress.DateId = dateRepository.getDateKey(startDate);
+                            dailyProgress.PlannedWeight = newProgram.StartWeight;
+                            startDate = startDate.AddDays(1);
+                            newWeight = Math.Round((newProgram.StartWeight - lbsPerDay), 2);
+                        }
+                        else
+                        {
+                            dailyProgress.DateId = dateRepository.getDateKey(startDate);
+                            dailyProgress.PlannedWeight = newWeight;
+                            startDate = startDate.AddDays(1);
+                            newWeight = Math.Round((newWeight - lbsPerDay), 2);
+                        }
+
+                        //dailyProgress.UserProgramId = newProgramId;
+                        dailyProgress.Created = DateTime.Now;
+                        dailyProgress.CreatedBy = currentUserName;
+                        dailyProgress.LastModified = DateTime.Now;
+                        dailyProgress.LastModifiedBy = currentUserName;
+
+                        _context.DailyProgress.Add(dailyProgress);
+                        numberOfDays--;
+                    }
+
+                    _context.SaveChanges();
+                }
 
                 return RedirectToAction("Index");
             }
             return RedirectToAction("Index");
         }
 
-        public ActionResult userProgramEdit(UserProgramViewModel model)
+        [HttpPost]
+        public ActionResult userProgramUpdate(UserProgramViewModel model)
         {
             if (ModelState.IsValid)
             {
-                var newOrModify = userProgramRepository.Find(model.Id);
-                if (newOrModify == null)
+                var activeProgram = userProgramRepository.GetActive.Where(x => x.ProgramUserId == model.UserId).FirstOrDefault();
+
+                if (model.IsNew || activeProgram == null)
                 {
-                    newOrModify = new UserPrograms()
+                    var masterProgram = program.GetActive.Where(x => x.Id == model.MasterProgramId).First();
+                    var currentUserName = CurrentUser.UserName;
+                    UserPrograms newProgram = new UserPrograms()
                     {
-                        ProgramType = model.UserType,
-                        StartDate = model.currentProgramStartDate,
-                        RenewalDate = model.currentProgramRenewalDate,
-                        EndDate = model.currentProgramEndDate,
+                        ProgramType = masterProgram.Name,
                         ProgramUserId = model.UserId,
-                        MasterProgramId = model.MasterProgramId,
-                        CoachUserId = model.CoachId,
+                        StartDate = model.currentProgramStartDate,
+                        EndDate = model.currentProgramEndDate,
+                        RenewalDate = model.currentProgramRenewalDate,
+                        StartWeight = model.StartWeight,
+                        GoalWeight = model.GoalWeight,
+                        MasterProgramId = masterProgram.Id,
+                        IsActive = true,
                         Notes = model.Notes,
-                        LastModified = DateTime.Now,
-                        LastModifiedBy = CurrentUser.UserName,
+                        CoachUserId = model.CoachId,
                         Created = DateTime.Now,
-                        CreatedBy = CurrentUser.UserName
+                        CreatedBy = currentUserName,
+                        LastModified = DateTime.Now,
+                        LastModifiedBy = currentUserName
                     };
-                    userProgramRepository.Create(newOrModify);
+
+                    _context.UserPrograms.Add(newProgram);
+
+                    DateTime startDate = Convert.ToDateTime(newProgram.StartDate);
+                    var numberOfDays = (newProgram.EndDate.Value.Date - newProgram.StartDate.Value.Date).TotalDays;
+                    double lbsPerDay = Math.Round((newProgram.StartWeight - newProgram.GoalWeight) / numberOfDays, 2);
+
+                    double newWeight = 0;
+
+                    //var dailyProgress = new DailyProgress();
+                    while (numberOfDays > 0)
+                    {
+                        DailyProgress dailyProgress = new DailyProgress();
+                        dailyProgress.UserProgram = newProgram;
+                        if (startDate == newProgram.StartDate)
+                        {
+
+                            dailyProgress.DateId = dateRepository.getDateKey(startDate);
+                            dailyProgress.PlannedWeight = newProgram.StartWeight;
+                            startDate = startDate.AddDays(1);
+                            newWeight = Math.Round((newProgram.StartWeight - lbsPerDay), 2);
+                        }
+                        else
+                        {
+                            dailyProgress.DateId = dateRepository.getDateKey(startDate);
+                            dailyProgress.PlannedWeight = newWeight;
+                            startDate = startDate.AddDays(1);
+                            newWeight = Math.Round((newWeight - lbsPerDay), 2);
+                        }
+
+                        //dailyProgress.UserProgramId = newProgramId;
+                        dailyProgress.Created = DateTime.Now;
+                        dailyProgress.CreatedBy = currentUserName;
+                        dailyProgress.LastModified = DateTime.Now;
+                        dailyProgress.LastModifiedBy = currentUserName;
+
+                        _context.DailyProgress.Add(dailyProgress);
+                        numberOfDays--;
+                    }
+
+                    _context.SaveChanges();
+                    return RedirectToAction("ShowProgramDetails", new { @_userId = newProgram.ProgramUserId.ToString() });
+
+
                 }
                 else
                 {
-                    newOrModify.ProgramUserId = model.UserId;
-                    newOrModify.ProgramType = model.ProgramType;
-                    newOrModify.StartDate = model.currentProgramStartDate;
-                    newOrModify.EndDate = model.currentProgramEndDate;
-                    newOrModify.RenewalDate = model.currentProgramRenewalDate;
-                    newOrModify.MasterProgramId = model.MasterProgramId;
-                    newOrModify.CoachUserId = model.CoachId;
-                    newOrModify.Notes = model.Notes;
-                    newOrModify.LastModified = DateTime.Now;
-                    newOrModify.LastModifiedBy = CurrentUser.UserName;
+                    var updProgram = userProgramRepository.GetActive.Where(x => x.Id == activeProgram.Id).First();
+                    activeProgram.MasterProgramId = model.MasterProgramId;
+                    activeProgram.StartDate = model.currentProgramStartDate;
+                    activeProgram.EndDate = model.currentProgramEndDate;
+                    activeProgram.RenewalDate = model.currentProgramRenewalDate;
+                    activeProgram.StartWeight = model.StartWeight;
+                    activeProgram.GoalWeight = model.GoalWeight;
+                    activeProgram.Notes = model.Notes;
+                    activeProgram.CoachUserId = model.CoachId;
+                    activeProgram.LastModified = DateTime.Now;
+                    activeProgram.LastModifiedBy = CurrentUser.UserName;
+                    activeProgram.IsActive = model.IsActive;
 
-                    userProgramRepository.Update(newOrModify);
+
+                    userProgramRepository.Update(activeProgram);
+
+                    return RedirectToAction("Index");
                 }
-                
-                return RedirectToAction("Index");
-                
             }
-            return RedirectToAction("Index");
+            else
+            {
+                ModelState.AddModelError("", "Something failed editing the program template!");
+                return RedirectToAction("ShowProgramDetails", new { @_userId = model.UserId });
+            }
         }
-        
+        //public ActionResult userProgramEdit(UserProgramViewModel model)
+        //{
+        //    if (ModelState.IsValid)
+        //    {
+        //        var newOrModify = userProgramRepository.Find(model.Id);
+        //        if (newOrModify == null)
+        //        {
+        //            newOrModify = new UserPrograms()
+        //            {
+        //                ProgramType = model.UserType,
+        //                StartDate = model.currentProgramStartDate,
+        //                RenewalDate = model.currentProgramRenewalDate,
+        //                EndDate = model.currentProgramEndDate,
+        //                ProgramUserId = model.UserId,
+        //                MasterProgramId = model.MasterProgramId,
+        //                CoachUserId = model.CoachId,
+        //                Notes = model.Notes,
+        //                LastModified = DateTime.Now,
+        //                LastModifiedBy = CurrentUser.UserName,
+        //                Created = DateTime.Now,
+        //                CreatedBy = CurrentUser.UserName
+        //            };
+        //            userProgramRepository.Create(newOrModify);
+        //        }
+        //        else
+        //        {
+        //            newOrModify.ProgramUserId = model.UserId;
+        //            newOrModify.ProgramType = model.ProgramType;
+        //            newOrModify.StartDate = model.currentProgramStartDate;
+        //            newOrModify.EndDate = model.currentProgramEndDate;
+        //            newOrModify.RenewalDate = model.currentProgramRenewalDate;
+        //            newOrModify.MasterProgramId = model.MasterProgramId;
+        //            newOrModify.CoachUserId = model.CoachId;
+        //            newOrModify.Notes = model.Notes;
+        //            newOrModify.LastModified = DateTime.Now;
+        //            newOrModify.LastModifiedBy = CurrentUser.UserName;
+
+        //            userProgramRepository.Update(newOrModify);
+        //        }
+
+        //        return RedirectToAction("Index");
+
+        //    }
+        //    return RedirectToAction("Index");
+        //}
+
         public async Task<ActionResult> ShowProgramDetails(string _userId)
         {
             var userId = Convert.ToInt32(_userId);
@@ -228,102 +438,7 @@ namespace KetoSavageWeb.Controllers
             return View("UserProgramDetails", model);
         }
 
-        [HttpPost]
-        public ActionResult updateProgram(UserProgramViewModel model)
-        {
-            if (ModelState.IsValid)
-            {
-                if (model.IsNew || model.Id == 0)
-                {
-                    var masterProgram = program.GetActive.Where(x => x.Id == model.MasterProgramId).First();
-                    var currentUserName = CurrentUser.UserName;
-                    UserPrograms newProgram = new UserPrograms()
-                    {
-                        ProgramType = masterProgram.Name,
-                        ProgramUserId = model.UserId,
-                        StartDate = model.currentProgramStartDate,
-                        EndDate = model.currentProgramEndDate,
-                        RenewalDate = model.currentProgramRenewalDate,
-                        StartWeight = model.StartWeight,
-                        GoalWeight = model.GoalWeight,
-                        MasterProgramId = masterProgram.Id,
-                        Notes = model.Notes,
-                        CoachUserId = model.CoachId,
-                        Created = DateTime.Now,
-                        CreatedBy = currentUserName,
-                        LastModified = DateTime.Now,
-                        LastModifiedBy = currentUserName
-                    };
-                    
-                    _context.UserPrograms.Add(newProgram);
-                    
-                    DateTime startDate = Convert.ToDateTime(newProgram.StartDate);
-                    var numberOfDays = (newProgram.EndDate.Value.Date - newProgram.StartDate.Value.Date).TotalDays;
-                    double lbsPerDay = Math.Round((newProgram.StartWeight - newProgram.GoalWeight) / numberOfDays,2);
 
-                    double newWeight = 0;
-
-                    //var dailyProgress = new DailyProgress();
-                    while (numberOfDays > 0)
-                    {
-                        DailyProgress dailyProgress = new DailyProgress();
-                        dailyProgress.UserProgram = newProgram;
-                        if (startDate == newProgram.StartDate)
-                        {
-
-                            dailyProgress.DateId = dateRepository.getDateKey(startDate);
-                            dailyProgress.PlannedWeight = newProgram.StartWeight;
-                            startDate = startDate.AddDays(1);
-                            newWeight = Math.Round((newProgram.StartWeight - lbsPerDay),2);
-                        }
-                        else
-                        {
-                            dailyProgress.DateId = dateRepository.getDateKey(startDate);
-                            dailyProgress.PlannedWeight = newWeight;
-                            startDate = startDate.AddDays(1);
-                            newWeight = Math.Round((newWeight - lbsPerDay),2);
-                        }
-
-                        //dailyProgress.UserProgramId = newProgramId;
-                        dailyProgress.Created = DateTime.Now;
-                        dailyProgress.CreatedBy = currentUserName;
-                        dailyProgress.LastModified = DateTime.Now;
-                        dailyProgress.LastModifiedBy = currentUserName;
-
-                        _context.DailyProgress.Add(dailyProgress);
-                        numberOfDays--;
-                    }
-
-                    _context.SaveChanges();
-                    return RedirectToAction("ShowProgramDetails", new { @_userId = newProgram.ProgramUserId.ToString()});
-
-
-                }
-                else
-                {
-                    var updProgram = userProgramRepository.GetActive.Where(x => x.Id == model.Id).FirstOrDefault();
-                    updProgram.MasterProgramId = model.MasterProgramId;
-                    updProgram.StartDate = model.currentProgramStartDate;
-                    updProgram.EndDate = model.currentProgramEndDate;
-                    updProgram.RenewalDate = model.currentProgramRenewalDate;
-                    updProgram.StartWeight = model.StartWeight;
-                    updProgram.GoalWeight = model.GoalWeight;
-                    updProgram.Notes = model.Notes;
-                    updProgram.CoachUserId = model.CoachId;
-                    updProgram.LastModified = DateTime.Now;
-                    updProgram.LastModifiedBy = CurrentUser.UserName;
-
-                    userProgramRepository.Update(updProgram);
-
-                    return RedirectToAction("Index");
-                }
-            }
-            else
-            {
-                ModelState.AddModelError("", "Something failed editing the program template!");
-                return RedirectToAction("ShowProgramDetails", new { @_userId = model.UserId });
-            }
-        }
         [HttpPost]
         public PartialViewResult UserProgramDetails(string _userId)
         {

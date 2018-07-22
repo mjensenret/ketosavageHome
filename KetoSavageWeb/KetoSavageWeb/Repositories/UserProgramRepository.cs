@@ -67,20 +67,25 @@ namespace KetoSavageWeb.Repositories
                                   let minProgress = userProgress.Min(r => r.DateId)
                                   where w.DateId == minProgress
                                   select w.UserProgram.StartWeight).Sum();
+            var currentProgress = 0.00;
+            var plannedProgress = 0.00;
+            if (actualProgress.Count() > 1)
+            { 
+                currentProgress = (from w in actualProgress
+                                        let maxProgress = actualProgress.Max(r => r.DateId)
+                                        where w.DateId == maxProgress
+                                        select w.ActualWeight.Value).Sum();
 
-            var currentProgress = (from w in actualProgress
-                                    let maxProgress = actualProgress.Max(r => r.DateId)
-                                    where w.DateId == maxProgress
-                                    select w.ActualWeight.Value).Sum();
 
-            var plannedProgress = (from w in actualProgress
+            plannedProgress = (from w in actualProgress
                                    let maxProgress = actualProgress.Max(r => r.DateId)
                                    where w.DateId == maxProgress
                                    select w.PlannedWeight.Value).Sum();
+            }
 
             ProgressGaugeViewModel model = new ProgressGaugeViewModel()
             {
-                actualWeight = currentProgress - startWeight,
+                actualWeight = currentProgress > 0 ? currentProgress - startWeight : startWeight,
                 plannedWeight = plannedProgress - startWeight
             };
             

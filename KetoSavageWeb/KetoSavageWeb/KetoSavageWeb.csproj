@@ -50,11 +50,12 @@
       <HintPath>..\packages\Antlr.3.4.1.9004\lib\Antlr3.Runtime.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="DevExtreme.AspNet.Data, Version=1.4.5.0, Culture=neutral, PublicKeyToken=982f5dab1439d0f7, processorArchitecture=MSIL">
-      <HintPath>..\packages\DevExtreme.AspNet.Data.1.4.5\lib\net40\DevExtreme.AspNet.Data.dll</HintPath>
+    <Reference Include="DevExtreme.AspNet.Data, Version=1.4.7.0, Culture=neutral, PublicKeyToken=982f5dab1439d0f7, processorArchitecture=MSIL">
+      <HintPath>..\packages\DevExtreme.AspNet.Data.1.4.7\lib\net40\DevExtreme.AspNet.Data.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="DevExtreme.AspNet.Mvc">
+    <Reference Include="DevExtreme.AspNet.Mvc, Version=17.2.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\lib\DevExtreme\DevExtreme.AspNet.Mvc.dll</HintPath>
     </Reference>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
@@ -85,8 +86,8 @@
       <HintPath>..\packages\Glimpse.Mvc5.1.5.3\lib\net45\Glimpse.Mvc5.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="KetoSavageThemeAssembly">
-      <HintPath>App_Themes\KetoSavage\KetoSavageThemeAssembly.dll</HintPath>
+    <Reference Include="KetoSavageTheme">
+      <HintPath>..\..\..\..\DevExpressThemes\KetoSavageTheme.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.AspNet.Identity.Core, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.AspNet.Identity.Core.2.2.1\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
@@ -223,44 +224,46 @@
     <Reference Include="System.Configuration" />
     <Reference Include="System.Web.Services" />
     <Reference Include="System.EnterpriseServices" />
-    <Reference Include="DevExpress.Utils.v17.2, Version=17.2.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-    <Reference Include="DevExpress.Data.v17.2, Version=17.2.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-    <Reference Include="DevExpress.Web.ASPxThemes.v17.2, Version=17.2.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-    <Reference Include="DevExpress.RichEdit.v17.2.Core, Version=17.2.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-    <Reference Include="DevExpress.RichEdit.v17.2.Export, Version=17.2.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-    <Reference Include="DevExpress.Printing.v17.2.Core, Version=17.2.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-    <Reference Include="DevExpress.Web.v17.2, Version=17.2.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-    <Reference Include="DevExpress.Web.Mvc5.v17.2, Version=17.2.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-    <Reference Include="DevExpress.Web.ASPxPivotGrid.v17.2, Version=17.2.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-    <Reference Include="DevExpress.PivotGrid.v17.2.Core, Version=17.2.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-    <Reference Include="DevExpress.Spreadsheet.v17.2.Core, Version=17.2.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-    <Reference Include="DevExpress.Web.ASPxSpreadsheet.v17.2, Version=17.2.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-    <Reference Include="DevExpress.XtraScheduler.v17.2.Core, Version=17.2.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-    <Reference Include="DevExpress.Web.ASPxScheduler.v17.2, Version=17.2.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-    <Reference Include="DevExpress.Charts.v17.2.Core, Version=17.2.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-    <Reference Include="DevExpress.XtraCharts.v17.2, Version=17.2.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-    <Reference Include="DevExpress.XtraCharts.v17.2.Web, Version=17.2.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-    <Reference Include="DevExpress.Web.Resources.v17.2, Version=17.2.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-    <Reference Include="DevExpress.XtraReports.v17.2, Version=17.2.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-    <Reference Include="DevExpress.XtraReports.v17.2.Web, Version=17.2.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-    <Reference Include="DevExpress.Pdf.v17.2.Core, Version=17.2.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-    <Reference Include="DevExpress.CodeParser.v17.2, Version=17.2.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-    <Reference Include="DevExpress.DataAccess.v17.2, Version=17.2.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-    <Reference Include="DevExpress.Office.v17.2.Core, Version=17.2.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-    <Reference Include="DevExpress.Sparkline.v17.2.Core, Version=17.2.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-    <Reference Include="DevExpress.Xpo.v17.2, Version=17.2.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-    <Reference Include="DevExpress.XtraGauges.v17.2.Core, Version=17.2.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-    <Reference Include="DevExpress.Dashboard.v17.2.Core, Version=17.2.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-    <Reference Include="DevExpress.Dashboard.v17.2.Web, Version=17.2.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-    <Reference Include="DevExpress.Dashboard.v17.2.Web.Mvc5, Version=17.2.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-    <Reference Include="DevExpress.TreeMap.v17.2.Core, Version=17.2.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-    <Reference Include="DevExpress.Map.v17.2.Core, Version=17.2.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-    <Reference Include="DevExpress.XtraTreeMap.v17.2, Version=17.2.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-    <Reference Include="DevExpress.XtraGauges.v17.2.Presets, Version=17.2.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-    <Reference Include="DevExpress.XtraGauges.v17.2.Win, Version=17.2.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-    <Reference Include="DevExpress.XtraMap.v17.2, Version=17.2.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-    <Reference Include="DevExpress.XtraEditors.v17.2, Version=17.2.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-    <Reference Include="DevExpress.XtraPrinting.v17.2, Version=17.2.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Utils.v18.1, Version=18.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Data.v18.1, Version=18.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Web.ASPxThemes.v18.1, Version=18.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.RichEdit.v18.1.Core, Version=18.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.RichEdit.v18.1.Export, Version=18.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Printing.v18.1.Core, Version=18.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Web.v18.1, Version=18.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Web.Mvc5.v18.1, Version=18.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Web.ASPxPivotGrid.v18.1, Version=18.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.PivotGrid.v18.1.Core, Version=18.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Spreadsheet.v18.1.Core, Version=18.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Web.ASPxSpreadsheet.v18.1, Version=18.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraScheduler.v18.1.Core, Version=18.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Web.ASPxScheduler.v18.1, Version=18.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Charts.v18.1.Core, Version=18.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraCharts.v18.1, Version=18.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraCharts.v18.1.Web, Version=18.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Web.Resources.v18.1, Version=18.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraReports.v18.1, Version=18.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraReports.v18.1.Web.WebForms, Version=18.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraReports.v18.1.Web, Version=18.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Pdf.v18.1.Core, Version=18.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.CodeParser.v18.1, Version=18.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.DataAccess.v18.1, Version=18.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Office.v18.1.Core, Version=18.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Sparkline.v18.1.Core, Version=18.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Xpo.v18.1, Version=18.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraGauges.v18.1.Core, Version=18.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Dashboard.v18.1.Core, Version=18.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Dashboard.v18.1.Web.WebForms, Version=18.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Dashboard.v18.1.Web, Version=18.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Dashboard.v18.1.Web.Mvc5, Version=18.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.TreeMap.v18.1.Core, Version=18.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Map.v18.1.Core, Version=18.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraTreeMap.v18.1, Version=18.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraGauges.v18.1.Presets, Version=18.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraGauges.v18.1.Win, Version=18.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraMap.v18.1, Version=18.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraEditors.v18.1, Version=18.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraPrinting.v18.1, Version=18.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="WebActivatorEx, Version=2.0.0.0, Culture=neutral, PublicKeyToken=7b26dc2a43f6a0d4, processorArchitecture=MSIL">
       <HintPath>..\packages\WebActivatorEx.2.2.0\lib\net40\WebActivatorEx.dll</HintPath>
@@ -290,62 +293,174 @@
     <Content Include="App_Themes\KetoSavage\CardView\spriteAccessible.css" />
     <Content Include="App_Themes\KetoSavage\CardView\styles.css" />
     <Content Include="App_Themes\KetoSavage\CardView\stylesCompact.css" />
-    <Content Include="App_Themes\KetoSavage\Chart\Loading.gif" />
-    <Content Include="App_Themes\KetoSavage\Chart\styles.css" />
-    <Content Include="App_Themes\KetoSavage\Editors\dt_sprite.png" />
-    <Content Include="App_Themes\KetoSavage\Editors\dt_spriteAccessible.png" />
-    <Content Include="App_Themes\KetoSavage\Editors\edtBinaryImageDesign.gif" />
-    <Content Include="App_Themes\KetoSavage\Editors\edtButtonBack.gif" />
-    <Content Include="App_Themes\KetoSavage\Editors\edtButtonHoverBack.gif" />
-    <Content Include="App_Themes\KetoSavage\Editors\edtCalendarButtonBack.gif" />
-    <Content Include="App_Themes\KetoSavage\Editors\edtCalendarButtonHBack.gif" />
-    <Content Include="App_Themes\KetoSavage\Editors\edtCalendarDayInRange.svg" />
-    <Content Include="App_Themes\KetoSavage\Editors\edtCalendarSelected.svg" />
-    <Content Include="App_Themes\KetoSavage\Editors\edtCalendarToday.svg" />
-    <Content Include="App_Themes\KetoSavage\Editors\edtCalendarTodayInRange.svg" />
-    <Content Include="App_Themes\KetoSavage\Editors\edtCalendarTodaySelected.svg" />
-    <Content Include="App_Themes\KetoSavage\Editors\edtDropDownBack.gif" />
-    <Content Include="App_Themes\KetoSavage\Editors\edtDropDownButtonHoverBack.gif" />
-    <Content Include="App_Themes\KetoSavage\Editors\edtSpinDecBtnBack.gif" />
-    <Content Include="App_Themes\KetoSavage\Editors\edtSpinIncBtnBack.gif" />
-    <Content Include="App_Themes\KetoSavage\Editors\edtTrackBarDoubleLargeTickH.svg" />
-    <Content Include="App_Themes\KetoSavage\Editors\edtTrackBarDoubleLargeTickV.svg" />
-    <Content Include="App_Themes\KetoSavage\Editors\edtTrackBarDoubleSmallTickH.svg" />
-    <Content Include="App_Themes\KetoSavage\Editors\edtTrackBarDoubleSmallTickV.svg" />
-    <Content Include="App_Themes\KetoSavage\Editors\edtTrackBarLargeTickH.svg" />
-    <Content Include="App_Themes\KetoSavage\Editors\edtTrackBarLargeTickV.svg" />
-    <Content Include="App_Themes\KetoSavage\Editors\edtTrackBarSmallTickH.svg" />
-    <Content Include="App_Themes\KetoSavage\Editors\edtTrackBarSmallTickV.svg" />
-    <Content Include="App_Themes\KetoSavage\Editors\edtTrackBarTrackH.svg" />
-    <Content Include="App_Themes\KetoSavage\Editors\edtTrackBarTrackV.svg" />
-    <Content Include="App_Themes\KetoSavage\Editors\sprite.css" />
-    <Content Include="App_Themes\KetoSavage\Editors\sprite.svg" />
-    <Content Include="App_Themes\KetoSavage\Editors\spriteAccessible.css" />
-    <Content Include="App_Themes\KetoSavage\Editors\styles.css" />
-    <Content Include="App_Themes\KetoSavage\Editors\stylesCompact.css" />
-    <Content Include="App_Themes\KetoSavage\GridView\dt_sprite.png" />
-    <Content Include="App_Themes\KetoSavage\GridView\dt_spriteAccessible.png" />
-    <Content Include="App_Themes\KetoSavage\GridView\gvLoadingOnStatusBar.gif" />
-    <Content Include="App_Themes\KetoSavage\GridView\sprite.css" />
-    <Content Include="App_Themes\KetoSavage\GridView\sprite.svg" />
-    <Content Include="App_Themes\KetoSavage\GridView\spriteAccessible.css" />
-    <Content Include="App_Themes\KetoSavage\GridView\styles.css" />
-    <Content Include="App_Themes\KetoSavage\GridView\stylesCompact.css" />
-    <Content Include="App_Themes\KetoSavage\HtmlEditor\dt_sprite.png" />
-    <Content Include="App_Themes\KetoSavage\HtmlEditor\dt_spriteAccessible.png" />
-    <Content Include="App_Themes\KetoSavage\HtmlEditor\dxheAudio.svg" />
-    <Content Include="App_Themes\KetoSavage\HtmlEditor\dxheFlash.svg" />
-    <Content Include="App_Themes\KetoSavage\HtmlEditor\dxheFoldMarker.png" />
-    <Content Include="App_Themes\KetoSavage\HtmlEditor\dxheNotSupported.svg" />
-    <Content Include="App_Themes\KetoSavage\HtmlEditor\dxheVideo.svg" />
-    <Content Include="App_Themes\KetoSavage\HtmlEditor\dxheYoutube.svg" />
-    <Content Include="App_Themes\KetoSavage\HtmlEditor\heFoldGutterFolded.svg" />
-    <Content Include="App_Themes\KetoSavage\HtmlEditor\heFoldGutterOpen.svg" />
-    <Content Include="App_Themes\KetoSavage\HtmlEditor\sprite.css" />
-    <Content Include="App_Themes\KetoSavage\HtmlEditor\sprite.svg" />
-    <Content Include="App_Themes\KetoSavage\HtmlEditor\spriteAccessible.css" />
-    <Content Include="App_Themes\KetoSavage\HtmlEditor\styles.css" />
-    <Content Include="App_Themes\KetoSavage\KetoSavageThemeAssembly.dll" />
+    <Content Include="App_Themes\KetoSavage\Chart\Loading.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_Themes\KetoSavage\Chart\styles.css">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_Themes\KetoSavage\Editors\dt_sprite.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_Themes\KetoSavage\Editors\dt_spriteAccessible.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_Themes\KetoSavage\Editors\edtBinaryImageDesign.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_Themes\KetoSavage\Editors\edtButtonBack.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_Themes\KetoSavage\Editors\edtButtonHoverBack.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_Themes\KetoSavage\Editors\edtCalendarButtonBack.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_Themes\KetoSavage\Editors\edtCalendarButtonHBack.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_Themes\KetoSavage\Editors\edtCalendarDayInRange.svg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_Themes\KetoSavage\Editors\edtCalendarSelected.svg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_Themes\KetoSavage\Editors\edtCalendarToday.svg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_Themes\KetoSavage\Editors\edtCalendarTodayInRange.svg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_Themes\KetoSavage\Editors\edtCalendarTodaySelected.svg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_Themes\KetoSavage\Editors\edtDropDownBack.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_Themes\KetoSavage\Editors\edtDropDownButtonHoverBack.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_Themes\KetoSavage\Editors\edtSpinDecBtnBack.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_Themes\KetoSavage\Editors\edtSpinIncBtnBack.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_Themes\KetoSavage\Editors\edtTrackBarDoubleLargeTickH.svg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_Themes\KetoSavage\Editors\edtTrackBarDoubleLargeTickV.svg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_Themes\KetoSavage\Editors\edtTrackBarDoubleSmallTickH.svg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_Themes\KetoSavage\Editors\edtTrackBarDoubleSmallTickV.svg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_Themes\KetoSavage\Editors\edtTrackBarLargeTickH.svg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_Themes\KetoSavage\Editors\edtTrackBarLargeTickV.svg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_Themes\KetoSavage\Editors\edtTrackBarSmallTickH.svg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_Themes\KetoSavage\Editors\edtTrackBarSmallTickV.svg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_Themes\KetoSavage\Editors\edtTrackBarTrackH.svg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_Themes\KetoSavage\Editors\edtTrackBarTrackV.svg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_Themes\KetoSavage\Editors\sprite.css">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_Themes\KetoSavage\Editors\sprite.svg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_Themes\KetoSavage\Editors\spriteAccessible.css">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_Themes\KetoSavage\Editors\styles.css">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_Themes\KetoSavage\Editors\stylesCompact.css">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_Themes\KetoSavage\GridView\dt_sprite.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_Themes\KetoSavage\GridView\dt_spriteAccessible.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_Themes\KetoSavage\GridView\gvLoadingOnStatusBar.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_Themes\KetoSavage\GridView\sprite.css">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_Themes\KetoSavage\GridView\sprite.svg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_Themes\KetoSavage\GridView\spriteAccessible.css">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_Themes\KetoSavage\GridView\styles.css">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_Themes\KetoSavage\GridView\stylesCompact.css">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_Themes\KetoSavage\HtmlEditor\dt_sprite.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_Themes\KetoSavage\HtmlEditor\dt_spriteAccessible.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_Themes\KetoSavage\HtmlEditor\dxheAudio.svg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_Themes\KetoSavage\HtmlEditor\dxheFlash.svg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_Themes\KetoSavage\HtmlEditor\dxheFoldMarker.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_Themes\KetoSavage\HtmlEditor\dxheNotSupported.svg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_Themes\KetoSavage\HtmlEditor\dxheVideo.svg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_Themes\KetoSavage\HtmlEditor\dxheYoutube.svg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_Themes\KetoSavage\HtmlEditor\heFoldGutterFolded.svg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_Themes\KetoSavage\HtmlEditor\heFoldGutterOpen.svg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_Themes\KetoSavage\HtmlEditor\sprite.css">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_Themes\KetoSavage\HtmlEditor\sprite.svg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_Themes\KetoSavage\HtmlEditor\spriteAccessible.css">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_Themes\KetoSavage\HtmlEditor\styles.css">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_Themes\KetoSavage\KetoSavageThemeAssembly.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="App_Themes\KetoSavage\PivotGrid\-1.png" />
     <Content Include="App_Themes\KetoSavage\PivotGrid\0.png" />
     <Content Include="App_Themes\KetoSavage\PivotGrid\1.png" />
@@ -396,46 +511,126 @@
     <Content Include="App_Themes\KetoSavage\VerticalGrid\sprite.svg" />
     <Content Include="App_Themes\KetoSavage\VerticalGrid\spriteAccessible.css" />
     <Content Include="App_Themes\KetoSavage\VerticalGrid\styles.css" />
-    <Content Include="App_Themes\KetoSavage\Web\1x1.gif" />
-    <Content Include="App_Themes\KetoSavage\Web\currentPage.svg" />
-    <Content Include="App_Themes\KetoSavage\Web\dt_sprite.png" />
-    <Content Include="App_Themes\KetoSavage\Web\dt_spriteAccessible.png" />
-    <Content Include="App_Themes\KetoSavage\Web\fmFile.png" />
-    <Content Include="App_Themes\KetoSavage\Web\fmFileCheck.png" />
-    <Content Include="App_Themes\KetoSavage\Web\fmFilePdf.png" />
-    <Content Include="App_Themes\KetoSavage\Web\fmFilePlainText.png" />
-    <Content Include="App_Themes\KetoSavage\Web\fmFilePresentation.png" />
-    <Content Include="App_Themes\KetoSavage\Web\fmFileRichText.png" />
-    <Content Include="App_Themes\KetoSavage\Web\fmFileSpreadsheet.png" />
-    <Content Include="App_Themes\KetoSavage\Web\fmSplitterSeparator.gif" />
-    <Content Include="App_Themes\KetoSavage\Web\igLoading.gif" />
-    <Content Include="App_Themes\KetoSavage\Web\igNavBtnsBack.png" />
-    <Content Include="App_Themes\KetoSavage\Web\isLoading.gif" />
-    <Content Include="App_Themes\KetoSavage\Web\Loading.gif" />
-    <Content Include="App_Themes\KetoSavage\Web\mPopupBack.gif" />
-    <Content Include="App_Themes\KetoSavage\Web\ncGotoBack.svg" />
-    <Content Include="App_Themes\KetoSavage\Web\pcModalBack.gif" />
-    <Content Include="App_Themes\KetoSavage\Web\pDropDownButtonBack.gif" />
-    <Content Include="App_Themes\KetoSavage\Web\pDropDownButtonHoverBack.gif" />
-    <Content Include="App_Themes\KetoSavage\Web\rcMapImage.svg" />
-    <Content Include="App_Themes\KetoSavage\Web\splResizingPointer.gif" />
-    <Content Include="App_Themes\KetoSavage\Web\sprite.css" />
-    <Content Include="App_Themes\KetoSavage\Web\sprite.svg" />
-    <Content Include="App_Themes\KetoSavage\Web\spriteAccessible.css" />
-    <Content Include="App_Themes\KetoSavage\Web\styles.css" />
-    <Content Include="App_Themes\KetoSavage\Web\stylesCompact.css" />
-    <Content Include="App_Themes\KetoSavage\Web\tcScrollBtnBack.gif" />
-    <Content Include="App_Themes\KetoSavage\Web\tcScrollBtnDisabledBack.gif" />
-    <Content Include="App_Themes\KetoSavage\Web\tcScrollBtnHoverBack.gif" />
-    <Content Include="App_Themes\KetoSavage\Web\tcTabBack.gif" />
-    <Content Include="App_Themes\KetoSavage\Web\tiGotoBack.svg" />
-    <Content Include="App_Themes\KetoSavage\Web\tvElbow.gif" />
-    <Content Include="App_Themes\KetoSavage\Web\tvElbowRtl.gif" />
-    <Content Include="App_Themes\KetoSavage\Web\tvLine.gif" />
-    <Content Include="App_Themes\KetoSavage\Web\tvNodeLoading.gif" />
-    <Content Include="App_Themes\KetoSavage\Web\ucButtonBack.gif" />
-    <Content Include="App_Themes\KetoSavage\Web\ucButtonHoverBack.gif" />
-    <Content Include="App_Themes\KetoSavage\Web\ucSlLogo.png" />
+    <Content Include="App_Themes\KetoSavage\Web\1x1.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_Themes\KetoSavage\Web\currentPage.svg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_Themes\KetoSavage\Web\dt_sprite.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_Themes\KetoSavage\Web\dt_spriteAccessible.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_Themes\KetoSavage\Web\fmFile.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_Themes\KetoSavage\Web\fmFileCheck.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_Themes\KetoSavage\Web\fmFilePdf.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_Themes\KetoSavage\Web\fmFilePlainText.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_Themes\KetoSavage\Web\fmFilePresentation.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_Themes\KetoSavage\Web\fmFileRichText.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_Themes\KetoSavage\Web\fmFileSpreadsheet.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_Themes\KetoSavage\Web\fmSplitterSeparator.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_Themes\KetoSavage\Web\igLoading.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_Themes\KetoSavage\Web\igNavBtnsBack.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_Themes\KetoSavage\Web\isLoading.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_Themes\KetoSavage\Web\Loading.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_Themes\KetoSavage\Web\mPopupBack.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_Themes\KetoSavage\Web\ncGotoBack.svg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_Themes\KetoSavage\Web\pcModalBack.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_Themes\KetoSavage\Web\pDropDownButtonBack.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_Themes\KetoSavage\Web\pDropDownButtonHoverBack.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_Themes\KetoSavage\Web\rcMapImage.svg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_Themes\KetoSavage\Web\splResizingPointer.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_Themes\KetoSavage\Web\sprite.css">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_Themes\KetoSavage\Web\sprite.svg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_Themes\KetoSavage\Web\spriteAccessible.css">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_Themes\KetoSavage\Web\styles.css">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_Themes\KetoSavage\Web\stylesCompact.css">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_Themes\KetoSavage\Web\tcScrollBtnBack.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_Themes\KetoSavage\Web\tcScrollBtnDisabledBack.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_Themes\KetoSavage\Web\tcScrollBtnHoverBack.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_Themes\KetoSavage\Web\tcTabBack.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_Themes\KetoSavage\Web\tiGotoBack.svg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_Themes\KetoSavage\Web\tvElbow.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_Themes\KetoSavage\Web\tvElbowRtl.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_Themes\KetoSavage\Web\tvLine.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_Themes\KetoSavage\Web\tvNodeLoading.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_Themes\KetoSavage\Web\ucButtonBack.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_Themes\KetoSavage\Web\ucButtonHoverBack.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_Themes\KetoSavage\Web\ucSlLogo.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="App_Themes\KetoSavage\XtraReports\dt_sprite.png" />
     <Content Include="App_Themes\KetoSavage\XtraReports\dt_spriteAccessible.png" />
     <Content Include="App_Themes\KetoSavage\XtraReports\Loading.gif" />
@@ -478,6 +673,11 @@
     <Content Include="Content\dx.ios7.default.css" />
     <Content Include="Content\dx.light.compact.css" />
     <Content Include="Content\dx.light.css" />
+    <Content Include="Content\dx.material.blue.light.css" />
+    <Content Include="Content\dx.material.lime.light.css" />
+    <Content Include="Content\dx.material.orange.light.css" />
+    <Content Include="Content\dx.material.purple.light.css" />
+    <Content Include="Content\dx.material.teal.light.css" />
     <Content Include="Content\dx.softblue.compact.css" />
     <Content Include="Content\dx.softblue.css" />
     <Content Include="Content\dx.spa.css" />
@@ -561,11 +761,27 @@
     <Content Include="Scripts\globalize\message.min.js" />
     <Content Include="Scripts\globalize\number.js" />
     <Content Include="Scripts\globalize\number.min.js" />
+    <Content Include="Content\fonts\Roboto-300.ttf" />
+    <Content Include="Content\fonts\Roboto-300.woff" />
+    <Content Include="Content\fonts\Roboto-300.woff2" />
+    <Content Include="Content\fonts\Roboto-400.ttf" />
+    <Content Include="Content\fonts\Roboto-400.woff" />
+    <Content Include="Content\fonts\Roboto-400.woff2" />
+    <Content Include="Content\fonts\Roboto-500.ttf" />
+    <Content Include="Content\fonts\Roboto-500.woff" />
+    <Content Include="Content\fonts\Roboto-500.woff2" />
+    <Content Include="Content\icons\dxicons.woff2" />
+    <Content Include="Content\icons\dxiconsios.woff2" />
+    <Content Include="Content\icons\dxiconsmaterial.ttf" />
+    <Content Include="Content\icons\dxiconsmaterial.woff" />
+    <Content Include="Content\icons\dxiconsmaterial.woff2" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />
     <Content Include="Scripts\jquery-3.3.1.slim.js" />
     <Content Include="Scripts\jquery-3.3.1.slim.min.js" />
+    <Content Include="Scripts\jquery.js" />
+    <Content Include="Scripts\jquery.min.js" />
     <Content Include="Scripts\jquery.unobtrusive-ajax.js" />
     <Content Include="Scripts\jquery.unobtrusive-ajax.min.js" />
     <Content Include="Scripts\jquery.validate.js" />
@@ -578,150 +794,432 @@
     <Content Include="Scripts\knockout-3.3.0.debug.js" />
     <Content Include="Scripts\knockout-3.3.0.js" />
     <Content Include="packages.config" />
-    <Content Include="App_Themes\KetoSavage\ASPxBinaryImage.skin" />
-    <Content Include="App_Themes\KetoSavage\ASPxButton.skin" />
-    <Content Include="App_Themes\KetoSavage\ASPxButtonEdit.skin" />
-    <Content Include="App_Themes\KetoSavage\ASPxCalendar.skin" />
-    <Content Include="App_Themes\KetoSavage\ASPxCallbackPanel.skin" />
-    <Content Include="App_Themes\KetoSavage\ASPxCaptcha.skin" />
-    <Content Include="App_Themes\KetoSavage\ASPxCardView.skin" />
-    <Content Include="App_Themes\KetoSavage\ASPxCheckBox.skin" />
-    <Content Include="App_Themes\KetoSavage\ASPxCheckBoxList.skin" />
-    <Content Include="App_Themes\KetoSavage\ASPxCloudControl.skin" />
-    <Content Include="App_Themes\KetoSavage\ASPxColorEdit.skin" />
-    <Content Include="App_Themes\KetoSavage\ASPxComboBox.skin" />
-    <Content Include="App_Themes\KetoSavage\ASPxDataView.skin" />
-    <Content Include="App_Themes\KetoSavage\ASPxDateEdit.skin" />
-    <Content Include="App_Themes\KetoSavage\ASPxDateNavigator.skin" />
-    <Content Include="App_Themes\KetoSavage\ASPxDockPanel.skin" />
-    <Content Include="App_Themes\KetoSavage\ASPxDocumentViewer.skin" />
-    <Content Include="App_Themes\KetoSavage\ASPxDropDownEdit.skin" />
-    <Content Include="App_Themes\KetoSavage\ASPxFileManager.skin" />
-    <Content Include="App_Themes\KetoSavage\ASPxFilterControl.skin" />
-    <Content Include="App_Themes\KetoSavage\ASPxFormLayout.skin" />
-    <Content Include="App_Themes\KetoSavage\ASPxGridLookup.skin" />
-    <Content Include="App_Themes\KetoSavage\ASPxGridView.skin" />
-    <Content Include="App_Themes\KetoSavage\ASPxHeadline.skin" />
-    <Content Include="App_Themes\KetoSavage\ASPxHint.skin" />
-    <Content Include="App_Themes\KetoSavage\ASPxHtmlEditor.skin" />
-    <Content Include="App_Themes\KetoSavage\ASPxHyperLink.skin" />
-    <Content Include="App_Themes\KetoSavage\ASPxImage.skin" />
-    <Content Include="App_Themes\KetoSavage\ASPxImageGallery.skin" />
-    <Content Include="App_Themes\KetoSavage\ASPxImageSlider.skin" />
-    <Content Include="App_Themes\KetoSavage\ASPxImageZoom.skin" />
-    <Content Include="App_Themes\KetoSavage\ASPxImageZoomNavigator.skin" />
-    <Content Include="App_Themes\KetoSavage\ASPxLabel.skin" />
-    <Content Include="App_Themes\KetoSavage\ASPxListBox.skin" />
-    <Content Include="App_Themes\KetoSavage\ASPxLoadingPanel.skin" />
-    <Content Include="App_Themes\KetoSavage\ASPxMemo.skin" />
-    <Content Include="App_Themes\KetoSavage\ASPxMenu.skin" />
-    <Content Include="App_Themes\KetoSavage\ASPxNavBar.skin" />
-    <Content Include="App_Themes\KetoSavage\ASPxNewsControl.skin" />
-    <Content Include="App_Themes\KetoSavage\ASPxPageControl.skin" />
-    <Content Include="App_Themes\KetoSavage\ASPxPager.skin" />
-    <Content Include="App_Themes\KetoSavage\ASPxPanel.skin" />
-    <Content Include="App_Themes\KetoSavage\ASPxPivotGrid.skin" />
-    <Content Include="App_Themes\KetoSavage\ASPxPopupControl.skin" />
-    <Content Include="App_Themes\KetoSavage\ASPxPopupMenu.skin" />
-    <Content Include="App_Themes\KetoSavage\ASPxProgressBar.skin" />
-    <Content Include="App_Themes\KetoSavage\ASPxRadioButton.skin" />
-    <Content Include="App_Themes\KetoSavage\ASPxRadioButtonList.skin" />
-    <Content Include="App_Themes\KetoSavage\ASPxRatingControl.skin" />
-    <Content Include="App_Themes\KetoSavage\ASPxRibbon.skin" />
-    <Content Include="App_Themes\KetoSavage\ASPxRichEdit.skin" />
-    <Content Include="App_Themes\KetoSavage\ASPxRoundPanel.skin" />
-    <Content Include="App_Themes\KetoSavage\ASPxScheduler.skin" />
-    <Content Include="App_Themes\KetoSavage\ASPxSiteMapControl.skin" />
-    <Content Include="App_Themes\KetoSavage\ASPxSpellChecker.skin" />
-    <Content Include="App_Themes\KetoSavage\ASPxSpinEdit.skin" />
+    <Content Include="App_Themes\KetoSavage\ASPxBinaryImage.skin">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_Themes\KetoSavage\ASPxButton.skin">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_Themes\KetoSavage\ASPxButtonEdit.skin">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_Themes\KetoSavage\ASPxCalendar.skin">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_Themes\KetoSavage\ASPxCallbackPanel.skin">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_Themes\KetoSavage\ASPxCaptcha.skin">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_Themes\KetoSavage\ASPxCardView.skin">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_Themes\KetoSavage\ASPxCheckBox.skin">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_Themes\KetoSavage\ASPxCheckBoxList.skin">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_Themes\KetoSavage\ASPxCloudControl.skin">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_Themes\KetoSavage\ASPxColorEdit.skin">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_Themes\KetoSavage\ASPxComboBox.skin">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_Themes\KetoSavage\ASPxDataView.skin">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_Themes\KetoSavage\ASPxDateEdit.skin">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_Themes\KetoSavage\ASPxDateNavigator.skin">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_Themes\KetoSavage\ASPxDockPanel.skin">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_Themes\KetoSavage\ASPxDocumentViewer.skin">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_Themes\KetoSavage\ASPxDropDownEdit.skin">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_Themes\KetoSavage\ASPxFileManager.skin">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_Themes\KetoSavage\ASPxFilterControl.skin">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_Themes\KetoSavage\ASPxFormLayout.skin">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_Themes\KetoSavage\ASPxGridLookup.skin">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_Themes\KetoSavage\ASPxGridView.skin">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_Themes\KetoSavage\ASPxHeadline.skin">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_Themes\KetoSavage\ASPxHint.skin">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_Themes\KetoSavage\ASPxHtmlEditor.skin">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_Themes\KetoSavage\ASPxHyperLink.skin">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_Themes\KetoSavage\ASPxImage.skin">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_Themes\KetoSavage\ASPxImageGallery.skin">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_Themes\KetoSavage\ASPxImageSlider.skin">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_Themes\KetoSavage\ASPxImageZoom.skin">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_Themes\KetoSavage\ASPxImageZoomNavigator.skin">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_Themes\KetoSavage\ASPxLabel.skin">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_Themes\KetoSavage\ASPxListBox.skin">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_Themes\KetoSavage\ASPxLoadingPanel.skin">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_Themes\KetoSavage\ASPxMemo.skin">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_Themes\KetoSavage\ASPxMenu.skin">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_Themes\KetoSavage\ASPxNavBar.skin">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_Themes\KetoSavage\ASPxNewsControl.skin">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_Themes\KetoSavage\ASPxPageControl.skin">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_Themes\KetoSavage\ASPxPager.skin">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_Themes\KetoSavage\ASPxPanel.skin">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_Themes\KetoSavage\ASPxPivotGrid.skin">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_Themes\KetoSavage\ASPxPopupControl.skin">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_Themes\KetoSavage\ASPxPopupMenu.skin">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_Themes\KetoSavage\ASPxProgressBar.skin">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_Themes\KetoSavage\ASPxRadioButton.skin">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_Themes\KetoSavage\ASPxRadioButtonList.skin">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_Themes\KetoSavage\ASPxRatingControl.skin">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_Themes\KetoSavage\ASPxRibbon.skin">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_Themes\KetoSavage\ASPxRichEdit.skin">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_Themes\KetoSavage\ASPxRoundPanel.skin">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_Themes\KetoSavage\ASPxScheduler.skin">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_Themes\KetoSavage\ASPxSiteMapControl.skin">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_Themes\KetoSavage\ASPxSpellChecker.skin">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_Themes\KetoSavage\ASPxSpinEdit.skin">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="App_Themes\KetoSavage\ASPxSplitter.skin">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="App_Themes\KetoSavage\ASPxSpreadsheet.skin" />
-    <Content Include="App_Themes\KetoSavage\ASPxTabControl.skin" />
-    <Content Include="App_Themes\KetoSavage\ASPxTextBox.skin" />
-    <Content Include="App_Themes\KetoSavage\ASPxTimeEdit.skin" />
-    <Content Include="App_Themes\KetoSavage\ASPxTitleIndex.skin" />
-    <Content Include="App_Themes\KetoSavage\ASPxTokenBox.skin" />
-    <Content Include="App_Themes\KetoSavage\ASPxTrackBar.skin" />
-    <Content Include="App_Themes\KetoSavage\ASPxTreeList.skin" />
-    <Content Include="App_Themes\KetoSavage\ASPxTreeView.skin" />
-    <Content Include="App_Themes\KetoSavage\ASPxUploadControl.skin" />
-    <Content Include="App_Themes\KetoSavage\ASPxValidationSummary.skin" />
-    <Content Include="App_Themes\KetoSavage\ASPxVerticalGrid.skin" />
-    <Content Include="App_Themes\KetoSavage\MonthEdit.skin" />
-    <Content Include="App_Themes\KetoSavage\RecurrenceTypeEdit.skin" />
-    <Content Include="App_Themes\KetoSavage\ReportDocumentMap.skin" />
-    <Content Include="App_Themes\KetoSavage\ReportParametersPanel.skin" />
-    <Content Include="App_Themes\KetoSavage\ReportToolbar.skin" />
-    <Content Include="App_Themes\KetoSavage\ReportViewer.skin" />
-    <Content Include="App_Themes\KetoSavage\WebChartControl.skin" />
-    <Content Include="App_Themes\KetoSavage\WeekDaysEdit.skin" />
-    <Content Include="App_Themes\KetoSavage\WeekOfMonthEdit.skin" />
-    <Content Include="App_Themes\KetoSavage\MVCxButton.skin" />
-    <Content Include="App_Themes\KetoSavage\MVCxButtonEdit.skin" />
-    <Content Include="App_Themes\KetoSavage\MVCxCalendar.skin" />
-    <Content Include="App_Themes\KetoSavage\MVCxCallbackPanel.skin" />
-    <Content Include="App_Themes\KetoSavage\MVCxCaptcha.skin" />
-    <Content Include="App_Themes\KetoSavage\MVCxCardView.skin" />
-    <Content Include="App_Themes\KetoSavage\MVCxChartControl.skin" />
-    <Content Include="App_Themes\KetoSavage\MVCxCheckBox.skin" />
-    <Content Include="App_Themes\KetoSavage\MVCxCheckBoxList.skin" />
-    <Content Include="App_Themes\KetoSavage\MVCxColorEdit.skin" />
-    <Content Include="App_Themes\KetoSavage\MVCxComboBox.skin" />
-    <Content Include="App_Themes\KetoSavage\MVCxDataView.skin" />
-    <Content Include="App_Themes\KetoSavage\MVCxDateEdit.skin" />
-    <Content Include="App_Themes\KetoSavage\MVCxDockPanel.skin" />
-    <Content Include="App_Themes\KetoSavage\MVCxDocumentViewer.skin" />
-    <Content Include="App_Themes\KetoSavage\MVCxDropDownEdit.skin" />
-    <Content Include="App_Themes\KetoSavage\MVCxFileManager.skin" />
-    <Content Include="App_Themes\KetoSavage\MVCxFormLayout.skin" />
-    <Content Include="App_Themes\KetoSavage\MVCxGridLookup.skin" />
-    <Content Include="App_Themes\KetoSavage\MVCxGridView.skin" />
-    <Content Include="App_Themes\KetoSavage\MVCxHint.skin" />
-    <Content Include="App_Themes\KetoSavage\MVCxHtmlEditor.skin" />
-    <Content Include="App_Themes\KetoSavage\MVCxHyperLink.skin" />
-    <Content Include="App_Themes\KetoSavage\MVCxImageGallery.skin" />
-    <Content Include="App_Themes\KetoSavage\MVCxImageSlider.skin" />
-    <Content Include="App_Themes\KetoSavage\MVCxImageZoom.skin" />
-    <Content Include="App_Themes\KetoSavage\MVCxImageZoomNavigator.skin" />
-    <Content Include="App_Themes\KetoSavage\MVCxLabel.skin" />
-    <Content Include="App_Themes\KetoSavage\MVCxListBox.skin" />
-    <Content Include="App_Themes\KetoSavage\MVCxLoadingPanel.skin" />
-    <Content Include="App_Themes\KetoSavage\MVCxMemo.skin" />
-    <Content Include="App_Themes\KetoSavage\MVCxMenu.skin" />
-    <Content Include="App_Themes\KetoSavage\MVCxNavBar.skin" />
-    <Content Include="App_Themes\KetoSavage\MVCxPageControl.skin" />
-    <Content Include="App_Themes\KetoSavage\MVCxPanel.skin" />
-    <Content Include="App_Themes\KetoSavage\MVCxPivotGrid.skin" />
-    <Content Include="App_Themes\KetoSavage\MVCxPopupControl.skin" />
-    <Content Include="App_Themes\KetoSavage\MVCxPopupMenu.skin" />
-    <Content Include="App_Themes\KetoSavage\MVCxProgressBar.skin" />
-    <Content Include="App_Themes\KetoSavage\MVCxRadioButton.skin" />
-    <Content Include="App_Themes\KetoSavage\MVCxRadioButtonList.skin" />
-    <Content Include="App_Themes\KetoSavage\MVCxRatingControl.skin" />
-    <Content Include="App_Themes\KetoSavage\MVCxReportToolbar.skin" />
-    <Content Include="App_Themes\KetoSavage\MVCxReportViewer.skin" />
-    <Content Include="App_Themes\KetoSavage\MVCxRibbon.skin" />
-    <Content Include="App_Themes\KetoSavage\MVCxRichEdit.skin" />
-    <Content Include="App_Themes\KetoSavage\MVCxRoundPanel.skin" />
-    <Content Include="App_Themes\KetoSavage\MVCxScheduler.skin" />
-    <Content Include="App_Themes\KetoSavage\MVCxSpellChecker.skin" />
-    <Content Include="App_Themes\KetoSavage\MVCxSpinEdit.skin" />
-    <Content Include="App_Themes\KetoSavage\MVCxSplitter.skin" />
-    <Content Include="App_Themes\KetoSavage\MVCxSpreadsheet.skin" />
-    <Content Include="App_Themes\KetoSavage\MVCxTabControl.skin" />
-    <Content Include="App_Themes\KetoSavage\MVCxTextBox.skin" />
-    <Content Include="App_Themes\KetoSavage\MVCxTimeEdit.skin" />
-    <Content Include="App_Themes\KetoSavage\MVCxTokenBox.skin" />
-    <Content Include="App_Themes\KetoSavage\MVCxTrackBar.skin" />
-    <Content Include="App_Themes\KetoSavage\MVCxTreeList.skin" />
-    <Content Include="App_Themes\KetoSavage\MVCxTreeView.skin" />
-    <Content Include="App_Themes\KetoSavage\MVCxUploadControl.skin" />
-    <Content Include="App_Themes\KetoSavage\MVCxValidationSummary.skin" />
-    <Content Include="App_Themes\KetoSavage\MVCxVerticalGrid.skin" />
-    <Content Include="App_Themes\KetoSavage\Fonts\Roboto-Medium.ttf" />
-    <Content Include="App_Themes\KetoSavage\Fonts\Roboto-Regular.ttf" />
+    <Content Include="App_Themes\KetoSavage\ASPxSpreadsheet.skin">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_Themes\KetoSavage\ASPxTabControl.skin">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_Themes\KetoSavage\ASPxTextBox.skin">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_Themes\KetoSavage\ASPxTimeEdit.skin">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_Themes\KetoSavage\ASPxTitleIndex.skin">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_Themes\KetoSavage\ASPxTokenBox.skin">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_Themes\KetoSavage\ASPxTrackBar.skin">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_Themes\KetoSavage\ASPxTreeList.skin">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_Themes\KetoSavage\ASPxTreeView.skin">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_Themes\KetoSavage\ASPxUploadControl.skin">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_Themes\KetoSavage\ASPxValidationSummary.skin">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_Themes\KetoSavage\ASPxVerticalGrid.skin">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_Themes\KetoSavage\MonthEdit.skin">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_Themes\KetoSavage\RecurrenceTypeEdit.skin">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_Themes\KetoSavage\ReportDocumentMap.skin">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_Themes\KetoSavage\ReportParametersPanel.skin">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_Themes\KetoSavage\ReportToolbar.skin">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_Themes\KetoSavage\ReportViewer.skin">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_Themes\KetoSavage\WebChartControl.skin">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_Themes\KetoSavage\WeekDaysEdit.skin">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_Themes\KetoSavage\WeekOfMonthEdit.skin">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_Themes\KetoSavage\MVCxButton.skin">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_Themes\KetoSavage\MVCxButtonEdit.skin">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_Themes\KetoSavage\MVCxCalendar.skin">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_Themes\KetoSavage\MVCxCallbackPanel.skin">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_Themes\KetoSavage\MVCxCaptcha.skin">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_Themes\KetoSavage\MVCxCardView.skin">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_Themes\KetoSavage\MVCxChartControl.skin">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_Themes\KetoSavage\MVCxCheckBox.skin">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_Themes\KetoSavage\MVCxCheckBoxList.skin">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_Themes\KetoSavage\MVCxColorEdit.skin">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_Themes\KetoSavage\MVCxComboBox.skin">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_Themes\KetoSavage\MVCxDataView.skin">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_Themes\KetoSavage\MVCxDateEdit.skin">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_Themes\KetoSavage\MVCxDockPanel.skin">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_Themes\KetoSavage\MVCxDocumentViewer.skin">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_Themes\KetoSavage\MVCxDropDownEdit.skin">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_Themes\KetoSavage\MVCxFileManager.skin">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_Themes\KetoSavage\MVCxFormLayout.skin">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_Themes\KetoSavage\MVCxGridLookup.skin">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_Themes\KetoSavage\MVCxGridView.skin">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_Themes\KetoSavage\MVCxHint.skin">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_Themes\KetoSavage\MVCxHtmlEditor.skin">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_Themes\KetoSavage\MVCxHyperLink.skin">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_Themes\KetoSavage\MVCxImageGallery.skin">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_Themes\KetoSavage\MVCxImageSlider.skin">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_Themes\KetoSavage\MVCxImageZoom.skin">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_Themes\KetoSavage\MVCxImageZoomNavigator.skin">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_Themes\KetoSavage\MVCxLabel.skin">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_Themes\KetoSavage\MVCxListBox.skin">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_Themes\KetoSavage\MVCxLoadingPanel.skin">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_Themes\KetoSavage\MVCxMemo.skin">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_Themes\KetoSavage\MVCxMenu.skin">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_Themes\KetoSavage\MVCxNavBar.skin">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_Themes\KetoSavage\MVCxPageControl.skin">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_Themes\KetoSavage\MVCxPanel.skin">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_Themes\KetoSavage\MVCxPivotGrid.skin">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_Themes\KetoSavage\MVCxPopupControl.skin">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_Themes\KetoSavage\MVCxPopupMenu.skin">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_Themes\KetoSavage\MVCxProgressBar.skin">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_Themes\KetoSavage\MVCxRadioButton.skin">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_Themes\KetoSavage\MVCxRadioButtonList.skin">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_Themes\KetoSavage\MVCxRatingControl.skin">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_Themes\KetoSavage\MVCxReportToolbar.skin">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_Themes\KetoSavage\MVCxReportViewer.skin">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_Themes\KetoSavage\MVCxRibbon.skin">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_Themes\KetoSavage\MVCxRichEdit.skin">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_Themes\KetoSavage\MVCxRoundPanel.skin">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_Themes\KetoSavage\MVCxScheduler.skin">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_Themes\KetoSavage\MVCxSpellChecker.skin">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_Themes\KetoSavage\MVCxSpinEdit.skin">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_Themes\KetoSavage\MVCxSplitter.skin">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_Themes\KetoSavage\MVCxSpreadsheet.skin">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_Themes\KetoSavage\MVCxTabControl.skin">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_Themes\KetoSavage\MVCxTextBox.skin">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_Themes\KetoSavage\MVCxTimeEdit.skin">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_Themes\KetoSavage\MVCxTokenBox.skin">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_Themes\KetoSavage\MVCxTrackBar.skin">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_Themes\KetoSavage\MVCxTreeList.skin">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_Themes\KetoSavage\MVCxTreeView.skin">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_Themes\KetoSavage\MVCxUploadControl.skin">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_Themes\KetoSavage\MVCxValidationSummary.skin">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_Themes\KetoSavage\MVCxVerticalGrid.skin">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_Themes\KetoSavage\Fonts\Roboto-Medium.ttf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_Themes\KetoSavage\Fonts\Roboto-Regular.ttf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="Content\icons\dxicons.ttf" />
     <Content Include="Content\icons\dxicons.woff" />
     <Content Include="Content\icons\dxiconsios.ttf" />
@@ -857,11 +1355,13 @@
     <Content Include="Views\ClientCharts\_clientPastWeekMacroChart.cshtml" />
     <Content Include="Views\ClientCharts\_clientCurrentWeekBarGauge.cshtml" />
     <Content Include="Views\ClientCharts\_clientProgramGrid.cshtml" />
-    <Content Include="Views\UserProgress\_newsCarousel.cshtml" />
+    <Content Include="Views\ManageNews\_newsCarousel.cshtml" />
     <Content Include="Views\UserPrograms\_manageNewsfeed.cshtml" />
     <Content Include="Views\ManageNews\Index.cshtml" />
     <Content Include="Views\ManageNews\_newsGrid.cshtml" />
     <Content Include="Views\ClientDashboard\Index.cshtml" />
+    <Content Include="Views\UserPrograms\_manageMacroPartial.cshtml" />
+    <Content Include="Views\UserPrograms\ManageClientMacros.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -1087,6 +1587,7 @@
           <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
         </WebProjectProperties>
       </FlavorProperties>
+      <UserProperties DismissedDevExtremeVersion="18.1.4.0" />
     </VisualStudio>
   </ProjectExtensions>
 </Project>

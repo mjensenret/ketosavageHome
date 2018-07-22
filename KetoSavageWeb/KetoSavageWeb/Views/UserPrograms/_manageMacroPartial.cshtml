@@ -1,0 +1,141 @@
+﻿
+@{ 
+    var grid = Html.DevExpress().GridView(userList =>
+    {
+        userList.Name = "MacroClientList";
+        userList.CallbackRouteValues = new { Controller = "UserPrograms", Action = "ManageClientMacros" };
+        //userList.SettingsEditing.AddNewRowRouteValues = new { Controller = "UserPrograms", Action = "userProgramGridAdd" };
+        userList.SettingsEditing.UpdateRowRouteValues = new { Controller = "UserPrograms", Action = "updateProgram" };
+        userList.Styles.AlternatingRow.Enabled = DefaultBoolean.True;
+        userList.SettingsBehavior.AllowFixedGroups = true;
+        userList.Settings.ShowFilterRow = true;
+        userList.Settings.ShowGroupPanel = false;
+        userList.SettingsBehavior.AllowFocusedRow = true;
+        userList.SettingsEditing.Mode = GridViewEditingMode.EditFormAndDisplayRow;
+        userList.SettingsBehavior.ConfirmDelete = true;
+        userList.SettingsPager.FirstPageButton.Visible = true;
+        userList.SettingsPager.LastPageButton.Visible = true;
+        userList.SettingsPager.PageSizeItemSettings.Visible = true;
+        userList.SettingsPager.PageSizeItemSettings.Items = new string[] { "10", "20", "50" };
+
+
+        userList.CommandColumn.Visible = false;
+        userList.CommandColumn.ShowNewButtonInHeader = false;
+        userList.CommandColumn.ShowEditButton = false;
+        userList.CommandColumn.ShowClearFilterButton = true;
+
+        userList.KeyFieldName = "UserId";
+
+        userList.Columns.Add(c =>
+        {
+            c.FieldName = "Id";
+            c.Visible = false;
+
+        });
+        userList.Columns.Add(c =>
+        {
+            c.FieldName = "UserId";
+            c.Visible = false;
+        });
+        userList.Columns.Add(c =>
+        {
+            c.FieldName = "FullName";
+            c.Caption = "Name";
+            c.ReadOnly = true;
+            c.VisibleIndex = 1;
+        });
+        userList.Columns.Add(c =>
+        {
+            c.FieldName = "ProgramUserId";
+            c.Caption = "Macros";
+            c.Visible = true;
+            c.Settings.AllowAutoFilter = DefaultBoolean.False;
+            c.EditFormSettings.Visible = DefaultBoolean.False;
+            c.VisibleIndex = 2;
+            c.SetDataItemTemplateContent(container =>
+            {
+                Html.DevExpress().HyperLink(hlSettings =>
+                {
+                    hlSettings.Name = string.Format("hl_{0}", (container as GridViewDataItemTemplateContainer).VisibleIndex);
+                    hlSettings.NavigateUrl = "javascript:void(0)";
+                    hlSettings.Properties.ClientSideEvents.Click = string.Format("function(s, e) {{ ShowUserProgramDetails('{0}'); }}", Url.Action("ShowProgramDetails", "UserPrograms", new { _userId = (container as GridViewDataItemTemplateContainer).KeyValue.ToString() }));
+                    hlSettings.Properties.Text = "Edit Macros";
+                }).Render();
+            });
+
+        });
+        userList.Columns.Add(c =>
+        {
+            c.FieldName = "ProgramName";
+            c.Caption = "Program";
+            c.EditFormSettings.Visible = DefaultBoolean.False;
+            c.VisibleIndex = 3;
+        });
+        userList.Columns.Add(c =>
+        {
+            c.FieldName = "StartWeight";
+            c.Caption = "Start Weight";
+            c.Settings.AllowAutoFilter = DefaultBoolean.False;
+            c.VisibleIndex = 4;
+        });
+        userList.Columns.Add(c =>
+        {
+            c.FieldName = "CurrentWeight";
+            c.Caption = "Current Weight";
+            c.Settings.AllowAutoFilter = DefaultBoolean.False;
+            c.VisibleIndex = 5;
+        });
+        userList.Columns.Add(c =>
+        {
+            c.FieldName = "GoalWeight";
+            c.Caption = "Goal Weight";
+            c.Settings.AllowAutoFilter = DefaultBoolean.False;
+            c.VisibleIndex = 6;
+        });
+        userList.Columns.Add(c =>
+        {
+            c.FieldName = "UserName";
+            c.ReadOnly = true;
+            c.Visible = false;
+        });
+        userList.Columns.Add(c =>
+        {
+            c.FieldName = "currentProgramStartDate";
+            c.Caption = "Start Date";
+            c.ColumnType = MVCxGridViewColumnType.DateEdit;
+            c.VisibleIndex = 7;
+        });
+        userList.Columns.Add(c =>
+        {
+            c.FieldName = "currentProgramEndDate";
+            c.Caption = "End Date";
+            c.ColumnType = MVCxGridViewColumnType.DateEdit;
+            c.VisibleIndex = 8;
+        });
+        userList.Columns.Add(c =>
+        {
+            c.FieldName = "LastModified";
+            c.Caption = "Last Modified";
+            c.ReadOnly = true;
+            c.Visible = true;
+            c.PropertiesEdit.DisplayFormatString = "MM/dd/yyyy";
+            c.Settings.AllowAutoFilter = DefaultBoolean.False;
+            c.EditFormSettings.Visible = DefaultBoolean.False;
+            c.VisibleIndex = 9;
+        });
+
+        //userList.Columns.Add(c =>
+        //{
+        //    c.FieldName = "CoachId";
+        //    c.ColumnType = MVCxGridViewColumnType.ComboBox;
+        //    c.Visible = false;
+        //    c.Caption = "Coach";
+        //    c.EditFormSettings.Visible = DefaultBoolean.True;
+        //    c.VisibleIndex = 10;
+        //    var combo = c.PropertiesEdit as ComboBoxProperties;
+        //    combo.DataSource = ViewBag.CoachList;
+        //});
+
+    });
+}
+@grid.Bind(Model).GetHtml()

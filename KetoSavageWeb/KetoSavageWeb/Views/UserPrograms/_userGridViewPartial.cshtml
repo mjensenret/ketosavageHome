@@ -4,10 +4,15 @@
     {
         userList.Name = "UserList";
         userList.CallbackRouteValues = new { Controller = "UserPrograms", Action = "UserProgramList" };
-        //userList.SettingsEditing.AddNewRowRouteValues = new { Controller = "UserPrograms", Action = "userProgramGridAdd" };
-        userList.SettingsEditing.UpdateRowRouteValues = new { Controller = "UserPrograms", Action = "updateProgram" };
+        userList.SettingsEditing.AddNewRowRouteValues = new { Controller = "UserPrograms", Action = "userProgramAdd" };
+        userList.SettingsEditing.UpdateRowRouteValues = new { Controller = "UserPrograms", Action = "userProgramUpdate" };
         userList.Styles.AlternatingRow.Enabled = DefaultBoolean.True;
-        userList.SettingsBehavior.AllowFixedGroups = true;
+        userList.SettingsBehavior.AllowFixedGroups = false;
+        userList.SettingsBehavior.AllowHeaderFilter = true;
+        userList.SettingsBehavior.FilterRowMode = GridViewFilterRowMode.Auto;
+        userList.Settings.ShowFilterRow = true;
+        userList.Settings.ShowFilterRowMenu = true;
+        userList.Settings.ShowFilterRowMenuLikeItem = true;
         userList.Settings.ShowGroupPanel = true;
         userList.SettingsBehavior.AllowFocusedRow = true;
         userList.SettingsEditing.Mode = GridViewEditingMode.EditFormAndDisplayRow;
@@ -16,10 +21,11 @@
         userList.SettingsPager.LastPageButton.Visible = true;
         userList.SettingsPager.PageSizeItemSettings.Visible = true;
         userList.SettingsPager.PageSizeItemSettings.Items = new string[] { "10", "20", "50" };
-        
+
 
         userList.CommandColumn.Visible = true;
         userList.CommandColumn.ShowNewButtonInHeader = false;
+        userList.CommandColumn.ShowNewButton = true;
         userList.CommandColumn.ShowEditButton = true;
         userList.CommandColumn.ShowClearFilterButton = true;
 
@@ -28,7 +34,7 @@
         userList.Columns.Add(c =>
         {
             c.FieldName = "Id";
-            c.Visible = true;
+            c.Visible = false;
 
         });
         userList.Columns.Add(c =>
@@ -98,26 +104,26 @@
         });
         userList.Columns.Add(c =>
         {
-            c.FieldName = "LastModified";
-            c.Caption = "Last Modified";
-            c.ReadOnly = true;
-            c.Visible = true;
-            c.EditFormSettings.Visible = DefaultBoolean.False;
-        });
-        userList.Columns.Add(c =>
-        {
             c.FieldName = "StartWeight";
-            c.Caption = "Start Weight";
-        });
-        userList.Columns.Add(c =>
-        {
-            c.FieldName = "CurrentWeight";
-            c.Caption = "Current Weight";
+            c.Visible = false;
+            c.EditFormSettings.Visible = DefaultBoolean.True;
+            c.EditFormSettings.VisibleIndex = 20;
         });
         userList.Columns.Add(c =>
         {
             c.FieldName = "GoalWeight";
-            c.Caption = "Goal Weight";
+            c.Visible = false;
+            c.EditFormSettings.Visible = DefaultBoolean.True;
+            c.EditFormSettings.VisibleIndex = 21;
+        });
+        userList.Columns.Add(c =>
+        {
+            c.FieldName = "LastModified";
+            c.Caption = "Last Modified";
+            c.ReadOnly = true;
+            c.Visible = true;
+            c.PropertiesEdit.DisplayFormatString = "MM/dd/yyyy";
+            c.EditFormSettings.Visible = DefaultBoolean.False;
         });
         userList.Columns.Add(c =>
         {
@@ -139,27 +145,22 @@
         });
         userList.Columns.Add(c =>
         {
-            c.FieldName = "ProgramUserId";
-            c.Caption = "Macros";
-            c.Visible = true;
-            c.EditFormSettings.Visible = DefaultBoolean.False;
-            c.SetDataItemTemplateContent(container =>
-            {
-                Html.DevExpress().HyperLink(hlSettings =>
-                {
-                    hlSettings.Name = string.Format("hl_{0}", (container as GridViewDataItemTemplateContainer).VisibleIndex);
-                    hlSettings.NavigateUrl = "javascript:void(0)";
-                    hlSettings.Properties.ClientSideEvents.Click = string.Format("function(s, e) {{ ShowUserProgramDetails('{0}'); }}", Url.Action("ShowProgramDetails", "UserPrograms", new { _userId = (container as GridViewDataItemTemplateContainer).KeyValue.ToString() }));
-                    hlSettings.Properties.Text = "Edit Macros";
-
-                    //hlSettings.Name = string.Format("hl_{0}", (container as GridViewDataItemTemplateContainer).VisibleIndex);
-                    //hlSettings.NavigateUrl = "javascript:void(0)";
-                    //hlSettings.Properties.ClientSideEvents.Click = string.Format("function(s, e) {{ ShowUserProgramDetails('{0}'); }}", (container as GridViewDataItemTemplateContainer).KeyValue.ToString());
-                    //hlSettings.Properties.Text = "Edit Macros";
-                }).Render();
-            });
+            c.FieldName = "IsActive";
+            c.ColumnType = MVCxGridViewColumnType.CheckBox;
+            c.Caption = "Active";
+            c.EditFormSettings.Visible = DefaultBoolean.True;
 
         });
+        userList.InitNewRow = (s, e) =>
+        {
+            MVCxGridView g = s as MVCxGridView;
+            e.NewValues["UserName"] = g.GetRowValues(g.FocusedRowIndex, "UserName");
+            e.NewValues["FullName"] = g.GetRowValues(g.FocusedRowIndex, "FullName");
+            e.NewValues["UserType"] = g.GetRowValues(g.FocusedRowIndex, "UserType");
+            e.NewValues["UserId"] = g.GetRowValues(g.FocusedRowIndex, "UserId");
+            e.NewValues["IsActive"] = true;
+        };
+
     });
 }
 @grid.Bind(Model).GetHtml()

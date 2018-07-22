@@ -8,10 +8,44 @@
     font-family: "Roboto Medium";
     src: local("Roboto Medium"), url('../Fonts/Roboto-Medium.ttf');
 }
+.dxeCalendarToday_KetoSavage .dxe-apt-labels-container,
+.dxeCalendarSelected_KetoSavage .dxe-apt-labels-container
+{
+    display: none;
+}
+.dxeCalendar_KetoSavage .dxe-apt-labels-container
+{
+    height: 5px;
+    margin-bottom: -5px;
+    margin-left: -2px;
+    margin-right: -2px;
+}
+.dxeCalendar_KetoSavage .dxe-apt-labels-container > div
+{
+    width: 5px;
+    height: 5px;
+    margin-top: 2px;
+    border-radius: 50%;
+}
+.dxeCalendar_KetoSavage .dxe-more-labels-container > .dxe-h-line
+{
+    width: 5px;
+    top: 2px;
+}
+.dxeCalendar_KetoSavage .dxe-more-labels-container > .dxe-v-line
+{
+    height: 5px;
+    left: 2px;
+}
+.dxeCalendar_KetoSavage .dxe-more-labels-container > div.dxe-h-line,
+.dxeCalendar_KetoSavage .dxe-more-labels-container > div.dxe-v-line
+{
+    background-color: #757575;
+}
 /* -- ValidationSummary -- */
 .dxvsValidationSummary_KetoSavage
 {
-    font: 14px 'Open Sans', Helvetica, 'Droid Sans', Tahoma, Geneva, sans-serif;
+    font: 14px 'Roboto Regular', Helvetica, 'Droid Sans', Tahoma, Geneva, sans-serif;
     color: Red;
 }
 .dxvsValidationSummary_KetoSavage td.dxvsRC_KetoSavage
@@ -52,7 +86,7 @@
 /* TrackBar */
 .dxeTrackBar_KetoSavage
 {
-    font: 14px 'Open Sans', Helvetica, 'Droid Sans', Tahoma, Geneva, sans-serif;
+    font: 14px 'Roboto Regular', Helvetica, 'Droid Sans', Tahoma, Geneva, sans-serif;
     user-select: none;
     -moz-user-select: -moz-none;
     -khtml-user-select: none;
@@ -169,8 +203,8 @@
 .dxeFocused_KetoSavage .dxeTBVSys .dxeFocusedMDHSys .dxeTBMainDH_KetoSavage.dxEditors_edtTBMainDHHover_KetoSavage,
 .dxeFocused_KetoSavage .dxeTBVSys .dxeFocusedSDHSys .dxeTBSecondaryDH_KetoSavage.dxEditors_edtTBSecondaryDHHover_KetoSavage
 {
-    background-color: #000000;
-    border-color: #000000;
+    background-color: #DEDEDE;
+    border-color: #DEDEDE;
 }
 .dxeTBHSys .dxeTBMainDH_KetoSavage.dxEditors_edtTBMainDHPressed_KetoSavage,
 .dxeTBHSys .dxeTBSecondaryDH_KetoSavage.dxEditors_edtTBSecondaryDHPressed_KetoSavage,
@@ -181,15 +215,15 @@
 .dxeFocused_KetoSavage .dxeTBVSys .dxeFocusedMDHSys .dxeTBMainDH_KetoSavage.dxEditors_edtTBMainDHPressed_KetoSavage,
 .dxeFocused_KetoSavage .dxeTBVSys .dxeFocusedSDHSys .dxeTBSecondaryDH_KetoSavage.dxEditors_edtTBSecondaryDHPressed_KetoSavage
 {
-    background-color: #000000;
-    border-color: #000000;
+    background-color: #FFFFFF;
+    border-color: #DEDEDE;
 }
 .dxeFocused_KetoSavage .dxeTBHSys .dxeFocusedMDHSys .dxeTBMainDH_KetoSavage,
 .dxeFocused_KetoSavage .dxeTBHSys .dxeFocusedSDHSys .dxeTBSecondaryDH_KetoSavage,
 .dxeFocused_KetoSavage .dxeTBVSys .dxeFocusedMDHSys .dxeTBMainDH_KetoSavage,
 .dxeFocused_KetoSavage .dxeTBVSys .dxeFocusedSDHSys .dxeTBSecondaryDH_KetoSavage
 {
-    border: 2px solid #000000;
+    border: 2px solid #DEDEDE;
 }
 .dxeTBMainDH_KetoSavage, .dxeTBSecondaryDH_KetoSavage
 {
@@ -198,7 +232,7 @@
     -moz-border-radius: 50%;
     -o-border-radius: 50%;
     -khtml-border-radius: 50%;
-    background-color: #000000;
+    background-color: #FFFFFF;
     z-index: 9;
 }
 .dxeTBVSys .dxeTBRBScaleSys .dxeTBTrack_KetoSavage, .dxeTBVSys .dxeTBTrack_KetoSavage
@@ -230,11 +264,11 @@
 }
 .dxeTBHSys .dxeTBBarHighlight_KetoSavage
 {
-    background: #000000;
+    background: #DEDEDE;
 }
 .dxeTBVSys .dxeTBBarHighlight_KetoSavage
 {
-    background: #000000;
+    background: #DEDEDE;
 }
 .dxeTBRBLabel_KetoSavage, .dxeTBLTLabel_KetoSavage
 {
@@ -315,7 +349,7 @@
 .dxeTBSelectedTick_KetoSavage .dxeTBRBLabel_KetoSavage,
 .dxeTBSelectedTick_KetoSavage .dxeTBLTLabel_KetoSavage
 {
-    color: #000000;
+    color: #DEDEDE;
 }
 .dxeTBVSys .dxeTBLTScaleSys .dxeTBItem_KetoSavage
 {
@@ -452,7 +486,7 @@
 .dxeHelpText_KetoSavage,
 .dxeTBValueToolTip_KetoSavage
 {
-    font: 14px 'Open Sans', Helvetica, 'Droid Sans', Tahoma, Geneva, sans-serif;
+    font: 14px 'Roboto Regular', Helvetica, 'Droid Sans', Tahoma, Geneva, sans-serif;
 }
 div.dxeHelpText_KetoSavage,
 .dxeTBValueToolTip_KetoSavage
@@ -461,8 +495,8 @@ div.dxeHelpText_KetoSavage,
     display: inline;
     line-height: 18px;
     position: absolute;
-    background: #000000;
-    color: #000000;
+    background: #DEDEDE;
+    color: #FFFFFF;
     z-index: 41998;
     -webkit-border-radius: 4px;
     -moz-border-radius: 4px;
@@ -507,21 +541,21 @@ td.dxeHelpText_KetoSavage.dxeVHelpTextSys
 .dxeTrackBar_KetoSavage .dxeTBDecBtn_KetoSavage .dxRipple,
 .dxeTrackBar_KetoSavage .dxeTBIncBtn_KetoSavage .dxRipple
 {
-    background-color: rgba(0,0,0,0.3);
+    background-color: rgba(222,222,222,0.3);
 }
 .dxAndroidMobilePlatform .dxeTrackBar_KetoSavage .dxeTBDecBtn_KetoSavage .dxRipple,
 .dxMacOSMobilePlatform .dxeTrackBar_KetoSavage .dxeTBIncBtn_KetoSavage .dxRipple,
 .dxAndroidMobilePlatform .dxeTrackBar_KetoSavage .dxeTBDecBtn_KetoSavage .dxRipple,
 .dxMacOSMobilePlatform .dxeTrackBar_KetoSavage .dxeTBIncBtn_KetoSavage .dxRipple
 {
-    background-color: rgba(0,0,0,0.4);
+    background-color: rgba(222,222,222,0.4);
 }
 /* Loading */
 .dxlpLoadingPanel_KetoSavage,
 .dxlpLoadingPanelWithContent_KetoSavage
 {
     background-color: white;
-    font: 14px 'Open Sans', Helvetica, 'Droid Sans', Tahoma, Geneva, sans-serif;
+    font: 14px 'Roboto Regular', Helvetica, 'Droid Sans', Tahoma, Geneva, sans-serif;
     color: #484848;
     -moz-box-shadow: 0 2px 4px 0 rgba(0,0,0,0.16), 0 2px 8px 0 rgba(0,0,0,0.12);
     -webkit-box-shadow: 0 2px 4px 0 rgba(0,0,0,0.16), 0 2px 8px 0 rgba(0,0,0,0.12);
@@ -558,7 +592,7 @@ html.dxIE.dxBrowserVersion-9 .dxeImage_KetoSavage.dxe-loadingImage
     -khtml-border-radius: 50%;
     border-radius: 50%;
     animation: dxLoadSpinSys 1s linear infinite;
-    border: 4px solid #000000;
+    border: 4px solid #DEDEDE;
     border-top: 4px solid #EEE;
     width: 24px;
     height: 24px;
@@ -589,8 +623,8 @@ html.dxIE.dxBrowserVersion-9 .dxeImage_KetoSavage.dxe-loadingImage
 }
 .dxeBase_KetoSavage
 {
-    font: 14px 'Open Sans', Helvetica, 'Droid Sans', Tahoma, Geneva, sans-serif;
-    color: #C0C0C0;
+    font: 14px 'Roboto Regular', Helvetica, 'Droid Sans', Tahoma, Geneva, sans-serif;
+    color: #dedede;
 }
 @keyframes radioFocusAnimation
 {
@@ -630,7 +664,7 @@ html.dxIE.dxBrowserVersion-9 .dxeImage_KetoSavage.dxe-loadingImage
     margin-top: -8px;
     width: 36px;
     height: 36px;
-    background-color: rgba(0,0,0,0.3);
+    background-color: rgba(222,222,222,0.3);
     border-radius: 50%;
     animation: radioFocusAnimation 0.17s cubic-bezier(0.61, 0.08, 0.46, 0.71);
 }
@@ -652,7 +686,7 @@ html.dxIE.dxBrowserVersion-9 .dxeImage_KetoSavage.dxe-loadingImage
 }
 .dxeIRadioButton_KetoSavage.dxEditors_edtRadioButtonChecked_KetoSavage .dxRipple
 {
-    background-color: rgba(0,0,0,0.3);
+    background-color: rgba(222,222,222,0.3);
 }
 .dxeIRadioButton_KetoSavage.dxichSys.dxWeb_edtRadioButtonUnchecked_KetoSavage .dxRipple
 {
@@ -661,7 +695,7 @@ html.dxIE.dxBrowserVersion-9 .dxeImage_KetoSavage.dxe-loadingImage
 .dxAndroidMobilePlatform .dxeIRadioButton_KetoSavage.dxEditors_edtRadioButtonChecked_KetoSavage .dxRipple,
 .dxMacOSMobilePlatform .dxeIRadioButton_KetoSavage.dxEditors_edtRadioButtonChecked_KetoSavage .dxRipple
 {
-    background-color: rgba(0,0,0,0.4);
+    background-color: rgba(222,222,222,0.4);
 }
 .dxAndroidMobilePlatform .dxeIRadioButton_KetoSavage.dxichSys.dxWeb_edtRadioButtonUnchecked_KetoSavage .dxRipple,
 .dxMacOSMobilePlatform .dxeIRadioButton_KetoSavage.dxichSys.dxWeb_edtRadioButtonUnchecked_KetoSavage .dxRipple
@@ -688,19 +722,23 @@ html.dxIE.dxBrowserVersion-9 .dxeImage_KetoSavage.dxe-loadingImage
     padding: 8px 8px 5px 3px;
 }
 span.dxeBase_KetoSavage.dxichCellSys.dxeTAR label,
-span[dir='rtl'].dxeBase_KetoSavage.dxichCellSys.dxeTAL label
+span[dir='rtl'].dxeBase_KetoSavage.dxichCellSys.dxeTAL label,
+.dx-acc-r span.dxeBase_KetoSavage.dxichCellSys.dxeTAR > span:not([id]),
+.dx-acc-r span[dir='rtl'].dxeBase_KetoSavage.dxichCellSys.dxeTAL > span:not([id])
 {
     padding: 6px 3px 5px 11px;
 }
 span.dxeBase_KetoSavage.dxichCellSys.dxeTAL label,
-span[dir='rtl'].dxeBase_KetoSavage.dxichCellSys.dxeTAR label
+span[dir='rtl'].dxeBase_KetoSavage.dxichCellSys.dxeTAR label,
+.dx-acc-r span.dxeBase_KetoSavage.dxichCellSys.dxeTAL > span:not([id]),
+.dx-acc-r span[dir='rtl'].dxeBase_KetoSavage.dxichCellSys.dxeTAR > span:not([id])
 {
     padding: 6px 11px 5px 3px;
 }
 /* -- ErrorFrame -- */
 .dxeErrorCell_KetoSavage
 {
-    font: 14px 'Open Sans', Helvetica, 'Droid Sans', Tahoma, Geneva, sans-serif;
+    font: 14px 'Roboto Regular', Helvetica, 'Droid Sans', Tahoma, Geneva, sans-serif;
     color: Red;
     border-color: black;
     padding-right: 12px;
@@ -757,12 +795,12 @@ span[dir='rtl'].dxeBase_KetoSavage.dxichCellSys.dxeTAR label
 }
 .dxeEditArea_KetoSavage
 {
-    border: 1px solid #A0A0A0;
+    /*border: 1px solid #A0A0A0;*/
 }
 .dxeEditArea_KetoSavage,
 body input.dxeEditArea_KetoSavage
 {
-    color: #dedede;
+    color: #7c7c7c;
 }
 input[type="text"].dxeEditArea_KetoSavage,
 input[type="password"].dxeEditArea_KetoSavage
@@ -805,7 +843,7 @@ input[type="password"].dxeEditArea_KetoSavage
 .dxeSpinLargeDecButton_KetoSavage,
 .dxeColorEditButton_KetoSavage
 {
-    background-color: #444444;
+    background-color: #dedede;
     vertical-align: middle;
     cursor: pointer;
     text-align: center;
@@ -833,9 +871,9 @@ input[type="password"].dxeEditArea_KetoSavage
 }
 .dxeColorEditButton_KetoSavage
 {
-    background-color: #000000;
+    background-color: #DEDEDE;
     padding: 8px 17px 10px 17px;
-    color: #000000;
+    color: #FFFFFF;
     -webkit-border-radius: 2px;
     -moz-border-radius: 2px;
     -o-border-radius: 2px;
@@ -848,16 +886,16 @@ input[type="password"].dxeEditArea_KetoSavage
 .dxeCalendarButton_KetoSavage,
 input.dxeColorEditButton_KetoSavage
 {
-    background-color: #FF1111;
+    background-color: #ff0000;
     box-shadow: none;
     border: none;
     padding: 8px 11px 7px;
     min-width: 37px;
     text-align: center;
     white-space: nowrap;
-    color: White;
+    color: white;
     text-transform: uppercase;
-    font: 14px 'Open Sans', Helvetica, 'Droid Sans', Tahoma, Geneva, sans-serif;font-weight:bold;
+    font: 14px 'Roboto Medium', Helvetica, 'Droid Sans', Tahoma, Geneva, sans-serif;
     font-size: 1em;
 }
 .dxeCalendarButton_KetoSavage.dxeButtonDisabled_KetoSavage,
@@ -895,7 +933,7 @@ input.dxeColorEditButton_KetoSavage
 }
 .dxeButtonEditButton_KetoSavage .dxEditors_edtDropDown_KetoSavage + .dxRippleContainer .dxRipple
 {
-    background-color: rgba(0,0,0,0.3);
+    background-color: rgba(222,222,222,0.3);
 }
 .dxAndroidMobilePlatform .dxeButtonEditButton_KetoSavage .dxRippleContainer .dxRipple,
 .dxMacOSMobilePlatform .dxeButtonEditButton_KetoSavage .dxRippleContainer .dxRipple
@@ -905,7 +943,7 @@ input.dxeColorEditButton_KetoSavage
 .dxAndroidMobilePlatform .dxeButtonEditButton_KetoSavage .dxEditors_edtDropDown_KetoSavage + .dxRippleContainer .dxRipple,
 .dxMacOSMobilePlatform .dxeButtonEditButton_KetoSavage .dxEditors_edtDropDown_KetoSavage + .dxRippleContainer .dxRipple
 {
-    background-color: rgba(0,0,0,0.4);
+    background-color: rgba(222,222,222,0.4);
 }
 /* -- Pressed -- */
 .dxeCalendarButtonPressed_KetoSavage,
@@ -916,7 +954,7 @@ input.dxeColorEditButton_KetoSavage
 .dxeSpinLargeDecButtonPressed_KetoSavage,
 .dxeColorEditButton_KetoSavage:active
 {
-    background-color: #000000;
+    background-color: #DEDEDE;
     color: white;
 }
 .dxeColorEditButton_KetoSavage:active,
@@ -931,7 +969,7 @@ input.dxeColorEditButton_KetoSavage:hover
     box-shadow: none;
     -moz-box-shadow: none;
     -webkit-box-shadow: none;
-    color: #000000 !important;
+    color: #DEDEDE !important;
     background: #DDDDDD;
     -webkit-border-radius: 2px;
     -moz-border-radius: 2px;
@@ -942,7 +980,7 @@ input.dxeColorEditButton_KetoSavage:hover
 }
 .dxeCalendarButtonPressed_KetoSavage
 {
-    color: #000000 !important;
+    color: #DEDEDE !important;
     background: #DDD;
     -webkit-border-radius: 2px;
     -moz-border-radius: 2px;
@@ -957,32 +995,32 @@ input.dxeColorEditButton_KetoSavage:hover
 .dxeSpinLargeIncButtonHover_KetoSavage,
 .dxeSpinLargeDecButtonHover_KetoSavage
 {
-    background-color: #000000;
+    background-color: #DEDEDE;
     color: white !important;
 }
 .dxeCalendarButtonHover_KetoSavage
 {
-    color: #000000 !important;
+    color: #DEDEDE !important;
     background: #DDD;
     border-radius: 2px;
 }
 .dxeButtonEdit_KetoSavage
 {
-    background-color: Black;
-    border: 1px solid #DCDCDC;
+    background-color: #dedede;
+    border: 1px solid #4d4d4d;
     -webkit-border-radius: 2px;
     -moz-border-radius: 2px;
     -o-border-radius: 2px;
     -khtml-border-radius: 2px;
     border-radius: 2px;
     width: 170px;
-    font: 14px 'Open Sans', Helvetica, 'Droid Sans', Tahoma, Geneva, sans-serif;
+    font: 14px 'Roboto Regular', Helvetica, 'Droid Sans', Tahoma, Geneva, sans-serif;
     border-collapse: separate;
     border-spacing: 0;
 }
 .dxeButtonEdit_KetoSavage .dxeEditArea_KetoSavage
 {
-    background-color: Black;
+    background-color: #dedede;
 }
 .dxeButtonEdit_KetoSavage .dxeEditArea_KetoSavage,
 .dxeButtonEdit_KetoSavage td.dxic
@@ -995,9 +1033,9 @@ input.dxeColorEditButton_KetoSavage:hover
 }
 .dxeTextBox_KetoSavage
 {
+    background-color: #dedede;
     border: 1px solid #4d4d4d;
-    font: 14px 'Open Sans', Helvetica, 'Droid Sans', Tahoma, Geneva, sans-serif;
-    color: #C0C0C0;
+    font: 14px 'Roboto Regular', Helvetica, 'Droid Sans', Tahoma, Geneva, sans-serif;
     -webkit-border-radius: 2px;
     -moz-border-radius: 2px;
     -o-border-radius: 2px;
@@ -1006,7 +1044,7 @@ input.dxeColorEditButton_KetoSavage:hover
 }
 .dxeTextBox_KetoSavage .dxeEditArea_KetoSavage
 {
-    background-color: transparent;
+    background-color: #dedede;
 }
 .dxeRadioButtonList_KetoSavage, .dxeCheckBoxList_KetoSavage
 {
@@ -1020,48 +1058,43 @@ input.dxeColorEditButton_KetoSavage:hover
 .dxeRadioButtonList_KetoSavage,
 .dxeCheckBoxList_KetoSavage
 {
-    font: 14px 'Open Sans', Helvetica, 'Droid Sans', Tahoma, Geneva, sans-serif;
+    font: 14px 'Roboto Regular', Helvetica, 'Droid Sans', Tahoma, Geneva, sans-serif;
 }
 .dxeRadioButtonList_KetoSavage td.dxe,
 .dxeCheckBoxList_KetoSavage td.dxe
 {
-    padding: 7px 6px 9px 12px;
+    padding: 8px 17px 9px 11px;
 }
 .dxeRadioButtonList_KetoSavage[dir='rtl'] td.dxe,
 .dxeCheckBoxList_KetoSavage[dir='rtl'] td.dxe
 {
-    padding: 7px 12px 9px 6px;
+    padding: 8px 11px 9px 17px;
 }
 /* -- Memo -- */
 .dxeMemo_KetoSavage
 {
-    background-color: Black;
+    background-color: white;
     border: 1px solid #DCDCDC;
-    font: 14px 'Open Sans', Helvetica, 'Droid Sans', Tahoma, Geneva, sans-serif;
+    font: 14px 'Roboto Regular', Helvetica, 'Droid Sans', Tahoma, Geneva, sans-serif;
     -webkit-border-radius: 2px;
     -moz-border-radius: 2px;
     -o-border-radius: 2px;
     -khtml-border-radius: 2px;
     border-radius: 2px;
 }
-.dxFirefox .dxeMemo_KetoSavage tr > td,
-.dxeMemo_KetoSavage tr > td
-{
-    padding: 0px 11px 0px 0px;
-}
 .dxFirefox .dxeMemo_KetoSavage .dxeMemoEditArea_KetoSavage,
 .dxeMemo_KetoSavage .dxeMemoEditArea_KetoSavage
 {
     padding: 7px 4px 0px 7px;
-    background-color: Black;
+    background-color: #dedede;
     outline: none;
-    color: #000000;
+    color: #484848;
 }
 /* -- Hyperlink -- */
 .dxeHyperlink_KetoSavage
 {
-    font: 14px 'Open Sans', Helvetica, 'Droid Sans', Tahoma, Geneva, sans-serif;
-    color: #ff1111;
+    font: 14px 'Roboto Regular', Helvetica, 'Droid Sans', Tahoma, Geneva, sans-serif;
+    color: #DEDEDE;
     text-decoration: none;
 }
 .dxeHyperlink_KetoSavage:hover
@@ -1071,12 +1104,12 @@ input.dxeColorEditButton_KetoSavage:hover
 /* -- ListBox -- */
 .dxeListBox_KetoSavage
 {
-    background-color: black;
+    background-color: #7c7c7c;
     width: 70px;
     height: 109px;
-    font: 14px 'Open Sans', Helvetica, 'Droid Sans', Tahoma, Geneva, sans-serif;
-    color: #C0C0C0;
-    border: 1px solid #DCDCDC;
+    font: 14px 'Roboto Regular', Helvetica, 'Droid Sans', Tahoma, Geneva, sans-serif;
+    color: white;
+    border: 1px solid #4d4d4d;
 }
 .dxeListBox_KetoSavage div.dxlbd
 {
@@ -1126,7 +1159,7 @@ input.dxeColorEditButton_KetoSavage:hover
 }
 .dxeListBox_KetoSavage.dx-acc-r .dxeListBoxFilter_KetoSavage .dxeLBShowFilterBtnSys .dxbf
 {
-    border-color: #000000;
+    border-color: #DEDEDE;
 }
 .dxeListBox_KetoSavage .dxeListBoxFilter_KetoSavage .dxeLBFEButtonSys img
 {
@@ -1198,7 +1231,7 @@ input.dxeColorEditButton_KetoSavage:hover
 }
 .dxeDisabled_KetoSavage .dxeListBoxSelectAll_KetoSavage .dxeBase_KetoSavage
 {
-    color: #000000;
+    color: #bbbbbb;
 }
 .dxeListBoxItemRow_KetoSavage
 {
@@ -1212,7 +1245,7 @@ input.dxeColorEditButton_KetoSavage:hover
 }
 .dxeListBoxItem_KetoSavage em
 {
-    background: #CFCFCF none repeat 0 0;
+    background: #7c7c7c none repeat 0 0;
     color: #484848;
     font-weight: bold;
     font-style: normal;
@@ -1364,7 +1397,7 @@ input.dxeColorEditButton_KetoSavage:hover
 .dxeListBox_KetoSavage .dxeListBoxSelectAll_KetoSavage .dxRipple,
 .dxeListBox_KetoSavage .dxeHCCSA .dxRipple
 {
-    background-color: rgba(0,0,0,0.55);
+    background-color: rgba(222,222,222,0.55);
 }
 .dxeListBoxItemRow_KetoSavage.dx-ar > .dxeListBoxItem_KetoSavage,
 .dxeListBoxItemRow_KetoSavage.dx-al > .dxeListBoxItem_KetoSavage
@@ -1401,8 +1434,8 @@ input.dxeColorEditButton_KetoSavage:hover
 }
 .dxeListBoxItemSelected_KetoSavage
 {
-    color: #C0C0C0;
-    background-color: #343434;
+    color: #FFFFFF;
+    background-color: #5c5c5c;
 }
 .dxeDisabled_KetoSavage.dxeListBox_KetoSavage .dxeListBoxItemSelected_KetoSavage
 {
@@ -1410,28 +1443,28 @@ input.dxeColorEditButton_KetoSavage:hover
 }
 .dxeListBoxItemHover_KetoSavage.dxeListBoxItemSelected_KetoSavage
 {
-    color: #C0C0C0;
-    background-color: #000000;
+    color: #FFFFFF;
+    background-color: #5c5c5c;
 }
 .dxeListBoxItemHover_KetoSavage
 {
-    background-color: #343434;
-    color: #C0C0C0;
+    background-color: #5c5c5c;
+    color: #484848;
 }
 .dxeListBoxWithCustAppearanceSys .dxeListBoxItemSelected_KetoSavage
 {
-    color: #000000 !important;
-    background-color: #000000 !important;
+    color: #FFFFFF !important;
+    background-color: #DEDEDE !important;
 }
 .dxeListBoxWithCustAppearanceSys.dxeDisabled_KetoSavage.dxeListBox_KetoSavage .dxeListBoxItemSelected_KetoSavage
 {
     background-color: #DDDDDD !important;
-    color: #000000 !important;
+    color: #bbbbbb !important;
 }
 .dxeListBoxWithCustAppearanceSys .dxeListBoxItemHover_KetoSavage.dxeListBoxItemSelected_KetoSavage
 {
-    color: #000000 !important;
-    background-color: #000000 !important;
+    color: #FFFFFF !important;
+    background-color: #DEDEDE !important;
 }
 .dxeListBoxWithCustAppearanceSys .dxeListBoxItemHover_KetoSavage
 {
@@ -1494,12 +1527,12 @@ input.dxeColorEditButton_KetoSavage:hover
 /* -- Calendar -- */
 .dxeCalendar_KetoSavage
 {
-    background-color: Black;
-    color: #C0C0C0;
+    background-color: black;
+    color: #484848;
     font-weight: normal;
-    font: 14px 'Open Sans', Helvetica, 'Droid Sans', Tahoma, Geneva, sans-serif;font-weight:bold;
+    font: 14px 'Roboto Medium', Helvetica, 'Droid Sans', Tahoma, Geneva, sans-serif;
     cursor: default;
-    border: 1px solid #D9D9D9;
+    border: 1px solid #4d4d4d;
     -webkit-border-radius: 2px;
     -moz-border-radius: 2px;
     -o-border-radius: 2px;
@@ -1515,9 +1548,9 @@ input.dxeColorEditButton_KetoSavage:hover
 {
     font-size: 0.75em;
     text-align: right;
-    padding: 12px 9px;
-    color: #000000;
-    background-color: #444444;
+    padding: 15px 9px 15px 10px;
+    color: #A1A1A1;
+    background-color: #2a2a2a;
 }
 .dxeCalendar_KetoSavage td.dxMonthGridWithWeekNumbers > table > tbody > tr > td:nth-child(2)
 {
@@ -1546,19 +1579,20 @@ input.dxeColorEditButton_KetoSavage:hover
     padding: 20px 4px 10px;
     font-size: 0.86em;
     text-transform: uppercase;
+	color: #7c7c7c;
 }
 .dxeCalendarWeekNumber_KetoSavage
 {
     font-size: 0.75em;
     text-align: right;
-    padding: 12px 9px;
+    padding: 15px 9px 15px 10px;
     color: #A1A1A1;
-    background-color: #444444;
+    background-color: #F1F1F1;
 }
 .dxeCalendar_KetoSavage td.dxMonthGridWithWeekNumbers > table > tbody > tr:last-child > td,
 .dxeCalendar_KetoSavage td.dxMonthGrid > table > tbody > tr:last-child > td
 {
-    padding-bottom: 25px;
+    padding-bottom: 35px;
 }
 .dxIE.dxBrowserVersion-10 .dxeCalendar_KetoSavage td.dxMonthGridWithWeekNumbers > table > tbody > tr:last-child > td,
 .dxIE.dxBrowserVersion-10 .dxeCalendar_KetoSavage td.dxMonthGrid > table > tbody > tr:last-child > td
@@ -1569,12 +1603,7 @@ input.dxeColorEditButton_KetoSavage:hover
 }
 .dxeCalendar_KetoSavage td.dxMonthGridWithWeekNumbers > table > tbody > tr:last-child > td:first-child
 {
-    padding-bottom: 25px;
-}
-.dxeCalendarDay_KetoSavage
-{
-    padding: 4px 15px 4px 15px;
-    text-align: center;
+    padding-bottom: 35px;
 }
 .dxeCalendarWeekend_KetoSavage
 {
@@ -1596,11 +1625,12 @@ input.dxeColorEditButton_KetoSavage:hover
 }
 .dxeCalendarDay_KetoSavage
 {
-    padding: 11px;
+    padding: 12px;
+    text-align: center;
 }
 .dxeCalendarToday_KetoSavage.dxeDisabled_KetoSavage
 {
-    border: 1px solid #000000;
+    border: 1px solid #DEDEDE;
 }
 .dxeCalendarSelected_KetoSavage.dxeDayInRange
 {
@@ -1608,19 +1638,19 @@ input.dxeColorEditButton_KetoSavage:hover
 }
 .dxeCalendarSelected_KetoSavage
 {
-    color: #FF1111;
+    color: white;
 }
 .dxeCalendarSelected_KetoSavage,
 .dxeCalendarToday_KetoSavage
 {
     background-repeat: no-repeat;
-    background-position: center 2px;
-    background-size: 34px 34px;
+    background-position: center 3px;
+    background-size: 40px 40px;
 }
 .dxeCalendar_KetoSavage td.dxMonthGridWithWeekNumbers > table > tbody > tr > td:nth-child(2).dxeCalendarSelected_KetoSavage,
 .dxeCalendar_KetoSavage td.dxMonthGridWithWeekNumbers > table > tbody > tr > td:nth-child(2).dxeCalendarToday_KetoSavage
 {
-    background-position: center 2px;
+    background-position: center 3px;
 }
 .dxeCalendar_KetoSavage td.dxMonthGrid > table > tbody > tr > td:nth-child(1).dxeCalendarSelected_KetoSavage,
 .dxeCalendar_KetoSavage td.dxMonthGrid > table > tbody > tr > td:nth-child(1).dxeCalendarToday_KetoSavage
@@ -1632,7 +1662,7 @@ input.dxeColorEditButton_KetoSavage:hover
 .dxeCalendar_KetoSavage td.dxMonthGridWithWeekNumbers > table > tbody > tr:last-child > td.dxeCalendarSelected_KetoSavage,
 .dxeCalendar_KetoSavage td.dxMonthGridWithWeekNumbers > table > tbody > tr:last-child > td.dxeCalendarToday_KetoSavage
 {
-    background-position: center 2px;
+    background-position: center 3px;
 }
 .dxeCalendarSelected_KetoSavage
 {
@@ -1640,7 +1670,8 @@ input.dxeColorEditButton_KetoSavage:hover
 }
 .dxeCalendarToday_KetoSavage
 {
-    background-image: url('edtCalendarToday.svg');}
+    background-image: url('edtCalendarToday.svg');
+}
 .dxeDayInRange.dxeCalendarSelected_KetoSavage
 {
     background-image: url('edtCalendarDayInRange.svg');
@@ -1663,8 +1694,8 @@ input.dxeColorEditButton_KetoSavage:hover
 }
 .dxeCalendarHeader_KetoSavage
 {
-    background-color: #444444;
-    color: white;
+    background-color: #2a2a2a;
+    color: #7c7c7c;
     font-size: 1.15em;
     padding: 8px 8px 8px 8px;
     margin: 10px;
@@ -1708,15 +1739,15 @@ input.dxeColorEditButton_KetoSavage:hover
 }
 .dxeCalendar_KetoSavage.dxeFocused_KetoSavage .dxeCalendarFooter_KetoSavage
 {
-    border-color: #000000;
+    border-color: #DEDEDE;
 }
 .dxeCalendarFastNav_KetoSavage
 {
-    color: #C0C0C0;
-    background: Black;
-    border-top: 1px solid #c0c0c0;
-    border-right: 1px solid #c0c0c0;
-    border-left: 1px solid #c0c0c0;
+    color: #dedede;
+    background: black none;
+    border-top: 1px solid #4d4d4d;
+    border-right: 1px solid #4d4d4d;
+    border-left: 1px solid #4d4d4d;
     padding: 12px 8px;
 }
 .dxFastNavGrid .dxeCalendarFastNav_KetoSavage
@@ -1740,7 +1771,7 @@ input.dxeColorEditButton_KetoSavage:hover
 .dxeCalendarFastNavHeader_KetoSavage
 {
     color: #666666;
-    background-color: #000000;
+    background-color: #F1F1F1;
     padding: 8px;
     text-align: center;
     cursor: pointer;
@@ -1757,10 +1788,10 @@ input.dxeColorEditButton_KetoSavage:hover
 {
     color: Black;
     padding: 8px 0px;
-    border-right: 1px solid #c0c0c0;
-    border-bottom: 1px solid #c0c0c0;
-    border-left: 1px solid #c0c0c0;
-    background-color: Black;
+    border-right: 1px solid #4d4d4d;
+    border-bottom: 1px solid #4d4d4d;
+    border-left: 1px solid #4d4d4d;
+    background-color: #1a1a1a;
 }
 .dxeCalendarFastNavFooter_KetoSavage .dxeCFNFS
 {
@@ -1771,7 +1802,7 @@ input.dxeColorEditButton_KetoSavage:hover
 .dxeCalendarFastNavMonth_KetoSavage,
 .dxeCalendarFastNavYear_KetoSavage
 {
-    color: #C0C0C0;
+    color: #7c7c7c;
     padding: 3px 5px;
     text-align: center;
     cursor: pointer;
@@ -1789,7 +1820,6 @@ input.dxeColorEditButton_KetoSavage:hover
     -moz-background-clip: content-box;
     -webkit-background-clip: content-box;
     background-clip: content-box;
-    padding: 0px;
 }
 .dxeCalendarFastNavItem_KetoSavage:before,
 .dxeCalendarFastNavItem_KetoSavage:after
@@ -1810,7 +1840,7 @@ input.dxeColorEditButton_KetoSavage:hover
 .dxeCalendarFastNavYearSelected_KetoSavage
 {
     color: White;
-    background-color: #000000;
+    background-color: #DEDEDE;
 }
 .dxeCalendarFastNavItemHover_KetoSavage
 {
@@ -1835,12 +1865,12 @@ input.dxeColorEditButton_KetoSavage:hover
 }
 .dxeDateEditTimeEditCell_KetoSavage
 {
-    padding: 17px 74px 20px 93px;
+    padding: 37px 74px 20px 93px;
     width: 90px;
 }
 .dxeDateEditClockCell_KetoSavage
 {
-    padding: 21px 48px 0 65px;
+    padding: 37px 48px 0 65px;
 }
 .dxeCalendarFooter_KetoSavage.dxeDETSF
 {
@@ -1849,7 +1879,7 @@ input.dxeColorEditButton_KetoSavage:hover
 }
 .dxpcDropDown_KetoSavage .dxeCalendar_KetoSavage
 {
-    border: 1px solid #c0c0c0;
+    border: 1px solid #4d4d4d;
 }
 .dxeCalendarButton_KetoSavage::before
 {
@@ -1872,9 +1902,9 @@ input.dxeColorEditButton_KetoSavage:hover
 }
 .dxeCalendarDay_KetoSavage .dxRippleContainer
 {
-    padding: 11px;
-    margin-left: -11px;
-    margin-top: -11px;
+    padding: 12px;
+    margin-left: -12px;
+    margin-top: -12px;
 }
 .dxAndroidMobilePlatform .dxeCalendarDay_KetoSavage .dxRipple,
 .dxMacOSMobilePlatform .dxeCalendarDay_KetoSavage .dxRipple
@@ -1884,10 +1914,10 @@ input.dxeColorEditButton_KetoSavage:hover
 .dxeCalendar_KetoSavage td.dxMonthGridWithWeekNumbers > table > tbody > tr:last-child > td .dxRippleContainer,
 .dxeCalendar_KetoSavage td.dxMonthGrid > table > tbody > tr:last-child > td .dxRippleContainer
 {
-    margin-top: -11px;
+    margin-top: -12px;
     margin-left: -5px;
-    width: 40px !important;
-    height: 40px !important;
+    width: 47px !important;
+    height: 47px !important;
 }
 .dxeCalendar_KetoSavage td.dxMonthGridWithWeekNumbers > table > tbody > tr:last-child > td .dxRippleContainer .dxRipple,
 .dxeCalendar_KetoSavage td.dxMonthGrid > table > tbody > tr:last-child > td .dxRippleContainer .dxRipple
@@ -1914,52 +1944,52 @@ div.dxeCalendarDETS.dxeCalendarVerticalDETS .dxeCalendarFooter_KetoSavage td:not
 .dxeDisabled_KetoSavage,
 .dxeDisabled_KetoSavage td.dxe
 {
-    color: #82322f;
+    color: #bbbbbb;
     cursor: default;
 }
 .dxeEditArea_KetoSavage.dxeDisabled_KetoSavage
 {
-    color: #787878;
+    color: #bbbbbb;
 }
 a.dxeDisabled_KetoSavage:hover
 {
-    color: #82322f;
+    color: #bbbbbb;
     text-decoration: none;
 }
 .dxeButtonDisabled_KetoSavage
 {
-    border-color: #000000;
-    color: #000000;
+    border-color: #bbbbbb;
+    color: #bbbbbb;
     cursor: default;
 }
 /* -- Button -- */
 .dxbButton_KetoSavage
 {
-	color: White;
-	background: #FF1111;
-	-moz-box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16), 0 2px 10px 0 rgba(0,0,0,0.12);
-	border-radius: 2px;
-	-moz-border-radius: 2px;
-	-o-border-radius: 2px;
-	-khtml-border-radius: 2px;
-	padding: 1px;
-	font: 14px 'Roboto Medium',Helvetica,'Droid Sans',Tahoma,Geneva,sans-serif;
-	-webkit-transition-property: box-shadow, background-color;
-	-moz-transition-property: box-shadow, background-color;
-	-o-transition-property: box-shadow, background-color;
-	transition-property: box-shadow, background-color;
-	-webkit-transition-duration: .3s;
-	-moz-transition-duration: .3s;
-	-o-transition-duration: .3s;
-	transition-duration: .3s;
-	-webkit-transition-timing-function: ease-out;
-	-moz-transition-timing-function: ease-out;
-	-o-transition-timing-function: ease-out;
-	transition-timing-function: ease-out;
-	-webkit-tap-highlight-color: transparent;
-	-webkit-border-radius: 2px;
-	box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16), 0 2px 10px 0 rgba(0,0,0,0.12);
-	-webkit-box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16), 0 2px 10px 0 rgba(0,0,0,0.12);
+    color: white;
+    background-color: #ff0000;
+    -moz-box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16), 0 2px 10px 0 rgba(0,0,0,0.12);
+    -webkit-box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16), 0 2px 10px 0 rgba(0,0,0,0.12);
+    box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16), 0 2px 10px 0 rgba(0,0,0,0.12);
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    -o-border-radius: 2px;
+    -khtml-border-radius: 2px;
+    border-radius: 2px;
+    padding: 1px;
+    font: 14px 'Roboto Medium', Helvetica, 'Droid Sans', Tahoma, Geneva, sans-serif;
+    -webkit-transition-property: box-shadow, background-color;
+    -moz-transition-property: box-shadow, background-color;
+    -o-transition-property: box-shadow, background-color;
+    transition-property: box-shadow, background-color;
+    -webkit-transition-duration: .3s;
+    -moz-transition-duration: .3s;
+    -o-transition-duration: .3s;
+    transition-duration: .3s;
+    -webkit-transition-timing-function: ease-out;
+    -moz-transition-timing-function: ease-out;
+    -o-transition-timing-function: ease-out;
+    transition-timing-function: ease-out;
+    -webkit-tap-highlight-color: transparent;
 }
 .dxbButton_KetoSavage.dxbTSys
 {
@@ -1969,15 +1999,18 @@ a.dxeDisabled_KetoSavage:hover
 }
 .dxbButton_KetoSavage.dxbDisabled_KetoSavage
 {
-	border-color: #DDDDDD;
-	background: #FF4D4D;
-	color: #787878;
-	cursor: default;
-	-moz-box-shadow: none;
+    border-color: #dc4c40;
+    background-color: #dc4c40;
+    color: #A2A2A2;
+    cursor: default;
+    box-shadow: none;
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
 }
 .dxbButtonHover_KetoSavage
 {
-    color: #dedede;
+    color: white;
+    background-color: #82322f;
     box-shadow: 0px 5px 6px rgba(0,0,0,0.2);
     -moz-box-shadow: 0px 5px 6px rgba(0,0,0,0.2);
     -webkit-box-shadow: 0px 5px 6px rgba(0,0,0,0.2);
@@ -1985,12 +2018,12 @@ a.dxeDisabled_KetoSavage:hover
 .dxbButtonChecked_KetoSavage
 {
     color: white;
-    background-color: #000000;
+    background-color: #ff0000;
 }
 .dxbButtonPressed_KetoSavage
 {
-    color: #ff1111;
-    background-color: #000000;
+    color: white;
+    background-color: #82322f;
     box-shadow: 0px 5px 6px rgba(0,0,0,0.2);
     -moz-box-shadow: 0px 5px 6px rgba(0,0,0,0.2);
     -webkit-box-shadow: 0px 5px 6px rgba(0,0,0,0.2);
@@ -2021,7 +2054,7 @@ div.dxbButton_KetoSavage .dxRipple
 /* Button Link */
 a.dxbButton_KetoSavage
 {
-    color: #dedede;
+    color: #DEDEDE;
     text-decoration: none;
     box-shadow: none;
     -moz-box-shadow: none;
@@ -2038,13 +2071,13 @@ a.dxbButton_KetoSavage:hover
 }
 /*a.dxbButton_KetoSavage:active
 {
-    background-color: #dedede;
+    background-color: #DDDDDD;
 }*/
 /* Disabled */
 .dxbDisabled_KetoSavage,
 a.dxbButton_KetoSavage.dxbDisabled_KetoSavage
 {
-    color: #787878;
+    color: #BBBBBB;
     cursor: default;
     text-decoration: none;
 }
@@ -2055,10 +2088,11 @@ a.dxbButton_KetoSavage.dxbDisabled_KetoSavage
 /* -- FilterControl -- */
 .dxfcControl_KetoSavage
 {
-	font: 14px 'Roboto Regular',Helvetica,'Droid Sans',Tahoma,Geneva,sans-serif;
-	color: White;
-	padding: 14px 1em 0;
-	background: #000000;
+    font: 14px 'Roboto Regular', Helvetica, 'Droid Sans', Tahoma, Geneva, sans-serif;
+    color: Black;
+    padding: 0 1em;
+    padding-top: 14px;
+	background-color: black;
 }
 .dxfcTable_KetoSavage
 {
@@ -2075,13 +2109,13 @@ a.dxbButton_KetoSavage.dxbDisabled_KetoSavage
 a.dxfcPropertyName_KetoSavage
 {
     white-space: nowrap !important;
-    color: #000000 !important;
+    color: #DEDEDE !important;
 }
 a.dxfcGroupType_KetoSavage
 {
     white-space: nowrap !important;
     padding: 0 3px !important;
-    color: #FF1111 !important;
+    color: #db3412 !important;
 }
 a.dxfcOperation_KetoSavage
 {
@@ -2100,7 +2134,7 @@ a.dxfcValue_KetoSavage
     border: 1px solid black;
     padding: 2px 5px 3px;
     color: Black;
-    font: 14px 'Open Sans', Helvetica, 'Droid Sans', Tahoma, Geneva, sans-serif;
+    font: 14px 'Roboto Regular', Helvetica, 'Droid Sans', Tahoma, Geneva, sans-serif;
 }
 .dxfcControl_KetoSavage ul.dxfc-tree,
 .dxfcControl_KetoSavage .dxfc-tree ul
@@ -2229,9 +2263,9 @@ a.dxfcValue_KetoSavage
 /* -- ProgressBar -- */
 .dxeProgressBar_KetoSavage
 {
-    background-color: #000000;
-    color: #000000;
-    font: 14px 'Open Sans', Helvetica, 'Droid Sans', Tahoma, Geneva, sans-serif;
+    background-color: #FFFFFF;
+    color: #484848;
+    font: 14px 'Roboto Regular', Helvetica, 'Droid Sans', Tahoma, Geneva, sans-serif;
     height: 32px;
     border: 1px solid #DCDCDC;
     -webkit-border-radius: 1px;
@@ -2267,7 +2301,7 @@ a.dxfcValue_KetoSavage
 }
 .dxeProgressBarIndicator_KetoSavage
 {
-    background-color: #FF1111;
+    background-color: #DEDEDE;
 }
 .dxeProgressBar_KetoSavage.dxeDisabled_KetoSavage .dxeProgressBarIndicator_KetoSavage
 {
@@ -2277,12 +2311,13 @@ a.dxfcValue_KetoSavage
 .dxpcDropDown_KetoSavage,
 .dxeDropDownWindow_KetoSavage
 {
-    font: 14px 'Open Sans', Helvetica, 'Droid Sans', Tahoma, Geneva, sans-serif;
+    font: 14px 'Roboto Regular', Helvetica, 'Droid Sans', Tahoma, Geneva, sans-serif;
+	color: #4d4d4d;
 }
 .dxeDropDownWindow_KetoSavage
 {
-    background-color: #FAFAFA;
-    border: 1px solid #c0c0c0;
+    background-color: #dedede;
+    border: 1px solid #4d4d4d;
 }
 .dxpcDropDown_KetoSavage > .dxpc-shadow
 {
@@ -2300,7 +2335,7 @@ a.dxfcValue_KetoSavage
 }
 .dxeItemPicker_KetoSavage
 {
-    background-color: #000000;
+    background-color: #ffffff;
     border: 1px solid #c0c0c0;
 }
 .dxeColorTable_KetoSavage td.dx
@@ -2317,7 +2352,7 @@ a.dxfcValue_KetoSavage
 .dxeColorTableCellDiv_KetoSavage,
 .dxeACICellDiv_KetoSavage
 {
-    border: 2px solid #000000;
+    border: 2px solid #FFFFFF;
     width: 22px;
     height: 22px;
     font-size: 0;
@@ -2343,7 +2378,7 @@ a.dxfcValue_KetoSavage
 .dxeColorTableCellHover_KetoSavage.dxeACICellSelected_KetoSavage > .dxeACICellDiv_KetoSavage
 {
     padding: 0px !important;
-    border: 2px solid #000000;
+    border: 2px solid #DEDEDE;
 }
 .dxeColorTableCellHover_KetoSavage > .dxeColorTableCellDiv_KetoSavage,
 .dxeItemPickerCellHover_KetoSavage,
@@ -2373,7 +2408,7 @@ a.dxfcValue_KetoSavage
 /* -- Focused Style -- */
 .dxeFocused_KetoSavage
 {
-    border: 1px solid #FF1111;
+    border: 1px solid #ff0000;
 }
 .dxeFocused_KetoSavage.dxeTrackBar_KetoSavage
 {
@@ -2399,11 +2434,11 @@ a.dxfcValue_KetoSavage
 /* -- Captcha -- */
 .dxcaControl_KetoSavage
 {
-    font: 14px 'Open Sans', Helvetica, 'Droid Sans', Tahoma, Geneva, sans-serif;
+    font: 14px 'Roboto Regular', Helvetica, 'Droid Sans', Tahoma, Geneva, sans-serif;
 }
 .dxcaControl_KetoSavage .dxca-imageDiv
 {
-    color: #000000;
+    color: #FFFFFF;
 }
 .dxEditors_caRefresh_KetoSavage
 {
@@ -2415,7 +2450,7 @@ a.dxfcValue_KetoSavage
 .dxcaRefreshButton_KetoSavage
 {
     text-decoration: none;
-    color: #C0C0C0;
+    color: #1e3695;
 }
 .dxcaDisabledRefreshButton_KetoSavage
 {
@@ -2446,7 +2481,7 @@ a.dxfcValue_KetoSavage
 .dxcaLoadingPanel_KetoSavage
 {
     background-color: white;
-    font: 14px 'Open Sans', Helvetica, 'Droid Sans', Tahoma, Geneva, sans-serif;
+    font: 14px 'Roboto Regular', Helvetica, 'Droid Sans', Tahoma, Geneva, sans-serif;
     color: #484848;
 }
 .dxcaLoadingPanel_KetoSavage td.dx
@@ -2482,7 +2517,7 @@ a.dxfcValue_KetoSavage
 .dxeButtonEdit_KetoSavage td.dxic,
 .dxeButtonEdit_KetoSavage[cellspacing="0"] td.dxic
 {
-    padding: 3px;
+    padding: 7px 8px 6px 7px;
 }
 /* Removes flicking in Material Safari*/
 .dxeTrackBar_KetoSavage,
@@ -2653,7 +2688,7 @@ a.dxfcValue_KetoSavage
 .dxeColorTablesMainDiv_KetoSavage,
 .dxeColorSelectorMainDiv_KetoSavage
 {
-    background-color: #000000;
+    background-color: #FFFFFF;
     border: 1px solid #E0E0E0;
     -webkit-border-radius: 2px;
     -moz-border-radius: 2px;
@@ -2730,7 +2765,7 @@ input.dxeTokenBoxInput_KetoSavage[type="text"]
 .dxeToken_KetoSavage
 {
     display: inline-block;
-    background: #FF1111;
+    background: #DEDEDE;
     color: white;
     float: left;
     min-width: 30px;
@@ -2760,9 +2795,13 @@ input.dxeTokenBoxInput_KetoSavage[type="text"]
 .dxeTokenRemoveButton_KetoSavage
 {
     cursor: pointer;
-    margin: 3px 5px 0 0;
+    margin: 3px 3px 0 0;
     border-radius: 50%;
-    background-color: #444444;
+    background-color: #BBB;
+}
+*[dir="rtl"] .dxeTokenRemoveButton_KetoSavage
+{
+    margin: 3px 0 0 3px;
 }
 .dxFirefox .dxeButtonEdit_KetoSavage td.dxictb,
 .dxeButtonEdit_KetoSavage td.dxictb
@@ -2859,19 +2898,24 @@ input.dxeTokenBoxInput_KetoSavage[type="text"]
 /* Editor caption */
 .dxeCaptionCell_KetoSavage
 {
-    font: 14px 'Open Sans', Helvetica, 'Droid Sans', Tahoma, Geneva, sans-serif;
-    color: #C0C0C0;
+    font: 14px 'Roboto Regular', Helvetica, 'Droid Sans', Tahoma, Geneva, sans-serif;
+    color: #dedede;
     white-space: nowrap;
     line-height: 16px;
     height: 100%;
+	background-color: black;
 }
-.dxeCaptionCell_KetoSavage.dxeCLLSys
+.dxeCaptionCell_KetoSavage.dxeCLLSys,
+[dir='rtl'] .dxeCaptionCell_KetoSavage.dxeCLRSys
 {
-    padding-right: 17px;
+    padding-left: 0px;
+    padding-right: 16px;
 }
+[dir='rtl'] .dxeCaptionCell_KetoSavage.dxeCLLSys,
 .dxeCaptionCell_KetoSavage.dxeCLRSys
 {
-    padding-left: 17px;
+    padding-right: 0px;
+    padding-left: 16px;
 }
 .dxeCaptionCell_KetoSavage.dxeCLTSys,
 .dxeCaptionCell_KetoSavage.dxeCLBSys
@@ -2983,7 +3027,7 @@ noindex:-o-prefocus, body:first-of-type .dxeCaptionCell_KetoSavage.dxeCaptionVAT
 /* Out of range warning*/
 .dxeOutOfRWarn_KetoSavage
 {
-    font: 14px 'Open Sans', Helvetica, 'Droid Sans', Tahoma, Geneva, sans-serif;
+    font: 14px 'Roboto Regular', Helvetica, 'Droid Sans', Tahoma, Geneva, sans-serif;
     padding: 3px 8px 4px 8px;
     display: none;
     position: absolute;

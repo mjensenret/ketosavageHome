@@ -8,7 +8,7 @@
         p.Name = "pnlNewsCarousel";
         p.SetContent(() =>
         {
-            Html.RenderAction("newsCarousel");
+            Html.RenderAction("newsCarousel", "ManageNews");
         });
     }).GetHtml()
 </div>

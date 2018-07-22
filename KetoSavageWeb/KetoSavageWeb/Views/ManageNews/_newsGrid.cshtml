@@ -33,7 +33,7 @@
         settings.Columns.Add(c =>
         {
             c.FieldName = "Type";
-            c.VisibleIndex = 1;
+            c.VisibleIndex = 2;
             c.ColumnType = MVCxGridViewColumnType.ComboBox;
             var combo = c.PropertiesEdit as ComboBoxProperties;
             combo.DataSource = ViewBag.NewsType;
@@ -41,7 +41,8 @@
         settings.Columns.Add(c =>
         {
             c.FieldName = "Headline";
-            c.VisibleIndex = 2;
+            c.VisibleIndex = 1;
+            
         });
         settings.Columns.Add(c =>
         {
@@ -51,16 +52,24 @@
         settings.Columns.Add(c =>
         {
             c.FieldName = "IsActive";
-            c.EditFormSettings.Visible = DefaultBoolean.False;
+            c.Caption = "Active";
+            //c.EditFormSettings.Visible = DefaultBoolean.False;
             c.VisibleIndex = 4;
             c.ColumnType = MVCxGridViewColumnType.CheckBox;
-            c.Width = Unit.Pixel(100);
+            c.Width = Unit.Pixel(50);
         });
         settings.Columns.Add(c =>
         {
             c.FieldName = "Expires";
             c.VisibleIndex = 5;
+            c.ColumnType = MVCxGridViewColumnType.DateEdit;
         });
+        settings.InitNewRow = (sender, e) =>
+        {
+            e.NewValues["Expires"] = DateTime.Now;
+            //e.NewValues["IsActive"] = true;
+        };
+
     });
     if (ViewData["EditError"] != null)
     {

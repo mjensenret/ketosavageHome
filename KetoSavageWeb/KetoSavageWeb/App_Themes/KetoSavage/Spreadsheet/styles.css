@@ -1,7 +1,7 @@
 .dxssControl_KetoSavage
 {
     border-style: none;
-    font: 14px 'Open Sans', Helvetica, 'Droid Sans', Tahoma, Geneva, sans-serif;
+    font: 14px 'Roboto Regular', Helvetica, 'Droid Sans', Tahoma, Geneva, sans-serif;
 }
 .dxssControl_KetoSavage .dxss-gl .dxss-v,
 .dxssControl_KetoSavage .dxss-gl .dxss-h
@@ -20,36 +20,36 @@
 }
 .dxssControl_KetoSavage .dxss-crse
 {
-    background-color: #000000;
+    background-color: #DEDEDE;
     opacity: .20;
 }
 .dxssControl_KetoSavage .dxss-trbe
 {
-    border-top-color: #000000;
+    border-top-color: #DEDEDE;
 }
 .dxssControl_KetoSavage .dxss-rrbe
 {
-    border-right-color: #000000;
+    border-right-color: #DEDEDE;
 }
 .dxssControl_KetoSavage .dxss-brbe
 {
-    border-bottom-color: #000000;
+    border-bottom-color: #DEDEDE;
 }
 .dxssControl_KetoSavage .dxss-lrbe
 {
-    border-left-color: #000000;
+    border-left-color: #DEDEDE;
 }
 .dxssControl_KetoSavage .dxss-fh
 {
-    background-color: #000000;
+    background-color: #DEDEDE;
 }
 .dxssControl_KetoSavage .dxss-sbe
 {
-    border-color: #000000;
+    border-color: #DEDEDE;
 }
 .dxssControl_KetoSavage .dxss-sbe
 {
-    border-color: #000000;
+    border-color: #DEDEDE;
 }
 .dxssControl_KetoSavage .dxtcLite_KetoSavage.dxtc-bottom > .dxtc-stripContainer .dxtc-rightIndent,
 .dxssControl_KetoSavage .dxtcLite_KetoSavage.dxtc-bottom > .dxtc-stripContainer .dxtc-leftIndent
@@ -67,7 +67,7 @@
 .dxssControl_KetoSavage .dxss-hrg,
 .dxssControl_KetoSavage .dxss-vrg
 {
-    background-color: #000000;
+    background-color: #DEDEDE;
 }
 .dxssControl_KetoSavage .dxss-md
 {
@@ -87,7 +87,7 @@
 }
 .dxssControl_KetoSavage .dxss-tse
 {
-    border-color: #000000;
+    border-color: #DEDEDE;
 }
 .dxssControl_KetoSavage .dxss-tre
 {
@@ -112,7 +112,7 @@
 .dxssLoadingPanel_KetoSavage
 {
     background-color: white;
-    font: 14px 'Open Sans', Helvetica, 'Droid Sans', Tahoma, Geneva, sans-serif;
+    font: 14px 'Roboto Regular', Helvetica, 'Droid Sans', Tahoma, Geneva, sans-serif;
     color: #484848;
     -moz-box-shadow: 0 2px 4px 0 rgba(0,0,0,0.16), 0 2px 8px 0 rgba(0,0,0,0.12);
     -webkit-box-shadow: 0 2px 4px 0 rgba(0,0,0,0.16), 0 2px 8px 0 rgba(0,0,0,0.12);
@@ -133,7 +133,7 @@
     -khtml-border-radius: 50%;
     border-radius: 50%;
     animation: dxLoadSpinSys 1s linear infinite;
-    border: 4px solid #000000;
+    border: 4px solid #DEDEDE;
     border-top: 4px solid #EEE;
     width: 24px;
     height: 24px;
@@ -152,7 +152,7 @@ html.dxIE.dxBrowserVersion-9 .dxssLoadingPanel_KetoSavage .dxlp-loadingImage
 /* DX Spreadsheet Cell Editor Element, Formula Bar, IntelliSense elements */
 .dxssControl_KetoSavage .dxss-ctve
 {
-    border: 2px solid #000000;
+    border: 2px solid #DEDEDE;
     /*the same -dxss-cfe */
 }
 .dxssControl_KetoSavage .dxss-fb
@@ -186,10 +186,10 @@ html.dxIE.dxBrowserVersion-9 .dxssLoadingPanel_KetoSavage .dxlp-loadingImage
     padding-right: 27px !important;
     padding-bottom: 0px !important;
 }
-.dxssControl_KetoSavage .dxss-Hint
+.dxssControl_KetoSavage .dxss-hint
 {
-    border: 1px solid #000000;
-    background-color: #000000;
+    border: 1px solid #dedede;
+    background-color: #FFFFFF;
     padding: 3px 8px 4px 8px;
     -webkit-border-radius: 3px;
     -moz-border-radius: 3px;
@@ -197,14 +197,14 @@ html.dxIE.dxBrowserVersion-9 .dxssLoadingPanel_KetoSavage .dxlp-loadingImage
     -khtml-border-radius: 3px;
     border-radius: 3px;
 }
-.dxssControl_KetoSavage .dxss-Hint,
+.dxssControl_KetoSavage .dxss-hint,
 .dxss-funcLB.dxeListBox_KetoSavage
 {
     -moz-box-shadow: 0 2px 4px 0 rgba(0,0,0,0.16), 0 2px 8px 0 rgba(0,0,0,0.12);
     -webkit-box-shadow: 0 2px 4px 0 rgba(0,0,0,0.16), 0 2px 8px 0 rgba(0,0,0,0.12);
     box-shadow: 0 2px 4px 0 rgba(0,0,0,0.16), 0 2px 8px 0 rgba(0,0,0,0.12);
 }
-.dxssControl_KetoSavage .dxss-Hint.dxss-funcInfo
+.dxssControl_KetoSavage .dxss-hint.dxss-funcInfo
 {
     margin-left: 10px;
     margin-right: 10px;
@@ -215,7 +215,7 @@ html.dxIE.dxBrowserVersion-9 .dxssLoadingPanel_KetoSavage .dxlp-loadingImage
 }
 .dxssDlgPageSetupForm .dxssPSContainer .dxssPageControl.dxtcLite_KetoSavage .dxtc-content
 {
-    padding-top: 0;
+    padding-top: 20px;
     padding-bottom: 10px;
 }
 .dxssDlgPageSetupForm .dxssPSContainer .dxssPageControl.dxtcLite_KetoSavage
@@ -302,12 +302,12 @@ html.dxIE.dxBrowserVersion-9 .dxssLoadingPanel_KetoSavage .dxlp-loadingImage
 /* Cell Editing */
 .dxssControl_KetoSavage.icbem .dxss-inputTarget
 {
-    border: 2px solid #000000;
+    border: 2px solid #DEDEDE;
 }
 /*Cell position hint*/
 .dxssControl_KetoSavage .dxss-cell-pos-hint
 {
-    background-color: #000000;
+    background-color: #DEDEDE;
     color: white;
 }
 .dxrControl_KetoSavage .dxssRibbonCBSmall
@@ -317,6 +317,35 @@ html.dxIE.dxBrowserVersion-9 .dxssLoadingPanel_KetoSavage .dxlp-loadingImage
 .dxrControl_KetoSavage .dxssRibbonCBLarge
 {
     width: 130px;
+}
+/* --------------Select-All----------------- */
+.dxssControl_KetoSavage .dxss-ssbi
+{
+    border-color: transparent;
+    border-bottom-color: #cecece;
+}
+.dxssControl_KetoSavage .dxss-ssb:hover .dxss-ssbi
+{
+    border-bottom-color: #a8a8a8;
+}
+/* ----------Add-Sheet-Button---------------*/
+.dxssControl_KetoSavage .dxss-ast-btn:before,
+.dxssControl_KetoSavage .dxss-ast-btn:after
+{
+    background-color: #747474;
+}
+.dxssControl_KetoSavage .dxss-ast-circle:hover .dxss-ast-btn:before,
+.dxssControl_KetoSavage .dxss-ast-circle:hover .dxss-ast-btn:after
+{
+    background-color: #DEDEDE;
+}
+.dxssControl_KetoSavage .dxss-ast
+{
+    border-top: 3px solid #DFDFDF;
+}
+.dxssControl_KetoSavage .dxss-ast .dxss-ast-circle
+{
+    margin-top: 10px;
 }
 /* --------------Dialogs----------------- */
 .dxssControl_KetoSavage .dxss-dialogSimpleFooterGroup,
@@ -401,8 +430,8 @@ html.dxIE.dxBrowserVersion-9 .dxssLoadingPanel_KetoSavage .dxlp-loadingImage
 .dxss-modifyChartStyleContent .dxbButtonHover_KetoSavage
 {
     color: white;
-    background-color: #000000;
-    border: 1px solid #000000;
+    background-color: #DEDEDE;
+    border: 1px solid #DEDEDE;
 }
 .dxss-modifyChartStyleContent .dxbButtonChecked_KetoSavage
 {

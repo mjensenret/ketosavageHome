@@ -17,7 +17,7 @@ namespace KetoSavageWeb.Repositories
 
         public int GetWeekNum(DateTime currentDate)
         {
-            var model = _context.DateModels.Where(x => x.Date == currentDate).FirstOrDefault();
+            var model = _context.DateModels.Where(x => x.Date == currentDate.Date).FirstOrDefault();
             
             return model.WeekOfYear;
         }

@@ -1,1030 +1,137 @@
-.dx-acc-r .dxsc-agenda-show-time .dxsc-selected .dxScheduler_Appointment_NoRecurrence_KetoSavage:before,
-.dx-acc-r .dxsc-agenda-show-time .dxsc-selected .dxScheduler_Appointment_Recurrence_KetoSavage:before,
-.dx-acc-r .dxsc-agenda-show-time .dxsc-selected .dxScheduler_Appointment_Reminder_KetoSavage:before,
-.dx-acc-r .dxScheduler_Appointment_DayClock_KetoSavage:before,
-.dx-acc-r .dxScheduler_Appointment_EndArrow_KetoSavage:before,
-.dx-acc-r .dxScheduler_Appointment_NightClock_KetoSavage:before,
-.dx-acc-r .dxScheduler_Appointment_NoRecurrence_KetoSavage:before,
-.dx-acc-r .dxScheduler_Appointment_Recurrence_KetoSavage:before,
-.dx-acc-r .dxScheduler_Appointment_Reminder_KetoSavage:before,
-.dx-acc-r .dxScheduler_Appointment_StartArrow_KetoSavage:before,
-.dx-acc-r .dxScheduler_AppointmentClockArrows_day_hour_00_KetoSavage:before,
-.dx-acc-r .dxScheduler_AppointmentClockArrows_day_hour_05_KetoSavage:before,
-.dx-acc-r .dxScheduler_AppointmentClockArrows_day_hour_10_KetoSavage:before,
-.dx-acc-r .dxScheduler_AppointmentClockArrows_day_hour_15_KetoSavage:before,
-.dx-acc-r .dxScheduler_AppointmentClockArrows_day_hour_20_KetoSavage:before,
-.dx-acc-r .dxScheduler_AppointmentClockArrows_day_hour_25_KetoSavage:before,
-.dx-acc-r .dxScheduler_AppointmentClockArrows_day_hour_30_KetoSavage:before,
-.dx-acc-r .dxScheduler_AppointmentClockArrows_day_hour_35_KetoSavage:before,
-.dx-acc-r .dxScheduler_AppointmentClockArrows_day_hour_40_KetoSavage:before,
-.dx-acc-r .dxScheduler_AppointmentClockArrows_day_hour_45_KetoSavage:before,
-.dx-acc-r .dxScheduler_AppointmentClockArrows_day_hour_50_KetoSavage:before,
-.dx-acc-r .dxScheduler_AppointmentClockArrows_day_hour_55_KetoSavage:before,
-.dx-acc-r .dxScheduler_AppointmentClockArrows_day_minute_00_KetoSavage:before,
-.dx-acc-r .dxScheduler_AppointmentClockArrows_day_minute_05_KetoSavage:before,
-.dx-acc-r .dxScheduler_AppointmentClockArrows_day_minute_10_KetoSavage:before,
-.dx-acc-r .dxScheduler_AppointmentClockArrows_day_minute_15_KetoSavage:before,
-.dx-acc-r .dxScheduler_AppointmentClockArrows_day_minute_20_KetoSavage:before,
-.dx-acc-r .dxScheduler_AppointmentClockArrows_day_minute_25_KetoSavage:before,
-.dx-acc-r .dxScheduler_AppointmentClockArrows_day_minute_30_KetoSavage:before,
-.dx-acc-r .dxScheduler_AppointmentClockArrows_day_minute_35_KetoSavage:before,
-.dx-acc-r .dxScheduler_AppointmentClockArrows_day_minute_40_KetoSavage:before,
-.dx-acc-r .dxScheduler_AppointmentClockArrows_day_minute_45_KetoSavage:before,
-.dx-acc-r .dxScheduler_AppointmentClockArrows_day_minute_50_KetoSavage:before,
-.dx-acc-r .dxScheduler_AppointmentClockArrows_day_minute_55_KetoSavage:before,
-.dx-acc-r .dxScheduler_AppointmentClockArrows_night_hour_00_KetoSavage:before,
-.dx-acc-r .dxScheduler_AppointmentClockArrows_night_hour_05_KetoSavage:before,
-.dx-acc-r .dxScheduler_AppointmentClockArrows_night_hour_10_KetoSavage:before,
-.dx-acc-r .dxScheduler_AppointmentClockArrows_night_hour_15_KetoSavage:before,
-.dx-acc-r .dxScheduler_AppointmentClockArrows_night_hour_20_KetoSavage:before,
-.dx-acc-r .dxScheduler_AppointmentClockArrows_night_hour_25_KetoSavage:before,
-.dx-acc-r .dxScheduler_AppointmentClockArrows_night_hour_30_KetoSavage:before,
-.dx-acc-r .dxScheduler_AppointmentClockArrows_night_hour_35_KetoSavage:before,
-.dx-acc-r .dxScheduler_AppointmentClockArrows_night_hour_40_KetoSavage:before,
-.dx-acc-r .dxScheduler_AppointmentClockArrows_night_hour_45_KetoSavage:before,
-.dx-acc-r .dxScheduler_AppointmentClockArrows_night_hour_50_KetoSavage:before,
-.dx-acc-r .dxScheduler_AppointmentClockArrows_night_hour_55_KetoSavage:before,
-.dx-acc-r .dxScheduler_AppointmentClockArrows_night_minute_00_KetoSavage:before,
-.dx-acc-r .dxScheduler_AppointmentClockArrows_night_minute_05_KetoSavage:before,
-.dx-acc-r .dxScheduler_AppointmentClockArrows_night_minute_10_KetoSavage:before,
-.dx-acc-r .dxScheduler_AppointmentClockArrows_night_minute_15_KetoSavage:before,
-.dx-acc-r .dxScheduler_AppointmentClockArrows_night_minute_20_KetoSavage:before,
-.dx-acc-r .dxScheduler_AppointmentClockArrows_night_minute_25_KetoSavage:before,
-.dx-acc-r .dxScheduler_AppointmentClockArrows_night_minute_30_KetoSavage:before,
-.dx-acc-r .dxScheduler_AppointmentClockArrows_night_minute_35_KetoSavage:before,
-.dx-acc-r .dxScheduler_AppointmentClockArrows_night_minute_40_KetoSavage:before,
-.dx-acc-r .dxScheduler_AppointmentClockArrows_night_minute_45_KetoSavage:before,
-.dx-acc-r .dxScheduler_AppointmentClockArrows_night_minute_50_KetoSavage:before,
-.dx-acc-r .dxScheduler_AppointmentClockArrows_night_minute_55_KetoSavage:before,
-.dx-acc-r .dxScheduler_InplaceEditor_Cancel_KetoSavage:before,
-.dx-acc-r .dxScheduler_InplaceEditor_EditForm_KetoSavage:before,
-.dx-acc-r .dxScheduler_InplaceEditor_Save_KetoSavage:before,
-.dx-acc-r .dxScheduler_Menu_Delete_KetoSavage:before,
-.dx-acc-r .dxScheduler_Menu_GoToDate_KetoSavage:before,
-.dx-acc-r .dxScheduler_Menu_NewAppointment_KetoSavage:before,
-.dx-acc-r .dxScheduler_Menu_RecurringAppointment_KetoSavage:before,
-.dx-acc-r .dxScheduler_MoreButton_Bottom_KetoSavage:before,
-.dx-acc-r .dxScheduler_MoreButton_BottomHover_KetoSavage:before,
-.dx-acc-r .dxScheduler_MoreButton_Top_KetoSavage:before,
-.dx-acc-r .dxScheduler_MoreButton_TopHover_KetoSavage:before,
-.dx-acc-r .dxScheduler_NavigationButton_Backward_KetoSavage:before,
-.dx-acc-r .dxScheduler_NavigationButton_BackwardDisabled_KetoSavage:before,
-.dx-acc-r .dxScheduler_NavigationButton_BackwardHover_KetoSavage:before,
-.dx-acc-r .dxScheduler_NavigationButton_Forward_KetoSavage:before,
-.dx-acc-r .dxScheduler_NavigationButton_ForwardDisabled_KetoSavage:before,
-.dx-acc-r .dxScheduler_NavigationButton_ForwardHover_KetoSavage:before,
-.dx-acc-r .dxScheduler_ResourceNavigator_Decrease_KetoSavage:before,
-.dx-acc-r .dxScheduler_ResourceNavigator_DecreaseDisabled_KetoSavage:before,
-.dx-acc-r .dxScheduler_ResourceNavigator_DecreaseHover_KetoSavage:before,
-.dx-acc-r .dxScheduler_ResourceNavigator_First_KetoSavage:before,
-.dx-acc-r .dxScheduler_ResourceNavigator_FirstDisabled_KetoSavage:before,
-.dx-acc-r .dxScheduler_ResourceNavigator_FirstHover_KetoSavage:before,
-.dx-acc-r .dxScheduler_ResourceNavigator_Increase_KetoSavage:before,
-.dx-acc-r .dxScheduler_ResourceNavigator_IncreaseDisabled_KetoSavage:before,
-.dx-acc-r .dxScheduler_ResourceNavigator_IncreaseHover_KetoSavage:before,
-.dx-acc-r .dxScheduler_ResourceNavigator_Last_KetoSavage:before,
-.dx-acc-r .dxScheduler_ResourceNavigator_LastDisabled_KetoSavage:before,
-.dx-acc-r .dxScheduler_ResourceNavigator_LastHover_KetoSavage:before,
-.dx-acc-r .dxScheduler_ResourceNavigator_Next_KetoSavage:before,
-.dx-acc-r .dxScheduler_ResourceNavigator_NextDisabled_KetoSavage:before,
-.dx-acc-r .dxScheduler_ResourceNavigator_NextHover_KetoSavage:before,
-.dx-acc-r .dxScheduler_ResourceNavigator_NextPage_KetoSavage:before,
-.dx-acc-r .dxScheduler_ResourceNavigator_NextPageDisabled_KetoSavage:before,
-.dx-acc-r .dxScheduler_ResourceNavigator_NextPageHover_KetoSavage:before,
-.dx-acc-r .dxScheduler_ResourceNavigator_Prev_KetoSavage:before,
-.dx-acc-r .dxScheduler_ResourceNavigator_PrevDisabled_KetoSavage:before,
-.dx-acc-r .dxScheduler_ResourceNavigator_PrevHover_KetoSavage:before,
-.dx-acc-r .dxScheduler_ResourceNavigator_PrevPage_KetoSavage:before,
-.dx-acc-r .dxScheduler_ResourceNavigator_PrevPageDisabled_KetoSavage:before,
-.dx-acc-r .dxScheduler_ResourceNavigator_PrevPageHover_KetoSavage:before,
-.dx-acc-r .dxScheduler_SmartTag_KetoSavage:before,
-.dx-acc-r .dxScheduler_StatusInfo_Error_KetoSavage:before,
-.dx-acc-r .dxScheduler_TimeMarker_KetoSavage:before,
-.dx-acc-r .dxScheduler_Tooltip_BottomLeft_KetoSavage:before,
-.dx-acc-r .dxScheduler_Tooltip_BottomRight_KetoSavage:before,
-.dx-acc-r .dxScheduler_Tooltip_BottomStem_KetoSavage:before,
-.dx-acc-r .dxScheduler_Tooltip_Empty_KetoSavage:before,
-.dx-acc-r .dxScheduler_Tooltip_TopLeft_KetoSavage:before,
-.dx-acc-r .dxScheduler_Tooltip_TopRight_KetoSavage:before,
-.dx-acc-r .dxScheduler_ViewNavigator_Backward_KetoSavage:before,
-.dx-acc-r .dxScheduler_ViewNavigator_Down_KetoSavage:before,
-.dx-acc-r .dxScheduler_ViewNavigator_Forward_KetoSavage:before,
-.dx-acc-r .dxsc-info.dxeImage_KetoSavage .dxScheduler_StatusInfo_Info_KetoSavage:before,
-.dx-acc-r .dxscNoBorderButtonHover_KetoSavage .dxScheduler_InplaceEditor_Cancel_KetoSavage:before,
-.dx-acc-r .dxscNoBorderButtonHover_KetoSavage .dxScheduler_InplaceEditor_EditForm_KetoSavage:before,
-.dx-acc-r .dxscNoBorderButtonHover_KetoSavage .dxScheduler_InplaceEditor_Save_KetoSavage:before,
-.dx-acc-r .dxscNoBorderButtonPressed_KetoSavage .dxScheduler_InplaceEditor_Cancel_KetoSavage:before,
-.dx-acc-r .dxscNoBorderButtonPressed_KetoSavage .dxScheduler_InplaceEditor_EditForm_KetoSavage:before,
-.dx-acc-r .dxscNoBorderButtonPressed_KetoSavage .dxScheduler_InplaceEditor_Save_KetoSavage:before,
-.dx-acc-r .dxsc-selected .dxScheduler_Appointment_DayClock_KetoSavage:before,
-.dx-acc-r .dxsc-selected .dxScheduler_Appointment_EndArrow_KetoSavage:before,
-.dx-acc-r .dxsc-selected .dxScheduler_Appointment_NightClock_KetoSavage:before,
-.dx-acc-r .dxsc-selected .dxScheduler_Appointment_NoRecurrence_KetoSavage:before,
-.dx-acc-r .dxsc-selected .dxScheduler_Appointment_Recurrence_KetoSavage:before,
-.dx-acc-r .dxsc-selected .dxScheduler_Appointment_Reminder_KetoSavage:before,
-.dx-acc-r .dxsc-selected .dxScheduler_Appointment_StartArrow_KetoSavage:before,
-.dx-acc-r .dxscViewSelector_KetoSavage .dxm-hovered .dxWeb_mAdaptiveMenu_KetoSavage:before,
-.dx-acc-r .dxscViewSelector_KetoSavage .dxWeb_mAdaptiveMenu_KetoSavage:before,
-.dx-acc-r .dxsc-warning.dxeImage_KetoSavage, .dxScheduler_StatusInfo_Warning_KetoSavage:before
-
-{
-    content: url('sprite.svg');
-
-}
-.dx-acc-r .dxsc-agenda-show-time .dxsc-selected .dxScheduler_Appointment_NoRecurrence_KetoSavage:before
-
-{
-    left: -238px;
-    top: -74px;
-
-}
-.dx-acc-r .dxsc-agenda-show-time .dxsc-selected .dxScheduler_Appointment_Recurrence_KetoSavage:before
-
-{
-    left: -238px;
-    top: -37px;
-
-}
-.dx-acc-r .dxsc-agenda-show-time .dxsc-selected .dxScheduler_Appointment_Reminder_KetoSavage:before
-
-{
-    left: -17px;
-    top: -91px;
-
-}
-.dx-acc-r .dxScheduler_Appointment_DayClock_KetoSavage:before
-
-{
-    left: -80px;
-    top: -140px;
-
-}
-.dx-acc-r .dxScheduler_Appointment_EndArrow_KetoSavage:before
-
-{
-    left: -102px;
-    top: -91px;
-
-}
-.dx-acc-r .dxScheduler_Appointment_NightClock_KetoSavage:before
-
-{
-    left: -208px;
-    top: -140px;
-
-}
-.dx-acc-r .dxScheduler_Appointment_NoRecurrence_KetoSavage:before
-
-{
-    left: -204px;
-    top: -37px;
-
-}
-.dx-acc-r .dxScheduler_Appointment_Recurrence_KetoSavage:before
-
-{
-    left: -34px;
-    top: -91px;
-
-}
-.dx-acc-r .dxScheduler_Appointment_Reminder_KetoSavage:before
-
-{
-    left: -238px;
-    top: -91px;
-
-}
-.dx-acc-r .dxScheduler_Appointment_StartArrow_KetoSavage:before
-
-{
-    left: -202px;
-    top: -54px;
-
-}
-.dx-acc-r .dxScheduler_AppointmentClockArrows_day_hour_00_KetoSavage:before
-
-{
-    left: -112px;
-    top: -108px;
-
-}
-.dx-acc-r .dxScheduler_AppointmentClockArrows_day_hour_05_KetoSavage:before
-
-{
-    left: -48px;
-    top: -124px;
-
-}
-.dx-acc-r .dxScheduler_AppointmentClockArrows_day_hour_10_KetoSavage:before
-
-{
-    left: -64px;
-    top: -108px;
-
-}
-.dx-acc-r .dxScheduler_AppointmentClockArrows_day_hour_15_KetoSavage:before
-
-{
-    left: -160px;
-    top: -124px;
-
-}
-.dx-acc-r .dxScheduler_AppointmentClockArrows_day_hour_20_KetoSavage:before
-
-{
-    left: -64px;
-    top: -140px;
-
-}
-.dx-acc-r .dxScheduler_AppointmentClockArrows_day_hour_25_KetoSavage:before
-
-{
-    left: -176px;
-    top: -108px;
-
-}
-.dx-acc-r .dxScheduler_AppointmentClockArrows_day_hour_30_KetoSavage:before
-
-{
-    left: -96px;
-    top: -140px;
-
-}
-.dx-acc-r .dxScheduler_AppointmentClockArrows_day_hour_35_KetoSavage:before
-
-{
-    left: -48px;
-    top: -140px;
-
-}
-.dx-acc-r .dxScheduler_AppointmentClockArrows_day_hour_40_KetoSavage:before
-
-{
-    left: -144px;
-    top: -108px;
-
-}
-.dx-acc-r .dxScheduler_AppointmentClockArrows_day_hour_45_KetoSavage:before
-
-{
-    left: -144px;
-    top: -140px;
-
-}
-.dx-acc-r .dxScheduler_AppointmentClockArrows_day_hour_50_KetoSavage:before
-
-{
-    left: -160px;
-    top: -140px;
-
-}
-.dx-acc-r .dxScheduler_AppointmentClockArrows_day_hour_55_KetoSavage:before
-
-{
-    left: -96px;
-    top: -108px;
-
-}
-.dx-acc-r .dxScheduler_AppointmentClockArrows_day_minute_00_KetoSavage:before
-
-{
-    left: -64px;
-    top: -156px;
-
-}
-.dx-acc-r .dxScheduler_AppointmentClockArrows_day_minute_05_KetoSavage:before
-
-{
-    left: -16px;
-    top: -140px;
-
-}
-.dx-acc-r .dxScheduler_AppointmentClockArrows_day_minute_10_KetoSavage:before
-
-{
-    left: -16px;
-    top: -108px;
-
-}
-.dx-acc-r .dxScheduler_AppointmentClockArrows_day_minute_15_KetoSavage:before
-
-{
-    left: -32px;
-    top: -140px;
-
-}
-.dx-acc-r .dxScheduler_AppointmentClockArrows_day_minute_20_KetoSavage:before
-
-{
-    left: -96px;
-    top: -124px;
-
-}
-.dx-acc-r .dxScheduler_AppointmentClockArrows_day_minute_25_KetoSavage:before
-
-{
-    left: -192px;
-    top: -108px;
-
-}
-.dx-acc-r .dxScheduler_AppointmentClockArrows_day_minute_30_KetoSavage:before
-
-{
-    left: 0px;
-    top: -108px;
-
-}
-.dx-acc-r .dxScheduler_AppointmentClockArrows_day_minute_35_KetoSavage:before
-
-{
-    left: -144px;
-    top: -124px;
-
-}
-.dx-acc-r .dxScheduler_AppointmentClockArrows_day_minute_40_KetoSavage:before
-
-{
-    left: -128px;
-    top: -108px;
-
-}
-.dx-acc-r .dxScheduler_AppointmentClockArrows_day_minute_45_KetoSavage:before
-
-{
-    left: -224px;
-    top: -140px;
-
-}
-.dx-acc-r .dxScheduler_AppointmentClockArrows_day_minute_50_KetoSavage:before
-
-{
-    left: -176px;
-    top: -140px;
-
-}
-.dx-acc-r .dxScheduler_AppointmentClockArrows_day_minute_55_KetoSavage:before
-
-{
-    left: -96px;
-    top: -156px;
-
-}
-.dx-acc-r .dxScheduler_AppointmentClockArrows_night_hour_00_KetoSavage:before
-
-{
-    left: -128px;
-    top: -140px;
-
-}
-.dx-acc-r .dxScheduler_AppointmentClockArrows_night_hour_05_KetoSavage:before
-
-{
-    left: -80px;
-    top: -108px;
-
-}
-.dx-acc-r .dxScheduler_AppointmentClockArrows_night_hour_10_KetoSavage:before
-
-{
-    left: -188px;
-    top: -38px;
-
-}
-.dx-acc-r .dxScheduler_AppointmentClockArrows_night_hour_15_KetoSavage:before
-
-{
-    left: 0px;
-    top: -124px;
-
-}
-.dx-acc-r .dxScheduler_AppointmentClockArrows_night_hour_20_KetoSavage:before
-
-{
-    left: -16px;
-    top: -156px;
-
-}
-.dx-acc-r .dxScheduler_AppointmentClockArrows_night_hour_25_KetoSavage:before
-
-{
-    left: -224px;
-    top: -108px;
-
-}
-.dx-acc-r .dxScheduler_AppointmentClockArrows_night_hour_30_KetoSavage:before
-
-{
-    left: 0px;
-    top: -140px;
-
-}
-.dx-acc-r .dxScheduler_AppointmentClockArrows_night_hour_35_KetoSavage:before
-
-{
-    left: -112px;
-    top: -140px;
-
-}
-.dx-acc-r .dxScheduler_AppointmentClockArrows_night_hour_40_KetoSavage:before
-
-{
-    left: -48px;
-    top: -108px;
-
-}
-.dx-acc-r .dxScheduler_AppointmentClockArrows_night_hour_45_KetoSavage:before
-
-{
-    left: -208px;
-    top: -124px;
-
-}
-.dx-acc-r .dxScheduler_AppointmentClockArrows_night_hour_50_KetoSavage:before
-
-{
-    left: -32px;
-    top: -124px;
-
-}
-.dx-acc-r .dxScheduler_AppointmentClockArrows_night_hour_55_KetoSavage:before
-
-{
-    left: -80px;
-    top: -124px;
-
-}
-.dx-acc-r .dxScheduler_AppointmentClockArrows_night_minute_00_KetoSavage:before
-
-{
-    left: -32px;
-    top: -156px;
-
-}
-.dx-acc-r .dxScheduler_AppointmentClockArrows_night_minute_05_KetoSavage:before
-
-{
-    left: -192px;
-    top: -140px;
-
-}
-.dx-acc-r .dxScheduler_AppointmentClockArrows_night_minute_10_KetoSavage:before
-
-{
-    left: -176px;
-    top: -124px;
-
-}
-.dx-acc-r .dxScheduler_AppointmentClockArrows_night_minute_15_KetoSavage:before
-
-{
-    left: -16px;
-    top: -124px;
-
-}
-.dx-acc-r .dxScheduler_AppointmentClockArrows_night_minute_20_KetoSavage:before
-
-{
-    left: -64px;
-    top: -124px;
-
-}
-.dx-acc-r .dxScheduler_AppointmentClockArrows_night_minute_25_KetoSavage:before
-
-{
-    left: -112px;
-    top: -124px;
-
-}
-.dx-acc-r .dxScheduler_AppointmentClockArrows_night_minute_30_KetoSavage:before
-
-{
-    left: -224px;
-    top: -124px;
-
-}
-.dx-acc-r .dxScheduler_AppointmentClockArrows_night_minute_35_KetoSavage:before
-
-{
-    left: -160px;
-    top: -108px;
-
-}
-.dx-acc-r .dxScheduler_AppointmentClockArrows_night_minute_40_KetoSavage:before
-
-{
-    left: -32px;
-    top: -108px;
-
-}
-.dx-acc-r .dxScheduler_AppointmentClockArrows_night_minute_45_KetoSavage:before
-
-{
-    left: 0px;
-    top: -156px;
-
-}
-.dx-acc-r .dxScheduler_AppointmentClockArrows_night_minute_50_KetoSavage:before
-
-{
-    left: -128px;
-    top: -124px;
-
-}
-.dx-acc-r .dxScheduler_AppointmentClockArrows_night_minute_55_KetoSavage:before
-
-{
-    left: -80px;
-    top: -156px;
-
-}
-.dx-acc-r .dxScheduler_InplaceEditor_Cancel_KetoSavage:before
-
-{
-    left: -187px;
-    top: -91px;
-
-}
-.dx-acc-r .dxScheduler_InplaceEditor_EditForm_KetoSavage:before
-
-{
-    left: -170px;
-    top: -91px;
-
-}
-.dx-acc-r .dxScheduler_InplaceEditor_Save_KetoSavage:before
-
-{
-    left: -225px;
-    top: 0px;
-
-}
-.dx-acc-r .dxScheduler_Menu_Delete_KetoSavage:before
-
-{
-    left: -136px;
-    top: -91px;
-
-}
-.dx-acc-r .dxScheduler_Menu_GoToDate_KetoSavage:before
-
-{
-    left: -185px;
-    top: -54px;
-
-}
-.dx-acc-r .dxScheduler_Menu_NewAppointment_KetoSavage:before
-
-{
-    left: -219px;
-    top: -54px;
-
-}
-.dx-acc-r .dxScheduler_Menu_RecurringAppointment_KetoSavage:before
-
-{
-    left: -51px;
-    top: -91px;
-
-}
-.dx-acc-r .dxScheduler_MoreButton_Bottom_KetoSavage:before
-
-{
-    left: -156px;
-    top: -172px;
-
-}
-.dx-acc-r .dxScheduler_MoreButton_BottomHover_KetoSavage:before
-
-{
-    left: -195px;
-    top: -172px;
-
-}
-.dx-acc-r .dxScheduler_MoreButton_Top_KetoSavage:before
-
-{
-    left: -78px;
-    top: -172px;
-
-}
-.dx-acc-r .dxScheduler_MoreButton_TopHover_KetoSavage:before
-
-{
-    left: -65px;
-    top: -172px;
-
-}
-.dx-acc-r .dxScheduler_NavigationButton_Backward_KetoSavage:before
-
-{
-    left: -74px;
-    top: -54px;
-
-}
-.dx-acc-r .dxScheduler_NavigationButton_BackwardDisabled_KetoSavage:before
-
-{
-    left: -188px;
-    top: 0px;
-
-}
-.dx-acc-r .dxScheduler_NavigationButton_BackwardHover_KetoSavage:before
-
-{
-    left: 0px;
-    top: -54px;
-
-}
-.dx-acc-r .dxScheduler_NavigationButton_Forward_KetoSavage:before
-
-{
-    left: -148px;
-    top: -54px;
-
-}
-.dx-acc-r .dxScheduler_NavigationButton_ForwardDisabled_KetoSavage:before
-
-{
-    left: -111px;
-    top: -54px;
-
-}
-.dx-acc-r .dxScheduler_NavigationButton_ForwardHover_KetoSavage:before
-
-{
-    left: -37px;
-    top: -54px;
-
-}
-.dx-acc-r .dxScheduler_ResourceNavigator_Decrease_KetoSavage:before
-
-{
-    left: -240px;
-    top: -108px;
-
-}
-.dx-acc-r .dxScheduler_ResourceNavigator_DecreaseDisabled_KetoSavage:before
-
-{
-    left: -240px;
-    top: -140px;
-
-}
-.dx-acc-r .dxScheduler_ResourceNavigator_DecreaseHover_KetoSavage:before
-
-{
-    left: -127px;
-    top: -156px;
-
-}
-.dx-acc-r .dxScheduler_ResourceNavigator_First_KetoSavage:before
-
-{
-    left: -157px;
-    top: -156px;
-
-}
-.dx-acc-r .dxScheduler_ResourceNavigator_FirstDisabled_KetoSavage:before
-
-{
-    left: -217px;
-    top: -156px;
-
-}
-.dx-acc-r .dxScheduler_ResourceNavigator_FirstHover_KetoSavage:before
-
-{
-    left: -187px;
-    top: -156px;
-
-}
-.dx-acc-r .dxScheduler_ResourceNavigator_Increase_KetoSavage:before
-
-{
-    left: -240px;
-    top: -124px;
-
-}
-.dx-acc-r .dxScheduler_ResourceNavigator_IncreaseDisabled_KetoSavage:before
-
-{
-    left: -142px;
-    top: -156px;
-
-}
-.dx-acc-r .dxScheduler_ResourceNavigator_IncreaseHover_KetoSavage:before
-
-{
-    left: -112px;
-    top: -156px;
-
-}
-.dx-acc-r .dxScheduler_ResourceNavigator_Last_KetoSavage:before
-
-{
-    left: -202px;
-    top: -156px;
-
-}
-.dx-acc-r .dxScheduler_ResourceNavigator_LastDisabled_KetoSavage:before
-
-{
-    left: -172px;
-    top: -156px;
-
-}
-.dx-acc-r .dxScheduler_ResourceNavigator_LastHover_KetoSavage:before
-
-{
-    left: -232px;
-    top: -156px;
-
-}
-.dx-acc-r .dxScheduler_ResourceNavigator_Next_KetoSavage:before
-
-{
-    left: 0px;
-    top: -172px;
-
-}
-.dx-acc-r .dxScheduler_ResourceNavigator_NextDisabled_KetoSavage:before
-
-{
-    left: -242px;
-    top: 0px;
-
-}
-.dx-acc-r .dxScheduler_ResourceNavigator_NextHover_KetoSavage:before
-
-{
-    left: -169px;
-    top: -172px;
-
-}
-.dx-acc-r .dxScheduler_ResourceNavigator_NextPage_KetoSavage:before
-
-{
-    left: -143px;
-    top: -172px;
-
-}
-.dx-acc-r .dxScheduler_ResourceNavigator_NextPageDisabled_KetoSavage:before
-
-{
-    left: -26px;
-    top: -172px;
-
-}
-.dx-acc-r .dxScheduler_ResourceNavigator_NextPageHover_KetoSavage:before
-
-{
-    left: -13px;
-    top: -172px;
-
-}
-.dx-acc-r .dxScheduler_ResourceNavigator_Prev_KetoSavage:before
-
-{
-    left: -130px;
-    top: -172px;
-
-}
-.dx-acc-r .dxScheduler_ResourceNavigator_PrevDisabled_KetoSavage:before
-
-{
-    left: -91px;
-    top: -172px;
-
-}
-.dx-acc-r .dxScheduler_ResourceNavigator_PrevHover_KetoSavage:before
-
-{
-    left: -39px;
-    top: -172px;
-
-}
-.dx-acc-r .dxScheduler_ResourceNavigator_PrevPage_KetoSavage:before
-
-{
-    left: -208px;
-    top: -172px;
-
-}
-.dx-acc-r .dxScheduler_ResourceNavigator_PrevPageDisabled_KetoSavage:before
-
-{
-    left: -242px;
-    top: -24px;
-
-}
-.dx-acc-r .dxScheduler_ResourceNavigator_PrevPageHover_KetoSavage:before
-
-{
-    left: -182px;
-    top: -172px;
-
-}
-.dx-acc-r .dxScheduler_SmartTag_KetoSavage:before
-
-{
-    left: -117px;
-    top: -172px;
-
-}
-.dx-acc-r .dxScheduler_StatusInfo_Error_KetoSavage:before
-
-{
-    left: -90px;
-    top: 0px;
-
-}
-.dx-acc-r .dxScheduler_TimeMarker_KetoSavage:before
-
-{
-    left: -221px;
-    top: -172px;
-
-}
-.dx-acc-r .dxScheduler_Tooltip_BottomLeft_KetoSavage:before
-
-{
-    left: -247px;
-    top: -156px;
-
-}
-.dx-acc-r .dxScheduler_Tooltip_BottomRight_KetoSavage:before
-
-{
-    left: -247px;
-    top: -164px;
-
-}
-.dx-acc-r .dxScheduler_Tooltip_BottomStem_KetoSavage:before
-
-{
-    left: 0px;
-    top: 0px;
-
-}
-.dx-acc-r .dxScheduler_Tooltip_Empty_KetoSavage:before
-
-{
-    left: -186px;
-    top: -52px;
-
-}
-.dx-acc-r .dxScheduler_Tooltip_TopLeft_KetoSavage:before
-
-{
-    left: -242px;
-    top: -16px;
-
-}
-.dx-acc-r .dxScheduler_Tooltip_TopRight_KetoSavage:before
-
-{
-    left: -233px;
-    top: -172px;
-
-}
-.dx-acc-r .dxScheduler_ViewNavigator_Backward_KetoSavage:before
-
-{
-    left: -52px;
-    top: -172px;
-
-}
-.dx-acc-r .dxScheduler_ViewNavigator_Down_KetoSavage:before
-
-{
-    left: -208px;
-    top: -108px;
-
-}
-.dx-acc-r .dxScheduler_ViewNavigator_Forward_KetoSavage:before
-
-{
-    left: -104px;
-    top: -172px;
-
-}
-.dx-acc-r .dxsc-info.dxeImage_KetoSavage, .dxScheduler_StatusInfo_Info_KetoSavage:before
-
-{
-    left: -41px;
-    top: 0px;
-
-}
-.dx-acc-r .dxscNoBorderButtonHover_KetoSavage .dxScheduler_InplaceEditor_Cancel_KetoSavage:before
-
-{
-    left: -204px;
-    top: -91px;
-
-}
-.dx-acc-r .dxscNoBorderButtonHover_KetoSavage .dxScheduler_InplaceEditor_EditForm_KetoSavage:before
-
-{
-    left: -68px;
-    top: -91px;
-
-}
-.dx-acc-r .dxscNoBorderButtonHover_KetoSavage .dxScheduler_InplaceEditor_Save_KetoSavage:before
-
-{
-    left: -221px;
-    top: -91px;
-
-}
-.dx-acc-r .dxscNoBorderButtonPressed_KetoSavage .dxScheduler_InplaceEditor_Cancel_KetoSavage:before
-
-{
-    left: -225px;
-    top: -20px;
-
-}
-.dx-acc-r .dxscNoBorderButtonPressed_KetoSavage .dxScheduler_InplaceEditor_EditForm_KetoSavage:before
-
-{
-    left: -204px;
-    top: -74px;
-
-}
-.dx-acc-r .dxscNoBorderButtonPressed_KetoSavage .dxScheduler_InplaceEditor_Save_KetoSavage:before
-
-{
-    left: -187px;
-    top: -74px;
-
-}
-.dx-acc-r .dxsc-selected .dxScheduler_Appointment_DayClock_KetoSavage:before
-
-{
-    left: -192px;
-    top: -124px;
-
-}
-.dx-acc-r .dxsc-selected .dxScheduler_Appointment_EndArrow_KetoSavage:before
-
-{
-    left: -236px;
-    top: -54px;
-
-}
-.dx-acc-r .dxsc-selected .dxScheduler_Appointment_NightClock_KetoSavage:before
-
-{
-    left: -48px;
-    top: -156px;
-
-}
-.dx-acc-r .dxsc-selected .dxScheduler_Appointment_NoRecurrence_KetoSavage:before
-
-{
-    left: -221px;
-    top: -37px;
-
-}
-.dx-acc-r .dxsc-selected .dxScheduler_Appointment_Recurrence_KetoSavage:before
-
-{
-    left: 0px;
-    top: -91px;
-
-}
-.dx-acc-r .dxsc-selected .dxScheduler_Appointment_Reminder_KetoSavage:before
-
-{
-    left: -119px;
-    top: -91px;
-
-}
-.dx-acc-r .dxsc-selected .dxScheduler_Appointment_StartArrow_KetoSavage:before
-
-{
-    left: -153px;
-    top: -91px;
-
-}
-.dx-acc-r .dxscViewSelector_KetoSavage .dxm-hovered .dxWeb_mAdaptiveMenu_KetoSavage:before
-
-{
-    left: -85px;
-    top: -91px;
-
-}
-.dx-acc-r .dxscViewSelector_KetoSavage .dxWeb_mAdaptiveMenu_KetoSavage:before
-
-{
-    left: -221px;
-    top: -74px;
-
-}
-.dx-acc-r .dxsc-warning.dxeImage_KetoSavage, .dxScheduler_StatusInfo_Warning_KetoSavage:before
-
-{
-    left: -139px;
-    top: 0px;
-
-}
+.dx-acc-r .dxsc-agenda-no-time .dxsc-apt-no-label.dxsc-selected .dxScheduler_Appointment_NoRecurrence_KetoSavage:before, .dx-acc-r .dxsc-agenda-no-time .dxsc-apt-no-label.dxsc-selected .dxScheduler_Appointment_Recurrence_KetoSavage:before, .dx-acc-r .dxsc-agenda-no-time .dxsc-apt-no-label.dxsc-selected .dxScheduler_Appointment_Reminder_KetoSavage:before, .dx-acc-r .dxsc-agenda-show-time .dxsc-selected .dxScheduler_Appointment_NoRecurrence_KetoSavage:before, .dx-acc-r .dxsc-agenda-show-time .dxsc-selected .dxScheduler_Appointment_Recurrence_KetoSavage:before, .dx-acc-r .dxsc-agenda-show-time .dxsc-selected .dxScheduler_Appointment_Reminder_KetoSavage:before, .dx-acc-r .dxsc-angle-up .dxScheduler_ResourceNavigator_MoreButton_KetoSavage:before, .dx-acc-r .dxScheduler_Appointment_DayClock_KetoSavage:before, .dx-acc-r .dxScheduler_Appointment_EndArrow_KetoSavage:before, .dx-acc-r .dxScheduler_Appointment_NightClock_KetoSavage:before, .dx-acc-r .dxScheduler_Appointment_NoRecurrence_KetoSavage:before, .dx-acc-r .dxScheduler_Appointment_Recurrence_KetoSavage:before, .dx-acc-r .dxScheduler_Appointment_Reminder_KetoSavage:before, .dx-acc-r .dxScheduler_Appointment_StartArrow_KetoSavage:before, .dx-acc-r .dxScheduler_AppointmentClockArrows_day_hour_00_KetoSavage:before, .dx-acc-r .dxScheduler_AppointmentClockArrows_day_hour_05_KetoSavage:before, .dx-acc-r .dxScheduler_AppointmentClockArrows_day_hour_10_KetoSavage:before, .dx-acc-r .dxScheduler_AppointmentClockArrows_day_hour_15_KetoSavage:before, .dx-acc-r .dxScheduler_AppointmentClockArrows_day_hour_20_KetoSavage:before, .dx-acc-r .dxScheduler_AppointmentClockArrows_day_hour_25_KetoSavage:before, .dx-acc-r .dxScheduler_AppointmentClockArrows_day_hour_30_KetoSavage:before, .dx-acc-r .dxScheduler_AppointmentClockArrows_day_hour_35_KetoSavage:before, .dx-acc-r .dxScheduler_AppointmentClockArrows_day_hour_40_KetoSavage:before, .dx-acc-r .dxScheduler_AppointmentClockArrows_day_hour_45_KetoSavage:before, .dx-acc-r .dxScheduler_AppointmentClockArrows_day_hour_50_KetoSavage:before, .dx-acc-r .dxScheduler_AppointmentClockArrows_day_hour_55_KetoSavage:before, .dx-acc-r .dxScheduler_AppointmentClockArrows_day_minute_00_KetoSavage:before, .dx-acc-r .dxScheduler_AppointmentClockArrows_day_minute_05_KetoSavage:before, .dx-acc-r .dxScheduler_AppointmentClockArrows_day_minute_10_KetoSavage:before, .dx-acc-r .dxScheduler_AppointmentClockArrows_day_minute_15_KetoSavage:before, .dx-acc-r .dxScheduler_AppointmentClockArrows_day_minute_20_KetoSavage:before, .dx-acc-r .dxScheduler_AppointmentClockArrows_day_minute_25_KetoSavage:before, .dx-acc-r .dxScheduler_AppointmentClockArrows_day_minute_30_KetoSavage:before, .dx-acc-r .dxScheduler_AppointmentClockArrows_day_minute_35_KetoSavage:before, .dx-acc-r .dxScheduler_AppointmentClockArrows_day_minute_40_KetoSavage:before, .dx-acc-r .dxScheduler_AppointmentClockArrows_day_minute_45_KetoSavage:before, .dx-acc-r .dxScheduler_AppointmentClockArrows_day_minute_50_KetoSavage:before, .dx-acc-r .dxScheduler_AppointmentClockArrows_day_minute_55_KetoSavage:before, .dx-acc-r .dxScheduler_AppointmentClockArrows_night_hour_00_KetoSavage:before, .dx-acc-r .dxScheduler_AppointmentClockArrows_night_hour_05_KetoSavage:before, .dx-acc-r .dxScheduler_AppointmentClockArrows_night_hour_10_KetoSavage:before, .dx-acc-r .dxScheduler_AppointmentClockArrows_night_hour_15_KetoSavage:before, .dx-acc-r .dxScheduler_AppointmentClockArrows_night_hour_20_KetoSavage:before, .dx-acc-r .dxScheduler_AppointmentClockArrows_night_hour_25_KetoSavage:before, .dx-acc-r .dxScheduler_AppointmentClockArrows_night_hour_30_KetoSavage:before, .dx-acc-r .dxScheduler_AppointmentClockArrows_night_hour_35_KetoSavage:before, .dx-acc-r .dxScheduler_AppointmentClockArrows_night_hour_40_KetoSavage:before, .dx-acc-r .dxScheduler_AppointmentClockArrows_night_hour_45_KetoSavage:before, .dx-acc-r .dxScheduler_AppointmentClockArrows_night_hour_50_KetoSavage:before, .dx-acc-r .dxScheduler_AppointmentClockArrows_night_hour_55_KetoSavage:before, .dx-acc-r .dxScheduler_AppointmentClockArrows_night_minute_00_KetoSavage:before, .dx-acc-r .dxScheduler_AppointmentClockArrows_night_minute_05_KetoSavage:before, .dx-acc-r .dxScheduler_AppointmentClockArrows_night_minute_10_KetoSavage:before, .dx-acc-r .dxScheduler_AppointmentClockArrows_night_minute_15_KetoSavage:before, .dx-acc-r .dxScheduler_AppointmentClockArrows_night_minute_20_KetoSavage:before, .dx-acc-r .dxScheduler_AppointmentClockArrows_night_minute_25_KetoSavage:before, .dx-acc-r .dxScheduler_AppointmentClockArrows_night_minute_30_KetoSavage:before, .dx-acc-r .dxScheduler_AppointmentClockArrows_night_minute_35_KetoSavage:before, .dx-acc-r .dxScheduler_AppointmentClockArrows_night_minute_40_KetoSavage:before, .dx-acc-r .dxScheduler_AppointmentClockArrows_night_minute_45_KetoSavage:before, .dx-acc-r .dxScheduler_AppointmentClockArrows_night_minute_50_KetoSavage:before, .dx-acc-r .dxScheduler_AppointmentClockArrows_night_minute_55_KetoSavage:before, .dx-acc-r .dxScheduler_InplaceEditor_Cancel_KetoSavage:before, .dx-acc-r .dxScheduler_InplaceEditor_EditForm_KetoSavage:before, .dx-acc-r .dxScheduler_InplaceEditor_Save_KetoSavage:before, .dx-acc-r .dxScheduler_Menu_Delete_KetoSavage:before, .dx-acc-r .dxScheduler_Menu_GoToDate_KetoSavage:before, .dx-acc-r .dxScheduler_Menu_NewAppointment_KetoSavage:before, .dx-acc-r .dxScheduler_Menu_RecurringAppointment_KetoSavage:before, .dx-acc-r .dxScheduler_MoreButton_Bottom_KetoSavage:before, .dx-acc-r .dxScheduler_MoreButton_BottomHover_KetoSavage:before, .dx-acc-r .dxScheduler_MoreButton_Top_KetoSavage:before, .dx-acc-r .dxScheduler_MoreButton_TopHover_KetoSavage:before, .dx-acc-r .dxScheduler_NavigationButton_Backward_KetoSavage:before, .dx-acc-r .dxScheduler_NavigationButton_BackwardDisabled_KetoSavage:before, .dx-acc-r .dxScheduler_NavigationButton_BackwardHover_KetoSavage:before, .dx-acc-r .dxScheduler_NavigationButton_Forward_KetoSavage:before, .dx-acc-r .dxScheduler_NavigationButton_ForwardDisabled_KetoSavage:before, .dx-acc-r .dxScheduler_NavigationButton_ForwardHover_KetoSavage:before, .dx-acc-r .dxScheduler_ResourceNavigator_Decrease_KetoSavage:before, .dx-acc-r .dxScheduler_ResourceNavigator_DecreaseDisabled_KetoSavage:before, .dx-acc-r .dxScheduler_ResourceNavigator_DecreaseHover_KetoSavage:before, .dx-acc-r .dxScheduler_ResourceNavigator_Filter_KetoSavage:before, .dx-acc-r .dxScheduler_ResourceNavigator_First_KetoSavage:before, .dx-acc-r .dxScheduler_ResourceNavigator_FirstDisabled_KetoSavage:before, .dx-acc-r .dxScheduler_ResourceNavigator_FirstHover_KetoSavage:before, .dx-acc-r .dxScheduler_ResourceNavigator_Increase_KetoSavage:before, .dx-acc-r .dxScheduler_ResourceNavigator_IncreaseDisabled_KetoSavage:before, .dx-acc-r .dxScheduler_ResourceNavigator_IncreaseHover_KetoSavage:before, .dx-acc-r .dxScheduler_ResourceNavigator_Last_KetoSavage:before, .dx-acc-r .dxScheduler_ResourceNavigator_LastDisabled_KetoSavage:before, .dx-acc-r .dxScheduler_ResourceNavigator_LastHover_KetoSavage:before, .dx-acc-r .dxScheduler_ResourceNavigator_MoreButton_KetoSavage:before, .dx-acc-r .dxScheduler_ResourceNavigator_Next_KetoSavage:before, .dx-acc-r .dxScheduler_ResourceNavigator_NextDisabled_KetoSavage:before, .dx-acc-r .dxScheduler_ResourceNavigator_NextHover_KetoSavage:before, .dx-acc-r .dxScheduler_ResourceNavigator_NextPage_KetoSavage:before, .dx-acc-r .dxScheduler_ResourceNavigator_NextPageDisabled_KetoSavage:before, .dx-acc-r .dxScheduler_ResourceNavigator_NextPageHover_KetoSavage:before, .dx-acc-r .dxScheduler_ResourceNavigator_Prev_KetoSavage:before, .dx-acc-r .dxScheduler_ResourceNavigator_PrevDisabled_KetoSavage:before, .dx-acc-r .dxScheduler_ResourceNavigator_PrevHover_KetoSavage:before, .dx-acc-r .dxScheduler_ResourceNavigator_PrevPage_KetoSavage:before, .dx-acc-r .dxScheduler_ResourceNavigator_PrevPageDisabled_KetoSavage:before, .dx-acc-r .dxScheduler_ResourceNavigator_PrevPageHover_KetoSavage:before, .dx-acc-r .dxScheduler_SmartTag_KetoSavage:before, .dx-acc-r .dxScheduler_StatusInfo_Error_KetoSavage:before, .dx-acc-r .dxScheduler_TimeMarker_KetoSavage:before, .dx-acc-r .dxScheduler_Tooltip_BottomLeft_KetoSavage:before, .dx-acc-r .dxScheduler_Tooltip_BottomRight_KetoSavage:before, .dx-acc-r .dxScheduler_Tooltip_BottomStem_KetoSavage:before, .dx-acc-r .dxScheduler_Tooltip_Empty_KetoSavage:before, .dx-acc-r .dxScheduler_Tooltip_TopLeft_KetoSavage:before, .dx-acc-r .dxScheduler_Tooltip_TopRight_KetoSavage:before, .dx-acc-r .dxScheduler_ViewNavigator_Backward_KetoSavage:before, .dx-acc-r .dxScheduler_ViewNavigator_Down_KetoSavage:before, .dx-acc-r .dxScheduler_ViewNavigator_Forward_KetoSavage:before, .dx-acc-r .dxsc-info.dxeImage_KetoSavage:before, .dx-acc-r .dxScheduler_StatusInfo_Info_KetoSavage:before, .dx-acc-r .dxscNoBorderButtonHover_KetoSavage .dxScheduler_InplaceEditor_Cancel_KetoSavage:before, .dx-acc-r .dxscNoBorderButtonHover_KetoSavage .dxScheduler_InplaceEditor_EditForm_KetoSavage:before, .dx-acc-r .dxscNoBorderButtonHover_KetoSavage .dxScheduler_InplaceEditor_Save_KetoSavage:before, .dx-acc-r .dxscNoBorderButtonPressed_KetoSavage .dxScheduler_InplaceEditor_Cancel_KetoSavage:before, .dx-acc-r .dxscNoBorderButtonPressed_KetoSavage .dxScheduler_InplaceEditor_EditForm_KetoSavage:before, .dx-acc-r .dxscNoBorderButtonPressed_KetoSavage .dxScheduler_InplaceEditor_Save_KetoSavage:before, .dx-acc-r .dxscResourceNavigator_KetoSavage .dxsc-restoken-remove:before, .dx-acc-r .dxsc-selected .dxScheduler_Appointment_DayClock_KetoSavage:before, .dx-acc-r .dxsc-selected .dxScheduler_Appointment_EndArrow_KetoSavage:before, .dx-acc-r .dxsc-selected .dxScheduler_Appointment_NightClock_KetoSavage:before, .dx-acc-r .dxsc-selected .dxScheduler_Appointment_NoRecurrence_KetoSavage:before, .dx-acc-r .dxsc-selected .dxScheduler_Appointment_Recurrence_KetoSavage:before, .dx-acc-r .dxsc-selected .dxScheduler_Appointment_Reminder_KetoSavage:before, .dx-acc-r .dxsc-selected .dxScheduler_Appointment_StartArrow_KetoSavage:before, .dx-acc-r .dxscViewSelector_KetoSavage .dxm-hovered .dxWeb_mAdaptiveMenu_KetoSavage:before, .dx-acc-r .dxscViewSelector_KetoSavage .dxWeb_mAdaptiveMenu_KetoSavage:before, .dx-acc-r .dxsc-warning.dxeImage_KetoSavage:before, .dx-acc-r .dxScheduler_StatusInfo_Warning_KetoSavage:before { content: url('sprite.svg'); }
+.dx-acc-r .dxsc-agenda-no-time .dxsc-apt-no-label.dxsc-selected .dxScheduler_Appointment_NoRecurrence_KetoSavage:before { left: -196px; top: -54px; }
+.dx-acc-r .dxsc-agenda-no-time .dxsc-apt-no-label.dxsc-selected .dxScheduler_Appointment_Recurrence_KetoSavage:before { left: -111px; top: -54px; }
+.dx-acc-r .dxsc-agenda-no-time .dxsc-apt-no-label.dxsc-selected .dxScheduler_Appointment_Reminder_KetoSavage:before { left: -247px; top: -54px; }
+.dx-acc-r .dxsc-agenda-show-time .dxsc-selected .dxScheduler_Appointment_NoRecurrence_KetoSavage:before { left: -191px; top: -37px; }
+.dx-acc-r .dxsc-agenda-show-time .dxsc-selected .dxScheduler_Appointment_Recurrence_KetoSavage:before { left: -208px; top: -74px; }
+.dx-acc-r .dxsc-agenda-show-time .dxsc-selected .dxScheduler_Appointment_Reminder_KetoSavage:before { left: -293px; top: -37px; }
+.dx-acc-r .dxsc-angle-up .dxScheduler_ResourceNavigator_MoreButton_KetoSavage:before { left: -222px; top: -123px; }
+.dx-acc-r .dxScheduler_Appointment_DayClock_KetoSavage:before { left: -96px; top: -107px; }
+.dx-acc-r .dxScheduler_Appointment_EndArrow_KetoSavage:before { left: -213px; top: -54px; }
+.dx-acc-r .dxScheduler_Appointment_NightClock_KetoSavage:before { left: -64px; top: -107px; }
+.dx-acc-r .dxScheduler_Appointment_NoRecurrence_KetoSavage:before { left: -281px; top: -54px; }
+.dx-acc-r .dxScheduler_Appointment_Recurrence_KetoSavage:before { left: -259px; top: -74px; }
+.dx-acc-r .dxScheduler_Appointment_Reminder_KetoSavage:before { left: -157px; top: -74px; }
+.dx-acc-r .dxScheduler_Appointment_StartArrow_KetoSavage:before { left: -242px; top: -37px; }
+.dx-acc-r .dxScheduler_AppointmentClockArrows_day_hour_00_KetoSavage:before { left: -64px; top: -91px; }
+.dx-acc-r .dxScheduler_AppointmentClockArrows_day_hour_05_KetoSavage:before { left: -288px; top: -91px; }
+.dx-acc-r .dxScheduler_AppointmentClockArrows_day_hour_10_KetoSavage:before { left: -48px; top: -107px; }
+.dx-acc-r .dxScheduler_AppointmentClockArrows_day_hour_15_KetoSavage:before { left: -64px; top: -123px; }
+.dx-acc-r .dxScheduler_AppointmentClockArrows_day_hour_20_KetoSavage:before { left: -224px; top: -91px; }
+.dx-acc-r .dxScheduler_AppointmentClockArrows_day_hour_25_KetoSavage:before { left: -16px; top: -107px; }
+.dx-acc-r .dxScheduler_AppointmentClockArrows_day_hour_30_KetoSavage:before { left: -192px; top: -91px; }
+.dx-acc-r .dxScheduler_AppointmentClockArrows_day_hour_35_KetoSavage:before { left: -96px; top: -123px; }
+.dx-acc-r .dxScheduler_AppointmentClockArrows_day_hour_40_KetoSavage:before { left: 0px; top: -123px; }
+.dx-acc-r .dxScheduler_AppointmentClockArrows_day_hour_45_KetoSavage:before { left: -112px; top: -107px; }
+.dx-acc-r .dxScheduler_AppointmentClockArrows_day_hour_50_KetoSavage:before { left: -112px; top: -123px; }
+.dx-acc-r .dxScheduler_AppointmentClockArrows_day_hour_55_KetoSavage:before { left: -128px; top: -91px; }
+.dx-acc-r .dxScheduler_AppointmentClockArrows_day_minute_00_KetoSavage:before { left: -160px; top: -107px; }
+.dx-acc-r .dxScheduler_AppointmentClockArrows_day_minute_05_KetoSavage:before { left: -32px; top: -123px; }
+.dx-acc-r .dxScheduler_AppointmentClockArrows_day_minute_10_KetoSavage:before { left: -32px; top: -91px; }
+.dx-acc-r .dxScheduler_AppointmentClockArrows_day_minute_15_KetoSavage:before { left: -48px; top: -123px; }
+.dx-acc-r .dxScheduler_AppointmentClockArrows_day_minute_20_KetoSavage:before { left: -124px; top: -75px; }
+.dx-acc-r .dxScheduler_AppointmentClockArrows_day_minute_25_KetoSavage:before { left: -16px; top: -123px; }
+.dx-acc-r .dxScheduler_AppointmentClockArrows_day_minute_30_KetoSavage:before { left: -208px; top: -91px; }
+.dx-acc-r .dxScheduler_AppointmentClockArrows_day_minute_35_KetoSavage:before { left: -144px; top: -91px; }
+.dx-acc-r .dxScheduler_AppointmentClockArrows_day_minute_40_KetoSavage:before { left: -160px; top: -123px; }
+.dx-acc-r .dxScheduler_AppointmentClockArrows_day_minute_45_KetoSavage:before { left: -112px; top: -91px; }
+.dx-acc-r .dxScheduler_AppointmentClockArrows_day_minute_50_KetoSavage:before { left: -256px; top: -91px; }
+.dx-acc-r .dxScheduler_AppointmentClockArrows_day_minute_55_KetoSavage:before { left: -128px; top: -107px; }
+.dx-acc-r .dxScheduler_AppointmentClockArrows_night_hour_00_KetoSavage:before { left: -272px; top: -107px; }
+.dx-acc-r .dxScheduler_AppointmentClockArrows_night_hour_05_KetoSavage:before { left: -80px; top: -123px; }
+.dx-acc-r .dxScheduler_AppointmentClockArrows_night_hour_10_KetoSavage:before { left: -176px; top: -91px; }
+.dx-acc-r .dxScheduler_AppointmentClockArrows_night_hour_15_KetoSavage:before { left: -288px; top: -107px; }
+.dx-acc-r .dxScheduler_AppointmentClockArrows_night_hour_20_KetoSavage:before { left: -256px; top: -107px; }
+.dx-acc-r .dxScheduler_AppointmentClockArrows_night_hour_25_KetoSavage:before { left: -128px; top: -123px; }
+.dx-acc-r .dxScheduler_AppointmentClockArrows_night_hour_30_KetoSavage:before { left: -304px; top: -91px; }
+.dx-acc-r .dxScheduler_AppointmentClockArrows_night_hour_35_KetoSavage:before { left: -224px; top: -107px; }
+.dx-acc-r .dxScheduler_AppointmentClockArrows_night_hour_40_KetoSavage:before { left: 0px; top: -107px; }
+.dx-acc-r .dxScheduler_AppointmentClockArrows_night_hour_45_KetoSavage:before { left: -96px; top: -91px; }
+.dx-acc-r .dxScheduler_AppointmentClockArrows_night_hour_50_KetoSavage:before { left: -208px; top: -107px; }
+.dx-acc-r .dxScheduler_AppointmentClockArrows_night_hour_55_KetoSavage:before { left: -32px; top: -107px; }
+.dx-acc-r .dxScheduler_AppointmentClockArrows_night_minute_00_KetoSavage:before { left: -176px; top: -107px; }
+.dx-acc-r .dxScheduler_AppointmentClockArrows_night_minute_05_KetoSavage:before { left: -240px; top: -107px; }
+.dx-acc-r .dxScheduler_AppointmentClockArrows_night_minute_10_KetoSavage:before { left: -48px; top: -91px; }
+.dx-acc-r .dxScheduler_AppointmentClockArrows_night_minute_15_KetoSavage:before { left: -144px; top: -107px; }
+.dx-acc-r .dxScheduler_AppointmentClockArrows_night_minute_20_KetoSavage:before { left: -144px; top: -123px; }
+.dx-acc-r .dxScheduler_AppointmentClockArrows_night_minute_25_KetoSavage:before { left: -160px; top: -91px; }
+.dx-acc-r .dxScheduler_AppointmentClockArrows_night_minute_30_KetoSavage:before { left: -80px; top: -91px; }
+.dx-acc-r .dxScheduler_AppointmentClockArrows_night_minute_35_KetoSavage:before { left: -80px; top: -107px; }
+.dx-acc-r .dxScheduler_AppointmentClockArrows_night_minute_40_KetoSavage:before { left: -272px; top: -91px; }
+.dx-acc-r .dxScheduler_AppointmentClockArrows_night_minute_45_KetoSavage:before { left: 0px; top: -91px; }
+.dx-acc-r .dxScheduler_AppointmentClockArrows_night_minute_50_KetoSavage:before { left: -192px; top: -107px; }
+.dx-acc-r .dxScheduler_AppointmentClockArrows_night_minute_55_KetoSavage:before { left: -240px; top: -91px; }
+.dx-acc-r .dxScheduler_InplaceEditor_Cancel_KetoSavage:before { left: -174px; top: -74px; }
+.dx-acc-r .dxScheduler_InplaceEditor_EditForm_KetoSavage:before { left: -162px; top: -54px; }
+.dx-acc-r .dxScheduler_InplaceEditor_Save_KetoSavage:before { left: -208px; top: -37px; }
+.dx-acc-r .dxScheduler_Menu_Delete_KetoSavage:before { left: -276px; top: -74px; }
+.dx-acc-r .dxScheduler_Menu_GoToDate_KetoSavage:before { left: -298px; top: -54px; }
+.dx-acc-r .dxScheduler_Menu_NewAppointment_KetoSavage:before { left: -128px; top: -54px; }
+.dx-acc-r .dxScheduler_Menu_RecurringAppointment_KetoSavage:before { left: -145px; top: -54px; }
+.dx-acc-r .dxScheduler_MoreButton_Bottom_KetoSavage:before { left: -311px; top: -139px; }
+.dx-acc-r .dxScheduler_MoreButton_BottomHover_KetoSavage:before { left: -155px; top: -139px; }
+.dx-acc-r .dxScheduler_MoreButton_Top_KetoSavage:before { left: -272px; top: -139px; }
+.dx-acc-r .dxScheduler_MoreButton_TopHover_KetoSavage:before { left: -103px; top: -139px; }
+.dx-acc-r .dxScheduler_NavigationButton_Backward_KetoSavage:before { left: -262px; top: 0px; }
+.dx-acc-r .dxScheduler_NavigationButton_BackwardDisabled_KetoSavage:before { left: -74px; top: -54px; }
+.dx-acc-r .dxScheduler_NavigationButton_BackwardHover_KetoSavage:before { left: -37px; top: -54px; }
+.dx-acc-r .dxScheduler_NavigationButton_Forward_KetoSavage:before { left: -188px; top: 0px; }
+.dx-acc-r .dxScheduler_NavigationButton_ForwardDisabled_KetoSavage:before { left: -225px; top: 0px; }
+.dx-acc-r .dxScheduler_NavigationButton_ForwardHover_KetoSavage:before { left: 0px; top: -54px; }
+.dx-acc-r .dxScheduler_ResourceNavigator_Decrease_KetoSavage:before { left: -297px; top: -123px; }
+.dx-acc-r .dxScheduler_ResourceNavigator_DecreaseDisabled_KetoSavage:before { left: -312px; top: -123px; }
+.dx-acc-r .dxScheduler_ResourceNavigator_DecreaseHover_KetoSavage:before { left: -252px; top: -123px; }
+.dx-acc-r .dxScheduler_ResourceNavigator_Filter_KetoSavage:before { left: -207px; top: -123px; }
+.dx-acc-r .dxScheduler_ResourceNavigator_First_KetoSavage:before { left: -75px; top: -139px; }
+.dx-acc-r .dxScheduler_ResourceNavigator_FirstDisabled_KetoSavage:before { left: -15px; top: -139px; }
+.dx-acc-r .dxScheduler_ResourceNavigator_FirstHover_KetoSavage:before { left: -45px; top: -139px; }
+.dx-acc-r .dxScheduler_ResourceNavigator_Increase_KetoSavage:before { left: -192px; top: -123px; }
+.dx-acc-r .dxScheduler_ResourceNavigator_IncreaseDisabled_KetoSavage:before { left: -267px; top: -123px; }
+.dx-acc-r .dxScheduler_ResourceNavigator_IncreaseHover_KetoSavage:before { left: -237px; top: -123px; }
+.dx-acc-r .dxScheduler_ResourceNavigator_Last_KetoSavage:before { left: 0px; top: -139px; }
+.dx-acc-r .dxScheduler_ResourceNavigator_LastDisabled_KetoSavage:before { left: -30px; top: -139px; }
+.dx-acc-r .dxScheduler_ResourceNavigator_LastHover_KetoSavage:before { left: -60px; top: -139px; }
+.dx-acc-r .dxScheduler_ResourceNavigator_MoreButton_KetoSavage:before { left: -282px; top: -123px; }
+.dx-acc-r .dxScheduler_ResourceNavigator_Next_KetoSavage:before { left: -207px; top: -139px; }
+.dx-acc-r .dxScheduler_ResourceNavigator_NextDisabled_KetoSavage:before { left: -194px; top: -139px; }
+.dx-acc-r .dxScheduler_ResourceNavigator_NextHover_KetoSavage:before { left: -111px; top: -78px; }
+.dx-acc-r .dxScheduler_ResourceNavigator_NextPage_KetoSavage:before { left: -181px; top: -139px; }
+.dx-acc-r .dxScheduler_ResourceNavigator_NextPageDisabled_KetoSavage:before { left: -90px; top: -139px; }
+.dx-acc-r .dxScheduler_ResourceNavigator_NextPageHover_KetoSavage:before { left: -285px; top: -139px; }
+.dx-acc-r .dxScheduler_ResourceNavigator_Prev_KetoSavage:before { left: -233px; top: -139px; }
+.dx-acc-r .dxScheduler_ResourceNavigator_PrevDisabled_KetoSavage:before { left: -259px; top: -139px; }
+.dx-acc-r .dxScheduler_ResourceNavigator_PrevHover_KetoSavage:before { left: -129px; top: -139px; }
+.dx-acc-r .dxScheduler_ResourceNavigator_PrevPage_KetoSavage:before { left: -116px; top: -139px; }
+.dx-acc-r .dxScheduler_ResourceNavigator_PrevPageDisabled_KetoSavage:before { left: -220px; top: -139px; }
+.dx-acc-r .dxScheduler_ResourceNavigator_PrevPageHover_KetoSavage:before { left: -246px; top: -139px; }
+.dx-acc-r .dxScheduler_SmartTag_KetoSavage:before { left: -168px; top: -139px; }
+.dx-acc-r .dxScheduler_StatusInfo_Error_KetoSavage:before { left: -139px; top: 0px; }
+.dx-acc-r .dxScheduler_TimeMarker_KetoSavage:before { left: -299px; top: -25px; }
+.dx-acc-r .dxScheduler_Tooltip_BottomLeft_KetoSavage:before { left: -311px; top: -29px; }
+.dx-acc-r .dxScheduler_Tooltip_BottomRight_KetoSavage:before { left: -315px; top: -66px; }
+.dx-acc-r .dxScheduler_Tooltip_BottomStem_KetoSavage:before { left: 0px; top: 0px; }
+.dx-acc-r .dxScheduler_Tooltip_Empty_KetoSavage:before { left: -324px; top: 0px; }
+.dx-acc-r .dxScheduler_Tooltip_TopLeft_KetoSavage:before { left: -319px; top: -29px; }
+.dx-acc-r .dxScheduler_Tooltip_TopRight_KetoSavage:before { left: -315px; top: -54px; }
+.dx-acc-r .dxScheduler_ViewNavigator_Backward_KetoSavage:before { left: -298px; top: -139px; }
+.dx-acc-r .dxScheduler_ViewNavigator_Down_KetoSavage:before { left: -176px; top: -123px; }
+.dx-acc-r .dxScheduler_ViewNavigator_Forward_KetoSavage:before { left: -142px; top: -139px; }
+.dx-acc-r .dxsc-info.dxeImage_KetoSavage:before, .dx-acc-r .dxScheduler_StatusInfo_Info_KetoSavage:before { left: -41px; top: 0px; }
+.dx-acc-r .dxscNoBorderButtonHover_KetoSavage .dxScheduler_InplaceEditor_Cancel_KetoSavage:before { left: -264px; top: -54px; }
+.dx-acc-r .dxscNoBorderButtonHover_KetoSavage .dxScheduler_InplaceEditor_EditForm_KetoSavage:before { left: -259px; top: -37px; }
+.dx-acc-r .dxscNoBorderButtonHover_KetoSavage .dxScheduler_InplaceEditor_Save_KetoSavage:before { left: -310px; top: -74px; }
+.dx-acc-r .dxscNoBorderButtonPressed_KetoSavage .dxScheduler_InplaceEditor_Cancel_KetoSavage:before { left: -293px; top: -74px; }
+.dx-acc-r .dxscNoBorderButtonPressed_KetoSavage .dxScheduler_InplaceEditor_EditForm_KetoSavage:before { left: -140px; top: -74px; }
+.dx-acc-r .dxscNoBorderButtonPressed_KetoSavage .dxScheduler_InplaceEditor_Save_KetoSavage:before { left: -242px; top: -74px; }
+.dx-acc-r .dxscResourceNavigator_KetoSavage .dxsc-restoken-remove:before { left: -299px; top: 0px; }
+.dx-acc-r .dxsc-selected .dxScheduler_Appointment_DayClock_KetoSavage:before { left: -16px; top: -91px; }
+.dx-acc-r .dxsc-selected .dxScheduler_Appointment_EndArrow_KetoSavage:before { left: -276px; top: -37px; }
+.dx-acc-r .dxsc-selected .dxScheduler_Appointment_NightClock_KetoSavage:before { left: -304px; top: -107px; }
+.dx-acc-r .dxsc-selected .dxScheduler_Appointment_NoRecurrence_KetoSavage:before { left: -225px; top: -37px; }
+.dx-acc-r .dxsc-selected .dxScheduler_Appointment_Recurrence_KetoSavage:before { left: -179px; top: -54px; }
+.dx-acc-r .dxsc-selected .dxScheduler_Appointment_Reminder_KetoSavage:before { left: -310px; top: -37px; }
+.dx-acc-r .dxsc-selected .dxScheduler_Appointment_StartArrow_KetoSavage:before { left: -225px; top: -74px; }
+.dx-acc-r .dxscViewSelector_KetoSavage .dxm-hovered .dxWeb_mAdaptiveMenu_KetoSavage:before { left: -191px; top: -74px; }
+.dx-acc-r .dxscViewSelector_KetoSavage .dxWeb_mAdaptiveMenu_KetoSavage:before { left: -230px; top: -54px; }
+.dx-acc-r .dxsc-warning.dxeImage_KetoSavage:before, .dx-acc-r .dxScheduler_StatusInfo_Warning_KetoSavage:before { left: -90px; top: 0px; }
 

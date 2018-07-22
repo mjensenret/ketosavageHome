@@ -1,7 +1,7 @@
 /*!
 * DevExtreme (dx.messages.it.js)
-* Version: 17.2.8
-* Build date: Tue May 08 2018
+* Version: 18.1.4
+* Build date: Tue Jun 19 2018
 *
 * Copyright (c) 2012 - 2018 Developer Express Inc. ALL RIGHTS RESERVED
 * Read about DevExtreme licensing here: https://js.devexpress.com/Licensing/
@@ -153,6 +153,10 @@
             "dxDataGrid-ariaSearchInGrid": "Cerca nella griglia",
             "dxDataGrid-ariaSelectAll": "Seleziona tutti",
             "dxDataGrid-ariaSelectRow": "Seleziona riga",
+            "dxDataGrid-filterBuilderPopupTitle": "Composizione filtro",
+            "dxDataGrid-filterPanelCreateFilter": "Nuovo filtro",
+            "dxDataGrid-filterPanelClearFilter": "Cancella",
+            "dxDataGrid-filterPanelFilterEnabledHint": "Attiva il filtro",
             "dxTreeList-ariaTreeList": "Albero",
             "dxTreeList-editingAddRowToNode": "Aggiungi",
             "dxPager-infoText": "Pagina {0} di {1} ({2} elementi)",
@@ -235,8 +239,8 @@
             "dxFilterBuilder-addCondition": "Aggiungi condizione",
             "dxFilterBuilder-addGroup": "Aggiungi gruppo",
             "dxFilterBuilder-enterValueText": "<inserire un valore>",
-            "dxFilterBuilder-filterOperationEquals": "Uguale",
-            "dxFilterBuilder-filterOperationNotEquals": "Diverso",
+            "dxFilterBuilder-filterOperationEquals": "Uguale a",
+            "dxFilterBuilder-filterOperationNotEquals": "Diverso da",
             "dxFilterBuilder-filterOperationLess": "Minore di",
             "dxFilterBuilder-filterOperationLessOrEquals": "Minore o uguale a",
             "dxFilterBuilder-filterOperationGreater": "Maggiore di",
@@ -246,7 +250,10 @@
             "dxFilterBuilder-filterOperationNotContains": "Non contiene",
             "dxFilterBuilder-filterOperationEndsWith": "Termina con",
             "dxFilterBuilder-filterOperationIsBlank": "È vuoto",
-            "dxFilterBuilder-filterOperationIsNotBlank": "Non è vuoto"
+            "dxFilterBuilder-filterOperationIsNotBlank": "Non è vuoto",
+            "dxFilterBuilder-filterOperationBetween": "Compreso",
+            "dxFilterBuilder-filterOperationAnyOf": "Include",
+            "dxFilterBuilder-filterOperationNoneOf": "Non include"
         }
     })
 });

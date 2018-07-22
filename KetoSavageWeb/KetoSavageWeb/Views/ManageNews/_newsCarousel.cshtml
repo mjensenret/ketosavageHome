@@ -1,0 +1,62 @@
+﻿@model IQueryable<KetoSavageWeb.Models.NewsModel>
+    <div class="carousel slide" data-ride="carousel" id="quote-carousel">
+        <!-- Bottom Carousel Indicators -->
+        <ol class="carousel-indicators">
+            @*<li data-target="#quote-carousel" data-slide-to="0" class="active"></li>
+            <li data-target="#quote-carousel" data-slide-to="1"></li>
+            <li data-target="#quote-carousel" data-slide-to="2"></li>*@
+            @{ int d = 0;}
+            @foreach (var item in Model)
+            {
+                d++;
+                var active = d == 1 ? "active" : "";
+                <li data-target="#quote-carousel" data-slide-to="@d" class="@active"></li>
+            }
+        </ol>
+
+        <!-- Carousel Slides / Quotes -->
+        <div class="carousel-inner">
+            @{int i = 0;}
+            @foreach (var item in Model) {
+            i++;
+            var active = i == 1 ? "active" : "";
+            <div class="item @active">
+                @if(item.Type == "Quote")
+                {
+                <blockquote class="quote">
+                    <div class="row">
+                        <div class="col-sm-9">
+                            <p>@item.Headline</p>
+                            <small>@item.Author</small>
+                        </div>
+                    </div>
+                </blockquote>
+                }
+                else
+                {
+                <blockquote class="news">
+                    <div class="row">
+                        <div class="col-sm-9">
+                            <p>@item.Headline</p>
+                        </div>
+                    </div>
+                </blockquote>
+                }
+            </div>
+            }
+        </div>
+
+        <!-- Carousel Buttons Next/Prev -->
+        <a data-slide="prev" href="#quote-carousel" class="left carousel-control"><i class="fa fa-chevron-left"></i></a>
+        <a data-slide="next" href="#quote-carousel" class="right carousel-control"><i class="fa fa-chevron-right"></i></a>
+    </div>
+    <script type="text/javascript">
+        // When the DOM is ready, run this function
+        $(document).ready(function () {
+            //Set the carousel options
+            $('#quote-carousel').carousel({
+                pause: true,
+                interval: 5000,
+            });
+        });
+    </script>

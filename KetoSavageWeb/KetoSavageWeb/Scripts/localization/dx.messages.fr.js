@@ -1,7 +1,7 @@
 /*!
 * DevExtreme (dx.messages.fr.js)
-* Version: 17.2.8
-* Build date: Tue May 08 2018
+* Version: 18.1.4
+* Build date: Tue Jun 19 2018
 *
 * Copyright (c) 2012 - 2018 Developer Express Inc. ALL RIGHTS RESERVED
 * Read about DevExtreme licensing here: https://js.devexpress.com/Licensing/
@@ -153,6 +153,10 @@
             "dxDataGrid-ariaSearchInGrid": "Rechercher dans la grille",
             "dxDataGrid-ariaSelectAll": "Sélectionner tout",
             "dxDataGrid-ariaSelectRow": "Sélectionner ligne",
+            "dxDataGrid-filterBuilderPopupTitle": "Création de filtre",
+            "dxDataGrid-filterPanelCreateFilter": "Créer un filtre",
+            "dxDataGrid-filterPanelClearFilter": "Supprimer",
+            "dxDataGrid-filterPanelFilterEnabledHint": "Activer le filtre",
             "dxTreeList-ariaTreeList": "Liste arborescente",
             "dxTreeList-editingAddRowToNode": "Ajouter",
             "dxPager-infoText": "Page {0} sur {1} ({2} élements)",
@@ -246,7 +250,10 @@
             "dxFilterBuilder-filterOperationNotContains": "Ne contient pas",
             "dxFilterBuilder-filterOperationEndsWith": "Finit par",
             "dxFilterBuilder-filterOperationIsBlank": "Est vide",
-            "dxFilterBuilder-filterOperationIsNotBlank": "N'est pas vide"
+            "dxFilterBuilder-filterOperationIsNotBlank": "N'est pas vide",
+            "dxFilterBuilder-filterOperationBetween": "Entre",
+            "dxFilterBuilder-filterOperationAnyOf": "Est parmi",
+            "dxFilterBuilder-filterOperationNoneOf": "N'est pas parmi"
         }
     })
 });

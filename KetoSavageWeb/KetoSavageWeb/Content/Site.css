@@ -882,10 +882,10 @@ html, body {
     margin-right: 10px;
 }*/
 
-.news p:before {
+/*.news p:before {
     content: "KetoSavage Says - ";
     font-weight: bold;
-}
+}*/
 
 .quote {
     font-family: Georgia, serif;
