@@ -6,6 +6,7 @@
         userList.CallbackRouteValues = new { Controller = "UserPrograms", Action = "UserProgramList" };
         userList.SettingsEditing.AddNewRowRouteValues = new { Controller = "UserPrograms", Action = "userProgramAdd" };
         userList.SettingsEditing.UpdateRowRouteValues = new { Controller = "UserPrograms", Action = "userProgramUpdate" };
+        userList.SettingsEditing.DeleteRowRouteValues = new { Controller = "UserPrograms", Action = "userProgramDelete" };
         userList.Styles.AlternatingRow.Enabled = DefaultBoolean.True;
         userList.SettingsBehavior.AllowFixedGroups = false;
         userList.SettingsBehavior.AllowHeaderFilter = true;
@@ -28,8 +29,19 @@
         userList.CommandColumn.ShowNewButton = true;
         userList.CommandColumn.ShowEditButton = true;
         userList.CommandColumn.ShowClearFilterButton = true;
+        userList.CommandColumn.ShowDeleteButton = true;
+        userList.CommandButtonInitialize = (s, e) =>
+        {
+            var gv = s as MVCxGridView;
+            var program = gv.GetRowValues(e.VisibleIndex, "ProgramName");
+            if ((program == null && (e.ButtonType == ColumnCommandButtonType.Edit || e.ButtonType == ColumnCommandButtonType.Delete)) || (program != null && (e.ButtonType == ColumnCommandButtonType.New)))
+            {
+                e.Enabled = false;
+                e.Visible = false;
+            }
+        };
 
-        userList.KeyFieldName = "UserId";
+        userList.KeyFieldName = "Id";
 
         userList.Columns.Add(c =>
         {

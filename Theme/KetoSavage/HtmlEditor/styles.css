@@ -1,0 +1,681 @@
+/* ----------------- Main ----------------- */
+/* Loading panel */
+.dxheLoadingDiv_KetoSavage
+{
+    background: white;
+    opacity: 0.85;
+    filter: alpha(opacity=85);
+}
+.dxheLoadingPanel_KetoSavage
+{
+    background-color: white;
+    font: 14px 'Open Sans', Helvetica, 'Droid Sans', Tahoma, Geneva, sans-serif;
+    color: #484848;
+    -moz-box-shadow: 0 2px 4px 0 rgba(0,0,0,0.16), 0 2px 8px 0 rgba(0,0,0,0.12);
+    -webkit-box-shadow: 0 2px 4px 0 rgba(0,0,0,0.16), 0 2px 8px 0 rgba(0,0,0,0.12);
+    box-shadow: 0 2px 4px 0 rgba(0,0,0,0.16), 0 2px 8px 0 rgba(0,0,0,0.12);
+}
+.dxheLoadingPanel_KetoSavage td.dx
+{
+    font-size: 1.17em;
+    white-space: nowrap;
+    text-align: center;
+    padding: 10px 14px;
+}
+.dxheLoadingPanel_KetoSavage .dxlp-loadingImage
+{
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -o-border-radius: 50%;
+    -khtml-border-radius: 50%;
+    border-radius: 50%;
+    animation: dxLoadSpinSys 1s linear infinite;
+    border: 4px solid #000000;
+    border-top: 4px solid #EEE;
+    width: 24px;
+    height: 24px;
+}
+html.dxIE.dxBrowserVersion-9 .dxheLoadingPanel_KetoSavage .dxlp-loadingImage
+{
+    background-image: url('../Web/Loading.gif');
+    height: 32px;
+    width: 32px;
+    background-repeat: no-repeat;
+    background-position: center center;
+    animation: none;
+    border: none;
+    border-radius: 0;
+}
+.dxheDesignViewArea_KetoSavage .dx-base64img-wrapper:after
+{
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -o-border-radius: 50%;
+    -khtml-border-radius: 50%;
+    border-radius: 50%;
+    animation: dxLoadSpinSys 1s linear infinite;
+    border: 4px solid #000000;
+    border-top: 4px solid #EEE;
+    width: 24px;
+    height: 24px;
+}
+html.dxIE.dxBrowserVersion-9 .dxheDesignViewArea_KetoSavage .dx-base64img-wrapper:after
+{
+    background-image: url('../Web/Loading.gif');
+    height: 32px;
+    width: 32px;
+    background-repeat: no-repeat;
+    background-position: center center;
+    animation: none;
+    border: none;
+    border-radius: 0;
+}
+.dxheDesignViewArea_KetoSavage .dx-base64img-wrapper:after
+{
+    margin: -16px 0px 0px -16px;
+}
+.dxheControl_KetoSavage
+{
+    font: 14px 'Open Sans', Helvetica, 'Droid Sans', Tahoma, Geneva, sans-serif;
+    border: 1px solid #E5E5E5;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    -o-border-radius: 3px;
+    -khtml-border-radius: 3px;
+    border-radius: 3px;
+}
+/* Area */
+.dxheErrorFrame_KetoSavage
+{
+    font: 14px 'Open Sans', Helvetica, 'Droid Sans', Tahoma, Geneva, sans-serif;
+    color: #D00707;
+    background-color: #FBC7C7;
+    margin-bottom: 6px;
+}
+.dxheControl_KetoSavage .dxeMemo_KetoSavage .dxheErrorFrame_KetoSavage .dxhe,
+.dxheControl_KetoSavage.dxhe-rtl .dxeMemo_KetoSavage .dxheErrorFrame_KetoSavage .dxhe,
+.dxheErrorFrame_KetoSavage .dxhe
+{
+    padding: 5px;
+}
+.dxheControl_KetoSavage .dxeMemo_KetoSavage .dxheErrorFrame_KetoSavage .dxhe td,
+.dxheControl_KetoSavage.dxhe-rtl .dxeMemo_KetoSavage .dxheErrorFrame_KetoSavage .dxhe td,
+.dxheErrorFrame_KetoSavage .dxhe td
+{
+    padding: 0;
+}
+.dxheErrorFrame_KetoSavage .dxheErrorFrameCloseButton_KetoSavage
+{
+    cursor: pointer;
+}
+.dxheContentArea_KetoSavage td.dxheViewArea_KetoSavage
+{
+    line-height: 0;
+}
+.dxheContentArea_KetoSavage td.dxheViewArea_KetoSavage.dxheHtmlViewArea_KetoSavage
+{
+    line-height: inherit;
+}
+.dxheDesignViewArea_KetoSavage,
+.dxhePreviewArea_KetoSavage
+{
+    background: none #000000;
+}
+.dxheControl_KetoSavage .dxheHtmlViewArea_KetoSavage,
+body.dxheDesignViewArea_KetoSavage,
+body.dxhePreviewArea_KetoSavage
+{
+    margin: 0px;
+    background: none #000000;
+    border: 0;
+    font-size: smaller;
+    font: 12px Arial, Helvetica, sans-serif;
+}
+.dxheControl_KetoSavage .dxeMemo_KetoSavage.dxheHtmlViewArea_KetoSavage .dxeMemoEditArea_KetoSavage,
+body.dxheDesignViewArea_KetoSavage,
+body.dxhePreviewArea_KetoSavage
+{
+    padding: 15px 20px 0 20px;
+}
+.dxheControl_KetoSavage .dxeMemo_KetoSavage.dxheHtmlViewArea_KetoSavage td
+{
+    padding: 0 40px 0 0;
+}
+.dxheControl_KetoSavage.dxhe-rtl .dxheContentArea_KetoSavage .dxeMemo_KetoSavage.dxheHtmlViewArea_KetoSavage td
+{
+    padding: 0 0 0 40px;
+}
+.dxheControl_KetoSavage .dxeMemo_KetoSavage textarea
+{
+    resize: none;
+}
+.dxheControl_KetoSavage td.dxheDesignViewArea_KetoSavage .dxm-main.dxmtb
+{
+    border: 1px solid #C3C3C3;
+    background: #000000;
+}
+.dxheControl_KetoSavage td.dxheDesignViewArea_KetoSavage
+{
+    position: relative;
+}
+.dxheViewArea_KetoSavage .dxhe-tiControlsWrapper span.dxhe-tiTagName
+{
+    padding-right: 18px;
+}
+.dxheViewArea_KetoSavage .dxhe-tiControlsWrapper .dxbButton_KetoSavage
+{
+    min-width: 16px;
+    width: auto !important;
+}
+.dxheViewArea_KetoSavage .dxhe-tiControlsWrapper .dxbButton_KetoSavage.dxhe-tiDeleteButton
+{
+    margin-right: 1px;
+}
+td.dxheDesignViewArea_KetoSavage .dxmLite_KetoSavage
+{
+    position: absolute;
+    right: 0;
+    padding-right: 24px;
+}
+td.dxheDesignViewArea_KetoSavage .dxmLite_KetoSavage.dxm-rtl
+{
+    right: inherit;
+    padding-right: 0px;
+    padding-left: 5px;
+}
+.dxheViewArea_KetoSavage .dxheAudio
+{
+    background-image: url('dxheAudio.svg');
+}
+.dxheViewArea_KetoSavage .dxheFlash
+{
+    background-image: url('dxheFlash.svg');
+}
+.dxheViewArea_KetoSavage .dxheVideo
+{
+    background-image: url('dxheVideo.svg');
+}
+.dxheViewArea_KetoSavage .dxheYoutube
+{
+    background-image: url('dxheYoutube.svg');
+}
+.dxheViewArea_KetoSavage img.dxheNotSupported
+{
+    background-image: url('dxheNotSupported.svg');
+}
+.dxheViewArea_KetoSavage img.dxheAudio,
+.dxheViewArea_KetoSavage img.dxheFlash,
+.dxheViewArea_KetoSavage img.dxheVideo,
+.dxheViewArea_KetoSavage img.dxheYoutube,
+.dxheViewArea_KetoSavage img.dxheNotSupported
+{
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: #cfcfcf;
+    border: 1px dotted #000000;
+    opacity: 0.8;
+}
+.dxheViewArea_KetoSavage .dxhe-tiControlsWrapper
+{
+    background-color: #000000;
+    padding: 3px 4px 2px 10px;
+    border: none;
+}
+.dxheViewArea_KetoSavage .dxhePlaceholder
+{
+    cursor: default;
+    white-space: nowrap;
+}
+.dxheViewArea_KetoSavage.dxheDesignViewArea_KetoSavage .dxheSelected
+{
+    background-color: #E0E0E0;
+}
+.dxhe-insertPlaceholder .dxeListBox_KetoSavage.dxeFocused_KetoSavage
+{
+    border: 1px solid #C0C0C0;
+}
+.dxhe-insertPlaceholder .dxflGroup_KetoSavage,
+.dxpc-contentWrapper .dxflFormLayout_KetoSavage.dxhe-insertPlaceholder .dxflGroup_KetoSavage .dxflGroupBox_KetoSavage .dxflListBoxItemSys
+{
+    padding-top: 0;
+}
+.dxhe-insertPlaceholder .dxflGroup_KetoSavage .dxhe-dialogLI.dxhe-dialogButtonsContainer
+{
+    padding-top: 10px;
+}
+.dxhe-insertPlaceholder .dxeListBox_KetoSavage,
+.dxhe-insertPlaceholder .dxeListBox_KetoSavage .dxlbd
+{
+    width: 220px;
+    height: 215px;
+}
+/* CodeMirror */
+.dxheHtmlViewArea_KetoSavage .CodeMirror-activeline-background
+{
+    background: #e0e0e0;
+    opacity: 0.7;
+}
+.dxheHtmlViewArea_KetoSavage .CodeMirror-foldgutter-open::after
+{
+    content: url('heFoldGutterOpen.svg');
+}
+.dxheHtmlViewArea_KetoSavage .CodeMirror-foldgutter-folded::after
+{
+    content: url('heFoldGutterFolded.svg');
+}
+.dxheHtmlViewArea_KetoSavage .CodeMirror-foldmarker::after
+{
+    content: url('dxheFoldMarker.png');
+    background-size: 16px 10px;
+}
+.dxheSourceEditorSys.dxheHtmlViewArea_KetoSavage .CodeMirror-gutter.CodeMirror-linenumbers,
+.dxheHtmlViewArea_KetoSavage .CodeMirror-gutter.CodeMirror-linenumbers
+{
+    border-left: 0;
+    border-right: 0;
+}
+/* Element appearance in DesignView */
+body.dxheDesignViewArea_KetoSavage table.dxEmptyBorderTable,
+body.dxheDesignViewArea_KetoSavage table.dxEmptyBorderTable td
+{
+    border: 1px dotted gray;
+}
+@media print
+{
+    body.dxheDesignViewArea_KetoSavage table.dxEmptyBorderTable,
+    body.dxheDesignViewArea_KetoSavage table.dxEmptyBorderTable td
+    {
+        border: 0px;
+    }
+}
+body.dxheDesignViewArea_KetoSavage
+{
+    word-wrap: inherit;
+}
+body.dxheDesignViewArea_KetoSavage pre
+{
+    word-wrap: break-word;
+    white-space: pre-wrap;
+}
+/* Status Bar */
+.dxheStatusBar_KetoSavage
+{
+    background-color: #000000;
+}
+.dxheControl_KetoSavage .dxheStatusBar_KetoSavage .dxheStatusBarTab_KetoSavage .dxtc-link
+{
+    padding: 10px 24px 11px 24px;
+}
+.dxHtmlEditor_heSizeGrip_KetoSavage
+{
+    cursor: se-resize;
+    margin: 0 4px 4px 0;
+}
+.dxHtmlEditor_heSizeGripRtl_KetoSavage
+{
+    cursor: ne-resize;
+    margin: 0 0 4px 4px;
+}
+.dxheSizeGripContainer_KetoSavage
+{
+    width: 100%;
+    text-align: right;
+    font-size: 0;
+    margin-top: -18px;
+}
+.dxheControl_KetoSavage.dxhe-rtl .dxheSizeGripContainer_KetoSavage
+{
+    text-align: left;
+}
+.dxheStatusBar_KetoSavage .dxtcLite_KetoSavage.dxtc-bottom > .dxtc-stripContainer .dxtc-activeTab
+{
+    border-top: none;
+    border-left: 1px solid #E6E6E6;
+    border-right: 1px solid #E6E6E6;
+    background-color: #000000;
+}
+.dxheStatusBar_KetoSavage .dxtcLite_KetoSavage.dxtc-bottom > .dxtc-stripContainer .dxtc-leftIndent
+{
+    width: 0px !important;
+}
+.dxheStatusBar_KetoSavage .dxtcLite_KetoSavage.dxtc-bottom > .dxtc-stripContainer
+{
+    padding-bottom: 0px;
+}
+.dxheStatusBar_KetoSavage .dxtcLite_KetoSavage > .dxtc-stripContainer .dxtc-activeTab,
+.dxheStatusBar_KetoSavage .dxtcLite_KetoSavage > .dxtc-stripContainer .dxtc-activeTab a
+{
+    color: #000000;
+}
+.dxheStatusBar_KetoSavage .dxtcLite_KetoSavage > .dxtc-stripContainer .dxtc-tab a
+{
+    color: #484848;
+}
+.dxheStatusBar_KetoSavage .dxtcLite_KetoSavage
+{
+    margin-left: -1px;
+}
+.dxheControl_KetoSavage.dxhe-rtl .dxheStatusBar_KetoSavage .dxtcLite_KetoSavage
+{
+    margin-right: -1px;
+}
+.dxheControl_KetoSavage .dxrControl_KetoSavage .dxtcLite_KetoSavage.dxtc-top .dxtc-tab
+{
+    background: transparent;
+}
+/* ----------------- Dialog Forms ----------------- */
+.dxpcLite_KetoSavage .dxheDlgFooter,
+.dxpcLite_KetoSavage .dxheCustomDialog_KetoSavage .dxhecd-Buttons
+{
+    background-color: white;
+    border-top: Solid 1px #E0E0E0;
+    padding: 10px 11px;
+    text-align: right;
+}
+.dxpcLite_KetoSavage.dxRtl .dxheDlgFooter,
+.dxpcLite_KetoSavage.dxRtl .dxheCustomDialog_KetoSavage .dxhecd-Buttons
+{
+    text-align: left;
+}
+.dxpcLite_KetoSavage .dxheDlgFooterBtn
+{
+    margin-left: 8px;
+}
+.dxpcLite_KetoSavage.dxRtl .dxheDlgFooterBtn
+{
+    margin-right: 8px;
+    margin-left: 0;
+}
+.dxhe-dialogLoadingPanel.dxlpLoadingPanel_KetoSavage
+{
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+/* Insert Image Form */
+.dxpcLite_KetoSavage .dxheDlgInsertImageForm .dxheDlgImagePreviewCell,
+.dxpcLite_KetoSavage .dxheDlgSelectImageForm .dxheDlgImagePreviewCell
+{
+    color: #878787;
+    border: dashed 1px #cac8c8;
+}
+.dxpcLite_KetoSavage .dxheDlgPasteFromWordForm .dxheDlgPasteContainerCell td
+{
+    border: Solid 1px #9F9F9F;
+}
+/*----------------- Toolbars -----------------*/
+.dxtbSpacing_KetoSavage
+{
+    height: 2px;
+}
+.dxtbControl_KetoSavage
+{
+    color: #484848;
+    width: 100%;
+    border-bottom: Solid 1px #E5E5E5;
+    background-color: #000000;
+    padding-bottom: 2px;
+}
+.dxtbControl_KetoSavage td.dxmMenu_KetoSavage
+{
+    border-width: 0px;
+}
+.dxtbControl_KetoSavage .dxmLite_KetoSavage .dxm-main.dxmtb
+{
+    padding-top: 2px;
+}
+.dxtbControl_KetoSavage .dxmLite_KetoSavage .dxm-main
+{
+    background-color: #000000;
+}
+.dxtbControl_KetoSavage .dxmLite_KetoSavage .dxmtb.dxm-horizontal .dxm-separator b
+{
+    background-color: #dfdfdf;
+}
+.dxtbComboBoxMenuItem_KetoSavage
+{
+    padding-top: 2px;
+}
+.dxheControl_KetoSavage .dxrControl_KetoSavage .dxr-minBtn
+{
+    padding-right: 8px;
+}
+.dxheControl_KetoSavage .dxtbControl_KetoSavage.dxtbr_KetoSavage,
+.dxheControl_KetoSavage .dxrControl_KetoSavage .dxpc-mainDiv.dxr-minPopup
+{
+    border: 0;
+}
+/* Toolbars Lightweight Mode */
+.dxtbControl_KetoSavage .dxmLite_KetoSavage .dxm-main
+{
+    border-width: 0px;
+}
+.dxmLite_KetoSavage .dxhetipControl_KetoSavage img
+{
+    vertical-align: top;
+}
+.dxtbControl_KetoSavage .dxm-horizontal.dxmtb .dxm-dropDownMode .dxtcbColorDiv_KetoSavage
+{
+    margin-top: -1px;
+    margin-bottom: -2px;
+}
+/* ToolbarColorButton */
+.dxtcbColorDiv_KetoSavage
+{
+    width: 16px;
+    height: 3px;
+    font-size: 0;
+    background-color: Transparent;
+}
+/*----------------- RoundPanel -----------------*/
+.dxheRP.dxrpControl_KetoSavage .dxrpcontent_KetoSavage
+{
+    padding: 9px 10px 10px 10px !important;
+}
+/* InsertMediaDialogs */
+.dxflFormLayout_KetoSavage .dxhe-dialogSettings
+{
+    width: 320px;
+    padding-left: 0;
+}
+.dxflFormLayout_KetoSavage.dxhe-mediaDialog .dxtcLite_KetoSavage > .dxtc-stripContainer .dxtc-leftIndent,
+.dxflFormLayout_KetoSavage.dxhe-mediaDialog .dxtcLite_KetoSavage > .dxtc-stripContainer .dxtc-rightIndent
+{
+    width: 0px;
+}
+.dxflFormLayout_KetoSavage.dxhe-mediaDialog .dxtcLite_KetoSavage.dxtc-top > .dxtc-content
+{
+    border-left: 1px solid #DFDFDF !important;
+    border-right: 1px solid #DFDFDF !important;
+    border-bottom: 1px solid #DFDFDF !important;
+    border-top: 3px solid #DFDFDF !important;
+    border-top-style: solid !important;
+    margin-top: -3px;
+}
+.dxflFormLayout_KetoSavage.dxhe-mediaDialog .dxic-previewPanel.dxrpControl_KetoSavage
+{
+    background: #000000;
+    border: 1px dashed #A3A3A3;
+}
+.dxflFormLayout_KetoSavage.dxhe-mediaDialog .dxic-previewPanel.dxrpControl_KetoSavage .dxic-previewText
+{
+    text-transform: uppercase;
+    font-size: 1.65em;
+}
+.dxflFormLayout_KetoSavage.dxhe-mediaDialog .dxic-previewPanel.dxrpControl_KetoSavage span.dxic-validationTip
+{
+    margin-bottom: 5px;
+}
+.dxflFormLayout_KetoSavage.dxhe-mediaDialog
+{
+    width: 900px;
+}
+.dxpcLite_KetoSavage.dx-dialog.dxhe-dialog-media-popup
+{
+    max-width: 950px;
+}
+.dxflFormLayout_KetoSavage.dxhe-mediaDialog .dxic-control,
+.dxflFormLayout_KetoSavage.dxhe-mediaDialog .dxhe-dialogSettings
+{
+    height: 491px;
+}
+div.dxflFormLayout_KetoSavage.dxhe-dialog table.dxhe-dialogLG
+{
+    padding-left: 16px;
+    padding-right: 16px;
+}
+div.dxhe-insertLinkDialog.dxflFormLayout_KetoSavage div.dxhe-dialog div.dxhe-dialogLI.dxhe-dialogButtonsContainer
+{
+    margin-left: -4px;
+}
+div.dxhe-insertLinkDialog.dxflFormLayout_KetoSavage.dxhe-dialog .dxflRadioButtonListItemSys td.dxe
+{
+    padding-bottom: 10px;
+}
+div.dxflFormLayout_KetoSavage.dxhe-dialog > table.dxhe-dialogLG.dxflGroupSys,
+div.dxflFormLayout_KetoSavage.dxhe-dialog .dxhe-dialogButtonsContainer
+{
+    padding-bottom: 12px;
+    padding-top: 10px;
+}
+.dxhe-dialog .dxhe-dialogButtonsContainer td:last-child .dxbButton_KetoSavage
+{
+    margin-left: 12px;
+    margin-right: 5px;
+}
+div.dxhe-insertImageDialog.dxflFormLayout_KetoSavage .dxhe-dialogLI.dxhe-dialogButtonsContainer
+{
+    margin-top: 0;
+}
+.dxhe-insertImageDialog.dxflFormLayout_KetoSavage.dxhe-dialog > table.dxhe-dialogLG.dxflGroupSys
+{
+    padding: 12px;
+}
+.dxhe-insertLinkDialog.dxflFormLayout_KetoSavage.dxhe-dialog > table.dxhe-dialogLG.dxflGroupSys
+{
+    padding: 13px 18px 12px 18px;
+}
+div.dxhe-insertLinkDialog.dxflFormLayout_KetoSavage.dxhe-dialog table.dxhe-dialogLG
+{
+    padding-right: 0px;
+    padding-left: 5px;
+}
+.dxflFormLayout_KetoSavage.dxhe-dialog a.dxtc-link
+{
+    padding: 4px 10px;
+}
+div.dxflFormLayout_KetoSavage.dxhe-mediaDialogStyleSettings > table.dxhe-dialogLG.dxflGroupSys,
+div.dxflFormLayout_KetoSavage.dxhe-mediaDialogMainSettings > table.dxhe-dialogLG.dxflGroupSys
+{
+    padding: 16px 16px 0 16px;
+}
+.dxHtmlEditor_heConstrainProportionsMiddleOn_KetoSavage,
+.dxHtmlEditor_heConstrainProportionsMiddleOff_KetoSavage
+{
+    margin-left: 4px;
+}
+/* tag inspector */
+.dxheDesignViewArea_KetoSavage .dxhe-tiSelection
+{
+    box-sizing: border-box;
+    position: absolute;
+    border: 1px solid #000000;
+    background-color: #000000;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=30)";
+    opacity: 0.3;
+}
+.dxheDesignViewArea_KetoSavage .dxhe-tiWrapper
+{
+    border-bottom: 1px solid #E5E5E5;
+    background-color: #000000;
+}
+.dxheDesignViewArea_KetoSavage .dxhe-tiSeparator,
+.dxheDesignViewArea_KetoSavage .dxhe-tiTagName
+{
+    color: #757575;
+}
+.dxheDesignViewArea_KetoSavage .dxheSelectedTag_KetoSavage
+{
+    color: #000000;
+}
+.dxhe-intelliSenseSysWin .dxeListBox_KetoSavage.dxeFocused_KetoSavage
+{
+    border-color: #c0c0c0;
+}
+div.dxhe-searchQuick div.dxbButton_KetoSavage,
+div.dxhe-searchQuick div.dxbButton_KetoSavage .dxb
+{
+    background: none !important;
+    border: none !important;
+}
+.dxpcLite_KetoSavage.dxhe-quickSearchSysWin .dxhe-flItem0
+{
+    padding-left: 2px !important;
+}
+div.dxhe-searchQuick .dxbButton_KetoSavage.dxbTSys
+{
+    width: initial !important;
+}
+div.dxhe-searchQuick .dxbButton_KetoSavage
+{
+    background-color: transparent;
+    box-shadow: none;
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+}
+.dxheViewArea_KetoSavage
+{
+    border-bottom: 1px solid #DCDCDC;
+}
+td.dxheStatusBar_KetoSavage div.dxtcLite_KetoSavage.dxtcSys > .dxtc-stripContainer > li
+{
+    border-top: 1px solid #DCDCDC;
+}
+.dxhe-dialogWrapperPanel .dxucBrowseButton_KetoSavage
+{
+    padding: 6px 18px 7px;
+}
+.dxflFormLayout_KetoSavage.dxhe-insertTableDialog
+{
+    width: 511px;
+}
+div.dxflFormLayout_KetoSavage.dxhe-dialog:not(.dxhe-mediaDialogMainSettings):not(.dxhe-mediaDialogStyleSettings) > table.dxflGroup_KetoSavage.dxhe-dialogLG.dxflGroupSys
+{
+    padding-top: 0px;
+}
+.dxhe-dialog .dxflGroupBoxCaption_KetoSavage.dxhe-dialogLGBC
+{
+    left: 12px;
+}
+.dxpcLite_KetoSavage.dx-dialog > .dxhe-dialog-popup > .dxpc-header
+{
+    padding: 12px 10px 12px 16px;
+}
+.dxhe-dialog .dxflGroupBox_KetoSavage.dxhe-dialogLGB
+{
+    margin: 16px 0px;
+}
+.dxhe-dialog.dxhe-insertTableDialog .dxhe-dialogButtonsContainer td:last-child .dxbButton_KetoSavage
+{
+    margin-right: 12px;
+}
+div.dxflFormLayout_KetoSavage.dxhe-dialog.dxhe-insertTableDialog .dxhe-dialogLGB > table.dxhe-dialogLG
+{
+    padding-left: 12px;
+    padding-right: 12px;
+}
+.dxpcLite_KetoSavage.dx-dialog.dxhe-dialog-tables-popup
+{
+    max-width: 700px;
+}
+.dxpcLite_KetoSavage.dx-dialog.dxhe-dialog-placeholder-popup,
+.dxpcLite_KetoSavage.dx-dialog.dxhe-dialog-rowproperties-popup,
+.dxpcLite_KetoSavage.dx-dialog.dxhe-dialog-cellproperties-popup,
+.dxpcLite_KetoSavage.dx-dialog.dxhe-dialog-columnproperties-popup
+{
+    max-width: 500px;
+}
+.dxpcLite_KetoSavage .dxhe-searchPopup .dxhe-searchAdvanced .dxhe-searchdialogLG
+{
+    padding: 6px;
+}

@@ -1,0 +1,101 @@
+.dxwscCheckedTextContainer_KetoSavage
+{
+    background-color: white;
+    border: solid 1px #c0c0c0;
+    vertical-align: top;
+    overflow: auto;
+    height: 110px;
+    width: 340px;
+    padding: 5px;
+}
+.dxwscErrorWord_KetoSavage
+{
+    background: url('scErrorUnderline.gif') bottom;
+    background-repeat: repeat-x;
+    padding-bottom: 3px;
+    color: #484848;
+    font-weight: bold;
+}
+/* -- Loading panel -- */
+.dxwscLoadingPanel_KetoSavage
+{
+    background-color: white;
+    font: 14px 'Open Sans', Helvetica, 'Droid Sans', Tahoma, Geneva, sans-serif;
+    color: #484848;
+    -moz-box-shadow: 0 2px 4px 0 rgba(0,0,0,0.16), 0 2px 8px 0 rgba(0,0,0,0.12);
+    -webkit-box-shadow: 0 2px 4px 0 rgba(0,0,0,0.16), 0 2px 8px 0 rgba(0,0,0,0.12);
+    box-shadow: 0 2px 4px 0 rgba(0,0,0,0.16), 0 2px 8px 0 rgba(0,0,0,0.12);
+}
+.dxwscLoadingPanel_KetoSavage td.dx
+{
+    font-size: 1.17em;
+    white-space: nowrap;
+    text-align: center;
+    padding: 10px 14px;
+}
+.dxwscLoadingPanel_KetoSavage .dxlp-loadingImage
+{
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -o-border-radius: 50%;
+    -khtml-border-radius: 50%;
+    border-radius: 50%;
+    animation: dxLoadSpinSys 1s linear infinite;
+    border: 4px solid #000000;
+    border-top: 4px solid #EEE;
+    width: 24px;
+    height: 24px;
+}
+html.dxIE.dxBrowserVersion-9 .dxwscLoadingPanel_KetoSavage .dxlp-loadingImage
+{
+    background-image: url('../Web/Loading.gif');
+    height: 32px;
+    width: 32px;
+    background-repeat: no-repeat;
+    background-position: center center;
+    animation: none;
+    border: none;
+    border-radius: 0;
+}
+/* -- Forms -- */
+.dxwsc-main .dxpcLite_KetoSavage .dxwscDlgFooter
+{
+    border-top: 1px solid #c0c0c0;
+    padding: 10px 15px;
+    text-align: right;
+}
+.dxwsc-main .dxpcLite_KetoSavage .dxwscDlgButtonTable
+{
+    margin-left: 3px;
+}
+.dxwsc-main .dxpcLite_KetoSavage .dxwscDlgChangeToPanelContainer table > tbody > tr:last-child > td
+{
+    padding-top: 8px;
+}
+.dxwsc-main .dxpcLite_KetoSavage .dxwscDlgButtonTable > tbody > tr > td
+{
+    padding-bottom: 3px;
+}
+.dxwsc-main.dxwsc-rtl .dxpcLite_KetoSavage .dxwscDlgFooter
+{
+    text-align: left;
+}
+.dxwsc-main .dxpcLite_KetoSavage .dxwscDlgFooterBtn
+{
+    width: 96px;
+    margin-left: 8px;
+}
+.dxwsc-main.dxwsc-rtl .dxpcLite_KetoSavage .dxwscDlgFooterBtn
+{
+    margin-right: 8px;
+    margin-left: 0;
+}
+.dxwsc-main .dxpcLite_KetoSavage .dxwscDlgSpellCheckBtn
+{
+    width: 132px;
+}
+.dxwsc-main .dxpcLite_KetoSavage .dxrpControl_KetoSavage .dxrpHeader_KetoSavage,
+.dxwsc-main .dxpcLite_KetoSavage .dxrpControl_KetoSavage .dxrpHeader_KetoSavage td.dxrp
+{
+    font-size: 1.83em;
+}

@@ -1,0 +1,24 @@
+.dxsplControl_KetoSavage .dxmLiteReportToolbarPane
+{
+    background-color: #000000;
+    padding: 0;
+}
+.dxmLiteReportToolbarPane .dxrControl_KetoSavage.dxr-tabsHidden .dxr-tabContent
+{
+    border-top: none;
+    border-left: none;
+    border-right: none;
+}
+.dxmLiteReportToolbarPane .dxmLite_KetoSavage .dxm-main.dxmtb
+{
+    padding-top: 2px;
+    padding-bottom: 2px;
+}
+.dxmLiteReportToolbarPane .dxmLite_KetoSavage .dxm-horizontal.dxmtb .dxm-image-l .dxm-separator
+{
+    margin-top: -2px;
+}
+.dxmLiteReportToolbarPane .dxmLite_KetoSavage .dxm-horizontal.dxmtb .dxm-image-l .dxm-separator b
+{
+    padding-bottom: 6px;
+}

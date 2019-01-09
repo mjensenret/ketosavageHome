@@ -1,0 +1,296 @@
+.dxCardView_CTClearFilter_KetoSavage,
+.dxCardView_CTClearFilterDisabled_KetoSavage,
+.dxCardView_CTDeleteRow_KetoSavage,
+.dxCardView_CTDeleteRowDisabled_KetoSavage,
+.dxCardView_CTEditRow_KetoSavage,
+.dxCardView_CTEditRowDisabled_KetoSavage,
+.dxCardView_CTExportCsv_KetoSavage,
+.dxCardView_CTExportCsvDisabled_KetoSavage,
+.dxCardView_CTExportDocx_KetoSavage,
+.dxCardView_CTExportDocxDisabled_KetoSavage,
+.dxCardView_CTExportPdf_KetoSavage,
+.dxCardView_CTExportPdfDisabled_KetoSavage,
+.dxCardView_CTExportRtf_KetoSavage,
+.dxCardView_CTExportRtfDisabled_KetoSavage,
+.dxCardView_CTExportXls_KetoSavage,
+.dxCardView_CTExportXlsDisabled_KetoSavage,
+.dxCardView_CTExportXlsx_KetoSavage,
+.dxCardView_CTExportXlsxDisabled_KetoSavage,
+.dxCardView_CTNewRow_KetoSavage,
+.dxCardView_CTNewRowDisabled_KetoSavage,
+.dxCardView_CTRefresh_KetoSavage,
+.dxCardView_CTRefreshDisabled_KetoSavage,
+.dxCardView_CTShowCustomizationWindow_KetoSavage,
+.dxCardView_CTShowCustomizationWindowDisabled_KetoSavage,
+.dxCardView_CTShowFilterEditor_KetoSavage,
+.dxCardView_CTShowFilterEditorDisabled_KetoSavage,
+.dxCardView_CTShowSearchPanel_KetoSavage,
+.dxCardView_CTShowSearchPanelDisabled_KetoSavage,
+.dxCardView_gvCellError_KetoSavage,
+.dxCardView_gvFilterRowButton_KetoSavage,
+.dxCardView_gvHeaderFilter_KetoSavage,
+.dxCardView_gvHeaderFilterActive_KetoSavage,
+.dxCardView_gvHeaderSortDown_KetoSavage,
+.dxCardView_gvHeaderSortUp_KetoSavage,
+.dxm-checked .dxCardView_CTShowCustomizationWindow_KetoSavage,
+.dxm-checked .dxCardView_CTShowSearchPanel_KetoSavage
+{
+    background-image: url('sprite.svg');
+    background-repeat: no-repeat;
+    background-color: transparent;
+}
+.dxIE .dx-acc-r .dxCardView_CTClearFilter_KetoSavage::before,
+.dxIE .dx-acc-r .dxCardView_CTClearFilterDisabled_KetoSavage::before,
+.dxIE .dx-acc-r .dxCardView_CTDeleteRow_KetoSavage::before,
+.dxIE .dx-acc-r .dxCardView_CTDeleteRowDisabled_KetoSavage::before,
+.dxIE .dx-acc-r .dxCardView_CTEditRow_KetoSavage::before,
+.dxIE .dx-acc-r .dxCardView_CTEditRowDisabled_KetoSavage::before,
+.dxIE .dx-acc-r .dxCardView_CTExportCsv_KetoSavage::before,
+.dxIE .dx-acc-r .dxCardView_CTExportCsvDisabled_KetoSavage::before,
+.dxIE .dx-acc-r .dxCardView_CTExportDocx_KetoSavage::before,
+.dxIE .dx-acc-r .dxCardView_CTExportDocxDisabled_KetoSavage::before,
+.dxIE .dx-acc-r .dxCardView_CTExportPdf_KetoSavage::before,
+.dxIE .dx-acc-r .dxCardView_CTExportPdfDisabled_KetoSavage::before,
+.dxIE .dx-acc-r .dxCardView_CTExportRtf_KetoSavage::before,
+.dxIE .dx-acc-r .dxCardView_CTExportRtfDisabled_KetoSavage::before,
+.dxIE .dx-acc-r .dxCardView_CTExportXls_KetoSavage::before,
+.dxIE .dx-acc-r .dxCardView_CTExportXlsDisabled_KetoSavage::before,
+.dxIE .dx-acc-r .dxCardView_CTExportXlsx_KetoSavage::before,
+.dxIE .dx-acc-r .dxCardView_CTExportXlsxDisabled_KetoSavage::before,
+.dxIE .dx-acc-r .dxCardView_CTNewRow_KetoSavage::before,
+.dxIE .dx-acc-r .dxCardView_CTNewRowDisabled_KetoSavage::before,
+.dxIE .dx-acc-r .dxCardView_CTRefresh_KetoSavage::before,
+.dxIE .dx-acc-r .dxCardView_CTRefreshDisabled_KetoSavage::before,
+.dxIE .dx-acc-r .dxCardView_CTShowCustomizationWindow_KetoSavage::before,
+.dxIE .dx-acc-r .dxCardView_CTShowCustomizationWindowDisabled_KetoSavage::before,
+.dxIE .dx-acc-r .dxCardView_CTShowFilterEditor_KetoSavage::before,
+.dxIE .dx-acc-r .dxCardView_CTShowFilterEditorDisabled_KetoSavage::before,
+.dxIE .dx-acc-r .dxCardView_CTShowSearchPanel_KetoSavage::before,
+.dxIE .dx-acc-r .dxCardView_CTShowSearchPanelDisabled_KetoSavage::before,
+.dxIE .dx-acc-r .dxCardView_gvCellError_KetoSavage::before,
+.dxIE .dx-acc-r .dxCardView_gvFilterRowButton_KetoSavage::before,
+.dxIE .dx-acc-r .dxCardView_gvHeaderFilter_KetoSavage::before,
+.dxIE .dx-acc-r .dxCardView_gvHeaderFilterActive_KetoSavage::before,
+.dxIE .dx-acc-r .dxCardView_gvHeaderSortDown_KetoSavage::before,
+.dxIE .dx-acc-r .dxCardView_gvHeaderSortUp_KetoSavage::before,
+.dxIE .dx-acc-r .dxm-checked .dxCardView_CTShowCustomizationWindow_KetoSavage::before,
+.dxIE .dx-acc-r .dxm-checked .dxCardView_CTShowSearchPanel_KetoSavage::before{
+    width: 121px;
+}
+.dxCardView_CTClearFilter_KetoSavage
+{
+    background-position: 0px 0px;
+    width: 16px;
+    height: 16px;
+}
+.dxCardView_CTClearFilterDisabled_KetoSavage
+{
+    background-position: 0px -34px;
+    width: 16px;
+    height: 16px;
+}
+.dxCardView_CTDeleteRow_KetoSavage
+{
+    background-position: -34px 0px;
+    width: 16px;
+    height: 16px;
+}
+.dxCardView_CTDeleteRowDisabled_KetoSavage
+{
+    background-position: 0px -51px;
+    width: 16px;
+    height: 16px;
+}
+.dxCardView_CTEditRow_KetoSavage
+{
+    background-position: -51px -17px;
+    width: 16px;
+    height: 16px;
+}
+.dxCardView_CTEditRowDisabled_KetoSavage
+{
+    background-position: -68px -34px;
+    width: 16px;
+    height: 16px;
+}
+.dxCardView_CTExportCsv_KetoSavage
+{
+    background-position: -17px 0px;
+    width: 16px;
+    height: 16px;
+}
+.dxCardView_CTExportCsvDisabled_KetoSavage
+{
+    background-position: -102px 0px;
+    width: 16px;
+    height: 16px;
+}
+.dxCardView_CTExportDocx_KetoSavage
+{
+    background-position: -85px -17px;
+    width: 16px;
+    height: 16px;
+}
+.dxCardView_CTExportDocxDisabled_KetoSavage
+{
+    background-position: -85px -34px;
+    width: 16px;
+    height: 16px;
+}
+.dxCardView_CTExportPdf_KetoSavage
+{
+    background-position: -34px -17px;
+    width: 16px;
+    height: 16px;
+}
+.dxCardView_CTExportPdfDisabled_KetoSavage
+{
+    background-position: -17px -17px;
+    width: 16px;
+    height: 16px;
+}
+.dxCardView_CTExportRtf_KetoSavage
+{
+    background-position: -51px 0px;
+    width: 16px;
+    height: 16px;
+}
+.dxCardView_CTExportRtfDisabled_KetoSavage
+{
+    background-position: -17px -51px;
+    width: 16px;
+    height: 16px;
+}
+.dxCardView_CTExportXls_KetoSavage
+{
+    background-position: -68px -17px;
+    width: 16px;
+    height: 16px;
+}
+.dxCardView_CTExportXlsDisabled_KetoSavage
+{
+    background-position: -68px 0px;
+    width: 16px;
+    height: 16px;
+}
+.dxCardView_CTExportXlsx_KetoSavage
+{
+    background-position: -51px -51px;
+    width: 16px;
+    height: 16px;
+}
+.dxCardView_CTExportXlsxDisabled_KetoSavage
+{
+    background-position: -102px -34px;
+    width: 16px;
+    height: 16px;
+}
+.dxCardView_CTNewRow_KetoSavage
+{
+    background-position: -51px -34px;
+    width: 16px;
+    height: 16px;
+}
+.dxCardView_CTNewRowDisabled_KetoSavage
+{
+    background-position: -68px -51px;
+    width: 16px;
+    height: 16px;
+}
+.dxCardView_CTRefresh_KetoSavage
+{
+    background-position: -102px -17px;
+    width: 16px;
+    height: 16px;
+}
+.dxCardView_CTRefreshDisabled_KetoSavage
+{
+    background-position: 0px -17px;
+    width: 16px;
+    height: 16px;
+}
+.dxCardView_CTShowCustomizationWindow_KetoSavage
+{
+    background-position: -34px -34px;
+    width: 16px;
+    height: 16px;
+}
+.dxCardView_CTShowCustomizationWindowDisabled_KetoSavage
+{
+    background-position: -17px -34px;
+    width: 16px;
+    height: 16px;
+}
+.dxCardView_CTShowFilterEditor_KetoSavage
+{
+    background-position: 0px -68px;
+    width: 14px;
+    height: 14px;
+}
+.dxCardView_CTShowFilterEditorDisabled_KetoSavage
+{
+    background-position: -75px -68px;
+    width: 14px;
+    height: 14px;
+}
+.dxCardView_CTShowSearchPanel_KetoSavage
+{
+    background-position: -15px -68px;
+    width: 14px;
+    height: 14px;
+}
+.dxCardView_CTShowSearchPanelDisabled_KetoSavage
+{
+    background-position: -85px 0px;
+    width: 16px;
+    height: 16px;
+}
+.dxCardView_gvCellError_KetoSavage
+{
+    background-position: -30px -68px;
+    width: 14px;
+    height: 14px;
+}
+.dxCardView_gvFilterRowButton_KetoSavage
+{
+    background-position: -85px -51px;
+    width: 14px;
+    height: 14px;
+}
+.dxCardView_gvHeaderFilter_KetoSavage
+{
+    background-position: -100px -51px;
+    width: 14px;
+    height: 14px;
+}
+.dxCardView_gvHeaderFilterActive_KetoSavage
+{
+    background-position: -60px -68px;
+    width: 14px;
+    height: 14px;
+}
+.dxCardView_gvHeaderSortDown_KetoSavage
+{
+    background-position: -103px -68px;
+    width: 12px;
+    height: 12px;
+}
+.dxCardView_gvHeaderSortUp_KetoSavage
+{
+    background-position: -90px -68px;
+    width: 12px;
+    height: 12px;
+}
+.dxm-checked .dxCardView_CTShowCustomizationWindow_KetoSavage
+{
+    background-position: -34px -51px;
+    width: 16px;
+    height: 16px;
+}
+.dxm-checked .dxCardView_CTShowSearchPanel_KetoSavage
+{
+    background-position: -45px -68px;
+    width: 14px;
+    height: 14px;
+}
+

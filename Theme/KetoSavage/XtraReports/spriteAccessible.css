@@ -1,0 +1,278 @@
+.dx-acc-r .dxm-hovered .dxXtraReports_BtnFirstPage_KetoSavage:before,
+.dx-acc-r .dxm-hovered .dxXtraReports_BtnLastPage_KetoSavage:before,
+.dx-acc-r .dxm-hovered .dxXtraReports_BtnNextPage_KetoSavage:before,
+.dx-acc-r .dxm-hovered .dxXtraReports_BtnPrevPage_KetoSavage:before,
+.dx-acc-r .dxm-hovered .dxXtraReports_BtnPrint_KetoSavage:before,
+.dx-acc-r .dxm-hovered .dxXtraReports_BtnPrintPage_KetoSavage:before,
+.dx-acc-r .dxm-hovered .dxXtraReports_BtnSave_KetoSavage:before,
+.dx-acc-r .dxm-hovered .dxXtraReports_BtnSaveWindow_KetoSavage:before,
+.dx-acc-r .dxm-hovered .dxXtraReports_BtnSearch_KetoSavage:before,
+.dx-acc-r .dxXtraReports_BtnFirstPage_KetoSavage:before,
+.dx-acc-r .dxXtraReports_BtnFirstPageDisabled_KetoSavage:before,
+.dx-acc-r .dxXtraReports_BtnLastPage_KetoSavage:before,
+.dx-acc-r .dxXtraReports_BtnLastPageDisabled_KetoSavage:before,
+.dx-acc-r .dxXtraReports_BtnNextPage_KetoSavage:before,
+.dx-acc-r .dxXtraReports_BtnNextPageDisabled_KetoSavage:before,
+.dx-acc-r .dxXtraReports_BtnPrevPage_KetoSavage:before,
+.dx-acc-r .dxXtraReports_BtnPrevPageDisabled_KetoSavage:before,
+.dx-acc-r .dxXtraReports_BtnPrint_KetoSavage:before,
+.dx-acc-r .dxXtraReports_BtnPrintDisabled_KetoSavage:before,
+.dx-acc-r .dxXtraReports_BtnPrintPage_KetoSavage:before,
+.dx-acc-r .dxXtraReports_BtnPrintPageDisabled_KetoSavage:before,
+.dx-acc-r .dxXtraReports_BtnSave_KetoSavage:before,
+.dx-acc-r .dxXtraReports_BtnSaveDisabled_KetoSavage:before,
+.dx-acc-r .dxXtraReports_BtnSaveWindow_KetoSavage:before,
+.dx-acc-r .dxXtraReports_BtnSaveWindowDisabled_KetoSavage:before,
+.dx-acc-r .dxXtraReports_BtnSearch_KetoSavage:before,
+.dx-acc-r .dxXtraReports_BtnSearchDisabled_KetoSavage:before,
+.dx-acc-r .dxXtraReports_PageBorder_blc_KetoSavage:before,
+.dx-acc-r .dxXtraReports_PageBorder_brc_KetoSavage:before,
+.dx-acc-r .dxXtraReports_PageBorder_tlc_KetoSavage:before,
+.dx-acc-r .dxXtraReports_PageBorder_trc_KetoSavage:before
+
+{
+    content: url('sprite.svg');
+
+}
+.dx-acc-r .dxm-hovered .dxXtraReports_BtnFirstPage_KetoSavage:before
+
+{
+    left: -19px;
+    top: -38px;
+
+}
+.dx-acc-r .dxm-hovered .dxXtraReports_BtnLastPage_KetoSavage:before
+
+{
+    left: -76px;
+    top: -19px;
+
+}
+.dx-acc-r .dxm-hovered .dxXtraReports_BtnNextPage_KetoSavage:before
+
+{
+    left: -38px;
+    top: 0px;
+
+}
+.dx-acc-r .dxm-hovered .dxXtraReports_BtnPrevPage_KetoSavage:before
+
+{
+    left: -57px;
+    top: -19px;
+
+}
+.dx-acc-r .dxm-hovered .dxXtraReports_BtnPrint_KetoSavage:before
+
+{
+    left: -51px;
+    top: -57px;
+
+}
+.dx-acc-r .dxm-hovered .dxXtraReports_BtnPrintPage_KetoSavage:before
+
+{
+    left: -17px;
+    top: -74px;
+
+}
+.dx-acc-r .dxm-hovered .dxXtraReports_BtnSave_KetoSavage:before
+
+{
+    left: -85px;
+    top: -57px;
+
+}
+.dx-acc-r .dxm-hovered .dxXtraReports_BtnSaveWindow_KetoSavage:before
+
+{
+    left: -51px;
+    top: -74px;
+
+}
+.dx-acc-r .dxm-hovered .dxXtraReports_BtnSearch_KetoSavage:before
+
+{
+    left: 0px;
+    top: -57px;
+
+}
+.dx-acc-r .dxXtraReports_BtnFirstPage_KetoSavage:before
+
+{
+    left: 0px;
+    top: -38px;
+
+}
+.dx-acc-r .dxXtraReports_BtnFirstPageDisabled_KetoSavage:before
+
+{
+    left: -57px;
+    top: 0px;
+
+}
+.dx-acc-r .dxXtraReports_BtnLastPage_KetoSavage:before
+
+{
+    left: -76px;
+    top: 0px;
+
+}
+.dx-acc-r .dxXtraReports_BtnLastPageDisabled_KetoSavage:before
+
+{
+    left: 0px;
+    top: 0px;
+
+}
+.dx-acc-r .dxXtraReports_BtnNextPage_KetoSavage:before
+
+{
+    left: -19px;
+    top: 0px;
+
+}
+.dx-acc-r .dxXtraReports_BtnNextPageDisabled_KetoSavage:before
+
+{
+    left: 0px;
+    top: -19px;
+
+}
+.dx-acc-r .dxXtraReports_BtnPrevPage_KetoSavage:before
+
+{
+    left: -38px;
+    top: -19px;
+
+}
+.dx-acc-r .dxXtraReports_BtnPrevPageDisabled_KetoSavage:before
+
+{
+    left: -19px;
+    top: -19px;
+
+}
+.dx-acc-r .dxXtraReports_BtnPrint_KetoSavage:before
+
+{
+    left: -72px;
+    top: -38px;
+
+}
+.dx-acc-r .dxXtraReports_BtnPrintDisabled_KetoSavage:before
+
+{
+    left: -89px;
+    top: -38px;
+
+}
+.dx-acc-r .dxXtraReports_BtnPrintPage_KetoSavage:before
+
+{
+    left: 0px;
+    top: -74px;
+
+}
+.dx-acc-r .dxXtraReports_BtnPrintPageDisabled_KetoSavage:before
+
+{
+    left: -55px;
+    top: -38px;
+
+}
+.dx-acc-r .dxXtraReports_BtnSave_KetoSavage:before
+
+{
+    left: -34px;
+    top: -57px;
+
+}
+.dx-acc-r .dxXtraReports_BtnSaveDisabled_KetoSavage:before
+
+{
+    left: -68px;
+    top: -74px;
+
+}
+.dx-acc-r .dxXtraReports_BtnSaveWindow_KetoSavage:before
+
+{
+    left: -68px;
+    top: -57px;
+
+}
+.dx-acc-r .dxXtraReports_BtnSaveWindowDisabled_KetoSavage:before
+
+{
+    left: -34px;
+    top: -74px;
+
+}
+.dx-acc-r .dxXtraReports_BtnSearch_KetoSavage:before
+
+{
+    left: -38px;
+    top: -38px;
+
+}
+.dx-acc-r .dxXtraReports_BtnSearchDisabled_KetoSavage:before
+
+{
+    left: -17px;
+    top: -57px;
+
+}
+.dx-acc-r .dxXtraReports_PageBorder_blc_KetoSavage:before
+
+{
+    left: -95px;
+    top: -19px;
+
+}
+.dx-acc-r .dxXtraReports_PageBorder_brc_KetoSavage:before
+
+{
+    left: -85px;
+    top: -74px;
+
+}
+.dx-acc-r .dxXtraReports_PageBorder_tlc_KetoSavage:before
+
+{
+    left: -95px;
+    top: 0px;
+
+}
+.dx-acc-r .dxXtraReports_PageBorder_trc_KetoSavage:before
+
+{
+    left: -96px;
+    top: -74px;
+
+}
+.dx-acc-r .dxXtraReports_PageBorder_t_KetoSavage :before
+
+{
+    content: url('pageTopBorder.svg');
+
+}
+.dx-acc-r .dxXtraReports_PageBorder_l_KetoSavage :before
+
+{
+    content: url('pageLeftBorder.svg');
+
+}
+.dx-acc-r .dxXtraReports_PageBorder_r_KetoSavage :before
+
+{
+    content: url('pageRightBorder.svg');
+
+}
+.dx-acc-r .dxXtraReports_PageBorder_b_KetoSavage :before
+
+{
+    content: url('pageBottomBorder.svg');
+
+}
+

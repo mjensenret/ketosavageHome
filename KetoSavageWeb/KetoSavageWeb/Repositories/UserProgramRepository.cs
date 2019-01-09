@@ -69,7 +69,7 @@ namespace KetoSavageWeb.Repositories
                                   select w.UserProgram.StartWeight).Sum();
             var currentProgress = 0.00;
             var plannedProgress = 0.00;
-            if (actualProgress.Count() > 1)
+            if (actualProgress.Count() > 0)
             { 
                 currentProgress = (from w in actualProgress
                                         let maxProgress = actualProgress.Max(r => r.DateId)
@@ -77,7 +77,7 @@ namespace KetoSavageWeb.Repositories
                                         select w.ActualWeight.Value).Sum();
 
 
-            plannedProgress = (from w in actualProgress
+                plannedProgress = (from w in actualProgress
                                    let maxProgress = actualProgress.Max(r => r.DateId)
                                    where w.DateId == maxProgress
                                    select w.PlannedWeight.Value).Sum();

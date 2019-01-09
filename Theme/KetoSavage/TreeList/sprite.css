@@ -1,0 +1,344 @@
+.dxm-checked .dxTreeList_CTShowCustomizationWindow_KetoSavage,
+.dxTreeList_CollapsedButton_KetoSavage,
+.dxTreeList_CollapsedButtonRtl_KetoSavage,
+.dxTreeList_CTCollapseRow_KetoSavage,
+.dxTreeList_CTCollapseRowDisabled_KetoSavage,
+.dxTreeList_CTDeleteRow_KetoSavage,
+.dxTreeList_CTDeleteRowDisabled_KetoSavage,
+.dxTreeList_CTEditRow_KetoSavage,
+.dxTreeList_CTEditRowDisabled_KetoSavage,
+.dxTreeList_CTExpandRow_KetoSavage,
+.dxTreeList_CTExpandRowDisabled_KetoSavage,
+.dxTreeList_CTExportDocx_KetoSavage,
+.dxTreeList_CTExportDocxDisabled_KetoSavage,
+.dxTreeList_CTExportPdf_KetoSavage,
+.dxTreeList_CTExportPdfDisabled_KetoSavage,
+.dxTreeList_CTExportRtf_KetoSavage,
+.dxTreeList_CTExportRtfDisabled_KetoSavage,
+.dxTreeList_CTExportXls_KetoSavage,
+.dxTreeList_CTExportXlsDisabled_KetoSavage,
+.dxTreeList_CTExportXlsx_KetoSavage,
+.dxTreeList_CTExportXlsxDisabled_KetoSavage,
+.dxTreeList_CTFullCollapse_KetoSavage,
+.dxTreeList_CTFullCollapseDisabled_KetoSavage,
+.dxTreeList_CTFullExpand_KetoSavage,
+.dxTreeList_CTFullExpandDisabled_KetoSavage,
+.dxTreeList_CTNewRow_KetoSavage,
+.dxTreeList_CTNewRowDisabled_KetoSavage,
+.dxTreeList_CTRefresh_KetoSavage,
+.dxTreeList_CTRefreshDisabled_KetoSavage,
+.dxTreeList_CTShowCustomizationWindow_KetoSavage,
+.dxTreeList_CTShowCustomizationWindowDisabled_KetoSavage,
+.dxTreeList_DragAndDropArrowDown_KetoSavage,
+.dxTreeList_DragAndDropArrowUp_KetoSavage,
+.dxTreeList_DragAndDropHide_KetoSavage,
+.dxTreeList_DragAndDropNode_KetoSavage,
+.dxTreeList_ExpandedButton_KetoSavage,
+.dxTreeList_ExpandedButtonRtl_KetoSavage,
+.dxTreeList_FilterRowButton_KetoSavage,
+.dxTreeList_HeaderFilter_KetoSavage,
+.dxTreeList_HeaderFilterActive_KetoSavage,
+.dxTreeList_SortAsc_KetoSavage,
+.dxTreeList_SortDesc_KetoSavage
+{
+    background-image: url('sprite.svg');
+    background-repeat: no-repeat;
+    background-color: transparent;
+}
+.dxIE .dx-acc-r .dxm-checked .dxTreeList_CTShowCustomizationWindow_KetoSavage::before,
+.dxIE .dx-acc-r .dxTreeList_CollapsedButton_KetoSavage::before,
+.dxIE .dx-acc-r .dxTreeList_CollapsedButtonRtl_KetoSavage::before,
+.dxIE .dx-acc-r .dxTreeList_CTCollapseRow_KetoSavage::before,
+.dxIE .dx-acc-r .dxTreeList_CTCollapseRowDisabled_KetoSavage::before,
+.dxIE .dx-acc-r .dxTreeList_CTDeleteRow_KetoSavage::before,
+.dxIE .dx-acc-r .dxTreeList_CTDeleteRowDisabled_KetoSavage::before,
+.dxIE .dx-acc-r .dxTreeList_CTEditRow_KetoSavage::before,
+.dxIE .dx-acc-r .dxTreeList_CTEditRowDisabled_KetoSavage::before,
+.dxIE .dx-acc-r .dxTreeList_CTExpandRow_KetoSavage::before,
+.dxIE .dx-acc-r .dxTreeList_CTExpandRowDisabled_KetoSavage::before,
+.dxIE .dx-acc-r .dxTreeList_CTExportDocx_KetoSavage::before,
+.dxIE .dx-acc-r .dxTreeList_CTExportDocxDisabled_KetoSavage::before,
+.dxIE .dx-acc-r .dxTreeList_CTExportPdf_KetoSavage::before,
+.dxIE .dx-acc-r .dxTreeList_CTExportPdfDisabled_KetoSavage::before,
+.dxIE .dx-acc-r .dxTreeList_CTExportRtf_KetoSavage::before,
+.dxIE .dx-acc-r .dxTreeList_CTExportRtfDisabled_KetoSavage::before,
+.dxIE .dx-acc-r .dxTreeList_CTExportXls_KetoSavage::before,
+.dxIE .dx-acc-r .dxTreeList_CTExportXlsDisabled_KetoSavage::before,
+.dxIE .dx-acc-r .dxTreeList_CTExportXlsx_KetoSavage::before,
+.dxIE .dx-acc-r .dxTreeList_CTExportXlsxDisabled_KetoSavage::before,
+.dxIE .dx-acc-r .dxTreeList_CTFullCollapse_KetoSavage::before,
+.dxIE .dx-acc-r .dxTreeList_CTFullCollapseDisabled_KetoSavage::before,
+.dxIE .dx-acc-r .dxTreeList_CTFullExpand_KetoSavage::before,
+.dxIE .dx-acc-r .dxTreeList_CTFullExpandDisabled_KetoSavage::before,
+.dxIE .dx-acc-r .dxTreeList_CTNewRow_KetoSavage::before,
+.dxIE .dx-acc-r .dxTreeList_CTNewRowDisabled_KetoSavage::before,
+.dxIE .dx-acc-r .dxTreeList_CTRefresh_KetoSavage::before,
+.dxIE .dx-acc-r .dxTreeList_CTRefreshDisabled_KetoSavage::before,
+.dxIE .dx-acc-r .dxTreeList_CTShowCustomizationWindow_KetoSavage::before,
+.dxIE .dx-acc-r .dxTreeList_CTShowCustomizationWindowDisabled_KetoSavage::before,
+.dxIE .dx-acc-r .dxTreeList_DragAndDropArrowDown_KetoSavage::before,
+.dxIE .dx-acc-r .dxTreeList_DragAndDropArrowUp_KetoSavage::before,
+.dxIE .dx-acc-r .dxTreeList_DragAndDropHide_KetoSavage::before,
+.dxIE .dx-acc-r .dxTreeList_DragAndDropNode_KetoSavage::before,
+.dxIE .dx-acc-r .dxTreeList_ExpandedButton_KetoSavage::before,
+.dxIE .dx-acc-r .dxTreeList_ExpandedButtonRtl_KetoSavage::before,
+.dxIE .dx-acc-r .dxTreeList_FilterRowButton_KetoSavage::before,
+.dxIE .dx-acc-r .dxTreeList_HeaderFilter_KetoSavage::before,
+.dxIE .dx-acc-r .dxTreeList_HeaderFilterActive_KetoSavage::before,
+.dxIE .dx-acc-r .dxTreeList_SortAsc_KetoSavage::before,
+.dxIE .dx-acc-r .dxTreeList_SortDesc_KetoSavage::before{
+    width: 17px;
+}
+.dxm-checked .dxTreeList_CTShowCustomizationWindow_KetoSavage
+{
+    background-position: 0px -408px;
+    width: 16px;
+    height: 16px;
+}
+.dxTreeList_CollapsedButton_KetoSavage
+{
+    background-position: -11px -592px;
+    width: 4px;
+    height: 7px;
+}
+.dxTreeList_CollapsedButtonRtl_KetoSavage
+{
+    background-position: -10px -581px;
+    width: 4px;
+    height: 7px;
+}
+.dxTreeList_CTCollapseRow_KetoSavage
+{
+    background-position: 0px -391px;
+    width: 16px;
+    height: 16px;
+}
+.dxTreeList_CTCollapseRowDisabled_KetoSavage
+{
+    background-position: 0px -85px;
+    width: 16px;
+    height: 16px;
+}
+.dxTreeList_CTDeleteRow_KetoSavage
+{
+    background-position: 0px -476px;
+    width: 16px;
+    height: 16px;
+}
+.dxTreeList_CTDeleteRowDisabled_KetoSavage
+{
+    background-position: 0px -374px;
+    width: 16px;
+    height: 16px;
+}
+.dxTreeList_CTEditRow_KetoSavage
+{
+    background-position: 0px -34px;
+    width: 16px;
+    height: 16px;
+}
+.dxTreeList_CTEditRowDisabled_KetoSavage
+{
+    background-position: 0px -170px;
+    width: 16px;
+    height: 16px;
+}
+.dxTreeList_CTExpandRow_KetoSavage
+{
+    background-position: 0px -119px;
+    width: 16px;
+    height: 16px;
+}
+.dxTreeList_CTExpandRowDisabled_KetoSavage
+{
+    background-position: 0px -340px;
+    width: 16px;
+    height: 16px;
+}
+.dxTreeList_CTExportDocx_KetoSavage
+{
+    background-position: 0px -238px;
+    width: 16px;
+    height: 16px;
+}
+.dxTreeList_CTExportDocxDisabled_KetoSavage
+{
+    background-position: 0px -136px;
+    width: 16px;
+    height: 16px;
+}
+.dxTreeList_CTExportPdf_KetoSavage
+{
+    background-position: 0px -493px;
+    width: 16px;
+    height: 16px;
+}
+.dxTreeList_CTExportPdfDisabled_KetoSavage
+{
+    background-position: 0px -204px;
+    width: 16px;
+    height: 16px;
+}
+.dxTreeList_CTExportRtf_KetoSavage
+{
+    background-position: 0px -102px;
+    width: 16px;
+    height: 16px;
+}
+.dxTreeList_CTExportRtfDisabled_KetoSavage
+{
+    background-position: 0px -323px;
+    width: 16px;
+    height: 16px;
+}
+.dxTreeList_CTExportXls_KetoSavage
+{
+    background-position: 0px -221px;
+    width: 16px;
+    height: 16px;
+}
+.dxTreeList_CTExportXlsDisabled_KetoSavage
+{
+    background-position: 0px -357px;
+    width: 16px;
+    height: 16px;
+}
+.dxTreeList_CTExportXlsx_KetoSavage
+{
+    background-position: 0px -187px;
+    width: 16px;
+    height: 16px;
+}
+.dxTreeList_CTExportXlsxDisabled_KetoSavage
+{
+    background-position: 0px -459px;
+    width: 16px;
+    height: 16px;
+}
+.dxTreeList_CTFullCollapse_KetoSavage
+{
+    background-position: 0px -289px;
+    width: 16px;
+    height: 16px;
+}
+.dxTreeList_CTFullCollapseDisabled_KetoSavage
+{
+    background-position: 0px -68px;
+    width: 16px;
+    height: 16px;
+}
+.dxTreeList_CTFullExpand_KetoSavage
+{
+    background-position: 0px -51px;
+    width: 16px;
+    height: 16px;
+}
+.dxTreeList_CTFullExpandDisabled_KetoSavage
+{
+    background-position: 0px -425px;
+    width: 16px;
+    height: 16px;
+}
+.dxTreeList_CTNewRow_KetoSavage
+{
+    background-position: 0px -306px;
+    width: 16px;
+    height: 16px;
+}
+.dxTreeList_CTNewRowDisabled_KetoSavage
+{
+    background-position: 0px 0px;
+    width: 16px;
+    height: 16px;
+}
+.dxTreeList_CTRefresh_KetoSavage
+{
+    background-position: 0px -442px;
+    width: 16px;
+    height: 16px;
+}
+.dxTreeList_CTRefreshDisabled_KetoSavage
+{
+    background-position: 0px -272px;
+    width: 16px;
+    height: 16px;
+}
+.dxTreeList_CTShowCustomizationWindow_KetoSavage
+{
+    background-position: 0px -255px;
+    width: 16px;
+    height: 16px;
+}
+.dxTreeList_CTShowCustomizationWindowDisabled_KetoSavage
+{
+    background-position: 0px -153px;
+    width: 16px;
+    height: 16px;
+}
+.dxTreeList_DragAndDropArrowDown_KetoSavage
+{
+    background-position: 0px -592px;
+    width: 10px;
+    height: 9px;
+}
+.dxTreeList_DragAndDropArrowUp_KetoSavage
+{
+    background-position: 0px -602px;
+    width: 10px;
+    height: 9px;
+}
+.dxTreeList_DragAndDropHide_KetoSavage
+{
+    background-position: 0px -17px;
+    width: 16px;
+    height: 16px;
+}
+.dxTreeList_DragAndDropNode_KetoSavage
+{
+    background-position: 0px -581px;
+    width: 9px;
+    height: 10px;
+}
+.dxTreeList_ExpandedButton_KetoSavage
+{
+    background-position: 0px -612px;
+    width: 7px;
+    height: 4px;
+}
+.dxTreeList_ExpandedButtonRtl_KetoSavage
+{
+    background-position: -8px -612px;
+    width: 7px;
+    height: 4px;
+}
+.dxTreeList_FilterRowButton_KetoSavage
+{
+    background-position: 0px -510px;
+    width: 14px;
+    height: 14px;
+}
+.dxTreeList_HeaderFilter_KetoSavage
+{
+    background-position: 0px -525px;
+    width: 14px;
+    height: 14px;
+}
+.dxTreeList_HeaderFilterActive_KetoSavage
+{
+    background-position: 0px -540px;
+    width: 14px;
+    height: 14px;
+}
+.dxTreeList_SortAsc_KetoSavage
+{
+    background-position: 0px -568px;
+    width: 12px;
+    height: 12px;
+}
+.dxTreeList_SortDesc_KetoSavage
+{
+    background-position: 0px -555px;
+    width: 12px;
+    height: 12px;
+}
+

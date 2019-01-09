@@ -165,6 +165,7 @@ namespace KetoSavageWeb.Controllers
                     type = "Planned",
                     weight = x.PlannedWeight
                 })
+                .OrderBy(x => x.date)
                 .ToList();
             
             var actualWeight = userProgramRepository.GetDailyProgressByUser(userId)
@@ -174,6 +175,7 @@ namespace KetoSavageWeb.Controllers
                     type = "Actual",
                     weight = x.ActualWeight
                 })
+                .OrderBy(x => x.date)
                 .ToList();
 
             var weightChart = plannedWeight.Union(actualWeight).ToList();
@@ -314,7 +316,7 @@ namespace KetoSavageWeb.Controllers
             var q = (userProgress
                 .OrderByDescending(u => u.DateId)
                 )
-                .Where(x => x.Dates.WeekOfYear <= currentWeekNumber)
+                .Where(x => x.Dates.WeekOfYear <= currentWeekNumber + 1)
                 .Select(x => new
                 {
                     x.Dates.Date,

@@ -1,17 +1,28 @@
 /*!
  * DevExtreme (dx.vectormaputils.debug.js)
- * Version: 18.1.4
- * Build date: Tue Jun 19 2018
+ * Version: 18.2.4
+ * Build date: Mon Dec 17 2018
  *
  * Copyright (c) 2012 - 2018 Developer Express Inc. ALL RIGHTS RESERVED
  * Read about DevExtreme licensing here: https://js.devexpress.com/Licensing/
  */
 "use strict";
-! function(wnd) {
-    var exports = wnd.DevExpress = wnd.DevExpress || {};
-    exports = exports.viz = exports.viz || {};
-    exports = exports.vectormaputils = {};
-
+! function(root, factory) {
+    if ("function" === typeof define && define.amd) {
+        define(function(require, exports, module) {
+            factory(exports)
+        })
+    } else {
+        if ("object" === typeof module && module.exports) {
+            factory(exports)
+        } else {
+            var exports = root.DevExpress = root.DevExpress || {};
+            exports = exports.viz = exports.viz || {};
+            exports = exports.vectormaputils = {};
+            factory(exports)
+        }
+    }
+}(this, function(exports) {
     function noop() {}
 
     function eigen(x) {
@@ -640,4 +651,4 @@
         request.setRequestHeader("X-Requested-With", "XMLHttpRequest");
         request.send(null)
     }
-}(window);
+});

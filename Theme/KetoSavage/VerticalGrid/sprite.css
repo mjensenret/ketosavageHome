@@ -1,0 +1,304 @@
+.dxm-checked .dxVerticalGrid_CTShowSearchPanel_KetoSavage,
+.dxVerticalGrid_CategoryCollapsed_KetoSavage,
+.dxVerticalGrid_CategoryExpanded_KetoSavage,
+.dxVerticalGrid_CollapsedButton_KetoSavage,
+.dxVerticalGrid_CTClearFilter_KetoSavage,
+.dxVerticalGrid_CTClearFilterDisabled_KetoSavage,
+.dxVerticalGrid_CTDeleteRow_KetoSavage,
+.dxVerticalGrid_CTDeleteRowDisabled_KetoSavage,
+.dxVerticalGrid_CTEditRow_KetoSavage,
+.dxVerticalGrid_CTEditRowDisabled_KetoSavage,
+.dxVerticalGrid_CTExportCsv_KetoSavage,
+.dxVerticalGrid_CTExportCsvDisabled_KetoSavage,
+.dxVerticalGrid_CTExportDocx_KetoSavage,
+.dxVerticalGrid_CTExportDocxDisabled_KetoSavage,
+.dxVerticalGrid_CTExportPdf_KetoSavage,
+.dxVerticalGrid_CTExportPdfDisabled_KetoSavage,
+.dxVerticalGrid_CTExportRtf_KetoSavage,
+.dxVerticalGrid_CTExportRtfDisabled_KetoSavage,
+.dxVerticalGrid_CTExportXls_KetoSavage,
+.dxVerticalGrid_CTExportXlsDisabled_KetoSavage,
+.dxVerticalGrid_CTExportXlsx_KetoSavage,
+.dxVerticalGrid_CTExportXlsxDisabled_KetoSavage,
+.dxVerticalGrid_CTNewRow_KetoSavage,
+.dxVerticalGrid_CTNewRowDisabled_KetoSavage,
+.dxVerticalGrid_CTRefresh_KetoSavage,
+.dxVerticalGrid_CTRefreshDisabled_KetoSavage,
+.dxVerticalGrid_CTShowFilterEditor_KetoSavage,
+.dxVerticalGrid_CTShowFilterEditorDisabled_KetoSavage,
+.dxVerticalGrid_CTShowSearchPanel_KetoSavage,
+.dxVerticalGrid_CTShowSearchPanelDisabled_KetoSavage,
+.dxVerticalGrid_ExpandedButton_KetoSavage,
+.dxVerticalGrid_gvCellError_KetoSavage,
+.dxVerticalGrid_gvFilterRowButton_KetoSavage,
+.dxVerticalGrid_gvHeaderFilter_KetoSavage,
+.dxVerticalGrid_gvHeaderFilterActive_KetoSavage,
+.dxVerticalGrid_gvHeaderSortDown_KetoSavage,
+.dxVerticalGrid_gvHeaderSortUp_KetoSavage
+{
+    background-image: url('sprite.svg');
+    background-repeat: no-repeat;
+    background-color: transparent;
+}
+.dxIE .dx-acc-r .dxm-checked .dxVerticalGrid_CTShowSearchPanel_KetoSavage::before,
+.dxIE .dx-acc-r .dxVerticalGrid_CategoryCollapsed_KetoSavage::before,
+.dxIE .dx-acc-r .dxVerticalGrid_CategoryExpanded_KetoSavage::before,
+.dxIE .dx-acc-r .dxVerticalGrid_CollapsedButton_KetoSavage::before,
+.dxIE .dx-acc-r .dxVerticalGrid_CTClearFilter_KetoSavage::before,
+.dxIE .dx-acc-r .dxVerticalGrid_CTClearFilterDisabled_KetoSavage::before,
+.dxIE .dx-acc-r .dxVerticalGrid_CTDeleteRow_KetoSavage::before,
+.dxIE .dx-acc-r .dxVerticalGrid_CTDeleteRowDisabled_KetoSavage::before,
+.dxIE .dx-acc-r .dxVerticalGrid_CTEditRow_KetoSavage::before,
+.dxIE .dx-acc-r .dxVerticalGrid_CTEditRowDisabled_KetoSavage::before,
+.dxIE .dx-acc-r .dxVerticalGrid_CTExportCsv_KetoSavage::before,
+.dxIE .dx-acc-r .dxVerticalGrid_CTExportCsvDisabled_KetoSavage::before,
+.dxIE .dx-acc-r .dxVerticalGrid_CTExportDocx_KetoSavage::before,
+.dxIE .dx-acc-r .dxVerticalGrid_CTExportDocxDisabled_KetoSavage::before,
+.dxIE .dx-acc-r .dxVerticalGrid_CTExportPdf_KetoSavage::before,
+.dxIE .dx-acc-r .dxVerticalGrid_CTExportPdfDisabled_KetoSavage::before,
+.dxIE .dx-acc-r .dxVerticalGrid_CTExportRtf_KetoSavage::before,
+.dxIE .dx-acc-r .dxVerticalGrid_CTExportRtfDisabled_KetoSavage::before,
+.dxIE .dx-acc-r .dxVerticalGrid_CTExportXls_KetoSavage::before,
+.dxIE .dx-acc-r .dxVerticalGrid_CTExportXlsDisabled_KetoSavage::before,
+.dxIE .dx-acc-r .dxVerticalGrid_CTExportXlsx_KetoSavage::before,
+.dxIE .dx-acc-r .dxVerticalGrid_CTExportXlsxDisabled_KetoSavage::before,
+.dxIE .dx-acc-r .dxVerticalGrid_CTNewRow_KetoSavage::before,
+.dxIE .dx-acc-r .dxVerticalGrid_CTNewRowDisabled_KetoSavage::before,
+.dxIE .dx-acc-r .dxVerticalGrid_CTRefresh_KetoSavage::before,
+.dxIE .dx-acc-r .dxVerticalGrid_CTRefreshDisabled_KetoSavage::before,
+.dxIE .dx-acc-r .dxVerticalGrid_CTShowFilterEditor_KetoSavage::before,
+.dxIE .dx-acc-r .dxVerticalGrid_CTShowFilterEditorDisabled_KetoSavage::before,
+.dxIE .dx-acc-r .dxVerticalGrid_CTShowSearchPanel_KetoSavage::before,
+.dxIE .dx-acc-r .dxVerticalGrid_CTShowSearchPanelDisabled_KetoSavage::before,
+.dxIE .dx-acc-r .dxVerticalGrid_ExpandedButton_KetoSavage::before,
+.dxIE .dx-acc-r .dxVerticalGrid_gvCellError_KetoSavage::before,
+.dxIE .dx-acc-r .dxVerticalGrid_gvFilterRowButton_KetoSavage::before,
+.dxIE .dx-acc-r .dxVerticalGrid_gvHeaderFilter_KetoSavage::before,
+.dxIE .dx-acc-r .dxVerticalGrid_gvHeaderFilterActive_KetoSavage::before,
+.dxIE .dx-acc-r .dxVerticalGrid_gvHeaderSortDown_KetoSavage::before,
+.dxIE .dx-acc-r .dxVerticalGrid_gvHeaderSortUp_KetoSavage::before{
+    width: 69px;
+}
+.dxm-checked .dxVerticalGrid_CTShowSearchPanel_KetoSavage
+{
+    background-position: -30px -102px;
+    width: 14px;
+    height: 14px;
+}
+.dxVerticalGrid_CategoryCollapsed_KetoSavage
+{
+    background-position: -13px -132px;
+    width: 12px;
+    height: 12px;
+}
+.dxVerticalGrid_CategoryExpanded_KetoSavage
+{
+    background-position: -26px -132px;
+    width: 12px;
+    height: 12px;
+}
+.dxVerticalGrid_CollapsedButton_KetoSavage
+{
+    background-position: -39px -132px;
+    width: 12px;
+    height: 12px;
+}
+.dxVerticalGrid_CTClearFilter_KetoSavage
+{
+    background-position: 0px -51px;
+    width: 16px;
+    height: 16px;
+}
+.dxVerticalGrid_CTClearFilterDisabled_KetoSavage
+{
+    background-position: 0px 0px;
+    width: 16px;
+    height: 16px;
+}
+.dxVerticalGrid_CTDeleteRow_KetoSavage
+{
+    background-position: -51px -17px;
+    width: 16px;
+    height: 16px;
+}
+.dxVerticalGrid_CTDeleteRowDisabled_KetoSavage
+{
+    background-position: -17px -34px;
+    width: 16px;
+    height: 16px;
+}
+.dxVerticalGrid_CTEditRow_KetoSavage
+{
+    background-position: -17px -85px;
+    width: 16px;
+    height: 16px;
+}
+.dxVerticalGrid_CTEditRowDisabled_KetoSavage
+{
+    background-position: -17px -51px;
+    width: 16px;
+    height: 16px;
+}
+.dxVerticalGrid_CTExportCsv_KetoSavage
+{
+    background-position: -51px -34px;
+    width: 16px;
+    height: 16px;
+}
+.dxVerticalGrid_CTExportCsvDisabled_KetoSavage
+{
+    background-position: -34px 0px;
+    width: 16px;
+    height: 16px;
+}
+.dxVerticalGrid_CTExportDocx_KetoSavage
+{
+    background-position: 0px -68px;
+    width: 16px;
+    height: 16px;
+}
+.dxVerticalGrid_CTExportDocxDisabled_KetoSavage
+{
+    background-position: 0px -85px;
+    width: 16px;
+    height: 16px;
+}
+.dxVerticalGrid_CTExportPdf_KetoSavage
+{
+    background-position: 0px -17px;
+    width: 16px;
+    height: 16px;
+}
+.dxVerticalGrid_CTExportPdfDisabled_KetoSavage
+{
+    background-position: -17px 0px;
+    width: 16px;
+    height: 16px;
+}
+.dxVerticalGrid_CTExportRtf_KetoSavage
+{
+    background-position: -34px -17px;
+    width: 16px;
+    height: 16px;
+}
+.dxVerticalGrid_CTExportRtfDisabled_KetoSavage
+{
+    background-position: -51px 0px;
+    width: 16px;
+    height: 16px;
+}
+.dxVerticalGrid_CTExportXls_KetoSavage
+{
+    background-position: -34px -51px;
+    width: 16px;
+    height: 16px;
+}
+.dxVerticalGrid_CTExportXlsDisabled_KetoSavage
+{
+    background-position: -34px -85px;
+    width: 16px;
+    height: 16px;
+}
+.dxVerticalGrid_CTExportXlsx_KetoSavage
+{
+    background-position: -51px -68px;
+    width: 16px;
+    height: 16px;
+}
+.dxVerticalGrid_CTExportXlsxDisabled_KetoSavage
+{
+    background-position: -34px -34px;
+    width: 16px;
+    height: 16px;
+}
+.dxVerticalGrid_CTNewRow_KetoSavage
+{
+    background-position: -17px -68px;
+    width: 16px;
+    height: 16px;
+}
+.dxVerticalGrid_CTNewRowDisabled_KetoSavage
+{
+    background-position: -51px -51px;
+    width: 16px;
+    height: 16px;
+}
+.dxVerticalGrid_CTRefresh_KetoSavage
+{
+    background-position: -17px -17px;
+    width: 16px;
+    height: 16px;
+}
+.dxVerticalGrid_CTRefreshDisabled_KetoSavage
+{
+    background-position: -34px -68px;
+    width: 16px;
+    height: 16px;
+}
+.dxVerticalGrid_CTShowFilterEditor_KetoSavage
+{
+    background-position: -30px -117px;
+    width: 14px;
+    height: 14px;
+}
+.dxVerticalGrid_CTShowFilterEditorDisabled_KetoSavage
+{
+    background-position: -45px -102px;
+    width: 14px;
+    height: 14px;
+}
+.dxVerticalGrid_CTShowSearchPanel_KetoSavage
+{
+    background-position: -51px -85px;
+    width: 14px;
+    height: 14px;
+}
+.dxVerticalGrid_CTShowSearchPanelDisabled_KetoSavage
+{
+    background-position: 0px -34px;
+    width: 16px;
+    height: 16px;
+}
+.dxVerticalGrid_ExpandedButton_KetoSavage
+{
+    background-position: -45px -117px;
+    width: 12px;
+    height: 12px;
+}
+.dxVerticalGrid_gvCellError_KetoSavage
+{
+    background-position: 0px -102px;
+    width: 14px;
+    height: 14px;
+}
+.dxVerticalGrid_gvFilterRowButton_KetoSavage
+{
+    background-position: 0px -117px;
+    width: 14px;
+    height: 14px;
+}
+.dxVerticalGrid_gvHeaderFilter_KetoSavage
+{
+    background-position: -15px -102px;
+    width: 14px;
+    height: 14px;
+}
+.dxVerticalGrid_gvHeaderFilterActive_KetoSavage
+{
+    background-position: -15px -117px;
+    width: 14px;
+    height: 14px;
+}
+.dxVerticalGrid_gvHeaderSortDown_KetoSavage
+{
+    background-position: -52px -132px;
+    width: 12px;
+    height: 12px;
+}
+.dxVerticalGrid_gvHeaderSortUp_KetoSavage
+{
+    background-position: 0px -132px;
+    width: 12px;
+    height: 12px;
+}
+

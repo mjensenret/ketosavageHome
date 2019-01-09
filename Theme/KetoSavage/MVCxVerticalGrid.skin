@@ -1,0 +1,23 @@
+<%@ Register TagPrefix="dx" Namespace="DevExpress.Data" Assembly="DevExpress.Data.v18.1, Version=18.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" %>
+<%@ Register TagPrefix="dx" Namespace="DevExpress.Web" Assembly="DevExpress.Web.v18.1, Version=18.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" %>
+<%@ Register TagPrefix="dxmvc" Namespace="DevExpress.Web.Mvc" Assembly="DevExpress.Web.Mvc5.v18.1, Version=18.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" %> 
+
+<dxmvc:MVCxVerticalGrid runat="server" CssFilePath="{0}/styles.css" CssPostfix="KetoSavage">
+    <SettingsPager CurrentPageNumberFormat="{0}">
+        <PageSizeItemSettings ShowPopupShadow="true" />
+    </SettingsPager>
+    <Images SpriteCssFilePath="{0}/sprite.css" />
+    <Styles CssPostfix="KetoSavage" CssFilePath="{0}/styles.css" IndentWidth="32" />
+    <StylesPager>
+        <Pager ItemSpacing="0px" Spacing="0px" />
+    </StylesPager>
+    <StylesEditors>
+        <Calendar>
+            <Border BorderColor="Silver" BorderStyle="Solid" BorderWidth="1px" />
+        </Calendar>
+    </StylesEditors>
+    <SettingsPopup>
+        <HeaderFilter MinWidth="230px" MinHeight="150px"></HeaderFilter>
+    </SettingsPopup>
+</dxmvc:MVCxVerticalGrid>
+

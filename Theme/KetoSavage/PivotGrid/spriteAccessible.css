@@ -1,0 +1,350 @@
+.dx-acc-r .dxPivotGrid_CTNAttribute:before,
+.dx-acc-r .dxPivotGrid_CTNCalculatedMeasure:before,
+.dx-acc-r .dxPivotGrid_CTNDimension:before,
+.dx-acc-r .dxPivotGrid_CTNFolderClosed:before,
+.dx-acc-r .dxPivotGrid_CTNFolderOpen:before,
+.dx-acc-r .dxPivotGrid_CTNHierarchy:before,
+.dx-acc-r .dxPivotGrid_CTNKpi:before,
+.dx-acc-r .dxPivotGrid_CTNMeasure:before,
+.dx-acc-r .dxPivotGrid_FLBottomPanelOnly1by4_KetoSavage:before,
+.dx-acc-r .dxPivotGrid_FLBottomPanelOnly2by2_KetoSavage:before,
+.dx-acc-r .dxPivotGrid_FLButton_KetoSavage:before,
+.dx-acc-r .dxPivotGrid_FLColumnAreaHeaders_KetoSavage:before,
+.dx-acc-r .dxPivotGrid_FLDataAreaHeaders_KetoSavage:before,
+.dx-acc-r .dxPivotGrid_FLFieldList_KetoSavage:before,
+.dx-acc-r .dxPivotGrid_FLFilterAreaHeaders_KetoSavage:before,
+.dx-acc-r .dxPivotGrid_FLRowAreaHeaders_KetoSavage:before,
+.dx-acc-r .dxPivotGrid_FLStackedDefault_KetoSavage:before,
+.dx-acc-r .dxPivotGrid_FLStackedSideBySide_KetoSavage:before,
+.dx-acc-r .dxPivotGrid_FLTopPanelOnly_KetoSavage:before,
+.dx-acc-r .dxPivotGrid_pgCollapsedButton_KetoSavage:before,
+.dx-acc-r .dxPivotGrid_pgCustomizationFormCloseButton_KetoSavage:before,
+.dx-acc-r .dxPivotGrid_pgDataHeaders_KetoSavage:before,
+.dx-acc-r .dxPivotGrid_pgDragArrowDown_KetoSavage:before,
+.dx-acc-r .dxPivotGrid_pgDragArrowLeft_KetoSavage:before,
+.dx-acc-r .dxPivotGrid_pgDragArrowRight_KetoSavage:before,
+.dx-acc-r .dxPivotGrid_pgDragArrowUp_KetoSavage:before,
+.dx-acc-r .dxPivotGrid_pgDragHideField_KetoSavage:before,
+.dx-acc-r .dxPivotGrid_pgExpandedButton_KetoSavage:before,
+.dx-acc-r .dxPivotGrid_pgFilterButton_KetoSavage:before,
+.dx-acc-r .dxPivotGrid_pgFilterButtonActive_KetoSavage:before,
+.dx-acc-r .dxPivotGrid_pgFilterResizer_KetoSavage:before,
+.dx-acc-r .dxPivotGrid_pgGroupSeparator_KetoSavage:before,
+.dx-acc-r .dxPivotGrid_pgPrefilterButton_KetoSavage:before,
+.dx-acc-r .dxPivotGrid_pgSortByColumn_KetoSavage:before,
+.dx-acc-r .dxPivotGrid_pgSortDownButton_KetoSavage:before,
+.dx-acc-r .dxPivotGrid_pgSortUpButton_KetoSavage:before,
+.dx-acc-r .dxtv-ndSel .dxPivotGrid_CTNCalculatedMeasure:before,
+.dx-acc-r .dxtv-ndSel .dxPivotGrid_CTNDimension:before,
+.dx-acc-r .dxtv-ndSel .dxPivotGrid_CTNFolderClosed:before,
+.dx-acc-r .dxtv-ndSel .dxPivotGrid_CTNFolderOpen:before,
+.dx-acc-r .dxtv-ndSel .dxPivotGrid_CTNHierarchy:before,
+.dx-acc-r .dxtv-ndSel .dxPivotGrid_CTNKpi:before,
+.dx-acc-r .dxtv-ndSel .dxPivotGrid_CTNMeasure:before
+
+{
+    content: url('sprite.svg');
+
+}
+.dx-acc-r .dxPivotGrid_CTNAttribute:before
+
+{
+    left: -68px;
+    top: -36px;
+
+}
+.dx-acc-r .dxPivotGrid_CTNCalculatedMeasure:before
+
+{
+    left: -17px;
+    top: -70px;
+
+}
+.dx-acc-r .dxPivotGrid_CTNDimension:before
+
+{
+    left: -51px;
+    top: -36px;
+
+}
+.dx-acc-r .dxPivotGrid_CTNFolderClosed:before
+
+{
+    left: 0px;
+    top: -104px;
+
+}
+.dx-acc-r .dxPivotGrid_CTNFolderOpen:before
+
+{
+    left: -34px;
+    top: -87px;
+
+}
+.dx-acc-r .dxPivotGrid_CTNHierarchy:before
+
+{
+    left: -68px;
+    top: -70px;
+
+}
+.dx-acc-r .dxPivotGrid_CTNKpi:before
+
+{
+    left: -17px;
+    top: -87px;
+
+}
+.dx-acc-r .dxPivotGrid_CTNMeasure:before
+
+{
+    left: -34px;
+    top: -104px;
+
+}
+.dx-acc-r .dxPivotGrid_FLBottomPanelOnly1by4_KetoSavage:before
+
+{
+    left: -21px;
+    top: 0px;
+
+}
+.dx-acc-r .dxPivotGrid_FLBottomPanelOnly2by2_KetoSavage:before
+
+{
+    left: -51px;
+    top: -87px;
+
+}
+.dx-acc-r .dxPivotGrid_FLButton_KetoSavage:before
+
+{
+    left: -51px;
+    top: -104px;
+
+}
+.dx-acc-r .dxPivotGrid_FLColumnAreaHeaders_KetoSavage:before
+
+{
+    left: -68px;
+    top: -87px;
+
+}
+.dx-acc-r .dxPivotGrid_FLDataAreaHeaders_KetoSavage:before
+
+{
+    left: -34px;
+    top: -53px;
+
+}
+.dx-acc-r .dxPivotGrid_FLFieldList_KetoSavage:before
+
+{
+    left: -51px;
+    top: -53px;
+
+}
+.dx-acc-r .dxPivotGrid_FLFilterAreaHeaders_KetoSavage:before
+
+{
+    left: 0px;
+    top: -36px;
+
+}
+.dx-acc-r .dxPivotGrid_FLRowAreaHeaders_KetoSavage:before
+
+{
+    left: 0px;
+    top: -70px;
+
+}
+.dx-acc-r .dxPivotGrid_FLStackedDefault_KetoSavage:before
+
+{
+    left: -34px;
+    top: -36px;
+
+}
+.dx-acc-r .dxPivotGrid_FLStackedSideBySide_KetoSavage:before
+
+{
+    left: -38px;
+    top: 0px;
+
+}
+.dx-acc-r .dxPivotGrid_FLTopPanelOnly_KetoSavage:before
+
+{
+    left: 0px;
+    top: -87px;
+
+}
+.dx-acc-r .dxPivotGrid_pgCollapsedButton_KetoSavage:before
+
+{
+    left: -83px;
+    top: -104px;
+
+}
+.dx-acc-r .dxPivotGrid_pgCustomizationFormCloseButton_KetoSavage:before
+
+{
+    left: 0px;
+    top: 0px;
+
+}
+.dx-acc-r .dxPivotGrid_pgDataHeaders_KetoSavage:before
+
+{
+    left: 0px;
+    top: -21px;
+
+}
+.dx-acc-r .dxPivotGrid_pgDragArrowDown_KetoSavage:before
+
+{
+    left: -59px;
+    top: -121px;
+
+}
+.dx-acc-r .dxPivotGrid_pgDragArrowLeft_KetoSavage:before
+
+{
+    left: -38px;
+    top: -121px;
+
+}
+.dx-acc-r .dxPivotGrid_pgDragArrowRight_KetoSavage:before
+
+{
+    left: -28px;
+    top: -121px;
+
+}
+.dx-acc-r .dxPivotGrid_pgDragArrowUp_KetoSavage:before
+
+{
+    left: -48px;
+    top: -121px;
+
+}
+.dx-acc-r .dxPivotGrid_pgDragHideField_KetoSavage:before
+
+{
+    left: -34px;
+    top: -70px;
+
+}
+.dx-acc-r .dxPivotGrid_pgExpandedButton_KetoSavage:before
+
+{
+    left: -80px;
+    top: -16px;
+
+}
+.dx-acc-r .dxPivotGrid_pgFilterButton_KetoSavage:before
+
+{
+    left: -68px;
+    top: -104px;
+
+}
+.dx-acc-r .dxPivotGrid_pgFilterButtonActive_KetoSavage:before
+
+{
+    left: -59px;
+    top: -21px;
+
+}
+.dx-acc-r .dxPivotGrid_pgFilterResizer_KetoSavage:before
+
+{
+    left: -44px;
+    top: -21px;
+
+}
+.dx-acc-r .dxPivotGrid_pgGroupSeparator_KetoSavage:before
+
+{
+    left: -23px;
+    top: -21px;
+
+}
+.dx-acc-r .dxPivotGrid_pgPrefilterButton_KetoSavage:before
+
+{
+    left: 0px;
+    top: -121px;
+
+}
+.dx-acc-r .dxPivotGrid_pgSortByColumn_KetoSavage:before
+
+{
+    left: -72px;
+    top: 0px;
+
+}
+.dx-acc-r .dxPivotGrid_pgSortDownButton_KetoSavage:before
+
+{
+    left: -15px;
+    top: -121px;
+
+}
+.dx-acc-r .dxPivotGrid_pgSortUpButton_KetoSavage:before
+
+{
+    left: -74px;
+    top: -21px;
+
+}
+.dx-acc-r .dxtv-ndSel .dxPivotGrid_CTNCalculatedMeasure:before
+
+{
+    left: 0px;
+    top: -53px;
+
+}
+.dx-acc-r .dxtv-ndSel .dxPivotGrid_CTNDimension:before
+
+{
+    left: -55px;
+    top: 0px;
+
+}
+.dx-acc-r .dxtv-ndSel .dxPivotGrid_CTNFolderClosed:before
+
+{
+    left: -17px;
+    top: -53px;
+
+}
+.dx-acc-r .dxtv-ndSel .dxPivotGrid_CTNFolderOpen:before
+
+{
+    left: -17px;
+    top: -104px;
+
+}
+.dx-acc-r .dxtv-ndSel .dxPivotGrid_CTNHierarchy:before
+
+{
+    left: -17px;
+    top: -36px;
+
+}
+.dx-acc-r .dxtv-ndSel .dxPivotGrid_CTNKpi:before
+
+{
+    left: -51px;
+    top: -70px;
+
+}
+.dx-acc-r .dxtv-ndSel .dxPivotGrid_CTNMeasure:before
+
+{
+    left: -68px;
+    top: -53px;
+
+}
+

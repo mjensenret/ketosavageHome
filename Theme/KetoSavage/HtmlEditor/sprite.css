@@ -1,0 +1,224 @@
+.dxeListBoxItemSelected_KetoSavage .dxHtmlEditor_heEnumIcon_KetoSavage,
+.dxeListBoxItemSelected_KetoSavage .dxHtmlEditor_heEventIcon_KetoSavage,
+.dxeListBoxItemSelected_KetoSavage .dxHtmlEditor_heFieldIcon_KetoSavage,
+.dxeListBoxItemSelected_KetoSavage .dxHtmlEditor_heXmlItemIcon_KetoSavage,
+.dxHtmlEditor_heConstrainProportionsBottom_KetoSavage,
+.dxHtmlEditor_heConstrainProportionsBottomRtl_KetoSavage,
+.dxHtmlEditor_heConstrainProportionsMiddleOff_KetoSavage,
+.dxHtmlEditor_heConstrainProportionsMiddleOffRtl_KetoSavage,
+.dxHtmlEditor_heConstrainProportionsMiddleOn_KetoSavage,
+.dxHtmlEditor_heConstrainProportionsMiddleOnRtl_KetoSavage,
+.dxHtmlEditor_heConstrainProportionsTop_KetoSavage,
+.dxHtmlEditor_heConstrainProportionsTopRtl_KetoSavage,
+.dxHtmlEditor_heEnumIcon_KetoSavage,
+.dxHtmlEditor_heErrorFrameCloseButton_KetoSavage,
+.dxHtmlEditor_heEventIcon_KetoSavage,
+.dxHtmlEditor_heFieldIcon_KetoSavage,
+.dxHtmlEditor_heReset_KetoSavage,
+.dxHtmlEditor_heSizeGrip_KetoSavage,
+.dxHtmlEditor_heSizeGripRtl_KetoSavage,
+.dxHtmlEditor_heTagInspectorChangeButton_KetoSavage,
+.dxHtmlEditor_heTagInspectorRemoveButton_KetoSavage,
+.dxHtmlEditor_heTagInspectorSeparator_KetoSavage,
+.dxHtmlEditor_heToolbarPopOut_KetoSavage,
+.dxHtmlEditor_heXmlItemIcon_KetoSavage,
+.dxm-hovered .dxHtmlEditor_heToolbarPopOut_KetoSavage
+{
+    background-image: url('sprite.svg');
+    background-repeat: no-repeat;
+    background-color: transparent;
+}
+.dxIE .dx-acc-r .dxeListBoxItemSelected_KetoSavage .dxHtmlEditor_heEnumIcon_KetoSavage::before,
+.dxIE .dx-acc-r .dxeListBoxItemSelected_KetoSavage .dxHtmlEditor_heEventIcon_KetoSavage::before,
+.dxIE .dx-acc-r .dxeListBoxItemSelected_KetoSavage .dxHtmlEditor_heFieldIcon_KetoSavage::before,
+.dxIE .dx-acc-r .dxeListBoxItemSelected_KetoSavage .dxHtmlEditor_heXmlItemIcon_KetoSavage::before,
+.dxIE .dx-acc-r .dxHtmlEditor_heConstrainProportionsBottom_KetoSavage::before,
+.dxIE .dx-acc-r .dxHtmlEditor_heConstrainProportionsBottomRtl_KetoSavage::before,
+.dxIE .dx-acc-r .dxHtmlEditor_heConstrainProportionsMiddleOff_KetoSavage::before,
+.dxIE .dx-acc-r .dxHtmlEditor_heConstrainProportionsMiddleOffRtl_KetoSavage::before,
+.dxIE .dx-acc-r .dxHtmlEditor_heConstrainProportionsMiddleOn_KetoSavage::before,
+.dxIE .dx-acc-r .dxHtmlEditor_heConstrainProportionsMiddleOnRtl_KetoSavage::before,
+.dxIE .dx-acc-r .dxHtmlEditor_heConstrainProportionsTop_KetoSavage::before,
+.dxIE .dx-acc-r .dxHtmlEditor_heConstrainProportionsTopRtl_KetoSavage::before,
+.dxIE .dx-acc-r .dxHtmlEditor_heEnumIcon_KetoSavage::before,
+.dxIE .dx-acc-r .dxHtmlEditor_heErrorFrameCloseButton_KetoSavage::before,
+.dxIE .dx-acc-r .dxHtmlEditor_heEventIcon_KetoSavage::before,
+.dxIE .dx-acc-r .dxHtmlEditor_heFieldIcon_KetoSavage::before,
+.dxIE .dx-acc-r .dxHtmlEditor_heReset_KetoSavage::before,
+.dxIE .dx-acc-r .dxHtmlEditor_heSizeGrip_KetoSavage::before,
+.dxIE .dx-acc-r .dxHtmlEditor_heSizeGripRtl_KetoSavage::before,
+.dxIE .dx-acc-r .dxHtmlEditor_heTagInspectorChangeButton_KetoSavage::before,
+.dxIE .dx-acc-r .dxHtmlEditor_heTagInspectorRemoveButton_KetoSavage::before,
+.dxIE .dx-acc-r .dxHtmlEditor_heTagInspectorSeparator_KetoSavage::before,
+.dxIE .dx-acc-r .dxHtmlEditor_heToolbarPopOut_KetoSavage::before,
+.dxIE .dx-acc-r .dxHtmlEditor_heXmlItemIcon_KetoSavage::before,
+.dxIE .dx-acc-r .dxm-hovered .dxHtmlEditor_heToolbarPopOut_KetoSavage::before{
+    width: 299px;
+}
+.dxeListBoxItemSelected_KetoSavage .dxHtmlEditor_heEnumIcon_KetoSavage
+{
+    background-position: -85px 0px;
+    width: 16px;
+    height: 16px;
+}
+.dxeListBoxItemSelected_KetoSavage .dxHtmlEditor_heEventIcon_KetoSavage
+{
+    background-position: -17px 0px;
+    width: 16px;
+    height: 16px;
+}
+.dxeListBoxItemSelected_KetoSavage .dxHtmlEditor_heFieldIcon_KetoSavage
+{
+    background-position: 0px 0px;
+    width: 16px;
+    height: 16px;
+}
+.dxeListBoxItemSelected_KetoSavage .dxHtmlEditor_heXmlItemIcon_KetoSavage
+{
+    background-position: -68px 0px;
+    width: 16px;
+    height: 16px;
+}
+.dxHtmlEditor_heConstrainProportionsBottom_KetoSavage
+{
+    background-position: -290px -10px;
+    width: 8px;
+    height: 6px;
+}
+.dxHtmlEditor_heConstrainProportionsBottomRtl_KetoSavage
+{
+    background-position: -272px -10px;
+    width: 8px;
+    height: 6px;
+}
+.dxHtmlEditor_heConstrainProportionsMiddleOff_KetoSavage
+{
+    background-position: -217px 0px;
+    width: 7px;
+    height: 13px;
+}
+.dxHtmlEditor_heConstrainProportionsMiddleOffRtl_KetoSavage
+{
+    background-position: -241px 0px;
+    width: 7px;
+    height: 13px;
+}
+.dxHtmlEditor_heConstrainProportionsMiddleOn_KetoSavage
+{
+    background-position: -225px 0px;
+    width: 7px;
+    height: 13px;
+}
+.dxHtmlEditor_heConstrainProportionsMiddleOnRtl_KetoSavage
+{
+    background-position: -233px 0px;
+    width: 7px;
+    height: 13px;
+}
+.dxHtmlEditor_heConstrainProportionsTop_KetoSavage
+{
+    background-position: -286px 0px;
+    width: 8px;
+    height: 6px;
+}
+.dxHtmlEditor_heConstrainProportionsTopRtl_KetoSavage
+{
+    background-position: -281px -10px;
+    width: 8px;
+    height: 6px;
+}
+.dxHtmlEditor_heEnumIcon_KetoSavage
+{
+    background-position: -136px 0px;
+    width: 16px;
+    height: 16px;
+}
+.dxHtmlEditor_heErrorFrameCloseButton_KetoSavage
+{
+    background-position: -249px 0px;
+    width: 10px;
+    height: 10px;
+}
+.dxHtmlEditor_heEventIcon_KetoSavage
+{
+    background-position: -51px 0px;
+    width: 16px;
+    height: 16px;
+}
+.dxHtmlEditor_heFieldIcon_KetoSavage
+{
+    background-position: -102px 0px;
+    width: 16px;
+    height: 16px;
+}
+.dxHtmlEditor_heReset_KetoSavage
+{
+    background-position: -153px 0px;
+    width: 16px;
+    height: 16px;
+}
+.dxHtmlEditor_heSizeGrip_KetoSavage
+{
+    background-position: -187px 0px;
+    width: 14px;
+    height: 14px;
+}
+.dxHtmlEditor_heSizeGripRtl_KetoSavage
+{
+    background-position: -202px 0px;
+    width: 14px;
+    height: 14px;
+}
+.dxHtmlEditor_heTagInspectorChangeButton_KetoSavage
+{
+    background-position: -34px 0px;
+    width: 16px;
+    height: 16px;
+}
+.dxHtmlEditor_heTagInspectorRemoveButton_KetoSavage
+{
+    background-position: -170px 0px;
+    width: 16px;
+    height: 16px;
+}
+.dxHtmlEditor_heTagInspectorSeparator_KetoSavage
+{
+    background-position: -280px 0px;
+    width: 5px;
+    height: 8px;
+}
+.dxHtmlEditor_heToolbarPopOut_KetoSavage
+{
+    background-position: -260px 0px;
+    width: 9px;
+    height: 9px;
+}
+.dxHtmlEditor_heXmlItemIcon_KetoSavage
+{
+    background-position: -119px 0px;
+    width: 16px;
+    height: 16px;
+}
+.dxm-hovered .dxHtmlEditor_heToolbarPopOut_KetoSavage
+{
+    background-position: -270px 0px;
+    width: 9px;
+    height: 9px;
+}
+.dxHtmlEditor_heConstrainProportionsMiddleOn_KetoSavage,
+.dxHtmlEditor_heConstrainProportionsMiddleOff_KetoSavage,
+.dxHtmlEditor_heConstrainProportionsBottom_KetoSavage,
+.dxHtmlEditor_heConstrainProportionsTop_KetoSavage,
+.dxHtmlEditor_RoundPanel_herpHeaderTopLeftCorner_KetoSavage,
+.dxHtmlEditor_RoundPanel_herpHeaderTopRightCorner_KetoSavage,
+.dxHtmlEditor_RoundPanel_herpBottomLeftCorner_KetoSavage,
+.dxHtmlEditor_RoundPanel_herpBottomRightCorner_KetoSavage,
+.dxHtmlEditor_RoundPanel_herpTopLeftCorner_KetoSavage,
+.dxHtmlEditor_RoundPanel_herpTopRightCorner_KetoSavage,
+.dxHtmlEditor_RoundPanel_herpGroupBoxBottomLeftCorner_KetoSavage,
+.dxHtmlEditor_RoundPanel_herpGroupBoxBottomRightCorner_KetoSavage,
+.dxHtmlEditor_RoundPanel_herpGroupBoxTopLeftCorner_KetoSavage,
+.dxHtmlEditor_RoundPanel_herpGroupBoxTopRightCorner_KetoSavage
+{
+	display:block;
+}
