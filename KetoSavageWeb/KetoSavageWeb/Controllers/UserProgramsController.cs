@@ -42,21 +42,23 @@ namespace KetoSavageWeb.Controllers
             
             var coachList = UserManager.Users.Where(x => x.IsActive == true).Where(x => x.Roles.Select(y => y.Role.Name).Contains("Coach")).ToList();
             var userQuery = UserManager.Users.Where(x => x.IsActive == true).Include(x => x.Roles).Include(y => y.UserPrograms);
-            userQuery = userQuery.Where(x => x.Roles.Select(y => y.Role.Name).Contains("Client")).Include(z => z.UserPrograms.Select(p => p.DailyProgress));
+            userQuery = userQuery.Where(x => x.Roles.Select(y => y.Role.Name).Contains("Client")).Include(z => z.UserPrograms);
             //userQuery = userQuery.Where(x => x.UserPrograms.Select(y => y.IsDeleted == false).FirstOrDefault());
+
+            
 
             var items = (userQuery
                 .OrderBy(x => x.UserName)
                 .Select(x => new
                 {
                     UserId = x.Id,
-                    ProgramId = x.UserPrograms.Where(z => z.IsDeleted == false).Select(y => y.Id).FirstOrDefault(),
+                    ProgramId = x.UserPrograms.Where(z => z.IsDeleted == false  && z.IsActive == true).Select(y => y.Id).FirstOrDefault(),
                     x.FirstName,
                     x.LastName,
                     x.Roles,
                     x.UserName,
                     x.Email,
-                    UserPrograms = x.UserPrograms.Where(z => z.IsDeleted == false)
+                    UserPrograms = x.UserPrograms.Where(z => z.IsDeleted == false && z.IsActive == true)
                 })
                 .ToList()
                 .Select(x => new UserProgramViewModel()
@@ -105,13 +107,13 @@ namespace KetoSavageWeb.Controllers
                 .Select(x => new
                 {
                     UserId = x.Id,
-                    ProgramId = x.UserPrograms.Where(z => z.IsDeleted == false).Select(y => y.Id).FirstOrDefault(),
+                    ProgramId = x.UserPrograms.Where(z => z.IsDeleted == false && z.IsActive == true).Select(y => y.Id).FirstOrDefault(),
                     x.FirstName,
                     x.LastName,
                     x.Roles,
                     x.UserName,
                     x.Email,
-                    UserPrograms = x.UserPrograms.Where(z => z.IsDeleted == false && z.EndDate >= DateTime.Now)
+                    UserPrograms = x.UserPrograms.Where(z => z.IsDeleted == false && z.EndDate >= DateTime.Now && z.IsActive == true)
                 })
                 .ToList()
                 .Select(x => new UserProgramViewModel()
@@ -394,7 +396,7 @@ namespace KetoSavageWeb.Controllers
                 {
                     currentWeight = userProgram.DailyProgress
                         .Where(w => w.ActualWeight != null)
-                        .OrderByDescending(t => t.DateId)
+                        .OrderBy(t => t.DateId)
                         .Select(x => x.ActualWeight)
                         .FirstOrDefault();
                 }
@@ -545,7 +547,7 @@ namespace KetoSavageWeb.Controllers
 
             var q = (userProgramDetails
                 //.Where(x => x.Dates.WeekOfYear == currentWeek || x.Dates.WeekOfYear == (currentWeek - 1))
-                .OrderByDescending(x => x.Dates.Date)
+                .OrderBy(x => x.Dates.Date)
                 .Select(x => new
                 {
                     x.DateId,

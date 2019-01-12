@@ -34,10 +34,17 @@
         {
             var gv = s as MVCxGridView;
             var program = gv.GetRowValues(e.VisibleIndex, "ProgramName");
+            var active = gv.GetRowValues(e.VisibleIndex, "IsActive");
             if ((program == null && (e.ButtonType == ColumnCommandButtonType.Edit || e.ButtonType == ColumnCommandButtonType.Delete)) || (program != null && (e.ButtonType == ColumnCommandButtonType.New)))
             {
                 e.Enabled = false;
                 e.Visible = false;
+            }
+
+            if (program !=null && false.Equals(active) && e.ButtonType == ColumnCommandButtonType.New)
+            {
+                e.Enabled = true;
+                e.Visible = true;
             }
         };
 

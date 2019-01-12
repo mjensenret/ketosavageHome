@@ -53,6 +53,8 @@ namespace KetoSavageWeb.Controllers
                 dailyProgress.ActualFat = model.actualFat;
                 dailyProgress.ActualProtein = model.actualProtein;
                 dailyProgress.ActualCarbohydrate = model.actualCarb;
+                dailyProgress.HungerLevel = model.hungerLevel;
+                dailyProgress.Notes = model.Notes;
                 dailyProgress.LastModified = DateTime.Now;
                 dailyProgress.LastModifiedBy = CurrentUser.UserName;
 

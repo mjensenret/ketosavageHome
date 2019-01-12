@@ -2,9 +2,18 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using System.Web.Mvc;
 
 namespace KetoSavageWeb.ViewModels
 {
+    public enum HungerLevel
+    {
+        None,
+        Slight,
+        Moderate,
+        Sevier
+    }
+
     public class ProgressViewModel
     {
     }
@@ -16,6 +25,17 @@ namespace KetoSavageWeb.ViewModels
         public double actualFat { get; set; }
         public double actualProtein { get; set; }
         public double actualCarb { get; set; }
+        public string hungerLevel { get; set; }
+        public string Notes { get; set; }
+        public List<SelectListItem> hungerList()
+        {
+            List<SelectListItem> choices = new List<SelectListItem>();
+            foreach (var c in Enum.GetValues(typeof(HungerLevel)))
+            {
+                choices.Add(new SelectListItem() { Text = c.ToString(), Value = c.ToString() });
+            }
+            return choices;
+        }
     }
 
     public class EnterMeasurementViewModel

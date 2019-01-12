@@ -52,13 +52,37 @@
 
         });
     });
+    settings.Items.Add(m => m.hungerLevel, l =>
+    {
+        l.Caption = "Hunger Level";
+        l.NestedExtension().ComboBox(s =>
+        {
+            s.Properties.ValueType = typeof(string);
+            var list = Model.hungerList();
+            foreach(var j in list)
+            {
+                s.Properties.Items.Add(j.Text, j.Value);
+            }
+
+        });
+    });
+    settings.Items.Add(m => m.Notes, n =>
+    {
+        n.Caption = "Notes";
+        n.Width = Unit.Percentage(100);
+        n.NestedExtension().Memo(memo =>
+        {
+            memo.Width = Unit.Percentage(100);
+            memo.Properties.Rows = 8;
+        });
+    });
     settings.Items.Add(s =>
     {
         s.ShowCaption = DefaultBoolean.False;
         s.SetNestedContent(() =>
         {
             Html.DevExpress().Button(b =>
-            {                
+            {
                 b.Name = "btnMacroSubmit";
                 b.ControlStyle.CssClass = "button";
                 b.Text = "Save";

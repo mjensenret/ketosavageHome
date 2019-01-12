@@ -1475,6 +1475,14 @@
     <Compile Include="Migrations\201807092123340_modifyNewsfeed.Designer.cs">
       <DependentUpon>201807092123340_modifyNewsfeed.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201901090204591_addHungerLevel.cs" />
+    <Compile Include="Migrations\201901090204591_addHungerLevel.Designer.cs">
+      <DependentUpon>201901090204591_addHungerLevel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201901110314427_addNotesUpdateHungerLevel.cs" />
+    <Compile Include="Migrations\201901110314427_addNotesUpdateHungerLevel.Designer.cs">
+      <DependentUpon>201901110314427_addNotesUpdateHungerLevel.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Abstract\UserManaged.cs" />
     <Compile Include="Models\AccountModels.cs" />
@@ -1558,6 +1566,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201807092123340_modifyNewsfeed.resx">
       <DependentUpon>201807092123340_modifyNewsfeed.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201901090204591_addHungerLevel.resx">
+      <DependentUpon>201901090204591_addHungerLevel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201901110314427_addNotesUpdateHungerLevel.resx">
+      <DependentUpon>201901110314427_addNotesUpdateHungerLevel.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

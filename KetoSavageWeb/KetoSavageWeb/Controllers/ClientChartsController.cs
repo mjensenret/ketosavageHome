@@ -314,7 +314,7 @@ namespace KetoSavageWeb.Controllers
             var userProgress = userProgramRepository.GetActive.Where(x => x.ProgramUserId == userId).Include(y => y.DailyProgress).SelectMany(z => z.DailyProgress);
 
             var q = (userProgress
-                .OrderByDescending(u => u.DateId)
+                .OrderBy(u => u.DateId)
                 )
                 .Where(x => x.Dates.WeekOfYear <= currentWeekNumber + 1)
                 .Select(x => new
