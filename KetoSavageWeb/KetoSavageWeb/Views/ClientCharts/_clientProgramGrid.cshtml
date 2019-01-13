@@ -2,36 +2,38 @@
 
 <div id="devExtremeProgramGrid">
     @(Html.DevExtreme().DataGrid()
-.ID("gridClientProgram")
-.DataSource(Model)
-.RowAlternationEnabled(true)
-.Paging(p => p.PageSize(10))
-.Pager(p => p
-.AllowedPageSizes(new int[] { 10, 20, 30, 40 })
-.ShowPageSizeSelector(true)
-)
-.Columns(c =>
-{
-c.Add()
-    .DataField("Date");
-c.Add()
-.Caption("Weight")
-.Columns(a =>
-{
-a.Add()
-.Caption("Planned")
-.DataField("PlannedWeight");
-a.Add()
-.Caption("Actual")
-.DataField("ActualWeight");
-a.Add()
-.Caption("Variance")
-.CalculateCellValue(@<text>
-        function(data) {
-        return [data.ActualWeight - data.PlannedWeight]
-        }
-</text>);
-});
+    .ID("gridClientProgram")
+    .DataSource(Model)
+    .RowAlternationEnabled(true)
+    .Paging(p => p.PageSize(10))
+    .Pager(p => p
+    .AllowedPageSizes(new int[] { 10, 20, 30, 40 })
+    .ShowPageSizeSelector(true)
+    )
+    .Columns(c =>
+    {
+        c.Add()
+        .DataField("Date");
+        c.Add()
+    .Caption("Weight")
+    .Columns(a =>
+    {
+        a.Add()
+            .Caption("Planned")
+            .DataField("PlannedWeight")
+            .Format(f => f.Type(Format.FixedPoint).Precision(2));
+        a.Add()
+            .Caption("Actual")
+            .DataField("ActualWeight")
+            .Format(f => f.Type(Format.FixedPoint).Precision(2));
+        a.Add()
+            .Caption("Variance")
+            .CalculateCellValue(@<text>
+                function(data) {
+                return [data.ActualWeight - data.PlannedWeight]
+                }
+            </text>);
+    });
 c.Add()
 .Caption("Fat")
 .Columns(a =>
