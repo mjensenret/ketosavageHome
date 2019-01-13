@@ -36,12 +36,46 @@ namespace KetoSavageWeb.Controllers
 
         public PartialViewResult EnterMacroForm()
         {
-            EnterMacroViewModel model = new EnterMacroViewModel();
+            var model = userProgramRepository.GetDailyProgressByDate(CurrentUser.Id, DateTime.Now.Date);
             var userId = CurrentUser.Id;
-            model.macroUserId = userId;
-            model.macroDate = DateTime.Now;
 
-            return PartialView("_enterDailyMacros", model);
+            EnterMacroViewModel viewModel = new EnterMacroViewModel();
+            
+            viewModel.macroUserId = userId;
+            viewModel.macroDate = model.Dates.Date;
+            viewModel.actualFat = (model.ActualFat != null) ? Convert.ToDouble(model.ActualFat) : 0 ;
+            viewModel.actualProtein = (model.ActualProtein != null) ? Convert.ToDouble(model.ActualProtein) : 0;
+            viewModel.actualCarb = (model.ActualCarbohydrate != null) ? Convert.ToDouble(model.ActualCarbohydrate) : 0;
+            viewModel.hungerLevel = model.HungerLevel;
+            viewModel.Notes = model.Notes;
+
+            return PartialView("_enterDailyMacros", viewModel);
+        }
+
+        public JsonResult onMacroDateChange(string date)
+        {
+            try
+            {
+                DateTime selectedDate = Convert.ToDateTime(date);
+                var model = userProgramRepository.GetDailyProgressByDate(CurrentUser.Id, Convert.ToDateTime(date));
+
+                var data = new {
+                    IsSuccess = true,
+                    fat = model.ActualFat,
+                    protein = model.ActualProtein,
+                    carbs = model.ActualCarbohydrate,
+                    notes = model.Notes,
+                    hungerLevel = model.HungerLevel
+                };
+                return Json(data, JsonRequestBehavior.AllowGet);
+            }
+            catch (Exception e)
+            {
+                var data = new { IsSuccess = false, Message = "Something failed" };
+                TempData.Remove("MacroDate");
+                return Json(data);
+            }
+
         }
         [HttpPost]
         public ActionResult UpdateActualMacros(EnterMacroViewModel model)
@@ -103,6 +137,7 @@ namespace KetoSavageWeb.Controllers
             if (programDetails.Count() > 0)
             {
                 var q = (programDetails
+                    .OrderBy(x => x.Dates.Date)
                     .Select(x => new
                     {
                         x.Id,

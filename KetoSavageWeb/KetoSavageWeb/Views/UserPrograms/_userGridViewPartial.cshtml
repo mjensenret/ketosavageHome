@@ -1,5 +1,6 @@
 ﻿
-@{ 
+
+@{
     var grid = Html.DevExpress().GridView(userList =>
     {
         userList.Name = "UserList";
@@ -41,7 +42,7 @@
                 e.Visible = false;
             }
 
-            if (program !=null && false.Equals(active) && e.ButtonType == ColumnCommandButtonType.New)
+            if (program != null && false.Equals(active) && e.ButtonType == ColumnCommandButtonType.New)
             {
                 e.Enabled = true;
                 e.Visible = true;
@@ -105,6 +106,8 @@
             c.FieldName = "currentProgramStartDate";
             c.Caption = "Start Date";
             c.ColumnType = MVCxGridViewColumnType.DateEdit;
+            var props = c.PropertiesEdit as DateEditProperties;
+            props.ClientSideEvents.DateChanged = "onStartDateChange";
             c.VisibleIndex = 6;
         });
         userList.Columns.Add(c =>

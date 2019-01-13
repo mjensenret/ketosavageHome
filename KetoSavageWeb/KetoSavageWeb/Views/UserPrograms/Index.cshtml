@@ -1,4 +1,19 @@
 ﻿@model KetoSavageWeb.ViewModels.UserProgramViewModel
+
+<script type="text/javascript">
+    function onStartDateChange(s, e) {
+        var startDate = UserList.GetEditor("currentProgramStartDate").GetValue();
+        UserList.GetEditor("currentProgramRenewalDate").SetValue(addDays(startDate, 30));
+        UserList.GetEditor("currentProgramEndDate").SetValue(addDays(startDate, 90));
+    }
+
+    function addDays(date, days) {
+        var result = new Date(date);
+        result.setDate(result.getDate() + days);
+        return result;
+    }
+</script>
+
 @{
     ViewBag.Title = "User Programs";
 }

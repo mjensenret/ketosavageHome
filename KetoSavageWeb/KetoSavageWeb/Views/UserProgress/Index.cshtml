@@ -50,7 +50,59 @@
     }).GetHtml()
 </div>
 
+<script type="text/javascript">
+    function OnDateChanged()
+    {
+        var dd = ASPxClientControl.GetControlCollection().GetByName("macroDate").GetValue().toDateString("MM/dd/yyyy");
+        window.console.log("Value of dd" + dd);
+        var fatField = ASPxClientControl.GetControlCollection().GetByName("actualFat");
+        var proteinField = ASPxClientControl.GetControlCollection().GetByName("actualProtein");
+        var carbField = ASPxClientControl.GetControlCollection().GetByName("actualCarb");
+        var noteField = ASPxClientControl.GetControlCollection().GetByName("Notes");
+        var hungerField = ASPxClientControl.GetControlCollection().GetByName("hungerLevel");
 
+        $.ajax({
+            type: "POST",
+            url: '@Url.Action("onMacroDateChange", "UserProgress")',
+            data: { date: dd},
+            //beforeSend: function() {
+            //    loadingPanel.Show();
+            //},
+            success: function(response) {
+                if (response.IsSuccess) {
+                    window.console.log(response.fat);
+                    window.console.log(response.protein);
+                    window.console.log(response.carbs);
+                    window.console.log(response.notes);
+                    window.console.log(response.hungerLevel);
+                    fatField.SetText(response.fat);
+                    proteinField.SetText(response.protein);
+                    carbField.SetText(response.carbs);
+                    if (response.notes == null) {
+                        noteField.SetText("");
+                    }
+                    else {
+                        noteField.SetText(response.notes);
+                    }
+                    if (response.hungerLevel == null) {
+                        hungerField.SetValue("");
+                    }
+                    else {
+                        hungerField.SetValue(response.hungerLevel);
+                    }
+                }
+                else {
+                    window.console.log("no success");
+                }
+                
+            },
+            error: function (jqXHR, textStatus, errorThrown) {
+                window.console.log(errorThrown);
+                alert("For some reason, this did not work");
+            }
+        });
+    }
+</script>
 
 
 

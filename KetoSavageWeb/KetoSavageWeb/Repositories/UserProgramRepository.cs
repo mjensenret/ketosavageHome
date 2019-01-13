@@ -40,6 +40,12 @@ namespace KetoSavageWeb.Repositories
 
             return pastProgress;
         }
+
+        public DailyProgress GetDailyProgressByDate(int userId, DateTime date)
+        {
+            var dailyProgress = this.GetActive.Where(x => x.ProgramUserId == userId).Include(x => x.DailyProgress).Select(x => x.DailyProgress.Where(y => y.Dates.Date == date)).FirstOrDefault();
+            return dailyProgress.FirstOrDefault();
+        }
         public IQueryable<DailyProgress> GetCurrentProgressByUser(int userId, DateTime currentDate)
         {
             //var currentWeek = db.DateModels.Where(x => x.Date == currentDate.Date).Select(y => y.WeekOfYear).First();

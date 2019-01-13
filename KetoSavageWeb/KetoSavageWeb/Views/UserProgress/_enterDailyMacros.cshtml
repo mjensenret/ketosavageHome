@@ -9,7 +9,7 @@
     settings.SettingsItems.ShowCaption = DefaultBoolean.True;
     settings.SettingsItemCaptions.Location = LayoutItemCaptionLocation.Top;
 
-    settings.SettingsItemHelpTexts.Position = HelpTextPosition.Auto;
+    settings.SettingsItemHelpTexts.Position = HelpTextPosition.Bottom;
 
     settings.Items.Add(m => m.macroUserId, u =>
     {
@@ -25,7 +25,8 @@
         f.Caption = "Date";
         f.NestedExtension().DateEdit(d =>
         {
-
+            d.Properties.EditFormatString = "MM/dd/yyyy";
+            d.Properties.ClientSideEvents.DateChanged = "OnDateChanged";
         });
     });
     settings.Items.Add(m => m.actualFat, a =>
@@ -93,4 +94,5 @@
 
 }).GetHtml()
 @{ Html.EndForm();}
+
 
