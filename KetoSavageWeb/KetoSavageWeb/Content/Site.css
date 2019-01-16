@@ -109,14 +109,11 @@ html, body {
 
 }
 
-.loginForm
+#loginForm
 {
-    width: 100%;
     margin: auto;
-    position: relative;
-    float: none !important;
-    display: block;
-    max-width: 400px;
+    width: 50%;
+    border: 3px solid green;
 }
 
 .center img
@@ -731,7 +728,7 @@ html, body {
     /*border: inset;
     background: #ff1111;*/
     margin: auto;
-    width: 90%;
+    width: 60%;
 }
 
 .responsive {
@@ -744,20 +741,20 @@ html, body {
 /*Beginning of Chart CSS declarations*/
 
 /*Coach-specific controls*/
-#controlPanel, #weightGraph, #gaugeContainer, #gridContainer, #newsfeed, #newsGrid{
+#controlPanel, #weightGraph, #gaugeContainer, #gridContainer, #newsGrid{
         padding: 5px;
-        width: 95%;
+        width: 100%;
+        max-width: 1100px;
         /*border: ridge;*/
         /*display: inline-block;*/
         /*float: left;*/
 }
-/*User's progress weight chart*/
-/*#weightGraph {
-    padding: 10px;
-    display:inline-block;
-    width: 88%;
-    border: ridge;
-}*/
+
+#newsfeed {
+    max-width: 1100px;
+    /*width: 60%;*/
+}
+
 .buttons {
     float: left;
 }

@@ -21,9 +21,11 @@
         {
             form.Name = "frmLoginControls";
             form.SettingsAdaptivity.AdaptivityMode = FormLayoutAdaptivityMode.SingleColumnWindowLimit;
+            form.Width = Unit.Percentage(50);
+            form.Style.Add("margin", "auto");
             //form.SettingsAdaptivity.SwitchToSingleColumnAtWindowInnerWidth = 200;
             //form.NestedExtensionWidth = Unit.Percentage(100);
-            form.Styles.Style.CssClass = "loginForm";
+            //form.Styles.Style.CssClass = "loginForm";
 
             form.Items.AddGroupItem(i =>
             {
@@ -32,7 +34,7 @@
                 i.GroupBoxDecoration = GroupBoxDecoration.None;
                 i.Items.Add(b =>
                 {
-                    b.HorizontalAlign = FormLayoutHorizontalAlign.Center;
+                    b.HorizontalAlign = FormLayoutHorizontalAlign.Right;
                     b.ShowCaption = DefaultBoolean.False;
                     //b.Width = Unit.Percentage(100);
                     b.SetNestedContent(() =>
@@ -51,7 +53,7 @@
 
                 i.Items.Add(b =>
                 {
-                    b.HorizontalAlign = FormLayoutHorizontalAlign.Center;
+                    b.HorizontalAlign = FormLayoutHorizontalAlign.Left;
                     b.ShowCaption = DefaultBoolean.False;
                     //b.Width = Unit.Percentage(100);
                     b.SetNestedContent(() =>

@@ -11,7 +11,7 @@
         form.Name = "ModalModeFormLayout";
         form.RequiredMarkDisplayMode = RequiredMarkMode.None;
         form.SettingsItemCaptions.Location = LayoutItemCaptionLocation.Top;
-        //form.Width = Unit.Percentage(100);
+        form.Width = Unit.Percentage(100);
         //form.Height = Unit.Percentage(100);
 
         form.NestedExtensionWidth = Unit.Percentage(100);
@@ -44,7 +44,7 @@
             g.ColCount = 2;
             g.GroupBoxDecoration = GroupBoxDecoration.None;
             g.ShowCaption = DefaultBoolean.False;
-            g.Paddings.Padding = 10;
+            g.Paddings.Padding = 0;
             g.Items.Add(i =>
             {
                 i.ShowCaption = DefaultBoolean.False;
@@ -59,7 +59,7 @@
                         {
                             buttonSettings.Name = "btnLogin";
                             buttonSettings.ControlStyle.CssClass = "button";
-                            buttonSettings.Width = 100;
+                            buttonSettings.Width = 75;
                             buttonSettings.Text = "Login";
                             buttonSettings.UseSubmitBehavior = true;
                         }).Render();
@@ -77,7 +77,7 @@
                     {
                         buttonSettings.Name = "btnCancel";
                         buttonSettings.ControlStyle.CssClass = "button";
-                        buttonSettings.Width = 100;
+                        buttonSettings.Width = 75;
                         buttonSettings.Text = "Cancel";
                         buttonSettings.ClientSideEvents.Click = "function(s, e){ popupControl.Hide(); }";
                     }).Render();

@@ -111,11 +111,11 @@
     @Html.DevExpress().PopupControl(settings =>
     {
         settings.Name = "mainPopupControl";
-        settings.Width = 300;
+        settings.Width = Unit.Percentage(25);
         settings.AllowDragging = true;
         settings.CloseAction = CloseAction.CloseButton;
         settings.CloseOnEscape = true;
-        settings.PopupAnimationType = DevExpress.Web.AnimationType.Fade;
+        settings.PopupAnimationType = DevExpress.Web.AnimationType.None;
         settings.ShowHeader = false;
         settings.Modal = true;
         settings.AutoUpdatePosition = true;
