@@ -446,6 +446,7 @@ namespace KetoSavageWeb.Controllers
 
             ViewBag.ProgramList = new SelectList(program.GetActive, "Id", "programDescription");
             ViewBag.CoachList = new SelectList(coachList, "Id", "UserName");
+            ViewBag.ClientName = model.FullName;
 
             return View("UserProgramDetails", model);
         }
@@ -456,7 +457,10 @@ namespace KetoSavageWeb.Controllers
         {
             var userId = Convert.ToInt32(_userId);
 
+
             var userProgram = userProgramRepository.GetActive.Where(x => x.ProgramUserId == userId);
+            ViewBag.ClientName = (userProgram.Select(x => x.ProgramUser.FirstName) + " " +
+                                  userProgram.Select(x => x.ProgramUser.LastName));
 
             var item = (userProgram
                 .Select(up => new

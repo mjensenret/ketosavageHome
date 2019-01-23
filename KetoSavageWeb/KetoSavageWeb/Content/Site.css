@@ -30,7 +30,7 @@ html, body {
 {
 	border-top-width: 0!important;
 }
-.templateTitle 
+.templateTitle
 {
 	color: #ffffff;
 	float:left;
@@ -157,14 +157,16 @@ html, body {
 	color: #DEDEDE;
 	margin-bottom: 20px;
 }
-
-
+#client-name {
+    font-size: 18px;
+    font-weight: bold;
+    padding: 5px;
+}
 /* iOS */
 .dxpnlControl_iOS.leftPane,
 .dxpnlControl_iOS.rightPane,
-.dxpnlControl_iOS.contentPane
-{
-	border-width: 1px !important;
+.dxpnlControl_iOS.contentPane {
+    border-width: 1px !important;
 }
 .dxpnlControl_iOS.leftPane.panel
 {
