@@ -19,14 +19,14 @@ namespace KetoSavageWeb.Repositories
         {
             var model = _context.DateModels.Where(x => x.Date == currentDate.Date).FirstOrDefault();
             
-            return model.WeekOfYear;
+            return model.ISOWeekOfYear;
         }
 
         public IQueryable<DateModels> GetPastWeeks(DateTime currentDate)
         {
             var startWeekNum = this.GetWeekNum(currentDate) - 4;
             var currentWeekNum = this.GetWeekNum(currentDate);
-            var model = _context.DateModels.Where(x => x.WeekOfMonth >= startWeekNum && x.WeekOfMonth < currentWeekNum);
+            var model = _context.DateModels.Where(x => x.ISOWeekOfYear >= startWeekNum && x.ISOWeekOfYear < currentWeekNum);
 
             return model;
         }
@@ -43,12 +43,12 @@ namespace KetoSavageWeb.Repositories
 
         public int getLastWeekNumber(DateTime currentDate)
         {
-            var model = _context.DateModels.Where(x => x.Date == currentDate.Date).FirstOrDefault().WeekOfYear - 1;
+            var model = _context.DateModels.Where(x => x.Date == currentDate.Date).FirstOrDefault().ISOWeekOfYear - 1;
             return model;
         }
         public int getCurrentWeekNumber(DateTime currentDate)
         {
-            var model = _context.DateModels.Where(x => x.Date == currentDate.Date).FirstOrDefault().WeekOfYear;
+            var model = _context.DateModels.Where(x => x.Date == currentDate.Date).FirstOrDefault().ISOWeekOfYear;
             return model;
         }
     }

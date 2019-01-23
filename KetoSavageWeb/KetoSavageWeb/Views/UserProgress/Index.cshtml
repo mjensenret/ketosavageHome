@@ -13,7 +13,6 @@
     }).GetHtml()
 </div>
 
-
 <div id="weightGraph">
     @Html.DevExpress().Panel(p =>
     {
@@ -49,7 +48,21 @@
     });
     }).GetHtml()
 </div>
-
+@*@Html.DevExpress().PopupControl(settings =>
+    {
+        settings.Name = "mainPopupControl";
+        settings.Width = Unit.Percentage(25);
+        settings.AllowDragging = true;
+        settings.CloseAction = CloseAction.CloseButton;
+        settings.CloseOnEscape = true;
+        settings.PopupAnimationType = DevExpress.Web.AnimationType.None;
+        settings.ShowHeader = false;
+        settings.Modal = true;
+        settings.AutoUpdatePosition = true;
+        settings.PopupHorizontalAlign = PopupHorizontalAlign.WindowCenter;
+        settings.PopupVerticalAlign = PopupVerticalAlign.TopSides;
+        settings.ClientSideEvents.CloseUp = "function(s, e){ ASPxClientEdit.ClearEditorsInContainer(null, '', true); }";
+    }).GetHtml()*@
 <script type="text/javascript">
     function OnDateChanged()
     {
@@ -94,7 +107,7 @@
                 else {
                     window.console.log("no success");
                 }
-                
+
             },
             error: function (jqXHR, textStatus, errorThrown) {
                 window.console.log(errorThrown);

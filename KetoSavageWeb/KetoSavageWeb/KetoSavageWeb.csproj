@@ -1367,6 +1367,8 @@
     <Content Include="Views\ClientDashboard\Index.cshtml" />
     <Content Include="Views\UserPrograms\_manageMacroPartial.cshtml" />
     <Content Include="Views\UserPrograms\ManageClientMacros.cshtml" />
+    <Content Include="Views\UserPrograms\_macroPieChart.cshtml" />
+    <Content Include="Views\UserPrograms\_weeklyMacroUpdateForm.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

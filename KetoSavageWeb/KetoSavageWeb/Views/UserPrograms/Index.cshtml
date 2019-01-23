@@ -21,11 +21,11 @@
 @Html.Action("UserProgramList")
 @*@Html.Partial("_userGridViewPartial")*@
 
-@Html.DevExpress().PopupControl(settings =>
+@*@Html.DevExpress().PopupControl(settings =>
 {
     settings.Name = "popup";
     settings.ShowMaximizeButton = true;
-    settings.PopupHorizontalAlign = PopupHorizontalAlign.WindowCenter;
+    settings.PopupHorizontalAlign = PopupHorizontalAlign.LeftSides;
     settings.PopupVerticalAlign = PopupVerticalAlign.WindowCenter;
     settings.Modal = true;
     settings.HeaderText = "Edit/Update Client Program";
@@ -38,4 +38,4 @@
         Html.RenderPartial("_userProgramHeader");
     });
 
-}).GetHtml()
+}).GetHtml()*@

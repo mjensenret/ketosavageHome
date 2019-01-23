@@ -479,10 +479,57 @@ namespace KetoSavageWeb.Controllers
                 ));
 
             var model = item;
-                        
-
 
             return PartialView("_userProgramDetails", model);
+        }
+
+        public PartialViewResult MacroPieChart()
+        {
+            List<MacroPieChart> model = new List<MacroPieChart>()
+            {
+                new MacroPieChart
+                {
+                    macro = "Fat", value = 165.00*9 / 1925
+                },
+                new MacroPieChart
+                {
+                    macro = "Protein", value = 100.00*4 / 1925
+                },
+                new MacroPieChart
+                {
+                    macro = "Carbs", value = 10.00*4 / 1925
+                    //macro = "Carbs", value = Convert.ToDouble((10*4) / 1925)
+                }
+
+            };
+            return PartialView("_macroPieChart", model);
+        }
+
+        [HttpPost]
+        public PartialViewResult onMacroChange(string fat, string protein, string carbs)
+        {
+            var fatCalories = Convert.ToDouble(fat) * 9;
+            var proteinCalories = Convert.ToDouble(protein) * 4;
+            var carbCalories = Convert.ToDouble(carbs) * 4;
+            var totalCalories = fatCalories + proteinCalories + carbCalories;
+
+            List<MacroPieChart> model = new List<MacroPieChart>()
+            {
+                new MacroPieChart
+                {
+                    macro = "Fat", value = fatCalories / totalCalories
+                },
+                new MacroPieChart
+                {
+                    macro = "Protein", value = (proteinCalories > 0) ? proteinCalories / totalCalories : 0
+                },
+                new MacroPieChart
+                {
+                    macro = "Carbs", value = (carbCalories > 0) ? carbCalories / totalCalories : 0
+                }
+            };
+
+            return PartialView("_macroPieChart", model);
         }
 
         public PartialViewResult pastPerformance(int _userId)
@@ -566,7 +613,7 @@ namespace KetoSavageWeb.Controllers
                     Id = y.Id,
                     DateKey = y.Dates.DateKey,
                     Date = y.Dates.Date,
-                    WeekNum = y.Dates.WeekOfYear,
+                    WeekNum = y.Dates.ISOWeekOfYear,
                     WeekdayName = y.Dates.WeekDayName,
                     PlannedFat = Convert.ToDouble(y.PlannedFat),
                     PlannedProtein = Convert.ToDouble(y.PlannedProtein),
@@ -593,22 +640,37 @@ namespace KetoSavageWeb.Controllers
             return RedirectToAction("ShowProgramDetails", new { @_userId = Session["UserId"] });
         }
 
+        public ActionResult WeeklyMacroUpdateForm()
+        {
+            return PartialView("_weeklyMacroUpdateForm");
+        }
 
+        //Enter weekly macros
         public ActionResult EnterMacroForm()
         {
+            
             DailyMacroUpdate model = new DailyMacroUpdate();
             model.userId = Convert.ToInt32(Session["userId"]);
             model.week = DateTime.Now;
-            
+            var weekOfYear = dateRepository.GetWeekNum(model.week);
+            var userProgram = userProgramRepository.GetActive.Where(p => p.ProgramUserId == model.userId)
+                .Include(d => d.DailyProgress).FirstOrDefault();
+            var dailyProgress = userProgram.DailyProgress.Where(d => d.Dates.ISOWeekOfYear == weekOfYear).FirstOrDefault();
+
+            model.Fat = (dailyProgress != null) ? Convert.ToInt32(dailyProgress.PlannedFat) : 0;
+            model.Protein = (dailyProgress != null) ? Convert.ToInt32(dailyProgress.PlannedProtein) : 0;
+            model.Carbohydrates = (dailyProgress != null) ? Convert.ToInt32(dailyProgress.PlannedCarbohydrate) : 0;
 
             return PartialView("_enterNewMacroForm",model);
         }
+
+
         [HttpPost]
         public ActionResult SetWeeklyMacros(DailyMacroUpdate model)
         {
             var userProgram = userProgramRepository.GetActive.Where(p => p.ProgramUserId == model.userId).Include(d => d.DailyProgress).FirstOrDefault();
             var updWeekNum = dateRepository.GetWeekNum(model.week);
-            var dailyProgress = userProgram.DailyProgress.Where(d => d.Dates.WeekOfYear == updWeekNum);
+            var dailyProgress = userProgram.DailyProgress.Where(d => d.Dates.ISOWeekOfYear == updWeekNum);
 
             foreach (var d in dailyProgress)
             {

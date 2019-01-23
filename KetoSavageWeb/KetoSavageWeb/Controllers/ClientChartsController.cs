@@ -199,8 +199,8 @@ namespace KetoSavageWeb.Controllers
 
 
             var q = (pastProgress
-                    .Where(x => x.Dates.WeekOfYear == previousWeekNumber)
-                    .GroupBy(x => x.Dates.WeekOfYear))
+                    .Where(x => x.Dates.ISOWeekOfYear == previousWeekNumber)
+                    .GroupBy(x => x.Dates.ISOWeekOfYear))
                     .Select(x => new
                     {
                         avgActFat = x.Average(y => y.ActualFat),
@@ -248,7 +248,7 @@ namespace KetoSavageWeb.Controllers
 
 
             var q = (currentProgress
-                    .GroupBy(x => x.Dates.WeekOfYear))
+                    .GroupBy(x => x.Dates.ISOWeekOfYear))
                     .Select(x => new
                     {
                         avgPlannedFat = x.Average(y => y.PlannedFat),
@@ -316,7 +316,7 @@ namespace KetoSavageWeb.Controllers
             var q = (userProgress
                 .OrderBy(u => u.DateId)
                 )
-                .Where(x => x.Dates.WeekOfYear <= currentWeekNumber + 1)
+                .Where(x => x.Dates.ISOWeekOfYear <= currentWeekNumber + 1)
                 .Select(x => new
                 {
                     x.Dates.Date,

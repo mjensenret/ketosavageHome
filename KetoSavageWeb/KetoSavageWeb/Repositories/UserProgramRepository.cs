@@ -30,11 +30,11 @@ namespace KetoSavageWeb.Repositories
         }
         public IQueryable<DailyProgress> GetPastProgressByUser(int userId, DateTime currentDate)
         {
-            var currentWeek = db.DateModels.Where(x => x.Date == currentDate.Date).Select(y => y.WeekOfYear).First();
+            var currentWeek = db.DateModels.Where(x => x.Date == currentDate.Date).Select(y => y.ISOWeekOfYear).First();
             var startWeek = currentWeek - 4;
             var up = this.GetActive.Where(x => x.ProgramUserId == userId).Include(x => x.DailyProgress).SelectMany(x => x.DailyProgress);
             var pastProgress = (up
-                .Where(x => x.Dates.WeekOfYear >= startWeek && x.Dates.WeekOfYear <= currentWeek)
+                .Where(x => x.Dates.ISOWeekOfYear >= startWeek && x.Dates.ISOWeekOfYear <= currentWeek)
                 .OrderByDescending(x => x.DateId)
                 );
 
@@ -50,15 +50,15 @@ namespace KetoSavageWeb.Repositories
         {
             //var currentWeek = db.DateModels.Where(x => x.Date == currentDate.Date).Select(y => y.WeekOfYear).First();
             var currentWeek = db.DateModels.Where(x => x.Date == currentDate.Date).First();
-            var startWeek = currentWeek.WeekOfYear;
+            var startWeek = currentWeek.ISOWeekOfYear;
             if (currentWeek.WeekDayName == "Sunday")
             {
-                startWeek = currentWeek.WeekOfYear - 1;
+                startWeek = currentWeek.ISOWeekOfYear - 1;
             }
 
             var up = this.GetActive.Where(x => x.ProgramUserId == userId).Include(x => x.DailyProgress).SelectMany(x => x.DailyProgress);
             var currentProgress = (up
-                .Where(x => x.Dates.WeekOfYear == startWeek)
+                .Where(x => x.Dates.ISOWeekOfYear == startWeek)
                 .OrderByDescending(x => x.DateId)
                 );
 
