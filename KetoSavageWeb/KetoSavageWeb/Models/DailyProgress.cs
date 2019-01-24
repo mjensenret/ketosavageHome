@@ -27,4 +27,25 @@ namespace KetoSavageWeb.Models
         public virtual UserPrograms UserProgram { get; set; }
         public virtual DateModels Dates { get; set; }
     }
+
+    public class MeasurementHeader : UserManaged
+    {
+        [ForeignKey("Dates")]
+        public int DateId { get; set; }
+        [ForeignKey("UserProgram")]
+        public int UserProgramId { get; set; }
+        public string MeasurementNotes { get; set; }
+        public virtual UserPrograms UserProgram { get; set; }
+        public virtual DateModels Dates { get; set; }
+    }
+
+    public class MeasurementDetails
+    {
+        public int Id { get; set; }
+        [ForeignKey("measurementHeader")]
+        public int measurementHeaderId { get; set; }
+        public string measurementType { get; set; }
+        public double measurementValue { get; set; }
+        public virtual MeasurementHeader measurementHeader { get; set; }
+    }
 }
