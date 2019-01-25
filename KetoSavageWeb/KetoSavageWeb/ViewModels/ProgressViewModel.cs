@@ -1,5 +1,7 @@
-﻿using System;
+﻿using KetoSavageWeb.Models;
+using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -12,6 +14,29 @@ namespace KetoSavageWeb.ViewModels
         Slight,
         Moderate,
         Sevier
+    }
+
+    public enum MeasurementType
+    {
+        Weight,
+        Neck,
+        Shoulders,
+        Chest,
+        [Display(Name ="Right Arm")]
+        RightArm,
+        [Display(Name ="Left Arm")]
+        LeftArm,
+        Waist,
+        Hips,
+        [Display(Name = "Right Thigh")]
+        RightThigh,
+        [Display(Name = "Left Thigh")]
+        LeftThigh,
+        [Display(Name = "Right Calve")]
+        RightCalve,
+        [Display(Name = "Left Calve")]
+        LeftCalve
+
     }
 
     public class ProgressViewModel
@@ -44,5 +69,13 @@ namespace KetoSavageWeb.ViewModels
         public int measurementProgressId { get; set; }
         public DateTime measurementDate { get; set; }
         public double actualWeight { get; set; }
+    }
+
+    public class MeasurementViewModel
+    {
+        public int userProgramId { get; set; }
+        public DateTime measurementDate { get; set; }
+        public string measurementNotes { get; set; }
+        public ICollection<MeasurementDetails> MeasurementDetails { get; set; }
     }
 }
