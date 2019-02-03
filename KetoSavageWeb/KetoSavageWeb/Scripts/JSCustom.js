@@ -35,8 +35,11 @@ function LeftMenuClick(s, e) {
     }
     else if (e.item.name === "measurements")
     {
-        var measurementUrl = $("#enterMeasurements").val();
-        openEntryWindow(e.item.name, measurementUrl);
+        //var measurementUrl = $("#enterMeasurements").val();
+        //openEntryWindow(e.item.name, measurementUrl);
+        var popup = $("#measureFormPopup").dxPopup("instance");
+        popup.show();
+
     }
 
 }

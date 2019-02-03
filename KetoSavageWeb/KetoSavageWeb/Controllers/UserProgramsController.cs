@@ -296,7 +296,7 @@ namespace KetoSavageWeb.Controllers
 
                 if (updEndDate)
                 {
-                    var lastDailyProgress = (userDailyProgress == null || userDailyProgress.Count() < 1) ? userProgram.StartDate.Value : userDailyProgress.OrderByDescending(x => x.DateId).Select(x => x.Dates.Date).First();
+                    var lastDailyProgress = userDailyProgress.OrderByDescending(x => x.DateId).Select(x => x.Dates.Date).First();
                     if (lastDailyProgress < userProgram.EndDate.Value)
                     {
                         var addDays = (userProgram.EndDate.Value - lastDailyProgress).TotalDays;
@@ -751,7 +751,8 @@ namespace KetoSavageWeb.Controllers
             }
             else
             {
-                return RedirectToAction("EnterMeasurementsForm");
+                //return RedirectToAction("EnterMeasurementsForm");
+                return null;
             }
 
         }

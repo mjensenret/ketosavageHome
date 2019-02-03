@@ -3,7 +3,10 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
+using System.Runtime.Serialization;
 using System.Web;
+using KetoSavageWeb.ViewModels;
+using Newtonsoft.Json;
 
 namespace KetoSavageWeb.Models
 {
@@ -37,8 +40,11 @@ namespace KetoSavageWeb.Models
         public string MeasurementNotes { get; set; }
         public virtual UserPrograms UserProgram { get; set; }
         public virtual DateModels Dates { get; set; }
+
+        public virtual ICollection<MeasurementDetails> MeasurementDetails { get; set; }
     }
 
+    [DataContract(IsReference = true)]
     public class MeasurementDetails
     {
         public int Id { get; set; }

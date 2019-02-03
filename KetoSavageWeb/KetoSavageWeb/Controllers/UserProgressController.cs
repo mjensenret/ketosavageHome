@@ -4,9 +4,15 @@ using KetoSavageWeb.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
+using System.Data.Entity.Migrations;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using DevExpress.XtraEditors.Filtering.Templates;
+using DevExtreme.AspNet.Data;
+using Newtonsoft.Json;
+using MeasurementEntriesViewModel = KetoSavageWeb.ViewModels.MeasurementEntriesViewModel;
+using DevExtreme.AspNet.Mvc;
 
 namespace KetoSavageWeb.Controllers
 {
@@ -106,6 +112,204 @@ namespace KetoSavageWeb.Controllers
 
             return PartialView("_enterDailyMeasurements", model);
         }
+
+        public PartialViewResult DxMeasurementForm()
+        {
+            var date = DateTime.Now.Date;
+            var userProgram = userProgramRepository.GetActive.Where(p => p.ProgramUserId == CurrentUser.Id).Include(d => d.Measurements).FirstOrDefault();
+            var userMeasurements = userProgram.Measurements.Where(x => x.Dates.Date == date);
+            var userMeasurementDetails = userMeasurements.SelectMany(x => x.MeasurementDetails);
+            //var measurementDetails = userMeasurements.MeasurementDetails;
+            var model = new MeasurementViewModel();
+
+            model.MeasurementDate = DateTime.Today;
+            model.UserProgramId = userProgram.Id;
+            if (userMeasurements != null)
+            {
+                model.Id = userMeasurements.Select(m => m.Id).FirstOrDefault();
+                model.MeasurementNotes = userMeasurements.Select(m => m.MeasurementNotes).FirstOrDefault();
+                if (userMeasurementDetails.Any())
+                {
+                    var detailsVm = userMeasurementDetails
+                        .Select(x => new
+                        {
+                            x.Id,
+                            x.measurementHeaderId,
+                            x.measurementType,
+                            x.measurementValue
+                        })
+                        .ToList()
+                        .Select(m => new MeasurementEntriesViewModel()
+                        {
+                            Id = m.Id,
+                            MeasurementId = m.measurementHeaderId,
+                            MeasurementType = m.measurementType,
+                            MeasurementValue = m.measurementValue,
+                            MeasurementDropDown = new List<MeasurementType>()
+                        });
+                    model.MeasurementDetails = detailsVm;
+                }
+
+            }
+
+            return PartialView("_dxMeasurementForm", model);
+        }
+
+        [HttpPost]
+        public PartialViewResult DxUpdateMeasurementDateChange(DateTime date)
+        {
+            var newDate = date.Date;
+            var userProgram = userProgramRepository.GetActive.Where(p => p.ProgramUserId == CurrentUser.Id).Include(d => d.Measurements).FirstOrDefault();
+            var userMeasurements = userProgram.Measurements.Where(x => x.Dates.Date == date);
+            var userMeasurementDetails = userMeasurements.SelectMany(x => x.MeasurementDetails);
+            //var measurementDetails = userMeasurements.MeasurementDetails;
+            var model = new MeasurementViewModel();
+
+            model.MeasurementDate = date;
+            model.UserProgramId = userProgram.Id;
+            if (userMeasurements != null)
+            {
+                model.Id = userMeasurements.Select(m => m.Id).FirstOrDefault();
+                model.MeasurementNotes = userMeasurements.Select(m => m.MeasurementNotes).FirstOrDefault();
+                if (userMeasurementDetails.Any())
+                {
+                    var detailsVm = userMeasurementDetails
+                        .Select(x => new
+                        {
+                            x.Id,
+                            x.measurementHeaderId,
+                            x.measurementType,
+                            x.measurementValue
+                        })
+                        .ToList()
+                        .Select(m => new MeasurementEntriesViewModel()
+                        {
+                            Id = m.Id,
+                            MeasurementId = m.measurementHeaderId,
+                            MeasurementType = m.measurementType,
+                            MeasurementValue = m.measurementValue,
+                            MeasurementDropDown = new List<MeasurementType>()
+                        });
+                    model.MeasurementDetails = detailsVm;
+                }
+
+            }
+
+            return PartialView("_dxMeasurementForm", model);
+        }
+
+        // Fetching items from the "Orders" collection
+        public ActionResult GetOrderDetails(DataSourceLoadOptions loadOptions, DateTime date)
+        {
+            IEnumerable<MeasurementEntriesViewModel> model = null;
+
+            var header = _context.MeasurementHeader.Where(h => h.Dates.Date == date).FirstOrDefault();
+
+            if (header != null)
+            {
+                var details = _context.MeasurementDetail.Where(d => d.measurementHeaderId == header.Id);
+
+
+                if (details.Any())
+                {
+                    model = details
+                        .Select(x => new
+                        {
+                            x.Id,
+                            x.measurementHeaderId,
+                            x.measurementType,
+                            x.measurementValue
+                        })
+                        .ToList()
+                        .Select(m => new MeasurementEntriesViewModel()
+                        {
+                            Id = m.Id,
+                            MeasurementId = m.measurementHeaderId,
+                            MeasurementType = m.measurementType,
+                            MeasurementValue = m.measurementValue,
+                            MeasurementDropDown = new List<MeasurementType>()
+                        });
+                }
+
+            }
+            else
+            {
+                model = new List<MeasurementEntriesViewModel>();
+            }
+
+
+
+            var result = DataSourceLoader.Load(model, loadOptions);
+            var resultJson = JsonConvert.SerializeObject(result);
+            return Content(resultJson, "application/json");
+        }
+
+        [HttpPost]
+        public ActionResult DxUpdateMeasurements(MeasurementViewModel model)
+        {
+            
+
+            var measurementList = _context.MeasurementHeader.Where(x => x.UserProgramId == model.UserProgramId && x.Dates.Date == model.MeasurementDate).Include(y => y.MeasurementDetails);
+            var dateId = _context.DateModels.Where(x => x.Date == model.MeasurementDate).Select(y => y.DateKey).Single();
+            var dailyProgress = _context.DailyProgress.Single(x => x.UserProgramId == model.UserProgramId && x.DateId == dateId);
+            
+            if (measurementList.Any())
+            {
+                var updHeader = new MeasurementHeader();
+                updHeader.Id = model.Id;
+                updHeader.DateId = dateId;
+                updHeader.UserProgramId = model.UserProgramId;
+                updHeader.MeasurementNotes = model.MeasurementNotes;
+
+                _context.MeasurementHeader.AddOrUpdate(updHeader);
+
+                var updDetails = new MeasurementDetails();
+
+                foreach (var i in model.MeasurementDetails)
+                {
+                    updDetails.Id = i.Id;
+                    updDetails.measurementHeaderId = measurementList.Select(x => x.Id).FirstOrDefault();
+                    updDetails.measurementType = i.MeasurementType;
+                    updDetails.measurementValue = i.MeasurementValue;
+                    if (i.MeasurementType == "Weight")
+                    {
+                        dailyProgress.ActualWeight = i.MeasurementValue;
+                    }
+                    _context.MeasurementDetail.AddOrUpdate(updDetails);
+                }
+                _context.SaveChanges();
+
+            }
+            else
+            {
+                var insModel = new MeasurementHeader();
+                insModel.DateId = dateId;
+                insModel.MeasurementNotes = model.MeasurementNotes;
+                insModel.UserProgramId = model.UserProgramId;
+                _context.MeasurementHeader.Add(insModel);
+                
+                foreach (var m in model.MeasurementDetails)
+                {
+                    var detModel = new MeasurementDetails();
+                    detModel.measurementHeaderId = insModel.Id;
+                    detModel.measurementType = m.MeasurementType;
+                    detModel.measurementValue = m.MeasurementValue;
+                    if (m.MeasurementType == "Weight")
+                    {
+                        dailyProgress.ActualWeight = m.MeasurementValue;
+                    }
+                    _context.MeasurementDetail.Add(detModel);
+                }
+
+
+
+                _context.SaveChanges();
+
+            }
+
+            return RedirectToAction("Index");
+        }
+
         [HttpPost]
         public ActionResult UpdateMeasurements(EnterMeasurementViewModel model)
         {
@@ -186,7 +390,7 @@ namespace KetoSavageWeb.Controllers
             }
             else
             {
-                return RedirectToAction("EnterMeasurementsForm");
+                return RedirectToAction("DxMeasurementForm");
             }
 
         }

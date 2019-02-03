@@ -12,7 +12,17 @@
         });
     }).GetHtml()
 </div>
-
+@*<div>
+    @Html.DevExpress().Panel(p =>
+    {
+        p.Name = "pnlTest";
+        p.Width = 800;
+        p.SetContent(() =>
+        {
+            Html.RenderAction("DxMeasurementForm", "UserProgress");
+        });
+    }).GetHtml()
+</div>*@
 <div id="weightGraph">
     @Html.DevExpress().Panel(p =>
     {
@@ -41,31 +51,80 @@
 <div id="gridContainer">
     @Html.DevExpress().Panel(p =>
     {
-    p.Name = "pnlPastProgress";
-    p.SetContent(() =>
-    {
-        Html.RenderAction("PastPerformanceGrid");
-    });
+        p.Name = "pnlPastProgress";
+        p.SetContent(() =>
+        {
+            Html.RenderAction("PastPerformanceGrid");
+        });
     }).GetHtml()
 </div>
-@*@Html.DevExpress().PopupControl(settings =>
-    {
-        settings.Name = "mainPopupControl";
-        settings.Width = Unit.Percentage(25);
-        settings.AllowDragging = true;
-        settings.CloseAction = CloseAction.CloseButton;
-        settings.CloseOnEscape = true;
-        settings.PopupAnimationType = DevExpress.Web.AnimationType.None;
-        settings.ShowHeader = false;
-        settings.Modal = true;
-        settings.AutoUpdatePosition = true;
-        settings.PopupHorizontalAlign = PopupHorizontalAlign.WindowCenter;
-        settings.PopupVerticalAlign = PopupVerticalAlign.TopSides;
-        settings.ClientSideEvents.CloseUp = "function(s, e){ ASPxClientEdit.ClearEditorsInContainer(null, '', true); }";
-    }).GetHtml()*@
+
+@(Html.DevExtreme().Popup()
+          .ID("measureFormPopup")
+          .Visible(false)
+          .DragEnabled(true)
+          .CloseOnOutsideClick(true)
+          .ContentTemplate(@<text>
+            @(Html.Action("DxMeasurementForm"))
+        </text>)
+)
 <script type="text/javascript">
-    function OnDateChanged()
-    {
+
+    function CreateInputElement(itemName, itemValue, itemIndex, container) {
+        var $input = $("<input/>");
+
+        $input.appendTo(container).attr({ type: "hidden", name: "MeasurementDetails[" + itemIndex + "]." + itemName }).val(itemValue);
+    }
+
+    function clickHandler(e) {
+
+        if (e.validationGroup.validate().isValid) {
+
+            $("#measurementGrid").dxDataGrid("instance").getDataSource().load().done(function (items) {
+
+                for (var i = 0; i < items.length; i++) {
+                    var item = items[i];
+                    for (var property in item) {
+                        if (item.hasOwnProperty(property)) {
+                            CreateInputElement(property, item[property], i, $("#editMeasurements")[0]);
+                        }
+                    }
+                }
+                $("#editMeasurements").submit();
+
+            });
+        }
+    }
+
+    function getDateValue() {
+        var date = $("#measurementDate").dxDateBox("option", "text");
+        window.console.log(date);
+        return date;
+    }
+
+    function refreshForm() {
+
+        var date = getDateValue();
+        changeMeasurementDate(date);
+        //$("#measurementGrid").dxDataGrid("refresh");
+
+    }
+
+    function changeMeasurementDate(date) {
+        var dd = date;
+        window.console.log("dd: " +dd);
+        $.ajax({
+            type: "POST",
+            url: '@Url.Action("DxUpdateMeasurementDateChange", "UserProgress")',
+            data: { date: date },
+            success: function(response) {
+                $("#form-container").html(response);
+            }
+        });
+
+    }
+
+    function OnDateChanged() {
         var dd = ASPxClientControl.GetControlCollection().GetByName("macroDate").GetValue().toDateString("MM/dd/yyyy");
         window.console.log("Value of dd" + dd);
         var fatField = ASPxClientControl.GetControlCollection().GetByName("actualFat");

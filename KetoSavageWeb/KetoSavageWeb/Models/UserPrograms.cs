@@ -22,7 +22,8 @@ namespace KetoSavageWeb.Models
         public int? CoachUserId { get; set; }
         public virtual ApplicationUser CoachUser { get; set; }
         public ICollection<DailyProgress> DailyProgress { get; set; }
-        
+        public ICollection<MeasurementHeader> Measurements { get; set; }
+
     }
 
 

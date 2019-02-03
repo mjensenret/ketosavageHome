@@ -99,7 +99,12 @@ namespace KetoSavageWeb.Repositories
                                    
         }
 
-
+        public MeasurementHeader GetMeasurements(DateTime date, int userProgramId)
+        {
+            var measurement = db.MeasurementHeader.Where(x => x.Dates.Date == date.Date && x.UserProgramId == userProgramId)
+                .Include(y => y.MeasurementDetails).FirstOrDefault();
+            return measurement;
+        }
 
         public List<DailyProgress> GetDailyProgressList()
         {
@@ -139,6 +144,5 @@ namespace KetoSavageWeb.Repositories
             newItem.PlannedCarbohydrate = postedItem.PlannedCarbs;
             newItem.IsRefeed = postedItem.IsRefeed;
         }
-
     }
 }
