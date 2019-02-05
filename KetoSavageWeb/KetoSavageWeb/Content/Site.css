@@ -17723,3 +17723,7 @@ html, body {
 .dx-htmleditor-toolbar-menu-separator {
     border-top-color: #4d4d4d;
 }
+
+#gridClientProgram {
+    height: 440px;
+}

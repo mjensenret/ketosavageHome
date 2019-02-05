@@ -54,20 +54,38 @@
         p.Name = "pnlPastProgress";
         p.SetContent(() =>
         {
-            Html.RenderAction("PastPerformanceGrid");
+            //Html.RenderAction("PastPerformanceGrid");
+            Html.RenderAction("ClientProgramGrid", "ClientCharts", new { userId = Session["UserId"] });
         });
     }).GetHtml()
 </div>
 
 @(Html.DevExtreme().Popup()
-          .ID("measureFormPopup")
-          .Visible(false)
-          .DragEnabled(true)
-          .CloseOnOutsideClick(true)
-          .ContentTemplate(@<text>
-            @(Html.Action("DxMeasurementForm"))
+      .ID("measureFormPopup")
+      .ShowTitle(false)
+      .Visible(false)
+      .DragEnabled(true)
+      .CloseOnOutsideClick(true)
+      .ContentTemplate(@<text>
+            @MeasurementScrollView()
         </text>)
-)
+      )
+
+@helper MeasurementScrollView()
+{
+    @(Html.DevExtreme().ScrollView()
+          .ID("measureScrollView")
+          .ShowScrollbar(ShowScrollbarMode.OnScroll)
+          .Content(@<Text>
+                       @MeasurementForm()
+                   </Text>))
+}
+
+@helper MeasurementForm()
+{
+    @(Html.Action("DxMeasurementForm"))
+}
+
 <script type="text/javascript">
 
     function CreateInputElement(itemName, itemValue, itemIndex, container) {

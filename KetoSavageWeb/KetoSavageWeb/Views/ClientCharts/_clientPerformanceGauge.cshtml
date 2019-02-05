@@ -7,17 +7,17 @@
         .Color("#FF1111")
     )
     .Scale(s => s
-        .StartValue(-50)
-        .EndValue(50)
+        .StartValue(-20)
+        .EndValue(20)
         .TickInterval(2)
         .Label(l => l.UseRangeColors(false))
     )
     .RangeContainer(c => c
         .Ranges(r =>
         {
-            r.Add().StartValue(-50).EndValue(-25).Color("Red");
-            r.Add().StartValue(-25).EndValue(25).Color("Green");
-            r.Add().StartValue(25).EndValue(50).Color("Red");
+            r.Add().StartValue(-20).EndValue(-10).Color("Red");
+            r.Add().StartValue(-10).EndValue(10).Color("Green");
+            r.Add().StartValue(10).EndValue(20).Color("Red");
         })
     )
     .Title(t => t

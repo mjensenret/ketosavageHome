@@ -5,11 +5,12 @@
     .ID("gridClientProgram")
     .DataSource(Model)
     .RowAlternationEnabled(true)
-    .Paging(p => p.PageSize(10))
-    .Pager(p => p
-    .AllowedPageSizes(new int[] { 10, 20, 30, 40 })
-    .ShowPageSizeSelector(true)
-    )
+    //.Paging(p => p.PageSize(10))
+    .Scrolling( scrolling => scrolling.Mode(GridScrollingMode.Virtual))
+    //.Pager(p => p
+    //.AllowedPageSizes(new int[] { 10, 20, 30, 40 })
+    //.ShowPageSizeSelector(true)
+    //)
     .Columns(c =>
     {
         c.Add()
