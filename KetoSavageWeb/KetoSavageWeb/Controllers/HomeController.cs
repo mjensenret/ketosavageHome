@@ -9,6 +9,7 @@ namespace KetoSavageWeb.Controllers
 {
     public class HomeController : KSBaseController
     {
+        [AllowAnonymous]
         public ActionResult Index(string errorMessage)
         {
             if(Request.IsAuthenticated)
