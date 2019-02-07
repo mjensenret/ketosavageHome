@@ -109,7 +109,7 @@ html, body {
 
 }
 
-#loginForm
+#loginForm, #form-container
 {
     margin: auto;
     width: 25%;
@@ -118,17 +118,18 @@ html, body {
 }
 
 @media (max-width: 1200px) {
-    #loginForm {
+    #loginForm, #form-container {
         width: 50%;
         padding: 10px;
     }
+
 }
 
 @media (max-width: 600px) {
-    #loginForm {
+    #loginForm, #form-container {
         width: 100%;
     }
-    .dx-button-normal {
+    .dx-button-normal, .dx-button-success {
         width: 100%
     }
 }
@@ -4159,7 +4160,7 @@ html, body {
         }
 
     .dx-button-mode-contained.dx-button-success {
-        background-color: #b00000;
+        background-color: #ff1111;
         border-color: transparent;
         color: #2a2a2a;
     }
@@ -4169,7 +4170,7 @@ html, body {
         }
 
         .dx-button-mode-contained.dx-button-success.dx-state-hover {
-            background-color: #ff1111;
+            background-color: #b00000;
             border-color: transparent;
         }
 
