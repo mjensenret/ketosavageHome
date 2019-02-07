@@ -72,6 +72,17 @@
         </text>)
       )
 
+@(Html.DevExtreme().Popup()
+      .ID("macroFormPopup")
+      .ShowTitle(false)
+      .Visible(false)
+      .DragEnabled(true)
+      .CloseOnBackButton(true)
+      .FullScreen(true)
+      .ContentTemplate(@<text>
+                           @Html.Action("MacroHeader")
+                        </text>))
+
 @helper MeasurementScrollView()
 {
     @(Html.DevExtreme().ScrollView()
@@ -84,7 +95,7 @@
 
 @helper MeasurementForm()
 {
-    @(Html.Action("DxMeasurementForm"))
+    @(Html.Action("MeasurementHeader"))
 }
 
 <script type="text/javascript">
@@ -143,49 +154,25 @@
 
     }
 
-    function OnDateChanged() {
-        var dd = ASPxClientControl.GetControlCollection().GetByName("macroDate").GetValue().toDateString("MM/dd/yyyy");
-        window.console.log("Value of dd" + dd);
-        var fatField = ASPxClientControl.GetControlCollection().GetByName("actualFat");
-        var proteinField = ASPxClientControl.GetControlCollection().GetByName("actualProtein");
-        var carbField = ASPxClientControl.GetControlCollection().GetByName("actualCarb");
-        var noteField = ASPxClientControl.GetControlCollection().GetByName("Notes");
-        var hungerField = ASPxClientControl.GetControlCollection().GetByName("hungerLevel");
+    function refreshMacroForm() {
+        var date = $("#macroDate").dxDateBox("option", "text");
+        changeMacroDate(date);
+    }
+
+    function changeMacroDate(date) {
+        var dd = date;
+        window.console.log("Value of date " + dd);
+
 
         $.ajax({
             type: "POST",
-            url: '@Url.Action("onMacroDateChange", "UserProgress")',
-            data: { date: dd},
+            url: '@Url.Action("EnterMacroForm", "UserProgress")',
+            data: { date: date},
             //beforeSend: function() {
             //    loadingPanel.Show();
             //},
             success: function(response) {
-                if (response.IsSuccess) {
-                    window.console.log(response.fat);
-                    window.console.log(response.protein);
-                    window.console.log(response.carbs);
-                    window.console.log(response.notes);
-                    window.console.log(response.hungerLevel);
-                    fatField.SetText(response.fat);
-                    proteinField.SetText(response.protein);
-                    carbField.SetText(response.carbs);
-                    if (response.notes == null) {
-                        noteField.SetText("");
-                    }
-                    else {
-                        noteField.SetText(response.notes);
-                    }
-                    if (response.hungerLevel == null) {
-                        hungerField.SetValue("");
-                    }
-                    else {
-                        hungerField.SetValue(response.hungerLevel);
-                    }
-                }
-                else {
-                    window.console.log("no success");
-                }
-
+                $("#form-container").html(response);
             },
             error: function (jqXHR, textStatus, errorThrown) {
                 window.console.log(errorThrown);

@@ -1342,8 +1342,6 @@
     <Content Include="Views\UserPrograms\_pastPerformance.cshtml" />
     <Content Include="Views\UserPrograms\_dailyMacros.cshtml" />
     <Content Include="Views\UserProgress\Index.cshtml" />
-    <Content Include="Views\UserProgress\Macros.cshtml" />
-    <Content Include="Views\UserProgress\Weight.cshtml" />
     <Content Include="Views\UserProgress\_enterDailyMacros.cshtml" />
     <Content Include="Views\UserProgress\_enterDailyMeasurements.cshtml" />
     <Content Include="Views\UserProgress\_entryForms.cshtml" />
@@ -1374,6 +1372,8 @@
     <Content Include="Views\UserPrograms\_weeklyMacroUpdateForm.cshtml" />
     <Content Include="Views\UserProgress\_dxMeasurementForm.cshtml" />
     <Content Include="Views\Home\_dxLoginForm.cshtml" />
+    <Content Include="Views\UserProgress\_dxMacroFormHeader.cshtml" />
+    <Content Include="Views\UserProgress\_dxMeasurementHeader.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

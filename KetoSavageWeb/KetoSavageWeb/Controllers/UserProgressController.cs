@@ -40,6 +40,11 @@ namespace KetoSavageWeb.Controllers
             return View();
         }
 
+        public PartialViewResult MacroHeader()
+        {
+            return PartialView("_dxMacroFormHeader");
+        }
+
         public PartialViewResult EnterMacroForm()
         {
             var model = userProgramRepository.GetDailyProgressByDate(CurrentUser.Id, DateTime.Now.Date);
@@ -58,31 +63,50 @@ namespace KetoSavageWeb.Controllers
             return PartialView("_enterDailyMacros", viewModel);
         }
 
-        public JsonResult onMacroDateChange(string date)
+        [HttpPost]
+        public PartialViewResult EnterMacroForm(DateTime date)
         {
-            try
-            {
-                DateTime selectedDate = Convert.ToDateTime(date);
-                var model = userProgramRepository.GetDailyProgressByDate(CurrentUser.Id, Convert.ToDateTime(date));
+            var model = userProgramRepository.GetDailyProgressByDate(CurrentUser.Id, date);
+            var userId = CurrentUser.Id;
 
-                var data = new {
-                    IsSuccess = true,
-                    fat = model.ActualFat,
-                    protein = model.ActualProtein,
-                    carbs = model.ActualCarbohydrate,
-                    notes = model.Notes,
-                    hungerLevel = model.HungerLevel
-                };
-                return Json(data, JsonRequestBehavior.AllowGet);
-            }
-            catch (Exception e)
-            {
-                var data = new { IsSuccess = false, Message = "Something failed" };
-                TempData.Remove("MacroDate");
-                return Json(data);
-            }
+            EnterMacroViewModel viewModel = new EnterMacroViewModel();
 
+            viewModel.macroUserId = userId;
+            viewModel.macroDate = model.Dates.Date;
+            viewModel.actualFat = (model.ActualFat != null) ? Convert.ToDouble(model.ActualFat) : 0;
+            viewModel.actualProtein = (model.ActualProtein != null) ? Convert.ToDouble(model.ActualProtein) : 0;
+            viewModel.actualCarb = (model.ActualCarbohydrate != null) ? Convert.ToDouble(model.ActualCarbohydrate) : 0;
+            viewModel.hungerLevel = model.HungerLevel;
+            viewModel.Notes = model.Notes;
+
+            return PartialView("_enterDailyMacros", viewModel);
         }
+
+        //public JsonResult onMacroDateChange(string date)
+        //{
+        //    try
+        //    {
+        //        DateTime selectedDate = Convert.ToDateTime(date);
+        //        var model = userProgramRepository.GetDailyProgressByDate(CurrentUser.Id, Convert.ToDateTime(date));
+
+        //        var data = new {
+        //            IsSuccess = true,
+        //            fat = model.ActualFat,
+        //            protein = model.ActualProtein,
+        //            carbs = model.ActualCarbohydrate,
+        //            notes = model.Notes,
+        //            hungerLevel = model.HungerLevel
+        //        };
+        //        return Json(data, JsonRequestBehavior.AllowGet);
+        //    }
+        //    catch (Exception e)
+        //    {
+        //        var data = new { IsSuccess = false, Message = "Something failed" };
+        //        TempData.Remove("MacroDate");
+        //        return Json(data);
+        //    }
+
+        //}
         [HttpPost]
         public ActionResult UpdateActualMacros(EnterMacroViewModel model)
         {
@@ -103,14 +127,20 @@ namespace KetoSavageWeb.Controllers
 
             return RedirectToAction("Index");
         }
-        public PartialViewResult EnterMeasurementsForm()
-        {
-            EnterMeasurementViewModel model = new EnterMeasurementViewModel();
-            var userId = CurrentUser.Id;
-            model.measurementUserId = userId;
-            model.measurementDate = DateTime.Now;
 
-            return PartialView("_enterDailyMeasurements", model);
+        //public PartialViewResult EnterMeasurementsForm()
+        //{
+        //    //TODO: remove this action
+        //    EnterMeasurementViewModel model = new EnterMeasurementViewModel();
+        //    var userId = CurrentUser.Id;
+        //    model.measurementUserId = userId;
+        //    model.measurementDate = DateTime.Now;
+
+        //    return PartialView("_enterDailyMeasurements", model);
+        //}
+        public PartialViewResult MeasurementHeader()
+        {
+            return PartialView("_dxMeasurementHeader");
         }
 
         public PartialViewResult DxMeasurementForm()

@@ -30,8 +30,10 @@ function LeftMenuClick(s, e) {
     }
     else if (e.item.name === "macros")
     {
-        var macroUrl = $("#enterMacros").val();
-        openEntryWindow(e.item.name, macroUrl);
+        //var macroUrl = $("#enterMacros").val();
+        //openEntryWindow(e.item.name, macroUrl);
+        var popup = $("#macroFormPopup").dxPopup("instance");
+        popup.show();
     }
     else if (e.item.name === "measurements")
     {

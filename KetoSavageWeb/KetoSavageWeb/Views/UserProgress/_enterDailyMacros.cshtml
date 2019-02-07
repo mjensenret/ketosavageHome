@@ -1,98 +1,47 @@
-﻿@model KetoSavageWeb.ViewModels.EnterMacroViewModel
-
-@{ Html.BeginForm("UpdateActualMacros", "UserProgress", FormMethod.Post);}
-@Html.DevExpress().FormLayout(settings =>
-{
-    settings.Name = "dailyMacros";
+﻿@using KetoSavageWeb.ViewModels
+@using ButtonType = DevExtreme.AspNet.Mvc.ButtonType
+@model KetoSavageWeb.ViewModels.EnterMacroViewModel
 
 
-    settings.SettingsItems.ShowCaption = DefaultBoolean.True;
-    settings.SettingsItemCaptions.Location = LayoutItemCaptionLocation.Top;
+    @{ Html.BeginForm("UpdateActualMacros", "UserProgress", FormMethod.Post);}
+    @Html.HiddenFor(m => m.macroUserId)
+    <div id="macro-form">
 
-    settings.SettingsItemHelpTexts.Position = HelpTextPosition.Bottom;
 
-    settings.Items.Add(m => m.macroUserId, u =>
-    {
-        u.ClientVisible = false;
-        u.NestedExtension().TextBox(un =>
-        {
-            un.ClientVisible = false;
-            un.ReadOnly = true;
-        });
-    });
-    settings.Items.Add(m => m.macroDate, f =>
-    {
-        f.Caption = "Date";
-        f.NestedExtension().DateEdit(d =>
-        {
-            d.Properties.EditFormatString = "MM/dd/yyyy";
-            d.Properties.ClientSideEvents.DateChanged = "OnDateChanged";
-        });
-    });
-    settings.Items.Add(m => m.actualFat, a =>
-    {
-        a.Caption = "Fat";
-        a.NestedExtension().TextBox(f =>
-        {
-
-        });
-    });
-    settings.Items.Add(m => m.actualProtein, p =>
-    {
-        p.Caption = "Protein";
-        p.NestedExtension().TextBox(t =>
-        {
-
-        });
-    });
-    settings.Items.Add(m => m.actualCarb, c =>
-    {
-        c.Caption = "Carbohydrates";
-        c.NestedExtension().TextBox(ac =>
-        {
-
-        });
-    });
-    settings.Items.Add(m => m.hungerLevel, l =>
-    {
-        l.Caption = "Hunger Level";
-        l.NestedExtension().ComboBox(s =>
-        {
-            s.Properties.ValueType = typeof(string);
-            var list = Model.hungerList();
-            foreach(var j in list)
-            {
-                s.Properties.Items.Add(j.Text, j.Value);
-            }
-
-        });
-    });
-    settings.Items.Add(m => m.Notes, n =>
-    {
-        n.Caption = "Notes";
-        n.Width = Unit.Percentage(100);
-        n.NestedExtension().Memo(memo =>
-        {
-            memo.Width = Unit.Percentage(100);
-            memo.Properties.Rows = 8;
-        });
-    });
-    settings.Items.Add(s =>
-    {
-        s.ShowCaption = DefaultBoolean.False;
-        s.SetNestedContent(() =>
-        {
-            Html.DevExpress().Button(b =>
-            {
-                b.Name = "btnMacroSubmit";
-                b.ControlStyle.CssClass = "button";
-                b.Text = "Save";
-                b.UseSubmitBehavior = true;
-            }).Render();
-        });
-    });
-
-}).GetHtml()
-@{ Html.EndForm();}
-
+        @(Html.DevExtreme().Form<EnterMacroViewModel>()
+                          .ID("dailyMacros")
+                          .LabelLocation(FormLabelLocation.Top)
+                          .Items(items =>
+                          {
+                              items.AddSimpleFor(m => m.macroDate)
+                                  .Editor(e => e
+                                      .DateBox()
+                                      .ID("macroDate")
+                                      .OnValueChanged("refreshMacroForm")
+                                            .Width("100%"));
+                                    items.AddSimpleFor(m => m.actualFat);
+                                    items.AddSimpleFor(m => m.actualProtein);
+                                    items.AddSimpleFor(m => m.actualCarb);
+                                    items.AddSimpleFor(m => m.hungerLevel)
+                                        .Editor(e => e
+                                            .DropDownBox()
+                                            .DataSource(Model.hungerList()
+                                                .Select(i => new { Value = i.Text, Text = i.Text }))
+                                            .DisplayExpr("Text")
+                                            .ValueExpr("Value"));
+                                    items.AddSimpleFor(m => m.Notes)
+                                        .Editor(e => e.TextArea());
+                                    items.AddSimple()
+                                        .Template(@<text>
+                                            @( Html.DevExtreme().Button()
+                                                .ID("btnMacros")
+                                                .Text("Save")
+                                                .Type(ButtonType.Normal)
+                                                .UseSubmitBehavior(true))
+                                        </text>);
+                           })
+          .FormData(Model)
+          )
+    </div>
+    @{ Html.EndForm();}
 
