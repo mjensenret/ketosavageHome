@@ -112,9 +112,27 @@ html, body {
 #loginForm
 {
     margin: auto;
-    width: 50%;
-    border: 3px solid green;
+    width: 25%;
+    padding: 30px;
+    border: 1px solid #4d4d4d;
 }
+
+@media (max-width: 1200px) {
+    #loginForm {
+        width: 50%;
+        padding: 10px;
+    }
+}
+
+@media (max-width: 600px) {
+    #loginForm {
+        width: 100%;
+    }
+    .dx-button-normal {
+        width: 100%
+    }
+}
+
 
 .center img
 {
@@ -162,6 +180,8 @@ html, body {
     font-weight: bold;
     padding: 5px;
 }
+
+
 /* iOS */
 .dxpnlControl_iOS.leftPane,
 .dxpnlControl_iOS.rightPane,
@@ -4139,7 +4159,7 @@ html, body {
         }
 
     .dx-button-mode-contained.dx-button-success {
-        background-color: #5cb85c;
+        background-color: #b00000;
         border-color: transparent;
         color: #2a2a2a;
     }
@@ -4149,17 +4169,17 @@ html, body {
         }
 
         .dx-button-mode-contained.dx-button-success.dx-state-hover {
-            background-color: #449d44;
+            background-color: #ff1111;
             border-color: transparent;
         }
 
         .dx-button-mode-contained.dx-button-success.dx-state-focused {
-            background-color: #3d8b3d;
+            background-color: #7d0000;
             border-color: transparent;
         }
 
         .dx-button-mode-contained.dx-button-success.dx-state-active {
-            background-color: #357935;
+            background-color: #7d0000;
             border-color: transparent;
             color: #2a2a2a;
         }

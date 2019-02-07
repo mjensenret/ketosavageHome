@@ -1,0 +1,47 @@
+﻿@using KetoSavageWeb.Models
+@using ButtonType = DevExtreme.AspNet.Mvc.ButtonType
+@using TextBoxMode = DevExtreme.AspNet.Mvc.TextBoxMode
+<div id='loginImage'>
+    <img src='../../Content/Images/KSLogo_NotLoggedIn.png' alt='KetoSavage' class='responsive'/>
+</div>
+
+<div id="loginForm">
+
+
+    @using (Html.BeginForm("Login", "Account"))
+    {
+        using (Html.DevExtreme().ValidationGroup())
+        {
+            @Html.AntiForgeryToken()
+
+            @(Html.DevExtreme().Form<LoginModel>()
+                          .ShowValidationSummary(true)
+                          .Items(items =>
+                          {
+                              items.AddGroup()
+                                  .Caption("Log In")
+                                  .Items(groupItem =>
+                                  {
+                                      groupItem.AddSimple().Template(@<text>
+                                                                    <p style='color: red'>@ViewBag.ErrorMessage</p>
+                                                                </text>);
+                                                groupItem.AddSimpleFor(m => m.UserName);
+                                                groupItem.AddSimpleFor(m => m.Password)
+                                                    .Editor(e => e.TextBox().Mode(TextBoxMode.Password));
+                                                groupItem.AddSimpleFor(m => m.RememberMe)
+                                                    .Editor(e => e.CheckBox());
+                                            });
+                                        items.AddButton()
+                                            .HorizontalAlignment(HorizontalAlignment.Right)
+                                            .ButtonOptions(b => b.Text("Login")
+                                                .Type(ButtonType.Normal)
+                                                .UseSubmitBehavior(true));
+
+                                    })
+                                    .FormData(Model)
+            )
+
+
+        }
+    }
+</div>

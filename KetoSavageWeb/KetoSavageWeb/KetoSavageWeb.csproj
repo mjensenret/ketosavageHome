@@ -1373,6 +1373,7 @@
     <Content Include="Views\UserPrograms\_macroPieChart.cshtml" />
     <Content Include="Views\UserPrograms\_weeklyMacroUpdateForm.cshtml" />
     <Content Include="Views\UserProgress\_dxMeasurementForm.cshtml" />
+    <Content Include="Views\Home\_dxLoginForm.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
