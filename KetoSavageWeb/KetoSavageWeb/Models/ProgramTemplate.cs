@@ -19,6 +19,7 @@ namespace KetoSavageWeb.Models
         public int GoalId { get; set; }
         public virtual ProgramGoals Goal { get; set; }
         public ICollection<UserPrograms> UserPrograms { get; set; }
+        public ICollection<HungerLevel> HungerLevel { get; set; }
     }
 
     public class ProgramGoals
@@ -27,6 +28,14 @@ namespace KetoSavageWeb.Models
         public string Name { get; set; }
         public string Description { get; set; }
         public ICollection<ProgramTemplate> Programs { get; set; }
+    }
+
+    public class HungerLevel
+    {
+        public int Id { get; set; }
+        public string Text { get; set; }
+        public int Value { get; set; }
+        public virtual ProgramTemplate Program { get; set; }
     }
 
 }

@@ -24,8 +24,8 @@
                                     items.AddSimpleFor(m => m.actualCarb);
                                     items.AddSimpleFor(m => m.hungerLevel)
                                         .Editor(e => e
-                                            .DropDownBox()
-                                            .DataSource(Model.hungerList()
+                                            .SelectBox()
+                                            .DataSource(EnumHelper.GetSelectList(typeof(HungerLevelEnum))
                                                 .Select(i => new { Value = i.Text, Text = i.Text }))
                                             .DisplayExpr("Text")
                                             .ValueExpr("Value"));

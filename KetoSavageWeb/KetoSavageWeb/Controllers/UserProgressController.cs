@@ -59,6 +59,9 @@ namespace KetoSavageWeb.Controllers
             viewModel.actualCarb = (model.ActualCarbohydrate != null) ? Convert.ToDouble(model.ActualCarbohydrate) : 0;
             viewModel.hungerLevel = model.HungerLevel;
             viewModel.Notes = model.Notes;
+            viewModel.hungerList = new List<HungerLevel>();
+
+
 
             return PartialView("_enterDailyMacros", viewModel);
         }

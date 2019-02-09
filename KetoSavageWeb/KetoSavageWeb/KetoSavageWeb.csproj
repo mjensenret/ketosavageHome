@@ -1495,6 +1495,10 @@
     <Compile Include="Migrations\201901241729283_measurementTables.Designer.cs">
       <DependentUpon>201901241729283_measurementTables.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201902091655507_hungerLevelAddition.cs" />
+    <Compile Include="Migrations\201902091655507_hungerLevelAddition.Designer.cs">
+      <DependentUpon>201902091655507_hungerLevelAddition.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Abstract\UserManaged.cs" />
     <Compile Include="Models\AccountModels.cs" />
@@ -1587,6 +1591,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201901241729283_measurementTables.resx">
       <DependentUpon>201901241729283_measurementTables.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201902091655507_hungerLevelAddition.resx">
+      <DependentUpon>201902091655507_hungerLevelAddition.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

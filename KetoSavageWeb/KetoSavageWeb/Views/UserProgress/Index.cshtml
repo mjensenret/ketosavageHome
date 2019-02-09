@@ -37,15 +37,15 @@
 </div>
 <div id="gaugeContainer">
     @Html.DevExpress().Panel(p =>
-    {
+{
     p.Name = "pnlCharts";
     p.SetContent(() =>
     {
-    Html.RenderAction("ClientPerformanceGauge", "ClientCharts", new { userId = Session["UserId"] });
-    Html.RenderAction("ClientPastWeekMacroChart", "ClientCharts", new { userId = Session["UserId"] });
-    Html.RenderAction("ClientCurrentWeekMacroGauge", "ClientCharts", new { userId = Session["UserId"] });
+        Html.RenderAction("ClientPerformanceGauge", "ClientCharts", new { userId = Session["UserId"] });
+        Html.RenderAction("ClientPastWeekMacroChart", "ClientCharts", new { userId = Session["UserId"] });
+        Html.RenderAction("ClientCurrentWeekMacroGauge", "ClientCharts", new { userId = Session["UserId"] });
     });
-    }).GetHtml()
+}).GetHtml()
 </div>
 
 <div id="gridContainer">
@@ -64,7 +64,7 @@
       .ID("measureFormPopup")
       .ShowTitle(false)
       .Visible(false)
-      .DragEnabled(true)
+      .DragEnabled(false)
       .CloseOnOutsideClick(true)
       .FullScreen(true)
       .ContentTemplate(@<text>
