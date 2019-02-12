@@ -1342,8 +1342,6 @@
     <Content Include="Views\UserPrograms\_pastPerformance.cshtml" />
     <Content Include="Views\UserPrograms\_dailyMacros.cshtml" />
     <Content Include="Views\UserProgress\Index.cshtml" />
-    <Content Include="Views\UserProgress\Macros.cshtml" />
-    <Content Include="Views\UserProgress\Weight.cshtml" />
     <Content Include="Views\UserProgress\_enterDailyMacros.cshtml" />
     <Content Include="Views\UserProgress\_enterDailyMeasurements.cshtml" />
     <Content Include="Views\UserProgress\_entryForms.cshtml" />
@@ -1373,6 +1371,9 @@
     <Content Include="Views\UserPrograms\_macroPieChart.cshtml" />
     <Content Include="Views\UserPrograms\_weeklyMacroUpdateForm.cshtml" />
     <Content Include="Views\UserProgress\_dxMeasurementForm.cshtml" />
+    <Content Include="Views\Home\_dxLoginForm.cshtml" />
+    <Content Include="Views\UserProgress\_dxMacroFormHeader.cshtml" />
+    <Content Include="Views\UserProgress\_dxMeasurementHeader.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -1397,6 +1398,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\ManageNewsController.cs" />
+    <Compile Include="Controllers\ProgramApiController.cs" />
     <Compile Include="Controllers\ProgressApiController.cs" />
     <Compile Include="Controllers\UserProgramsController.cs" />
     <Compile Include="Controllers\ManageUsersController.cs" />
@@ -1494,6 +1496,18 @@
     <Compile Include="Migrations\201901241729283_measurementTables.Designer.cs">
       <DependentUpon>201901241729283_measurementTables.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201902091655507_hungerLevelAddition.cs" />
+    <Compile Include="Migrations\201902091655507_hungerLevelAddition.Designer.cs">
+      <DependentUpon>201902091655507_hungerLevelAddition.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201902101756028_renameDescriptionColumn.cs" />
+    <Compile Include="Migrations\201902101756028_renameDescriptionColumn.Designer.cs">
+      <DependentUpon>201902101756028_renameDescriptionColumn.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201902110131524_updateHungerLevelTable.cs" />
+    <Compile Include="Migrations\201902110131524_updateHungerLevelTable.Designer.cs">
+      <DependentUpon>201902110131524_updateHungerLevelTable.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Abstract\UserManaged.cs" />
     <Compile Include="Models\AccountModels.cs" />
@@ -1528,6 +1542,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Controllers\Infrastructure\" />
+    <Folder Include="Views\ProgramApi\" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201803111631012_Initial.resx">
@@ -1586,6 +1601,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201901241729283_measurementTables.resx">
       <DependentUpon>201901241729283_measurementTables.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201902091655507_hungerLevelAddition.resx">
+      <DependentUpon>201902091655507_hungerLevelAddition.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201902101756028_renameDescriptionColumn.resx">
+      <DependentUpon>201902101756028_renameDescriptionColumn.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201902110131524_updateHungerLevelTable.resx">
+      <DependentUpon>201902110131524_updateHungerLevelTable.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

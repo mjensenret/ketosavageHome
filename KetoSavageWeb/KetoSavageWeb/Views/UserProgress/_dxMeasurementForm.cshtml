@@ -3,8 +3,6 @@
 @using ButtonType = DevExtreme.AspNet.Mvc.ButtonType
 @model KetoSavageWeb.ViewModels.MeasurementViewModel
 
-<div id="form-container">
-
 
     @{ Html.BeginForm("DxUpdateMeasurements", "UserProgress", FormMethod.Post, new { id = "editMeasurements" });}
     @*@(Html.DevExtreme().DateBox()
@@ -33,6 +31,7 @@
                                           .DateBox()
                                           .OnValueChanged("refreshForm")
                                           .ID("measurementDate")
+                                          .Width("100%")
                                       );
                                   groupItems.AddSimpleFor(m => m.MeasurementNotes);
                                   groupItems.AddSimpleFor(m => m.MeasurementDetails)
@@ -71,7 +70,7 @@
                                                 @(Html.DevExtreme().Button()
                                                               .ID("btnAddMeasurements")
                                                               .Text("Save")
-                                                              .Type(ButtonType.Success)
+                                                              .Type(ButtonType.Normal)
                                                               .UseSubmitBehavior(false)
                                                               .OnClick("clickHandler")
                                                               .ValidationGroup("measurements"))
@@ -81,5 +80,3 @@
                                     .FormData(Model))
     </div>
     @{ Html.EndForm();}
-
-</div>

@@ -8,7 +8,7 @@ using System.Web.Mvc;
 
 namespace KetoSavageWeb.ViewModels
 {
-    public enum HungerLevel
+    public enum HungerLevelEnum
     {
         None,
         Slight,
@@ -52,15 +52,7 @@ namespace KetoSavageWeb.ViewModels
         public double actualCarb { get; set; }
         public string hungerLevel { get; set; }
         public string Notes { get; set; }
-        public List<SelectListItem> hungerList()
-        {
-            List<SelectListItem> choices = new List<SelectListItem>();
-            foreach (var c in Enum.GetValues(typeof(HungerLevel)))
-            {
-                choices.Add(new SelectListItem() { Text = c.ToString(), Value = c.ToString() });
-            }
-            return choices;
-        }
+        public List<HungerLevelEnum> hungerList { get; set; }
     }
 
     public class EnterMeasurementViewModel

@@ -42,6 +42,7 @@ namespace KetoSavageWeb.Models
         public DbSet<NewsModel> NewsModel { get; set; }
         public DbSet<MeasurementHeader> MeasurementHeader { get; set; }
         public DbSet<MeasurementDetails> MeasurementDetail { get; set; }
+        public DbSet<HungerLevel> HungerLevels { get; set; }
 
         public bool RequireUniqueEmail { get; set; }
 

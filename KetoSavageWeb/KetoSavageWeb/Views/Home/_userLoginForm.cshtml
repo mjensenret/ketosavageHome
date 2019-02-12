@@ -5,18 +5,9 @@
     @Html.DevExpress().Panel(p =>
 {
     p.Name = "pnlLoginRegisterForm";
-    //p.Width = Unit.Percentage(50);
-    //p.SettingsAdaptivity.CollapseAtWindowInnerWidth = 300;
 
     p.SetContent(() =>
     {
-        //Html.DevExpress().Image(img =>
-        //{
-        //    img.Name = "loginImage";
-        //    img.ImageUrl = string.Format("~/Content/Images/KSLogo_NotLoggedIn.png");
-        //}).Render();
-        //ViewContext.Writer.Write("<div class=\"col-md-12 text-center\" ><img src\"@Url.Content(\"~/Content/Images/KSLogo_NotLoggedIn.png\"))
-
         Html.DevExpress().FormLayout(form =>
         {
             form.Name = "frmLoginControls";

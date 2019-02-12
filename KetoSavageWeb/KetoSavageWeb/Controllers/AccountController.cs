@@ -93,7 +93,7 @@ namespace KetoSavageWeb.Controllers {
                     case SignInStatus.Failure:
                     default:
                         ViewBag.ErrorMessage = "The user name or password provided is incorrect";
-                        return View(model);
+                        return RedirectToAction("Index","Home", new {errorMessage=ViewBag.ErrorMessage});
                 }
             }
 

@@ -34,10 +34,10 @@ namespace KetoSavageWeb.Migrations
             //    );
             //
             //-----------------Uncomment to debug seed method----------------------------------//
-            if (System.Diagnostics.Debugger.IsAttached == false)
-            {
-                System.Diagnostics.Debugger.Launch();
-            }
+            //if (System.Diagnostics.Debugger.IsAttached == false)
+            //{
+            //    System.Diagnostics.Debugger.Launch();
+            //}
             try
             {
                 ApplicationUserManager userMgr = new ApplicationUserManager(new UserStore<ApplicationUser, Role, int, UserLogin, UserRole, UserClaim>(context));
@@ -125,49 +125,49 @@ namespace KetoSavageWeb.Migrations
                 context.ProgramGoals.AddOrUpdate(g => new { g.Name }, maintGoal);
 
                 context.SaveChanges();
-
+                
                 var cutProgram = new ProgramTemplate
                 {
                     GoalId = cutGoal.Id,
                     Name = "Cut",
-                    programDescription = "Reduce bodyfat",
+                    Description = "Reduce bodyfat",
                     CreatedBy = "Seed Method",
                     LastModifiedBy = "Seed Method"
 
                 };
-                context.Programs.AddOrUpdate(p => new { p.programDescription }, cutProgram);
+                context.Programs.AddOrUpdate(p => new { p.Description }, cutProgram);
 
                 var buildProgram = new ProgramTemplate
                 {
                     GoalId = buildGoal.Id,
                     Name = "Build",
-                    programDescription = "Build Muscle",
+                    Description = "Build Muscle",
                     CreatedBy = "Seed Method",
                     LastModifiedBy = "Seed Method"
                 };
-                context.Programs.AddOrUpdate(p => new { p.programDescription }, buildProgram);
+                context.Programs.AddOrUpdate(p => new { p.Description }, buildProgram);
 
                 var compProgram = new ProgramTemplate
                 {
                     GoalId = competitionPrep.Id,
                     Name = "CompetitionPrep",
-                    programDescription = "Competition Prep",
+                    Description = "Competition Prep",
                     CreatedBy = "Seed Method",
                     LastModifiedBy = "Seed Method"
                 };
 
-                context.Programs.AddOrUpdate(p => new { p.programDescription }, compProgram);
+                context.Programs.AddOrUpdate(p => new { p.Description }, compProgram);
 
                 var maintProgram = new ProgramTemplate
                 {
                     GoalId = maintGoal.Id,
                     Name = "Maintenance",
-                    programDescription = "Maintenance Program",
+                    Description = "Maintenance Program",
                     CreatedBy = "Seed Method",
                     LastModifiedBy = "Seed Method"
                 };
 
-                context.Programs.AddOrUpdate(p => new { p.programDescription }, maintProgram);
+                context.Programs.AddOrUpdate(p => new { p.Description }, maintProgram);
 
                 context.SaveChanges();
             }

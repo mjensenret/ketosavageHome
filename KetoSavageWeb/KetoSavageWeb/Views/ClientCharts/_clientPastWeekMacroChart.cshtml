@@ -16,6 +16,23 @@
             .Format(Format.Percent)
         )
     )
+      .CustomizePoint(@<text>
+                          function()
+                          {
+                          if(this.argument == "Carbs")
+                          {
+                          return { color: "#ff0000" }
+                          }
+                          else if(this.argument == "Fat")
+                          {
+                          return { color: "#ff6f00"}
+                          }
+                          else if(this.argument == "Protein")
+                          {
+                          return { color: "#ffa600"}
+                          }
+                          }
+                       </text>)
     .Legend(l => l
         .Orientation(DevExtreme.AspNet.Mvc.Orientation.Horizontal)
         .ItemTextPosition(Position.Bottom)

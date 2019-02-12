@@ -1,5 +1,4 @@
 ﻿
-
 @{
     var grid = Html.DevExpress().GridView(userList =>
     {
@@ -99,6 +98,7 @@
             g.VisibleIndex = 5;
             var combo = g.PropertiesEdit as ComboBoxProperties;
             combo.DataSource = ViewBag.ProgramList;
+            combo.ClientSideEvents.Init = "_init";
 
         });
         userList.Columns.Add(c =>
@@ -164,6 +164,7 @@
             c.VisibleIndex = 10;
             var combo = c.PropertiesEdit as ComboBoxProperties;
             combo.DataSource = ViewBag.CoachList;
+            combo.ClientSideEvents.Init = "_init";
         });
         userList.Columns.Add(c =>
         {

@@ -1,74 +1,150 @@
-﻿@{
-    var grid = Html.DevExpress().GridView(settings =>
-    {
-        settings.Name = "ManageProgramGrid";
-        settings.CallbackRouteValues = new { Controller = "Programs", Action = "programGridView" };
-        settings.SettingsEditing.AddNewRowRouteValues = new { Controller = "Programs", Action = "programGridAdd" };
-        settings.SettingsEditing.UpdateRowRouteValues = new { Controller = "Programs", Action = "programGridEdit" };
-        settings.Styles.AlternatingRow.Enabled = DefaultBoolean.True;
-        settings.SettingsBehavior.AllowFixedGroups = true;
-        settings.Settings.ShowGroupPanel = true;
-        settings.SettingsBehavior.AllowFocusedRow = true;
-        settings.SettingsEditing.Mode = GridViewEditingMode.EditFormAndDisplayRow;
-        settings.SettingsBehavior.ConfirmDelete = true;
-        settings.SettingsPager.FirstPageButton.Visible = true;
-        settings.SettingsPager.LastPageButton.Visible = true;
-        settings.SettingsPager.PageSizeItemSettings.Visible = true;
-        settings.SettingsPager.PageSizeItemSettings.Items = new string[] { "10", "20", "50" };
-
-        settings.CommandColumn.Visible = true;
-        settings.CommandColumn.ShowNewButtonInHeader = true;
-        settings.CommandColumn.ShowEditButton = true;
-
-        settings.KeyFieldName = "Id";
-
-        settings.Columns.Add(c =>
-        {
-            c.FieldName = "Id";
-            c.Visible = false;
-        });
-        settings.Columns.Add(c =>
-        {
-            c.FieldName = "Name";
-            c.VisibleIndex = 1;
-        });
-        settings.Columns.Add(c =>
-        {
-            c.FieldName = "WeightFactor";
-            c.Caption = "Weight Factor";
-        });
-        settings.Columns.Add(c =>
-        {
-            c.FieldName = "Description";
-            c.VisibleIndex = 2;
-        });
-        settings.Columns.Add(c =>
-        {
-            c.FieldName = "GoalName";
-            c.Caption = "Category";
-            c.VisibleIndex = 3;
-            c.EditFormSettings.Visible = DefaultBoolean.False;
-        });
-        settings.Columns.Add(g =>
-        {
-            g.Visible = false;
-            g.VisibleIndex = 4;
-            g.FieldName = "GoalId";
-            g.Caption = "Goal";
-            g.EditFormSettings.Visible = DefaultBoolean.True;
-            g.ColumnType = MVCxGridViewColumnType.ComboBox;
-            var combo = g.PropertiesEdit as ComboBoxProperties;
-            combo.DataSource = ViewBag.Goals;
-
-        });
+﻿@using KetoSavageWeb.Models
+@using KetoSavageWeb.ViewModels
 
 
-
-    });
-    if (ViewData["EditError"] != null)
-    {
-        grid.SetEditErrorText((string)ViewData["EditError"]);
+<script type="text/javascript">
+    //<![CDATA[
+    function onInitNewRow(e, parentID) {
+        window.console.log(parentID);
+        e.data.programId = parentID;
     }
-}
-@grid.Bind(Model).GetHtml()
+    //]]>
+</script>
+
+@(Html.DevExtreme().DataGrid<ProgramViewModel>()
+          .ID("dxProgramGrid")
+          .ShowBorders(true)
+          .Editing(e => e.Mode(GridEditMode.Popup)
+              .AllowUpdating(true)
+              .AllowAdding(true)
+              .Popup(p => p
+                  .Title("Program Details")
+                  .ShowTitle(true)
+                  .ShowCloseButton(true)
+                  .Position(pos => pos
+                      .My(HorizontalAlignment.Center, VerticalAlignment.Top)
+                      .At(HorizontalAlignment.Center, VerticalAlignment.Top)
+                      .Of(new JS("window"))
+                  ))
+            )
+          .Columns(c =>
+          {
+              c.AddFor(m => m.Name);
+              c.AddFor(m => m.Description);
+              c.AddFor(m => m.GoalId)
+                  .Caption("Category")
+                  .Lookup(l => l
+                      .DataSource(d => d.WebApi().Controller("ProgramApi").LoadAction("getProgramGoals").Key("Id"))
+                      .DisplayExpr("Name")
+                      .ValueExpr("Id"));
+          })
+          .DataSource(d => d.WebApi().Controller("ProgramApi")
+              .LoadAction("GetAllPrograms")
+              .UpdateAction("UpdateProgram")
+              .InsertAction("AddProgram")
+              .Key("Id"))
+          .MasterDetail(md =>
+          {
+              md.Enabled(true);
+              md.Template(@<text>
+                @(Html.DevExtreme().DataGrid<HungerLevel>()
+                              .ColumnAutoWidth(true)
+                              .ShowBorders(true)
+                              .Editing(e =>
+                              {
+                                  e.AllowAdding(true);
+                                  e.AllowUpdating(true);
+                                  e.AllowDeleting(true);
+                                  e.Mode(GridEditMode.Row);
+                              })
+                              .Columns(c =>
+                              {
+                                  c.AddFor(m => m.Text);
+                                  c.AddFor(m => m.Value);
+                              })
+                              .DataSource(d => d.WebApi().Controller("ProgramApi")
+                                  .LoadAction("getHungerLevels")
+                                  .LoadParams(new { programId = new JS("data.Id") })
+                                  .InsertAction("AddHungerLevel")
+                                  .Key("data.Id"))
+                              .OnInitNewRow(string.Format("function(e) {{ onInitNewRow(e, {0}); }}", new JS("data.Id")))
+                )
+            </text>);
+
+                })
+)
+
+@*@{
+        var grid = Html.DevExpress().GridView(settings =>
+        {
+            settings.Name = "ManageProgramGrid";
+            settings.CallbackRouteValues = new { Controller = "Programs", Action = "programGridView" };
+            settings.SettingsEditing.AddNewRowRouteValues = new { Controller = "Programs", Action = "programGridAdd" };
+            settings.SettingsEditing.UpdateRowRouteValues = new { Controller = "Programs", Action = "programGridEdit" };
+            settings.Styles.AlternatingRow.Enabled = DefaultBoolean.True;
+            settings.SettingsBehavior.AllowFixedGroups = true;
+            settings.Settings.ShowGroupPanel = true;
+            settings.SettingsBehavior.AllowFocusedRow = true;
+            settings.SettingsEditing.Mode = GridViewEditingMode.EditFormAndDisplayRow;
+            settings.SettingsBehavior.ConfirmDelete = true;
+            settings.SettingsPager.FirstPageButton.Visible = true;
+            settings.SettingsPager.LastPageButton.Visible = true;
+            settings.SettingsPager.PageSizeItemSettings.Visible = true;
+            settings.SettingsPager.PageSizeItemSettings.Items = new string[] { "10", "20", "50" };
+
+            settings.CommandColumn.Visible = true;
+            settings.CommandColumn.ShowNewButtonInHeader = true;
+            settings.CommandColumn.ShowEditButton = true;
+
+            settings.KeyFieldName = "Id";
+
+            settings.Columns.Add(c =>
+            {
+                c.FieldName = "Id";
+                c.Visible = false;
+            });
+            settings.Columns.Add(c =>
+            {
+                c.FieldName = "Name";
+                c.VisibleIndex = 1;
+            });
+            settings.Columns.Add(c =>
+            {
+                c.FieldName = "WeightFactor";
+                c.Caption = "Weight Factor";
+            });
+            settings.Columns.Add(c =>
+            {
+                c.FieldName = "Description";
+                c.VisibleIndex = 2;
+            });
+            settings.Columns.Add(c =>
+            {
+                c.FieldName = "GoalName";
+                c.Caption = "Category";
+                c.VisibleIndex = 3;
+                c.EditFormSettings.Visible = DefaultBoolean.False;
+            });
+            settings.Columns.Add(g =>
+            {
+                g.Visible = false;
+                g.VisibleIndex = 4;
+                g.FieldName = "GoalId";
+                g.Caption = "Goal";
+                g.EditFormSettings.Visible = DefaultBoolean.True;
+                g.ColumnType = MVCxGridViewColumnType.ComboBox;
+                var combo = g.PropertiesEdit as ComboBoxProperties;
+                combo.DataSource = ViewBag.Goals;
+
+            });
+
+
+
+        });
+        if (ViewData["EditError"] != null)
+        {
+            grid.SetEditErrorText((string)ViewData["EditError"]);
+        }
+    }
+    @grid.Bind(Model).GetHtml()*@
 

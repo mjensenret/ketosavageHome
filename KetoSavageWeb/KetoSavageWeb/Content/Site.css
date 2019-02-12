@@ -1,44 +1,43 @@
 html, body {
-	background-color: #000000;
+    background-color: #000000;
     color: #DEDEDE;
-	margin: 0;
+    margin: 0;
 }
 
 /* Header */
 
-.dxpnl-edge.t.headerPane 
-{
-	background-color: #000000;
-	background-position: left top;
-	background-repeat: no-repeat;
+.dxpnl-edge.t.headerPane {
+    background-color: #000000;
+    background-position: left top;
+    background-repeat: no-repeat;
 }
-.dxpnl-edge.t.headerPane.panel 
-{
-	padding: 0;
+
+    .dxpnl-edge.t.headerPane.panel {
+        padding: 0;
+    }
+
+.headerMenu {
+    background-color: #000000;
+    border-width: 0 !important;
+    border-top-width: 1px !important;
 }
-.headerMenu 
-{
-	background-color: #000000;
-	border-width: 0!important;
-	border-top-width: 1px!important;
+
+.expandedPanel {
+    padding: 2px !important;
 }
-.expandedPanel 
-{
-	padding: 2px!important;
+
+    .expandedPanel .headerMenu {
+        border-top-width: 0 !important;
+    }
+
+.templateTitle {
+    color: #ffffff;
+    float: left;
+    margin: 12px 12px 18px;
 }
-.expandedPanel .headerMenu 
-{
-	border-top-width: 0!important;
-}
-.templateTitle
-{
-	color: #ffffff;
-	float:left;
-	margin: 12px 12px 18px;
-}
-.expandedPanel .templateTitle 
-{
-	display: none;
+
+.expandedPanel .templateTitle {
+    display: none;
 }
 
 /*.homeButtonLink .templateTitle
@@ -46,81 +45,78 @@ html, body {
 	 background: url(~/Content/Images/KSLogo_white.png) no-repeat top left;
 	 display: block;
 	 text-indent: -9999px; /* hides the link text */
-}*/
+}
 
-.dxpnl-edge.t.headerPane.bar .templateTitle 
-{
-	margin: 0;
+*/
+
+.dxpnl-edge.t.headerPane.bar .templateTitle {
+    margin: 0;
 }
-.templateTitle a 
-{
-	text-decoration: none;
-	font-size: medium;
-	color: #ffffff;
+
+.templateTitle a {
+    text-decoration: none;
+    font-size: medium;
+    color: #ffffff;
 }
-.loginControl 
-{
-	float: right;
-	margin: 24px 25px 12px;
-	font-size: 12px;
+
+.loginControl {
+    float: right;
+    margin: 24px 25px 12px;
+    font-size: 12px;
 }
-.expandedPanel .loginControl
-{
-	float: none;
-	margin-left: 12px;
-	margin-bottom: 24px;
+
+.expandedPanel .loginControl {
+    float: none;
+    margin-left: 12px;
+    margin-bottom: 24px;
 }
-.loginControl a 
-{
-	color: #ffffff;
-	text-decoration: none;
-	border-bottom: dashed 1px black;
-	display: inline-block;
+
+.loginControl a {
+    color: #ffffff;
+    text-decoration: none;
+    border-bottom: dashed 1px black;
+    display: inline-block;
 }
 
 
 /* Footer */
-.dxpnl-edge.b.footerPane 
-{
-	background-color: #000000;
+.dxpnl-edge.b.footerPane {
+    background-color: #000000;
 }
-.dxpnl-edge.b.footerPane.panel 
-{
-	padding: 0;
-}
-.footerMenu 
-{
-	float: right;
-	padding-top: 7px;
-}
-.copyright 
-{
-	float: left;
-	margin: 30px 15px 11px;
-}
-.content 
-{
-	padding: 5px;
-}
-.center
-{
 
+    .dxpnl-edge.b.footerPane.panel {
+        padding: 0;
+    }
+
+.footerMenu {
+    float: right;
+    padding-top: 7px;
+}
+
+.copyright {
+    float: left;
+    margin: 30px 15px 11px;
+}
+
+.content {
+    padding: 5px;
+}
+
+.center {
     text-align: center;
-
 }
 
-#loginForm
-{
+#loginForm, #form-container {
     margin: auto;
-    width: 50%;
-    border: 3px solid green;
+    width: 25%;
+    padding: 30px;
+    border: 1px solid #4d4d4d;
 }
 
-.center img
-{
-	margin-left: auto;
-	margin-right: auto;
-	display: block;
+.center img {
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
     width: 100%;
     height: auto;
     max-width: 300px;
@@ -128,197 +124,193 @@ html, body {
 
 
 /* Left Panel */
-.leftPane.panel
-{
-	padding: 1px;
-	width: 200px;
+.leftPane.panel {
+    padding: 1px;
+    width: 200px;
 }
 
 /* Right Panel */
-.rightPane.panel
-{
-	padding: 0;
-	width: 250px;
+.rightPane.panel {
+    padding: 0;
+    width: 250px;
 }
 
 /* Account */
-.accountHeader h2 
-{
-	margin: 10px 0 7px 0;
-	font-size: 16px;
+.accountHeader h2 {
+    margin: 10px 0 7px 0;
+    font-size: 16px;
 }
-.accountHeader p 
-{
-	margin: 0;
-	padding: 0;
+
+.accountHeader p {
+    margin: 0;
+    padding: 0;
 }
-.accountHeader 
-{
-	color: #DEDEDE;
-	margin-bottom: 20px;
+
+.accountHeader {
+    color: #DEDEDE;
+    margin-bottom: 20px;
 }
+
 #client-name {
     font-size: 18px;
     font-weight: bold;
     padding: 5px;
 }
+
+
 /* iOS */
 .dxpnlControl_iOS.leftPane,
 .dxpnlControl_iOS.rightPane,
 .dxpnlControl_iOS.contentPane {
     border-width: 1px !important;
 }
-.dxpnlControl_iOS.leftPane.panel
-{
-	width: 300px;
+
+    .dxpnlControl_iOS.leftPane.panel {
+        width: 300px;
+    }
+
+.dxpnlControl_iOS.rightPane {
+    width: 450px;
 }
-.dxpnlControl_iOS.rightPane
-{
-	width: 450px;
+
+.dxpnlControl_iOS .templateTitle {
+    margin: 17px 25px;
 }
-.dxpnlControl_iOS .templateTitle
-{
-	margin: 17px 25px;
+
+    .dxpnlControl_iOS .templateTitle a {
+        color: #303030;
+        font-size: 26px;
+        line-height: 1em;
+        font-weight: bold;
+    }
+
+.dxpnlControl_iOS .loginControl a {
+    color: #0160E7;
+    text-decoration: underline;
+    font-size: 20px;
+    font-weight: bold;
 }
-.dxpnlControl_iOS .templateTitle a
-{
-	color: #303030;
-	font-size: 26px;
-	line-height: 1em;
-	font-weight: bold;
+
+.dxpnlControl_iOS.mainContentPane {
+    border-width: 0px !important;
+    box-shadow: initial;
+    -webkit-box-shadow: initial;
+    -moz-box-shadow: initial;
 }
-.dxpnlControl_iOS .loginControl a
-{
-	color: #0160E7;
-	text-decoration: underline;
-	font-size: 20px;
-	font-weight: bold;
+
+.dxpnlControl_iOS.dxpnl-edge.b.footerPane {
+    border-width: 1px !important;
 }
-.dxpnlControl_iOS.mainContentPane
-{
-	border-width: 0px !important;
-	box-shadow: initial;
-	-webkit-box-shadow: initial;
-	-moz-box-shadow: initial;
+
+.dxpnlControl_iOS .accountHeader p {
+    color: #303030;
 }
-.dxpnlControl_iOS.dxpnl-edge.b.footerPane
-{
-	border-width: 1px !important;
-}
-.dxpnlControl_iOS .accountHeader p
-{
-	color: #303030;
-}
-.dxpnlControl_iOS .accountHeader h2
-{
-	color: #303030;
-	font-size: 26px;
-	margin-bottom: 10px;
+
+.dxpnlControl_iOS .accountHeader h2 {
+    color: #303030;
+    font-size: 26px;
+    margin-bottom: 10px;
 }
 
 
 /* Aqua */
 .dxpnlControl_Aqua.dxpnl-edge.t.headerPane,
 .dxpnlControl_Aqua.dxpnl-edge.b.footerPane,
-.dxpnlControl_Aqua .footerMenu li
-{
-	background-color: #BFDBFF;
+.dxpnlControl_Aqua .footerMenu li {
+    background-color: #BFDBFF;
 }
-.dxpnlControl_Aqua.dxpnl-edge.t.headerPane
-{
-	background-image: url('images/AquaHeader.jpg');
+
+.dxpnlControl_Aqua.dxpnl-edge.t.headerPane {
+    background-image: url('images/AquaHeader.jpg');
 }
-.dxpnlControl_Aqua .accountHeader h2
-{
-	color: #5689C5;
+
+.dxpnlControl_Aqua .accountHeader h2 {
+    color: #5689C5;
 }
+
 .dxpnlControl_Aqua .loginControl a,
-.dxpnlControl_Aqua .templateTitle a
-{
-	color: White;
-	border-color: White;
+.dxpnlControl_Aqua .templateTitle a {
+    color: White;
+    border-color: White;
 }
 
 
 /* DevEx */
 .dxpnlControl_DevEx.dxpnl-edge.t.headerPane,
 .dxpnlControl_DevEx.dxpnl-edge.b.footerPane,
-.dxpnlControl_DevEx .footerMenu li
-{
-	background-color: #F2F3F4;
+.dxpnlControl_DevEx .footerMenu li {
+    background-color: #F2F3F4;
 }
+
 .dxpnlControl_DevEx .templateTitle a,
 .dxpnlControl_DevEx .loginControl,
-.dxpnlControl_DevEx .loginControl a
-{
-	color: #4B4B57;
+.dxpnlControl_DevEx .loginControl a {
+    color: #4B4B57;
 }
-.dxpnlControl_DevEx .loginControl a 
-{
-	border-bottom-color: #4B4B57;
-}
+
+    .dxpnlControl_DevEx .loginControl a {
+        border-bottom-color: #4B4B57;
+    }
 
 
 /* BlackGlass */
 .dxpnlControl_BlackGlass.dxpnl-edge.t.headerPane,
 .dxpnlControl_BlackGlass.dxpnl-edge.b.footerPane,
-.dxpnlControl_BlackGlass .footerMenu li
-{
-	background-color: #2A2A2A;
-	color: white;
+.dxpnlControl_BlackGlass .footerMenu li {
+    background-color: #2A2A2A;
+    color: white;
 }
-.dxpnlControl_BlackGlass.dxpnl-edge.t.headerPane
-{
-	background-image: url('images/BlackGlassHeader.jpg');
+
+.dxpnlControl_BlackGlass.dxpnl-edge.t.headerPane {
+    background-image: url('images/BlackGlassHeader.jpg');
 }
-.dxpnlControl_BlackGlass .leftPanel li[class$="dxnb-last"] ul
-{
-	border-bottom: 1px solid black;
+
+.dxpnlControl_BlackGlass .leftPanel li[class$="dxnb-last"] ul {
+    border-bottom: 1px solid black;
 }
-.dxpnlControl_BlackGlass .accountHeader p
-{
-	color: #585858;
+
+.dxpnlControl_BlackGlass .accountHeader p {
+    color: #585858;
 }
+
 .dxpnlControl_BlackGlass .loginControl a,
-.dxpnlControl_BlackGlass .templateTitle a
-{
-	color: White;
-	border-color: White;
+.dxpnlControl_BlackGlass .templateTitle a {
+    color: White;
+    border-color: White;
 }
 
 
 /* Glass */
 .dxpnlControl_Glass.dxpnl-edge.t.headerPane,
 .dxpnlControl_Glass.dxpnl-edge.b.footerPane,
-.dxpnlControl_Glass .footerMenu li
-{
-	background-color: #CFE0E7;
+.dxpnlControl_Glass .footerMenu li {
+    background-color: #CFE0E7;
 }
-.dxpnlControl_Glass.dxpnl-edge.t.headerPane
-{
-	background-image: url('images/GlassHeader.jpg');
+
+.dxpnlControl_Glass.dxpnl-edge.t.headerPane {
+    background-image: url('images/GlassHeader.jpg');
 }
-.dxpnlControl_Glass .footerMenu *
-{
-	background-image: none !important;
+
+.dxpnlControl_Glass .footerMenu * {
+    background-image: none !important;
 }
+
 .dxpnlControl_Glass .templateTitle a,
 .dxpnlControl_Glass .loginControl,
-.dxpnlControl_Glass .loginControl a
-{
-	color: #4B4B57;
+.dxpnlControl_Glass .loginControl a {
+    color: #4B4B57;
 }
-.dxpnlControl_Glass .loginControl a 
-{
-	border-bottom-color: #4B4B57;
+
+    .dxpnlControl_Glass .loginControl a {
+        border-bottom-color: #4B4B57;
+    }
+
+.dxpnlControl_Glass .accountHeader h2 {
+    color: #387FA4;
 }
-.dxpnlControl_Glass .accountHeader h2
-{
-	color: #387FA4;
-}
-.dxpnlControl_Glass .accountHeader p
-{
-	color: #575757;
+
+.dxpnlControl_Glass .accountHeader p {
+    color: #575757;
 }
 
 
@@ -326,158 +318,152 @@ html, body {
 /* Office2003Blue */
 .dxpnlControl_Office2003Blue.dxpnl-edge.t.headerPane,
 .dxpnlControl_Office2003Blue.dxpnl-edge.b.footerPane,
-.dxpnlControl_Office2003Blue .footerMenu li
-{
-	background-color: #BCD4F6;
+.dxpnlControl_Office2003Blue .footerMenu li {
+    background-color: #BCD4F6;
 }
-.dxpnlControl_Office2003Blue .footerMenu div
-{
-	background: transparent none;
+
+.dxpnlControl_Office2003Blue .footerMenu div {
+    background: transparent none;
 }
-.dxpnlControl_Office2003Blue .leftPanel > ul
-{
-	background: transparent none;
+
+.dxpnlControl_Office2003Blue .leftPanel > ul {
+    background: transparent none;
 }
+
 .dxpnlControl_Office2003Blue .templateTitle a,
 .dxpnlControl_Office2003Blue .loginControl,
-.dxpnlControl_Office2003Blue .loginControl a
-{
-	color: #4B4B57;
+.dxpnlControl_Office2003Blue .loginControl a {
+    color: #4B4B57;
 }
-.dxpnlControl_Office2003Blue .loginControl a 
-{
-	border-bottom-color: #4B4B57;
-}
-.dxpnlControl_Office2003Blue .accountHeader p
-{
-	color: #424242;
+
+    .dxpnlControl_Office2003Blue .loginControl a {
+        border-bottom-color: #4B4B57;
+    }
+
+.dxpnlControl_Office2003Blue .accountHeader p {
+    color: #424242;
 }
 
 
 /* Office2003Olive */
 .dxpnlControl_Office2003Olive.dxpnl-edge.t.headerPane,
 .dxpnlControl_Office2003Olive.dxpnl-edge.b.footerPane,
-.dxpnlControl_Office2003Olive .footerMenu li
-{
-	background-color: #D6DCBB;
+.dxpnlControl_Office2003Olive .footerMenu li {
+    background-color: #D6DCBB;
 }
-.dxpnlControl_Office2003Olive .footerMenu div
-{
-	background: transparent none;
+
+.dxpnlControl_Office2003Olive .footerMenu div {
+    background: transparent none;
 }
-.dxpnlControl_Office2003Olive .leftPanel > ul
-{
-	background: transparent none;
+
+.dxpnlControl_Office2003Olive .leftPanel > ul {
+    background: transparent none;
 }
+
 .dxpnlControl_Office2003Olive .templateTitle a,
 .dxpnlControl_Office2003Olive .loginControl,
-.dxpnlControl_Office2003Olive .loginControl a
-{
-	color: #4B4B57;
+.dxpnlControl_Office2003Olive .loginControl a {
+    color: #4B4B57;
 }
-.dxpnlControl_Office2003Olive .loginControl a 
-{
-	border-bottom-color: #4B4B57;
-}
-.dxpnlControl_Office2003Olive .accountHeader p
-{
-	color: #424242;
+
+    .dxpnlControl_Office2003Olive .loginControl a {
+        border-bottom-color: #4B4B57;
+    }
+
+.dxpnlControl_Office2003Olive .accountHeader p {
+    color: #424242;
 }
 
 /* Office2003Silver */
 .dxpnlControl_Office2003Silver.dxpnl-edge.t.headerPane,
 .dxpnlControl_Office2003Silver.dxpnl-edge.b.footerPane,
-.dxpnlControl_Office2003Silver .footerMenu li
-{
-	background-color: #D0D0DE;
+.dxpnlControl_Office2003Silver .footerMenu li {
+    background-color: #D0D0DE;
 }
-.dxpnlControl_Office2003Silver .footerMenu div
-{
-	background: transparent none;
+
+.dxpnlControl_Office2003Silver .footerMenu div {
+    background: transparent none;
 }
-.dxpnlControl_Office2003Silver .leftPanel > ul
-{
-	background: transparent none;
+
+.dxpnlControl_Office2003Silver .leftPanel > ul {
+    background: transparent none;
 }
+
 .dxpnlControl_Office2003Silver .templateTitle a,
 .dxpnlControl_Office2003Silver .loginControl,
-.dxpnlControl_Office2003Silver .loginControl a
-{
-	color: #4B4B57;
+.dxpnlControl_Office2003Silver .loginControl a {
+    color: #4B4B57;
 }
-.dxpnlControl_Office2003Silver .loginControl a
-{
-	border-bottom-color: #4B4B57;
-}
-.dxpnlControl_Office2003Silver .accountHeader p
-{
-	color: #424242;
+
+    .dxpnlControl_Office2003Silver .loginControl a {
+        border-bottom-color: #4B4B57;
+    }
+
+.dxpnlControl_Office2003Silver .accountHeader p {
+    color: #424242;
 }
 
 /* Office2010Black */
 .dxpnlControl_Office2010Black.dxpnl-edge.t.headerPane,
 .dxpnlControl_Office2010Black.dxpnl-edge.b.footerPane,
-.dxpnlControl_Office2010Black .footerMenu li
-{
-	background-color: #393939;
-	color: white;
+.dxpnlControl_Office2010Black .footerMenu li {
+    background-color: #393939;
+    color: white;
 }
-.dxpnlControl_Office2010Black .footerMenu a
-{
-	color: white !important;
+
+.dxpnlControl_Office2010Black .footerMenu a {
+    color: white !important;
 }
-.dxpnlControl_Office2010Black .accountHeader h2
-{
-	color: #3C3C3C;
+
+.dxpnlControl_Office2010Black .accountHeader h2 {
+    color: #3C3C3C;
 }
+
 .dxpnlControl_Office2010Black .loginControl a,
-.dxpnlControl_Office2010Black .templateTitle a
-{
-	color: White;
-	border-color: White;
+.dxpnlControl_Office2010Black .templateTitle a {
+    color: White;
+    border-color: White;
 }
 
 
 /* Office2010Blue */
 .dxpnlControl_Office2010Blue.dxpnl-edge.t.headerPane,
 .dxpnlControl_Office2010Blue.dxpnl-edge.b.footerPane,
-.dxpnlControl_Office2010Blue .footerMenu li
-{
-	background-color: #D3E4F6;
+.dxpnlControl_Office2010Blue .footerMenu li {
+    background-color: #D3E4F6;
 }
+
 .dxpnlControl_Office2010Blue .templateTitle a,
 .dxpnlControl_Office2010Blue .loginControl,
-.dxpnlControl_Office2010Blue .loginControl a
-{
-	color: Black;
+.dxpnlControl_Office2010Blue .loginControl a {
+    color: Black;
 }
-.dxpnlControl_Office2010Blue .loginControl a 
-{
-	border-bottom-color: Black;
-}
-.dxpnlControl_Office2010Blue .accountHeader h2
-{
-	color: #498BC2;
+
+    .dxpnlControl_Office2010Blue .loginControl a {
+        border-bottom-color: Black;
+    }
+
+.dxpnlControl_Office2010Blue .accountHeader h2 {
+    color: #498BC2;
 }
 
 
 /* Office2010Silver */
 .dxpnlControl_Office2010Silver.dxpnl-edge.t.headerPane,
 .dxpnlControl_Office2010Silver.dxpnl-edge.b.footerPane,
-.dxpnlControl_Office2010Silver .footerMenu li
-{
-	background-color: #A9ACB4;
-	color: white;
+.dxpnlControl_Office2010Silver .footerMenu li {
+    background-color: #A9ACB4;
+    color: white;
 }
-.dxpnlControl_Office2010Silver .accountHeader h2
-{
-	color: #3B3B3B;
+
+.dxpnlControl_Office2010Silver .accountHeader h2 {
+    color: #3B3B3B;
 }
+
 .dxpnlControl_Office2010Silver .loginControl a,
-.dxpnlControl_Office2010Silver .templateTitle a
-{
-	color: White;
-	border-color: White;
+.dxpnlControl_Office2010Silver .templateTitle a {
+    color: White;
+    border-color: White;
 }
 
 
@@ -485,245 +471,237 @@ html, body {
 /* PlasticBlue */
 .dxpnlControl_PlasticBlue.dxpnl-edge.t.headerPane,
 .dxpnlControl_PlasticBlue.dxpnl-edge.b.footerPane,
-.dxpnlControl_PlasticBlue .footerMenu li
-{
-	background-color :#3C4F8F;
-	color: white;
+.dxpnlControl_PlasticBlue .footerMenu li {
+    background-color: #3C4F8F;
+    color: white;
 }
-.dxpnlControl_PlasticBlue.dxpnl-edge.t.headerPane
-{
-	background-image: url('images/PlasticBlueHeader.jpg');
+
+.dxpnlControl_PlasticBlue.dxpnl-edge.t.headerPane {
+    background-image: url('images/PlasticBlueHeader.jpg');
 }
-.dxpnlControl_PlasticBlue .accountHeader h2
-{
-	color: #5A83D0;
+
+.dxpnlControl_PlasticBlue .accountHeader h2 {
+    color: #5A83D0;
 }
-.dxpnlControl_PlasticBlue .accountHeader p
-{
-	color: #575757;
+
+.dxpnlControl_PlasticBlue .accountHeader p {
+    color: #575757;
 }
+
 .dxpnlControl_PlasticBlue .loginControl a,
-.dxpnlControl_PlasticBlue .templateTitle a
-{
-	color: White;
-	border-color: White;
+.dxpnlControl_PlasticBlue .templateTitle a {
+    color: White;
+    border-color: White;
 }
 
 
 /* RedWine */
 .dxpnlControl_RedWine.dxpnl-edge.t.headerPane,
 .dxpnlControl_RedWine.dxpnl-edge.b.footerPane,
-.dxpnlControl_RedWine .footerMenu li
-{
-	background-color: #78002B;
-	color: white;
+.dxpnlControl_RedWine .footerMenu li {
+    background-color: #78002B;
+    color: white;
 }
-.dxpnlControl_RedWine.dxpnl-edge.t.headerPane
-{
-	background-image: url('images/RedWineHeader.jpg');
-	background-position: top right;
+
+.dxpnlControl_RedWine.dxpnl-edge.t.headerPane {
+    background-image: url('images/RedWineHeader.jpg');
+    background-position: top right;
 }
-.dxpnlControl_RedWine .footerMenu div 
-{
-	background: transparent none;
+
+.dxpnlControl_RedWine .footerMenu div {
+    background: transparent none;
 }
-.dxpnlControl_RedWine .accountHeader h2
-{
-	color: #8A0A37;
+
+.dxpnlControl_RedWine .accountHeader h2 {
+    color: #8A0A37;
 }
+
 .dxpnlControl_RedWine .loginControl a,
-.dxpnlControl_RedWine .templateTitle a
-{
-	color: White;
-	border-color: White;
+.dxpnlControl_RedWine .templateTitle a {
+    color: White;
+    border-color: White;
 }
 
 
 /* SoftOrange */
 .dxpnlControl_SoftOrange.dxpnl-edge.t.headerPane,
 .dxpnlControl_SoftOrange.dxpnl-edge.b.footerPane,
-.dxpnlControl_SoftOrange .footerMenu li
-{
-	background-color: #F9F9F9 !important;
-	background-image: none !important;
+.dxpnlControl_SoftOrange .footerMenu li {
+    background-color: #F9F9F9 !important;
+    background-image: none !important;
 }
+
 .dxpnlControl_SoftOrange .templateTitle a,
 .dxpnlControl_SoftOrange .loginControl,
-.dxpnlControl_SoftOrange .loginControl a
-{
-	color: Black;
+.dxpnlControl_SoftOrange .loginControl a {
+    color: Black;
 }
-.dxpnlControl_SoftOrange .loginControl a 
-{
-	border-bottom-color: Black;
+
+    .dxpnlControl_SoftOrange .loginControl a {
+        border-bottom-color: Black;
+    }
+
+.dxpnlControl_SoftOrange .accountHeader h2 {
+    color: Black;
 }
-.dxpnlControl_SoftOrange .accountHeader h2
-{
-	color: Black;
-}
-.dxpnlControl_SoftOrange .accountHeader p
-{
-	color: #707070;
+
+.dxpnlControl_SoftOrange .accountHeader p {
+    color: #707070;
 }
 
 
 /* Youthful */
 .dxpnlControl_Youthful.dxpnl-edge.t.headerPane,
 .dxpnlControl_Youthful.dxpnl-edge.b.footerPane,
-.dxpnlControl_Youthful .footerMenu li
-{
-	background-color: #8AA150;
-	color: white !important;
+.dxpnlControl_Youthful .footerMenu li {
+    background-color: #8AA150;
+    color: white !important;
 }
-.dxpnlControl_Youthful .accountHeader h2
-{
-	color: #80A70E;
+
+.dxpnlControl_Youthful .accountHeader h2 {
+    color: #80A70E;
 }
+
 .dxpnlControl_Youthful .loginControl a,
-.dxpnlControl_Youthful .templateTitle a
-{
-	color: White;
-	border-color: White;
+.dxpnlControl_Youthful .templateTitle a {
+    color: White;
+    border-color: White;
 }
 
 /* Metropolis */
 .dxpnlControl_Metropolis.dxpnl-edge.t.headerPane,
-.dxpnlControl_Metropolis .footerMenu li
-{
-	background-color: White;
-	color: Black;
+.dxpnlControl_Metropolis .footerMenu li {
+    background-color: White;
+    color: Black;
 }
-.dxpnlControl_Metropolis.rightPane
-{
-	width: 400px;
+
+.dxpnlControl_Metropolis.rightPane {
+    width: 400px;
 }
-.dxpnlControl_Metropolis .accountHeader h2
-{
-	color: #3B3B3B;
+
+.dxpnlControl_Metropolis .accountHeader h2 {
+    color: #3B3B3B;
 }
+
 .dxpnlControl_Metropolis .loginControl a,
-.dxpnlControl_Metropolis .templateTitle a
-{
-	color: Black;
-	border-color: Black;
+.dxpnlControl_Metropolis .templateTitle a {
+    color: Black;
+    border-color: Black;
 }
-.dxpnlControl_Metropolis .templateTitle a 
-{
-	font-size: 28px;
+
+.dxpnlControl_Metropolis .templateTitle a {
+    font-size: 28px;
 }
 
 /* MetropolisBlue */
 .dxpnlControl_MetropolisBlue.dxpnl-edge.t.headerPane,
-.dxpnlControl_MetropolisBlue .footerMenu li
-{
-	background-color: White;
-	color: Black;
+.dxpnlControl_MetropolisBlue .footerMenu li {
+    background-color: White;
+    color: Black;
 }
-.dxpnlControl_MetropolisBlue.rightPane
-{
-	width: 400px;
+
+.dxpnlControl_MetropolisBlue.rightPane {
+    width: 400px;
 }
-.dxpnlControl_MetropolisBlue .accountHeader h2
-{
-	color: #3B3B3B;
+
+.dxpnlControl_MetropolisBlue .accountHeader h2 {
+    color: #3B3B3B;
 }
+
 .dxpnlControl_MetropolisBlue .loginControl a,
-.dxpnlControl_MetropolisBlue .templateTitle a
-{
-	color: Black;
-	border-color: Black;
+.dxpnlControl_MetropolisBlue .templateTitle a {
+    color: Black;
+    border-color: Black;
 }
-.dxpnlControl_MetropolisBlue .templateTitle a 
-{
-	font-size: 28px;
+
+.dxpnlControl_MetropolisBlue .templateTitle a {
+    font-size: 28px;
 }
 
 /* Moderno */
 .dxpnlControl_Moderno.dxpnl-edge.t.headerPane,
-.dxpnlControl_Moderno .footerMenu li
-{
-	background-color: White;
-	color: Black;
+.dxpnlControl_Moderno .footerMenu li {
+    background-color: White;
+    color: Black;
 }
-.dxpnlControl_Moderno.headerPane .headerMenu .dxm-main
-{
-	border-color: #000000;
-	border-style: solid;
+
+.dxpnlControl_Moderno.headerPane .headerMenu .dxm-main {
+    border-color: #000000;
+    border-style: solid;
 }
-.dxpnlControl_Moderno.leftPane
-{
-	padding: 0px;
+
+.dxpnlControl_Moderno.leftPane {
+    padding: 0px;
 }
-.dxpnlControl_Moderno.leftPane .dxnbLite_Moderno .dxnb-gr:first-child .dxnb-header,
-.dxpnlControl_Moderno.leftPane .dxnbLite_Moderno .dxnb-gr:first-child .dxnb-headerCollapsed
-{
-	border-top: 0px;
+
+    .dxpnlControl_Moderno.leftPane .dxnbLite_Moderno .dxnb-gr:first-child .dxnb-header,
+    .dxpnlControl_Moderno.leftPane .dxnbLite_Moderno .dxnb-gr:first-child .dxnb-headerCollapsed {
+        border-top: 0px;
+    }
+
+.dxpnlControl_Moderno.rightPane {
+    width: 350px;
 }
-.dxpnlControl_Moderno.rightPane
-{
-	width: 350px;
+
+.dxpnlControl_Moderno .accountHeader h2 {
+    color: #3B3B3B;
 }
-.dxpnlControl_Moderno .accountHeader h2
-{
-	color: #3B3B3B;
-}
+
 .dxpnlControl_Moderno .loginControl a,
-.dxpnlControl_Moderno .templateTitle a
-{
-	font-size: 14px;
-	color: #0072c6;
-	border-color: #0072c6;
+.dxpnlControl_Moderno .templateTitle a {
+    font-size: 14px;
+    color: #0072c6;
+    border-color: #0072c6;
 }
-.dxpnlControl_Moderno .templateTitle a 
-{
-	font-size: 28px;
+
+.dxpnlControl_Moderno .templateTitle a {
+    font-size: 28px;
 }
-.dxpnlControl_Moderno .contentPane .dxgvControl_Moderno .dxgvTable_Moderno
-{
-	border: 0!important;
+
+.dxpnlControl_Moderno .contentPane .dxgvControl_Moderno .dxgvTable_Moderno {
+    border: 0 !important;
 }
-.dxpnlControl_Moderno .contentPane .dxgvControl_Moderno .dxgvHeader_Moderno
-{
-	border-top: 0!important;
+
+.dxpnlControl_Moderno .contentPane .dxgvControl_Moderno .dxgvHeader_Moderno {
+    border-top: 0 !important;
 }
-.dxpnlControl_Moderno.dxpnl-edge.b.footerPane 
-{
-	background: #EDEDED;
+
+.dxpnlControl_Moderno.dxpnl-edge.b.footerPane {
+    background: #EDEDED;
 }
 
 /* Mulberry */
-.dxpnlControl_Mulberry .footerMenu li
-{
-	background-color: White;
-	color: Black;
+.dxpnlControl_Mulberry .footerMenu li {
+    background-color: White;
+    color: Black;
 }
-.dxpnlControl_Mulberry .accountHeader h2
-{
-	color: #3B3B3B;
+
+.dxpnlControl_Mulberry .accountHeader h2 {
+    color: #3B3B3B;
 }
+
 .dxpnlControl_Mulberry .loginControl a,
-.dxpnlControl_Mulberry .templateTitle a
-{
-	color: #BF4E6A;
-	border-color: #BF4E6A;
-	font-size: 14px;
+.dxpnlControl_Mulberry .templateTitle a {
+    color: #BF4E6A;
+    border-color: #BF4E6A;
+    font-size: 14px;
 }
-.dxpnlControl_Mulberry .templateTitle a 
-{
-	font-size: 28px;
+
+.dxpnlControl_Mulberry .templateTitle a {
+    font-size: 28px;
 }
+
 .dxpnlControl_Mulberry.dxpnl-edge.t.headerPane,
-.dxpnlControl_Mulberry.dxpnl-edge.b.footerPane
-{
-	background: #F1F2F5;
+.dxpnlControl_Mulberry.dxpnl-edge.b.footerPane {
+    background: #F1F2F5;
 }
-.dxpnlControl_Mulberry .contentPane .dxgvControl_Mulberry .dxgvTable_Mulberry
-{
-	border: 0!important;
+
+.dxpnlControl_Mulberry .contentPane .dxgvControl_Mulberry .dxgvTable_Mulberry {
+    border: 0 !important;
 }
-.dxpnlControl_Mulberry .contentPane .dxgvControl_Mulberry .dxgvHeader_Mulberry
-{
-	border-top: 0!important;
+
+.dxpnlControl_Mulberry .contentPane .dxgvControl_Mulberry .dxgvHeader_Mulberry {
+    border-top: 0 !important;
 }
 /*Index CSS declarations*/
 #loginPage {
@@ -743,13 +721,13 @@ html, body {
 /*Beginning of Chart CSS declarations*/
 
 /*Coach-specific controls*/
-#controlPanel, #weightGraph, #gaugeContainer, #gridContainer, #newsGrid{
-        padding: 5px;
-        width: 100%;
-        max-width: 1100px;
-        /*border: ridge;*/
-        /*display: inline-block;*/
-        /*float: left;*/
+#controlPanel, #weightGraph, #gaugeContainer, #gridContainer, #newsGrid {
+    padding: 5px;
+    width: 100%;
+    max-width: 1100px;
+    /*border: ridge;*/
+    /*display: inline-block;*/
+    /*float: left;*/
 }
 
 #newsfeed {
@@ -771,7 +749,7 @@ html, body {
 
 #progressGauge {
     height: 250px;
-    display:inline-block;
+    display: inline-block;
     background-color: #0a0a0a;
 }
 
@@ -779,7 +757,6 @@ html, body {
     display: inline-block;
     height: 250px;
     background-color: #0a0a0a;
-
 }
 
 #currentMacroGauge {
@@ -788,12 +765,14 @@ html, body {
     height: 250px;
     position: relative;
 }
+
 #currentWeekGauge {
     float: left;
     height: 245px;
     background-color: #0a0a0a;
 }
-#panel {
+
+#currentWeekGaugePanel {
     /*border:solid;*/
     color: #dedede;
     width: 150px;
@@ -803,7 +782,6 @@ html, body {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-
 }
 
 #weight-chart {
@@ -814,65 +792,59 @@ html, body {
 /*Quote carousel CSS*/
 
 /* carousel */
-#quote-carousel 
-{
+#quote-carousel {
     padding: 0 10px 30px 10px;
     background-color: #0a0a0a;
 }
 
-/* Control buttons  */
-#quote-carousel .carousel-control
-{
-  background: none;
-  color: #dedede;
-  font-size: 2.3em;
-  text-shadow: none;
-  width: 50px;
-}
-/* Previous button  */
-#quote-carousel .carousel-control.left 
-{
-  /*left: -10px;*/
-  /*border: solid;*/
-}
-/* Next button  */
-#quote-carousel .carousel-control.right 
-{
-  /*right: 10px !important;*/
-}
-/* Changes the position of the indicators */
-#quote-carousel .carousel-indicators 
-{
-  right: 50%;
-  top: auto;
-  bottom: 0px;
-  margin-right: -5px;
-}
-/* Changes the color of the indicators */
-#quote-carousel .carousel-indicators li 
-{
-  background: #DEDEDE;
-}
-#quote-carousel .carousel-indicators .active 
-{
-  background: #ff1111;
-}
-#quote-carousel img
-{
-  width: auto;
-  height: 100px;
-  border: solid;
-}
+    /* Control buttons  */
+    #quote-carousel .carousel-control {
+        background: none;
+        color: #dedede;
+        font-size: 2.3em;
+        text-shadow: none;
+        width: 50px;
+    }
+        /* Previous button  */
+        #quote-carousel .carousel-control.left {
+            /*left: -10px;*/
+            /*border: solid;*/
+        }
+        /* Next button  */
+        #quote-carousel .carousel-control.right {
+            /*right: 10px !important;*/
+        }
+    /* Changes the position of the indicators */
+    #quote-carousel .carousel-indicators {
+        right: 50%;
+        top: auto;
+        bottom: 0px;
+        margin-right: -5px;
+    }
+        /* Changes the color of the indicators */
+        #quote-carousel .carousel-indicators li {
+            background: #DEDEDE;
+        }
+
+        #quote-carousel .carousel-indicators .active {
+            background: #ff1111;
+        }
+
+    #quote-carousel img {
+        width: auto;
+        height: 100px;
+        border: solid;
+    }
 /* End carousel */
 
 .item blockquote {
-    border-left: none; 
+    border-left: none;
     margin: 10px;
 }
 
-.item blockquote img {
-    margin-bottom: 10px;
-}
+    .item blockquote img {
+        margin-bottom: 10px;
+    }
 
 /*.item blockquote p:before  {
     content: "\f10d";
@@ -892,52 +864,12 @@ html, body {
 }
 
 
-.quote p:before  {
-    content: "\f10d";
-    font-family: 'Fontawesome';
-    float: left;
-    margin-right: 10px;
-}
-
-
-
-
-/**
-  MEDIA QUERIES
-*/
-
-/* Small devices (tablets, 768px and up) */
-@media (min-width: 768px) { 
-    #quote-carousel 
-    {
-      margin-bottom: 0px;
-      padding: 0 40px 30px 40px;
+    .quote p:before {
+        content: "\f10d";
+        font-family: 'Fontawesome';
+        float: left;
+        margin-right: 10px;
     }
-    
-}
-
-/* Small devices (tablets, up to 768px) */
-@media (max-width: 768px) { 
-    
-    /* Make the indicators larger for easier clicking with fingers/thumb on mobile */
-    
-    #quote-carousel .carousel-indicators {
-        bottom: 0px !important;  
-    }
-    #quote-carousel .carousel-indicators li {
-        display: inline-block;
-        margin: -10px 5px;
-        width: 7px;
-        height: 7px;
-    }
-    #quote-carousel .carousel-indicators li.active {
-        margin: -10px 5px;
-        width: 10px;
-        height: 10px;
-    }
-}
-
-/*End of quote carousel CSS*/
 
 /*Devextreme CSS*/
 /*
@@ -948,6 +880,7 @@ html, body {
 #devExtremeProgramGrid {
     border: 1px solid #4d4d4d;
 }
+
 .dx-colorview-palette-handle {
     background: -webkit-gradient(transparent 5px, rgba(255, 255, 255, 0.2) 6px, #000000 7px, #000000 12px, rgba(255, 255, 255, 0.2) 13px);
     background: -webkit-radial-gradient(transparent 5px, rgba(255, 255, 255, 0.2) 6px, #000000 7px, #000000 12px, rgba(255, 255, 255, 0.2) 13px);
@@ -4139,7 +4072,7 @@ html, body {
         }
 
     .dx-button-mode-contained.dx-button-success {
-        background-color: #5cb85c;
+        background-color: #ff1111;
         border-color: transparent;
         color: #2a2a2a;
     }
@@ -4149,17 +4082,17 @@ html, body {
         }
 
         .dx-button-mode-contained.dx-button-success.dx-state-hover {
-            background-color: #449d44;
+            background-color: #b00000;
             border-color: transparent;
         }
 
         .dx-button-mode-contained.dx-button-success.dx-state-focused {
-            background-color: #3d8b3d;
+            background-color: #7d0000;
             border-color: transparent;
         }
 
         .dx-button-mode-contained.dx-button-success.dx-state-active {
-            background-color: #357935;
+            background-color: #7d0000;
             border-color: transparent;
             color: #2a2a2a;
         }
@@ -17723,3 +17656,93 @@ html, body {
 .dx-htmleditor-toolbar-menu-separator {
     border-top-color: #4d4d4d;
 }
+
+#gridClientProgram {
+    height: 440px;
+}
+
+/**
+  MEDIA QUERIES
+*/
+
+
+/*Extra small devices (phones, 600px and down*/
+
+@media only screen and (max-width: 600px) {
+    #loginForm, #form-container, #macroFormPopup, #measureFormPopup, #measureScrollView {
+        width: 100%;
+        margin: 0px;
+        background-color: blue;
+    }
+
+    .dx-popup-content {
+        padding: 0px;
+    }
+
+    .dx-button-normal, .dx-button-success {
+        width: 100%;
+    }
+
+    #currentWeekGaugePanel {
+        display: none;
+    }
+}
+
+/*Small devices (portrait tablets and large phones, 600px and up*/
+@media only screen and (min-width: 600px) {
+    #loginForm, #form-container {
+        width: 90%;
+        background-color: red;
+    }
+
+    #currentWeekGaugePanel {
+        display: none;
+    }
+
+    /* Make the indicators larger for easier clicking with fingers/thumb on mobile */
+    #quote-carousel .carousel-indicators {
+        bottom: 0px !important;
+    }
+
+        #quote-carousel .carousel-indicators li {
+            display: inline-block;
+            margin: -10px 5px;
+            width: 7px;
+            height: 7px;
+        }
+
+            #quote-carousel .carousel-indicators li.active {
+                margin: -10px 5px;
+                width: 10px;
+                height: 10px;
+            }
+}
+
+/*Medium devices (landscape tablets, 768px and up)*/
+@media (min-width: 768px) {
+    #quote-carousel {
+        margin-bottom: 0px;
+        padding: 0 40px 30px 40px;
+    }
+}
+
+/*Large devices (laptops/desktops, 992px and up*/
+@media only screen and (min-width: 992px) {
+    #loginForm, #form-container {
+        width: 75%;
+        padding: 10px;
+        background-color: orange;
+    }
+}
+
+/*Extra large devices (large laptops/desktops 1200px and up)*/
+@media only screen and (min-width: 1200px) {
+    #loginForm, #form-container {
+        width: 50%;
+        padding: 10px;
+        background-color: green;
+    }
+}
+
+/*End of quote carousel CSS*/
+

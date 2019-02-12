@@ -67,7 +67,7 @@ namespace KetoSavageWeb.Controllers
                     UserId = x.UserId,
                     UserName = x.UserName,
                     FullName = string.Join(" ", x.FirstName, x.LastName),
-                    ProgramName = x.UserPrograms.Select(y => y.MasterProgram.programDescription).FirstOrDefault(),
+                    ProgramName = x.UserPrograms.Select(y => y.MasterProgram.Description).FirstOrDefault(),
                     UserType = x.Roles.Select(y => y.Role.Name).FirstOrDefault(),
                     currentProgramStartDate = x.UserPrograms.Select(y => y.StartDate).FirstOrDefault(),
                     currentProgramRenewalDate = x.UserPrograms.Select(y => y.RenewalDate).FirstOrDefault(),
@@ -83,7 +83,7 @@ namespace KetoSavageWeb.Controllers
                     IsActive = x.UserPrograms.Select(y => y.IsActive).FirstOrDefault()
                 }
                 ));
-            ViewBag.ProgramList = new SelectList(program.GetActive, "Id", "programDescription");
+            ViewBag.ProgramList = new SelectList(program.GetActive, "Id", "Description");
             ViewBag.CoachList = new SelectList(coachList, "Id", "UserName");
                     
             var model = items.ToList();
@@ -122,7 +122,7 @@ namespace KetoSavageWeb.Controllers
                     UserId = x.UserId,
                     UserName = x.UserName,
                     FullName = string.Join(" ", x.FirstName, x.LastName),
-                    ProgramName = x.UserPrograms.Select(y => y.MasterProgram.programDescription).FirstOrDefault(),
+                    ProgramName = x.UserPrograms.Select(y => y.MasterProgram.Description).FirstOrDefault(),
                     UserType = x.Roles.Select(y => y.Role.Name).FirstOrDefault(),
                     currentProgramStartDate = x.UserPrograms.Select(y => y.StartDate).FirstOrDefault(),
                     currentProgramRenewalDate = x.UserPrograms.Select(y => y.RenewalDate).FirstOrDefault(),
@@ -137,7 +137,7 @@ namespace KetoSavageWeb.Controllers
                     CurrentWeight = getCurrentWeight(x.UserId).HasValue ? getCurrentWeight(x.UserId).Value : x.UserPrograms.Select(y => y.StartWeight).FirstOrDefault()
                 }
                 ));
-            ViewBag.ProgramList = new SelectList(program.GetActive, "Id", "programDescription");
+            ViewBag.ProgramList = new SelectList(program.GetActive, "Id", "Description");
             ViewBag.CoachList = new SelectList(coachList, "Id", "UserName");
             var model = items.ToList();
 
@@ -444,7 +444,7 @@ namespace KetoSavageWeb.Controllers
                 ViewBag.IsNew = false;
             };
 
-            ViewBag.ProgramList = new SelectList(program.GetActive, "Id", "programDescription");
+            ViewBag.ProgramList = new SelectList(program.GetActive, "Id", "Description");
             ViewBag.CoachList = new SelectList(coachList, "Id", "UserName");
             ViewBag.ClientName = model.FullName;
 
