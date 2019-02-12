@@ -23,7 +23,7 @@ namespace KetoSavageWeb.ViewModels
         public int GoalId { get; set; }
 
         public virtual ProgramGoals Goal { get; set; }
-        public ICollection<HungerLevel> HungerLevel { get; set; }
+        //public ICollection<HungerLevel> HungerLevel { get; set; }
         public SelectList ProgramList { get; set; }
     }
     public class ProgramListViewModel : UserManagedListModel<ProgramViewModel>

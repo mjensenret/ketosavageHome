@@ -51,8 +51,7 @@ namespace KetoSavageWeb.Controllers
                         WeightFactor = x.WeightWeek,
                         Goal = x.Goal,
                         GoalName = x.Goal.Name,
-                        GoalId = x.Goal.Id,
-                        HungerLevel = x.HungerLevel
+                        GoalId = x.Goal.Id
 
                     }
                 ).ToList());
@@ -65,14 +64,6 @@ namespace KetoSavageWeb.Controllers
         {
             var data = _context.ProgramGoals.ToList();
             return Request.CreateResponse(DataSourceLoader.Load(data, loadOptions));
-        }
-
-        [System.Web.Http.HttpGet]
-        public HttpResponseMessage getHungerLevels(DataSourceLoadOptions loadOptions, int programId)
-        {
-            var hungerLevels = _context.Programs.Where(x => x.Id == programId).Select(y => y.HungerLevel).FirstOrDefault();
-            //ICollection<HungerLevel> hungerLevels = _context.HungerLevels.Where(x => x.programId == programId).ToList();
-            return Request.CreateResponse(DataSourceLoader.Load(hungerLevels, loadOptions));
         }
 
         [System.Web.Http.HttpPost]
@@ -102,6 +93,33 @@ namespace KetoSavageWeb.Controllers
 
         }
 
+        [System.Web.Http.HttpPut]
+        public HttpResponseMessage UpdateProgram(FormDataCollection form)
+        {
+            var key = Convert.ToInt32(form.Get("key"));
+            var values = form.Get("values");
+            ProgramTemplate program = _context.Programs.Single(p => p.Id == key);
+
+            
+            JsonConvert.PopulateObject(values, program);
+
+            Validate(program);
+            if (!ModelState.IsValid)
+                return Request.CreateErrorResponse(HttpStatusCode.BadRequest, "Invalid ModelState");
+
+            _context.SaveChanges();
+
+            return Request.CreateResponse(HttpStatusCode.OK);
+        }
+
+        //Hunger Levels
+        [System.Web.Http.HttpGet]
+        public HttpResponseMessage getHungerLevels(DataSourceLoadOptions loadOptions, int programId)
+        {
+            var hungerLevels = _context.Programs.Where(x => x.Id == programId).Select(y => y.HungerLevel).FirstOrDefault();
+            return Request.CreateResponse(DataSourceLoader.Load(hungerLevels, loadOptions));
+        }
+
         [System.Web.Http.HttpPost]
         public HttpResponseMessage AddHungerLevel(FormDataCollection form)
         {
@@ -122,23 +140,21 @@ namespace KetoSavageWeb.Controllers
         }
 
         [System.Web.Http.HttpPut]
-        public HttpResponseMessage UpdateProgram(FormDataCollection form)
+        public HttpResponseMessage UpdateHungerLevel(FormDataCollection form)
         {
             var key = Convert.ToInt32(form.Get("key"));
             var values = form.Get("values");
-            ProgramTemplate program = _context.Programs.Single(p => p.Id == key);
+            var updHungerLevels = _context.HungerLevels.Single(x => x.Id == key);
 
-            
-            JsonConvert.PopulateObject(values, program);
+            JsonConvert.PopulateObject(values, updHungerLevels);
 
-            Validate(program);
+            Validate(updHungerLevels);
             if (!ModelState.IsValid)
-                return Request.CreateErrorResponse(HttpStatusCode.BadRequest, "Invalid ModelState");
+                return Request.CreateErrorResponse(HttpStatusCode.BadRequest, "Hunger level model state is invalid");
 
             _context.SaveChanges();
-
+            
             return Request.CreateResponse(HttpStatusCode.OK);
         }
-
     }
 }
