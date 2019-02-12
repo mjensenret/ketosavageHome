@@ -65,7 +65,16 @@
           .DragEnabled(true)
           .CloseOnOutsideClick(true)
           .ContentTemplate(@<text>
-            @(Html.Action("DxMeasurementForm"))
+            @(Html.DevExtreme().ScrollView()
+              .ID("measurementPopupScrollView")
+              .Content(@<text>
+                <span id="measurementPopup">
+                    @(Html.Action("DxMeasurementForm"))
+                </span>
+                        </text>)
+                             )
+
+)
         </text>)
 )
 <script type="text/javascript">
