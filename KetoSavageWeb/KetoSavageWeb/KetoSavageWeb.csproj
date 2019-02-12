@@ -1398,6 +1398,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\ManageNewsController.cs" />
+    <Compile Include="Controllers\ProgramApiController.cs" />
     <Compile Include="Controllers\ProgressApiController.cs" />
     <Compile Include="Controllers\UserProgramsController.cs" />
     <Compile Include="Controllers\ManageUsersController.cs" />
@@ -1499,6 +1500,14 @@
     <Compile Include="Migrations\201902091655507_hungerLevelAddition.Designer.cs">
       <DependentUpon>201902091655507_hungerLevelAddition.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201902101756028_renameDescriptionColumn.cs" />
+    <Compile Include="Migrations\201902101756028_renameDescriptionColumn.Designer.cs">
+      <DependentUpon>201902101756028_renameDescriptionColumn.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201902110131524_updateHungerLevelTable.cs" />
+    <Compile Include="Migrations\201902110131524_updateHungerLevelTable.Designer.cs">
+      <DependentUpon>201902110131524_updateHungerLevelTable.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Abstract\UserManaged.cs" />
     <Compile Include="Models\AccountModels.cs" />
@@ -1533,6 +1542,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Controllers\Infrastructure\" />
+    <Folder Include="Views\ProgramApi\" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201803111631012_Initial.resx">
@@ -1594,6 +1604,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201902091655507_hungerLevelAddition.resx">
       <DependentUpon>201902091655507_hungerLevelAddition.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201902101756028_renameDescriptionColumn.resx">
+      <DependentUpon>201902101756028_renameDescriptionColumn.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201902110131524_updateHungerLevelTable.resx">
+      <DependentUpon>201902110131524_updateHungerLevelTable.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

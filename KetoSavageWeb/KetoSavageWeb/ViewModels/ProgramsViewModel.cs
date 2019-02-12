@@ -3,6 +3,7 @@ using KetoSavageWeb.Infrastructure;
 using KetoSavageWeb.Models;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -17,7 +18,13 @@ namespace KetoSavageWeb.ViewModels
         public bool Active { get; set; }
         public double? WeightFactor { get; set; }
         public string GoalName { get; set; }
+
+        [Display(Name = "Category")]
         public int GoalId { get; set; }
+
+        public virtual ProgramGoals Goal { get; set; }
+        public ICollection<HungerLevel> HungerLevel { get; set; }
+        public SelectList ProgramList { get; set; }
     }
     public class ProgramListViewModel : UserManagedListModel<ProgramViewModel>
     {
@@ -53,8 +60,8 @@ namespace KetoSavageWeb.ViewModels
 
         public string Description
         {
-            get { return this.Program.programDescription; }
-            set { this.Program.programDescription = value; }
+            get { return this.Program.Description; }
+            set { this.Program.Description = value; }
         }
         public int GoalId
         {
