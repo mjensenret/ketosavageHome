@@ -1454,7 +1454,7 @@
             <summary>Specifies the widget&#39;s width.</summary>
         </member>
         <member name="T:DevExtreme.AspNet.Mvc.Builders.ButtonGroupBuilder">
-            <summary>The ButtonGroup is a widget that contains a set of toggle buttons, and can be used as a mode switcher.</summary>
+            <summary>The ButtonGroup is a widget that contains a set of toggle buttons and can be used as a mode switcher.</summary>
         </member>
         <member name="M:DevExtreme.AspNet.Mvc.Builders.ButtonGroupBuilder.ID(System.String)">
             <summary>Specifies an HTML id for the widget&#39;s root element.</summary>
@@ -2975,10 +2975,10 @@
             <summary>Specifies a function that customizes grid columns after they are created.</summary>
         </member>
         <member name="M:DevExtreme.AspNet.Mvc.Builders.DataGridBuilder`1.CustomizeExportData(System.String)">
-            <summary>Customizes data before export. You can use the exporting.customizeExcelCell function instead.</summary>
+            <summary>Customizes data before export. You can use the export.customizeExcelCell function instead.</summary>
         </member>
         <member name="M:DevExtreme.AspNet.Mvc.Builders.DataGridBuilder`1.CustomizeExportData(DevExtreme.AspNet.Mvc.RazorBlock)">
-            <summary>Customizes data before export. You can use the exporting.customizeExcelCell function instead.</summary>
+            <summary>Customizes data before export. You can use the export.customizeExcelCell function instead.</summary>
         </member>
         <member name="M:DevExtreme.AspNet.Mvc.Builders.DataGridBuilder`1.DataSource(System.Func{DevExtreme.AspNet.Mvc.Factories.DataSourceFactory,DevExtreme.AspNet.Mvc.Builders.OptionsOwnerBuilder})">
             <summary>Specifies the origin of data for the widget.</summary>
@@ -23337,10 +23337,10 @@
             <summary>Specifies whether or not to animate item collapsing and expanding.</summary>
         </member>
         <member name="M:DevExtreme.AspNet.Mvc.Builders.TreeViewBuilder.CreateChildren(System.String)">
-            <summary>Allows you to load nodes manually.</summary>
+            <summary>Allows you to load nodes. Applies if the dataStructure is &quot;plain&quot; and the dataSource and items are undefined.</summary>
         </member>
         <member name="M:DevExtreme.AspNet.Mvc.Builders.TreeViewBuilder.CreateChildren(DevExtreme.AspNet.Mvc.RazorBlock)">
-            <summary>Allows you to load nodes manually.</summary>
+            <summary>Allows you to load nodes. Applies if the dataStructure is &quot;plain&quot; and the dataSource and items are undefined.</summary>
         </member>
         <member name="M:DevExtreme.AspNet.Mvc.Builders.TreeViewBuilder.DataSource(System.Func{DevExtreme.AspNet.Mvc.Factories.DataSourceFactory,DevExtreme.AspNet.Mvc.Builders.OptionsOwnerBuilder})">
             <summary>A data source used to fetch data to be displayed by the widget.</summary>
@@ -29986,6 +29986,9 @@
         </member>
         <member name="M:DevExtreme.AspNet.Mvc.Builders.ChartValueAxisBuilder.VisualRange(System.Action{DevExtreme.AspNet.Mvc.Builders.VizRangeBuilder})">
             <summary>Defines the axis&#39; displayed range. Cannot be wider than the wholeRange.</summary>
+        </member>
+        <member name="M:DevExtreme.AspNet.Mvc.Builders.ChartValueAxisBuilder.VisualRangeUpdateMode(DevExtreme.AspNet.Mvc.VisualRangeUpdateMode)">
+            <summary>Specifies how the axis&#39;s visual range should behave when chart data is updated.</summary>
         </member>
         <member name="M:DevExtreme.AspNet.Mvc.Builders.ChartValueAxisBuilder.WholeRange(System.Collections.Generic.IEnumerable{System.DateTime})">
             <summary>Defines the range where the axis can be zoomed and panned.</summary>
@@ -41808,7 +41811,7 @@
             <summary>Specifies the geographical coordinates of the center for a map.</summary>
         </member>
         <member name="M:DevExtreme.AspNet.Mvc.Builders.VectorMapBuilder.ControlBar(System.Action{DevExtreme.AspNet.Mvc.Builders.VectorMapControlBarBuilder})">
-            <summary>Specifies the options of the control bar.</summary>
+            <summary>Configures the control bar.</summary>
         </member>
         <member name="M:DevExtreme.AspNet.Mvc.Builders.VectorMapBuilder.Disabled(System.Boolean)">
             <summary>Specifies whether the widget responds to the user interaction.</summary>
@@ -42000,7 +42003,7 @@
             <summary>Disables the zooming capability.</summary>
         </member>
         <member name="T:DevExtreme.AspNet.Mvc.Builders.VectorMapControlBarBuilder">
-            <summary>Specifies the options of the control bar.</summary>
+            <summary>Configures the control bar.</summary>
         </member>
         <member name="M:DevExtreme.AspNet.Mvc.Builders.VectorMapControlBarBuilder.Option(System.String,System.Object)">
             <summary>Allows to specify an arbitrary option by its name.</summary>
@@ -42777,7 +42780,7 @@
             <summary>The Button widget is a simple button that performs specified commands when a user clicks it.</summary>
         </member>
         <member name="M:DevExtreme.AspNet.Mvc.Factories.WidgetFactory`1.ButtonGroup">
-            <summary>The ButtonGroup is a widget that contains a set of toggle buttons, and can be used as a mode switcher.</summary>
+            <summary>The ButtonGroup is a widget that contains a set of toggle buttons and can be used as a mode switcher.</summary>
         </member>
         <member name="M:DevExtreme.AspNet.Mvc.Factories.WidgetFactory`1.Calendar">
             <summary>The Calendar is a widget that displays a calendar and allows an end user to select the required date within a specified date range.</summary>
@@ -43119,7 +43122,7 @@
             <summary>The TextBox is a widget that enables a user to enter and edit a single line of text.</summary>
         </member>
         <member name="M:DevExtreme.AspNet.Mvc.Factories.ToolbarItemFactory.ButtonGroup">
-            <summary>The ButtonGroup is a widget that contains a set of toggle buttons, and can be used as a mode switcher.</summary>
+            <summary>The ButtonGroup is a widget that contains a set of toggle buttons and can be used as a mode switcher.</summary>
         </member>
         <member name="M:DevExtreme.AspNet.Mvc.Factories.ValidationRulesFactory.AddRequired">
             <summary>A validation rule that demands that a validated field has a value.</summary>

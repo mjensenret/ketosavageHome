@@ -52,7 +52,7 @@ namespace KetoSavageWeb.ViewModels
         public double actualCarb { get; set; }
         public string hungerLevel { get; set; }
         public string Notes { get; set; }
-        public List<HungerLevelEnum> hungerList { get; set; }
+        public int masterProgramId { get; set; }
     }
 
     public class EnterMeasurementViewModel
