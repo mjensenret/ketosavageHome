@@ -1,9 +1,9 @@
-<%@ Register TagPrefix="dx" Namespace="DevExpress.Data" Assembly="DevExpress.Data.v18.1, Version=18.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" %>
-<%@ Register TagPrefix="dx" Namespace="DevExpress.XtraReports.Web" Assembly="DevExpress.XtraReports.v18.1.Web.WebForms, Version=18.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" %>
-<%@ Register TagPrefix="dxmvc" Namespace="DevExpress.Web.Mvc" Assembly="DevExpress.Web.Mvc.v18.1, Version=18.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" %>
+<%@ Register TagPrefix="dx" Namespace="DevExpress.Data" Assembly="DevExpress.Data.v18.2, Version=18.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" %>
+<%@ Register TagPrefix="dx" Namespace="DevExpress.XtraReports.Web" Assembly="DevExpress.XtraReports.v18.2.Web.WebForms, Version=18.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" %>
+<%@ Register TagPrefix="dxmvc" Namespace="DevExpress.Web.Mvc" Assembly="DevExpress.Web.Mvc5.v18.2, Version=18.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" %>
 <dxmvc:MVCxReportViewer runat="server" SpriteCssFilePath="{0}/sprite.css" CssPostfix="KetoSavage" CssFilePath="{0}/styles.css">
     <LoadingPanelImage Url="XtraReports/Loading.gif" />
-    <LoadingPanelStyle BackColor="#000000" Font-Names="Segoe UI" Font-Size="12px" ForeColor="#333333">
+    <LoadingPanelStyle BackColor="#FFFFFF" Font-Names="Segoe UI" Font-Size="12px" ForeColor="#333333">
         <Paddings PaddingLeft="14px" PaddingTop="10px" PaddingRight="14px" PaddingBottom="10px" />
         <Border BorderColor="#C3C3C3" BorderStyle="Solid" BorderWidth="1px" />
     </LoadingPanelStyle>

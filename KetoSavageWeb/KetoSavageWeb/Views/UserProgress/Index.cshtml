@@ -61,14 +61,12 @@
 </div>
 
 @(Html.DevExtreme().Popup()
-      .ID("measureFormPopup")
-      .ShowTitle(false)
-      .Visible(false)
-      .DragEnabled(false)
-      .CloseOnOutsideClick(true)
-      .FullScreen(true)
-      .ContentTemplate(@<text>
-            @MeasurementScrollView()
+          .ID("measureFormPopup")
+          .Visible(false)
+          .DragEnabled(true)
+          .CloseOnOutsideClick(true)
+          .ContentTemplate(@<text>
+            @(Html.Action("DxMeasurementForm"))
         </text>)
       )
 

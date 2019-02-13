@@ -3,12 +3,12 @@
 
 
 <script type="text/javascript">
-    //<![CDATA[
+
     function onInitNewRow(e, parentID) {
         window.console.log(parentID);
         e.data.programId = parentID;
     }
-    //]]>
+
 </script>
 
 @(Html.DevExtreme().DataGrid<ProgramViewModel>()
@@ -48,26 +48,27 @@
               md.Enabled(true);
               md.Template(@<text>
                 @(Html.DevExtreme().DataGrid<HungerLevel>()
-                              .ColumnAutoWidth(true)
-                              .ShowBorders(true)
-                              .Editing(e =>
-                              {
-                                  e.AllowAdding(true);
-                                  e.AllowUpdating(true);
-                                  e.AllowDeleting(true);
-                                  e.Mode(GridEditMode.Row);
-                              })
-                              .Columns(c =>
-                              {
-                                  c.AddFor(m => m.Text);
-                                  c.AddFor(m => m.Value);
-                              })
-                              .DataSource(d => d.WebApi().Controller("ProgramApi")
-                                  .LoadAction("getHungerLevels")
-                                  .LoadParams(new { programId = new JS("data.Id") })
-                                  .InsertAction("AddHungerLevel")
-                                  .Key("data.Id"))
-                              .OnInitNewRow(string.Format("function(e) {{ onInitNewRow(e, {0}); }}", new JS("data.Id")))
+                  .ColumnAutoWidth(true)
+                  .ShowBorders(true)
+                  .Editing(e =>
+                  {
+                      e.AllowAdding(true);
+                      e.AllowUpdating(true);
+                      e.AllowDeleting(true);
+                      e.Mode(GridEditMode.Row);
+                  })
+                  .Columns(c =>
+                  {
+                      c.AddFor(m => m.Text);
+                      c.AddFor(m => m.Value);
+                  })
+                  .DataSource(d => d.WebApi().Controller("ProgramApi")
+                      .LoadAction("getHungerLevels")
+                      .LoadParams(new { programId = new JS("data.Id") })
+                      .InsertAction("AddHungerLevel")
+                      .UpdateAction("UpdateHungerLevel")
+                      .Key("Id"))
+                  .OnInitNewRow(string.Format("function(e) {{ onInitNewRow(e, {0}); }}", new JS("data.Id")))
                 )
             </text>);
 

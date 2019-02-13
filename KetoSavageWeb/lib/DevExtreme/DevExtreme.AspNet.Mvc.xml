@@ -2407,6 +2407,12 @@
         <member name="M:DevExtreme.AspNet.Mvc.Builders.CompareRuleBuilder.ComparisonType(DevExtreme.AspNet.Mvc.ComparisonOperator)">
             <summary>Specifies the operator to be used for comparing the validated value with the target.</summary>
         </member>
+        <member name="M:DevExtreme.AspNet.Mvc.Builders.CompareRuleBuilder.IgnoreEmptyValue(System.Boolean)">
+            <summary>Specifies whether empty values are valid.</summary>
+        </member>
+        <member name="M:DevExtreme.AspNet.Mvc.Builders.CompareRuleBuilder.IgnoreEmptyValue(DevExtreme.AspNet.Mvc.JS)">
+            <summary>Specifies whether empty values are valid.</summary>
+        </member>
         <member name="M:DevExtreme.AspNet.Mvc.Builders.CompareRuleBuilder.Message(System.String)">
             <summary>Specifies the message that is shown for end-users if the current rule is broken.</summary>
         </member>
@@ -2853,6 +2859,12 @@
         </member>
         <member name="M:DevExtreme.AspNet.Mvc.Builders.CustomRuleBuilder.Option(System.String,System.Object)">
             <summary>Allows to specify an arbitrary option by its name.</summary>
+        </member>
+        <member name="M:DevExtreme.AspNet.Mvc.Builders.CustomRuleBuilder.IgnoreEmptyValue(System.Boolean)">
+            <summary>Specifies whether empty values are valid.</summary>
+        </member>
+        <member name="M:DevExtreme.AspNet.Mvc.Builders.CustomRuleBuilder.IgnoreEmptyValue(DevExtreme.AspNet.Mvc.JS)">
+            <summary>Specifies whether empty values are valid.</summary>
         </member>
         <member name="M:DevExtreme.AspNet.Mvc.Builders.CustomRuleBuilder.Message(System.String)">
             <summary>Specifies the message that is shown for end-users if the current rule is broken.</summary>
@@ -6698,6 +6710,12 @@
         <member name="M:DevExtreme.AspNet.Mvc.Builders.EmailRuleBuilder.Option(System.String,System.Object)">
             <summary>Allows to specify an arbitrary option by its name.</summary>
         </member>
+        <member name="M:DevExtreme.AspNet.Mvc.Builders.EmailRuleBuilder.IgnoreEmptyValue(System.Boolean)">
+            <summary>Specifies whether empty values are valid.</summary>
+        </member>
+        <member name="M:DevExtreme.AspNet.Mvc.Builders.EmailRuleBuilder.IgnoreEmptyValue(DevExtreme.AspNet.Mvc.JS)">
+            <summary>Specifies whether empty values are valid.</summary>
+        </member>
         <member name="M:DevExtreme.AspNet.Mvc.Builders.EmailRuleBuilder.Message(System.String)">
             <summary>Specifies the message that is shown for end-users if the current rule is broken.</summary>
         </member>
@@ -7105,6 +7123,12 @@
         </member>
         <member name="M:DevExtreme.AspNet.Mvc.Builders.FilterBuilderBuilder`1.MaxGroupLevel(DevExtreme.AspNet.Mvc.JS)">
             <summary>Specifies groups&#39; maximum nesting level.</summary>
+        </member>
+        <member name="M:DevExtreme.AspNet.Mvc.Builders.FilterBuilderBuilder`1.OnContentReady(System.String)">
+            <summary>A function that is executed when the widget&#39;s content is ready and each time the content is changed.</summary>
+        </member>
+        <member name="M:DevExtreme.AspNet.Mvc.Builders.FilterBuilderBuilder`1.OnContentReady(DevExtreme.AspNet.Mvc.RazorBlock)">
+            <summary>A function that is executed when the widget&#39;s content is ready and each time the content is changed.</summary>
         </member>
         <member name="M:DevExtreme.AspNet.Mvc.Builders.FilterBuilderBuilder`1.OnDisposing(System.String)">
             <summary>A function that is executed before the widget is disposed of.</summary>
@@ -8868,10 +8892,16 @@
             <summary>Specifies the container in which to place the toolbar.</summary>
         </member>
         <member name="T:DevExtreme.AspNet.Mvc.Builders.HtmlEditorToolbarItemBuilder">
-            <summary>Configures toolbar controls which allow users to format text and execute commands.</summary>
+            <summary>Configures toolbar controls. These controls allow users to format text and execute commands.</summary>
         </member>
         <member name="M:DevExtreme.AspNet.Mvc.Builders.HtmlEditorToolbarItemBuilder.Option(System.String,System.Object)">
             <summary>Allows to specify an arbitrary option by its name.</summary>
+        </member>
+        <member name="M:DevExtreme.AspNet.Mvc.Builders.HtmlEditorToolbarItemBuilder.CssClass(System.String)">
+            <summary>Specifies a CSS class to be applied to the item.</summary>
+        </member>
+        <member name="M:DevExtreme.AspNet.Mvc.Builders.HtmlEditorToolbarItemBuilder.CssClass(DevExtreme.AspNet.Mvc.JS)">
+            <summary>Specifies a CSS class to be applied to the item.</summary>
         </member>
         <member name="M:DevExtreme.AspNet.Mvc.Builders.HtmlEditorToolbarItemBuilder.Disabled(System.Boolean)">
             <summary>Specifies whether or not a widget item must be displayed disabled.</summary>
@@ -9804,10 +9834,10 @@
             <summary>Switches the widget to a right-to-left representation.</summary>
         </member>
         <member name="M:DevExtreme.AspNet.Mvc.Builders.LoadPanelBuilder.Shading(System.Boolean)">
-            <summary>A Boolean value specifying whether or not the main screen is inactive while the widget is active.</summary>
+            <summary>Specifies whether to shade the container when the widget is active.</summary>
         </member>
         <member name="M:DevExtreme.AspNet.Mvc.Builders.LoadPanelBuilder.Shading(DevExtreme.AspNet.Mvc.JS)">
-            <summary>A Boolean value specifying whether or not the main screen is inactive while the widget is active.</summary>
+            <summary>Specifies whether to shade the container when the widget is active.</summary>
         </member>
         <member name="M:DevExtreme.AspNet.Mvc.Builders.LoadPanelBuilder.ShadingColor(System.String)">
             <summary>Specifies the shading color.</summary>
@@ -10272,10 +10302,10 @@
             <summary>Specifies the time delay, in milliseconds, after the last character has been typed in, before a search is executed.</summary>
         </member>
         <member name="M:DevExtreme.AspNet.Mvc.Builders.LookupBuilder.Shading(System.Boolean)">
-            <summary>A Boolean value specifying whether or not the main screen is inactive while the lookup is active.</summary>
+            <summary>Specifies whether to shade the container when the lookup is active. Applies only if usePopover is false.</summary>
         </member>
         <member name="M:DevExtreme.AspNet.Mvc.Builders.LookupBuilder.Shading(DevExtreme.AspNet.Mvc.JS)">
-            <summary>A Boolean value specifying whether or not the main screen is inactive while the lookup is active.</summary>
+            <summary>Specifies whether to shade the container when the lookup is active. Applies only if usePopover is false.</summary>
         </member>
         <member name="M:DevExtreme.AspNet.Mvc.Builders.LookupBuilder.ShowCancelButton(System.Boolean)">
             <summary>Specifies whether to display the Cancel button in the lookup window.</summary>
@@ -11661,10 +11691,10 @@
             <summary>Allows to specify an arbitrary option by its name.</summary>
         </member>
         <member name="M:DevExtreme.AspNet.Mvc.Builders.NavBarItemBuilder.Badge(System.String)">
-            <summary>Specifies a badge text for the navbar item.</summary>
+            <summary>Specifies a badge text for the tab.</summary>
         </member>
         <member name="M:DevExtreme.AspNet.Mvc.Builders.NavBarItemBuilder.Badge(DevExtreme.AspNet.Mvc.JS)">
-            <summary>Specifies a badge text for the navbar item.</summary>
+            <summary>Specifies a badge text for the tab.</summary>
         </member>
         <member name="M:DevExtreme.AspNet.Mvc.Builders.NavBarItemBuilder.Disabled(System.Boolean)">
             <summary>Specifies whether or not a widget item must be displayed disabled.</summary>
@@ -12023,6 +12053,12 @@
         <member name="M:DevExtreme.AspNet.Mvc.Builders.NumericRuleBuilder.Option(System.String,System.Object)">
             <summary>Allows to specify an arbitrary option by its name.</summary>
         </member>
+        <member name="M:DevExtreme.AspNet.Mvc.Builders.NumericRuleBuilder.IgnoreEmptyValue(System.Boolean)">
+            <summary>Specifies whether empty values are valid.</summary>
+        </member>
+        <member name="M:DevExtreme.AspNet.Mvc.Builders.NumericRuleBuilder.IgnoreEmptyValue(DevExtreme.AspNet.Mvc.JS)">
+            <summary>Specifies whether empty values are valid.</summary>
+        </member>
         <member name="M:DevExtreme.AspNet.Mvc.Builders.NumericRuleBuilder.Message(System.String)">
             <summary>Specifies the message that is shown for end-users if the current rule is broken.</summary>
         </member>
@@ -12034,6 +12070,12 @@
         </member>
         <member name="M:DevExtreme.AspNet.Mvc.Builders.PatternRuleBuilder.Option(System.String,System.Object)">
             <summary>Allows to specify an arbitrary option by its name.</summary>
+        </member>
+        <member name="M:DevExtreme.AspNet.Mvc.Builders.PatternRuleBuilder.IgnoreEmptyValue(System.Boolean)">
+            <summary>Specifies whether empty values are valid.</summary>
+        </member>
+        <member name="M:DevExtreme.AspNet.Mvc.Builders.PatternRuleBuilder.IgnoreEmptyValue(DevExtreme.AspNet.Mvc.JS)">
+            <summary>Specifies whether empty values are valid.</summary>
         </member>
         <member name="M:DevExtreme.AspNet.Mvc.Builders.PatternRuleBuilder.Message(System.String)">
             <summary>Specifies the message that is shown for end-users if the current rule is broken.</summary>
@@ -13230,10 +13272,10 @@
             <summary>Switches the widget to a right-to-left representation.</summary>
         </member>
         <member name="M:DevExtreme.AspNet.Mvc.Builders.PopoverBuilder.Shading(System.Boolean)">
-            <summary>A Boolean value specifying whether or not the main screen is inactive while the widget is active.</summary>
+            <summary>Specifies whether to shade the container when the widget is active.</summary>
         </member>
         <member name="M:DevExtreme.AspNet.Mvc.Builders.PopoverBuilder.Shading(DevExtreme.AspNet.Mvc.JS)">
-            <summary>A Boolean value specifying whether or not the main screen is inactive while the widget is active.</summary>
+            <summary>Specifies whether to shade the container when the widget is active.</summary>
         </member>
         <member name="M:DevExtreme.AspNet.Mvc.Builders.PopoverBuilder.ShadingColor(System.String)">
             <summary>Specifies the shading color.</summary>
@@ -13653,10 +13695,10 @@
             <summary>Switches the widget to a right-to-left representation.</summary>
         </member>
         <member name="M:DevExtreme.AspNet.Mvc.Builders.PopupBuilder.Shading(System.Boolean)">
-            <summary>A Boolean value specifying whether or not the main screen is inactive while the widget is active.</summary>
+            <summary>Specifies whether to shade the container when the widget is active.</summary>
         </member>
         <member name="M:DevExtreme.AspNet.Mvc.Builders.PopupBuilder.Shading(DevExtreme.AspNet.Mvc.JS)">
-            <summary>A Boolean value specifying whether or not the main screen is inactive while the widget is active.</summary>
+            <summary>Specifies whether to shade the container when the widget is active.</summary>
         </member>
         <member name="M:DevExtreme.AspNet.Mvc.Builders.PopupBuilder.ShadingColor(System.String)">
             <summary>Specifies the shading color.</summary>
@@ -14185,6 +14227,12 @@
         </member>
         <member name="M:DevExtreme.AspNet.Mvc.Builders.RangeRuleBuilder.Option(System.String,System.Object)">
             <summary>Allows to specify an arbitrary option by its name.</summary>
+        </member>
+        <member name="M:DevExtreme.AspNet.Mvc.Builders.RangeRuleBuilder.IgnoreEmptyValue(System.Boolean)">
+            <summary>Specifies whether empty values are valid.</summary>
+        </member>
+        <member name="M:DevExtreme.AspNet.Mvc.Builders.RangeRuleBuilder.IgnoreEmptyValue(DevExtreme.AspNet.Mvc.JS)">
+            <summary>Specifies whether empty values are valid.</summary>
         </member>
         <member name="M:DevExtreme.AspNet.Mvc.Builders.RangeRuleBuilder.Max(System.DateTime)">
             <summary>Specifies the maximum value allowed for the validated value.</summary>
@@ -16082,6 +16130,21 @@
         <member name="M:DevExtreme.AspNet.Mvc.Builders.SchedulerBuilder.AllDayExpr(DevExtreme.AspNet.Mvc.JS)">
             <summary>Specifies the name of the data source item field whose value defines whether or not the corresponding appointment is an all-day appointment.</summary>
         </member>
+        <member name="M:DevExtreme.AspNet.Mvc.Builders.SchedulerBuilder.AppointmentCollectorTemplate(System.String)">
+            <summary>Specifies an appointment collector&#39;s custom template.</summary>
+        </member>
+        <member name="M:DevExtreme.AspNet.Mvc.Builders.SchedulerBuilder.AppointmentCollectorTemplate(DevExtreme.AspNet.Mvc.RazorBlock)">
+            <summary>Specifies an appointment collector&#39;s custom template.</summary>
+        </member>
+        <member name="M:DevExtreme.AspNet.Mvc.Builders.SchedulerBuilder.AppointmentCollectorTemplate(DevExtreme.AspNet.Mvc.TemplateName)">
+            <summary>Specifies an appointment collector&#39;s custom template.</summary>
+        </member>
+        <member name="M:DevExtreme.AspNet.Mvc.Builders.SchedulerBuilder.AppointmentCollectorTemplate(DevExtreme.AspNet.Mvc.JS)">
+            <summary>Specifies an appointment collector&#39;s custom template.</summary>
+        </member>
+        <member name="M:DevExtreme.AspNet.Mvc.Builders.SchedulerBuilder.AppointmentCollectorTemplate(System.Action)">
+            <summary>Specifies an appointment collector&#39;s custom template.</summary>
+        </member>
         <member name="M:DevExtreme.AspNet.Mvc.Builders.SchedulerBuilder.AppointmentTemplate(System.String)">
             <summary>Specifies a custom template for appointments.</summary>
         </member>
@@ -16144,6 +16207,12 @@
         </member>
         <member name="M:DevExtreme.AspNet.Mvc.Builders.SchedulerBuilder.CurrentView(DevExtreme.AspNet.Mvc.JS)">
             <summary>Specifies the currently displayed view. Accepts the view&#39;s name or type.</summary>
+        </member>
+        <member name="M:DevExtreme.AspNet.Mvc.Builders.SchedulerBuilder.CustomizeDateNavigatorText(System.String)">
+            <summary>Customizes the date navigator&#39;s text.</summary>
+        </member>
+        <member name="M:DevExtreme.AspNet.Mvc.Builders.SchedulerBuilder.CustomizeDateNavigatorText(DevExtreme.AspNet.Mvc.RazorBlock)">
+            <summary>Customizes the date navigator&#39;s text.</summary>
         </member>
         <member name="M:DevExtreme.AspNet.Mvc.Builders.SchedulerBuilder.DataCellTemplate(System.String)">
             <summary>Specifies a custom template for table cells.</summary>
@@ -16385,10 +16454,10 @@
         <member name="M:DevExtreme.AspNet.Mvc.Builders.SchedulerBuilder.OnAppointmentDeleting(DevExtreme.AspNet.Mvc.RazorBlock)">
             <summary>A function that is executed before an appointment is deleted from the data source.</summary>
         </member>
-        <member name="M:DevExtreme.AspNet.Mvc.Builders.SchedulerBuilder.OnAppointmentFormCreated(System.String)">
+        <member name="M:DevExtreme.AspNet.Mvc.Builders.SchedulerBuilder.OnAppointmentFormOpening(System.String)">
             <summary>A function that is executed before an appointment details form is opened.</summary>
         </member>
-        <member name="M:DevExtreme.AspNet.Mvc.Builders.SchedulerBuilder.OnAppointmentFormCreated(DevExtreme.AspNet.Mvc.RazorBlock)">
+        <member name="M:DevExtreme.AspNet.Mvc.Builders.SchedulerBuilder.OnAppointmentFormOpening(DevExtreme.AspNet.Mvc.RazorBlock)">
             <summary>A function that is executed before an appointment details form is opened.</summary>
         </member>
         <member name="M:DevExtreme.AspNet.Mvc.Builders.SchedulerBuilder.OnAppointmentRendered(System.String)">
@@ -16696,6 +16765,21 @@
         </member>
         <member name="M:DevExtreme.AspNet.Mvc.Builders.SchedulerViewBuilder.AgendaDuration(DevExtreme.AspNet.Mvc.JS)">
             <summary>Specifies the number of dates that can be shown at a time in the agenda view.</summary>
+        </member>
+        <member name="M:DevExtreme.AspNet.Mvc.Builders.SchedulerViewBuilder.AppointmentCollectorTemplate(System.String)">
+            <summary>Specifies an appointment collector&#39;s custom template.</summary>
+        </member>
+        <member name="M:DevExtreme.AspNet.Mvc.Builders.SchedulerViewBuilder.AppointmentCollectorTemplate(DevExtreme.AspNet.Mvc.RazorBlock)">
+            <summary>Specifies an appointment collector&#39;s custom template.</summary>
+        </member>
+        <member name="M:DevExtreme.AspNet.Mvc.Builders.SchedulerViewBuilder.AppointmentCollectorTemplate(DevExtreme.AspNet.Mvc.TemplateName)">
+            <summary>Specifies an appointment collector&#39;s custom template.</summary>
+        </member>
+        <member name="M:DevExtreme.AspNet.Mvc.Builders.SchedulerViewBuilder.AppointmentCollectorTemplate(DevExtreme.AspNet.Mvc.JS)">
+            <summary>Specifies an appointment collector&#39;s custom template.</summary>
+        </member>
+        <member name="M:DevExtreme.AspNet.Mvc.Builders.SchedulerViewBuilder.AppointmentCollectorTemplate(System.Action)">
+            <summary>Specifies an appointment collector&#39;s custom template.</summary>
         </member>
         <member name="M:DevExtreme.AspNet.Mvc.Builders.SchedulerViewBuilder.AppointmentTemplate(System.String)">
             <summary>Specifies a custom template for appointments.</summary>
@@ -18260,6 +18344,12 @@
         <member name="M:DevExtreme.AspNet.Mvc.Builders.StringLengthRuleBuilder.Option(System.String,System.Object)">
             <summary>Allows to specify an arbitrary option by its name.</summary>
         </member>
+        <member name="M:DevExtreme.AspNet.Mvc.Builders.StringLengthRuleBuilder.IgnoreEmptyValue(System.Boolean)">
+            <summary>Specifies whether empty values are valid.</summary>
+        </member>
+        <member name="M:DevExtreme.AspNet.Mvc.Builders.StringLengthRuleBuilder.IgnoreEmptyValue(DevExtreme.AspNet.Mvc.JS)">
+            <summary>Specifies whether empty values are valid.</summary>
+        </member>
         <member name="M:DevExtreme.AspNet.Mvc.Builders.StringLengthRuleBuilder.Max(System.Double)">
             <summary>Specifies the maximum length allowed for the validated value.</summary>
         </member>
@@ -18705,10 +18795,10 @@
             <summary>The selected item object.</summary>
         </member>
         <member name="M:DevExtreme.AspNet.Mvc.Builders.TabPanelBuilder.ShowNavButtons(System.Boolean)">
-            <summary>A Boolean value that specifies the availability of navigation buttons.</summary>
+            <summary>Specifies whether navigation buttons should be available when tabs exceed the widget&#39;s width.</summary>
         </member>
         <member name="M:DevExtreme.AspNet.Mvc.Builders.TabPanelBuilder.ShowNavButtons(DevExtreme.AspNet.Mvc.JS)">
-            <summary>A Boolean value that specifies the availability of navigation buttons.</summary>
+            <summary>Specifies whether navigation buttons should be available when tabs exceed the widget&#39;s width.</summary>
         </member>
         <member name="M:DevExtreme.AspNet.Mvc.Builders.TabPanelBuilder.SwipeEnabled(System.Boolean)">
             <summary>A Boolean value specifying whether or not to allow users to change the selected index by swiping.</summary>
@@ -19029,10 +19119,10 @@
             <summary>Specifies whether the widget enables an end-user to select only a single item or multiple items.</summary>
         </member>
         <member name="M:DevExtreme.AspNet.Mvc.Builders.TabsBuilder.ShowNavButtons(System.Boolean)">
-            <summary>A Boolean value that specifies the availability of navigation buttons.</summary>
+            <summary>Specifies whether navigation buttons should be available when tabs exceed the widget&#39;s width.</summary>
         </member>
         <member name="M:DevExtreme.AspNet.Mvc.Builders.TabsBuilder.ShowNavButtons(DevExtreme.AspNet.Mvc.JS)">
-            <summary>A Boolean value that specifies the availability of navigation buttons.</summary>
+            <summary>Specifies whether navigation buttons should be available when tabs exceed the widget&#39;s width.</summary>
         </member>
         <member name="M:DevExtreme.AspNet.Mvc.Builders.TabsBuilder.TabIndex(System.Int32)">
             <summary>Specifies the number of the element when the Tab key is used for navigating.</summary>
@@ -20739,10 +20829,10 @@
             <summary>Switches the widget to a right-to-left representation.</summary>
         </member>
         <member name="M:DevExtreme.AspNet.Mvc.Builders.ToastBuilder.Shading(System.Boolean)">
-            <summary>A Boolean value specifying whether or not the main screen is inactive while the widget is active.</summary>
+            <summary>Specifies whether to shade the container when the widget is active.</summary>
         </member>
         <member name="M:DevExtreme.AspNet.Mvc.Builders.ToastBuilder.Shading(DevExtreme.AspNet.Mvc.JS)">
-            <summary>A Boolean value specifying whether or not the main screen is inactive while the widget is active.</summary>
+            <summary>Specifies whether to shade the container when the widget is active.</summary>
         </member>
         <member name="M:DevExtreme.AspNet.Mvc.Builders.ToastBuilder.ShadingColor(System.String)">
             <summary>Specifies the shading color.</summary>
@@ -20962,6 +21052,12 @@
         </member>
         <member name="M:DevExtreme.AspNet.Mvc.Builders.ToolbarItemBuilder.Option(System.String,System.Object)">
             <summary>Allows to specify an arbitrary option by its name.</summary>
+        </member>
+        <member name="M:DevExtreme.AspNet.Mvc.Builders.ToolbarItemBuilder.CssClass(System.String)">
+            <summary>Specifies a CSS class to be applied to the item.</summary>
+        </member>
+        <member name="M:DevExtreme.AspNet.Mvc.Builders.ToolbarItemBuilder.CssClass(DevExtreme.AspNet.Mvc.JS)">
+            <summary>Specifies a CSS class to be applied to the item.</summary>
         </member>
         <member name="M:DevExtreme.AspNet.Mvc.Builders.ToolbarItemBuilder.Disabled(System.Boolean)">
             <summary>Specifies whether or not a widget item must be displayed disabled.</summary>
@@ -21240,10 +21336,10 @@
             <summary>Switches the widget to a right-to-left representation.</summary>
         </member>
         <member name="M:DevExtreme.AspNet.Mvc.Builders.TooltipBuilder.Shading(System.Boolean)">
-            <summary>A Boolean value specifying whether or not the main screen is inactive while the widget is active.</summary>
+            <summary>Specifies whether to shade the container when the widget is active.</summary>
         </member>
         <member name="M:DevExtreme.AspNet.Mvc.Builders.TooltipBuilder.Shading(DevExtreme.AspNet.Mvc.JS)">
-            <summary>A Boolean value specifying whether or not the main screen is inactive while the widget is active.</summary>
+            <summary>Specifies whether to shade the container when the widget is active.</summary>
         </member>
         <member name="M:DevExtreme.AspNet.Mvc.Builders.TooltipBuilder.ShadingColor(System.String)">
             <summary>Specifies the shading color.</summary>
