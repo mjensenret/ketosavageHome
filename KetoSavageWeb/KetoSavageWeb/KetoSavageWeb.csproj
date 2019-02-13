@@ -1644,7 +1644,7 @@
           <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
         </WebProjectProperties>
       </FlavorProperties>
-      <UserProperties DismissedDevExtremeVersion="18.2.4.0" />
+      <UserProperties DismissedDevExtremeVersion="18.2.6.0" />
     </VisualStudio>
   </ProjectExtensions>
 </Project>
