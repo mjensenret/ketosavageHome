@@ -5,14 +5,6 @@
 
 
     @{ Html.BeginForm("DxUpdateMeasurements", "UserProgress", FormMethod.Post, new { id = "editMeasurements" });}
-    @*@(Html.DevExtreme().DateBox()
-              .ID("dteMeasurementDate")
-              .Value(Model.measurementDate)
-              )
-        @(Html.DevExtreme().TextArea()
-              .ID("txtMeasurementNotes")
-              .Value(Model.measurementNotes)
-              )*@
     
     @Html.HiddenFor(m => m.Id)
     @Html.HiddenFor(m => m.UserProgramId)

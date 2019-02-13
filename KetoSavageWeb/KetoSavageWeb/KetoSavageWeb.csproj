@@ -1504,6 +1504,10 @@
     <Compile Include="Migrations\201902110131524_updateHungerLevelTable.Designer.cs">
       <DependentUpon>201902110131524_updateHungerLevelTable.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201902132230071_updateDailyProgressHL.cs" />
+    <Compile Include="Migrations\201902132230071_updateDailyProgressHL.Designer.cs">
+      <DependentUpon>201902132230071_updateDailyProgressHL.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Abstract\UserManaged.cs" />
     <Compile Include="Models\AccountModels.cs" />
@@ -1606,6 +1610,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201902110131524_updateHungerLevelTable.resx">
       <DependentUpon>201902110131524_updateHungerLevelTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201902132230071_updateDailyProgressHL.resx">
+      <DependentUpon>201902132230071_updateDailyProgressHL.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

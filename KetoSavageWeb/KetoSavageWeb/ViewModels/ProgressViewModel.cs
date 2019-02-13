@@ -8,14 +8,6 @@ using System.Web.Mvc;
 
 namespace KetoSavageWeb.ViewModels
 {
-    public enum HungerLevelEnum
-    {
-        None,
-        Slight,
-        Moderate,
-        Sevier
-    }
-
     public enum MeasurementType
     {
         Weight,
@@ -50,7 +42,7 @@ namespace KetoSavageWeb.ViewModels
         public double actualFat { get; set; }
         public double actualProtein { get; set; }
         public double actualCarb { get; set; }
-        public string hungerLevel { get; set; }
+        public int hungerLevelId { get; set; }
         public string Notes { get; set; }
         public int masterProgramId { get; set; }
     }

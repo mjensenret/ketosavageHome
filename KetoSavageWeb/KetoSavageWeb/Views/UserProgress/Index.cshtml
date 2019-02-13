@@ -12,22 +12,11 @@
         });
     }).GetHtml()
 </div>
-@*<div>
-    @Html.DevExpress().Panel(p =>
-    {
-        p.Name = "pnlTest";
-        p.Width = 800;
-        p.SetContent(() =>
-        {
-            Html.RenderAction("DxMeasurementForm", "UserProgress");
-        });
-    }).GetHtml()
-</div>*@
+
 <div id="weightGraph">
     @Html.DevExpress().Panel(p =>
     {
     p.Name = "pnlWeightGraph";
-    //p.ControlStyle.BackColor = System.Drawing.Color.Red;
     p.SetContent(() =>
     {
     var userId = Session["UserId"];
@@ -54,7 +43,6 @@
         p.Name = "pnlPastProgress";
         p.SetContent(() =>
         {
-            //Html.RenderAction("PastPerformanceGrid");
             Html.RenderAction("ClientProgramGrid", "ClientCharts", new { userId = Session["UserId"] });
         });
     }).GetHtml()

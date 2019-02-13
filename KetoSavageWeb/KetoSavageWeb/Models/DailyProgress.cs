@@ -22,7 +22,7 @@ namespace KetoSavageWeb.Models
         public double? ActualProtein { get; set; }
         public double? PlannedCarbohydrate { get; set; }
         public double? ActualCarbohydrate { get; set; }
-        public string HungerLevel { get; set; }
+        public int? HungerLevelId { get; set; }
         public bool IsRefeed { get; set; }
         public string Notes { get; set; }
         [ForeignKey("UserProgram")]

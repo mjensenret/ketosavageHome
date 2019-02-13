@@ -120,6 +120,15 @@ namespace KetoSavageWeb.Controllers
             return Request.CreateResponse(DataSourceLoader.Load(hungerLevels, loadOptions));
         }
 
+        [System.Web.Http.HttpGet]
+        public HttpResponseMessage getHungerLevelsByUser(DataSourceLoadOptions loadOptions, int userId)
+        {
+            var masterProgramId = _context.UserPrograms.Where(x => x.ProgramUserId == userId && x.IsActive && !x.IsDeleted).Select(y => y.MasterProgram.Id).FirstOrDefault();
+            var hungerLevels = _context.HungerLevels.Where(x => x.programId == masterProgramId);
+
+            return Request.CreateResponse(DataSourceLoader.Load(hungerLevels, loadOptions));
+        }
+
         [System.Web.Http.HttpPost]
         public HttpResponseMessage AddHungerLevel(FormDataCollection form)
         {
