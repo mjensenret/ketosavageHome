@@ -1,4 +1,5 @@
-﻿@{
+﻿@using DevExpress.Web.ASPxTreeList
+@{
     ViewBag.Title = "User Progress";
 }
 
@@ -52,9 +53,10 @@
           .ID("measureFormPopup")
           .Visible(false)
           .DragEnabled(true)
-          .CloseOnOutsideClick(true)
+      .CloseOnBackButton(true)
+      .FullScreen(true)
           .ContentTemplate(@<text>
-            @(Html.Action("DxMeasurementForm"))
+            @(Html.Action("MeasurementHeader"))
         </text>)
       )
 
@@ -114,7 +116,6 @@
 
     function getDateValue() {
         var date = $("#measurementDate").dxDateBox("option", "text");
-        window.console.log(date);
         return date;
     }
 
@@ -122,18 +123,15 @@
 
         var date = getDateValue();
         changeMeasurementDate(date);
-        //$("#measurementGrid").dxDataGrid("refresh");
-
     }
 
-    function changeMeasurementDate(date) {
-        var dd = date;
-        window.console.log("dd: " +dd);
+    function changeMeasurementDate(newDate) {
+        var dd = newDate;
         $.ajax({
             type: "POST",
             url: '@Url.Action("DxUpdateMeasurementDateChange", "UserProgress")',
-            data: { date: date },
-            success: function(response) {
+            data: { newDate: dd },
+            success: function (response) {
                 $("#form-container").html(response);
             }
         });

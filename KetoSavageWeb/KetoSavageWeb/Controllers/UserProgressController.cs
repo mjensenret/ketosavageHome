@@ -119,7 +119,7 @@ namespace KetoSavageWeb.Controllers
             var userMeasurementDetails = userMeasurements.SelectMany(x => x.MeasurementDetails);
             var model = new MeasurementViewModel();
 
-            model.MeasurementDate = DateTime.Today;
+            model.MeasurementDate = date;
             model.UserProgramId = userProgram.Id;
             if (userMeasurements != null)
             {
@@ -153,9 +153,9 @@ namespace KetoSavageWeb.Controllers
         }
 
         [HttpPost]
-        public PartialViewResult DxUpdateMeasurementDateChange(DateTime date)
+        public PartialViewResult DxUpdateMeasurementDateChange(DateTime newDate)
         {
-            var newDate = date.Date;
+            var date = newDate;
             var userProgram = userProgramRepository.GetActive.Where(p => p.ProgramUserId == CurrentUser.Id).Include(d => d.Measurements).FirstOrDefault();
             var userMeasurements = userProgram.Measurements.Where(x => x.Dates.Date == date);
             var userMeasurementDetails = userMeasurements.SelectMany(x => x.MeasurementDetails);
