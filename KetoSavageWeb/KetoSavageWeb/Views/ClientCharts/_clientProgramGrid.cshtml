@@ -1,60 +1,61 @@
 ﻿@using DevExpress.XtraLayout.Filtering.Templates
 @*@model IEnumerable<KetoSavageWeb.ViewModels.UserProgramProgress>*@
-
+@{ var today = DateTime.Now; }
 <div id="devExtremeProgramGrid">
     @(Html.DevExtreme().DataGrid()
-        .ID("gridClientProgram")
-        .DataSource(d => d.WebApi()
-            .Controller("ProgressApi")
-            .LoadAction("GetUserProgressGrid")
-        //.LoadParams(new { programId = 8})
-            .LoadParams(new {userId = ViewData["UserId"]} )
-            .UpdateAction("UpdateSingleDay")
-            .Key("Id")
-        )
-        .RowAlternationEnabled(true)
-        //.FocusedRowEnabled(true)
-        //.FocusedRowKey(DateTime.Now) //<-- not sure what to put here...
-        //.OnInitialized("onDataGridInitialized")
-        //      .OnFocusedRowChanging("onFocusedRowChanging")
-        .Scrolling( scrolling => scrolling.Mode(GridScrollingMode.Virtual))
-          .Editing(e =>
-          {
-              e.AllowUpdating(true);
-              e.Mode(GridEditMode.Row);
+            .ID("gridClientProgram")
+            .DataSource(d => d.WebApi()
+                .Controller("ProgressApi")
+                .LoadAction("GetUserProgressGrid")
+                //.LoadParams(new { programId = 8})
+                .LoadParams(new {userId = ViewData["UserId"]} )
+                .UpdateAction("UpdateSingleDay")
+                .Key("Date")
+            )
+            .RowAlternationEnabled(true)
+            //.FocusedRowEnabled(true)
+            //.FocusedRowKey(new DateTime(today.Year, today.Month, today.Day).ToString("s")) //<-- not sure what to put here...
+            //.OnInitialized("onDataGridInitialized")
+            //      .OnFocusedRowChanging("onFocusedRowChanging")
+            .Scrolling(scrolling => scrolling.Mode(GridScrollingMode.Virtual))
+            .OnRowUpdating("onRowUpdating")
+              .Editing(e =>
+              {
+                  e.AllowUpdating(true);
+                  e.Mode(GridEditMode.Row);
 
-          })
-         .Columns(c =>
-         {
-             c.Add()
-                 .DataField("IsRefeed")
-                 .Caption("Refeed")
-                 .DataType(GridColumnDataType.Boolean)
-                 .Width(70);
-         })
-        .Columns(c =>
-        {
-            c.Add()
-                .DataField("Date")
-                .DataType(GridColumnDataType.Date);
-            c.Add()
-                .Caption("Weight")
-                .Columns(a =>
-                {
-                a.Add()
-                    .Caption("Planned")
-                    .DataField("PlannedWeight")
-                    .Format(f => f.Type(Format.FixedPoint).Precision(2))
-                    .Width(70);
-                a.Add()
-                    .Caption("Actual")
-                    .DataField("ActualWeight")
-                    .Format(f => f.Type(Format.FixedPoint).Precision(2))
-                    .Width(70);
-                a.Add()
-                    .Caption("Variance")
-                    .Width(70)
-                    .CalculateCellValue(@<text>
+              })
+             .Columns(c =>
+             {
+                 c.Add()
+                     .DataField("IsRefeed")
+                     .Caption("Refeed")
+                     .DataType(GridColumnDataType.Boolean)
+                     .Width(70);
+             })
+            .Columns(c =>
+            {
+                c.Add()
+                    .DataField("Date")
+                    .DataType(GridColumnDataType.Date);
+                c.Add()
+                    .Caption("Weight")
+                    .Columns(a =>
+                    {
+                        a.Add()
+                        .Caption("Planned")
+                        .DataField("PlannedWeight")
+                        .Format(f => f.Type(Format.FixedPoint).Precision(2))
+                        .Width(70);
+                        a.Add()
+                        .Caption("Actual")
+                        .DataField("ActualWeight")
+                        .Format(f => f.Type(Format.FixedPoint).Precision(2))
+                        .Width(70);
+                        a.Add()
+                        .Caption("Variance")
+                        .Width(70)
+                        .CalculateCellValue(@<text>
                                             function(data) {
                                             var variance = (data.ActualWeight - data.PlannedWeight)
                                             variance = variance.toFixed(2)
@@ -154,8 +155,14 @@
                 });
             }
         }
-        window.console.log(e);
-
-        window.console.log("Key value: " + e.component.option("focusedRowKey"));
     }
+
+    function onRowUpdating(e) {
+        for (var property in e.oldData) {
+            if (!e.newData.hasOwnProperty(property)) {
+                e.newData[property] = e.oldData[property];
+            }
+        }
+    }
+
 </script>

@@ -101,18 +101,18 @@ namespace KetoSavageWeb.Controllers
         [HttpPut]
         public HttpResponseMessage UpdateSingleDay(FormDataCollection form)
         {
-            var key = Convert.ToInt32(form.Get("key"));
+            var key = Convert.ToDateTime(form.Get("key"));
             var values = form.Get("values");
             var updDailyProgressVm = new UserProgramProgress();
             JsonConvert.PopulateObject(values, updDailyProgressVm);
 
-            var updDailyProgress = _context.DailyProgress.Single(x => x.Id == key);
+            var updDailyProgress = _context.DailyProgress.Single(x => x.Id == updDailyProgressVm.Id);
             updDailyProgress.IsRefeed = updDailyProgressVm.IsRefeed;
-            if(updDailyProgressVm.PlannedFat != null)
+            if (updDailyProgressVm.PlannedFat != null)
                 updDailyProgress.PlannedFat = updDailyProgressVm.PlannedFat;
-            if(updDailyProgressVm.PlannedCarbohydrates != null)
+            if (updDailyProgressVm.PlannedCarbohydrates != null)
                 updDailyProgress.PlannedCarbohydrate = updDailyProgressVm.PlannedCarbohydrates;
-            if(updDailyProgressVm.PlannedProtein != null)
+            if (updDailyProgressVm.PlannedProtein != null)
                 updDailyProgress.PlannedProtein = updDailyProgressVm.PlannedProtein;
 
             Validate(updDailyProgress);
