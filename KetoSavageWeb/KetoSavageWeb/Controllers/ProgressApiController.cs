@@ -4,12 +4,15 @@ using System.Data.Entity;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
+using System.Net.Http.Formatting;
+using System.Security.Cryptography.X509Certificates;
 using System.Web.Http;
 using DevExtreme.AspNet.Data;
 using DevExtreme.AspNet.Mvc;
 using KetoSavageWeb.Models;
 using KetoSavageWeb.Repositories;
 using KetoSavageWeb.ViewModels;
+using Newtonsoft.Json;
 
 namespace KetoSavageWeb.Controllers
 {
@@ -21,6 +24,11 @@ namespace KetoSavageWeb.Controllers
         private DateRepository dateRepository;
 
         private KSDataContext _context = new KSDataContext();
+
+        public ProgressApiController()
+        {
+
+        }
 
         public ProgressApiController(ProgramRepository pr, RoleRepository rr, UserProgramRepository up, DateRepository dr)
         {
@@ -45,6 +53,75 @@ namespace KetoSavageWeb.Controllers
                 });
            
             return Request.CreateResponse(DataSourceLoader.Load(measurementDetailsViewModel, loadOptions));
+        }
+
+        [HttpGet]
+        public HttpResponseMessage GetUserProgressGrid(int userId, DataSourceLoadOptions loadOptions)
+        {
+            var query = _context.DailyProgress.Where(x => x.UserProgram.ProgramUserId == userId && x.UserProgram.IsActive && !x.UserProgram.IsDeleted);
+
+            var model = query
+                .Select(x => new
+                {
+                    x.Dates.DateKey,
+                    x.Dates.Date,
+                    x.Id,
+                    x.UserProgramId,
+                    x.PlannedWeight,
+                    x.ActualWeight,
+                    x.PlannedFat,
+                    x.ActualFat,
+                    x.PlannedProtein,
+                    x.ActualProtein,
+                    x.PlannedCarbohydrate,
+                    x.ActualCarbohydrate,
+                    x.IsRefeed
+                })
+                .ToList()
+                .Select(x => new UserProgramProgress()
+                {
+                    Id = x.Id,
+                    IsRefeed = x.IsRefeed,
+                    UserId = x.UserProgramId,
+                    DateId = x.DateKey,
+                    Date = x.Date,
+                    PlannedWeight = x.PlannedWeight,
+                    ActualWeight = x.ActualWeight,
+                    PlannedFat = x.PlannedFat,
+                    ActualFat = x.ActualFat,
+                    PlannedProtein = x.PlannedProtein,
+                    ActualProtein = x.ActualProtein,
+                    PlannedCarbohydrates = x.PlannedCarbohydrate,
+                    ActualCarbohydrates = x.ActualCarbohydrate
+                });
+
+            return Request.CreateResponse(DataSourceLoader.Load(model, loadOptions));
+        }
+
+        [HttpPut]
+        public HttpResponseMessage UpdateSingleDay(FormDataCollection form)
+        {
+            var key = Convert.ToInt32(form.Get("key"));
+            var values = form.Get("values");
+            var updDailyProgressVm = new UserProgramProgress();
+            JsonConvert.PopulateObject(values, updDailyProgressVm);
+
+            var updDailyProgress = _context.DailyProgress.Single(x => x.Id == key);
+            updDailyProgress.IsRefeed = updDailyProgressVm.IsRefeed;
+            if(updDailyProgressVm.PlannedFat != null)
+                updDailyProgress.PlannedFat = updDailyProgressVm.PlannedFat;
+            if(updDailyProgressVm.PlannedCarbohydrates != null)
+                updDailyProgress.PlannedCarbohydrate = updDailyProgressVm.PlannedCarbohydrates;
+            if(updDailyProgressVm.PlannedProtein != null)
+                updDailyProgress.PlannedProtein = updDailyProgressVm.PlannedProtein;
+
+            Validate(updDailyProgress);
+            if (!ModelState.IsValid)
+                return Request.CreateErrorResponse(HttpStatusCode.BadRequest, "ModelState is invalid");
+
+            _context.SaveChanges();
+
+            return Request.CreateResponse(HttpStatusCode.OK);
         }
     }
 }

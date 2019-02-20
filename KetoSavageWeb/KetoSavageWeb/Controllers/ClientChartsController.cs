@@ -344,6 +344,8 @@ namespace KetoSavageWeb.Controllers
 
                 });
 
+            ViewData["UserId"] = userId;
+
             return PartialView("_clientProgramGrid", q);
         }
     }

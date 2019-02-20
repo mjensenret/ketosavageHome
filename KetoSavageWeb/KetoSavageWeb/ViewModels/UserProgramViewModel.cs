@@ -60,6 +60,7 @@ namespace KetoSavageWeb.ViewModels
         public double? PlannedCarbohydrates { get; set; }
         public double? ActualCarbohydrates { get; set; }
         public int UserProgramId { get; set; }
+        public bool IsRefeed { get; set; }
         public virtual UserPrograms UserProgram { get; set; }
         public virtual DateModels Dates { get; set; }
         public int currentId { get; set; }

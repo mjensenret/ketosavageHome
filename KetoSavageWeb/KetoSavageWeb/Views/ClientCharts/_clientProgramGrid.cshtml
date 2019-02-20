@@ -1,96 +1,161 @@
-﻿@model IEnumerable<KetoSavageWeb.ViewModels.UserProgramProgress>
+﻿@using DevExpress.XtraLayout.Filtering.Templates
+@*@model IEnumerable<KetoSavageWeb.ViewModels.UserProgramProgress>*@
 
 <div id="devExtremeProgramGrid">
     @(Html.DevExtreme().DataGrid()
-    .ID("gridClientProgram")
-    .DataSource(Model)
-    .RowAlternationEnabled(true)
-    //.Paging(p => p.PageSize(10))
-    .Scrolling( scrolling => scrolling.Mode(GridScrollingMode.Virtual))
-    //.Pager(p => p
-    //.AllowedPageSizes(new int[] { 10, 20, 30, 40 })
-    //.ShowPageSizeSelector(true)
-    //)
-    .Columns(c =>
-    {
+        .ID("gridClientProgram")
+        .DataSource(d => d.WebApi()
+            .Controller("ProgressApi")
+            .LoadAction("GetUserProgressGrid")
+        //.LoadParams(new { programId = 8})
+            .LoadParams(new {userId = ViewData["UserId"]} )
+            .UpdateAction("UpdateSingleDay")
+            .Key("Id")
+        )
+        .RowAlternationEnabled(true)
+        //.FocusedRowEnabled(true)
+        //.FocusedRowKey(DateTime.Now) //<-- not sure what to put here...
+        //.OnInitialized("onDataGridInitialized")
+        //      .OnFocusedRowChanging("onFocusedRowChanging")
+        .Scrolling( scrolling => scrolling.Mode(GridScrollingMode.Virtual))
+          .Editing(e =>
+          {
+              e.AllowUpdating(true);
+              e.Mode(GridEditMode.Row);
+
+          })
+         .Columns(c =>
+         {
+             c.Add()
+                 .DataField("IsRefeed")
+                 .Caption("Refeed")
+                 .DataType(GridColumnDataType.Boolean)
+                 .Width(70);
+         })
+        .Columns(c =>
+        {
+            c.Add()
+                .DataField("Date")
+                .DataType(GridColumnDataType.Date);
+            c.Add()
+                .Caption("Weight")
+                .Columns(a =>
+                {
+                a.Add()
+                    .Caption("Planned")
+                    .DataField("PlannedWeight")
+                    .Format(f => f.Type(Format.FixedPoint).Precision(2))
+                    .Width(70);
+                a.Add()
+                    .Caption("Actual")
+                    .DataField("ActualWeight")
+                    .Format(f => f.Type(Format.FixedPoint).Precision(2))
+                    .Width(70);
+                a.Add()
+                    .Caption("Variance")
+                    .Width(70)
+                    .CalculateCellValue(@<text>
+                                            function(data) {
+                                            var variance = (data.ActualWeight - data.PlannedWeight)
+                                            variance = variance.toFixed(2)
+                                            @*return [data.ActualWeight - data.PlannedWeight]*@
+                                            return variance
+                            }
+                        </text>);
+                });
         c.Add()
-        .DataField("Date");
-        c.Add()
-    .Caption("Weight")
-    .Columns(a =>
-    {
-        a.Add()
-            .Caption("Planned")
-            .DataField("PlannedWeight")
-            .Format(f => f.Type(Format.FixedPoint).Precision(2));
-        a.Add()
-            .Caption("Actual")
-            .DataField("ActualWeight")
-            .Format(f => f.Type(Format.FixedPoint).Precision(2));
-        a.Add()
-            .Caption("Variance")
-            .CalculateCellValue(@<text>
-                function(data) {
-                return [data.ActualWeight - data.PlannedWeight]
-                }
-            </text>);
-    });
-c.Add()
-.Caption("Fat")
-.Columns(a =>
-{
-a.Add()
-        .Caption("Planned")
-        .DataField("PlannedFat");
-a.Add()
-        .Caption("Actual")
-        .DataField("ActualFat");
-a.Add()
-        .Caption("Variance")
-        .CalculateCellValue(@<text>
-            function(data) {
-            return [data.ActualFat - data.PlannedFat]
-            }
-        </text>);
-});
-        c.Add()
-        .Caption("Protein")
+        .Caption("Fat")
         .Columns(a =>
         {
-            a.Add()
-                    .Caption("Planned")
-                    .DataField("PlannedProtein");
-            a.Add()
-                    .Caption("Actual")
-                    .DataField("ActualProtein");
-            a.Add()
-                    .Caption("Variance")
-                    .CalculateCellValue(@<text>
-                        function(data) {
-                        return [data.ActualProtein - data.PlannedProtein]
-                        }
-                    </text>);
-                        });
-            c.Add()
-            .Caption("Carbohydrates")
-            .Columns(a =>
-            {
-                a.Add()
-                    .Caption("Planned")
-                    .DataField("PlannedCarbohydrates");
-                a.Add()
-                    .Caption("Actual")
-                    .DataField("ActualCarbohydrates");
-                a.Add()
-                    .Caption("Variance")
-                    .CalculateCellValue(@<text>
-                            function(data) {
-                                return [data.ActualCarbohydrates - data.PlannedCarbohydrates]
-                            }
-                    </text>);
-            });
+        a.Add()
+                .Caption("Planned")
+                .DataField("PlannedFat")
+            .Width(70);
+        a.Add()
+                .Caption("Actual")
+                .DataField("ActualFat")
+            .Width(70);
+        a.Add()
+                .Caption("Variance")
+            .Width(70)
+                .CalculateCellValue(@<text>
+                    function(data) {
+                    return [data.ActualFat - data.PlannedFat]
+                    }
+                </text>);
+        });
+                c.Add()
+                .Caption("Protein")
+                .Columns(a =>
+                {
+                    a.Add()
+                            .Caption("Planned")
+                            .DataField("PlannedProtein")
+                        .Width(70);
+                    a.Add()
+                            .Caption("Actual")
+                            .DataField("ActualProtein")
+                        .Width(70);
+                    a.Add()
+                            .Caption("Variance")
+                        .Width(70)
+                            .CalculateCellValue(@<text>
+                                function(data) {
+                                return [data.ActualProtein - data.PlannedProtein]
+                                }
+                            </text>);
+                                });
+                    c.Add()
+                    .Caption("Carbohydrates")
+                    .Columns(a =>
+                    {
+                        a.Add()
+                            .Caption("Planned")
+                            .DataField("PlannedCarbohydrates")
+                            .Width(70);
+                        a.Add()
+                            .Caption("Actual")
+                            .DataField("ActualCarbohydrates")
+                            .Width(70);
+                        a.Add()
+                            .Caption("Variance")
+                            .Width(70)
+                            .CalculateCellValue(@<text>
+                                    function(data) {
+                                        return [data.ActualCarbohydrates - data.PlannedCarbohydrates]
+                                    }
+                            </text>);
+                    });
 
-        })
+                })
 
     )
 </div>
+
+<script>
+    function onDataGridInitialized(e) {
+        dataGrid = e.component;
+        window.console.log(dataGrid);
+    }
+
+    function onFocusedRowChanging(e) {
+        var rowsCount = e.component.getVisibleRows().length,
+            pageCount = e.component.pageCount(),
+            pageIndex = e.component.pageIndex();
+
+        if(e.event.key && e.prevRowIndex === e.newRowIndex) {
+            if(e.newRowIndex === rowsCount - 1 && pageIndex < pageCount - 1) {
+                e.component.pageIndex(pageIndex + 1).done(function() {
+                    e.component.option("focusedRowIndex", 0);
+                });
+            } else if(e.newRowIndex === 0 && pageIndex > 0) {
+                e.component.pageIndex(pageIndex - 1).done(function() {
+                    e.component.option("focusedRowIndex", rowsCount - 1);
+                });
+            }
+        }
+        window.console.log(e);
+
+        window.console.log("Key value: " + e.component.option("focusedRowKey"));
+    }
+</script>

@@ -17669,18 +17669,19 @@ html, body {
 /*Extra small devices (phones, 600px and down*/
 
 @media only screen and (max-width: 600px) {
-    #loginForm, #form-container, #macroFormPopup, #measureFormPopup, #measureScrollView {
-        width: 100%;
-        margin: 0px;
-        background-color: blue;
-    }
-
     .dx-popup-content {
         padding: 0px;
     }
 
     .dx-button-normal, .dx-button-success {
         width: 100%;
+    }
+
+    #loginForm, #form-container {
+        width: 95%;
+        margin: auto;
+        background-color: blue;
+        padding: 5px;
     }
 
     #currentWeekGaugePanel {

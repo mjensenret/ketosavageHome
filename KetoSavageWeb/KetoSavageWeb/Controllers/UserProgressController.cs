@@ -142,7 +142,7 @@ namespace KetoSavageWeb.Controllers
                             MeasurementId = m.measurementHeaderId,
                             MeasurementType = m.measurementType,
                             MeasurementValue = m.measurementValue,
-                            MeasurementDropDown = new List<MeasurementType>()
+                            //MeasurementDropDown = new List<MeasurementType>()
                         });
                     model.MeasurementDetails = detailsVm;
                 }
@@ -184,7 +184,7 @@ namespace KetoSavageWeb.Controllers
                             MeasurementId = m.measurementHeaderId,
                             MeasurementType = m.measurementType,
                             MeasurementValue = m.measurementValue,
-                            MeasurementDropDown = new List<MeasurementType>()
+                            //MeasurementDropDown = new List<MeasurementType>()
                         });
                     model.MeasurementDetails = detailsVm;
                 }
@@ -223,7 +223,7 @@ namespace KetoSavageWeb.Controllers
                             MeasurementId = m.measurementHeaderId,
                             MeasurementType = m.measurementType,
                             MeasurementValue = m.measurementValue,
-                            MeasurementDropDown = new List<MeasurementType>()
+                            //MeasurementDropDown = new List<MeasurementType>()
                         });
                 }
 

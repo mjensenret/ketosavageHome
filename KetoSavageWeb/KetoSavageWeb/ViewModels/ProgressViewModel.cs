@@ -14,9 +14,9 @@ namespace KetoSavageWeb.ViewModels
         Neck,
         Shoulders,
         Chest,
-        [Display(Name ="Right Arm")]
+        [Display(Name = "Right Arm")]
         RightArm,
-        [Display(Name ="Left Arm")]
+        [Display(Name = "Left Arm")]
         LeftArm,
         Waist,
         Hips,

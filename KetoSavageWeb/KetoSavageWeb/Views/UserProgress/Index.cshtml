@@ -51,12 +51,15 @@
 
 @(Html.DevExtreme().Popup()
           .ID("measureFormPopup")
+      .ShowTitle(false)
           .Visible(false)
-          .DragEnabled(true)
+          .DragEnabled(false)
       .CloseOnBackButton(true)
       .FullScreen(true)
           .ContentTemplate(@<text>
-            @(Html.Action("MeasurementHeader"))
+               @*@(Html.Action("MeasurementHeader"))*@
+               @MeasurementScrollView()
+
         </text>)
       )
 
@@ -64,7 +67,7 @@
       .ID("macroFormPopup")
       .ShowTitle(false)
       .Visible(false)
-      .DragEnabled(true)
+      .DragEnabled(false)
       .CloseOnBackButton(true)
       .FullScreen(true)
       .ContentTemplate(@<text>
