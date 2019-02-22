@@ -50,19 +50,19 @@
 </div>
 
 @(Html.DevExtreme().Popup()
-          .ID("measureFormPopup")
-      .ShowTitle(false)
-          .Visible(false)
-          .DragEnabled(false)
-      .CloseOnBackButton(true)
-      .FullScreen(true)
-          .ContentTemplate(@<text>
-               @*@(Html.Action("MeasurementHeader"))*@
-               @MeasurementScrollView()
+        .ID("measureFormPopup")
+        .ShowTitle(false)
+        .ShowCloseButton(true)
+        .Visible(false)
+        .DragEnabled(false)
+        .CloseOnBackButton(true)
+        .FullScreen(true)
+        .ContentTemplate(@<text>
+            @(Html.Action("MeasurementHeader"))
+            @*@MeasurementScrollView()*@
 
         </text>)
-      )
-
+)
 @(Html.DevExtreme().Popup()
       .ID("macroFormPopup")
       .ShowTitle(false)
@@ -167,6 +167,7 @@
             }
         });
     }
+
 </script>
 
 

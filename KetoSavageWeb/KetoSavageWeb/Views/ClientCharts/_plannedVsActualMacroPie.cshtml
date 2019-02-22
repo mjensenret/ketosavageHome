@@ -1,0 +1,42 @@
+﻿<div id="pvaMacroPieChartDiv">
+    @(Html.DevExtreme().PieChart()
+            .ID("pvaMacroPie")
+            .Legend(l => l.Visible(true))
+            .Type(PieChartType.Doughnut)
+            .InnerRadius(0.2)
+            .CommonSeriesSettings(s => s.Label(l => l
+                .Visible(false)
+                .Connector(c => c.Visible(false)
+                    .Width(1)
+                    .Color("#cdcdcd")
+                    )
+                .CustomizeText(@<text>
+                    function(arg){
+                    return arg.valueText + "g";
+                    }
+                </text>)
+                        )
+                    )
+                    .Tooltip(t => t
+                        .Enabled(true)
+                        .CustomizeTooltip(@<text>
+                            function() {
+                            return { text: this.argumentText + "<br />" + this.seriesName + ": " + this.valueText + "g"};
+                            }
+                        </text>)
+                            )
+                            .Series(s =>
+                            {
+                                s.Add().Name("Planned").ArgumentField("macro").ValueField("Planned");
+                                s.Add().Name("Actual").ArgumentField("macro").ValueField("Actual");
+                            })
+                            .DataSource(d => d.WebApi().Controller("ProgressAPI").LoadAction("GetPreviousPvA").LoadParams(new { userId = Session["userId"] }))
+                        //.DataSource(new List<object>
+                        //{
+                        //    new { Macro = "Fat", Planned = 160, Actual = 150 },
+                        //    new { Macro = "Protein", Planned = 110, Actual = 100 },
+                        //    new { Macro = "Carb", Planned = 10, Actual = 12 }
+                        //})
+    )
+
+</div>

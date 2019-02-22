@@ -8,11 +8,11 @@
     
     @Html.HiddenFor(m => m.Id)
     @Html.HiddenFor(m => m.UserProgramId)
-    <div id="measurement-form">
         @(Html.DevExtreme().Form<MeasurementViewModel>()
                       .ID("measurementForm")
                       .ValidationGroup("measurements")
                       .LabelLocation(FormLabelLocation.Top)
+                      .ScrollingEnabled(true)
                       .Items(items =>
                       {
                           items.AddGroup()
@@ -25,7 +25,9 @@
                                           .ID("measurementDate")
                                           .Width("100%")
                                       );
-                                  groupItems.AddSimpleFor(m => m.MeasurementNotes);
+                                  groupItems.AddSimpleFor(m => m.MeasurementNotes)
+                                        .Editor(e => e
+                                        .TextBox());
                                   groupItems.AddSimpleFor(m => m.MeasurementDetails)
                                       .Template(@<text>
                                         @(Html.DevExtreme().DataGrid()
@@ -57,7 +59,7 @@
                                                           c.Add().DataField("MeasurementValue");
                                                       }))
                                     </text>);
-                                        groupItems.AddSimple()
+                                  groupItems.AddSimple()
                                             .Template(@<text>
                                                 @(Html.DevExtreme().Button()
                                                               .ID("btnAddMeasurements")
@@ -70,5 +72,6 @@
                                             });
                                     })
                                     .FormData(Model))
-    </div>
     @{ Html.EndForm();}
+
+

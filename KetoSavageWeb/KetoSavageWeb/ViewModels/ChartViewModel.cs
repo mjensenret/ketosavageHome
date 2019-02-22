@@ -79,4 +79,13 @@ namespace KetoSavageWeb.ViewModels
         public double actualCarbs { get; set; }
         public bool active { get; set; }
     }
+
+    public class PvAMacroPieChart
+    {
+        [Display(Name = "Macro")]
+        public string macro { get; set; }
+        public int Planned { get; set; }
+        public int Actual { get; set; }
+
+    }
 }

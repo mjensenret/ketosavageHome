@@ -724,7 +724,7 @@ html, body {
 #controlPanel, #weightGraph, #gaugeContainer, #gridContainer, #newsGrid {
     padding: 5px;
     width: 100%;
-    max-width: 1100px;
+    max-width: 1280px;
     /*border: ridge;*/
     /*display: inline-block;*/
     /*float: left;*/
@@ -766,10 +766,18 @@ html, body {
     position: relative;
 }
 
-#currentWeekGauge {
-    float: left;
-    height: 245px;
+#currentMacroGauge {
+    display: inline-block;
     background-color: #0a0a0a;
+    height: 250px;
+    position: relative;
+}
+
+#pvaMacroPieChartDiv {
+    display: inline-block;
+    background-color: #0a0a0a;
+    height: 300px;
+    position: relative;
 }
 
 #currentWeekGaugePanel {
@@ -17669,17 +17677,14 @@ html, body {
 /*Extra small devices (phones, 600px and down*/
 
 @media only screen and (max-width: 600px) {
-    .dx-popup-content {
-        padding: 0px;
-    }
 
     .dx-button-normal, .dx-button-success {
         width: 100%;
     }
 
-    #loginForm, #form-container {
+    #loginForm, #form-container, #testPopup {
         width: 95%;
-        margin: auto;
+        margin: 5px;
         background-color: blue;
         padding: 5px;
     }
@@ -17732,7 +17737,7 @@ html, body {
     #loginForm, #form-container {
         width: 75%;
         padding: 10px;
-        background-color: orange;
+        /*background-color: orange;*/
     }
 }
 
@@ -17741,7 +17746,7 @@ html, body {
     #loginForm, #form-container {
         width: 50%;
         padding: 10px;
-        background-color: green;
+        /*background-color: green;*/
     }
 }
 

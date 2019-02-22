@@ -124,15 +124,16 @@
 </div>
 <div id="gaugeContainer">
     @Html.DevExpress().Panel(settings =>
-        {
-            settings.Name = "pnlCharts";
-            settings.SetContent(() =>
-            {
-                Html.RenderAction("ClientPerformanceGauge", "ClientCharts", new { userId = Session["UserId"] });
-                Html.RenderAction("ClientPastWeekMacroChart", "ClientCharts", new { userId = Session["UserId"] });
-                Html.RenderAction("ClientCurrentWeekMacroGauge", "ClientCharts", new { userId = Session["UserId"] });
-            });
-        }).GetHtml()
+{
+    settings.Name = "pnlCharts";
+    settings.SetContent(() =>
+    {
+        Html.RenderAction("ClientPerformanceGauge", "ClientCharts", new { userId = Session["UserId"] });
+        Html.RenderAction("ClientPastWeekMacroChart", "ClientCharts", new { userId = Session["UserId"] });
+        Html.RenderAction("ClientCurrentWeekMacroGauge", "ClientCharts", new { userId = Session["UserId"] });
+        Html.RenderAction("PvAMacroPieChart", "ClientCharts");
+    });
+}).GetHtml()
 </div>
 <div id="gridContainer">
     @Html.DevExpress().Panel(settings =>

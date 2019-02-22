@@ -348,5 +348,11 @@ namespace KetoSavageWeb.Controllers
 
             return PartialView("_clientProgramGrid", q);
         }
+
+        public PartialViewResult PvAMacroPieChart()
+        {
+
+            return PartialView("_plannedVsActualMacroPie");
+        }
     }
 }

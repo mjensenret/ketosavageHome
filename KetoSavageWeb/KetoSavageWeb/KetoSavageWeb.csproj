@@ -1297,7 +1297,7 @@
     <Content Include="Views\Shared\HeaderPartialView.cshtml" />
     <Content Include="Views\Shared\LogOnPartialView.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
-    <Content Include="Views\Manage\Index.cshtml" />
+    <Content Include="Views\Manage\Index-orig.cshtml" />
     <Content Include="Views\Manage\AddPhoneNumber.cshtml" />
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Account\_ExternalLoginsListPartial.cshtml" />
@@ -1370,6 +1370,8 @@
     <Content Include="Views\Home\_dxLoginForm.cshtml" />
     <Content Include="Views\UserProgress\_dxMacroFormHeader.cshtml" />
     <Content Include="Views\UserProgress\_dxMeasurementHeader.cshtml" />
+    <Content Include="Views\Manage\Index.cshtml" />
+    <Content Include="Views\ClientCharts\_plannedVsActualMacroPie.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
