@@ -320,6 +320,7 @@ namespace KetoSavageWeb.Controllers
                 .Select(x => new
                 {
                     x.Dates.Date,
+                    x.Dates.WeekDayName,
                     x.PlannedWeight,
                     x.ActualWeight,
                     x.PlannedFat,
@@ -333,6 +334,7 @@ namespace KetoSavageWeb.Controllers
                 .Select(y => new UserProgramProgress()
                 {
                     Date = y.Date,
+                    WeekDay = y.WeekDayName,
                     PlannedWeight = y.PlannedWeight,
                     ActualWeight = y.ActualWeight,
                     PlannedFat = y.PlannedFat,

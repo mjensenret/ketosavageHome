@@ -65,6 +65,7 @@ namespace KetoSavageWeb.Controllers
                 {
                     x.Dates.DateKey,
                     x.Dates.Date,
+                    x.Dates.WeekDayName,
                     x.Id,
                     x.UserProgramId,
                     x.PlannedWeight,
@@ -85,6 +86,7 @@ namespace KetoSavageWeb.Controllers
                     UserId = x.UserProgramId,
                     DateId = x.DateKey,
                     Date = x.Date,
+                    WeekDay = x.WeekDayName,
                     PlannedWeight = x.PlannedWeight,
                     ActualWeight = x.ActualWeight,
                     PlannedFat = x.PlannedFat,

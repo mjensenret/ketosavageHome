@@ -1,11 +1,25 @@
 ﻿<div id="pvaMacroPieChartDiv">
     @(Html.DevExtreme().PieChart()
             .ID("pvaMacroPie")
-            .Legend(l => l.Visible(true))
+            .Legend(l => l
+                .Orientation(DevExtreme.AspNet.Mvc.Orientation.Horizontal)
+                .ItemTextPosition(Position.Bottom)
+                .HorizontalAlignment(HorizontalAlignment.Center)
+                .VerticalAlignment(VerticalEdge.Bottom)
+            )
             .Type(PieChartType.Doughnut)
             .InnerRadius(0.2)
+            .Size(s => s
+                .Height(250)
+                .Width(300)
+            )
+            .Title(t => t
+                .Text("Planned vs Actual - Last week")
+                .Font(f => f.Size(14).Color("White"))
+            )
             .CommonSeriesSettings(s => s.Label(l => l
-                .Visible(false)
+                .Visible(true)
+                .Position(PieChartLabelPosition.Inside)
                 .Connector(c => c.Visible(false)
                     .Width(1)
                     .Color("#cdcdcd")

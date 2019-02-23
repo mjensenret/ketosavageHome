@@ -37,7 +37,13 @@
             {
                 c.Add()
                     .DataField("Date")
-                    .DataType(GridColumnDataType.Date);
+                    .DataType(GridColumnDataType.Date)
+                    .AllowEditing(false)
+                    .Width(80);
+                c.Add()
+                    .DataField("WeekDay")
+                    .AllowEditing(false)
+                    .Width(90);
                 c.Add()
                     .Caption("Weight")
                     .Columns(a =>
@@ -46,15 +52,15 @@
                         .Caption("Planned")
                         .DataField("PlannedWeight")
                         .Format(f => f.Type(Format.FixedPoint).Precision(2))
-                        .Width(70);
+                        .AllowEditing(false);
                         a.Add()
                         .Caption("Actual")
                         .DataField("ActualWeight")
-                        .Format(f => f.Type(Format.FixedPoint).Precision(2))
-                        .Width(70);
+                        .AllowEditing(false)
+                        .Format(f => f.Type(Format.FixedPoint).Precision(2));
                         a.Add()
                         .Caption("Variance")
-                        .Width(70)
+                        .AllowEditing(false)
                         .CalculateCellValue(@<text>
                                             function(data) {
                                             var variance = (data.ActualWeight - data.PlannedWeight)
@@ -70,15 +76,14 @@
         {
         a.Add()
                 .Caption("Planned")
-                .DataField("PlannedFat")
-            .Width(70);
+                .DataField("PlannedFat");
         a.Add()
                 .Caption("Actual")
                 .DataField("ActualFat")
-            .Width(70);
+                .AllowEditing(false);
         a.Add()
                 .Caption("Variance")
-            .Width(70)
+                .AllowEditing(false)
                 .CalculateCellValue(@<text>
                     function(data) {
                     return [data.ActualFat - data.PlannedFat]
@@ -91,15 +96,14 @@
                 {
                     a.Add()
                             .Caption("Planned")
-                            .DataField("PlannedProtein")
-                        .Width(70);
+                            .DataField("PlannedProtein");
                     a.Add()
                             .Caption("Actual")
                             .DataField("ActualProtein")
-                        .Width(70);
+                            .AllowEditing(false);
                     a.Add()
                             .Caption("Variance")
-                        .Width(70)
+                            .AllowEditing(false)
                             .CalculateCellValue(@<text>
                                 function(data) {
                                 return [data.ActualProtein - data.PlannedProtein]
@@ -112,15 +116,14 @@
                     {
                         a.Add()
                             .Caption("Planned")
-                            .DataField("PlannedCarbohydrates")
-                            .Width(70);
+                            .DataField("PlannedCarbohydrates");
                         a.Add()
                             .Caption("Actual")
-                            .DataField("ActualCarbohydrates")
-                            .Width(70);
+                            .AllowEditing(false)
+                            .DataField("ActualCarbohydrates");
                         a.Add()
                             .Caption("Variance")
-                            .Width(70)
+                            .AllowEditing(false)
                             .CalculateCellValue(@<text>
                                     function(data) {
                                         return [data.ActualCarbohydrates - data.PlannedCarbohydrates]

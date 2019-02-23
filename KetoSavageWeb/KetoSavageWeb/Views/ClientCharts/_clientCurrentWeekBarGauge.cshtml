@@ -5,6 +5,10 @@
         .ID("currentWeekGauge")
         .StartValue(0)
         .EndValue(1)
+        .Size(s => s
+            .Height(250)
+            .Width(300)
+        )
         .Values(new JS("macrosToValues()"))
         .Label(l => l
             .Indent(10)

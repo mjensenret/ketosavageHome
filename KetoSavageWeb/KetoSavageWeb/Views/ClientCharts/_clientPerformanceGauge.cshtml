@@ -2,6 +2,10 @@
 
 @(Html.DevExtreme().CircularGauge()
     .ID("progressGauge")
+    .Size(s => s
+        .Height(220)
+        .Width(270)
+        )
     .ValueIndicator(i => i
         .Type(GaugeIndicatorType.TriangleNeedle)
         .Color("#FF1111")

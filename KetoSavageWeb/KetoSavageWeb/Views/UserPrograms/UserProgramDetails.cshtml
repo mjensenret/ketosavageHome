@@ -130,8 +130,8 @@
     {
         Html.RenderAction("ClientPerformanceGauge", "ClientCharts", new { userId = Session["UserId"] });
         Html.RenderAction("ClientPastWeekMacroChart", "ClientCharts", new { userId = Session["UserId"] });
-        Html.RenderAction("ClientCurrentWeekMacroGauge", "ClientCharts", new { userId = Session["UserId"] });
         Html.RenderAction("PvAMacroPieChart", "ClientCharts");
+        Html.RenderAction("ClientCurrentWeekMacroGauge", "ClientCharts", new { userId = Session["UserId"] });
     });
 }).GetHtml()
 </div>
