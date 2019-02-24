@@ -1,0 +1,19 @@
+﻿@(Html.DevExtreme().DataGrid()
+    .ID("clientRenewalGrid")
+    .ShowBorders(true)
+    .Columns(c =>
+    {
+        c.Add()
+        .DataField("ClientName")
+        .Caption("Client");
+    })
+    .Columns(c =>
+    {
+        c.Add()
+            .DataField("RenewalDate")
+            .DataType(GridColumnDataType.Date)
+            .SortOrder(SortOrder.Asc);
+    })
+    .DataSource(d => d.WebApi().Controller("ChartsAPI").LoadAction("GetClientRenewals"))
+
+)

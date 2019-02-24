@@ -1372,6 +1372,10 @@
     <Content Include="Views\UserProgress\_dxMeasurementHeader.cshtml" />
     <Content Include="Views\Manage\Index.cshtml" />
     <Content Include="Views\ClientCharts\_plannedVsActualMacroPie.cshtml" />
+    <Content Include="Views\CoachDashboard\Index.cshtml" />
+    <Content Include="Views\CoachCharts\_clientRenewalGrid.cshtml" />
+    <Content Include="Views\CoachCharts\_topPerformers.cshtml" />
+    <Content Include="Views\CoachCharts\_bottomPerformers.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -1392,7 +1396,10 @@
     <Compile Include="Controllers\Abstract\KSBaseController.cs" />
     <Compile Include="Controllers\Abstract\KSUserManagedController.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\ChartsAPIController.cs" />
     <Compile Include="Controllers\ClientDashboardController.cs" />
+    <Compile Include="Controllers\CoachChartsController.cs" />
+    <Compile Include="Controllers\CoachDashboardController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\ManageNewsController.cs" />

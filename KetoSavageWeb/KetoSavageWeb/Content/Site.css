@@ -40,14 +40,7 @@ html, body {
     display: none;
 }
 
-/*.homeButtonLink .templateTitle
-{
-	 background: url(~/Content/Images/KSLogo_white.png) no-repeat top left;
-	 display: block;
-	 text-indent: -9999px; /* hides the link text */
-}
 
-*/
 
 .dxpnl-edge.t.headerPane.bar .templateTitle {
     margin: 0;
@@ -17678,6 +17671,10 @@ html, body {
 
 @media only screen and (max-width: 600px) {
 
+    [class*="col-"] {
+        width: 100%;
+    }
+
     .dx-button-normal, .dx-button-success {
         width: 100%;
     }
@@ -17695,7 +17692,12 @@ html, body {
 }
 
 /*Small devices (portrait tablets and large phones, 600px and up*/
-@media only screen and (min-width: 600px) {
+@media only screen and (max-width: 600px) {
+    [class*="col-"] {
+        width: 100%;
+        background-color: aqua;
+    }
+
     #loginForm, #form-container {
         width: 90%;
         /*background-color: red;*/

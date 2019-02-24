@@ -1,0 +1,23 @@
+﻿@(Html.DevExtreme().Chart()
+    .ID("topPerformers")
+    .Title(t => t
+        .Text("Top 5 Performers")
+        .Font(f => f.Color("White").Size(14).Weight(200))
+    )
+    .Size(si => si
+        .Height(250)
+    )
+    .DataSource(d => d.WebApi().Controller("ChartsAPI").LoadAction("GetComplianceScore").LoadParams(new { type = "top" }))
+    //.DataSourceOptions(o => o
+    //.Filter(@"{""Score"", "">5"")
+    .CommonSeriesSettings(c => c
+        .ArgumentField("ClientName")
+        .Type(SeriesType.Bar)
+        
+    )
+    .Series(s => s
+        .Add().ValueField("Score")
+        .Name("Score")
+        
+    )
+)

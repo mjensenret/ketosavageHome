@@ -1,0 +1,27 @@
+﻿@{
+    ViewBag.Title = "Dashboard";
+}
+
+<div id="newsfeed">
+    @Html.DevExpress().Panel(p =>
+    {
+        p.Name = "pnlNewsCarousel";
+        p.SetContent(() =>
+        {
+            Html.RenderAction("newsCarousel", "ManageNews");
+        });
+    }).GetHtml()
+</div>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-2">
+            @Html.Action("ClientRenewalGrid", "CoachCharts")
+        </div>
+        <div class="col-3">
+            @Html.Action("TopPerformers", "CoachCharts")
+        </div>
+        <div class="col-3">
+            @Html.Action("BottomPerformers", "CoachCharts")
+        </div>
+    </div>
+</div>

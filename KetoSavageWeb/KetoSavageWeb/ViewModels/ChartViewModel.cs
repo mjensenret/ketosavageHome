@@ -88,4 +88,16 @@ namespace KetoSavageWeb.ViewModels
         public int Actual { get; set; }
 
     }
+
+    public class ClientRenewalGrid
+    {
+        public string ClientName { get; set; }
+        public DateTime RenewalDate { get; set; }
+    }
+
+    public class PerformanceChart
+    {
+        public string ClientName { get; set; }
+        public int Score { get; set; }
+    }
 }
