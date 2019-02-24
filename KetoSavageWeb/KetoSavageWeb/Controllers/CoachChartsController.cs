@@ -28,5 +28,16 @@ namespace KetoSavageWeb.Controllers
         {
             return PartialView("_bottomPerformers");
         }
+
+        public PartialViewResult TopPerformersLifetime()
+        {
+            return PartialView("_topPerformersLifetime");
+        }
+
+        public PartialViewResult BottomPerformersLifetime()
+        {
+            return PartialView("_bottomPerformersLifetime");
+        }
+
     }
 }

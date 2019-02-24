@@ -1,13 +1,13 @@
 ﻿@(Html.DevExtreme().Chart()
-    .ID("topPerformers")
+    .ID("topPerformersLastWeek")
     .Title(t => t
-        .Text("Top 5 Performers")
+        .Text("Top 5 Performers - Previous Week")
         .Font(f => f.Color("White").Size(14).Weight(200))
     )
     .Size(si => si
         .Height(250)
     )
-    .DataSource(d => d.WebApi().Controller("ChartsAPI").LoadAction("GetComplianceScore").LoadParams(new { type = "top" }))
+    .DataSource(d => d.WebApi().Controller("ChartsAPI").LoadAction("GetComplianceScore").LoadParams(new { type = "top", lifetime = "false" }))
     //.DataSourceOptions(o => o
     //.Filter(@"{""Score"", "">5"")
     .CommonSeriesSettings(c => c

@@ -17,11 +17,26 @@
         <div class="col-2">
             @Html.Action("ClientRenewalGrid", "CoachCharts")
         </div>
-        <div class="col-3">
-            @Html.Action("TopPerformers", "CoachCharts")
+        <div class="col-10">
+            <div class="row">
+                <div class="col-3">
+                    @Html.Action("TopPerformers", "CoachCharts")
+                </div>
+                <div class="col-3">
+                    @Html.Action("BottomPerformers", "CoachCharts")
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-3">
+                    @Html.Action("TopPerformersLifetime", "CoachCharts")
+                </div>
+                <div class="col-3">
+                    @Html.Action("BottomPerformersLifetime", "CoachCharts")
+                </div>
+
+            </div>
         </div>
-        <div class="col-3">
-            @Html.Action("BottomPerformers", "CoachCharts")
-        </div>
+
     </div>
+
 </div>

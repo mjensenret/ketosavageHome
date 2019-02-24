@@ -43,12 +43,18 @@ namespace KetoSavageWeb.Controllers
         }
 
         [HttpGet]
-        public HttpResponseMessage GetComplianceScore(DataSourceLoadOptions loadOptions, string type)
+        public HttpResponseMessage GetComplianceScore(DataSourceLoadOptions loadOptions, string type, bool lifetime)
         {
             var date = DateTime.Now.Date;
             var weekOfYear = _context.DateModels.Where(x => x.Date == date).Select(y => y.ISOWeekOfYear).First();
 
-            var clientProgress = _context.DailyProgress.Where(x => x.UserProgram.IsActive && !x.UserProgram.IsDeleted && x.Dates.ISOWeekOfYear == weekOfYear);
+            var clientProgress = _context.DailyProgress.Where(x => x.UserProgram.IsActive && !x.UserProgram.IsDeleted);
+
+            if (!lifetime)
+            {
+                clientProgress = clientProgress.Where(x => x.Dates.ISOWeekOfYear == weekOfYear);
+            }
+
 
             var scoreModel = returnVarianceScore(clientProgress);
 
@@ -85,9 +91,9 @@ namespace KetoSavageWeb.Controllers
                 .Select(g => new
                 {
                     ClientName = g.Key.Name,
-                    FatVariance = (g.Sum(x => x.ActualFat - x.PlannedFat)) * 9,
-                    ProtVariance = (g.Sum(x => x.ActualProtein - x.PlannedProtein)) * 4,
-                    CarbVariance = (g.Sum(x => x.ActualCarbohydrate - x.PlannedCarbohydrate)) * 4
+                    FatVariance = (g.Average(x => x.ActualFat - x.PlannedFat)) * 9,
+                    ProtVariance = (g.Average(x => x.ActualProtein - x.PlannedProtein)) * 4,
+                    CarbVariance = (g.Average(x => x.ActualCarbohydrate - x.PlannedCarbohydrate)) * 4
                 })
                 .GroupBy(t => new { t.ClientName })
                 .Select(su => new
@@ -98,6 +104,7 @@ namespace KetoSavageWeb.Controllers
             List<PerformanceChart> chart = new List<PerformanceChart>();
             foreach(var u in data)
             {
+                
                 var score = returnScore(Math.Abs(Convert.ToInt32(u.TotalVariance)));
                 chart.Add(new PerformanceChart()
                 {

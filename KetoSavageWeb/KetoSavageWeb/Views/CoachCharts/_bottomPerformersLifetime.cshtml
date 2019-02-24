@@ -1,13 +1,13 @@
 ﻿@(Html.DevExtreme().Chart()
-    .ID("bottomPerformers")
+    .ID("bottomPerformersLifetime")
     .Title(t => t
-        .Text("Bottom 5 Performers - Previous Week")
+        .Text("Bottom 5 Performers - Lifetime")
         .Font(f => f.Color("White").Size(14).Weight(200))
     )
     .Size(si => si
         .Height(250)
     )
-    .DataSource(d => d.WebApi().Controller("ChartsAPI").LoadAction("GetComplianceScore").LoadParams(new { type = "bottom", lifetime = "false" }))
+    .DataSource(d => d.WebApi().Controller("ChartsAPI").LoadAction("GetComplianceScore").LoadParams(new { type = "bottom", lifetime = "true" }))
     //.DataSourceOptions(o => o
     //.Filter(@"{""Score"", "">5"")
     .CommonSeriesSettings(c => c

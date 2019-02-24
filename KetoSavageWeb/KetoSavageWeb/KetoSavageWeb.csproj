@@ -1376,6 +1376,8 @@
     <Content Include="Views\CoachCharts\_clientRenewalGrid.cshtml" />
     <Content Include="Views\CoachCharts\_topPerformers.cshtml" />
     <Content Include="Views\CoachCharts\_bottomPerformers.cshtml" />
+    <Content Include="Views\CoachCharts\_bottomPerformersLifetime.cshtml" />
+    <Content Include="Views\CoachCharts\_topPerformersLifetime.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
