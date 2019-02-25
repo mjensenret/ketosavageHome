@@ -44,85 +44,86 @@
 
 </head>
 <body>
-    @if (Request.IsAuthenticated)
-    {
-        Html.DevExpress().Panel(p =>
+    <div class="container-fluid" id="mainContainer">
+        @if (Request.IsAuthenticated)
         {
-            p.Name = "topPanel";
-            p.FixedPosition = PanelFixedPosition.WindowTop;
-            p.Collapsible = true;
-            p.SettingsAdaptivity.CollapseAtWindowInnerWidth = 580;
-            p.ControlStyle.CssClass = "headerPane";
-            p.Styles.Panel.CssClass = "panel";
-            p.Styles.ExpandedPanel.CssClass = "expandedPanel";
-            p.Styles.ExpandBar.CssClass = "bar";
-            p.SetExpandBarTemplateContent(c =>
+            Html.DevExpress().Panel(p =>
             {
-                Html.RenderPartial("HeaderPartialView", HeaderViewRenderMode.Title);
-            });
-            p.SetContent(() =>
-            {
-                Html.RenderPartial("HeaderPartialView", HeaderViewRenderMode.Full);
+                p.Name = "topPanel";
+                p.FixedPosition = PanelFixedPosition.WindowTop;
+                p.Collapsible = true;
+                p.SettingsAdaptivity.CollapseAtWindowInnerWidth = 580;
+                p.ControlStyle.CssClass = "headerPane";
+                p.Styles.Panel.CssClass = "panel";
+                p.Styles.ExpandedPanel.CssClass = "expandedPanel";
+                p.Styles.ExpandBar.CssClass = "bar";
+                p.SetExpandBarTemplateContent(c =>
+                {
+                    Html.RenderPartial("HeaderPartialView", HeaderViewRenderMode.Title);
+                });
+                p.SetContent(() =>
+                {
+                    Html.RenderPartial("HeaderPartialView", HeaderViewRenderMode.Full);
 
-            });
-        }).GetHtml();
-        Html.DevExpress().Panel(p =>
+                });
+            }).GetHtml();
+            Html.DevExpress().Panel(p =>
+            {
+                p.Name = "leftPanel";
+                p.EnableClientSideAPI = true;
+                p.Collapsible = true;
+                p.SettingsAdaptivity.CollapseAtWindowInnerWidth = 580;
+        p.FixedPosition = PanelFixedPosition.WindowLeft;
+                p.SetContent(() =>
+                {
+                    Html.RenderPartial("_leftMenuPartialView");
+
+                });
+            }).GetHtml();
+
+
+        }
+
+        @RenderBody()
+
+        @if (Request.IsAuthenticated)
         {
-            p.Name = "leftPanel";
-            p.EnableClientSideAPI = true;
-            p.Collapsible = true;
-            p.SettingsAdaptivity.CollapseAtWindowInnerWidth = 580;
-            //p.ControlStyle.BackColor = System.Drawing.Color.Blue;
-            p.FixedPosition = PanelFixedPosition.WindowLeft;
-            p.SetContent(() =>
+            Html.DevExpress().Panel(p =>
             {
-                Html.RenderPartial("_leftMenuPartialView");
+                p.Name = "footerPanel";
+                p.FixedPosition = PanelFixedPosition.WindowBottom;
+                p.SetContent(() =>
+                {
+                    ViewContext.Writer.Write("Is this footer in the right location?");
+                });
+            }).GetHtml();
+        }
 
-            });
-        }).GetHtml();
-
-        //Html.DevExpress().Panel(p =>
-        //{
-        //    p.Name = "newPanelSelector";
-        //    p.ControlStyle.BackColor = System.Drawing.Color.Gray;
-        //    p.SetContent(() =>
-        //    {
-        //        ViewContext.Writer.Write("Possibly the menu?");
-
-        //        Html.RenderAction("mainMenuButtons", "Home");
-        //    });
-        //}).GetHtml();
-    }
-    @RenderBody()
-
-    @if (Request.IsAuthenticated)
-    {
-        Html.DevExpress().Panel(p =>
+        @Html.DevExpress().PopupControl(settings =>
         {
-            p.Name = "footerPanel";
-            p.FixedPosition = PanelFixedPosition.WindowBottom;
-            p.SetContent(() =>
-            {
-                ViewContext.Writer.Write("Is this footer in the right location?");
-            });
-        }).GetHtml();
-    }
+            settings.Name = "mainPopupControl";
+            settings.Width = Unit.Percentage(25);
+            settings.AllowDragging = true;
+            settings.CloseAction = CloseAction.CloseButton;
+            settings.CloseOnEscape = true;
+            settings.PopupAnimationType = DevExpress.Web.AnimationType.None;
+            settings.ShowHeader = false;
+            settings.Modal = true;
+            settings.AutoUpdatePosition = true;
+            settings.PopupHorizontalAlign = PopupHorizontalAlign.WindowCenter;
+            settings.PopupVerticalAlign = PopupVerticalAlign.TopSides;
+            settings.ClientSideEvents.CloseUp = "function(s, e){ ASPxClientEdit.ClearEditorsInContainer(null, '', true); }";
+        }).GetHtml()
 
-    @Html.DevExpress().PopupControl(settings =>
-    {
-        settings.Name = "mainPopupControl";
-        settings.Width = Unit.Percentage(25);
-        settings.AllowDragging = true;
-        settings.CloseAction = CloseAction.CloseButton;
-        settings.CloseOnEscape = true;
-        settings.PopupAnimationType = DevExpress.Web.AnimationType.None;
-        settings.ShowHeader = false;
-        settings.Modal = true;
-        settings.AutoUpdatePosition = true;
-        settings.PopupHorizontalAlign = PopupHorizontalAlign.WindowCenter;
-        settings.PopupVerticalAlign = PopupVerticalAlign.TopSides;
-        settings.ClientSideEvents.CloseUp = "function(s, e){ ASPxClientEdit.ClearEditorsInContainer(null, '', true); }";
-    }).GetHtml()
+        @(Html.DevExtreme().Popup()
+            .ID("mainDxPopup")
+            .ShowTitle(true)
+            .FullScreen(true)
+            .ShowCloseButton(true)
+            .Title("Popup on Main Page")
+        )
+    </div>
+
 </body>
 
 

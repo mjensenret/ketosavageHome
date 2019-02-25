@@ -1,42 +1,37 @@
 ﻿@{
     ViewBag.Title = "Dashboard";
 }
+<div class="row">
+    <div class="col-sm-12 col-md-8 col-lg-9 col-xl-9">
+        @Html.Action("newsCarousel", "ManageNews")
+    </div>
+    <div class="col-sm-12 col-md-4 col-lg-3 col-xl-3">
 
-<div id="newsfeed">
-    @Html.DevExpress().Panel(p =>
-    {
-        p.Name = "pnlNewsCarousel";
-        p.SetContent(() =>
-        {
-            Html.RenderAction("newsCarousel", "ManageNews");
-        });
-    }).GetHtml()
+    </div>
 </div>
-<div class="container-fluid">
-    <div class="row">
-        <div class="col-2">
-            @Html.Action("ClientRenewalGrid", "CoachCharts")
-        </div>
-        <div class="col-10">
-            <div class="row">
-                <div class="col-3">
-                    @Html.Action("TopPerformers", "CoachCharts")
-                </div>
-                <div class="col-3">
-                    @Html.Action("BottomPerformers", "CoachCharts")
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-3">
-                    @Html.Action("TopPerformersLifetime", "CoachCharts")
-                </div>
-                <div class="col-3">
-                    @Html.Action("BottomPerformersLifetime", "CoachCharts")
-                </div>
 
+<div class="row">
+    <div class="col-sm-12 col-md-6 col-lg-3">
+        @Html.Action("ClientRenewalGrid", "CoachCharts")
+    </div>
+    <div class="col-sm-12 col-md-6 col-lg-9">
+        <div class="row">
+            <div class="col-sm-12 col-md-6 col-lg-4">
+                @Html.Action("TopPerformers", "CoachCharts")
+            </div>
+            <div class="col-sm-12 col-md-6 col-lg-4">
+                @Html.Action("BottomPerformers", "CoachCharts")
             </div>
         </div>
+        <div class="row">
+            <div class="col-sm-12 col-md-6 col-lg-4">
+                @Html.Action("TopPerformersLifetime", "CoachCharts")
+            </div>
+            <div class="col-sm-12 col-md-6 col-lg-4">
+                @Html.Action("BottomPerformersLifetime", "CoachCharts")
+            </div>
 
+        </div>
     </div>
 
 </div>

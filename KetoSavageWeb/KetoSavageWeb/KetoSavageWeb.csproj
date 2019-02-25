@@ -1256,6 +1256,7 @@
     <Content Include="Scripts\localization\dx.web.ja.js" />
     <Content Include="Scripts\localization\dx.web.ru.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="Scripts\site.js" />
     <Content Include="Scripts\vectormap-data\africa.js" />
     <Content Include="Scripts\vectormap-data\canada.js" />
     <Content Include="Scripts\vectormap-data\eurasia.js" />
@@ -1378,6 +1379,7 @@
     <Content Include="Views\CoachCharts\_bottomPerformers.cshtml" />
     <Content Include="Views\CoachCharts\_bottomPerformersLifetime.cshtml" />
     <Content Include="Views\CoachCharts\_topPerformersLifetime.cshtml" />
+    <Content Include="Views\ClientCharts\_plannedVsActualCurrentWeekPie.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

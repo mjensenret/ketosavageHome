@@ -92,6 +92,7 @@ namespace KetoSavageWeb.Controllers
                 try
                 {
                     editNews.Headline = item.Headline;
+                    editNews.Type = item.Type;
                     editNews.IsActive = item.IsActive;
                     editNews.Author = item.Author;
                     editNews.Expires = item.Expires;

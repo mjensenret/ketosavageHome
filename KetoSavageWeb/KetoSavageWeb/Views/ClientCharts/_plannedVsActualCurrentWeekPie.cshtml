@@ -1,0 +1,56 @@
+﻿<div id="pvaMacroPieChartDiv">
+    @(Html.DevExtreme().PieChart()
+            .ID("pvaCurrentWeekMacroPie")
+            .Legend(l => l
+                .Orientation(DevExtreme.AspNet.Mvc.Orientation.Horizontal)
+                .ItemTextPosition(Position.Bottom)
+                .HorizontalAlignment(HorizontalAlignment.Center)
+                .VerticalAlignment(VerticalEdge.Bottom)
+            )
+            .Type(PieChartType.Doughnut)
+            .InnerRadius(0.2)
+            .Size(s => s
+                .Height(250)
+                .Width(300)
+            )
+            .Title(t => t
+                .Text("Planned vs Actual - Current Week")
+                .Font(f => f.Size(14).Color("White"))
+            )
+            .CommonSeriesSettings(s => s.Label(l => l
+                .Visible(true)
+                .Position(PieChartLabelPosition.Inside)
+                .Connector(c => c.Visible(false)
+                    .Width(1)
+                    .Color("#cdcdcd")
+                    )
+                .CustomizeText(@<text>
+                    function(arg){
+                    return arg.valueText + "g";
+                    }
+                </text>)
+                        )
+                    )
+                    .Tooltip(t => t
+                        .Enabled(true)
+                        .CustomizeTooltip(@<text>
+                            function() {
+                            return { text: this.argumentText + "<br />" + this.seriesName + ": " + this.valueText + "g"};
+                            }
+                        </text>)
+                            )
+                            .Series(s =>
+                            {
+                                s.Add().Name("Planned").ArgumentField("macro").ValueField("Planned");
+                                s.Add().Name("Actual").ArgumentField("macro").ValueField("Actual");
+                            })
+                            .DataSource(d => d.WebApi().Controller("ProgressAPI").LoadAction("GetCurrentPvA").LoadParams(new { userId = Session["userId"] }))
+                        //.DataSource(new List<object>
+                        //{
+                        //    new { Macro = "Fat", Planned = 160, Actual = 150 },
+                        //    new { Macro = "Protein", Planned = 110, Actual = 100 },
+                        //    new { Macro = "Carb", Planned = 10, Actual = 12 }
+                        //})
+    )
+
+</div>

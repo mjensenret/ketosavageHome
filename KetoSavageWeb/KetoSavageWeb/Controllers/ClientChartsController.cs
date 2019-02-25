@@ -356,5 +356,10 @@ namespace KetoSavageWeb.Controllers
 
             return PartialView("_plannedVsActualMacroPie");
         }
+
+        public PartialViewResult PvACurrentMacroPieChart()
+        {
+            return PartialView("_plannedVsActualCurrentWeekPie");
+        }
     }
 }

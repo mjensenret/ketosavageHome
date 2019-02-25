@@ -161,6 +161,41 @@ namespace KetoSavageWeb.Controllers
 
         }
 
+        [HttpGet]
+        public HttpResponseMessage GetCurrentPvA(int userId, DataSourceLoadOptions loadOptions)
+        {
+            var currentWeek = _context.DateModels.Where(x => x.Day == DateTime.Now.Day).Select(y => y.ISOWeekOfYear).First();
+            var dailyProgresses = _context.DailyProgress.Where(x => x.Dates.ISOWeekOfYear == currentWeek);
+
+            var model = dailyProgresses.Select(x => new
+            {
+                x.PlannedFat,
+                x.PlannedProtein,
+                x.PlannedCarbohydrate,
+                x.ActualFat,
+                x.ActualProtein,
+                x.ActualCarbohydrate
+            })
+            .ToList();
+
+            var plannedFat = Convert.ToInt32(model.Average(x => x.PlannedFat));
+            var plannedProtein = Convert.ToInt32(model.Average(x => x.PlannedProtein));
+            var plannedCarbs = Convert.ToInt32(model.Average(x => x.PlannedCarbohydrate));
+            var actualFat = Convert.ToInt32(model.Average(x => x.ActualFat));
+            var actualProtein = Convert.ToInt32(model.Average(x => x.ActualProtein));
+            var actualCarbs = Convert.ToInt32(model.Average(x => x.ActualCarbohydrate));
+
+            List<PvAMacroPieChart> pie = new List<PvAMacroPieChart>()
+            {
+                new PvAMacroPieChart { macro = "Fat", Planned = plannedFat, Actual = actualFat },
+                new PvAMacroPieChart { macro = "Protein", Planned = plannedProtein, Actual = actualProtein},
+                new PvAMacroPieChart { macro = "Carbs", Planned = plannedCarbs, Actual = actualCarbs}
+            };
+
+            return Request.CreateResponse(DataSourceLoader.Load(pie, loadOptions));
+
+        }
+
 
     }
 }

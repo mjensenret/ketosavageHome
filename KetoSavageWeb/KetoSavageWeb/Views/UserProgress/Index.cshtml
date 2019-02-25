@@ -2,95 +2,87 @@
 @{
     ViewBag.Title = "User Progress";
 }
+<div class="row">
+    <div class="col-sm-12 col-md-6">
+        @(Html.DevExtreme().Button()
+                            .ID("btnEnterMacros")
+                            .Text("Enter Macros")
+                            .OnClick("enterMacroPopup")
 
-<div id="newsfeed">
-    @Html.DevExpress().Panel(p =>
-    {
-        p.Name = "pnlNewsCarousel";
-        p.SetContent(() =>
-        {
-            Html.RenderAction("newsCarousel", "ManageNews");
-        });
-    }).GetHtml()
+        )
+    </div>
+    <div class="col-sm-12 col-md-6">
+        @(Html.DevExtreme().Button()
+                            .ID("btnEnterMeasurements")
+                            .Text("Enter Measurements")
+                            .OnClick("enterMeasurementPopup")
+
+        )
+    </div>
+</div>
+<div class="row">
+    <div class="col-sm-12 col-md-8 col-lg-10 col-xl-11">
+        @Html.Action("newsCarousel", "ManageNews")
+    </div>
+    <div class="col-sm-12 col-md-4 col-lg-2 col-xl-1">
+
+    </div>
+</div>
+<div class="row">
+    <div class="col-sm-12 col-md-8 col-lg-10 col-xl-11">
+        @Html.Action("ClientWeightGraph", "ClientCharts", new { userId = Session["UserId"] })
+    </div>
+</div>
+<div class="row">
+    <div class="col-sm-12 col-md-6 col-lg-4 col-xl-2">
+        @Html.Action("ClientPerformanceGauge", "ClientCharts", new { userId = Session["UserId"] })
+    </div>
+    <div class="col-sm-12 col-md-6 col-lg-4 col-xl-2">
+        @Html.Action("ClientPastWeekMacroChart", "ClientCharts", new { userId = Session["UserId"] })
+    </div>
+    <div class="col-sm-12 col-md-6 col-lg-4 col-xl-2">
+        @Html.Action("PvAMacroPieChart", "ClientCharts")
+    </div>
+    <div class="col-sm-12 col-md-6 col-lg-4 col-xl-2">
+        @Html.Action("PvACurrentMacroPieChart", "ClientCharts")
+    </div>
+</div>
+<div class="row">
+    <div class="col-sm-12 col-md-6 col-lg-4 col-xl-2">
+        @Html.Action("ClientCurrentWeekMacroGauge", "ClientCharts", new { userId = Session["UserId"] })
+    </div>
+</div>
+<div class="row">
+    <div class="col-sm-12 col-md-8 col-lg-10 col-xl-11">
+        @Html.Action("ClientProgramGrid", "ClientCharts", new { userId = Session["UserId"] })
+    </div>
 </div>
 
-<div id="weightGraph">
-    @Html.DevExpress().Panel(p =>
-    {
-    p.Name = "pnlWeightGraph";
-    p.SetContent(() =>
-    {
-    var userId = Session["UserId"];
-    Html.RenderAction("ClientWeightGraph", "ClientCharts", new { userId = userId });
-    });
-    }).GetHtml()
-</div>
-<div id="gaugeContainer">
-    @Html.DevExpress().Panel(p =>
-{
-    p.Name = "pnlCharts";
-    p.SetContent(() =>
-    {
-        Html.RenderAction("ClientPerformanceGauge", "ClientCharts", new { userId = Session["UserId"] });
-        Html.RenderAction("ClientPastWeekMacroChart", "ClientCharts", new { userId = Session["UserId"] });
-        Html.RenderAction("ClientCurrentWeekMacroGauge", "ClientCharts", new { userId = Session["UserId"] });
-        Html.RenderAction("PvAMacroPieChart", "ClientCharts");
-    });
-}).GetHtml()
-</div>
-
-<div id="gridContainer">
-    @Html.DevExpress().Panel(p =>
-    {
-        p.Name = "pnlPastProgress";
-        p.SetContent(() =>
-        {
-            Html.RenderAction("ClientProgramGrid", "ClientCharts", new { userId = Session["UserId"] });
-        });
-    }).GetHtml()
-</div>
-
-@(Html.DevExtreme().Popup()
-        .ID("measureFormPopup")
-        .ShowTitle(false)
-        .ShowCloseButton(true)
-        .Visible(false)
-        .DragEnabled(false)
-        .CloseOnBackButton(true)
-        .FullScreen(true)
-        .ContentTemplate(@<text>
-            @(Html.Action("MeasurementHeader"))
-            @*@MeasurementScrollView()*@
-
-        </text>)
-)
-@(Html.DevExtreme().Popup()
-      .ID("macroFormPopup")
-      .ShowTitle(false)
-      .Visible(false)
-      .DragEnabled(false)
-      .CloseOnBackButton(true)
-      .FullScreen(true)
-      .ContentTemplate(@<text>
-                           @Html.Action("MacroHeader")
-                        </text>))
-
-@helper MeasurementScrollView()
-{
-    @(Html.DevExtreme().ScrollView()
-          .ID("measureScrollView")
-          .ShowScrollbar(ShowScrollbarMode.OnScroll)
-          .Content(@<Text>
-                       @MeasurementForm()
-                   </Text>))
-}
-
-@helper MeasurementForm()
+@using (Html.DevExtreme().NamedTemplate("measurementPopup"))
 {
     @(Html.Action("MeasurementHeader"))
 }
 
+@using (Html.DevExtreme().NamedTemplate("macroPopup"))
+{
+    @(Html.Action("MacroHeader"))
+}
+
 <script type="text/javascript">
+
+    function enterMacroPopup() {
+        var mainPopup = $("#mainDxPopup").dxPopup("instance");
+        mainPopup.option("contentTemplate", $("#macroPopup"));
+        mainPopup.option("title", "Enter Macros");
+        mainPopup.show();
+    }
+
+    function enterMeasurementPopup() {
+        var mainPopup = $("#mainDxPopup").dxPopup("instance");
+        mainPopup.option("contentTemplate", $("#measurementPopup"));
+        mainPopup.option("title", "Enter Measurements");
+        mainPopup.show();
+    }
 
     function CreateInputElement(itemName, itemValue, itemIndex, container) {
         var $input = $("<input/>");

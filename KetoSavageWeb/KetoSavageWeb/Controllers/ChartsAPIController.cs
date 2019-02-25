@@ -119,16 +119,16 @@ namespace KetoSavageWeb.Controllers
         private int returnScore(int totalVariance)
         {
             return (totalVariance == 0 ) ? 0 :
-                (totalVariance < 50) ? 10 :
-                (totalVariance < 100) ? 9 :
-                (totalVariance < 150) ? 8 :
-                (totalVariance < 200) ? 7 :
-                (totalVariance < 250) ? 6 :
-                (totalVariance < 300) ? 5 :
-                (totalVariance < 350) ? 4 :
-                (totalVariance < 400) ? 3 :
-                (totalVariance < 450) ? 2 :
-                (totalVariance < 500) ? 1 :
+                (totalVariance < 20) ? 10 :
+                (totalVariance < 40) ? 9 :
+                (totalVariance < 60) ? 8 :
+                (totalVariance < 80) ? 7 :
+                (totalVariance < 100) ? 6 :
+                (totalVariance < 120) ? 5 :
+                (totalVariance < 140) ? 4 :
+                (totalVariance < 180) ? 3 :
+                (totalVariance < 200) ? 2 :
+                (totalVariance < 220) ? 1 :
                 0;
         }
     }
