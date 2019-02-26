@@ -74,4 +74,14 @@ namespace KetoSavageWeb.ViewModels
         public MeasurementViewModel MeasurementHeader { get; set; }
         public List<MeasurementType> MeasurementDropDown { get; set; }
     }
+
+    public class TestMeasurementViewModel
+    {
+        public int Id { get; set; }
+        public int UserProgramId { get; set; }
+        public DateTime MeasurementDate { get; set; }
+        public string MeasurementNotes { get; set; }
+        public IEnumerable<MeasurementDetails> MeasurementDetails { get; set; }
+        public MeasurementType MeasurementTypes { get; set; }
+    }
 }

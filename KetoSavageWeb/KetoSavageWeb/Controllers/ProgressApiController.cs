@@ -56,6 +56,30 @@ namespace KetoSavageWeb.Controllers
         }
 
         [HttpGet]
+        public HttpResponseMessage GetMeasurements(DateTime date, DataSourceLoadOptions loadOptions)
+        {
+            var m = _context.MeasurementHeader.Where(x => x.Dates.Date == date).Include(x => x.MeasurementDetails);
+
+            var model = m.Select(x => new
+            {
+                x.Id,
+                x.Dates.Date,
+                x.MeasurementNotes,
+                x.MeasurementDetails
+            })
+            .ToList()
+            .Select(x => new TestMeasurementViewModel()
+            {
+                Id = x.Id,
+                MeasurementDate = x.Date,
+                MeasurementNotes = x.MeasurementNotes,
+                MeasurementDetails = x.MeasurementDetails
+            });
+
+            return Request.CreateResponse(DataSourceLoader.Load(model, loadOptions));
+        }
+
+        [HttpGet]
         public HttpResponseMessage GetUserProgressGrid(int userId, DataSourceLoadOptions loadOptions)
         {
             var query = _context.DailyProgress.Where(x => x.UserProgram.ProgramUserId == userId && x.UserProgram.IsActive && !x.UserProgram.IsDeleted);
