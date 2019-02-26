@@ -50,6 +50,7 @@ namespace KetoSavageWeb.Controllers
 
             var clientProgress = _context.DailyProgress.Where(x => x.UserProgram.IsActive && !x.UserProgram.IsDeleted);
 
+
             if (!lifetime)
             {
                 clientProgress = clientProgress.Where(x => x.Dates.ISOWeekOfYear == weekOfYear);
@@ -85,7 +86,7 @@ namespace KetoSavageWeb.Controllers
                     x.PlannedCarbohydrate,
                     x.ActualFat,
                     x.ActualProtein,
-                    x.ActualCarbohydrate
+                    ActualCarbohydrate = (x.ActualCarbohydrate > x.PlannedCarbohydrate) ? x.ActualCarbohydrate : x.PlannedCarbohydrate
                 })
                 .GroupBy(s => new { s.Name })
                 .Select(g => new
