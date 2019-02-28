@@ -50,11 +50,11 @@ namespace KetoSavageWeb.Controllers
             var date = DateTime.Now.Date;
             var weekOfYear = _context.DateModels.Where(x => x.Date == date).Select(y => y.ISOWeekOfYear).First();
 
-            var clientProgress = _context.DailyProgress.Where(x => x.UserProgram.IsActive && !x.UserProgram.IsDeleted);
+            var clientProgress = _context.DailyProgress.Where(x => x.UserProgram.IsActive && !x.UserProgram.IsDeleted).ToList();
 
             if (!lifetime)
             {
-                clientProgress = clientProgress.Where(x => x.Dates.ISOWeekOfYear == weekOfYear && x.Dates.Year == date.Year);
+                clientProgress = clientProgress.Where(x => x.Dates.ISOWeekOfYear == weekOfYear && x.Dates.Year == date.Year).ToList();
             }
 
             var scoreModel = returnVarianceScore(clientProgress);
@@ -73,7 +73,7 @@ namespace KetoSavageWeb.Controllers
 
         }
 
-        private List<PerformanceChart> returnVarianceScore(IQueryable<DailyProgress> dp)
+        private List<PerformanceChart> returnVarianceScore(List<DailyProgress> dp)
         {
             var data = dp
                 .Select(x => new
