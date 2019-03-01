@@ -1380,6 +1380,7 @@
     <Content Include="Views\CoachCharts\_bottomPerformersLifetime.cshtml" />
     <Content Include="Views\CoachCharts\_topPerformersLifetime.cshtml" />
     <Content Include="Views\ClientCharts\_plannedVsActualCurrentWeekPie.cshtml" />
+    <Content Include="Views\UserProgress\_dxNewMeasurementForm.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
