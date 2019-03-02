@@ -95,7 +95,54 @@ namespace KetoSavageWeb.ViewModels
         public DateTime RenewalDate { get; set; }
     }
 
-    public class PerformanceChart
+    public class ClientPerformanceData
+    {
+        public string ClientName { get; set; }
+        public DateTime Date { get; set; }
+        public double PlannedFat { get; set; }
+        public double ActualFat { get; set; }
+        public double PlannedProtein { get; set; }
+        public double ActualProtein { get; set; }
+        public double PlannedCarbs { get; set; }
+        public double ActualCarbs { get; set; }
+        public double FatVariance
+        {
+            get
+            {
+                return Math.Abs(PlannedFat - ActualFat);
+            }
+        }
+        public double ProteinVariance
+        {
+            get
+            {
+                return Math.Abs(PlannedProtein - ActualProtein);
+            }
+        }
+        public double CarbVariance
+        {
+            get
+            {
+                if(ActualCarbs > PlannedCarbs)
+                {
+                    return Math.Abs(PlannedCarbs - ActualCarbs) * 5;
+                }
+                else
+                {
+                    return 0;
+                }
+            }
+        }
+        public double TotalDailyVariance
+        {
+            get
+            {
+                return (FatVariance + ProteinVariance + CarbVariance);
+            }
+        }
+    }
+
+    public class ClientPerformanceScore
     {
         public string ClientName { get; set; }
         public int Score { get; set; }

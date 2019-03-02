@@ -50,81 +50,97 @@ namespace KetoSavageWeb.Controllers
             var date = DateTime.Now.Date;
             var weekOfYear = _context.DateModels.Where(x => x.Date == date).Select(y => y.ISOWeekOfYear).First();
 
-            var clientProgress = _context.DailyProgress.Where(x => x.UserProgram.IsActive && !x.UserProgram.IsDeleted).ToList();
+            var clientProgress = _context.DailyProgress.Where(x => x.IsActive && !x.IsDeleted && x.Dates.Date < date && x.UserProgram.EndDate > date);
+
+            var variance = clientProgress
+                .OrderBy(x => x.UserProgram.ProgramUser.FirstName)
+                .ThenBy(x => x.Dates.Date)
+                .Select(x => new
+                {
+                    User = x.UserProgram.ProgramUser.FirstName + " " + x.UserProgram.ProgramUser.LastName,
+                    x.Dates.Date,
+                    x.PlannedFat,
+                    x.ActualFat,
+                    x.PlannedProtein,
+                    x.ActualProtein,
+                    x.PlannedCarbohydrate,
+                    x.ActualCarbohydrate
+                })
+                .ToList()
+                .Select(y => new ClientPerformanceData()
+                {
+                    ClientName = y.User,
+                    Date = y.Date,
+                    PlannedFat = Convert.ToDouble(y.PlannedFat),
+                    ActualFat = Convert.ToDouble(y.ActualFat),
+                    PlannedProtein = Convert.ToDouble(y.PlannedProtein),
+                    ActualProtein = Convert.ToDouble(y.ActualProtein),
+                    PlannedCarbs = Convert.ToDouble(y.PlannedCarbohydrate),
+                    ActualCarbs = Convert.ToDouble(y.ActualCarbohydrate)
+                });
 
             if (!lifetime)
+                variance = variance.Where(x => x.Date.Date >= date.AddDays(-7) && x.Date.Date < date);
+
+            //Debugging code
+            foreach(var t in variance)
             {
-                clientProgress = clientProgress.Where(x => x.Dates.ISOWeekOfYear == weekOfYear && x.Dates.Year == date.Year).ToList();
+                Debug.WriteLineIf(t.ClientName == "Michael Jensen", $"ClientName: {t.ClientName} " +
+                    $"Date: {t.Date} " +
+                    $"FatVariance: {t.FatVariance} " +
+                    $"ProteinVariance: {t.ProteinVariance} " +
+                    $"CarbVariance: {t.CarbVariance} " +
+                    $"TotalDailyVariance: {t.TotalDailyVariance}");
             }
 
-            var scoreModel = returnVarianceScore(clientProgress);
+
+            var scoreModel = returnVarianceScore(variance);
 
             if(type == "top")
             {
-                scoreModel = scoreModel.Where(x => x.Score >= 7).ToList();
+                scoreModel = scoreModel.Where(x => x.Score > 5).OrderByDescending(x => x.Score).ToList();
             }
             else
             {
-                scoreModel = scoreModel.Where(x => x.Score <= 5).ToList();
+                scoreModel = scoreModel.Where(x => x.Score <= 5).OrderBy(x => x.Score).ToList();
+            }
+            
+            //Debug
+            foreach (var t in scoreModel)
+            {
+                Debug.WriteLine($"ClientName: {t.ClientName} " +
+                    $"Score: {t.Score}");
             }
 
-            return Request.CreateResponse(DataSourceLoader.Load(scoreModel, loadOptions));
+            return Request.CreateResponse(DataSourceLoader.Load(scoreModel.Take(5), loadOptions));
 
 
         }
 
-        private List<PerformanceChart> returnVarianceScore(List<DailyProgress> dp)
+        private List<ClientPerformanceScore> returnVarianceScore(IEnumerable<ClientPerformanceData> pd)
         {
-            var data = dp
+            var data = pd
                 .Select(x => new
                 {
-                    Name = (x.UserProgram.ProgramUser.FirstName + " " + x.UserProgram.ProgramUser.LastName),
-                    x.PlannedFat,
-                    x.PlannedProtein,
-                    x.PlannedCarbohydrate,
-                    x.ActualFat,
-                    x.ActualProtein,
-                    ActualCarbohydrate = (x.ActualCarbohydrate > x.PlannedCarbohydrate) ? x.ActualCarbohydrate : x.PlannedCarbohydrate
+                    Name = x.ClientName,
+                    x.TotalDailyVariance
                 })
                 .ToList()
-                .Select(y => new
-                {
-                    y.Name,
-                    FatVariance = Math.Abs(Convert.ToDouble(y.ActualFat - y.PlannedFat)) * 9,
-                    ProteinVariance = Math.Abs(Convert.ToDouble(y.ActualProtein - y.PlannedProtein)) * 4,
-                    CarbVariance = Math.Abs(Convert.ToDouble(y.ActualCarbohydrate - y.PlannedCarbohydrate)) * 4
-                })
                 .GroupBy(s => new { s.Name })
                 .Select(su => new
                 {
                     su.Key.Name,
-                    TotalVariance = su.Average(x => x.FatVariance + x.ProteinVariance + x.CarbVariance),
-                    Fat = su.Sum(x => x.FatVariance),
-                    Protein = su.Sum(x => x.ProteinVariance),
-                    Carbs = su.Sum(x => x.CarbVariance)
+                    AvgVariance = su.Average(x => x.TotalDailyVariance)
                 });
-                //.GroupBy(s => new { s.Name })
-                //.Select(g => new
-                //{
-                //    ClientName = g.Key.Name,
-                //    FatVariance = (g.Average(x => Math.Abs(Convert.ToDouble(x.ActualFat - x.PlannedFat)))) * 9,
-                //    ProtVariance = (g.Average(x => Math.Abs(Convert.ToDouble(x.ActualProtein - x.PlannedProtein)))) * 4,
-                //    CarbVariance = (g.Average(x => Math.Abs(Convert.ToDouble(x.ActualCarbohydrate - x.PlannedCarbohydrate)))) * 4
-                //})
-                //.GroupBy(t => new { t.ClientName })
-                //.Select(su => new
-                //{
-                //    su.Key.ClientName,
-                //    TotalVariance = su.Sum(x => x.FatVariance + x.ProtVariance + x.CarbVariance)
-                //});
-            List<PerformanceChart> chart = new List<PerformanceChart>();
-            foreach(var u in data.Take(5))
+
+            List<ClientPerformanceScore> chart = new List<ClientPerformanceScore>();
+            foreach(var u in data)
             {
                 Debug.WriteLineIf(u.Name == "Michael Jensen", ($"--chart data u value: {u}"));
 
-                var score = returnScore(Math.Abs(Convert.ToInt32(u.TotalVariance)));
+                var score = returnScore(Convert.ToInt32(u.AvgVariance));
 
-                chart.Add(new PerformanceChart()
+                chart.Add(new ClientPerformanceScore()
                 {
                     ClientName = u.Name,
                     Score = score
@@ -137,19 +153,17 @@ namespace KetoSavageWeb.Controllers
 
         private int returnScore(int totalVariance)
         {
-            Debug.WriteLine($"returnScore-----------");
-            Debug.WriteLine($"TotalVariance: {totalVariance}");
             return (totalVariance == 0 ) ? 0 :
-                (totalVariance < 20) ? 10 :
-                (totalVariance < 40) ? 9 :
-                (totalVariance < 60) ? 8 :
-                (totalVariance < 80) ? 7 :
-                (totalVariance < 100) ? 6 :
-                (totalVariance < 120) ? 5 :
-                (totalVariance < 140) ? 4 :
-                (totalVariance < 180) ? 3 :
-                (totalVariance < 200) ? 2 :
-                (totalVariance < 220) ? 1 :
+                (totalVariance < 10) ? 10 :
+                (totalVariance < 20) ? 9 :
+                (totalVariance < 30) ? 8 :
+                (totalVariance < 40) ? 7 :
+                (totalVariance < 50) ? 6 :
+                (totalVariance < 60) ? 5 :
+                (totalVariance < 70) ? 4 :
+                (totalVariance < 80) ? 3 :
+                (totalVariance < 90) ? 2 :
+                (totalVariance < 100) ? 1 :
                 0;
         }
     }
