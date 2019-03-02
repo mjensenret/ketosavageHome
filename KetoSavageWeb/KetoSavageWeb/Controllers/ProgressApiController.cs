@@ -73,21 +73,21 @@ namespace KetoSavageWeb.Controllers
         //}
 
         //[Route("api/Measurements/{action}", Name = "Measurements")]
-        [HttpGet]
-        public HttpResponseMessage GetMeasurementDetails(int measurementId, DataSourceLoadOptions loadOptions)
-        {
-            IQueryable<MeasurementEntriesViewModel> measurementDetailsViewModel = null;
+        //[HttpGet]
+        //public HttpResponseMessage GetMeasurementDetails(int measurementId, DataSourceLoadOptions loadOptions)
+        //{
+        //    IQueryable<MeasurementEntriesViewModel> measurementDetailsViewModel = null;
 
-            measurementDetailsViewModel =
-                _context.MeasurementDetail.Where(x => x.measurementHeaderId == measurementId).Select(x => new MeasurementEntriesViewModel()
-                {
-                    MeasurementId = x.measurementHeaderId,
-                    MeasurementType = x.measurementType,
-                    MeasurementValue = x.measurementValue
-                });
+        //    measurementDetailsViewModel =
+        //        _context.MeasurementDetail.Where(x => x.measurementHeaderId == measurementId).Select(x => new MeasurementEntriesViewModel()
+        //        {
+        //            MeasurementId = x.measurementHeaderId,
+        //            MeasurementType = x.measurementType,
+        //            MeasurementValue = x.measurementValue
+        //        });
            
-            return Request.CreateResponse(DataSourceLoader.Load(measurementDetailsViewModel, loadOptions));
-        }
+        //    return Request.CreateResponse(DataSourceLoader.Load(measurementDetailsViewModel, loadOptions));
+        //}
 
         [HttpGet]
         public HttpResponseMessage GetMeasurements(DateTime date, DataSourceLoadOptions loadOptions)
@@ -187,8 +187,9 @@ namespace KetoSavageWeb.Controllers
         [HttpGet]
         public HttpResponseMessage GetPreviousPvA(int userId, DataSourceLoadOptions loadOptions)
         {
-            var previousWeek = _context.DateModels.Where(x => x.Day == DateTime.Now.Day).Select(y => y.ISOWeekOfYear).First() - 1;
-            var dailyProgresses = _context.DailyProgress.Where(x => x.Dates.ISOWeekOfYear == previousWeek);
+            var date = DateTime.Now;
+            var previousWeek = _context.DateModels.Where(x => x.Date == date.Date).Select(y => y.ISOWeekOfYear).First() - 1;
+            var dailyProgresses = _context.DailyProgress.Where(x => x.Dates.ISOWeekOfYear == previousWeek && x.Dates.Year == date.Year);
 
             var model = dailyProgresses.Select(x => new
             {
@@ -222,8 +223,9 @@ namespace KetoSavageWeb.Controllers
         [HttpGet]
         public HttpResponseMessage GetCurrentPvA(int userId, DataSourceLoadOptions loadOptions)
         {
-            var currentWeek = _context.DateModels.Where(x => x.Day == DateTime.Now.Day).Select(y => y.ISOWeekOfYear).First();
-            var dailyProgresses = _context.DailyProgress.Where(x => x.Dates.ISOWeekOfYear == currentWeek);
+            var date = DateTime.Now;
+            var currentWeek = _context.DateModels.Where(x => x.Date == date.Date).Select(y => y.ISOWeekOfYear).First();
+            var dailyProgresses = _context.DailyProgress.Where(x => x.Dates.ISOWeekOfYear == currentWeek && x.Dates.Year == date.Year);
 
             var model = dailyProgresses.Select(x => new
             {
