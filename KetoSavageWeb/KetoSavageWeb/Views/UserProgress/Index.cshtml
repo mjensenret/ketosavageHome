@@ -3,19 +3,19 @@
     ViewBag.Title = "User Progress";
 }
 <div class="row">
-    <div class="col-sm-12 col-md-6">
+    <div class="col-sm-12 col-md-3">
         @(Html.DevExtreme().Button()
-                            .ID("btnEnterMacros")
-                            .Text("Enter Macros")
-                            .OnClick("enterMacroPopup")
+                                    .ID("btnEnterMacros")
+                                    .Text("Enter Macros")
+                                    .OnClick("enterMacroPopup")
 
         )
     </div>
-    <div class="col-sm-12 col-md-6">
+    <div class="col-sm-12 col-md-3">
         @(Html.DevExtreme().Button()
-                            .ID("btnEnterMeasurements")
-                            .Text("Enter Measurements")
-                            .OnClick("enterMeasurementPopup")
+                                    .ID("btnEnterMeasurements")
+                                    .Text("Enter Measurements")
+                                    .OnClick("enterMeasurementPopup")
 
         )
     </div>
@@ -60,19 +60,19 @@
 
 @using (Html.DevExtreme().NamedTemplate("measurementPopup"))
 {
-    @(Html.Action("MeasurementHeader"))
+    @(Html.Action("DxMeasurementForm"))
 }
 
-@using (Html.DevExtreme().NamedTemplate("macroPopup"))
+@using (Html.DevExtreme().NamedTemplate("dxMacroPopup"))
 {
-    @(Html.Action("MacroHeader"))
+    @(Html.Action("DxMacroPopup"))
 }
 
 <script type="text/javascript">
 
     function enterMacroPopup() {
         var mainPopup = $("#mainDxPopup").dxPopup("instance");
-        mainPopup.option("contentTemplate", $("#macroPopup"));
+        mainPopup.option("contentTemplate", $("#dxMacroPopup"));
         mainPopup.option("title", "Enter Macros");
         mainPopup.show();
     }
@@ -83,6 +83,7 @@
         mainPopup.option("title", "Enter Measurements");
         mainPopup.show();
     }
+
 
     function CreateInputElement(itemName, itemValue, itemIndex, container) {
         var $input = $("<input/>");
@@ -123,12 +124,15 @@
 
     function changeMeasurementDate(newDate) {
         var dd = newDate;
+        var form = $("#measurementForm").dxForm("instance");
+        var grid = $("#measurementGrid").dxDataGrid("instance");
         $.ajax({
             type: "POST",
             url: '@Url.Action("DxUpdateMeasurementDateChange", "UserProgress")',
             data: { newDate: dd },
             success: function (response) {
-                $("#form-container").html(response);
+                form.option("formData", response);
+                grid.option("dataSource", response.MeasurementDetails);
             }
         });
 
@@ -143,6 +147,7 @@
         var dd = date;
         window.console.log("Value of date " + dd);
 
+        var form = $("#macroForm").dxForm("instance");
 
         $.ajax({
             type: "POST",
@@ -152,7 +157,9 @@
             //    loadingPanel.Show();
             //},
             success: function(response) {
-                $("#form-container").html(response);
+                //$("#form-container").html(response);
+                window.console.log("made it inside macroDate");
+                form.option("formData", response);
             },
             error: function (jqXHR, textStatus, errorThrown) {
                 window.console.log(errorThrown);
@@ -160,6 +167,11 @@
             }
         });
     }
+
+    //function macroDateChanged() {
+    //    window.console.log("macro date field updated");
+    //    var form
+    //}
 
 </script>
 

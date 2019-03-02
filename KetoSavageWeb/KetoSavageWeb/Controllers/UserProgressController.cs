@@ -40,34 +40,53 @@ namespace KetoSavageWeb.Controllers
             return View();
         }
 
-        public PartialViewResult MacroHeader()
-        {
-            return PartialView("_dxMacroFormHeader");
-        }
+        //public PartialViewResult MacroHeader()
+        //{
+        //    return PartialView("_dxMacroFormHeader");
+        //}
 
-        public PartialViewResult EnterMacroForm()
+        public PartialViewResult DxMacroPopup()
         {
             var model = userProgramRepository.GetDailyProgressByDate(CurrentUser.Id, DateTime.Now.Date);
             var userId = CurrentUser.Id;
 
             EnterMacroViewModel viewModel = new EnterMacroViewModel();
-            
+
             viewModel.macroUserId = userId;
             viewModel.macroDate = model.Dates.Date;
-            viewModel.actualFat = (model.ActualFat != null) ? Convert.ToDouble(model.ActualFat) : 0 ;
+            viewModel.actualFat = (model.ActualFat != null) ? Convert.ToDouble(model.ActualFat) : 0;
             viewModel.actualProtein = (model.ActualProtein != null) ? Convert.ToDouble(model.ActualProtein) : 0;
             viewModel.actualCarb = (model.ActualCarbohydrate != null) ? Convert.ToDouble(model.ActualCarbohydrate) : 0;
             viewModel.hungerLevelId = (model.HungerLevelId != null) ? Convert.ToInt32(model.HungerLevelId) : 0;
             viewModel.Notes = model.Notes;
             viewModel.masterProgramId = model.UserProgram.MasterProgramId;
 
-
-
-            return PartialView("_enterDailyMacros", viewModel);
+            return PartialView("_dxMacroForm", viewModel);
         }
 
+        //public PartialViewResult EnterMacroForm()
+        //{
+        //    var model = userProgramRepository.GetDailyProgressByDate(CurrentUser.Id, DateTime.Now.Date);
+        //    var userId = CurrentUser.Id;
+
+        //    EnterMacroViewModel viewModel = new EnterMacroViewModel();
+            
+        //    viewModel.macroUserId = userId;
+        //    viewModel.macroDate = model.Dates.Date;
+        //    viewModel.actualFat = (model.ActualFat != null) ? Convert.ToDouble(model.ActualFat) : 0 ;
+        //    viewModel.actualProtein = (model.ActualProtein != null) ? Convert.ToDouble(model.ActualProtein) : 0;
+        //    viewModel.actualCarb = (model.ActualCarbohydrate != null) ? Convert.ToDouble(model.ActualCarbohydrate) : 0;
+        //    viewModel.hungerLevelId = (model.HungerLevelId != null) ? Convert.ToInt32(model.HungerLevelId) : 0;
+        //    viewModel.Notes = model.Notes;
+        //    viewModel.masterProgramId = model.UserProgram.MasterProgramId;
+
+
+
+        //    return PartialView("_enterDailyMacros", viewModel);
+        //}
+
         [HttpPost]
-        public PartialViewResult EnterMacroForm(DateTime date)
+        public JsonResult EnterMacroForm(DateTime date)
         {
             var model = userProgramRepository.GetDailyProgressByDate(CurrentUser.Id, date);
             var userId = CurrentUser.Id;
@@ -82,7 +101,7 @@ namespace KetoSavageWeb.Controllers
             viewModel.hungerLevelId = (model.HungerLevelId != null) ? Convert.ToInt32(model.HungerLevelId) : 0;
             viewModel.Notes = model.Notes;
 
-            return PartialView("_enterDailyMacros", viewModel);
+            return Json(viewModel, JsonRequestBehavior.AllowGet);
         }
 
         [HttpPost]
@@ -153,7 +172,7 @@ namespace KetoSavageWeb.Controllers
         }
 
         [HttpPost]
-        public PartialViewResult DxUpdateMeasurementDateChange(DateTime newDate)
+        public JsonResult DxUpdateMeasurementDateChange(DateTime newDate)
         {
             var date = newDate;
             var userProgram = userProgramRepository.GetActive.Where(p => p.ProgramUserId == CurrentUser.Id).Include(d => d.Measurements).FirstOrDefault();
@@ -191,7 +210,7 @@ namespace KetoSavageWeb.Controllers
 
             }
 
-            return PartialView("_dxMeasurementForm", model);
+            return Json(model, JsonRequestBehavior.AllowGet);
         }
 
         // Fetching items from the "Orders" collection

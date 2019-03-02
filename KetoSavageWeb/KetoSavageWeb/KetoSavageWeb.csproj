@@ -1339,9 +1339,6 @@
     <Content Include="Views\UserPrograms\_pastPerformance.cshtml" />
     <Content Include="Views\UserPrograms\_dailyMacros.cshtml" />
     <Content Include="Views\UserProgress\Index.cshtml" />
-    <Content Include="Views\UserProgress\_enterDailyMacros.cshtml" />
-    <Content Include="Views\UserProgress\_enterDailyMeasurements.cshtml" />
-    <Content Include="Views\UserProgress\_entryForms.cshtml" />
     <Content Include="Views\UserProgress\_pastPerformanceGrid.cshtml" />
     <Content Include="Views\UserPrograms\Index - orig.cshtml" />
     <Content Include="Views\UserPrograms\UserProgramDetails - Orig.cshtml" />
@@ -1369,8 +1366,6 @@
     <Content Include="Views\UserPrograms\_weeklyMacroUpdateForm.cshtml" />
     <Content Include="Views\UserProgress\_dxMeasurementForm.cshtml" />
     <Content Include="Views\Home\_dxLoginForm.cshtml" />
-    <Content Include="Views\UserProgress\_dxMacroFormHeader.cshtml" />
-    <Content Include="Views\UserProgress\_dxMeasurementHeader.cshtml" />
     <Content Include="Views\Manage\Index.cshtml" />
     <Content Include="Views\ClientCharts\_plannedVsActualMacroPie.cshtml" />
     <Content Include="Views\CoachDashboard\Index.cshtml" />
@@ -1380,7 +1375,7 @@
     <Content Include="Views\CoachCharts\_bottomPerformersLifetime.cshtml" />
     <Content Include="Views\CoachCharts\_topPerformersLifetime.cshtml" />
     <Content Include="Views\ClientCharts\_plannedVsActualCurrentWeekPie.cshtml" />
-    <Content Include="Views\UserProgress\_dxNewMeasurementForm.cshtml" />
+    <Content Include="Views\UserProgress\_dxMacroForm.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

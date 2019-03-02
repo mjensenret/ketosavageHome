@@ -8,6 +8,12 @@
     
     @Html.HiddenFor(m => m.Id)
     @Html.HiddenFor(m => m.UserProgramId)
+<div id="form-date">
+    @(Html.DevExtreme().DateBoxFor(m => m.MeasurementDate)
+        .ID("measurementDate")
+        .OnValueChanged("refreshForm")
+    )
+</div>
         @(Html.DevExtreme().Form<MeasurementViewModel>()
                       .ID("measurementForm")
                       .ValidationGroup("measurements")
@@ -18,13 +24,6 @@
                           items.AddGroup()
                               .Items(groupItems =>
                               {
-                                  groupItems.AddSimpleFor(m => m.MeasurementDate)
-                                      .Editor(e => e
-                                          .DateBox()
-                                          .OnValueChanged("refreshForm")
-                                          .ID("measurementDate")
-                                          .Width("100%")
-                                      );
                                   groupItems.AddSimpleFor(m => m.MeasurementNotes)
                                         .Editor(e => e
                                         .TextBox());

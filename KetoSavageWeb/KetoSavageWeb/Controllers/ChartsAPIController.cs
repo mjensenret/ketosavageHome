@@ -82,18 +82,6 @@ namespace KetoSavageWeb.Controllers
             if (!lifetime)
                 variance = variance.Where(x => x.Date.Date >= date.AddDays(-7) && x.Date.Date < date);
 
-            //Debugging code
-            foreach(var t in variance)
-            {
-                Debug.WriteLineIf(t.ClientName == "Michael Jensen", $"ClientName: {t.ClientName} " +
-                    $"Date: {t.Date} " +
-                    $"FatVariance: {t.FatVariance} " +
-                    $"ProteinVariance: {t.ProteinVariance} " +
-                    $"CarbVariance: {t.CarbVariance} " +
-                    $"TotalDailyVariance: {t.TotalDailyVariance}");
-            }
-
-
             var scoreModel = returnVarianceScore(variance);
 
             if(type == "top")
@@ -103,13 +91,6 @@ namespace KetoSavageWeb.Controllers
             else
             {
                 scoreModel = scoreModel.Where(x => x.Score <= 5).OrderBy(x => x.Score).ToList();
-            }
-            
-            //Debug
-            foreach (var t in scoreModel)
-            {
-                Debug.WriteLine($"ClientName: {t.ClientName} " +
-                    $"Score: {t.Score}");
             }
 
             return Request.CreateResponse(DataSourceLoader.Load(scoreModel.Take(5), loadOptions));
@@ -136,7 +117,6 @@ namespace KetoSavageWeb.Controllers
             List<ClientPerformanceScore> chart = new List<ClientPerformanceScore>();
             foreach(var u in data)
             {
-                Debug.WriteLineIf(u.Name == "Michael Jensen", ($"--chart data u value: {u}"));
 
                 var score = returnScore(Convert.ToInt32(u.AvgVariance));
 

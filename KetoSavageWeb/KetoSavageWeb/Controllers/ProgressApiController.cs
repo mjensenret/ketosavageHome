@@ -38,6 +38,40 @@ namespace KetoSavageWeb.Controllers
             this.dateRepository = dr;
         }
 
+        //[HttpGet]
+        //public HttpResponseMessage GetMacroEntry(DateTime date, int userId, DataSourceLoadOptions loadOptions)
+        //{
+        //    var query = _context.DailyProgress.Where(x => x.IsActive && !x.IsDeleted && x.Dates.Date == date.Date && x.UserProgram.ProgramUser.Id == userId);
+
+        //    var model = query
+        //        .Select(x => new
+        //        {
+        //            x.Id,
+        //            x.Dates.Date,
+        //            x.DateId,
+        //            x.ActualFat,
+        //            x.ActualProtein,
+        //            x.ActualCarbohydrate,
+        //            x.Notes,
+        //            x.HungerLevelId,
+        //            userId
+        //        })
+        //        .ToList()
+        //        .Select(y => new EnterMacroViewModel()
+        //        {
+        //            macroUserId = y.userId,
+        //            macroDate = y.Date,
+        //            macroProgressId = y.Id,
+        //            actualFat = Convert.ToDouble(y.ActualFat),
+        //            actualProtein = Convert.ToDouble(y.ActualProtein),
+        //            actualCarb = Convert.ToDouble(y.ActualCarbohydrate),
+        //            Notes = y.Notes,
+        //            hungerLevelId = y.HungerLevelId.HasValue ? Convert.ToInt32(y.HungerLevelId) : 0
+        //        });
+
+        //    return Request.CreateResponse(DataSourceLoader.Load(model, loadOptions));
+        //}
+
         //[Route("api/Measurements/{action}", Name = "Measurements")]
         [HttpGet]
         public HttpResponseMessage GetMeasurementDetails(int measurementId, DataSourceLoadOptions loadOptions)

@@ -1,0 +1,42 @@
+﻿@using KetoSavageWeb.ViewModels
+@model EnterMacroViewModel
+
+@{ Html.BeginForm("UpdateActualMacros", "UserProgress", FormMethod.Post);}
+@Html.HiddenFor(m => m.macroUserId)
+<div id="macro-form">
+    <div>Date:</div>
+    @(Html.DevExtreme().DateBoxFor(m => m.macroDate)
+                .ID("macroDate")
+                .OnValueChanged("refreshMacroForm")
+    )
+    @(Html.DevExtreme().Form<EnterMacroViewModel>()
+                    .ID("macroForm")
+                    .FormData(Model)
+                    .LabelLocation(FormLabelLocation.Top)
+                    .Items(i =>
+                    {
+                    i.AddSimpleFor(m => m.actualFat);
+                    i.AddSimpleFor(m => m.actualProtein);
+                    i.AddSimpleFor(m => m.actualCarb);
+                    i.AddSimpleFor(m => m.hungerLevelId)
+                        .Editor(e => e
+                                  .SelectBox()
+                                  .DataSource(d => d.WebApi().Controller("ProgramApi").LoadAction("getHungerLevelsByUser").LoadParams(new { userId = Model.macroUserId }).Key("Id"))
+                                  .DisplayExpr("Text")
+                                  .ValueExpr("Id"));
+                    i.AddSimpleFor(m => m.Notes);
+                    i.AddSimple()
+                                          .Template(@<text>
+                                        @( Html.DevExtreme().Button()
+                                                          .ID("btnMacros")
+                                                          .Text("Save")
+                                                          .Type(DevExtreme.AspNet.Mvc.ButtonType.Normal)
+                                                          .UseSubmitBehavior(true))
+                                    </text>);
+                        })
+
+    )
+</div>
+
+
+@{ Html.EndForm();}
