@@ -3,74 +3,77 @@
 @using ButtonType = DevExtreme.AspNet.Mvc.ButtonType
 @model KetoSavageWeb.ViewModels.MeasurementViewModel
 
+@{Html.BeginForm("DxUpdateMeasurements", "UserProgress", FormMethod.Post, new { id = "editMeasurements" });}
+    @using (Html.DevExtreme().ValidationGroup("measurements"))
+    {
+        @Html.HiddenFor(m => m.Id);
+        @Html.HiddenFor(m => m.UserProgramId);
+        <div id="form-date">
+            Date:
+            @(Html.DevExtreme().DateBoxFor(m => m.MeasurementDate)
+                        .ID("measurementDate")
+                        .OnValueChanged("refreshForm")
+                        .Width("100%")
+            )
+        </div>
 
-    @{ Html.BeginForm("DxUpdateMeasurements", "UserProgress", FormMethod.Post, new { id = "editMeasurements" });}
-    
-    @Html.HiddenFor(m => m.Id)
-    @Html.HiddenFor(m => m.UserProgramId)
-<div id="form-date">
-    @(Html.DevExtreme().DateBoxFor(m => m.MeasurementDate)
-        .ID("measurementDate")
-        .OnValueChanged("refreshForm")
-    )
-</div>
         @(Html.DevExtreme().Form<MeasurementViewModel>()
-                      .ID("measurementForm")
-                      .ValidationGroup("measurements")
-                      .LabelLocation(FormLabelLocation.Top)
-                      .ScrollingEnabled(true)
-                      .Items(items =>
-                      {
-                          items.AddGroup()
-                              .Items(groupItems =>
-                              {
-                                  groupItems.AddSimpleFor(m => m.MeasurementNotes)
-                                        .Editor(e => e
-                                        .TextBox());
-                                  groupItems.AddSimpleFor(m => m.MeasurementDetails)
-                                      .Template(@<text>
-                                        @(Html.DevExtreme().DataGrid()
-                                                      .ID("measurementGrid")
-                                                      .ShowBorders(true)
-                                                      .DataSource(Model.MeasurementDetails)
-                                                      //.DataSource(ds => ds
-                                                      //    .Mvc()
-                                                      //    .Controller("UserProgress")
-                                                      //    .LoadAction("GetOrderDetails")
-                                                      //    .LoadParams(new { date = new JS("getDateValue") }))
-                                                      .Editing(e =>
-                                                      {
-                                                          e.Mode(GridEditMode.Row);
-                                                          e.AllowAdding(true);
-                                                          e.AllowUpdating(true);
-                                                          e.AllowDeleting(true);
-                                                      })
-                                                      .Columns(c =>
-                                                      {
-                                                          c.Add().DataField("Id").Visible(false);
-                                                          c.Add().DataField("MeasurementId").Visible(false);
-                                                          c.Add().DataField("MeasurementType")
-                                                              .Lookup(l => l
-                                                                  .DataSource(EnumHelper.GetSelectList(typeof(MeasurementType))
-                                                                      .Select(i => new { Value = i.Text, Text = i.Text }))
-                                                                  .DisplayExpr("Text")
-                                                                  .ValueExpr("Value"));
-                                                          c.Add().DataField("MeasurementValue");
-                                                      }))
-                                    </text>);
-                                  groupItems.AddSimple()
-                                            .Template(@<text>
-                                                @(Html.DevExtreme().Button()
-                                                              .ID("btnAddMeasurements")
-                                                              .Text("Save")
-                                                              .Type(ButtonType.Normal)
-                                                              .UseSubmitBehavior(false)
-                                                              .OnClick("clickHandler")
-                                                              .ValidationGroup("measurements"))
-                                            </text>);
-                                            });
-                                    })
-                                    .FormData(Model))
-    @{ Html.EndForm();}
-
+        .ID("measurementForm")
+        //.ValidationGroup("measurements")
+        .LabelLocation(FormLabelLocation.Top)
+        .ScrollingEnabled(true)
+        .Items(items =>
+        {
+            items.AddGroup()
+                .Items(groupItems =>
+                {
+                    groupItems.AddSimpleFor(m => m.MeasurementNotes)
+                        .Editor(e => e
+                        .TextBox());
+                    groupItems.AddSimpleFor(m => m.MeasurementDetails)
+                        .Template(@<text>
+                            @(Html.DevExtreme().DataGrid()
+                                .ID("measurementGrid")
+                                .ShowBorders(true)
+                                .DataSource(Model.MeasurementDetails)
+                                //.DataSource(ds => ds
+                                //    .Mvc()
+                                //    .Controller("UserProgress")
+                                //    .LoadAction("GetOrderDetails")
+                                //    .LoadParams(new { date = new JS("getDateValue") }))
+                                .Editing(e =>
+                                {
+                                    e.Mode(GridEditMode.Row);
+                                    e.AllowAdding(true);
+                                    e.AllowUpdating(true);
+                                    e.AllowDeleting(true);
+                                })
+                                .Columns(c =>
+                                {
+                                    c.Add().DataField("Id").Visible(false);
+                                    c.Add().DataField("MeasurementId").Visible(false);
+                                    c.Add().DataField("MeasurementType")
+                                .Lookup(l => l
+                                .DataSource(EnumHelper.GetSelectList(typeof(MeasurementType))
+                                .Select(i => new { Value = i.Text, Text = i.Text }))
+                                .DisplayExpr("Text")
+                                .ValueExpr("Value"));
+                                    c.Add().DataField("MeasurementValue");
+                                }))
+                                </text>);
+                    groupItems.AddSimple()
+                        .Template(@<text>
+                            @(Html.DevExtreme().Button()
+                                .ID("btnAddMeasurements")
+                                .Text("Save")
+                                .Type(ButtonType.Normal)
+                                .UseSubmitBehavior(false)
+                                .OnClick("clickHandler")
+                                .ValidationGroup("measurements"))
+                                </text>);
+                });
+        })
+        .FormData(Model))
+    }
+@{ Html.EndForm();}
 

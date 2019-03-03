@@ -262,35 +262,42 @@ namespace KetoSavageWeb.Controllers
         [HttpPost]
         public ActionResult DxUpdateMeasurements(MeasurementViewModel model)
         {
-            
 
-            var measurementList = _context.MeasurementHeader.Where(x => x.UserProgramId == model.UserProgramId && x.Dates.Date == model.MeasurementDate).Include(y => y.MeasurementDetails);
+            var test = model;
+            //var measurementList = _context.MeasurementHeader.Where(x => x.UserProgramId == model.UserProgramId && x.Dates.Date == model.MeasurementDate).Include(y => y.MeasurementDetails);
             var dateId = _context.DateModels.Where(x => x.Date == model.MeasurementDate).Select(y => y.DateKey).Single();
             var dailyProgress = _context.DailyProgress.Single(x => x.UserProgramId == model.UserProgramId && x.DateId == dateId);
-            
-            if (measurementList.Any())
+
+            if (model.Id != 0)
             {
-                var updHeader = new MeasurementHeader();
-                updHeader.Id = model.Id;
-                updHeader.DateId = dateId;
-                updHeader.UserProgramId = model.UserProgramId;
+                var updHeader = _context.MeasurementHeader.Find(model.Id);
                 updHeader.MeasurementNotes = model.MeasurementNotes;
-
-                _context.MeasurementHeader.AddOrUpdate(updHeader);
-
-                var updDetails = new MeasurementDetails();
+                updHeader.LastModified = DateTime.Now;
+                updHeader.LastModifiedBy = CurrentUser.UserName;
 
                 foreach (var i in model.MeasurementDetails)
                 {
-                    updDetails.Id = i.Id;
-                    updDetails.measurementHeaderId = measurementList.Select(x => x.Id).FirstOrDefault();
-                    updDetails.measurementType = i.MeasurementType;
-                    updDetails.measurementValue = i.MeasurementValue;
+                    if (i.Id != 0)
+                    {
+                        var updDetails = _context.MeasurementDetail.Find(i.Id);
+                        updDetails.measurementType = i.MeasurementType;
+                        updDetails.measurementValue = i.MeasurementValue;                        
+                    }
+                    else
+                    {
+                        var addDetail = new MeasurementDetails()
+                        {
+                            measurementHeaderId = model.Id,
+                            measurementType = i.MeasurementType,
+                            measurementValue = i.MeasurementValue
+                        };
+                        _context.MeasurementDetail.Add(addDetail);
+                    }
+                    
                     if (i.MeasurementType == "Weight")
                     {
                         dailyProgress.ActualWeight = i.MeasurementValue;
                     }
-                    _context.MeasurementDetail.AddOrUpdate(updDetails);
                 }
                 _context.SaveChanges();
 

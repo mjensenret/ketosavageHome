@@ -92,7 +92,7 @@
     }
 
     function clickHandler(e) {
-
+        window.console.log(e);
         if (e.validationGroup.validate().isValid) {
 
             $("#measurementGrid").dxDataGrid("instance").getDataSource().load().done(function (items) {
