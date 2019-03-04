@@ -30,18 +30,11 @@ function LeftMenuClick(s, e) {
     }
     else if (e.item.name === "macros")
     {
-        //var macroUrl = $("#enterMacros").val();
-        //openEntryWindow(e.item.name, macroUrl);
-        var popup = $("#macroFormPopup").dxPopup("instance");
-        popup.show();
+        enterMacroPopup();
     }
     else if (e.item.name === "measurements")
     {
-        //var measurementUrl = $("#enterMeasurements").val();
-        //openEntryWindow(e.item.name, measurementUrl);
-        var popup = $("#measureFormPopup").dxPopup("instance");
-        popup.show();
-
+        enterMeasurementPopup();
     }
 
 }

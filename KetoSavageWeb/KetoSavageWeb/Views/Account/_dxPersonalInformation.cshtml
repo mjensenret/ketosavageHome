@@ -1,0 +1,37 @@
+﻿@using KetoSavageWeb.Models
+@model EditUserViewModel
+
+@{Html.BeginForm("DxUpdatePersonal", "Account", FormMethod.Post);}
+@using (Html.DevExtreme().ValidationGroup("personalInfo"))
+{
+    @Html.AntiForgeryToken()
+
+    @Html.Hidden("UserId");
+    @(Html.DevExtreme().Form<EditUserViewModel>()
+                    .ID("updatePersonalInfo")
+                    .ShowValidationSummary(true)
+                    .LabelLocation(FormLabelLocation.Top)
+                    .FormData(Model)
+                    .Items(items =>
+                    {
+                        items.AddGroup()
+                            .Caption("Update Personal Information")
+                            .Items(groupItems =>
+                            {
+                                groupItems.AddSimpleFor(m => m.FirstName);
+                                groupItems.AddSimpleFor(m => m.LastName);
+                                groupItems.AddSimpleFor(m => m.Email);
+                            });
+                        items.AddButton()
+                        .HorizontalAlignment(HorizontalAlignment.Left)
+                        .ButtonOptions(o => o
+                            .Text("Update")
+                            .UseSubmitBehavior(true)
+                            .ValidationGroup("personalInfo")
+                        );
+                    })
+    )
+
+}
+
+@{ Html.EndForm();}

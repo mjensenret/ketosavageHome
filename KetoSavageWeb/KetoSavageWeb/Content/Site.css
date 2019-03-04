@@ -777,6 +777,7 @@ html, body {
 
 #currentWeekGaugePanel {
     /*border:solid;*/
+    background-color: #0a0a0a;
     color: #dedede;
     width: 150px;
     text-align: left;
@@ -791,6 +792,9 @@ html, body {
     color: #dedede;
 }
 
+#mobile-grid {
+    visibility:hidden;
+}
 
 /*Quote carousel CSS*/
 
@@ -824,7 +828,7 @@ html, body {
     top: auto;
     bottom: 0px;
     /*margin-right: -5px;*/
-    margin: auto;
+    /*margin: auto;*/
 }
 /* Changes the color of the indicators */
 #quote-carousel .carousel-indicators li {
@@ -17663,6 +17667,10 @@ html, body {
     height: 440px;
 }
 
+#gridClientProgramMobile {
+    height: 440px;
+}
+
 /**
   MEDIA QUERIES
 */
@@ -17697,6 +17705,13 @@ html, body {
     [class*="col-"] {
         width: 100%;
         background-color: black;
+    }
+    #desktop-grid {
+        visibility: hidden;
+    }
+
+    #mobile-grid {
+        visibility: visible;
     }
 
     #loginForm, #form-container {

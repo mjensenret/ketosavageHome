@@ -2,37 +2,37 @@
 
 <div id="currentMacroGauge">
     @(Html.DevExtreme().BarGauge()
-        .ID("currentWeekGauge")
-        .StartValue(0)
-        .EndValue(1)
-        .Size(s => s
-            .Height(250)
-            .Width(300)
-        )
-        .Values(new JS("macrosToValues()"))
-        .Label(l => l
-            .Indent(10)
-            .Format(f => f
-                .Type(Format.Percent)
-                .Precision(0)
-        ))
-        .Title(t => t
-            .Text("Current Week")
-            .Font(f => f.Color("White").Size(14))
-        )
+                .ID("currentWeekGauge")
+                .StartValue(0)
+                .EndValue(1)
+                .Size(s => s
+                    .Height(250)
+                    .Width(300)
+                )
+                .Values(new JS("macrosToValues()"))
+                .Label(l => l
+                    .Indent(10)
+                    .Format(f => f
+                        .Type(Format.Percent)
+                        .Precision(0)
+                ))
+                .Title(t => t
+                    .Text("Current Week")
+                    .Font(f => f.Color("White").Size(14))
+                )
     )
-
-    <div id="currentWeekGaugePanel">
-        @foreach (var macro in Model)
-        {
-            @(Html.DevExtreme().CheckBox()
-                .Value(macro.active)
-                .Text(macro.macro)
-                .OnValueChanged("checkBox_valueChanged")
-            )
-        }
-    </div>
 </div>
+<div id="currentWeekGaugePanel">
+    @foreach (var macro in Model)
+    {
+        @(Html.DevExtreme().CheckBox()
+            .Value(macro.active)
+            .Text(macro.macro)
+            .OnValueChanged("checkBox_valueChanged")
+        )
+    }
+</div>
+
 
 <script>
     var macros = @Html.Raw(Newtonsoft.Json.JsonConvert.SerializeObject(Model));

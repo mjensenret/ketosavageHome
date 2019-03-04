@@ -36,7 +36,7 @@ namespace KetoSavageWeb.Controllers
 
         //
         // GET: /Manage/Index
-        public async Task<ActionResult> Index(ManageMessageId? message)
+        public async Task<ActionResult> Index(ManageMessageId? message, string errorMessage)
         {
             ViewBag.StatusMessage =
                 message == ManageMessageId.ChangePasswordSuccess ? "Your password has been changed."
@@ -46,6 +46,7 @@ namespace KetoSavageWeb.Controllers
                 : message == ManageMessageId.AddPhoneSuccess ? "Your phone number was added."
                 : message == ManageMessageId.RemovePhoneSuccess ? "Your phone number was removed."
                 : "";
+            ViewBag.ErrorMessage = errorMessage;
 
             var userId = Convert.ToInt32(User.Identity.GetUserId());
             var model = new IndexViewModel

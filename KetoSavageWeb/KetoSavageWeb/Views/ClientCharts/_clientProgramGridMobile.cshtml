@@ -1,0 +1,119 @@
+﻿@using DevExpress.XtraLayout.Filtering.Templates
+@*@model IEnumerable<KetoSavageWeb.ViewModels.UserProgramProgress>*@
+@{ var today = DateTime.Now; }
+<div id="devExtremeProgramMobileGrid">
+    @(Html.DevExtreme().DataGrid()
+        .ID("gridClientProgramMobile")
+        .DataSource(d => d.WebApi()
+            .Controller("ProgressApi")
+            .LoadAction("GetUserProgressGrid")
+            .LoadParams(new {userId = ViewData["UserId"]} )
+            .Key("Date")
+        )
+        .RowAlternationEnabled(true)
+        //.FocusedRowEnabled(true)
+        //.FocusedRowKey(new DateTime(today.Year, today.Month, today.Day).ToString("s")) //<-- not sure what to put here...
+        //.OnInitialized("onDataGridInitialized")
+        //      .OnFocusedRowChanging("onFocusedRowChanging")
+        .Scrolling(scrolling => scrolling.Mode(GridScrollingMode.Virtual))
+        .Columns(c =>
+        {
+            c.Add()
+                .DataField("Date")
+                .DataType(GridColumnDataType.Date)
+                .AllowEditing(false)
+                .Width(80);
+            c.Add()
+                .Caption("W")
+                .Columns(a =>
+                {
+                    a.Add()
+                    .Caption("V")
+                    .AllowEditing(false)
+                    .CalculateCellValue(@<text>
+                                            function(data) {
+                                            var variance = (data.ActualWeight - data.PlannedWeight)
+                                            variance = variance.toFixed(2)
+                                            @*return [data.ActualWeight - data.PlannedWeight]*@
+                                            return variance
+                            }
+                        </text>);
+                });
+        c.Add()
+        .Caption("F")
+        .Columns(a =>
+        {
+        a.Add()
+                .Caption("V")
+                .AllowEditing(false)
+                .CalculateCellValue(@<text>
+                    function(data) {
+                    return [data.ActualFat - data.PlannedFat]
+                    }
+                </text>);
+        });
+                c.Add()
+                .Caption("P")
+                .Columns(a =>
+                {
+                    a.Add()
+                            .Caption("V")
+                            .AllowEditing(false)
+                            .CalculateCellValue(@<text>
+                                function(data) {
+                                return [data.ActualProtein - data.PlannedProtein]
+                                }
+                            </text>);
+                                });
+                    c.Add()
+                    .Caption("C")
+                    .Columns(a =>
+                    {
+                        a.Add()
+                            .Caption("V")
+                            .AllowEditing(false)
+                            .CalculateCellValue(@<text>
+                                    function(data) {
+                                        return [data.ActualCarbohydrates - data.PlannedCarbohydrates]
+                                    }
+                            </text>);
+                    });
+
+                })
+
+    )
+</div>
+
+<script>
+    function onDataGridInitialized(e) {
+        dataGrid = e.component;
+        window.console.log(dataGrid);
+    }
+
+    function onFocusedRowChanging(e) {
+        var rowsCount = e.component.getVisibleRows().length,
+            pageCount = e.component.pageCount(),
+            pageIndex = e.component.pageIndex();
+
+        if(e.event.key && e.prevRowIndex === e.newRowIndex) {
+            if(e.newRowIndex === rowsCount - 1 && pageIndex < pageCount - 1) {
+                e.component.pageIndex(pageIndex + 1).done(function() {
+                    e.component.option("focusedRowIndex", 0);
+                });
+            } else if(e.newRowIndex === 0 && pageIndex > 0) {
+                e.component.pageIndex(pageIndex - 1).done(function() {
+                    e.component.option("focusedRowIndex", rowsCount - 1);
+                });
+            }
+        }
+    }
+
+    function onRowUpdating(e) {
+        for (var property in e.oldData) {
+            if (!e.newData.hasOwnProperty(property)) {
+                e.newData[property] = e.oldData[property];
+            }
+        }
+    }
+
+</script>

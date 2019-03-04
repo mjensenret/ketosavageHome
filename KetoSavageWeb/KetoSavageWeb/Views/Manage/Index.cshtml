@@ -1,52 +1,20 @@
 ﻿
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Manage Account";
 }
-
-<div class="long-title"><h3>Manage Account</h3></div>
-<div id="form-container">
-    @(Html.DevExtreme().Form()
-        .ID("manageAccountMainForm")
-        .Items(items =>
-        {
-            items.AddGroup()
-                .Caption("Personal Information")
-                .Items(groupItems =>
-                {
-                    groupItems.AddSimple();
-                });
-            items.AddGroup()
-                .Caption("Reset Password")
-                .Items(groupItems => 
-                {
-                    groupItems.AddSimple();
-                });
-            items.AddGroup()
-                .Caption("Contact Information")
-                .Items(groupItems => {
-                    groupItems.AddTabbed()
-                    .TabPanelOptions(o => {
-                        o.DeferRendering(false);
-                    })
-                    .Tabs(tabItems => {
-                        tabItems.Add()
-                            .Title("Email")
-                            .Items(tabItem => tabItem.AddSimple());
-                        tabItems.Add()
-                            .Title("Phone")
-                            .Items(tabItem => tabItem.AddSimple());
-                        tabItems.Add()
-                            .Title("Instagram")
-                            .Items(tabItem => tabItem.AddSimple());
-                        tabItems.Add()
-                            .Title("FaceBook")
-                            .Items(tabItem => tabItem.AddSimple());
-                    });
-                });
-        })
-
-
-
-    )
+<div class="row">
+    <div class="col-sm-12">
+        <p>@ViewBag.StatusMessage</p>
+        <p>@ViewBag.ErrorMessage</p>
+    </div>
 </div>
-
+<div class="row">
+    <div class="col-sm-12">
+        @Html.Action("DxPersonalInformation", "Account")
+    </div>
+</div>
+<div class="row">
+    <div class="col-sm-12">
+        @Html.Action("DxChangePassword", "Account")
+    </div>
+</div>

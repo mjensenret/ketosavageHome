@@ -110,41 +110,49 @@
     }).GetHtml()
 </div>
 
-<div id="weightGraph">
-    @Html.DevExpress().Panel(settings =>
-    {
-        settings.Name = "pnlWeightGraph";
-        settings.SetContent(() =>
+<div class="row">
+    <div class="col-sm-12 col-md-8 col-lg-10 col-xl-11">
+        @Html.Action("ClientWeightGraph", "ClientCharts", new { userId = Session["UserId"] })
+    </div>
+</div>
+<div class="row">
+    <div class="col-sm-12 col-md-6 col-lg-4 col-xl-2">
+        @Html.Action("ClientPerformanceGauge", "ClientCharts", new { userId = Session["UserId"] })
+    </div>
+    <div class="col-sm-12 col-md-6 col-lg-4 col-xl-2">
+        @Html.Action("ClientPastWeekMacroChart", "ClientCharts", new { userId = Session["UserId"] })
+    </div>
+    <div class="col-sm-12 col-md-6 col-lg-4 col-xl-2">
+        @Html.Action("PvAMacroPieChart", "ClientCharts")
+    </div>
+    <div class="col-sm-12 col-md-6 col-lg-4 col-xl-2">
+        @Html.Action("PvACurrentMacroPieChart", "ClientCharts")
+    </div>
+</div>
+<div class="row">
+    <div class="col-sm-12 col-md-8 col-lg-6 col-xl-4" style="background-color: #0a0a0a">
+        @Html.Action("ClientCurrentWeekMacroGauge", "ClientCharts", new { userId = Session["UserId"] })
+    </div>
+</div>
+<div class="row">
+    <div class="col-sm-12 col-md-8 col-lg-10 col-xl-11">
+        @if (Request.Browser.IsMobileDevice)
         {
-            var userId = Session["UserId"];
-            Html.RenderAction("ClientWeightGraph", "ClientCharts", new { userId = userId });
-        });
+            if (Request.Browser.ScreenPixelsWidth > 780)
+            {
+                @Html.Action("ClientProgramGrid", "ClientCharts", new { userId = Session["UserId"] })
+            }
+            else
+            {
+                @Html.Action("ClientProgramGridMobile", "ClientCharts", new { userId = Session["UserId"] })
+            }
 
-    }).GetHtml()
-</div>
-<div id="gaugeContainer">
-    @Html.DevExpress().Panel(settings =>
-{
-    settings.Name = "pnlCharts";
-    settings.SetContent(() =>
-    {
-        Html.RenderAction("ClientPerformanceGauge", "ClientCharts", new { userId = Session["UserId"] });
-        Html.RenderAction("ClientPastWeekMacroChart", "ClientCharts", new { userId = Session["UserId"] });
-        Html.RenderAction("PvAMacroPieChart", "ClientCharts");
-        Html.RenderAction("PvACurrentMacroPieChart", "ClientCharts");
-        Html.RenderAction("ClientCurrentWeekMacroGauge", "ClientCharts", new { userId = Session["UserId"] });
-    });
-}).GetHtml()
-</div>
-<div id="gridContainer">
-    @Html.DevExpress().Panel(settings =>
-    {
-        settings.Name = "pnlGrids";
-        settings.SetContent(() =>
+        }
+        else
         {
-            Html.RenderAction("ClientProgramGrid", "ClientCharts", new { userId = Session["UserId"] });
-        });
-    }).GetHtml()
+            @Html.Action("ClientProgramGrid", "ClientCharts", new { userId = Session["UserId"] })
+        }
+    </div>
 </div>
 
 

@@ -13,6 +13,7 @@ using Microsoft.Owin.Security;
 using KetoSavageWeb.Repositories;
 using System.Data.Entity;
 using KetoSavageWeb.Domain.Infrastructure;
+using static KetoSavageWeb.Controllers.ManageController;
 
 namespace KetoSavageWeb.Controllers {
     public class AccountController : KSBaseController
@@ -25,7 +26,7 @@ namespace KetoSavageWeb.Controllers {
         ApplicationUserManager _userManager;
 
         //private KSDataContext _context { get { return HttpContext.GetOwinContext().Get<KSDataContext>(); } }
-    
+
 
         public AccountController()
         {
@@ -47,6 +48,18 @@ namespace KetoSavageWeb.Controllers {
             private set
             {
                 _signInManager = value;
+            }
+        }
+
+        public ApplicationUserManager UserManager
+        {
+            get
+            {
+                return _userManager ?? HttpContext.GetOwinContext().Get<ApplicationUserManager>();
+            }
+            private set
+            {
+                _userManager = value;
             }
         }
 
@@ -155,11 +168,21 @@ namespace KetoSavageWeb.Controllers {
             return View(model);
         }
 
+        // GET: /Account/DxPersonalInformation
+        public PartialViewResult DxPersonalInformation()
+        {
+            return PartialView("_dxPersonalInformation");
+        }
         //
         // GET: /Account/ChangePassword
 
         public ActionResult ChangePassword() {
             return View();
+        }
+
+        public PartialViewResult DxChangePassword()
+        {
+            return PartialView("_dxChangePassword");
         }
 
         //
@@ -173,7 +196,7 @@ namespace KetoSavageWeb.Controllers {
                 {
                     return View(model);
                 }
-                var passwordUser = UserManager.FindByNameAsync(User.Identity.GetUserName());
+                var passwordUser = await UserManager.FindByNameAsync(User.Identity.GetUserName());
                 var result = await UserManager.ChangePasswordAsync(passwordUser.Id, model.OldPassword, model.NewPassword);
                 if (result.Succeeded)
                 {
@@ -193,6 +216,43 @@ namespace KetoSavageWeb.Controllers {
             // If we got this far, something failed, redisplay form
             return View(model);
         }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<ActionResult> DxChangePassword(ChangePasswordModel model)
+        {
+            ManageMessageId? message;
+
+            if (ModelState.IsValid)
+            {
+                if (!ModelState.IsValid)
+                {
+                    return PartialView("_dxChangePassword",model);
+                }
+                var passwordUser = await UserManager.FindByNameAsync(User.Identity.GetUserName());
+                var result = await UserManager.ChangePasswordAsync(passwordUser.Id, model.OldPassword, model.NewPassword);
+                if (result.Succeeded)
+                {
+                    //var user = await UserManager.FindByIdAsync(User.Identity.GetUserId());
+                    var user = await UserManager.FindByNameAsync(User.Identity.GetUserName());
+                    if (user != null)
+                    {
+                        await SignInManager.SignInAsync(user, isPersistent: false, rememberBrowser: false);
+                    }
+
+                    message = ManageMessageId.ChangePasswordSuccess;
+                    return RedirectToAction("Index", "Manage", new { Message = message});
+                }
+                ViewBag.ErrorMessage = result.Errors.First();
+                message = ManageMessageId.Error;
+                return RedirectToAction("Index", "Manage", new { Message = message, errorMessage = ViewBag.ErrorMessage });
+
+            }
+
+            // If we got this far, something failed, redisplay form
+            message = ManageMessageId.Error;
+            return RedirectToAction("Index", "Manage", new { Message = message });
+            }
 
         //
         // GET: /Account/ChangePasswordSuccess

@@ -351,6 +351,49 @@ namespace KetoSavageWeb.Controllers
             return PartialView("_clientProgramGrid", q);
         }
 
+        public PartialViewResult ClientProgramGridMobile(int userId)
+        {
+            var currentWeekNumber = dateRepository.getCurrentWeekNumber(DateTime.Now);
+            var userProgress = userProgramRepository.GetActive.Where(x => x.ProgramUserId == userId).Include(y => y.DailyProgress).SelectMany(z => z.DailyProgress);
+
+            var q = (userProgress
+                .OrderBy(u => u.DateId)
+                )
+                .Where(x => x.Dates.ISOWeekOfYear <= currentWeekNumber + 1)
+                .Select(x => new
+                {
+                    x.Dates.Date,
+                    x.Dates.WeekDayName,
+                    x.PlannedWeight,
+                    x.ActualWeight,
+                    x.PlannedFat,
+                    x.ActualFat,
+                    x.PlannedProtein,
+                    x.ActualProtein,
+                    x.PlannedCarbohydrate,
+                    x.ActualCarbohydrate
+                })
+                .ToList()
+                .Select(y => new UserProgramProgress()
+                {
+                    Date = y.Date,
+                    WeekDay = y.WeekDayName,
+                    PlannedWeight = y.PlannedWeight,
+                    ActualWeight = y.ActualWeight,
+                    PlannedFat = y.PlannedFat,
+                    ActualFat = y.ActualFat,
+                    PlannedProtein = y.PlannedProtein,
+                    ActualProtein = y.ActualProtein,
+                    PlannedCarbohydrates = y.PlannedCarbohydrate,
+                    ActualCarbohydrates = y.ActualCarbohydrate
+
+                });
+
+            ViewData["UserId"] = userId;
+
+            return PartialView("_clientProgramGridMobile", q);
+        }
+
         public PartialViewResult PvAMacroPieChart()
         {
 
