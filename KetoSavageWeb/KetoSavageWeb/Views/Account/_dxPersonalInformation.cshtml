@@ -6,7 +6,7 @@
 {
     @Html.AntiForgeryToken()
 
-    @Html.Hidden("UserId");
+    @Html.HiddenFor(m => m.Id);
     @(Html.DevExtreme().Form<EditUserViewModel>()
                     .ID("updatePersonalInfo")
                     .ShowValidationSummary(true)

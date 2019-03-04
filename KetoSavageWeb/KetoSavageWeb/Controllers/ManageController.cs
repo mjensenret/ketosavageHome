@@ -260,6 +260,23 @@ namespace KetoSavageWeb.Controllers
             return result.Succeeded ? RedirectToAction("ManageLogins") : RedirectToAction("ManageLogins", new { Message = ManageMessageId.Error });
         }
 
+        public async Task<PartialViewResult> PersonalInfo()
+        {
+            var user = await UserManager.FindByIdAsync(Convert.ToInt32(User.Identity.GetUserId()));
+            if (user == null)
+            {
+                //return View("Error");
+            }
+            var model = new EditUserViewModel();
+            model.Id = user.Id;
+            model.UserName = user.UserName;
+            model.FirstName = user.FirstName;
+            model.LastName = user.LastName;
+            model.Email = user.Email;
+
+            return PartialView("_personalInfo", model);
+        }
+
 #region Helpers
         // Used for XSRF protection when adding external logins
         private const string XsrfKey = "XsrfId";

@@ -169,10 +169,40 @@ namespace KetoSavageWeb.Controllers {
         }
 
         // GET: /Account/DxPersonalInformation
-        public PartialViewResult DxPersonalInformation()
+        public async Task<PartialViewResult> EditPersonalInfo()
         {
-            return PartialView("_dxPersonalInformation");
+            var user = await UserManager.FindByIdAsync(Convert.ToInt32(User.Identity.GetUserId()));
+            var model = new EditUserViewModel();
+            model.Id = user.Id;
+            model.FirstName = user.FirstName;
+            model.LastName = user.LastName;
+            model.Email = user.Email;
+
+            return PartialView("_dxPersonalInformation", model);
         }
+
+        public async Task<ActionResult> DxUpdatePersonal(EditUserViewModel model)
+        {
+            var user = await UserManager.FindByIdAsync(model.Id);
+            try
+            {
+                user.FirstName = model.FirstName;
+                user.LastName = model.LastName;
+                user.Email = model.Email;
+                user.LastModified = DateTime.Now;
+                user.LastModifiedBy = model.UserName;
+
+                await UserManager.UpdateAsync(user);
+            }
+            catch (Exception e)
+            {
+                ViewBag.ErrorMessage = e.Message;
+            }
+
+            return RedirectToAction("Index", "Manage", new { errorMessage = ViewBag.ErrorMessage });
+
+        }
+
         //
         // GET: /Account/ChangePassword
 

@@ -8,13 +8,45 @@
         <p>@ViewBag.ErrorMessage</p>
     </div>
 </div>
-<div class="row">
+@*<div class="row">
     <div class="col-sm-12">
         @Html.Action("DxPersonalInformation", "Account")
     </div>
-</div>
+</div>*@
 <div class="row">
+    <div class="col-sm-12">
+        <h5>Personal Information:</h5>
+        @Html.Action("PersonalInfo")
+    </div>
+</div>
+@*<div class="row">
     <div class="col-sm-12">
         @Html.Action("DxChangePassword", "Account")
     </div>
-</div>
+</div>*@
+
+@using (Html.DevExtreme().NamedTemplate("editPersonalInfo"))
+{
+    @Html.Action("EditPersonalInfo", "Account");
+}
+
+@using (Html.DevExtreme().NamedTemplate("changePassword"))
+{
+    @Html.Action("DxChangePassword", "Account")
+}
+
+<script type="text/javascript">
+    function showEditPersonalDetails() {
+        var mainPopup = $("#mainDxPopup").dxPopup("instance");
+        mainPopup.option("contentTemplate", $("#editPersonalInfo"));
+        mainPopup.option("title", "Update Personal Information");
+        mainPopup.show();
+    }
+
+    function showChangePassword() {
+        var mainPopup = $("#mainDxPopup").dxPopup("instance");
+        mainPopup.option("contentTemplate", $("#changePassword"));
+        mainPopup.option("title", "Change Password");
+        mainPopup.show();
+    }
+</script>

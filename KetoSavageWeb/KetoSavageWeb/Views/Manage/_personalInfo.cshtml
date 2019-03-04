@@ -1,1 +1,38 @@
-﻿
+﻿@model KetoSavageWeb.Models.EditUserViewModel
+
+<div class="row">
+    <div class="col-sm-12">
+        <b>User Name: </b>@Html.DisplayFor(m => m.UserName)
+    </div>
+</div>
+<div class="row">
+    <div class="col-sm-12">
+        <b>First Name: </b>@Html.DisplayFor(m => m.FirstName)
+    </div>
+</div>
+<div class="row">
+    <div class="col-sm-12">
+        <b>Last Name: </b>@Html.DisplayFor(m => m.LastName)
+    </div>
+</div>
+<div class="row">
+    <div class="col-sm-12">
+        <b>Email: </b>@Html.DisplayFor(m => m.Email)
+    </div>
+</div>
+<div class="row">
+    <div class="col-sm-12">
+        @(Html.DevExtreme().Button()
+            .ID("btnEditPersonalInfo")
+            .Text("Edit")            
+            .OnClick("showEditPersonalDetails")
+            .UseSubmitBehavior(false)
+        )
+        @(Html.DevExtreme().Button()
+            .ID("btnChangePassword")
+            .Text("Change Password")
+            .OnClick("showChangePassword")
+            .UseSubmitBehavior(false)
+        )
+    </div>
+</div>
