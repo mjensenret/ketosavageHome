@@ -183,6 +183,7 @@ namespace KetoSavageWeb.Controllers {
 
         public async Task<ActionResult> DxUpdatePersonal(EditUserViewModel model)
         {
+            ManageMessageId? message;
             var user = await UserManager.FindByIdAsync(model.Id);
             try
             {
@@ -192,7 +193,19 @@ namespace KetoSavageWeb.Controllers {
                 user.LastModified = DateTime.Now;
                 user.LastModifiedBy = model.UserName;
 
-                await UserManager.UpdateAsync(user);
+                IdentityResult result = await UserManager.UpdateAsync(user);
+                if (result.Succeeded)
+                {
+                    message = ManageMessageId.UpdatePersonalSuccess;
+                    return RedirectToAction("Index", "Manage", new { Message = message });
+                }
+                else
+                {
+                    message = ManageMessageId.Error;
+                    ViewBag.ErrorMessage = result.Errors.First();
+                    return RedirectToAction("Index", "Manage", new { Message = message, errorMessage = ViewBag.ErrorMessage });
+                }
+                    
             }
             catch (Exception e)
             {

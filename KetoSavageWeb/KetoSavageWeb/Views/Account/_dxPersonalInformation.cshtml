@@ -15,12 +15,15 @@
                     .Items(items =>
                     {
                         items.AddGroup()
-                            .Caption("Update Personal Information")
                             .Items(groupItems =>
                             {
                                 groupItems.AddSimpleFor(m => m.FirstName);
                                 groupItems.AddSimpleFor(m => m.LastName);
-                                groupItems.AddSimpleFor(m => m.Email);
+                                groupItems.AddSimpleFor(m => m.Email)
+                                    .Editor(e => e
+                                        .TextBox()
+                                        .Mode(DevExtreme.AspNet.Mvc.TextBoxMode.Email)
+                                        );
                             });
                         items.AddButton()
                         .HorizontalAlignment(HorizontalAlignment.Left)

@@ -39,7 +39,8 @@ namespace KetoSavageWeb.Controllers
         public async Task<ActionResult> Index(ManageMessageId? message, string errorMessage)
         {
             ViewBag.StatusMessage =
-                message == ManageMessageId.ChangePasswordSuccess ? "Your password has been changed."
+                message == ManageMessageId.UpdatePersonalSuccess ? "Personal information has been updated successfully."
+                : message == ManageMessageId.ChangePasswordSuccess ? "Your password has been changed."
                 : message == ManageMessageId.SetPasswordSuccess ? "Your password has been set."
                 : message == ManageMessageId.SetTwoFactorSuccess ? "Your two-factor authentication provider has been set."
                 : message == ManageMessageId.Error ? "An error has occurred."
@@ -319,6 +320,7 @@ namespace KetoSavageWeb.Controllers
 
         public enum ManageMessageId
         {
+            UpdatePersonalSuccess,
             AddPhoneSuccess,
             ChangePasswordSuccess,
             SetTwoFactorSuccess,
