@@ -1,9 +1,9 @@
-﻿
+﻿@model List<KetoSavageWeb.ViewModels.ClientPerformanceScore>
+
 @(Html.DevExtreme().LinearGauge()
     .ID("clientScoreChart")
     .Title(t => t
         .Text("Client Score - Last 7 Days")
-        //.Subtitle(s => s.Text("test"))
         .Font(f => f
             .Color("#dedede")
             .Weight(900)
@@ -27,5 +27,5 @@
         .Color("#4286f4")
         .Offset(20)
     )
-    .Value(8)
+    .Value(Model[0].Score)
 )

@@ -1,31 +1,32 @@
-﻿
+﻿@model List<KetoSavageWeb.ViewModels.ClientPerformanceScore>
+
 @(Html.DevExtreme().LinearGauge()
-    .ID("clientLifetimeScoreChart")
-    .Title(t => t
-    .Text("Client Score - Program Lifetime")
-    //.Subtitle(s => s.Text("test"))
-    .Font(f => f
-        .Color("#dedede")
-        .Weight(900)
-        .Size(16)
-    ))
-    .Scale(s => s
-        .StartValue(0)
-        .EndValue(10)
-        .TickInterval(1)
+        .ID("clientLifetimeScoreChart")
+        .Title(t => t
+        .Text("Client Score - Program Lifetime")
+        //.Subtitle(s => s.Text("test"))
+        .Font(f => f
+            .Color("#dedede")
+            .Weight(900)
+            .Size(16)
+        ))
+        .Scale(s => s
+            .StartValue(0)
+            .EndValue(10)
+            .TickInterval(1)
+            )
+        .RangeContainer(r => r
+            .Offset(10)
+            .Ranges(c =>
+            {
+                c.Add().StartValue(0).EndValue(3).Color("#92000A");
+                c.Add().StartValue(3).EndValue(6).Color("#E6E200");
+                c.Add().StartValue(6).EndValue(10).Color("#77DD77");
+            })
         )
-    .RangeContainer(r => r
-        .Offset(10)
-        .Ranges(c =>
-        {
-            c.Add().StartValue(0).EndValue(3).Color("#92000A");
-            c.Add().StartValue(3).EndValue(6).Color("#E6E200");
-            c.Add().StartValue(6).EndValue(10).Color("#77DD77");
-        })
-    )
-    .ValueIndicator(v => v
-        .Color("#4286f4")
-        .Offset(20)
-    )
-    .Value(9)
+        .ValueIndicator(v => v
+            .Color("#4286f4")
+            .Offset(20)
+        )
+        .Value(Model[0].Score)
 )

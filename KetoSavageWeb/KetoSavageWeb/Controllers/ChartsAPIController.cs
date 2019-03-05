@@ -98,7 +98,7 @@ namespace KetoSavageWeb.Controllers
 
         }
 
-        private List<ClientPerformanceScore> returnVarianceScore(IEnumerable<ClientPerformanceData> pd)
+        public List<ClientPerformanceScore> returnVarianceScore(IEnumerable<ClientPerformanceData> pd)
         {
             var data = pd
                 .Select(x => new
