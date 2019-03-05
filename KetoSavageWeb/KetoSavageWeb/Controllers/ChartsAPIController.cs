@@ -146,6 +146,8 @@ namespace KetoSavageWeb.Controllers
                 (totalVariance < 100) ? 1 :
                 0;
         }
+
+
     }
 
 

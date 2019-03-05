@@ -1360,6 +1360,8 @@
     <Content Include="Views\Manage\_personalInfo.cshtml" />
     <Content Include="Views\Account\_dxChangePassword.cshtml" />
     <Content Include="Views\Account\_dxPersonalInformation.cshtml" />
+    <Content Include="Views\ClientCharts\_clientScoreChart.cshtml" />
+    <Content Include="Views\ClientCharts\_clientLifetimeScoreChart.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

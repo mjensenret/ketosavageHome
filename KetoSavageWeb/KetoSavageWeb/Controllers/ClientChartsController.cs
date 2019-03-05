@@ -404,5 +404,15 @@ namespace KetoSavageWeb.Controllers
         {
             return PartialView("_plannedVsActualCurrentWeekPie");
         }
+
+        public PartialViewResult ClientMacroScoreChart()
+        {
+            return PartialView("_clientScoreChart");
+        }
+
+        public PartialViewResult ClientLifetimeMacroScoreChart()
+        {
+            return PartialView("_clientLifetimeScoreChart");
+        }
     }
 }
