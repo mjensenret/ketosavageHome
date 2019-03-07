@@ -123,8 +123,9 @@ namespace KetoSavageWeb.Controllers
         [System.Web.Http.HttpGet]
         public HttpResponseMessage getHungerLevelsByUser(DataSourceLoadOptions loadOptions, int userId)
         {
-            var masterProgramId = _context.UserPrograms.Where(x => x.ProgramUserId == userId && x.IsActive && !x.IsDeleted).Select(y => y.MasterProgram.Id).FirstOrDefault();
-            var hungerLevels = _context.HungerLevels.Where(x => x.programId == masterProgramId);
+            var masterProgramId = _context.UserPrograms.Where(x => x.ProgramUserId == userId && x.IsActive && !x.IsDeleted).ToList().Select(y => y.MasterProgram.Id).FirstOrDefault();
+            var hungerLevels = _context.HungerLevels.Where(x => x.programId == masterProgramId).ToList();
+
 
             return Request.CreateResponse(DataSourceLoader.Load(hungerLevels, loadOptions));
         }
