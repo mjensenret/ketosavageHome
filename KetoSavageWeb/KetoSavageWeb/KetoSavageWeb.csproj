@@ -1338,20 +1338,6 @@
     <Content Include="Views\ClientCharts\_clientProgramGridMobile.cshtml" />
     <Content Include="Views\Account\_dxChangePassword.cshtml" />
     <Content Include="Views\Account\_dxPersonalInformation.cshtml" />
-    <Content Include="Views\ClientCharts\_clientScoreChart.cshtml" />
-    <Content Include="Views\ClientCharts\_clientLifetimeScoreChart.cshtml" />
-    <Content Include="Views\Shared\_rootLayout.cshtml" />
-    <Content Include="Views\Manage\AddPhoneNumber.cshtml" />
-    <Content Include="Views\Manage\Index-orig.cshtml" />
-    <Content Include="Views\Manage\Index.cshtml" />
-    <Content Include="Views\Manage\ManageLogins.cshtml" />
-    <Content Include="Views\Manage\SetPassword.cshtml" />
-    <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
-    <Content Include="Views\Manage\_personalInfo.cshtml" />
-    <Content Include="Views\UserPrograms\_dxUserGridViewPartial.cshtml" />
-    <Content Include="Views\UserPrograms\_dxManageMacroDataGrid.cshtml" />
-    <Content Include="Views\UserPrograms\_dxEnterWeeklyMacroForm.cshtml" />
-    <Content Include="Views\UserPrograms\_dxAddUpdateUserProgramForm.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
