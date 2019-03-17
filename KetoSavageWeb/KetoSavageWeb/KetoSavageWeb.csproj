@@ -243,9 +243,18 @@
     <Reference Include="DevExpress.XtraEditors.v18.2, Version=18.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraPrinting.v18.2, Version=18.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="System.Xml.Linq" />
+    <Reference Include="Web.Optimization, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Web.Optimization.0.0.7\lib\net40\Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="Web.Optimization.Bundles.AjaxMin, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Web.Optimization.Bundles.AjaxMin.0.0.8\lib\net40\Web.Optimization.Bundles.AjaxMin.dll</HintPath>
+    </Reference>
     <Reference Include="WebActivatorEx, Version=2.0.0.0, Culture=neutral, PublicKeyToken=7b26dc2a43f6a0d4, processorArchitecture=MSIL">
       <HintPath>..\packages\WebActivatorEx.2.2.0\lib\net40\WebActivatorEx.dll</HintPath>
       <Private>True</Private>
+    </Reference>
+    <Reference Include="WebApiContrib.IoC.Ninject, Version=0.9.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\WebApiContrib.IoC.Ninject.0.9.3.0\lib\net40\WebApiContrib.IoC.Ninject.dll</HintPath>
     </Reference>
     <Reference Include="WebGrease, Version=1.5.2.14234, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\WebGrease.1.5.2\lib\WebGrease.dll</HintPath>
@@ -613,7 +622,6 @@
     <Content Include="App_Themes\KetoSavage\XtraReports\sprite.svg" />
     <Content Include="App_Themes\KetoSavage\XtraReports\spriteAccessible.css" />
     <Content Include="App_Themes\KetoSavage\XtraReports\styles.css" />
-    <Content Include="bin\Content\generic.dark.custom.css" />
     <Content Include="bin\Content\Images\AquaHeader.jpg" />
     <Content Include="bin\Content\Images\BlackGlassHeader.jpg" />
     <Content Include="bin\Content\Images\GlassHeader.jpg" />
@@ -628,6 +636,7 @@
     <Content Include="Content\bootstrap.min.css">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="Content\dx-KetoSavage.css" />
     <Content Include="Content\dx.android5.light.css" />
     <Content Include="Content\dx.carmine.compact.css" />
     <Content Include="Content\dx.carmine.css" />
@@ -662,7 +671,7 @@
     <Content Include="Content\dx.win10.white.css" />
     <Content Include="Content\dx.win8.black.css" />
     <Content Include="Content\dx.win8.white.css" />
-    <Content Include="Content\generic.dark.custom.css">
+    <Content Include="Content\ketoSavageTheme.css">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Content\Images\AquaHeader.jpg">
@@ -695,6 +704,9 @@
     <Content Include="Content\jquery-ui.min.css">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="Content\Site.min.css">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Content\Site.css">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -717,6 +729,8 @@
     <Content Include="Scripts\cldr\unresolved.min.js" />
     <Content Include="Scripts\dx.all.debug.js" />
     <Content Include="Scripts\dx.all.js" />
+    <Content Include="Scripts\dx.custom.debug.js" />
+    <Content Include="Scripts\dx.custom.js" />
     <Content Include="Scripts\dx.mobile.debug.js" />
     <Content Include="Scripts\dx.mobile.js" />
     <Content Include="Scripts\dx.viz-web.debug.js" />
@@ -1237,6 +1251,7 @@
     <Content Include="Scripts\localization\dx.web.ru.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Scripts\site.js" />
+    <Content Include="Scripts\site.min.js" />
     <Content Include="Scripts\vectormap-data\africa.js" />
     <Content Include="Scripts\vectormap-data\canada.js" />
     <Content Include="Scripts\vectormap-data\eurasia.js" />
@@ -1265,70 +1280,37 @@
       <SubType>Designer</SubType>
     </Content>
     <Content Include="Views\_ViewStart.cshtml" />
-    <Content Include="Views\Account\ChangePassword.cshtml" />
-    <Content Include="Views\Account\ChangePasswordSuccess.cshtml" />
-    <Content Include="Views\Account\Login.cshtml" />
     <Content Include="Views\Account\Register.cshtml" />
-    <Content Include="Views\Home\Index_orig.cshtml" />
     <Content Include="Views\Shared\_lightLayout.cshtml" />
-    <Content Include="Views\Shared\_mainLayout.cshtml" />
-    <Content Include="Views\Shared\_rootLayout.cshtml" />
     <Content Include="Views\Shared\_leftMenuPartialView.cshtml" />
-    <Content Include="Views\Shared\FooterPartialView.cshtml" />
     <Content Include="Views\Shared\HeaderPartialView.cshtml" />
     <Content Include="Views\Shared\LogOnPartialView.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
-    <Content Include="Views\Manage\Index-orig.cshtml" />
-    <Content Include="Views\Manage\AddPhoneNumber.cshtml" />
-    <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Account\_ExternalLoginsListPartial.cshtml" />
-    <Content Include="Views\Manage\ManageLogins.cshtml" />
-    <Content Include="Views\Account\ExternalLoginConfirmation.cshtml" />
-    <Content Include="Views\Account\ConfirmEmail.cshtml" />
-    <Content Include="Views\Shared\Error.cshtml" />
-    <Content Include="Views\Account\ForgotPassword.cshtml" />
-    <Content Include="Views\Account\ForgotPasswordConfirmation.cshtml" />
-    <Content Include="Views\Account\ResetPassword.cshtml" />
-    <Content Include="Views\Account\ResetPasswordConfirmation.cshtml" />
     <Content Include="Views\Account\SendCode.cshtml" />
     <Content Include="Views\Account\VerifyCode.cshtml" />
-    <Content Include="Views\Manage\SetPassword.cshtml" />
-    <Content Include="Views\Home\GridViewPartialView.cshtml" />
-    <Content Include="Views\Account\_loginPartial_orig.cshtml" />
-    <Content Include="Views\Account\ManageUsers.cshtml" />
     <Content Include="Views\UsersAdmin\AddUser.cshtml" />
     <Content Include="Views\UsersAdmin\Index.cshtml" />
-    <Content Include="Views\UsersAdmin\UserGridPartialView.cshtml" />
     <Content Include="Views\UsersAdmin\AddNewUserPartial.cshtml" />
-    <Content Include="Views\UsersAdmin\UpdateUserPartial.cshtml" />
     <Content Include="Views\UsersAdmin\DeleteUserPartial.cshtml" />
     <Content Include="Views\UsersAdmin\UpdateUser.cshtml" />
     <Content Include="Views\ManageUsers\Index.cshtml" />
     <Content Include="Views\ManageUsers\_GridViewPartial.cshtml" />
     <Content Include="Views\Shared\_menuPartial.cshtml" />
-    <Content Include="Views\Account\_loginPartial.cshtml" />
     <Content Include="Views\UserPrograms\Index.cshtml" />
-    <Content Include="Views\UserPrograms\_userGridViewPartial.cshtml" />
-    <Content Include="Views\Account\_registerPartial.cshtml" />
+    <Content Include="Views\UserPrograms\_userGridViewPartial_remove.cshtml" />
     <Content Include="Views\Programs\Index.cshtml" />
     <Content Include="Views\Programs\_programGridViewPartial.cshtml" />
     <Content Include="Views\UserPrograms\_userProgramDetails.cshtml" />
     <Content Include="Views\UserPrograms\_userProgramHeader.cshtml" />
     <Content Include="Views\ManageUsers\_userContactCardPartial.cshtml" />
     <Content Include="Views\UserPrograms\UserProgramDetails.cshtml" />
-    <Content Include="Views\UserPrograms\_pastPerformance.cshtml" />
-    <Content Include="Views\UserPrograms\_dailyMacros.cshtml" />
     <Content Include="Views\UserProgress\Index.cshtml" />
     <Content Include="Views\UserProgress\_pastPerformanceGrid.cshtml" />
-    <Content Include="Views\UserPrograms\Index - orig.cshtml" />
-    <Content Include="Views\UserPrograms\UserProgramDetails - Orig.cshtml" />
     <Content Include="Views\UserPrograms\_enterNewMacroForm.cshtml" />
     <Content Include="Views\ClientCharts\_clientWeightGraph.cshtml" />
     <Content Include="Views\Shared\_ksRootLayout.cshtml" />
-    <Content Include="Views\Shared\HeaderPanelContentPartial.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
-    <Content Include="Views\Home\_userLoginForm.cshtml" />
-    <Content Include="Views\Shared\_menuButtons.cshtml" />
     <Content Include="Views\Home\_mainMenuButtons.cshtml" />
     <Content Include="Views\ClientCharts\_clientPlannedMacros.cshtml" />
     <Content Include="Views\ClientCharts\_clientPerformanceGauge.cshtml" />
@@ -1336,17 +1318,14 @@
     <Content Include="Views\ClientCharts\_clientCurrentWeekBarGauge.cshtml" />
     <Content Include="Views\ClientCharts\_clientProgramGrid.cshtml" />
     <Content Include="Views\ManageNews\_newsCarousel.cshtml" />
-    <Content Include="Views\UserPrograms\_manageNewsfeed.cshtml" />
     <Content Include="Views\ManageNews\Index.cshtml" />
     <Content Include="Views\ManageNews\_newsGrid.cshtml" />
-    <Content Include="Views\ClientDashboard\Index.cshtml" />
     <Content Include="Views\UserPrograms\_manageMacroPartial.cshtml" />
     <Content Include="Views\UserPrograms\ManageClientMacros.cshtml" />
     <Content Include="Views\UserPrograms\_macroPieChart.cshtml" />
     <Content Include="Views\UserPrograms\_weeklyMacroUpdateForm.cshtml" />
     <Content Include="Views\UserProgress\_dxMeasurementForm.cshtml" />
     <Content Include="Views\Home\_dxLoginForm.cshtml" />
-    <Content Include="Views\Manage\Index.cshtml" />
     <Content Include="Views\ClientCharts\_plannedVsActualMacroPie.cshtml" />
     <Content Include="Views\CoachDashboard\Index.cshtml" />
     <Content Include="Views\CoachCharts\_clientRenewalGrid.cshtml" />
@@ -1357,9 +1336,22 @@
     <Content Include="Views\ClientCharts\_plannedVsActualCurrentWeekPie.cshtml" />
     <Content Include="Views\UserProgress\_dxMacroForm.cshtml" />
     <Content Include="Views\ClientCharts\_clientProgramGridMobile.cshtml" />
-    <Content Include="Views\Manage\_personalInfo.cshtml" />
     <Content Include="Views\Account\_dxChangePassword.cshtml" />
     <Content Include="Views\Account\_dxPersonalInformation.cshtml" />
+    <Content Include="Views\ClientCharts\_clientScoreChart.cshtml" />
+    <Content Include="Views\ClientCharts\_clientLifetimeScoreChart.cshtml" />
+    <Content Include="Views\Shared\_rootLayout.cshtml" />
+    <Content Include="Views\Manage\AddPhoneNumber.cshtml" />
+    <Content Include="Views\Manage\Index-orig.cshtml" />
+    <Content Include="Views\Manage\Index.cshtml" />
+    <Content Include="Views\Manage\ManageLogins.cshtml" />
+    <Content Include="Views\Manage\SetPassword.cshtml" />
+    <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
+    <Content Include="Views\Manage\_personalInfo.cshtml" />
+    <Content Include="Views\UserPrograms\_dxUserGridViewPartial.cshtml" />
+    <Content Include="Views\UserPrograms\_dxManageMacroDataGrid.cshtml" />
+    <Content Include="Views\UserPrograms\_dxEnterWeeklyMacroForm.cshtml" />
+    <Content Include="Views\UserPrograms\_dxAddUpdateUserProgramForm.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -1377,14 +1369,15 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\Abstract\KSBaseAPIController.cs" />
     <Compile Include="Controllers\Abstract\KSBaseController.cs" />
     <Compile Include="Controllers\Abstract\KSUserManagedController.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\ChartsAPIController.cs" />
-    <Compile Include="Controllers\ClientDashboardController.cs" />
     <Compile Include="Controllers\CoachChartsController.cs" />
     <Compile Include="Controllers\CoachDashboardController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ManageClientProgramsAPIController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\ManageNewsController.cs" />
     <Compile Include="Controllers\ProgramApiController.cs" />

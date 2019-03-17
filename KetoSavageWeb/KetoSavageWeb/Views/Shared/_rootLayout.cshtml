@@ -1,118 +1,105 @@
 ﻿<!DOCTYPE html>
-
 <html>
 <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, user-scalable=no, maximum-scale=1.0, minimum-scale=1.0" />
-    <title>@ViewBag.Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        @ViewBag.Title
+    </title>
+
+    @Styles.Render("~/Content/bundle")
+    @Styles.Render("~/Content/DevExtremeBundle")
+
+
+    @Scripts.Render("~/Scripts/bundle")
+    @Scripts.Render("~/Scripts/DevExtremeBundle")
+
     <script src="@Url.Content("~/Scripts/JSCustom.js")" type="text/javascript"></script>
 
+    <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
 
-    @Html.DevExpress().GetStyleSheets(
-        new StyleSheet { ExtensionSuite = ExtensionSuite.NavigationAndLayout, Theme = "KetoSavage" },
-        new StyleSheet { ExtensionSuite = ExtensionSuite.Editors, Theme = "KetoSavage" },
-        new StyleSheet { ExtensionSuite = ExtensionSuite.CardView, Theme = "KetoSavage" },
-        new StyleSheet { ExtensionSuite = ExtensionSuite.PivotGrid, Theme = "KetoSavage" },
-        new StyleSheet { ExtensionSuite = ExtensionSuite.VerticalGrid, Theme = "KetoSavage" },
-        new StyleSheet { ExtensionSuite = ExtensionSuite.Spreadsheet, Theme = "KetoSavage" },
-        new StyleSheet { ExtensionSuite = ExtensionSuite.Scheduler, Theme = "KetoSavage" },
-        new StyleSheet { ExtensionSuite = ExtensionSuite.Chart, Theme = "KetoSavage" },
-        new StyleSheet { ExtensionSuite = ExtensionSuite.Report, Theme = "KetoSavage" },
-        new StyleSheet { ExtensionSuite = ExtensionSuite.GridView, Theme = "KetoSavage" },
-        new StyleSheet { ExtensionSuite = ExtensionSuite.Dashboard, Theme = "KetoSavage" }
-    )
-    @Html.DevExpress().GetScripts(
-        new Script { ExtensionSuite = ExtensionSuite.NavigationAndLayout },
-        new Script { ExtensionSuite = ExtensionSuite.Editors },
-        new Script { ExtensionSuite = ExtensionSuite.CardView },
-        new Script { ExtensionSuite = ExtensionSuite.PivotGrid },
-        new Script { ExtensionSuite = ExtensionSuite.VerticalGrid },
-        new Script { ExtensionSuite = ExtensionSuite.Spreadsheet },
-        new Script { ExtensionSuite = ExtensionSuite.Scheduler },
-        new Script { ExtensionSuite = ExtensionSuite.Chart },
-        new Script { ExtensionSuite = ExtensionSuite.Report },
-        new Script { ExtensionSuite = ExtensionSuite.GridView },
-        new Script { ExtensionSuite = ExtensionSuite.Dashboard }
-    )
-    <link href="@Url.Content("~/Content/Site.css")" rel="stylesheet" type="text/css" />
+
+
+
 </head>
 <body>
     @if (Request.IsAuthenticated)
     {
-        Html.DevExpress().Panel(settings =>
-        {
-            settings.Name = "HeaderPane";
-            settings.FixedPosition = PanelFixedPosition.WindowTop;
-            settings.Collapsible = false;
-            settings.SettingsAdaptivity.CollapseAtWindowInnerWidth = 500;
-            settings.ControlStyle.CssClass = "headerPane";
-            settings.Styles.Panel.CssClass = "panel";
-            settings.Styles.ExpandedPanel.CssClass = "expandedPanel";
-            settings.Styles.ExpandBar.CssClass = "bar";
-            settings.SetContent(() =>
-            {
-                Html.RenderPartial("HeaderPartialView", HeaderViewRenderMode.Full);
-            });
-            settings.SetExpandBarTemplateContent((c) =>
-            {
-                Html.RenderPartial("HeaderPartialView", HeaderViewRenderMode.Title);
-            });
-        }).GetHtml();
+        <nav class="navbar navbar-dark bg-dark fixed-top navbar-expand-md">
+            <a class="navbar-brand" href="/"><img src="~/Content/Images/KSHeaderLogo_white.png" /></a>
 
-        //Html.DevExpress().Panel(settings =>
-        //{
-        //    settings.Name = "LeftPanel";
-        //    settings.ClientVisible = true;
-        //    settings.FixedPosition = PanelFixedPosition.WindowLeft;
-        //    settings.Collapsible = false;
-        //    settings.ControlStyle.CssClass = "leftPanel";
-        //}).GetHtml();
+            <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
 
-        //Html.DevExpress().Panel(settings =>
-        //{
-        //    settings.Name = "MenuPanel";
-        //    settings.EnableClientSideAPI = true;
-        //    settings.Styles.Panel.CssClass = "panel";
-        //    settings.SetContent(() =>
-        //    {
-        //        Html.RenderPartial("_menuPartial");
-        //    });
-        //}).GetHtml();
+            @if (User.IsInRole("Client"))
+            {
+                
+                <div id="navbar" class="collapse navbar-collapse">
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item"><a href="#" class="nav-link" id="enterMacros">Enter Macros</a></li>
+                        <li class="nav-item"><a href="#" class="nav-link" id="enterMeasurements">Enter Measurements</a></li>
+                        <li class="nav-item">@Html.ActionLink("Account", "Index", "Manage", routeValues: null, htmlAttributes: new { title = "Manage", @class = "nav-link" })</li>
+                        <li class="nav-item">@Html.ActionLink("Logout", "LogOff", "Account", routeValues: null, htmlAttributes: new { @class = "nav-link" })</li>
+                    </ul>
+                </div>
+            }
+            else
+            {
+                <div id="navbar" class="collapse navbar-collapse">
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item"><a href="~/UserPrograms/ManageClientMacros" class="nav-link">Update Macros</a></li>
+                        <li class="nav-item"><a href="~/UserPrograms" class="nav-link">Client Programs</a></li>
+                        <li class="nav-item"><a href="~/ManageUsers" class="nav-link">Manage Users</a></li>
+                        <li class="nav-item"><a href="~/ManageNews" class="nav-link">Manage News</a></li>
+                        <li class="nav-item"><a href="~/Programs" class="nav-link">Manage Programs</a></li>
+                        <li class="nav-item">@Html.ActionLink("Account", "Index", "Manage", routeValues: null, htmlAttributes: new { title = "Manage", @class = "nav-link" })</li>
+                        <li class="nav-item">@Html.ActionLink("Logout", "LogOff", "Account", routeValues: null, htmlAttributes: new { @class = "nav-link" })</li>
+                    </ul>
+                </div>
+            }
+        </nav>
+
     }
 
-    <script type="text/javascript">
-        function updateHeaderMenuOrientation() {
-            if (!window.HeaderMenu) return;
-            var orientation = HeaderPane.IsExpandable() ? 'Vertical' : 'Horizontal';
-            if (orientation !== HeaderMenu.GetOrientation())
-                HeaderMenu.SetOrientation(orientation);
 
-            var collection = ASPxClientControl.GetControlCollection();
-            collection.ControlsInitialized.AddHandler(updateHeaderMenuOrientation);
-            collection.BrowserWindowResized.AddHandler(updateHeaderMenuOrientation);
-        }
-    </script>
+    <main role="main" class="container">
+        @RenderBody()
+    </main>
 
-    @Html.DevExpress().Panel(settings =>
-    {
-        settings.Name = "MainPane";
-        settings.ControlStyle.CssClass = "mainContentPane";
-        settings.SetContent(RenderBody().ToHtmlString());
-    }).GetHtml()
 
-    @Html.DevExpress().Panel(settings =>
-    {
-        settings.Name = "FooterPane";
-        settings.FixedPosition = PanelFixedPosition.WindowBottom;
-        settings.SettingsAdaptivity.HideAtWindowInnerWidth = 500;
-        settings.ControlStyle.CssClass = "footerPane";
-        settings.Styles.Panel.CssClass = "panel";
-        settings.SetContent(() =>
-        {
-            Html.RenderPartial("FooterPartialView");
-        });
-    }).GetHtml()
+    @(Html.DevExtreme().Popup()
+                                        .ID("mainDxPopup")
+                                        .ShowTitle(true)
+                                        .FullScreen(true)
+                                        .ShowCloseButton(true)
+                                        .Title("Popup on Main Page")
+    )
+
 
 </body>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 </html>

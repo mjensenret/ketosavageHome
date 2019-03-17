@@ -2,12 +2,9 @@
 @{
     ViewBag.Title = "KetoSavage Client Portal";
 }
-@Html.DevExpress().Panel(p =>
-{
-    p.Name = "mainContentPanel";
-    p.SetContent(() =>
-    {
-        if(Request.IsAuthenticated)
+<div class="row">
+    <div class="col-sm-12">
+        @if(Request.IsAuthenticated)
         {
             ViewContext.Writer.Write("Home/Index landing page");
 
@@ -16,8 +13,8 @@
         {
             Html.RenderPartial("_dxLoginForm");
         }
-    });
-}).GetHtml()
+    </div>
+</div>
 
 
 

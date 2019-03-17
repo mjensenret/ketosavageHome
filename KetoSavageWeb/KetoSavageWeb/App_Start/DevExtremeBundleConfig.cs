@@ -39,7 +39,8 @@ namespace KetoSavageWeb {
 
             // DevExtreme + extensions
             scriptBundle
-                .Include("~/Scripts/dx.all.js")
+                //.Include("~/Scripts/dx.all.js")
+                .Include("~/Scripts/dx.custom.js")
                 .Include("~/Scripts/aspnet/dx.aspnet.data.js")
                 .Include("~/Scripts/aspnet/dx.aspnet.mvc.js");
 
@@ -57,7 +58,7 @@ namespace KetoSavageWeb {
             // NOTE: see the available theme list here: http://js.devexpress.com/Documentation/Guide/Themes/Predefined_Themes/                    
             styleBundle
                 .Include("~/Content/dx.common.css")
-                .Include("~/Content/dx.light.css");
+                .Include("~/Content/dx-KetoSavage.css");
 
 
             bundles.Add(scriptBundle);

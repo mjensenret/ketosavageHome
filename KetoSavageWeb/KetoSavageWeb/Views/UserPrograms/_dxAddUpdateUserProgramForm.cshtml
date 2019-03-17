@@ -1,0 +1,73 @@
+﻿@using KetoSavageWeb.ViewModels
+@model UserProgramViewModel
+
+@{ Html.BeginForm();}
+
+@Html.HiddenFor(m => m.LastModifiedBy) = Session["currentUser"]
+@Html.HiddenFor(m => m.UserId)
+
+<div class="row">
+    <div class="col-sm-12">
+        @(Html.DevExtreme().Form<UserProgramViewModel>()
+            .ID("userProgramForm")
+            .FormData(Model)
+            .ColCount(2)
+            .Items(i =>
+            {
+                i.AddGroup()
+                    .Items(g =>
+                    {
+                        g.AddSimpleFor(m => m.ProgramType)
+                            .Editor(e => e
+                                .SelectBox()
+                                .DataSource(d => d.WebApi()
+                                    .Controller("ManageClientProgramsAPI")
+                                    .LoadAction("getProgramList")
+                                )
+                                .DisplayExpr("Name")
+                                .ValueExpr("Id")
+                            );
+                        g.AddSimpleFor(m => m.CoachId)
+                            .Editor(e => e
+                                .SelectBox()
+                                .DataSource(d => d.WebApi()
+                                    .Controller("ManageClientProgramsAPI")
+                                    .LoadAction("getCoachList")
+                                    )
+                                    .DisplayExpr("UserName")
+                                    .ValueExpr("Id")
+                            );
+                    });
+                i.AddGroup()
+                    .Items(g =>
+                    {
+                        g.AddSimpleFor(m => m.currentProgramStartDate)
+                            .Editor(e => e
+                                .DateBox()
+                            );
+                        g.AddSimpleFor(m => m.currentProgramRenewalDate)
+                            .Editor(e => e
+                                .DateBox()
+                            );
+                        g.AddSimpleFor(m => m.currentProgramEndDate)
+                            .Editor(e => e
+                                .DateBox()
+                            );
+                    });
+                i.AddGroup()
+                    .Items(g =>
+                    {
+                        g.AddSimple()
+                            .ColSpan(2)
+                            .Template(@<text>
+                                @(Html.DevExtreme().Button()
+                                    .ID("btnUpdate")
+                                    .Text("Save")
+                                    .UseSubmitBehavior(true)
+                                    );
+                            </text>);
+                    });
+            })
+        )
+    </div>
+</div>

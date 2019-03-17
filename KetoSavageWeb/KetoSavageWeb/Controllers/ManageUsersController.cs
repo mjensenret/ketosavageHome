@@ -17,7 +17,7 @@ namespace KetoSavageWeb.Controllers
         private ProgramRepository programRepository;
         private RoleRepository roleRepository;
 
-        ApplicationUserManager _userManager;
+        //ApplicationUserManager _userManager;
 
         public ManageUsersController(ProgramRepository pr, RoleRepository rr)
         {

@@ -14,6 +14,8 @@ namespace KetoSavageWeb.Controllers
         {
             if(Request.IsAuthenticated)
             {
+                Session["CurrentUserName"] = User.Identity.Name;
+
                 var coachOrAdmin = CurrentUser.Roles.Where(x => x.Role.Name == "Coach" || x.Role.Name == "Administrator").FirstOrDefault();
 
                 if (coachOrAdmin != null)

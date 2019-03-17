@@ -19,6 +19,7 @@ namespace KetoSavageWeb.Controllers
         private DateRepository dateRepository;
 
         private KSDataContext _context = new KSDataContext();
+        private ChartsAPIController chartsAPI = new ChartsAPIController();
 
         public ClientChartsController(ProgramRepository pr, RoleRepository rr, UserProgramRepository up, DateRepository dr)
         {
@@ -403,6 +404,83 @@ namespace KetoSavageWeb.Controllers
         public PartialViewResult PvACurrentMacroPieChart()
         {
             return PartialView("_plannedVsActualCurrentWeekPie");
+        }
+
+        public PartialViewResult ClientMacroScoreChart()
+        {
+            var startDate = DateTime.Now.Date.AddDays(-7);
+            var endDate = DateTime.Now.Date;
+
+            var userId = Convert.ToInt32(Session["UserId"]);
+
+            var dp = _context.DailyProgress.Where(x => x.UserProgram.ProgramUser.Id == userId && x.Dates.Date >= startDate && x.Dates.Date < endDate);
+
+            var performanceData = dp
+                .Select(x => new
+                {
+                    User = x.UserProgram.ProgramUser.FirstName + " " + x.UserProgram.ProgramUser.LastName,
+                    x.Dates.Date,
+                    x.PlannedFat,
+                    x.ActualFat,
+                    x.PlannedProtein,
+                    x.ActualProtein,
+                    x.PlannedCarbohydrate,
+                    x.ActualCarbohydrate
+                })
+                .ToList()
+                .Select(y => new ClientPerformanceData()
+                {
+                    ClientName = y.User,
+                    Date = y.Date,
+                    PlannedFat = Convert.ToDouble(y.PlannedFat),
+                    ActualFat = Convert.ToDouble(y.ActualFat),
+                    PlannedProtein = Convert.ToDouble(y.PlannedProtein),
+                    ActualProtein = Convert.ToDouble(y.ActualProtein),
+                    PlannedCarbs = Convert.ToDouble(y.PlannedCarbohydrate),
+                    ActualCarbs = Convert.ToDouble(y.ActualCarbohydrate)
+                });
+
+            var scoreModel = chartsAPI.returnVarianceScore(performanceData);
+
+            return PartialView("_clientScoreChart", scoreModel);
+        }
+
+        public PartialViewResult ClientLifetimeMacroScoreChart()
+        {
+            var endDate = DateTime.Now.Date;
+
+            var userId = Convert.ToInt32(Session["UserId"]);
+
+            var dp = _context.DailyProgress.Where(x => x.UserProgram.ProgramUser.Id == userId && x.Dates.Date < endDate);
+
+            var performanceData = dp
+                .Select(x => new
+                {
+                    User = x.UserProgram.ProgramUser.FirstName + " " + x.UserProgram.ProgramUser.LastName,
+                    x.Dates.Date,
+                    x.PlannedFat,
+                    x.ActualFat,
+                    x.PlannedProtein,
+                    x.ActualProtein,
+                    x.PlannedCarbohydrate,
+                    x.ActualCarbohydrate
+                })
+                .ToList()
+                .Select(y => new ClientPerformanceData()
+                {
+                    ClientName = y.User,
+                    Date = y.Date,
+                    PlannedFat = Convert.ToDouble(y.PlannedFat),
+                    ActualFat = Convert.ToDouble(y.ActualFat),
+                    PlannedProtein = Convert.ToDouble(y.PlannedProtein),
+                    ActualProtein = Convert.ToDouble(y.ActualProtein),
+                    PlannedCarbs = Convert.ToDouble(y.PlannedCarbohydrate),
+                    ActualCarbs = Convert.ToDouble(y.ActualCarbohydrate)
+                });
+
+            var scoreModel = chartsAPI.returnVarianceScore(performanceData);
+
+            return PartialView("_clientLifetimeScoreChart", scoreModel);
         }
     }
 }

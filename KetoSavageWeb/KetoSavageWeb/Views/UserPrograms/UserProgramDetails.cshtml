@@ -5,27 +5,11 @@
 }
 <script language="javascript">
 
-    function LoadMyGrid() {
-
-    }
-
-    function OnStartEdit(s, e) {
-
-    }
-
-    function OnEndEdit(s, e) {
-
-    }
-
-    function OnValidateEdit(s, e) {
-
-    }
-
-    function AddNewRow() {
-
-    }
-
-    function OnSelectionChanged(s, e) {
+    function enterMacroPopup() {
+        var mainPopup = $("#mainDxPopup").dxPopup("instance");
+        mainPopup.option("contentTemplate", $("#dxMacroPopup"));
+        mainPopup.option("title", "Enter Macros");
+        mainPopup.show();
     }
 
     function GotFocus(s, e) {
@@ -54,17 +38,15 @@
     }
 
     function updateMacroPieChart(s, e) {
-        var fat = Fat.GetText();
-        var protein = Protein.GetText();
-        var carbs = Carbohydrates.GetText();
+        var form = $("#updateForm").dxForm("instance");
+        var fat = form.getEditor("Fat").option("value");
+        var protein = form.getEditor("Protein").option("value");
+        var carbs = form.getEditor("Carbohydrates").option("value");
 
         $.ajax({
             type: "POST",
             url: '@Url.Action("onMacroChange", "UserPrograms")',
             data: { fat: fat, protein: protein, carbs: carbs},
-            //beforeSend: function() {
-            //    loadingPanel.Show();
-            //},
             success: function(response) {
                 window.console.log("success");
                 window.console.log(response);
@@ -83,59 +65,67 @@
 <div id="client-name">
     Client: @ViewBag.ClientName
 </div>
-<div id="controlPanel">
-    @Html.DevExpress().Panel(settings =>
-    {
-        settings.Name = "pnlButtons";
-        settings.ControlStyle.CssClass = "pnlButtons";
-        settings.SetContent(() =>
+@*<div id="controlPanel">
+        @Html.DevExpress().Panel(settings =>
         {
-            ViewContext.Writer.Write("<div class=\"buttons\">");
-            Html.DevExpress().Button(um =>
+            settings.Name = "pnlButtons";
+            settings.ControlStyle.CssClass = "pnlButtons";
+            settings.SetContent(() =>
             {
-                um.Name = "btnShowMacros";
-                um.Text = "Update Macros";
-                um.ClientSideEvents.Click = "function(s, e) { openWindow('Macros'); }";
-            }).Render();
-            ViewContext.Writer.Write("</div>");
-            //ViewContext.Writer.Write("<div class=\"buttons\">");
+                ViewContext.Writer.Write("<div class=\"buttons\">");
+                Html.DevExpress().Button(um =>
+                {
+                    um.Name = "btnShowMacros";
+                    um.Text = "Update Macros";
+                    um.ClientSideEvents.Click = "function(s, e) { openWindow('Macros'); }";
+                }).Render();
+                ViewContext.Writer.Write("</div>");
+                //ViewContext.Writer.Write("<div class=\"buttons\">");
 
-            //Html.DevExpress().Button(t =>
-            //{
-            //    t.Name = "btnTest";
-            //    t.Text = "Test Button";
-            //}).Render();
-            //ViewContext.Writer.Write("</div>");
-        });
-    }).GetHtml()
-</div>
-
+                //Html.DevExpress().Button(t =>
+                //{
+                //    t.Name = "btnTest";
+                //    t.Text = "Test Button";
+                //}).Render();
+                //ViewContext.Writer.Write("</div>");
+            });
+        }).GetHtml()
+    </div>*@
 <div class="row">
-    <div class="col-sm-12 col-md-8 col-lg-10 col-xl-11">
+    <div class="col-sm-12">
+        @(Html.DevExtreme().Button()
+                    .ID("btnUpdateMacros")
+                    .Text("Update Macros")
+                    .OnClick("enterMacroPopup")
+        )
+    </div>
+</div>
+<div class="row">
+    <div class="col-sm-12">
         @Html.Action("ClientWeightGraph", "ClientCharts", new { userId = Session["UserId"] })
     </div>
 </div>
 <div class="row">
-    <div class="col-sm-12 col-md-6 col-lg-4 col-xl-2">
+    <div class="col-sm-12 col-lg-3">
         @Html.Action("ClientPerformanceGauge", "ClientCharts", new { userId = Session["UserId"] })
     </div>
-    <div class="col-sm-12 col-md-6 col-lg-4 col-xl-2">
+    <div class="col-sm-12 col-lg-3">
         @Html.Action("ClientPastWeekMacroChart", "ClientCharts", new { userId = Session["UserId"] })
     </div>
-    <div class="col-sm-12 col-md-6 col-lg-4 col-xl-2">
+    <div class="col-sm-12 col-lg-3">
         @Html.Action("PvAMacroPieChart", "ClientCharts")
     </div>
-    <div class="col-sm-12 col-md-6 col-lg-4 col-xl-2">
+    <div class="col-sm-12 col-lg-3">
         @Html.Action("PvACurrentMacroPieChart", "ClientCharts")
     </div>
 </div>
 <div class="row">
-    <div class="col-sm-12 col-md-8 col-lg-6 col-xl-4" style="background-color: #0a0a0a">
+    <div class="col-sm-12" style="background-color: #0a0a0a">
         @Html.Action("ClientCurrentWeekMacroGauge", "ClientCharts", new { userId = Session["UserId"] })
     </div>
 </div>
 <div class="row">
-    <div class="col-sm-12 col-md-8 col-lg-10 col-xl-11">
+    <div class="col-sm-12">
         @if (Request.Browser.IsMobileDevice)
         {
             if (Request.Browser.ScreenPixelsWidth > 780)
@@ -155,24 +145,28 @@
     </div>
 </div>
 
-
-@Html.DevExpress().PopupControl(settings =>
+@using (Html.DevExtreme().NamedTemplate("dxMacroPopup"))
 {
-    settings.Name = "macroPopup";
-    //settings.Width = 400;
-    settings.AllowDragging = true;
-    settings.CloseAction = CloseAction.CloseButton;
-    settings.CloseOnEscape = true;
-    settings.PopupAnimationType = DevExpress.Web.AnimationType.None;
-    settings.ShowHeader = false;
-    settings.Modal = true;
-    settings.AutoUpdatePosition = true;
-    settings.PopupHorizontalAlign = PopupHorizontalAlign.OutsideLeft;
-    settings.PopupVerticalAlign = PopupVerticalAlign.TopSides;
-    settings.ClientSideEvents.CloseUp = "function(s, e){ ASPxClientEdit.ClearEditorsInContainer(null, '', true); }";
-    settings.SetContent(() =>
+    @(Html.Action("EnterMacroForm"))
+}
+
+@*@Html.DevExpress().PopupControl(settings =>
     {
-        Html.RenderAction("WeeklyMacroUpdateForm", "UserPrograms");
-    });
-}).GetHtml()
+        settings.Name = "macroPopup";
+        //settings.Width = 400;
+        settings.AllowDragging = true;
+        settings.CloseAction = CloseAction.CloseButton;
+        settings.CloseOnEscape = true;
+        settings.PopupAnimationType = DevExpress.Web.AnimationType.None;
+        settings.ShowHeader = false;
+        settings.Modal = true;
+        settings.AutoUpdatePosition = true;
+        settings.PopupHorizontalAlign = PopupHorizontalAlign.OutsideLeft;
+        settings.PopupVerticalAlign = PopupVerticalAlign.TopSides;
+        settings.ClientSideEvents.CloseUp = "function(s, e){ ASPxClientEdit.ClearEditorsInContainer(null, '', true); }";
+        settings.SetContent(() =>
+        {
+            Html.RenderAction("WeeklyMacroUpdateForm", "UserPrograms");
+        });
+    }).GetHtml()*@
 

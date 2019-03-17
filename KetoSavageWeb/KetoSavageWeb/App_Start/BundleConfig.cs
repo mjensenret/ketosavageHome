@@ -15,12 +15,15 @@ namespace KetoSavageWeb
             var styleBundle = new StyleBundle("~/Content/bundle");
 
             // jQuery
-            //scriptBundle
-            //    .Include("~/Scripts/jquery-3.1.0.js");
+            scriptBundle
+                .Include("~/Scripts/jquery-3.3.1.js");
 
             // Bootstrap
             scriptBundle
                 .Include("~/Scripts/bootstrap.js");
+
+            scriptBundle
+                .Include("~/Scripts/site.js");
 
             // Bootstrap
             styleBundle

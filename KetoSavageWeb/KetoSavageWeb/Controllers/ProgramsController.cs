@@ -114,10 +114,10 @@ namespace KetoSavageWeb.Controllers
             };
         }
 
-        [System.Web.Mvc.HttpPost]
-        public async Task<ActionResult> updateProgram(FormDataCollection form)
-        {
-            var values = form.Get("values");
+        //[System.Web.Mvc.HttpPost]
+        //public async Task<ActionResult> updateProgram(FormDataCollection form)
+        //{
+        //    var values = form.Get("values");
 
             //if (ModelState.IsValid)
             //{
@@ -145,8 +145,8 @@ namespace KetoSavageWeb.Controllers
             //    return RedirectToAction("Index");
             //}
             //ModelState.AddModelError("", "Something failed editing the program template!");
-            return RedirectToAction("Index");
-        }
+        //    return RedirectToAction("Index");
+        //}
 
         protected override ProgramEditViewModel createViewModel(ProgramTemplate entity)
         {

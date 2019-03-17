@@ -1,0 +1,64 @@
+﻿@using KetoSavageWeb.ViewModels
+@model DailyMacroUpdate
+
+@{ Html.BeginForm("SetWeeklyMacros", "UserPrograms", FormMethod.Post);}
+@Html.HiddenFor(m => m.userId)
+<div class="row">
+    <div class="col-sm-12">
+        @(Html.DevExtreme().Form<DailyMacroUpdate>()
+                .ID("updateForm")
+                .FormData(Model)
+                .ColCount(2)
+                .Items(i =>
+                {
+                    i.AddGroup()
+                    .Items(g =>
+                    {
+                        g.AddSimpleFor(m => m.week)
+                            .Editor(e => e
+                                .DateBox()
+                                .Width("100%")
+                            );
+                        g.AddSimpleFor(m => m.Fat)
+                            .Editor(e => e
+                                .NumberBox()
+                                .OnChange("updateMacroPieChart")
+                                .Name("fat")
+                            );
+                        g.AddSimpleFor(m => m.Protein)
+                            .Editor(e => e
+                                .NumberBox()
+                                .OnChange("updateMacroPieChart")
+                            );
+                        g.AddSimpleFor(m => m.Carbohydrates)
+                            .Editor(e => e
+                                .NumberBox()
+                                .OnChange("updateMacroPieChart")
+                            );
+                    });
+                    i.AddGroup()
+                    .Items(g =>
+                    {
+                    g.AddSimple()
+                            .Template(@<text>
+                                @Html.Action("MacroPieChart")
+                            </text>);
+                            });
+                    })
+                    .Items(i =>
+                    {
+                        i.AddSimple()
+                            .ColSpan(2)
+                            .Template(@<text>
+                                @(Html.DevExtreme().Button()
+                                        .ID("btnSave")
+                                        .Text("Save")
+                                        .Type(DevExtreme.AspNet.Mvc.ButtonType.Normal)
+                                        .UseSubmitBehavior(true)
+                                )    
+                            </text>);
+                    })
+        )
+    </div>
+</div>
+@{ Html.EndForm();}

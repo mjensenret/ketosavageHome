@@ -19,8 +19,8 @@ namespace KetoSavageWeb.Controllers {
     public class AccountController : KSBaseController
     {
 
-        private UserProfileRepository profileRepository;
-        private RoleRepository _roleRepository;
+        //private UserProfileRepository profileRepository;
+        //private RoleRepository _roleRepository;
 
         ApplicationSignInManager _signInManager;
         ApplicationUserManager _userManager;
@@ -51,7 +51,7 @@ namespace KetoSavageWeb.Controllers {
             }
         }
 
-        public ApplicationUserManager UserManager
+        public new ApplicationUserManager UserManager
         {
             get
             {

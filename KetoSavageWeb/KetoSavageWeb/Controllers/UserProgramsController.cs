@@ -39,55 +39,8 @@ namespace KetoSavageWeb.Controllers
 
         public ActionResult UserProgramList()
         {
-            
-            var coachList = UserManager.Users.Where(x => x.IsActive == true).Where(x => x.Roles.Select(y => y.Role.Name).Contains("Coach")).ToList();
-            var userQuery = UserManager.Users.Where(x => x.IsActive == true).Include(x => x.Roles).Include(y => y.UserPrograms);
-            userQuery = userQuery.Where(x => x.Roles.Select(y => y.Role.Name).Contains("Client")).Include(z => z.UserPrograms);
-            //userQuery = userQuery.Where(x => x.UserPrograms.Select(y => y.IsDeleted == false).FirstOrDefault());
-
-            
-
-            var items = (userQuery
-                .OrderBy(x => x.UserName)
-                .Select(x => new
-                {
-                    UserId = x.Id,
-                    ProgramId = x.UserPrograms.Where(z => z.IsDeleted == false  && z.IsActive == true).Select(y => y.Id).FirstOrDefault(),
-                    x.FirstName,
-                    x.LastName,
-                    x.Roles,
-                    x.UserName,
-                    x.Email,
-                    UserPrograms = x.UserPrograms.Where(z => z.IsDeleted == false && z.IsActive == true)
-                })
-                .ToList()
-                .Select(x => new UserProgramViewModel()
-                {
-                    Id = x.ProgramId,
-                    UserId = x.UserId,
-                    UserName = x.UserName,
-                    FullName = string.Join(" ", x.FirstName, x.LastName),
-                    ProgramName = x.UserPrograms.Select(y => y.MasterProgram.Description).FirstOrDefault(),
-                    UserType = x.Roles.Select(y => y.Role.Name).FirstOrDefault(),
-                    currentProgramStartDate = x.UserPrograms.Select(y => y.StartDate).FirstOrDefault(),
-                    currentProgramRenewalDate = x.UserPrograms.Select(y => y.RenewalDate).FirstOrDefault(),
-                    currentProgramEndDate = x.UserPrograms.Select(y => y.EndDate).FirstOrDefault(),
-                    LastModified = x.UserPrograms.Select(y => y.LastModified).FirstOrDefault(),
-                    CoachName = x.UserPrograms.Select(y => y.CoachUser.FirstName).FirstOrDefault(),
-                    Notes = x.UserPrograms.Select(y => y.Notes).FirstOrDefault(),
-                    MasterProgramId = x.UserPrograms.Select(y => y.MasterProgramId).FirstOrDefault(),
-                    CoachId = x.UserPrograms.Select(y => y.CoachUserId).FirstOrDefault(),
-                    StartWeight = x.UserPrograms.Select(y => y.StartWeight).FirstOrDefault(),
-                    GoalWeight = x.UserPrograms.Select(y => y.GoalWeight).FirstOrDefault(),
-                    CurrentWeight = getCurrentWeight(x.UserId).HasValue ? getCurrentWeight(x.UserId).Value : 0.00,
-                    IsActive = x.UserPrograms.Select(y => y.IsActive).FirstOrDefault()
-                }
-                ));
-            ViewBag.ProgramList = new SelectList(program.GetActive, "Id", "Description");
-            ViewBag.CoachList = new SelectList(coachList, "Id", "UserName");
-                    
-            var model = items.ToList();
-            return PartialView("_userGridViewPartial", model);
+            Session["currentUser"] = User.Identity.Name;
+            return PartialView("_dxUserGridViewPartial");
         }
 
         public ActionResult ManageClientMacros()
@@ -97,52 +50,7 @@ namespace KetoSavageWeb.Controllers
 
         public ActionResult ManageClientMacrosList()
         {
-            var coachList = UserManager.Users.Where(x => x.IsActive == true).Where(x => x.Roles.Select(y => y.Role.Name).Contains("Coach")).ToList();
-            var userQuery = UserManager.Users.Where(x => x.IsActive == true).Include(x => x.Roles).Include(y => y.UserPrograms);
-            userQuery = userQuery.Where(x => x.Roles.Select(y => y.Role.Name).Contains("Client")).Include(z => z.UserPrograms.Select(p => p.DailyProgress));
-
-            var items = (userQuery
-                .OrderBy(x => x.FirstName)
-                .ThenBy(x => x.LastName)
-                .Select(x => new
-                {
-                    UserId = x.Id,
-                    ProgramId = x.UserPrograms.Where(z => z.IsDeleted == false && z.IsActive == true).Select(y => y.Id).FirstOrDefault(),
-                    x.FirstName,
-                    x.LastName,
-                    x.Roles,
-                    x.UserName,
-                    x.Email,
-                    UserPrograms = x.UserPrograms.Where(z => z.IsDeleted == false && z.EndDate >= DateTime.Now && z.IsActive == true)
-                })
-                .ToList()
-                .Select(x => new UserProgramViewModel()
-                {
-                    Id = x.ProgramId,
-                    UserId = x.UserId,
-                    UserName = x.UserName,
-                    FullName = string.Join(" ", x.FirstName, x.LastName),
-                    ProgramName = x.UserPrograms.Select(y => y.MasterProgram.Description).FirstOrDefault(),
-                    UserType = x.Roles.Select(y => y.Role.Name).FirstOrDefault(),
-                    currentProgramStartDate = x.UserPrograms.Select(y => y.StartDate).FirstOrDefault(),
-                    currentProgramRenewalDate = x.UserPrograms.Select(y => y.RenewalDate).FirstOrDefault(),
-                    currentProgramEndDate = x.UserPrograms.Select(y => y.EndDate).FirstOrDefault(),
-                    LastModified = x.UserPrograms.Select(y => y.LastModified).FirstOrDefault(),
-                    CoachName = x.UserPrograms.Select(y => y.CoachUser.FirstName).FirstOrDefault(),
-                    Notes = x.UserPrograms.Select(y => y.Notes).FirstOrDefault(),
-                    MasterProgramId = x.UserPrograms.Select(y => y.MasterProgramId).FirstOrDefault(),
-                    CoachId = x.UserPrograms.Select(y => y.CoachUserId).FirstOrDefault(),
-                    StartWeight = x.UserPrograms.Select(y => y.StartWeight).FirstOrDefault(),
-                    GoalWeight = x.UserPrograms.Select(y => y.GoalWeight).FirstOrDefault(),
-                    CurrentWeight = getCurrentWeight(x.UserId).HasValue ? getCurrentWeight(x.UserId).Value : x.UserPrograms.Select(y => y.StartWeight).FirstOrDefault()
-                }
-                ));
-            ViewBag.ProgramList = new SelectList(program.GetActive, "Id", "Description");
-            ViewBag.CoachList = new SelectList(coachList, "Id", "UserName");
-            var model = items.ToList();
-
-            return PartialView("_manageMacroPartial", model);
-
+             return PartialView("_dxManageMacroDataGrid");
         }
 
         public ActionResult userProgramAdd(UserProgramViewModel model)
@@ -379,10 +287,10 @@ namespace KetoSavageWeb.Controllers
             return RedirectToAction("Index");
         }
 
-
-        public async Task<ActionResult> ShowProgramDetails(string _userId)
+        
+        public async Task<ActionResult> ShowProgramDetails(string uid)
         {
-            var userId = Convert.ToInt32(_userId);
+            var userId = Convert.ToInt32(uid);
             Session["UserId"] = userId;
             
             var coachList = UserManager.Users.Where(x => x.IsActive == true).Where(x => x.Roles.Select(y => y.Role.Name).Contains("Coach")).ToList();
@@ -665,7 +573,7 @@ namespace KetoSavageWeb.Controllers
             model.Protein = (dailyProgress != null) ? Convert.ToInt32(dailyProgress.PlannedProtein) : 0;
             model.Carbohydrates = (dailyProgress != null) ? Convert.ToInt32(dailyProgress.PlannedCarbohydrate) : 0;
 
-            return PartialView("_enterNewMacroForm",model);
+            return PartialView("_dxEnterWeeklyMacroForm",model);
         }
 
 
@@ -690,7 +598,7 @@ namespace KetoSavageWeb.Controllers
 
             userProgramRepository.Update(userProgram);
 
-            return RedirectToAction("ShowProgramDetails", new { @_userId = Session["UserId"] });
+            return RedirectToAction("ShowProgramDetails", new { @uid = Session["UserId"] });
             //return null;
         }
 

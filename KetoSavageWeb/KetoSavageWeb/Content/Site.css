@@ -2,6 +2,7 @@ html, body {
     background-color: #000000;
     color: #DEDEDE;
     margin: 0;
+    padding-top: 65px;
 }
 
 /* Header */

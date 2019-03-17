@@ -25,44 +25,44 @@
 }
 
 <div class="row">
-    <div class="col-sm-12 col-md-8 col-lg-10 col-xl-11">
+    <div class="col-sm-12">
         @Html.Action("newsCarousel", "ManageNews")
-    </div>
-    <div class="col-sm-12 col-md-4 col-lg-2 col-xl-1">
-
     </div>
 </div>
 <div class="row">
-    <div class="col-sm-12 col-md-8 col-lg-10 col-xl-11">
+    <div class="col-sm-12">
         @Html.Action("ClientWeightGraph", "ClientCharts", new { userId = Session["UserId"] })
     </div>
 </div>
 <div class="row">
-    <div class="col-sm-12 col-md-6 col-lg-4 col-xl-2">
+    <div class="col-sm-12">
+        @Html.Action("ClientMacroScoreChart", "ClientCharts", new { userId = Session["UserId"] })
+    </div>
+    <div class="col-sm-12">
+        @Html.Action("ClientLifetimeMacroScoreChart", "ClientCharts", new { userId = Session["UserId"] })
+    </div>
+</div>
+<div class="row">
+    <div class="col-sm-12 col-md-3">
         @Html.Action("ClientPerformanceGauge", "ClientCharts", new { userId = Session["UserId"] })
     </div>
-    <div class="col-sm-12 col-md-6 col-lg-4 col-xl-2">
+    <div class="col-sm-12 col-md-3">
         @Html.Action("ClientPastWeekMacroChart", "ClientCharts", new { userId = Session["UserId"] })
     </div>
-    <div class="col-sm-12 col-md-6 col-lg-4 col-xl-2">
+    <div class="col-sm-12 col-md-3">
         @Html.Action("PvAMacroPieChart", "ClientCharts")
     </div>
-    <div class="col-sm-12 col-md-6 col-lg-4 col-xl-2">
+    <div class="col-sm-12 col-md-3">
         @Html.Action("PvACurrentMacroPieChart", "ClientCharts")
     </div>
 </div>
 <div class="row">
-    <div class="col-sm-12 col-md-8 col-lg-6 col-xl-4" style="background-color: #0a0a0a">
+    <div class="col-sm-12">
         @Html.Action("ClientCurrentWeekMacroGauge", "ClientCharts", new { userId = Session["UserId"] })
     </div>
 </div>
-@*<div class="row">
-    <div class="col-sm-12 col-md-8 col-lg-10 col-xl-11" id="desktop-grid">
-        @Html.Action("ClientProgramGrid", "ClientCharts", new { userId = Session["UserId"] })
-    </div>
-</div>*@
 <div class="row">
-    <div class="col-sm-12 col-md-8 col-lg-10 col-xl-11">
+    <div class="col-sm-12">
         @if (Request.Browser.IsMobileDevice)
         {
             if (Request.Browser.ScreenPixelsWidth > 780)
@@ -93,6 +93,20 @@
 }
 
 <script type="text/javascript">
+
+    $("#enterMacros").click(function () {
+        var mainPopup = $("#mainDxPopup").dxPopup("instance");
+        mainPopup.option("contentTemplate", $("#dxMacroPopup"));
+        mainPopup.option("title", "Enter Macros");
+        mainPopup.show();
+    });
+
+    $("#enterMeasurements").click(function () {
+        var mainPopup = $("#mainDxPopup").dxPopup("instance");
+        mainPopup.option("contentTemplate", $("#measurementPopup"));
+        mainPopup.option("title", "Enter Measurements");
+        mainPopup.show();
+    });
 
     function enterMacroPopup() {
         var mainPopup = $("#mainDxPopup").dxPopup("instance");

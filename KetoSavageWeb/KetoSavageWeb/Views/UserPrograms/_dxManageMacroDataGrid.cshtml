@@ -1,0 +1,87 @@
+﻿@using KetoSavageWeb.ViewModels
+
+@(Html.DevExtreme().DataGrid()
+                    .ID("ClientMacroList")
+                    .DataSource(d => d.WebApi()
+                        .Controller("ManageClientProgramsAPI")
+                        .LoadAction("GetClientList")
+                        .Key("Id"))
+                    .ShowBorders(true)
+                    .RowAlternationEnabled(true)
+                    .Scrolling(s => s.Mode(GridScrollingMode.Virtual))
+                    .Columns(c =>
+                    {
+                        c.Add()
+                            .DataField("Id")
+                            .Visible(false);
+                    })
+                    .Columns(c =>
+                    {
+                        c.Add()
+                            .DataField("FullName")
+                            .Caption("Name");
+                    })
+                    .Columns(c =>
+                    {
+                        c.Add()
+                            .DataField("ProgramName")
+                            .Caption("Program");
+                    })
+                    .Columns(c =>
+                    {
+                        c.Add()
+                            .DataField("StartWeight")
+                            .Caption("Start Weight");
+                    })
+                    .Columns(c =>
+                    {
+                        c.Add()
+                            .DataField("CurrentWeight")
+                            .Caption("Current Weight");
+                    })
+                    .Columns(c =>
+                    {
+                        c.Add()
+                            .DataField("GoalWeight")
+                            .Caption("Goal Weight");
+                    })
+                    .Columns(c =>
+                    {
+                        c.Add()
+                            .DataField("currentProgramStartDate")
+                            .Caption("Start Date")
+                            .DataType(GridColumnDataType.Date);
+                    })
+                    .Columns(c =>
+                    {
+                        c.Add()
+                            .DataField("currentProgramEndDate")
+                            .Caption("End Date")
+                            .DataType(GridColumnDataType.Date);
+                    })
+                    .Columns(c =>
+                    {
+                        c.Add()
+                            .DataField("LastModified")
+                            .Caption("Last Modified")
+                            .DataType(GridColumnDataType.Date);
+                    })
+                    .Columns(c =>
+                    {
+                        c.Add()
+                        .Caption("Edit Macros")
+                            .Type(GridCommandColumnType.Buttons)
+                            .Buttons(b =>
+                            {
+                                b.Add()
+                    .Icon("edit")
+                    .OnClick(@<text>EditMacros</text>);
+            });
+    })
+)
+<script type="text/javascript">
+    function EditMacros(data) {
+        var userId = data.row.data.UserId;
+        window.location = "ShowProgramDetails?uid=" + userId;
+    }
+</script>

@@ -13,7 +13,8 @@ namespace KetoSavageWeb.App_Start
     using System.Collections.Generic;
     using System.Linq;
     using System.Web;
-
+    using System.Web.Http;
+    using WebApiContrib.IoC.Ninject;
 
     public class NinjectWebCommon
     {
@@ -50,6 +51,8 @@ namespace KetoSavageWeb.App_Start
                 kernel.Bind<IHttpModule>().To<HttpApplicationInitializationHttpModule>();
 
                 RegisterServices(kernel);
+
+                GlobalConfiguration.Configuration.DependencyResolver = new NinjectResolver(kernel);
                 return kernel;
             }
             catch

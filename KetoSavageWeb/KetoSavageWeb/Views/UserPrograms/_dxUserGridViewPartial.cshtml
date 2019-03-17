@@ -1,0 +1,62 @@
+﻿@using KetoSavageWeb.ViewModels
+
+@(Html.DevExtreme().DataGrid()
+    .ID("dxClientList")
+    .DataSource(d => d.WebApi()
+        .Controller("ManageClientProgramsAPI")
+        .LoadAction("GetClientPrograms")
+        .Key("Id"))
+    .ShowBorders(true)
+    .RowAlternationEnabled(true)
+    .Scrolling(s => s.Mode(GridScrollingMode.Virtual))
+    .Columns(c =>
+    {
+        c.Add()
+            .Type(GridCommandColumnType.Buttons)
+            .Buttons(b =>
+            {
+                b.Add()
+                    .Icon("edit");
+            });
+    })
+    .Columns(c =>
+    {
+        c.Add()
+            .DataField("FullName")
+            .Caption("Name");
+    })
+    .Columns(c =>
+    {
+        c.Add()
+            .DataField("ProgramName")
+            .Caption("Program");
+    })
+    .Columns(c =>
+    {
+        c.Add()
+            .DataField("currentProgramStartDate")
+            .DataType(GridColumnDataType.Date)
+            .Caption("Start Date");
+    })
+    .Columns(c =>
+    {
+        c.Add()
+            .DataField("currentProgramRenewalDate")
+            .DataType(GridColumnDataType.Date)
+            .Caption("Renewal Date");
+    })
+    .Columns(c =>
+    {
+        c.Add()
+            .DataField("currentProgramEndDate")
+            .DataType(GridColumnDataType.Date)
+            .Caption("End Date");
+    })
+    .Columns(c =>
+    {
+        c.Add()
+            .DataField("IsActive")
+            .Caption("Active")
+            .DataType(GridColumnDataType.Boolean);
+    })
+)
