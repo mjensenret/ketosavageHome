@@ -53,6 +53,11 @@ namespace KetoSavageWeb.Controllers
              return PartialView("_dxManageMacroDataGrid");
         }
 
+        public ActionResult UpdateUserProgram(int? userId)
+        {
+            ViewBag.UserId = userId;
+            return PartialView("_dxAddUpdateUserProgramForm");
+        }
         public ActionResult userProgramAdd(UserProgramViewModel model)
         {
             if (ModelState.IsValid)

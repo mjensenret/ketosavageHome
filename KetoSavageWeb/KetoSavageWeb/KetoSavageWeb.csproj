@@ -1307,7 +1307,7 @@
     <Content Include="Views\UserPrograms\UserProgramDetails.cshtml" />
     <Content Include="Views\UserProgress\Index.cshtml" />
     <Content Include="Views\UserProgress\_pastPerformanceGrid.cshtml" />
-    <Content Include="Views\UserPrograms\_enterNewMacroForm.cshtml" />
+    <Content Include="Views\UserPrograms\_enterNewMacroForm_remove.cshtml" />
     <Content Include="Views\ClientCharts\_clientWeightGraph.cshtml" />
     <Content Include="Views\Shared\_ksRootLayout.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
@@ -1323,7 +1323,7 @@
     <Content Include="Views\UserPrograms\_manageMacroPartial.cshtml" />
     <Content Include="Views\UserPrograms\ManageClientMacros.cshtml" />
     <Content Include="Views\UserPrograms\_macroPieChart.cshtml" />
-    <Content Include="Views\UserPrograms\_weeklyMacroUpdateForm.cshtml" />
+    <Content Include="Views\UserPrograms\_weeklyMacroUpdateForm_remove.cshtml" />
     <Content Include="Views\UserProgress\_dxMeasurementForm.cshtml" />
     <Content Include="Views\Home\_dxLoginForm.cshtml" />
     <Content Include="Views\ClientCharts\_plannedVsActualMacroPie.cshtml" />
@@ -1338,6 +1338,20 @@
     <Content Include="Views\ClientCharts\_clientProgramGridMobile.cshtml" />
     <Content Include="Views\Account\_dxChangePassword.cshtml" />
     <Content Include="Views\Account\_dxPersonalInformation.cshtml" />
+    <Content Include="Views\UserPrograms\_dxAddUpdateUserProgramForm.cshtml" />
+    <Content Include="Views\UserPrograms\_dxEnterWeeklyMacroForm.cshtml" />
+    <Content Include="Views\UserPrograms\_dxManageMacroDataGrid.cshtml" />
+    <Content Include="Views\UserPrograms\_dxUserGridViewPartial.cshtml" />
+    <Content Include="Views\Shared\_rootLayout.cshtml" />
+    <Content Include="Views\ClientCharts\_clientLifetimeScoreChart.cshtml" />
+    <Content Include="Views\ClientCharts\_clientScoreChart.cshtml" />
+    <Content Include="Views\Manage\AddPhoneNumber.cshtml" />
+    <Content Include="Views\Manage\Index-orig.cshtml" />
+    <Content Include="Views\Manage\Index.cshtml" />
+    <Content Include="Views\Manage\ManageLogins.cshtml" />
+    <Content Include="Views\Manage\SetPassword.cshtml" />
+    <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
+    <Content Include="Views\Manage\_personalInfo.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
