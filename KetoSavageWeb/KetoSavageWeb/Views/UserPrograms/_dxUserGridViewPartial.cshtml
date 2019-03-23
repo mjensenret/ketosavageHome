@@ -9,6 +9,26 @@
             .ShowBorders(true)
             .RowAlternationEnabled(true)
             .Scrolling(s => s.Mode(GridScrollingMode.Virtual))
+            .FilterRow(fr => fr
+                .Visible(true)
+                .ApplyFilter(GridApplyFilterMode.Auto)
+            )
+            .HeaderFilter(hf => hf.Visible(true))
+            .SearchPanel(searchPanel => searchPanel
+                .Visible(true)
+                .Width(240)
+                .Placeholder("Search...")
+            )
+            .Editing(e =>
+            {
+                e.Mode(GridEditMode.Popup);
+                e.AllowUpdating(true);
+                e.UseIcons(true);
+                e.Popup(p => p
+                    .Title("Edit Client Program")
+                    .ShowTitle(true)
+                    );
+            })
             .Columns(c =>
             {
                 c.Add()
@@ -16,8 +36,7 @@
                     .Buttons(b =>
                     {
                         b.Add()
-                            .Icon("edit")
-                            .OnClick("enterUserProgramPopup");
+                            .Name(GridColumnButtonName.Edit);
                     });
             })
             .Columns(c =>

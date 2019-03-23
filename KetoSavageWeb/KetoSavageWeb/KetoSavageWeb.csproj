@@ -202,46 +202,46 @@
     <Reference Include="System.Configuration" />
     <Reference Include="System.Web.Services" />
     <Reference Include="System.EnterpriseServices" />
-    <Reference Include="DevExpress.Utils.v18.2, Version=18.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-    <Reference Include="DevExpress.Data.v18.2, Version=18.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-    <Reference Include="DevExpress.Web.ASPxThemes.v18.2, Version=18.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-    <Reference Include="DevExpress.RichEdit.v18.2.Core, Version=18.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-    <Reference Include="DevExpress.RichEdit.v18.2.Export, Version=18.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-    <Reference Include="DevExpress.Printing.v18.2.Core, Version=18.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-    <Reference Include="DevExpress.Web.v18.2, Version=18.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-    <Reference Include="DevExpress.Web.Mvc5.v18.2, Version=18.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-    <Reference Include="DevExpress.Web.ASPxPivotGrid.v18.2, Version=18.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-    <Reference Include="DevExpress.PivotGrid.v18.2.Core, Version=18.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-    <Reference Include="DevExpress.Spreadsheet.v18.2.Core, Version=18.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-    <Reference Include="DevExpress.Web.ASPxSpreadsheet.v18.2, Version=18.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-    <Reference Include="DevExpress.XtraScheduler.v18.2.Core, Version=18.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-    <Reference Include="DevExpress.Web.ASPxScheduler.v18.2, Version=18.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-    <Reference Include="DevExpress.Charts.v18.2.Core, Version=18.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-    <Reference Include="DevExpress.XtraCharts.v18.2, Version=18.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-    <Reference Include="DevExpress.XtraCharts.v18.2.Web, Version=18.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-    <Reference Include="DevExpress.Web.Resources.v18.2, Version=18.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-    <Reference Include="DevExpress.XtraReports.v18.2, Version=18.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-    <Reference Include="DevExpress.XtraReports.v18.2.Web.WebForms, Version=18.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-    <Reference Include="DevExpress.XtraReports.v18.2.Web, Version=18.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-    <Reference Include="DevExpress.Pdf.v18.2.Core, Version=18.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-    <Reference Include="DevExpress.CodeParser.v18.2, Version=18.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-    <Reference Include="DevExpress.DataAccess.v18.2, Version=18.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-    <Reference Include="DevExpress.Office.v18.2.Core, Version=18.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-    <Reference Include="DevExpress.Sparkline.v18.2.Core, Version=18.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-    <Reference Include="DevExpress.Xpo.v18.2, Version=18.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-    <Reference Include="DevExpress.XtraGauges.v18.2.Core, Version=18.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-    <Reference Include="DevExpress.Dashboard.v18.2.Core, Version=18.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-    <Reference Include="DevExpress.Dashboard.v18.2.Web.WebForms, Version=18.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-    <Reference Include="DevExpress.Dashboard.v18.2.Web, Version=18.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-    <Reference Include="DevExpress.Dashboard.v18.2.Web.Mvc5, Version=18.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-    <Reference Include="DevExpress.TreeMap.v18.2.Core, Version=18.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-    <Reference Include="DevExpress.Map.v18.2.Core, Version=18.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-    <Reference Include="DevExpress.XtraTreeMap.v18.2, Version=18.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-    <Reference Include="DevExpress.XtraGauges.v18.2.Presets, Version=18.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-    <Reference Include="DevExpress.XtraGauges.v18.2.Win, Version=18.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-    <Reference Include="DevExpress.XtraMap.v18.2, Version=18.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-    <Reference Include="DevExpress.XtraEditors.v18.2, Version=18.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-    <Reference Include="DevExpress.XtraPrinting.v18.2, Version=18.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Utils.v18.2, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Data.v18.2, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Web.ASPxThemes.v18.2, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.RichEdit.v18.2.Core, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.RichEdit.v18.2.Export, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Printing.v18.2.Core, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Web.v18.2, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Web.Mvc5.v18.2, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Web.ASPxPivotGrid.v18.2, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.PivotGrid.v18.2.Core, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Spreadsheet.v18.2.Core, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Web.ASPxSpreadsheet.v18.2, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraScheduler.v18.2.Core, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Web.ASPxScheduler.v18.2, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Charts.v18.2.Core, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraCharts.v18.2, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraCharts.v18.2.Web, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Web.Resources.v18.2, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraReports.v18.2, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraReports.v18.2.Web.WebForms, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraReports.v18.2.Web, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Pdf.v18.2.Core, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.CodeParser.v18.2, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.DataAccess.v18.2, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Office.v18.2.Core, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Sparkline.v18.2.Core, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Xpo.v18.2, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraGauges.v18.2.Core, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Dashboard.v18.2.Core, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Dashboard.v18.2.Web.WebForms, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Dashboard.v18.2.Web, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Dashboard.v18.2.Web.Mvc5, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.TreeMap.v18.2.Core, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Map.v18.2.Core, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraTreeMap.v18.2, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraGauges.v18.2.Presets, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraGauges.v18.2.Win, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraMap.v18.2, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraEditors.v18.2, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraPrinting.v18.2, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="Web.Optimization, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Web.Optimization.0.0.7\lib\net40\Web.Optimization.dll</HintPath>
@@ -637,42 +637,43 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Content\dx-KetoSavage.css" />
-    <Content Include="Content\dx.android5.light.css" />
-    <Content Include="Content\dx.carmine.compact.css" />
-    <Content Include="Content\dx.carmine.css" />
+    <Content Include="Content\dx-KetoSavage.min.css" />
+    <Content Include="Content\CSSRemove\dx.android5.light.css" />
+    <Content Include="Content\CSSRemove\dx.carmine.compact.css" />
+    <Content Include="Content\CSSRemove\dx.carmine.css" />
     <Content Include="Content\dx.common.css" />
-    <Content Include="Content\dx.contrast.compact.css" />
-    <Content Include="Content\dx.contrast.css" />
-    <Content Include="Content\dx.dark.compact.css" />
-    <Content Include="Content\dx.dark.css" />
-    <Content Include="Content\dx.darkmoon.compact.css" />
-    <Content Include="Content\dx.darkmoon.css" />
-    <Content Include="Content\dx.darkviolet.compact.css" />
-    <Content Include="Content\dx.darkviolet.css" />
-    <Content Include="Content\dx.greenmist.compact.css" />
-    <Content Include="Content\dx.greenmist.css" />
-    <Content Include="Content\dx.ios7.default.css" />
-    <Content Include="Content\dx.light.compact.css" />
-    <Content Include="Content\dx.light.css" />
-    <Content Include="Content\dx.material.blue.dark.css" />
-    <Content Include="Content\dx.material.blue.light.css" />
-    <Content Include="Content\dx.material.lime.dark.css" />
-    <Content Include="Content\dx.material.lime.light.css" />
-    <Content Include="Content\dx.material.orange.dark.css" />
-    <Content Include="Content\dx.material.orange.light.css" />
-    <Content Include="Content\dx.material.purple.dark.css" />
-    <Content Include="Content\dx.material.purple.light.css" />
-    <Content Include="Content\dx.material.teal.dark.css" />
-    <Content Include="Content\dx.material.teal.light.css" />
-    <Content Include="Content\dx.softblue.compact.css" />
-    <Content Include="Content\dx.softblue.css" />
-    <Content Include="Content\dx.spa.css" />
-    <Content Include="Content\dx.win10.black.css" />
-    <Content Include="Content\dx.win10.white.css" />
-    <Content Include="Content\dx.win8.black.css" />
-    <Content Include="Content\dx.win8.white.css" />
+    <Content Include="Content\CSSRemove\dx.contrast.compact.css" />
+    <Content Include="Content\CSSRemove\dx.contrast.css" />
+    <Content Include="Content\CSSRemove\dx.dark.compact.css" />
+    <Content Include="Content\CSSRemove\dx.dark.css" />
+    <Content Include="Content\CSSRemove\dx.darkmoon.compact.css" />
+    <Content Include="Content\CSSRemove\dx.darkmoon.css" />
+    <Content Include="Content\CSSRemove\dx.darkviolet.compact.css" />
+    <Content Include="Content\CSSRemove\dx.darkviolet.css" />
+    <Content Include="Content\CSSRemove\dx.greenmist.compact.css" />
+    <Content Include="Content\CSSRemove\dx.greenmist.css" />
+    <Content Include="Content\CSSRemove\dx.ios7.default.css" />
+    <Content Include="Content\CSSRemove\dx.light.compact.css" />
+    <Content Include="Content\CSSRemove\dx.light.css" />
+    <Content Include="Content\CSSRemove\dx.material.blue.dark.css" />
+    <Content Include="Content\CSSRemove\dx.material.blue.light.css" />
+    <Content Include="Content\CSSRemove\dx.material.lime.dark.css" />
+    <Content Include="Content\CSSRemove\dx.material.lime.light.css" />
+    <Content Include="Content\CSSRemove\dx.material.orange.dark.css" />
+    <Content Include="Content\CSSRemove\dx.material.orange.light.css" />
+    <Content Include="Content\CSSRemove\dx.material.purple.dark.css" />
+    <Content Include="Content\CSSRemove\dx.material.purple.light.css" />
+    <Content Include="Content\CSSRemove\dx.material.teal.dark.css" />
+    <Content Include="Content\CSSRemove\dx.material.teal.light.css" />
+    <Content Include="Content\CSSRemove\dx.softblue.compact.css" />
+    <Content Include="Content\CSSRemove\dx.softblue.css" />
+    <Content Include="Content\CSSRemove\dx.spa.css" />
+    <Content Include="Content\CSSRemove\dx.win10.black.css" />
+    <Content Include="Content\CSSRemove\dx.win10.white.css" />
+    <Content Include="Content\CSSRemove\dx.win8.black.css" />
+    <Content Include="Content\CSSRemove\dx.win8.white.css" />
     <Content Include="Content\icons\favicon.ico" />
-    <Content Include="Content\ketoSavageTheme.css">
+    <Content Include="Content\CSSRemove\ketoSavageTheme.css">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Content\Images\AquaHeader.jpg">
@@ -703,6 +704,9 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Content\jquery-ui.min.css">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\CSSRemove\SiteOrig.css">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Content\Site.min.css">
@@ -1354,6 +1358,7 @@
     <Content Include="Views\Manage\SetPassword.cshtml" />
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Manage\_personalInfo.cshtml" />
+    <Content Include="Views\ManageUsers\_dxUserGrid.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -1382,6 +1387,7 @@
     <Compile Include="Controllers\ManageClientProgramsAPIController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\ManageNewsController.cs" />
+    <Compile Include="Controllers\ManageUsersAPIController.cs" />
     <Compile Include="Controllers\ProgramApiController.cs" />
     <Compile Include="Controllers\ProgressApiController.cs" />
     <Compile Include="Controllers\UserProgramsController.cs" />
@@ -1634,7 +1640,7 @@
           <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
         </WebProjectProperties>
       </FlavorProperties>
-      <UserProperties DismissedDevExtremeVersion="18.2.6.0" />
+      <UserProperties DismissedDevExtremeVersion="18.2.7.0" />
     </VisualStudio>
   </ProjectExtensions>
 </Project>

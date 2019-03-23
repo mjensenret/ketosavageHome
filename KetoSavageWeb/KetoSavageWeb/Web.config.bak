@@ -6,17 +6,17 @@
 <configuration>
   <configSections>
     <sectionGroup name="devExpress">
-      <section name="themes" type="DevExpress.Web.ThemesConfigurationSection, DevExpress.Web.v18.2, Version=18.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" requirePermission="false" />
-      <section name="compression" type="DevExpress.Web.CompressionConfigurationSection, DevExpress.Web.v18.2, Version=18.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" requirePermission="false" />
-      <section name="settings" type="DevExpress.Web.SettingsConfigurationSection, DevExpress.Web.v18.2, Version=18.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" requirePermission="false" />
-      <section name="errors" type="DevExpress.Web.ErrorsConfigurationSection, DevExpress.Web.v18.2, Version=18.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" requirePermission="false" />
-      <section name="resources" type="DevExpress.Web.ResourcesConfigurationSection, DevExpress.Web.v18.2, Version=18.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" requirePermission="false" />
+      <section name="themes" type="DevExpress.Web.ThemesConfigurationSection, DevExpress.Web.v18.2, Version=18.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" requirePermission="false" />
+      <section name="compression" type="DevExpress.Web.CompressionConfigurationSection, DevExpress.Web.v18.2, Version=18.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" requirePermission="false" />
+      <section name="settings" type="DevExpress.Web.SettingsConfigurationSection, DevExpress.Web.v18.2, Version=18.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" requirePermission="false" />
+      <section name="errors" type="DevExpress.Web.ErrorsConfigurationSection, DevExpress.Web.v18.2, Version=18.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" requirePermission="false" />
+      <section name="resources" type="DevExpress.Web.ResourcesConfigurationSection, DevExpress.Web.v18.2, Version=18.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" requirePermission="false" />
     </sectionGroup>
-    <section name="glimpse" type="Glimpse.Core.Configuration.Section, Glimpse.Core" />
+    <!--<section name="glimpse" type="Glimpse.Core.Configuration.Section, Glimpse.Core" />-->
     <sectionGroup name="applicationSettings" type="System.Configuration.ApplicationSettingsGroup, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
       <section name="KetoSavageWeb.Properties.Settings" type="System.Configuration.ClientSettingsSection, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" requirePermission="false" />
     </sectionGroup>
-  </configSections>
+  <section name="web.optimization" type="Web.Optimization.Configuration.OptimizationSection" /></configSections>
   <connectionStrings>
     <!--<add name="ApplicationServices" connectionString="data source=13-01-0110;Initial Catalog=KSData;User ID=KS;Password=S4v4g3*18;MultipleActiveResultSets=True;connect timeout=120" providerName="System.Data.SqlClient"/>-->
     <!--<add name="ApplicationServices" connectionString="Data Source=RD_Laptop;Initial Catalog=KSData;Integrated Security=True" providerName="System.Data.SqlClient" />-->
@@ -49,46 +49,46 @@
       <assemblies>
         <add assembly="System.Web.Abstractions, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31BF3856AD364E35" />
         <add assembly="System.Web.Routing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31BF3856AD364E35" />
-        <add assembly="DevExpress.Utils.v18.2, Version=18.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-        <add assembly="DevExpress.Data.v18.2, Version=18.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-        <add assembly="DevExpress.Web.ASPxThemes.v18.2, Version=18.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-        <add assembly="DevExpress.RichEdit.v18.2.Core, Version=18.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-        <add assembly="DevExpress.RichEdit.v18.2.Export, Version=18.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-        <add assembly="DevExpress.Printing.v18.2.Core, Version=18.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-        <add assembly="DevExpress.Web.v18.2, Version=18.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-        <add assembly="DevExpress.Web.Mvc5.v18.2, Version=18.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-        <add assembly="DevExpress.Web.ASPxPivotGrid.v18.2, Version=18.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-        <add assembly="DevExpress.PivotGrid.v18.2.Core, Version=18.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-        <add assembly="DevExpress.Spreadsheet.v18.2.Core, Version=18.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-        <add assembly="DevExpress.Web.ASPxSpreadsheet.v18.2, Version=18.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-        <add assembly="DevExpress.XtraScheduler.v18.2.Core, Version=18.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-        <add assembly="DevExpress.Web.ASPxScheduler.v18.2, Version=18.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-        <add assembly="DevExpress.Charts.v18.2.Core, Version=18.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-        <add assembly="DevExpress.XtraCharts.v18.2, Version=18.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-        <add assembly="DevExpress.XtraCharts.v18.2.Web, Version=18.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-        <add assembly="DevExpress.Web.Resources.v18.2, Version=18.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-        <add assembly="DevExpress.XtraReports.v18.2, Version=18.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-        <add assembly="DevExpress.XtraReports.v18.2.Web, Version=18.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-        <add assembly="DevExpress.XtraReports.v18.2.Web.WebForms, Version=18.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-        <add assembly="DevExpress.Pdf.v18.2.Core, Version=18.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-        <add assembly="DevExpress.CodeParser.v18.2, Version=18.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-        <add assembly="DevExpress.DataAccess.v18.2, Version=18.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-        <add assembly="DevExpress.Office.v18.2.Core, Version=18.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-        <add assembly="DevExpress.Sparkline.v18.2.Core, Version=18.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-        <add assembly="DevExpress.Xpo.v18.2, Version=18.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-        <add assembly="DevExpress.XtraGauges.v18.2.Core, Version=18.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-        <add assembly="DevExpress.Dashboard.v18.2.Core, Version=18.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-        <add assembly="DevExpress.Dashboard.v18.2.Web, Version=18.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-        <add assembly="DevExpress.Dashboard.v18.2.Web.WebForms, Version=18.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-        <add assembly="DevExpress.Dashboard.v18.2.Web.Mvc5, Version=18.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-        <add assembly="DevExpress.TreeMap.v18.2.Core, Version=18.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-        <add assembly="DevExpress.Map.v18.2.Core, Version=18.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-        <add assembly="DevExpress.XtraTreeMap.v18.2, Version=18.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-        <add assembly="DevExpress.XtraGauges.v18.2.Presets, Version=18.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-        <add assembly="DevExpress.XtraGauges.v18.2.Win, Version=18.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-        <add assembly="DevExpress.XtraMap.v18.2, Version=18.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-        <add assembly="DevExpress.XtraEditors.v18.2, Version=18.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-        <add assembly="DevExpress.XtraPrinting.v18.2, Version=18.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+        <add assembly="DevExpress.Utils.v18.2, Version=18.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+        <add assembly="DevExpress.Data.v18.2, Version=18.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+        <add assembly="DevExpress.Web.ASPxThemes.v18.2, Version=18.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+        <add assembly="DevExpress.RichEdit.v18.2.Core, Version=18.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+        <add assembly="DevExpress.RichEdit.v18.2.Export, Version=18.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+        <add assembly="DevExpress.Printing.v18.2.Core, Version=18.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+        <add assembly="DevExpress.Web.v18.2, Version=18.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+        <add assembly="DevExpress.Web.Mvc5.v18.2, Version=18.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+        <add assembly="DevExpress.Web.ASPxPivotGrid.v18.2, Version=18.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+        <add assembly="DevExpress.PivotGrid.v18.2.Core, Version=18.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+        <add assembly="DevExpress.Spreadsheet.v18.2.Core, Version=18.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+        <add assembly="DevExpress.Web.ASPxSpreadsheet.v18.2, Version=18.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+        <add assembly="DevExpress.XtraScheduler.v18.2.Core, Version=18.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+        <add assembly="DevExpress.Web.ASPxScheduler.v18.2, Version=18.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+        <add assembly="DevExpress.Charts.v18.2.Core, Version=18.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+        <add assembly="DevExpress.XtraCharts.v18.2, Version=18.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+        <add assembly="DevExpress.XtraCharts.v18.2.Web, Version=18.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+        <add assembly="DevExpress.Web.Resources.v18.2, Version=18.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+        <add assembly="DevExpress.XtraReports.v18.2, Version=18.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+        <add assembly="DevExpress.XtraReports.v18.2.Web, Version=18.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+        <add assembly="DevExpress.XtraReports.v18.2.Web.WebForms, Version=18.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+        <add assembly="DevExpress.Pdf.v18.2.Core, Version=18.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+        <add assembly="DevExpress.CodeParser.v18.2, Version=18.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+        <add assembly="DevExpress.DataAccess.v18.2, Version=18.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+        <add assembly="DevExpress.Office.v18.2.Core, Version=18.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+        <add assembly="DevExpress.Sparkline.v18.2.Core, Version=18.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+        <add assembly="DevExpress.Xpo.v18.2, Version=18.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+        <add assembly="DevExpress.XtraGauges.v18.2.Core, Version=18.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+        <add assembly="DevExpress.Dashboard.v18.2.Core, Version=18.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+        <add assembly="DevExpress.Dashboard.v18.2.Web, Version=18.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+        <add assembly="DevExpress.Dashboard.v18.2.Web.WebForms, Version=18.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+        <add assembly="DevExpress.Dashboard.v18.2.Web.Mvc5, Version=18.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+        <add assembly="DevExpress.TreeMap.v18.2.Core, Version=18.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+        <add assembly="DevExpress.Map.v18.2.Core, Version=18.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+        <add assembly="DevExpress.XtraTreeMap.v18.2, Version=18.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+        <add assembly="DevExpress.XtraGauges.v18.2.Presets, Version=18.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+        <add assembly="DevExpress.XtraGauges.v18.2.Win, Version=18.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+        <add assembly="DevExpress.XtraMap.v18.2, Version=18.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+        <add assembly="DevExpress.XtraEditors.v18.2, Version=18.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+        <add assembly="DevExpress.XtraPrinting.v18.2, Version=18.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
       </assemblies>
     </compilation>
     <authentication mode="Forms">
@@ -126,18 +126,17 @@
       </namespaces>
     </pages>
     <httpHandlers>
-      <add type="DevExpress.Web.ASPxUploadProgressHttpHandler, DevExpress.Web.v18.2, Version=18.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" verb="GET,POST" path="ASPxUploadProgressHandlerPage.ashx" validate="false" />
-      <add type="DevExpress.Web.ASPxHttpHandlerModule, DevExpress.Web.v18.2, Version=18.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" verb="GET,POST" path="DX.ashx" validate="false" />
-      <add type="DevExpress.Web.ASPxHttpHandlerModule, DevExpress.Web.v18.2, Version=18.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" verb="GET,POST" path="DXXRD.axd" validate="false" />
-      <add type="DevExpress.Web.ASPxHttpHandlerModule, DevExpress.Web.v18.2, Version=18.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" verb="GET,POST" path="DXXRDV.axd" validate="false" />
-      <add type="DevExpress.Web.ASPxHttpHandlerModule, DevExpress.Web.v18.2, Version=18.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" verb="GET,POST" path="DXQB.axd" validate="false" />
-      <add path="glimpse.axd" verb="GET" type="Glimpse.AspNet.HttpHandler, Glimpse.AspNet" />
+      <add type="DevExpress.Web.ASPxUploadProgressHttpHandler, DevExpress.Web.v18.2, Version=18.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" verb="GET,POST" path="ASPxUploadProgressHandlerPage.ashx" validate="false" />
+      <add type="DevExpress.Web.ASPxHttpHandlerModule, DevExpress.Web.v18.2, Version=18.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" verb="GET,POST" path="DX.ashx" validate="false" />
+      <add type="DevExpress.Web.ASPxHttpHandlerModule, DevExpress.Web.v18.2, Version=18.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" verb="GET,POST" path="DXXRD.axd" validate="false" />
+      <add type="DevExpress.Web.ASPxHttpHandlerModule, DevExpress.Web.v18.2, Version=18.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" verb="GET,POST" path="DXXRDV.axd" validate="false" />
+      <add type="DevExpress.Web.ASPxHttpHandlerModule, DevExpress.Web.v18.2, Version=18.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" verb="GET,POST" path="DXQB.axd" validate="false" />
+      <!--<add path="glimpse.axd" verb="GET" type="Glimpse.AspNet.HttpHandler, Glimpse.AspNet" />-->
     </httpHandlers>
-    <!-- Glimpse: This can be commented in to add additional data to the Trace tab when using WebForms
-        <trace writeToDiagnosticsTrace="true" enabled="true" pageOutput="false"/> -->
+    
     <httpModules>
-      <add type="DevExpress.Web.ASPxHttpHandlerModule, DevExpress.Web.v18.2, Version=18.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" name="ASPxHttpHandlerModule" />
-      <add name="Glimpse" type="Glimpse.AspNet.HttpModule, Glimpse.AspNet" />
+      <add type="DevExpress.Web.ASPxHttpHandlerModule, DevExpress.Web.v18.2, Version=18.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" name="ASPxHttpHandlerModule" />
+      <!--<add name="Glimpse" type="Glimpse.AspNet.HttpModule, Glimpse.AspNet" />-->
     </httpModules>
     <globalization culture="" uiCulture="" />
     <httpRuntime maxRequestLength="4096" requestValidationMode="4.0" executionTimeout="110" targetFramework="4.5" />
@@ -146,16 +145,16 @@
     <validation validateIntegratedModeConfiguration="false" />
     <modules runAllManagedModulesForAllRequests="true">
       <remove name="FormsAuthentication" />
-      <add type="DevExpress.Web.ASPxHttpHandlerModule, DevExpress.Web.v18.2, Version=18.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" name="ASPxHttpHandlerModule" />
-      <add name="Glimpse" type="Glimpse.AspNet.HttpModule, Glimpse.AspNet" preCondition="integratedMode" />
+      <add type="DevExpress.Web.ASPxHttpHandlerModule, DevExpress.Web.v18.2, Version=18.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" name="ASPxHttpHandlerModule" />
+      <!--<add name="Glimpse" type="Glimpse.AspNet.HttpModule, Glimpse.AspNet" preCondition="integratedMode" />-->
     </modules>
     <handlers>
-      <add type="DevExpress.Web.ASPxUploadProgressHttpHandler, DevExpress.Web.v18.2, Version=18.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" verb="GET,POST" path="ASPxUploadProgressHandlerPage.ashx" name="ASPxUploadProgressHandler" preCondition="integratedMode" />
-      <add type="DevExpress.Web.ASPxHttpHandlerModule, DevExpress.Web.v18.2, Version=18.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" verb="GET,POST" path="DX.ashx" name="ASPxHttpHandlerModule" preCondition="integratedMode" />
-      <add type="DevExpress.Web.ASPxHttpHandlerModule, DevExpress.Web.v18.2, Version=18.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" verb="GET,POST" path="DXXRD.axd" name="ASPxReportDesignerHandlerModule" preCondition="integratedMode" />
-      <add type="DevExpress.Web.ASPxHttpHandlerModule, DevExpress.Web.v18.2, Version=18.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" verb="GET,POST" path="DXXRDV.axd" name="ASPxWebDocumentViewerHandlerModule" preCondition="integratedMode" />
-      <add type="DevExpress.Web.ASPxHttpHandlerModule, DevExpress.Web.v18.2, Version=18.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" verb="GET,POST" path="DXQB.axd" name="ASPxQueryBuilderDesignerHandlerModule" preCondition="integratedMode" />
-      <add name="Glimpse" path="glimpse.axd" verb="GET" type="Glimpse.AspNet.HttpHandler, Glimpse.AspNet" preCondition="integratedMode" />
+      <add type="DevExpress.Web.ASPxUploadProgressHttpHandler, DevExpress.Web.v18.2, Version=18.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" verb="GET,POST" path="ASPxUploadProgressHandlerPage.ashx" name="ASPxUploadProgressHandler" preCondition="integratedMode" />
+      <add type="DevExpress.Web.ASPxHttpHandlerModule, DevExpress.Web.v18.2, Version=18.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" verb="GET,POST" path="DX.ashx" name="ASPxHttpHandlerModule" preCondition="integratedMode" />
+      <add type="DevExpress.Web.ASPxHttpHandlerModule, DevExpress.Web.v18.2, Version=18.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" verb="GET,POST" path="DXXRD.axd" name="ASPxReportDesignerHandlerModule" preCondition="integratedMode" />
+      <add type="DevExpress.Web.ASPxHttpHandlerModule, DevExpress.Web.v18.2, Version=18.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" verb="GET,POST" path="DXXRDV.axd" name="ASPxWebDocumentViewerHandlerModule" preCondition="integratedMode" />
+      <add type="DevExpress.Web.ASPxHttpHandlerModule, DevExpress.Web.v18.2, Version=18.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" verb="GET,POST" path="DXQB.axd" name="ASPxQueryBuilderDesignerHandlerModule" preCondition="integratedMode" />
+      <!--<add name="Glimpse" path="glimpse.axd" verb="GET" type="Glimpse.AspNet.HttpHandler, Glimpse.AspNet" preCondition="integratedMode" />-->
     </handlers>
     <security>
       <requestFiltering>
@@ -209,6 +208,14 @@
         <assemblyIdentity name="DevExtreme.AspNet.Data" publicKeyToken="982f5dab1439d0f7" culture="neutral" />
         <bindingRedirect oldVersion="0.0.0.0-1.4.7.0" newVersion="1.4.7.0" />
       </dependentAssembly>
+      <dependentAssembly>
+        <assemblyIdentity name="System.Web.Optimization" publicKeyToken="31bf3856ad364e35" culture="neutral" />
+        <bindingRedirect oldVersion="0.0.0.0-1.1.0.0" newVersion="1.1.0.0" />
+      </dependentAssembly>
+      <dependentAssembly>
+        <assemblyIdentity name="Ninject" publicKeyToken="c7192dc5380945e7" culture="neutral" />
+        <bindingRedirect oldVersion="0.0.0.0-3.3.3.0" newVersion="3.3.3.0" />
+      </dependentAssembly>
     </assemblyBinding>
   </runtime>
   <devExpress>
@@ -217,16 +224,16 @@
       <add type="DevExtreme" />
     </resources>
     <themes enableThemesAssembly="true" styleSheetTheme="" theme="KetoSavage" customThemeAssemblies="KetoSavageTheme" baseColor="" font="" />
-    <compression enableHtmlCompression="false" enableCallbackCompression="true" enableResourceCompression="true" enableResourceMerging="true" />
+    <compression enableHtmlCompression="true" enableCallbackCompression="true" enableResourceCompression="true" enableResourceMerging="true" />
     <settings accessibilityCompliant="false" bootstrapMode="" doctypeMode="Html5" rightToLeft="false" checkReferencesToExternalScripts="true" protectControlState="true" ieCompatibilityVersion="edge" />
     <errors callbackErrorRedirectUrl="" />
   </devExpress>
-  <glimpse defaultRuntimePolicy="On" endpointBaseUri="~/Glimpse.axd">
-    <!-- 
+  <!--<glimpse defaultRuntimePolicy="On" endpointBaseUri="~/Glimpse.axd">
+    --><!-- 
           For more information on how to configure Glimpse, please visit http://getglimpse.com/Help/Configuration
           or access {your site}/Glimpse.axd for even more details and a Configuration Tool to support you. 
-      -->
-  </glimpse>
+      --><!--
+  </glimpse>-->
   <applicationSettings>
     <KetoSavageWeb.Properties.Settings>
       <setting name="DefaultPassword" serializeAs="String">
@@ -246,4 +253,28 @@
       </setting>
     </KetoSavageWeb.Properties.Settings>
   </applicationSettings>
-</configuration>
+<web.optimization>
+    <bundles>
+      <bundle virtualPath="~/Content/sample" transform="System.Web.Optimization.JsMinify, System.Web.Optimization">
+        <content>
+          <!-- Add some single files -->
+          <!-- <add path="~/Scripts/validation.js" /> -->
+          <!-- <add path="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.7.2.min.js" /> -->          
+
+          <!-- Add a directory (and its subdirectories) -->
+          <!-- <add path="~/Scripts/Plugins" searchPattern="*.js" searchSubdirectories="true" /> -->
+        </content>
+        
+        <!--
+        If you want to apply multiple transformations, 
+        you should remove the "transform" attribute from the bundle. 
+        -->
+        <!--
+        <transformations>
+          <add type="Web.Optimization.Bundles.CoffeeScript.CoffeeScriptTransform, Web.Optimization.Bundles.CoffeeScript" />
+          <add type="System.Web.Optimization.JsMinify, System.Web.Optimization" />
+        </transformations>
+        -->
+      </bundle>
+    </bundles>
+  </web.optimization></configuration>

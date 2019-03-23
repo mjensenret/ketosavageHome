@@ -986,10 +986,10 @@
             <summary>Specifies the DOM events after which the widget&#39;s value should be updated.</summary>
         </member>
         <member name="M:DevExtreme.AspNet.Mvc.Builders.AutocompleteBuilder.ValueExpr(System.String)">
-            <summary>Specifies which data field provides the widget&#39;s value. When this option is not set, the value is the entire data object.</summary>
+            <summary>Specifies which data field provides unique values to the widget&#39;s value. When the data field is not set, the value is the entire data object.</summary>
         </member>
         <member name="M:DevExtreme.AspNet.Mvc.Builders.AutocompleteBuilder.ValueExpr(DevExtreme.AspNet.Mvc.JS)">
-            <summary>Specifies which data field provides the widget&#39;s value. When this option is not set, the value is the entire data object.</summary>
+            <summary>Specifies which data field provides unique values to the widget&#39;s value. When the data field is not set, the value is the entire data object.</summary>
         </member>
         <member name="M:DevExtreme.AspNet.Mvc.Builders.AutocompleteBuilder.Visible(System.Boolean)">
             <summary>Specifies whether the widget is visible.</summary>
@@ -2504,10 +2504,10 @@
             <summary>Specifies the name of the data source item field whose value defines whether or not the corresponding widget item is disabled.</summary>
         </member>
         <member name="M:DevExtreme.AspNet.Mvc.Builders.ContextMenuBuilder.DisplayExpr(System.String)">
-            <summary>Specifies the name of the data source item field whose value is displayed by the widget.</summary>
+            <summary>Specifies the data field whose values should be displayed.</summary>
         </member>
         <member name="M:DevExtreme.AspNet.Mvc.Builders.ContextMenuBuilder.DisplayExpr(DevExtreme.AspNet.Mvc.JS)">
-            <summary>Specifies the name of the data source item field whose value is displayed by the widget.</summary>
+            <summary>Specifies the data field whose values should be displayed.</summary>
         </member>
         <member name="M:DevExtreme.AspNet.Mvc.Builders.ContextMenuBuilder.ElementAttr(System.String,System.Object)">
             <summary>Specifies the attributes to be attached to the widget&#39;s root element.</summary>
@@ -2861,10 +2861,10 @@
             <summary>Allows to specify an arbitrary option by its name.</summary>
         </member>
         <member name="M:DevExtreme.AspNet.Mvc.Builders.CustomRuleBuilder.IgnoreEmptyValue(System.Boolean)">
-            <summary>Specifies whether empty values are valid.</summary>
+            <summary>Specifies whether the validationCallback should be called for null and undefined values.</summary>
         </member>
         <member name="M:DevExtreme.AspNet.Mvc.Builders.CustomRuleBuilder.IgnoreEmptyValue(DevExtreme.AspNet.Mvc.JS)">
-            <summary>Specifies whether empty values are valid.</summary>
+            <summary>Specifies whether the validationCallback should be called for null and undefined values.</summary>
         </member>
         <member name="M:DevExtreme.AspNet.Mvc.Builders.CustomRuleBuilder.Message(System.String)">
             <summary>Specifies the message that is shown for end-users if the current rule is broken.</summary>
@@ -3200,10 +3200,10 @@
             <summary>A function that is executed after an editor is created.</summary>
         </member>
         <member name="M:DevExtreme.AspNet.Mvc.Builders.DataGridBuilder`1.OnEditorPreparing(System.String)">
-            <summary>A function that is executed before an editor is created.</summary>
+            <summary>A function that is executed before a cell&#39;s editor is created. Not executed for cells with an editCellTemplate.</summary>
         </member>
         <member name="M:DevExtreme.AspNet.Mvc.Builders.DataGridBuilder`1.OnEditorPreparing(DevExtreme.AspNet.Mvc.RazorBlock)">
-            <summary>A function that is executed before an editor is created.</summary>
+            <summary>A function that is executed before a cell&#39;s editor is created. Not executed for cells with an editCellTemplate.</summary>
         </member>
         <member name="M:DevExtreme.AspNet.Mvc.Builders.DataGridBuilder`1.OnExported(System.String)">
             <summary>A function that is executed after data is exported.</summary>
@@ -4325,31 +4325,31 @@
             <summary>Specifies the URL of the server-side proxy that streams the resulting file to the end user to enable exporting in the Safari browser.</summary>
         </member>
         <member name="M:DevExtreme.AspNet.Mvc.Builders.DataGridExportBuilder.Texts(System.Action{DevExtreme.AspNet.Mvc.Builders.DataGridExportTextsBuilder})">
-            <summary>Contains options that specify texts for the export-related commands and hints.</summary>
+            <summary>Configures the texts of export commands, buttons, and hints.</summary>
         </member>
         <member name="T:DevExtreme.AspNet.Mvc.Builders.DataGridExportTextsBuilder">
-            <summary>Contains options that specify texts for the export-related commands and hints.</summary>
+            <summary>Configures the texts of export commands, buttons, and hints.</summary>
         </member>
         <member name="M:DevExtreme.AspNet.Mvc.Builders.DataGridExportTextsBuilder.Option(System.String,System.Object)">
             <summary>Allows to specify an arbitrary option by its name.</summary>
         </member>
         <member name="M:DevExtreme.AspNet.Mvc.Builders.DataGridExportTextsBuilder.ExportAll(System.String)">
-            <summary>Specifies the text of the command that exports all data.</summary>
+            <summary>The text or hint of the command that exports all data.</summary>
         </member>
         <member name="M:DevExtreme.AspNet.Mvc.Builders.DataGridExportTextsBuilder.ExportAll(DevExtreme.AspNet.Mvc.JS)">
-            <summary>Specifies the text of the command that exports all data.</summary>
+            <summary>The text or hint of the command that exports all data.</summary>
         </member>
         <member name="M:DevExtreme.AspNet.Mvc.Builders.DataGridExportTextsBuilder.ExportSelectedRows(System.String)">
-            <summary>Specifies the text of the drop-down menu command that exports selected rows.</summary>
+            <summary>The text of the command that exports selected rows. Applies when allowExportSelectedData option is true.</summary>
         </member>
         <member name="M:DevExtreme.AspNet.Mvc.Builders.DataGridExportTextsBuilder.ExportSelectedRows(DevExtreme.AspNet.Mvc.JS)">
-            <summary>Specifies the text of the drop-down menu command that exports selected rows.</summary>
+            <summary>The text of the command that exports selected rows. Applies when allowExportSelectedData option is true.</summary>
         </member>
         <member name="M:DevExtreme.AspNet.Mvc.Builders.DataGridExportTextsBuilder.ExportTo(System.String)">
-            <summary>Specifies the hint of the Export button when the allowExportSelectedData option is true.</summary>
+            <summary>The hint of the Export button when the allowExportSelectedData option is true.</summary>
         </member>
         <member name="M:DevExtreme.AspNet.Mvc.Builders.DataGridExportTextsBuilder.ExportTo(DevExtreme.AspNet.Mvc.JS)">
-            <summary>Specifies the hint of the Export button when the allowExportSelectedData option is true.</summary>
+            <summary>The hint of the Export button when the allowExportSelectedData option is true.</summary>
         </member>
         <member name="T:DevExtreme.AspNet.Mvc.Builders.DataGridFilterPanelBuilder">
             <summary>Configures the filter panel.</summary>
@@ -5159,16 +5159,16 @@
             <summary>Customizes the text to be displayed in the summary item.</summary>
         </member>
         <member name="M:DevExtreme.AspNet.Mvc.Builders.DataGridSummaryGroupItemBuilder`1.DisplayFormat(System.String)">
-            <summary>Specifies a pattern for the summary item text.</summary>
+            <summary>Specifies the summary item&#39;s text.</summary>
         </member>
         <member name="M:DevExtreme.AspNet.Mvc.Builders.DataGridSummaryGroupItemBuilder`1.DisplayFormat(DevExtreme.AspNet.Mvc.JS)">
-            <summary>Specifies a pattern for the summary item text.</summary>
+            <summary>Specifies the summary item&#39;s text.</summary>
         </member>
         <member name="M:DevExtreme.AspNet.Mvc.Builders.DataGridSummaryGroupItemBuilder`1.Name(System.String)">
-            <summary>Specifies the identifier of a summary item.</summary>
+            <summary>Specifies the group summary item&#39;s identifier.</summary>
         </member>
         <member name="M:DevExtreme.AspNet.Mvc.Builders.DataGridSummaryGroupItemBuilder`1.Name(DevExtreme.AspNet.Mvc.JS)">
-            <summary>Specifies the identifier of a summary item.</summary>
+            <summary>Specifies the group summary item&#39;s identifier.</summary>
         </member>
         <member name="M:DevExtreme.AspNet.Mvc.Builders.DataGridSummaryGroupItemBuilder`1.ShowInColumn(System.String)">
             <summary>Specifies the column that must hold the summary item when this item is displayed in the group footer or aligned by a column in the group row.</summary>
@@ -5297,16 +5297,16 @@
             <summary>Customizes the text to be displayed in the summary item.</summary>
         </member>
         <member name="M:DevExtreme.AspNet.Mvc.Builders.DataGridSummaryTotalItemBuilder`1.DisplayFormat(System.String)">
-            <summary>Specifies a pattern for the summary item text.</summary>
+            <summary>Specifies the summary item&#39;s text.</summary>
         </member>
         <member name="M:DevExtreme.AspNet.Mvc.Builders.DataGridSummaryTotalItemBuilder`1.DisplayFormat(DevExtreme.AspNet.Mvc.JS)">
-            <summary>Specifies a pattern for the summary item text.</summary>
+            <summary>Specifies the summary item&#39;s text.</summary>
         </member>
         <member name="M:DevExtreme.AspNet.Mvc.Builders.DataGridSummaryTotalItemBuilder`1.Name(System.String)">
-            <summary>Specifies the identifier of a summary item.</summary>
+            <summary>Specifies the total summary item&#39;s identifier.</summary>
         </member>
         <member name="M:DevExtreme.AspNet.Mvc.Builders.DataGridSummaryTotalItemBuilder`1.Name(DevExtreme.AspNet.Mvc.JS)">
-            <summary>Specifies the identifier of a summary item.</summary>
+            <summary>Specifies the total summary item&#39;s identifier.</summary>
         </member>
         <member name="M:DevExtreme.AspNet.Mvc.Builders.DataGridSummaryTotalItemBuilder`1.ShowInColumn(System.String)">
             <summary>Specifies the column that must hold the summary item.</summary>
@@ -6366,10 +6366,10 @@
             <summary>Specifies whether the widget responds to user interaction.</summary>
         </member>
         <member name="M:DevExtreme.AspNet.Mvc.Builders.DropDownBoxBuilder.DisplayExpr(System.String)">
-            <summary>Specifies the name of the data source item field whose value is displayed by the widget.</summary>
+            <summary>Specifies the data field whose values should be displayed.</summary>
         </member>
         <member name="M:DevExtreme.AspNet.Mvc.Builders.DropDownBoxBuilder.DisplayExpr(DevExtreme.AspNet.Mvc.JS)">
-            <summary>Specifies the name of the data source item field whose value is displayed by the widget.</summary>
+            <summary>Specifies the data field whose values should be displayed.</summary>
         </member>
         <member name="M:DevExtreme.AspNet.Mvc.Builders.DropDownBoxBuilder.DropDownButtonTemplate(System.String)">
             <summary>Specifies a custom template for the drop-down button.</summary>
@@ -6463,6 +6463,15 @@
         </member>
         <member name="M:DevExtreme.AspNet.Mvc.Builders.DropDownBoxBuilder.Items(System.Action{DevExtreme.AspNet.Mvc.Factories.CollectionFactory{DevExtreme.AspNet.Mvc.Builders.DropDownBoxItemBuilder}})">
             <summary>An array of items displayed by the widget.</summary>
+        </member>
+        <member name="M:DevExtreme.AspNet.Mvc.Builders.DropDownBoxBuilder.MaxLength(System.Double)">
+            <summary>Specifies the maximum number of characters you can enter into the textbox.</summary>
+        </member>
+        <member name="M:DevExtreme.AspNet.Mvc.Builders.DropDownBoxBuilder.MaxLength(System.String)">
+            <summary>Specifies the maximum number of characters you can enter into the textbox.</summary>
+        </member>
+        <member name="M:DevExtreme.AspNet.Mvc.Builders.DropDownBoxBuilder.MaxLength(DevExtreme.AspNet.Mvc.JS)">
+            <summary>Specifies the maximum number of characters you can enter into the textbox.</summary>
         </member>
         <member name="M:DevExtreme.AspNet.Mvc.Builders.DropDownBoxBuilder.Name(System.String)">
             <summary>The value to be assigned to the `name` attribute of the underlying HTML element.</summary>
@@ -6639,10 +6648,10 @@
             <summary>Specifies the DOM events after which the widget&#39;s value should be updated.</summary>
         </member>
         <member name="M:DevExtreme.AspNet.Mvc.Builders.DropDownBoxBuilder.ValueExpr(System.String)">
-            <summary>Specifies which data field provides the widget&#39;s value. When this option is not set, the value is the entire data object.</summary>
+            <summary>Specifies which data field provides unique values to the widget&#39;s value. When the data field is not set, the value is the entire data object.</summary>
         </member>
         <member name="M:DevExtreme.AspNet.Mvc.Builders.DropDownBoxBuilder.ValueExpr(DevExtreme.AspNet.Mvc.JS)">
-            <summary>Specifies which data field provides the widget&#39;s value. When this option is not set, the value is the entire data object.</summary>
+            <summary>Specifies which data field provides unique values to the widget&#39;s value. When the data field is not set, the value is the entire data object.</summary>
         </member>
         <member name="M:DevExtreme.AspNet.Mvc.Builders.DropDownBoxBuilder.Visible(System.Boolean)">
             <summary>Specifies whether the widget is visible.</summary>
@@ -7371,10 +7380,10 @@
             <summary>Specifies the lookup data source.</summary>
         </member>
         <member name="M:DevExtreme.AspNet.Mvc.Builders.FilterBuilderFieldLookupBuilder.DisplayExpr(System.String)">
-            <summary>Specifies the data source field whose values are displayed.</summary>
+            <summary>Specifies the data field whose values should be displayed.</summary>
         </member>
         <member name="M:DevExtreme.AspNet.Mvc.Builders.FilterBuilderFieldLookupBuilder.DisplayExpr(DevExtreme.AspNet.Mvc.JS)">
-            <summary>Specifies the data source field whose values are displayed.</summary>
+            <summary>Specifies the data field whose values should be displayed.</summary>
         </member>
         <member name="M:DevExtreme.AspNet.Mvc.Builders.FilterBuilderFieldLookupBuilder.ValueExpr(System.String)">
             <summary>Specifies the data source field whose values should be replaced.</summary>
@@ -8558,9 +8567,6 @@
         <member name="M:DevExtreme.AspNet.Mvc.Builders.GalleryItemBuilder.Text(DevExtreme.AspNet.Mvc.JS)">
             <summary>Specifies text displayed for the widget item.</summary>
         </member>
-        <member name="T:DevExtreme.AspNet.Mvc.Builders.GaugeIndicatorBuilder">
-            <summary>A base object for gauge value and subvalue indicators. Includes the options of indicators of all types.</summary>
-        </member>
         <member name="M:DevExtreme.AspNet.Mvc.Builders.GaugeIndicatorBuilder.Option(System.String,System.Object)">
             <summary>Allows to specify an arbitrary option by its name.</summary>
         </member>
@@ -9079,6 +9085,12 @@
         </member>
         <member name="M:DevExtreme.AspNet.Mvc.Builders.ListBuilder.Disabled(DevExtreme.AspNet.Mvc.JS)">
             <summary>Specifies whether the widget responds to user interaction.</summary>
+        </member>
+        <member name="M:DevExtreme.AspNet.Mvc.Builders.ListBuilder.DisplayExpr(System.String)">
+            <summary>Specifies the data field whose values should be displayed. Defaults to &quot;text&quot; when the data source contains objects.</summary>
+        </member>
+        <member name="M:DevExtreme.AspNet.Mvc.Builders.ListBuilder.DisplayExpr(DevExtreme.AspNet.Mvc.JS)">
+            <summary>Specifies the data field whose values should be displayed. Defaults to &quot;text&quot; when the data source contains objects.</summary>
         </member>
         <member name="M:DevExtreme.AspNet.Mvc.Builders.ListBuilder.ElementAttr(System.String,System.Object)">
             <summary>Specifies the attributes to be attached to the widget&#39;s root element.</summary>
@@ -9972,10 +9984,10 @@
             <summary>Specifies whether the widget responds to user interaction.</summary>
         </member>
         <member name="M:DevExtreme.AspNet.Mvc.Builders.LookupBuilder.DisplayExpr(System.String)">
-            <summary>Specifies the name of the data source item field whose value is displayed by the widget.</summary>
+            <summary>Specifies the data field whose values should be displayed.</summary>
         </member>
         <member name="M:DevExtreme.AspNet.Mvc.Builders.LookupBuilder.DisplayExpr(DevExtreme.AspNet.Mvc.JS)">
-            <summary>Specifies the name of the data source item field whose value is displayed by the widget.</summary>
+            <summary>Specifies the data field whose values should be displayed.</summary>
         </member>
         <member name="M:DevExtreme.AspNet.Mvc.Builders.LookupBuilder.ElementAttr(System.String,System.Object)">
             <summary>Specifies the attributes to be attached to the widget&#39;s root element.</summary>
@@ -10389,10 +10401,10 @@
             <summary>Specifies the DOM events after which the widget&#39;s value should be updated.</summary>
         </member>
         <member name="M:DevExtreme.AspNet.Mvc.Builders.LookupBuilder.ValueExpr(System.String)">
-            <summary>Specifies which data field provides the widget&#39;s value. When this option is not set, the value is the entire data object.</summary>
+            <summary>Specifies which data field provides unique values to the widget&#39;s value. When the data field is not set, the value is the entire data object.</summary>
         </member>
         <member name="M:DevExtreme.AspNet.Mvc.Builders.LookupBuilder.ValueExpr(DevExtreme.AspNet.Mvc.JS)">
-            <summary>Specifies which data field provides the widget&#39;s value. When this option is not set, the value is the entire data object.</summary>
+            <summary>Specifies which data field provides unique values to the widget&#39;s value. When the data field is not set, the value is the entire data object.</summary>
         </member>
         <member name="M:DevExtreme.AspNet.Mvc.Builders.LookupBuilder.Visible(System.Boolean)">
             <summary>Specifies whether the widget is visible.</summary>
@@ -10833,10 +10845,10 @@
             <summary>Specifies the name of the data source item field whose value defines whether or not the corresponding widget item is disabled.</summary>
         </member>
         <member name="M:DevExtreme.AspNet.Mvc.Builders.MenuBuilder.DisplayExpr(System.String)">
-            <summary>Specifies the name of the data source item field whose value is displayed by the widget.</summary>
+            <summary>Specifies the data field whose values should be displayed.</summary>
         </member>
         <member name="M:DevExtreme.AspNet.Mvc.Builders.MenuBuilder.DisplayExpr(DevExtreme.AspNet.Mvc.JS)">
-            <summary>Specifies the name of the data source item field whose value is displayed by the widget.</summary>
+            <summary>Specifies the data field whose values should be displayed.</summary>
         </member>
         <member name="M:DevExtreme.AspNet.Mvc.Builders.MenuBuilder.ElementAttr(System.String,System.Object)">
             <summary>Specifies the attributes to be attached to the widget&#39;s root element.</summary>
@@ -13305,10 +13317,10 @@
             <summary>A Boolean value specifying whether or not to display the title in the overlay window.</summary>
         </member>
         <member name="M:DevExtreme.AspNet.Mvc.Builders.PopoverBuilder.Target(System.String)">
-            <summary>The target element associated with a popover.</summary>
+            <summary>The target element associated with the widget.</summary>
         </member>
         <member name="M:DevExtreme.AspNet.Mvc.Builders.PopoverBuilder.Target(DevExtreme.AspNet.Mvc.JS)">
-            <summary>The target element associated with a popover.</summary>
+            <summary>The target element associated with the widget.</summary>
         </member>
         <member name="M:DevExtreme.AspNet.Mvc.Builders.PopoverBuilder.Title(System.String)">
             <summary>The title in the overlay window.</summary>
@@ -13332,7 +13344,7 @@
             <summary>Specifies a custom template for the widget title. Does not apply if the title is defined.</summary>
         </member>
         <member name="M:DevExtreme.AspNet.Mvc.Builders.PopoverBuilder.ToolbarItems(System.Action{DevExtreme.AspNet.Mvc.Factories.CollectionFactory{DevExtreme.AspNet.Mvc.Builders.PopoverToolbarItemBuilder}})">
-            <summary>Specifies items displayed on the top or bottom toolbar of the popup window.</summary>
+            <summary>Configures toolbar items.</summary>
         </member>
         <member name="M:DevExtreme.AspNet.Mvc.Builders.PopoverBuilder.Visible(System.Boolean)">
             <summary>A Boolean value specifying whether or not the widget is visible.</summary>
@@ -13386,7 +13398,7 @@
             <summary>Specifies the event names on which the widget is shown.</summary>
         </member>
         <member name="T:DevExtreme.AspNet.Mvc.Builders.PopoverToolbarItemBuilder">
-            <summary>Specifies items displayed on the top or bottom toolbar of the popup window.</summary>
+            <summary>Configures toolbar items.</summary>
         </member>
         <member name="M:DevExtreme.AspNet.Mvc.Builders.PopoverToolbarItemBuilder.Option(System.String,System.Object)">
             <summary>Allows to specify an arbitrary option by its name.</summary>
@@ -13746,7 +13758,7 @@
             <summary>Specifies a custom template for the widget title. Does not apply if the title is defined.</summary>
         </member>
         <member name="M:DevExtreme.AspNet.Mvc.Builders.PopupBuilder.ToolbarItems(System.Action{DevExtreme.AspNet.Mvc.Factories.CollectionFactory{DevExtreme.AspNet.Mvc.Builders.PopupToolbarItemBuilder}})">
-            <summary>Specifies items displayed on the top or bottom toolbar of the popup window.</summary>
+            <summary>Configures toolbar items.</summary>
         </member>
         <member name="M:DevExtreme.AspNet.Mvc.Builders.PopupBuilder.Visible(System.Boolean)">
             <summary>A Boolean value specifying whether or not the widget is visible.</summary>
@@ -13764,7 +13776,7 @@
             <summary>Specifies the widget&#39;s width in pixels.</summary>
         </member>
         <member name="T:DevExtreme.AspNet.Mvc.Builders.PopupToolbarItemBuilder">
-            <summary>Specifies items displayed on the top or bottom toolbar of the popup window.</summary>
+            <summary>Configures toolbar items.</summary>
         </member>
         <member name="M:DevExtreme.AspNet.Mvc.Builders.PopupToolbarItemBuilder.Option(System.String,System.Object)">
             <summary>Allows to specify an arbitrary option by its name.</summary>
@@ -14019,10 +14031,10 @@
             <summary>Specifies whether the widget responds to user interaction.</summary>
         </member>
         <member name="M:DevExtreme.AspNet.Mvc.Builders.RadioGroupBuilder.DisplayExpr(System.String)">
-            <summary>Specifies the name of the data source item field whose value is displayed by the widget.</summary>
+            <summary>Specifies the data field whose values should be displayed.</summary>
         </member>
         <member name="M:DevExtreme.AspNet.Mvc.Builders.RadioGroupBuilder.DisplayExpr(DevExtreme.AspNet.Mvc.JS)">
-            <summary>Specifies the name of the data source item field whose value is displayed by the widget.</summary>
+            <summary>Specifies the data field whose values should be displayed.</summary>
         </member>
         <member name="M:DevExtreme.AspNet.Mvc.Builders.RadioGroupBuilder.ElementAttr(System.String,System.Object)">
             <summary>Specifies the attributes to be attached to the widget&#39;s root element.</summary>
@@ -14157,10 +14169,10 @@
             <summary>Specifies the widget&#39;s value.</summary>
         </member>
         <member name="M:DevExtreme.AspNet.Mvc.Builders.RadioGroupBuilder.ValueExpr(System.String)">
-            <summary>Specifies which data field provides the widget&#39;s value. When this option is not set, the value is the entire data object.</summary>
+            <summary>Specifies which data field provides unique values to the widget&#39;s value. When the data field is not set, the value is the entire data object.</summary>
         </member>
         <member name="M:DevExtreme.AspNet.Mvc.Builders.RadioGroupBuilder.ValueExpr(DevExtreme.AspNet.Mvc.JS)">
-            <summary>Specifies which data field provides the widget&#39;s value. When this option is not set, the value is the entire data object.</summary>
+            <summary>Specifies which data field provides unique values to the widget&#39;s value. When the data field is not set, the value is the entire data object.</summary>
         </member>
         <member name="M:DevExtreme.AspNet.Mvc.Builders.RadioGroupBuilder.Visible(System.Boolean)">
             <summary>Specifies whether the widget is visible.</summary>
@@ -15138,10 +15150,10 @@
             <summary>Allows to specify an arbitrary option by its name.</summary>
         </member>
         <member name="M:DevExtreme.AspNet.Mvc.Builders.SankeyAdaptiveLayoutBuilder.Height(System.Double)">
-            <summary>Specifies the minimum container height at which the widget begins to adapt.</summary>
+            <summary>Specifies the minimum container height at which the layout begins to adapt.</summary>
         </member>
         <member name="M:DevExtreme.AspNet.Mvc.Builders.SankeyAdaptiveLayoutBuilder.Height(DevExtreme.AspNet.Mvc.JS)">
-            <summary>Specifies the minimum container height at which the widget begins to adapt.</summary>
+            <summary>Specifies the minimum container height at which the layout begins to adapt.</summary>
         </member>
         <member name="M:DevExtreme.AspNet.Mvc.Builders.SankeyAdaptiveLayoutBuilder.KeepLabels(System.Boolean)">
             <summary>Specifies whether node labels should be kept when the widget adapts the layout.</summary>
@@ -15150,10 +15162,10 @@
             <summary>Specifies whether node labels should be kept when the widget adapts the layout.</summary>
         </member>
         <member name="M:DevExtreme.AspNet.Mvc.Builders.SankeyAdaptiveLayoutBuilder.Width(System.Double)">
-            <summary>Specifies the minimum container width at which the widget begins to adapt.</summary>
+            <summary>Specifies the minimum container width at which the layout begins to adapt.</summary>
         </member>
         <member name="M:DevExtreme.AspNet.Mvc.Builders.SankeyAdaptiveLayoutBuilder.Width(DevExtreme.AspNet.Mvc.JS)">
-            <summary>Specifies the minimum container width at which the widget begins to adapt.</summary>
+            <summary>Specifies the minimum container width at which the layout begins to adapt.</summary>
         </member>
         <member name="T:DevExtreme.AspNet.Mvc.Builders.SankeyBuilder">
             <summary>The Sankey is a widget that visualizes the flow magnitude between value sets. The values being connected are called nodes; the connections - links. The higher the flow magnitude, the wider the link is.</summary>
@@ -16725,10 +16737,10 @@
             <summary>A data source used to fetch resources to be available in the scheduler.</summary>
         </member>
         <member name="M:DevExtreme.AspNet.Mvc.Builders.SchedulerResourceBuilder.DisplayExpr(System.String)">
-            <summary>Specifies the resource object field whose value is displayed by the Resource editor in the Appointment popup window.</summary>
+            <summary>Specifies which field from the resource data objects provides values to be displayed in the resource editor.</summary>
         </member>
         <member name="M:DevExtreme.AspNet.Mvc.Builders.SchedulerResourceBuilder.DisplayExpr(DevExtreme.AspNet.Mvc.JS)">
-            <summary>Specifies the resource object field whose value is displayed by the Resource editor in the Appointment popup window.</summary>
+            <summary>Specifies which field from the resource data objects provides values to be displayed in the resource editor.</summary>
         </member>
         <member name="M:DevExtreme.AspNet.Mvc.Builders.SchedulerResourceBuilder.FieldExpr(System.String)">
             <summary>The name of the appointment object field that specifies a resource of this kind.</summary>
@@ -17166,10 +17178,10 @@
             <summary>Specifies whether the widget responds to user interaction.</summary>
         </member>
         <member name="M:DevExtreme.AspNet.Mvc.Builders.SelectBoxBuilder.DisplayExpr(System.String)">
-            <summary>Specifies the name of the data source item field whose value is displayed by the widget.</summary>
+            <summary>Specifies the data field whose values should be displayed.</summary>
         </member>
         <member name="M:DevExtreme.AspNet.Mvc.Builders.SelectBoxBuilder.DisplayExpr(DevExtreme.AspNet.Mvc.JS)">
-            <summary>Specifies the name of the data source item field whose value is displayed by the widget.</summary>
+            <summary>Specifies the data field whose values should be displayed.</summary>
         </member>
         <member name="M:DevExtreme.AspNet.Mvc.Builders.SelectBoxBuilder.DropDownButtonTemplate(System.String)">
             <summary>Specifies a custom template for the drop-down button.</summary>
@@ -17559,10 +17571,10 @@
             <summary>Specifies the DOM events after which the widget&#39;s value should be updated. Applies only if acceptCustomValue is set to true.</summary>
         </member>
         <member name="M:DevExtreme.AspNet.Mvc.Builders.SelectBoxBuilder.ValueExpr(System.String)">
-            <summary>Specifies which data field provides the widget&#39;s value. When this option is not set, the value is the entire data object.</summary>
+            <summary>Specifies which data field provides unique values to the widget&#39;s value. When the data field is not set, the value is the entire data object.</summary>
         </member>
         <member name="M:DevExtreme.AspNet.Mvc.Builders.SelectBoxBuilder.ValueExpr(DevExtreme.AspNet.Mvc.JS)">
-            <summary>Specifies which data field provides the widget&#39;s value. When this option is not set, the value is the entire data object.</summary>
+            <summary>Specifies which data field provides unique values to the widget&#39;s value. When the data field is not set, the value is the entire data object.</summary>
         </member>
         <member name="M:DevExtreme.AspNet.Mvc.Builders.SelectBoxBuilder.Visible(System.Boolean)">
             <summary>Specifies whether the widget is visible.</summary>
@@ -19263,10 +19275,10 @@
             <summary>Specifies whether the widget responds to user interaction.</summary>
         </member>
         <member name="M:DevExtreme.AspNet.Mvc.Builders.TagBoxBuilder.DisplayExpr(System.String)">
-            <summary>Specifies the name of the data source item field whose value is displayed by the widget.</summary>
+            <summary>Specifies the data field whose values should be displayed.</summary>
         </member>
         <member name="M:DevExtreme.AspNet.Mvc.Builders.TagBoxBuilder.DisplayExpr(DevExtreme.AspNet.Mvc.JS)">
-            <summary>Specifies the name of the data source item field whose value is displayed by the widget.</summary>
+            <summary>Specifies the data field whose values should be displayed.</summary>
         </member>
         <member name="M:DevExtreme.AspNet.Mvc.Builders.TagBoxBuilder.DropDownButtonTemplate(System.String)">
             <summary>Specifies a custom template for the drop-down button.</summary>
@@ -19408,6 +19420,15 @@
         </member>
         <member name="M:DevExtreme.AspNet.Mvc.Builders.TagBoxBuilder.MaxDisplayedTags(DevExtreme.AspNet.Mvc.JS)">
             <summary>Specifies the limit on displayed tags. On exceeding it, the widget replaces all tags with a single multi-tag that displays the number of selected items.</summary>
+        </member>
+        <member name="M:DevExtreme.AspNet.Mvc.Builders.TagBoxBuilder.MaxLength(System.Double)">
+            <summary>Specifies the maximum number of characters you can enter into the textbox.</summary>
+        </member>
+        <member name="M:DevExtreme.AspNet.Mvc.Builders.TagBoxBuilder.MaxLength(System.String)">
+            <summary>Specifies the maximum number of characters you can enter into the textbox.</summary>
+        </member>
+        <member name="M:DevExtreme.AspNet.Mvc.Builders.TagBoxBuilder.MaxLength(DevExtreme.AspNet.Mvc.JS)">
+            <summary>Specifies the maximum number of characters you can enter into the textbox.</summary>
         </member>
         <member name="M:DevExtreme.AspNet.Mvc.Builders.TagBoxBuilder.MinSearchLength(System.Int32)">
             <summary>The minimum number of characters that must be entered into the text box to begin a search. Applies only if searchEnabled is true.</summary>
@@ -19677,10 +19698,10 @@
             <summary>Specifies the selected items.</summary>
         </member>
         <member name="M:DevExtreme.AspNet.Mvc.Builders.TagBoxBuilder.ValueExpr(System.String)">
-            <summary>Specifies which data field provides the widget&#39;s value. When this option is not set, the value is the entire data object.</summary>
+            <summary>Specifies which data field provides unique values to the widget&#39;s value. When the data field is not set, the value is the entire data object.</summary>
         </member>
         <member name="M:DevExtreme.AspNet.Mvc.Builders.TagBoxBuilder.ValueExpr(DevExtreme.AspNet.Mvc.JS)">
-            <summary>Specifies which data field provides the widget&#39;s value. When this option is not set, the value is the entire data object.</summary>
+            <summary>Specifies which data field provides unique values to the widget&#39;s value. When the data field is not set, the value is the entire data object.</summary>
         </member>
         <member name="M:DevExtreme.AspNet.Mvc.Builders.TagBoxBuilder.Visible(System.Boolean)">
             <summary>Specifies whether the widget is visible.</summary>
@@ -21357,10 +21378,10 @@
             <summary>Specifies options for displaying the widget.</summary>
         </member>
         <member name="M:DevExtreme.AspNet.Mvc.Builders.TooltipBuilder.Target(System.String)">
-            <summary>The target element associated with a popover.</summary>
+            <summary>The target element associated with the widget.</summary>
         </member>
         <member name="M:DevExtreme.AspNet.Mvc.Builders.TooltipBuilder.Target(DevExtreme.AspNet.Mvc.JS)">
-            <summary>The target element associated with a popover.</summary>
+            <summary>The target element associated with the widget.</summary>
         </member>
         <member name="M:DevExtreme.AspNet.Mvc.Builders.TooltipBuilder.Visible(System.Boolean)">
             <summary>A Boolean value specifying whether or not the widget is visible.</summary>
@@ -21741,10 +21762,10 @@
             <summary>A function that is executed after an editor is created.</summary>
         </member>
         <member name="M:DevExtreme.AspNet.Mvc.Builders.TreeListBuilder`1.OnEditorPreparing(System.String)">
-            <summary>A function that is executed before an editor is created.</summary>
+            <summary>A function that is executed before a cell&#39;s editor is created. Not executed for cells with an editCellTemplate.</summary>
         </member>
         <member name="M:DevExtreme.AspNet.Mvc.Builders.TreeListBuilder`1.OnEditorPreparing(DevExtreme.AspNet.Mvc.RazorBlock)">
-            <summary>A function that is executed before an editor is created.</summary>
+            <summary>A function that is executed before a cell&#39;s editor is created. Not executed for cells with an editCellTemplate.</summary>
         </member>
         <member name="M:DevExtreme.AspNet.Mvc.Builders.TreeListBuilder`1.OnFocusedCellChanged(System.String)">
             <summary>A function that is executed after the focused cell changes.</summary>
@@ -23373,10 +23394,10 @@
             <summary>Specifies the name of the data source item field whose value defines whether or not the corresponding widget item is disabled.</summary>
         </member>
         <member name="M:DevExtreme.AspNet.Mvc.Builders.TreeViewBuilder.DisplayExpr(System.String)">
-            <summary>Specifies the name of the data source item field whose value is displayed by the widget.</summary>
+            <summary>Specifies the data field whose values should be displayed.</summary>
         </member>
         <member name="M:DevExtreme.AspNet.Mvc.Builders.TreeViewBuilder.DisplayExpr(DevExtreme.AspNet.Mvc.JS)">
-            <summary>Specifies the name of the data source item field whose value is displayed by the widget.</summary>
+            <summary>Specifies the data field whose values should be displayed.</summary>
         </member>
         <member name="M:DevExtreme.AspNet.Mvc.Builders.TreeViewBuilder.ElementAttr(System.String,System.Object)">
             <summary>Specifies the attributes to be attached to the widget&#39;s root element.</summary>
@@ -25071,22 +25092,22 @@
             <summary>Allows to specify an arbitrary option by its name.</summary>
         </member>
         <member name="M:DevExtreme.AspNet.Mvc.Builders.ChartAdaptiveLayoutBuilder.Height(System.Double)">
-            <summary>Specifies the widget&#39;s height small enough for the layout to begin adapting.</summary>
+            <summary>Specifies the minimum container height at which the layout begins to adapt.</summary>
         </member>
         <member name="M:DevExtreme.AspNet.Mvc.Builders.ChartAdaptiveLayoutBuilder.Height(DevExtreme.AspNet.Mvc.JS)">
-            <summary>Specifies the widget&#39;s height small enough for the layout to begin adapting.</summary>
+            <summary>Specifies the minimum container height at which the layout begins to adapt.</summary>
         </member>
         <member name="M:DevExtreme.AspNet.Mvc.Builders.ChartAdaptiveLayoutBuilder.KeepLabels(System.Boolean)">
-            <summary>Specifies whether or not point labels should be kept when the layout is adapting.</summary>
+            <summary>Specifies whether point labels should be kept when the widget adapts the layout.</summary>
         </member>
         <member name="M:DevExtreme.AspNet.Mvc.Builders.ChartAdaptiveLayoutBuilder.KeepLabels(DevExtreme.AspNet.Mvc.JS)">
-            <summary>Specifies whether or not point labels should be kept when the layout is adapting.</summary>
+            <summary>Specifies whether point labels should be kept when the widget adapts the layout.</summary>
         </member>
         <member name="M:DevExtreme.AspNet.Mvc.Builders.ChartAdaptiveLayoutBuilder.Width(System.Double)">
-            <summary>Specifies the widget&#39;s width small enough for the layout to begin adapting.</summary>
+            <summary>Specifies the minimum container width at which the layout begins to adapt.</summary>
         </member>
         <member name="M:DevExtreme.AspNet.Mvc.Builders.ChartAdaptiveLayoutBuilder.Width(DevExtreme.AspNet.Mvc.JS)">
-            <summary>Specifies the widget&#39;s width small enough for the layout to begin adapting.</summary>
+            <summary>Specifies the minimum container width at which the layout begins to adapt.</summary>
         </member>
         <member name="T:DevExtreme.AspNet.Mvc.Builders.ChartAnimationBuilder">
             <summary>Specifies animation options.</summary>
@@ -25342,18 +25363,6 @@
         </member>
         <member name="M:DevExtreme.AspNet.Mvc.Builders.ChartArgumentAxisBuilder.MinValueMargin(DevExtreme.AspNet.Mvc.JS)">
             <summary>Controls the empty space between the minimum series points and the axis. Applies only to the axes of the &quot;continuous&quot; and &quot;logarithmic&quot; type.</summary>
-        </member>
-        <member name="M:DevExtreme.AspNet.Mvc.Builders.ChartArgumentAxisBuilder.MinVisualRangeLength(System.Action{DevExtreme.AspNet.Mvc.Builders.ChartArgumentAxisMinVisualRangeLengthBuilder})">
-            <summary>A class describing various time intervals. Inherited by tick intervals in Chart and RangeSelector.</summary>
-        </member>
-        <member name="M:DevExtreme.AspNet.Mvc.Builders.ChartArgumentAxisBuilder.MinVisualRangeLength(DevExtreme.AspNet.Mvc.VizTimeInterval)">
-            <summary>A class describing various time intervals. Inherited by tick intervals in Chart and RangeSelector.</summary>
-        </member>
-        <member name="M:DevExtreme.AspNet.Mvc.Builders.ChartArgumentAxisBuilder.MinVisualRangeLength(System.Double)">
-            <summary>A class describing various time intervals. Inherited by tick intervals in Chart and RangeSelector.</summary>
-        </member>
-        <member name="M:DevExtreme.AspNet.Mvc.Builders.ChartArgumentAxisBuilder.MinVisualRangeLength(DevExtreme.AspNet.Mvc.JS)">
-            <summary>A class describing various time intervals. Inherited by tick intervals in Chart and RangeSelector.</summary>
         </member>
         <member name="M:DevExtreme.AspNet.Mvc.Builders.ChartArgumentAxisBuilder.Opacity(System.Double)">
             <summary>Specifies how transparent the axis line should be.</summary>
@@ -25843,9 +25852,6 @@
         </member>
         <member name="M:DevExtreme.AspNet.Mvc.Builders.ChartArgumentAxisMinorTickIntervalBuilder.Years(DevExtreme.AspNet.Mvc.JS)">
             <summary>Specifies the time interval measured in years. Available only for an axis/scale displaying date-time values.</summary>
-        </member>
-        <member name="T:DevExtreme.AspNet.Mvc.Builders.ChartArgumentAxisMinVisualRangeLengthBuilder">
-            <summary>A class describing various time intervals. Inherited by tick intervals in Chart and RangeSelector.</summary>
         </member>
         <member name="M:DevExtreme.AspNet.Mvc.Builders.ChartArgumentAxisMinVisualRangeLengthBuilder.Option(System.String,System.Object)">
             <summary>Allows to specify an arbitrary option by its name.</summary>
@@ -27855,10 +27861,10 @@
             <summary>Specifies whether error bars must be displayed in full or partially.</summary>
         </member>
         <member name="M:DevExtreme.AspNet.Mvc.Builders.ChartCommonSeriesSettingsValueErrorBarBuilder.EdgeLength(System.Double)">
-            <summary>Specifies the length of the lines that indicate the error bar edges.</summary>
+            <summary>Specifies the length of the lines that indicate error bar edges.</summary>
         </member>
         <member name="M:DevExtreme.AspNet.Mvc.Builders.ChartCommonSeriesSettingsValueErrorBarBuilder.EdgeLength(DevExtreme.AspNet.Mvc.JS)">
-            <summary>Specifies the length of the lines that indicate the error bar edges.</summary>
+            <summary>Specifies the length of the lines that indicate error bar edges.</summary>
         </member>
         <member name="M:DevExtreme.AspNet.Mvc.Builders.ChartCommonSeriesSettingsValueErrorBarBuilder.HighValueField(System.String)">
             <summary>Specifies which data field provides high error values.</summary>
@@ -29406,10 +29412,10 @@
             <summary>Specifies whether error bars must be displayed in full or partially.</summary>
         </member>
         <member name="M:DevExtreme.AspNet.Mvc.Builders.ChartSeriesValueErrorBarBuilder.EdgeLength(System.Double)">
-            <summary>Specifies the length of the lines that indicate the error bar edges.</summary>
+            <summary>Specifies the length of the lines that indicate error bar edges.</summary>
         </member>
         <member name="M:DevExtreme.AspNet.Mvc.Builders.ChartSeriesValueErrorBarBuilder.EdgeLength(DevExtreme.AspNet.Mvc.JS)">
-            <summary>Specifies the length of the lines that indicate the error bar edges.</summary>
+            <summary>Specifies the length of the lines that indicate error bar edges.</summary>
         </member>
         <member name="M:DevExtreme.AspNet.Mvc.Builders.ChartSeriesValueErrorBarBuilder.HighValueField(System.String)">
             <summary>Specifies which data field provides high error values.</summary>
@@ -29866,18 +29872,6 @@
         </member>
         <member name="M:DevExtreme.AspNet.Mvc.Builders.ChartValueAxisBuilder.MinValueMargin(DevExtreme.AspNet.Mvc.JS)">
             <summary>Controls the empty space between the minimum series points and the axis. Applies only to the axes of the &quot;continuous&quot; and &quot;logarithmic&quot; type.</summary>
-        </member>
-        <member name="M:DevExtreme.AspNet.Mvc.Builders.ChartValueAxisBuilder.MinVisualRangeLength(System.Action{DevExtreme.AspNet.Mvc.Builders.ChartValueAxisMinVisualRangeLengthBuilder})">
-            <summary>A class describing various time intervals. Inherited by tick intervals in Chart and RangeSelector.</summary>
-        </member>
-        <member name="M:DevExtreme.AspNet.Mvc.Builders.ChartValueAxisBuilder.MinVisualRangeLength(DevExtreme.AspNet.Mvc.VizTimeInterval)">
-            <summary>A class describing various time intervals. Inherited by tick intervals in Chart and RangeSelector.</summary>
-        </member>
-        <member name="M:DevExtreme.AspNet.Mvc.Builders.ChartValueAxisBuilder.MinVisualRangeLength(System.Double)">
-            <summary>A class describing various time intervals. Inherited by tick intervals in Chart and RangeSelector.</summary>
-        </member>
-        <member name="M:DevExtreme.AspNet.Mvc.Builders.ChartValueAxisBuilder.MinVisualRangeLength(DevExtreme.AspNet.Mvc.JS)">
-            <summary>A class describing various time intervals. Inherited by tick intervals in Chart and RangeSelector.</summary>
         </member>
         <member name="M:DevExtreme.AspNet.Mvc.Builders.ChartValueAxisBuilder.MultipleAxesSpacing(System.Double)">
             <summary>Adds a pixel-measured empty space between two side-by-side value axes. Applies if several value axes are located on one side of the chart.</summary>
@@ -30376,9 +30370,6 @@
         </member>
         <member name="M:DevExtreme.AspNet.Mvc.Builders.ChartValueAxisMinorTickIntervalBuilder.Years(DevExtreme.AspNet.Mvc.JS)">
             <summary>Specifies the time interval measured in years. Available only for an axis/scale displaying date-time values.</summary>
-        </member>
-        <member name="T:DevExtreme.AspNet.Mvc.Builders.ChartValueAxisMinVisualRangeLengthBuilder">
-            <summary>A class describing various time intervals. Inherited by tick intervals in Chart and RangeSelector.</summary>
         </member>
         <member name="M:DevExtreme.AspNet.Mvc.Builders.ChartValueAxisMinVisualRangeLengthBuilder.Option(System.String,System.Object)">
             <summary>Allows to specify an arbitrary option by its name.</summary>
@@ -31542,22 +31533,22 @@
             <summary>Allows to specify an arbitrary option by its name.</summary>
         </member>
         <member name="M:DevExtreme.AspNet.Mvc.Builders.FunnelAdaptiveLayoutBuilder.Height(System.Double)">
-            <summary>Specifies the widget&#39;s height small enough for the layout to begin adapting.</summary>
+            <summary>Specifies the minimum container height at which the layout begins to adapt.</summary>
         </member>
         <member name="M:DevExtreme.AspNet.Mvc.Builders.FunnelAdaptiveLayoutBuilder.Height(DevExtreme.AspNet.Mvc.JS)">
-            <summary>Specifies the widget&#39;s height small enough for the layout to begin adapting.</summary>
+            <summary>Specifies the minimum container height at which the layout begins to adapt.</summary>
         </member>
         <member name="M:DevExtreme.AspNet.Mvc.Builders.FunnelAdaptiveLayoutBuilder.KeepLabels(System.Boolean)">
-            <summary>Specifies whether item labels should be kept when the layout is adapting.</summary>
+            <summary>Specifies whether item labels should be kept when the widget adapts the layout.</summary>
         </member>
         <member name="M:DevExtreme.AspNet.Mvc.Builders.FunnelAdaptiveLayoutBuilder.KeepLabels(DevExtreme.AspNet.Mvc.JS)">
-            <summary>Specifies whether item labels should be kept when the layout is adapting.</summary>
+            <summary>Specifies whether item labels should be kept when the widget adapts the layout.</summary>
         </member>
         <member name="M:DevExtreme.AspNet.Mvc.Builders.FunnelAdaptiveLayoutBuilder.Width(System.Double)">
-            <summary>Specifies the widget&#39;s width small enough for the layout to begin adapting.</summary>
+            <summary>Specifies the minimum container width at which the layout begins to adapt.</summary>
         </member>
         <member name="M:DevExtreme.AspNet.Mvc.Builders.FunnelAdaptiveLayoutBuilder.Width(DevExtreme.AspNet.Mvc.JS)">
-            <summary>Specifies the widget&#39;s width small enough for the layout to begin adapting.</summary>
+            <summary>Specifies the minimum container width at which the layout begins to adapt.</summary>
         </member>
         <member name="T:DevExtreme.AspNet.Mvc.Builders.FunnelBuilder">
             <summary>The Funnel is a widget that visualizes a value at different stages. It helps assess value changes throughout these stages and identify potential issues. The Funnel widget conveys information using different interactive elements (tooltips, labels, legend) and enables you to create not only a funnel, but also a pyramid chart.</summary>
@@ -33456,22 +33447,22 @@
             <summary>Allows to specify an arbitrary option by its name.</summary>
         </member>
         <member name="M:DevExtreme.AspNet.Mvc.Builders.PieChartAdaptiveLayoutBuilder.Height(System.Double)">
-            <summary>Specifies the widget&#39;s height small enough for the layout to begin adapting.</summary>
+            <summary>Specifies the minimum container height at which the layout begins to adapt.</summary>
         </member>
         <member name="M:DevExtreme.AspNet.Mvc.Builders.PieChartAdaptiveLayoutBuilder.Height(DevExtreme.AspNet.Mvc.JS)">
-            <summary>Specifies the widget&#39;s height small enough for the layout to begin adapting.</summary>
+            <summary>Specifies the minimum container height at which the layout begins to adapt.</summary>
         </member>
         <member name="M:DevExtreme.AspNet.Mvc.Builders.PieChartAdaptiveLayoutBuilder.KeepLabels(System.Boolean)">
-            <summary>Specifies whether or not point labels should be kept when the layout is adapting.</summary>
+            <summary>Specifies whether point labels should be kept when the widget adapts the layout.</summary>
         </member>
         <member name="M:DevExtreme.AspNet.Mvc.Builders.PieChartAdaptiveLayoutBuilder.KeepLabels(DevExtreme.AspNet.Mvc.JS)">
-            <summary>Specifies whether or not point labels should be kept when the layout is adapting.</summary>
+            <summary>Specifies whether point labels should be kept when the widget adapts the layout.</summary>
         </member>
         <member name="M:DevExtreme.AspNet.Mvc.Builders.PieChartAdaptiveLayoutBuilder.Width(System.Double)">
-            <summary>Specifies the widget&#39;s width small enough for the layout to begin adapting.</summary>
+            <summary>Specifies the minimum container width at which the layout begins to adapt.</summary>
         </member>
         <member name="M:DevExtreme.AspNet.Mvc.Builders.PieChartAdaptiveLayoutBuilder.Width(DevExtreme.AspNet.Mvc.JS)">
-            <summary>Specifies the widget&#39;s width small enough for the layout to begin adapting.</summary>
+            <summary>Specifies the minimum container width at which the layout begins to adapt.</summary>
         </member>
         <member name="T:DevExtreme.AspNet.Mvc.Builders.PieChartAnimationBuilder">
             <summary>Specifies animation options.</summary>
@@ -35124,22 +35115,22 @@
             <summary>Allows to specify an arbitrary option by its name.</summary>
         </member>
         <member name="M:DevExtreme.AspNet.Mvc.Builders.PolarChartAdaptiveLayoutBuilder.Height(System.Double)">
-            <summary>Specifies the widget&#39;s height small enough for the layout to begin adapting.</summary>
+            <summary>Specifies the minimum container height at which the layout begins to adapt.</summary>
         </member>
         <member name="M:DevExtreme.AspNet.Mvc.Builders.PolarChartAdaptiveLayoutBuilder.Height(DevExtreme.AspNet.Mvc.JS)">
-            <summary>Specifies the widget&#39;s height small enough for the layout to begin adapting.</summary>
+            <summary>Specifies the minimum container height at which the layout begins to adapt.</summary>
         </member>
         <member name="M:DevExtreme.AspNet.Mvc.Builders.PolarChartAdaptiveLayoutBuilder.KeepLabels(System.Boolean)">
-            <summary>Specifies whether or not point labels should be kept when the layout is adapting.</summary>
+            <summary>Specifies whether point labels should be kept when the widget adapts the layout.</summary>
         </member>
         <member name="M:DevExtreme.AspNet.Mvc.Builders.PolarChartAdaptiveLayoutBuilder.KeepLabels(DevExtreme.AspNet.Mvc.JS)">
-            <summary>Specifies whether or not point labels should be kept when the layout is adapting.</summary>
+            <summary>Specifies whether point labels should be kept when the widget adapts the layout.</summary>
         </member>
         <member name="M:DevExtreme.AspNet.Mvc.Builders.PolarChartAdaptiveLayoutBuilder.Width(System.Double)">
-            <summary>Specifies the widget&#39;s width small enough for the layout to begin adapting.</summary>
+            <summary>Specifies the minimum container width at which the layout begins to adapt.</summary>
         </member>
         <member name="M:DevExtreme.AspNet.Mvc.Builders.PolarChartAdaptiveLayoutBuilder.Width(DevExtreme.AspNet.Mvc.JS)">
-            <summary>Specifies the widget&#39;s width small enough for the layout to begin adapting.</summary>
+            <summary>Specifies the minimum container width at which the layout begins to adapt.</summary>
         </member>
         <member name="T:DevExtreme.AspNet.Mvc.Builders.PolarChartAnimationBuilder">
             <summary>Specifies animation options.</summary>
@@ -37053,10 +37044,10 @@
             <summary>Specifies whether error bars must be displayed in full or partially.</summary>
         </member>
         <member name="M:DevExtreme.AspNet.Mvc.Builders.PolarChartCommonSeriesSettingsValueErrorBarBuilder.EdgeLength(System.Double)">
-            <summary>Specifies the length of the lines that indicate the error bar edges.</summary>
+            <summary>Specifies the length of the lines that indicate error bar edges.</summary>
         </member>
         <member name="M:DevExtreme.AspNet.Mvc.Builders.PolarChartCommonSeriesSettingsValueErrorBarBuilder.EdgeLength(DevExtreme.AspNet.Mvc.JS)">
-            <summary>Specifies the length of the lines that indicate the error bar edges.</summary>
+            <summary>Specifies the length of the lines that indicate error bar edges.</summary>
         </member>
         <member name="M:DevExtreme.AspNet.Mvc.Builders.PolarChartCommonSeriesSettingsValueErrorBarBuilder.HighValueField(System.String)">
             <summary>Specifies the data field that provides data for high error values.</summary>
@@ -38061,10 +38052,10 @@
             <summary>Specifies whether error bars must be displayed in full or partially.</summary>
         </member>
         <member name="M:DevExtreme.AspNet.Mvc.Builders.PolarChartSeriesValueErrorBarBuilder.EdgeLength(System.Double)">
-            <summary>Specifies the length of the lines that indicate the error bar edges.</summary>
+            <summary>Specifies the length of the lines that indicate error bar edges.</summary>
         </member>
         <member name="M:DevExtreme.AspNet.Mvc.Builders.PolarChartSeriesValueErrorBarBuilder.EdgeLength(DevExtreme.AspNet.Mvc.JS)">
-            <summary>Specifies the length of the lines that indicate the error bar edges.</summary>
+            <summary>Specifies the length of the lines that indicate error bar edges.</summary>
         </member>
         <member name="M:DevExtreme.AspNet.Mvc.Builders.PolarChartSeriesValueErrorBarBuilder.HighValueField(System.String)">
             <summary>Specifies the data field that provides data for high error values.</summary>

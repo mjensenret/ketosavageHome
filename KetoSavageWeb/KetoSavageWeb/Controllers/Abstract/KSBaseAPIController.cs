@@ -15,15 +15,17 @@ namespace KetoSavageWeb.Controllers.Abstract
     {
         private ApplicationUser _user;
         private ApplicationUserManager _userManager;
+        private ApplicationRoleManager _roleManager;
 
         public KSBaseAPIController()
         {
 
         }
 
-        public KSBaseAPIController(ApplicationUserManager userManager)
+        public KSBaseAPIController(ApplicationUserManager userManager, ApplicationRoleManager roleManager)
         {
             _userManager = userManager;
+            _roleManager = roleManager;
         }
 
         public ApplicationUserManager UserManager
@@ -37,6 +39,18 @@ namespace KetoSavageWeb.Controllers.Abstract
             private set
             {
                 _userManager = value;
+            }
+        }
+
+        public ApplicationRoleManager RoleManager
+        {
+            get
+            {
+                return _roleManager ?? HttpContext.Current.GetOwinContext().Get<ApplicationRoleManager>();
+            }
+            private set
+            {
+                _roleManager = value;
             }
         }
     }

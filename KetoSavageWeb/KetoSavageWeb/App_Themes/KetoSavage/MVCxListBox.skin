@@ -1,6 +1,6 @@
-<%@ Register TagPrefix="dx" Namespace="DevExpress.Data" Assembly="DevExpress.Data.v18.2, Version=18.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" %>
-<%@ Register TagPrefix="dx" Namespace="DevExpress.Web" Assembly="DevExpress.Web.v18.2, Version=18.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" %>
-<%@ Register TagPrefix="dxmvc" Namespace="DevExpress.Web.Mvc" Assembly="DevExpress.Web.Mvc5.v18.2, Version=18.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" %>
+<%@ Register TagPrefix="dx" Namespace="DevExpress.Data" Assembly="DevExpress.Data.v18.2, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" %>
+<%@ Register TagPrefix="dx" Namespace="DevExpress.Web" Assembly="DevExpress.Web.v18.2, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" %>
+<%@ Register TagPrefix="dxmvc" Namespace="DevExpress.Web.Mvc" Assembly="DevExpress.Web.Mvc5.v18.2, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" %>
 
 <dxmvc:MVCxListBox runat="server" SpriteCssFilePath="{0}/sprite.css" CssPostfix="KetoSavage" CssFilePath="{0}/styles.css">
 </dxmvc:MVCxListBox>

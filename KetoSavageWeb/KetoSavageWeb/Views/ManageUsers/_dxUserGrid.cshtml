@@ -1,0 +1,79 @@
+﻿@using KetoSavageWeb.Models
+
+@(Html.DevExtreme().DataGrid()
+    .ID("manageUsersGridView")
+    .RowAlternationEnabled(true)
+    .ShowBorders(true)
+    .Scrolling(s => s.Mode(GridScrollingMode.Virtual))
+    .Editing(editing =>
+    {
+        editing.Mode(GridEditMode.Popup);
+        editing.AllowAdding(true);
+        editing.AllowDeleting(true);
+        editing.AllowUpdating(true);
+        editing.UseIcons(true);
+        editing.Popup(p => p
+            .Title("User Information")
+            .ShowTitle(true)
+            );
+    })
+    .FilterRow(fr => fr
+        .Visible(true)
+        .ApplyFilter(GridApplyFilterMode.Auto)
+    )
+    .HeaderFilter(hf => hf.Visible(true))
+    .SearchPanel(searchPanel => searchPanel
+        .Visible(true)
+        .Width(240)
+        .Placeholder("Search...")
+    )
+    .Columns(c =>
+    {
+        c.Add()
+            .Type(GridCommandColumnType.Buttons)
+            .Buttons(b =>
+            {
+                b.Add()
+                    .Name(GridColumnButtonName.Edit);
+                b.Add()
+                    .Name(GridColumnButtonName.Delete);
+            });
+        c.Add()
+            .DataField("UserName");
+        c.Add()
+            .DataField("FirstName");
+        c.Add()
+            .DataField("LastName");
+        c.Add()
+            .DataField("Email");
+        c.Add()
+            .DataField("SelectedRoleId")
+            .Caption("Role")
+            .Lookup(l => l
+                .DataSource(d => d.WebApi().Controller("ManageUsersAPI").LoadAction("GetUserRoles").Key("Name"))
+                .DisplayExpr("Name")
+                .ValueExpr("Name")
+                );
+        c.Add()
+            .DataField("Password")
+            .Visible(false);
+        c.Add()
+            .DataField("ConfirmPassword")
+            .Visible(false);
+    })
+    .DataSource(d => d.WebApi()
+        .Controller("ManageUsersAPI")
+        .LoadAction("GetUserList")
+        .InsertAction("AddUserAsync")
+        .UpdateAction("UpdateUserAsync")
+        .DeleteAction("DeleteUser")
+        .Key("Id")
+    )
+    .OnInitNewRow("PrepareEditor")
+)
+
+<script type="text/javascript">
+    function PrepareEditor(e) {
+
+    }
+</script>
