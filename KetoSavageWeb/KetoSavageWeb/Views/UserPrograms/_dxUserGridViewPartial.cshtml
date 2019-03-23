@@ -5,6 +5,8 @@
             .DataSource(d => d.WebApi()
                 .Controller("ManageClientProgramsAPI")
                 .LoadAction("GetClientPrograms")
+                .UpdateAction("updateProgram")
+                .InsertAction("updateProgram")
                 .Key("Id"))
             .ShowBorders(true)
             .RowAlternationEnabled(true)
@@ -19,6 +21,7 @@
                 .Width(240)
                 .Placeholder("Search...")
             )
+            .OnRowUpdating("onRowUpdating")
             .Editing(e =>
             {
                 e.Mode(GridEditMode.Popup);
@@ -43,13 +46,40 @@
             {
                 c.Add()
                     .DataField("FullName")
-                    .Caption("Name");
+                    .Caption("Name")
+                    .AllowEditing(false);
+            })
+            .Columns(c =>
+            {
+                c.Add()
+                    .DataField("UserName")
+                    .Visible(false)
+                    .AllowEditing(false)
+                    .ShowEditorAlways(false);
+            })
+            .Columns(c =>
+            {
+                c.Add()
+                    .DataField("CoachId")
+                    .Caption("Coach")
+                    .Lookup(l => l
+                        .DataSource(d => d.WebApi().Controller("ManageClientProgramsAPI")
+                            .LoadAction("getCoachList"))
+                        .DisplayExpr("FirstName")
+                        .ValueExpr("Id")
+                    );
             })
             .Columns(c =>
             {
                 c.Add()
                     .DataField("ProgramName")
-                    .Caption("Program");
+                    .Caption("Program")
+                    .Lookup(l => l
+                        .DataSource(d => d.WebApi().Controller("ManageClientProgramsAPI")
+                            .LoadAction("getProgramList"))
+                        .DisplayExpr("Description")
+                        .ValueExpr("Description")
+                    );
             })
             .Columns(c =>
             {
@@ -71,6 +101,24 @@
                     .DataField("currentProgramEndDate")
                     .DataType(GridColumnDataType.Date)
                     .Caption("End Date");
+            })
+            .Columns(c =>
+            {
+                c.Add()
+                    .DataField("StartWeight")
+                    .Caption("Start Weight");
+            })
+            .Columns(c =>
+            {
+                c.Add()
+                    .DataField("GoalWeight")
+                    .Caption("Goal Weight");
+            })
+            .Columns(c =>
+            {
+                c.Add()
+                    .DataField("CurrentWeight")
+                    .Caption("Current Weight");
             })
             .Columns(c =>
             {
@@ -99,5 +147,10 @@
             mainPopup.option("contentTemplate", url);
             mainPopup.option("title", "Modify Program");
             mainPopup.show();
-        }
+    }
+    function onRowUpdating(e) {
+
+        e.newData["UserName"] = e.oldData["UserName"];
+        console.log(e.newData);
+    }
 </script>

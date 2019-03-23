@@ -8,7 +8,7 @@ using System.Web;
 
 namespace KetoSavageWeb.Repositories
 {
-    public class DateRepository
+    public class DateRepository : IDateRepository
     {
         private KSDataContext _context = new KSDataContext();
         public DateRepository(IEntityContext<DateModels> entityContext)

@@ -1,3 +1,4 @@
+using KetoSavageWeb.App_Start;
 using System;
 using System.Collections.Generic;
 using System.Configuration;
@@ -7,6 +8,9 @@ using System.Web.Http;
 namespace KetoSavageWeb {
     public static class WebApiConfig {
         public static void Register(HttpConfiguration config) {
+
+            //config.DependencyResolver = new NinjectResolver();
+
             config.MapHttpAttributeRoutes();
 
             config.Routes.MapHttpRoute(

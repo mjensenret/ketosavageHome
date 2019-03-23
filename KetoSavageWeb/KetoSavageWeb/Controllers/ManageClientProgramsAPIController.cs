@@ -23,12 +23,14 @@ namespace KetoSavageWeb.Controllers
         private ProgramRepository program;
         private RoleRepository roleRepository;
         private UserProgramRepository userProgramRepository;
-        private DateRepository dateRepository;
+        private IDateRepository dateRepository;
 
         KSDataContext _context = new KSDataContext();
 
-        public ManageClientProgramsAPIController(UserProgramRepository upr)
+        public ManageClientProgramsAPIController(UserProgramRepository upr, ProgramRepository pr, IDateRepository dr)
         {
+            dateRepository = dr;
+            program = pr;
             userProgramRepository = upr;
         }
 
@@ -140,123 +142,200 @@ namespace KetoSavageWeb.Controllers
         {
             var key = Convert.ToInt32(form.Get("key"));
             var values = form.Get("values");
-            var updUserProgramViewModel = new UserProgramViewModel();
-            JsonConvert.PopulateObject(values, updUserProgramViewModel);
-            var userProgram = userProgramRepository.Find(updUserProgramViewModel.Id);
-            bool updStartDate = (userProgram.StartDate != updUserProgramViewModel.currentProgramStartDate);
-            bool updEndDate = (userProgram.EndDate != updUserProgramViewModel.currentProgramEndDate);
-            bool updStartWeight = (userProgram.StartWeight != updUserProgramViewModel.StartWeight);
-            bool updEndWeight = (userProgram.GoalWeight != updUserProgramViewModel.GoalWeight);
-
-            userProgram.ProgramType = updUserProgramViewModel.ProgramName;
-            userProgram.StartDate = updUserProgramViewModel.currentProgramStartDate;
-            userProgram.RenewalDate = updUserProgramViewModel.currentProgramRenewalDate;
-            userProgram.EndDate = updUserProgramViewModel.currentProgramEndDate;
-            userProgram.StartWeight = updUserProgramViewModel.StartWeight;
-            userProgram.GoalWeight = updUserProgramViewModel.GoalWeight;
-            userProgram.MasterProgramId = updUserProgramViewModel.MasterProgramId;
-            userProgram.IsActive = updUserProgramViewModel.IsActive;
-            userProgram.Notes = updUserProgramViewModel.Notes;
-            userProgram.CoachUserId = updUserProgramViewModel.CoachId;
-            userProgram.LastModified = DateTime.Now;
-            userProgram.LastModifiedBy = "RecordUserName";
-
-            userProgramRepository.Update(userProgram);
-
-            var userDailyProgress = _context.DailyProgress.Where(x => x.UserProgramId == userProgram.Id).OrderBy(x => x.DateId);
-
-            //Add or remove daily progress entries affected by the start date
-            if (updStartDate)
+            var model = new UserProgramViewModel();
+            JsonConvert.PopulateObject(values, model);
+            if(key == 0)
             {
-                if (userDailyProgress.Select(x => x.Dates.Date).First() < userProgram.StartDate.Value)
+                var activeProgram = userProgramRepository.GetActive.Where(x => x.ProgramUser.UserName == model.UserName).FirstOrDefault();
+
+                if (activeProgram == null)
                 {
-                    var oldDays = userDailyProgress
-                        .Where(x => x.Dates.Date < userProgram.StartDate.Value);
-
-                    foreach (var day in oldDays)
+                    var userQuery = UserManager.Users.Where(x => x.UserName == model.UserName).First();
+                    //var masterProgram = program.GetActive.Where(x => x.Description == model.ProgramName).First();
+                    var masterProgram = _context.Programs.Where(x => x.Description == model.ProgramName).First();
+                    var currentUserName = RequestContext.Principal.Identity.Name;
+                    
+                    UserPrograms newProgram = new UserPrograms()
                     {
-                        _context.DailyProgress.Remove(day);
-                    }
-                    _context.SaveChanges();
-                }
-                else
-                {
-                    var addDays = (userDailyProgress.Select(x => x.Dates.Date).First() - userProgram.StartDate.Value).TotalDays;
-                    var startDate = userProgram.StartDate.Value;
+                        ProgramType = masterProgram.Name,
+                        ProgramUserId = userQuery.Id,
+                        StartDate = model.currentProgramStartDate,
+                        EndDate = model.currentProgramEndDate,
+                        RenewalDate = model.currentProgramRenewalDate,
+                        StartWeight = model.StartWeight,
+                        GoalWeight = model.GoalWeight,
+                        MasterProgramId = masterProgram.Id,
+                        IsActive = true,
+                        Notes = model.Notes,
+                        CoachUserId = model.CoachId,
+                        Created = DateTime.Now,
+                        CreatedBy = currentUserName,
+                        LastModified = DateTime.Now,
+                        LastModifiedBy = currentUserName
+                    };
 
-                    while (addDays > 0)
+                    _context.UserPrograms.Add(newProgram);
+
+                    DateTime startDate = Convert.ToDateTime(newProgram.StartDate);
+                    var numberOfDays = (newProgram.EndDate.Value.Date - newProgram.StartDate.Value.Date).TotalDays;
+                    double lbsPerDay = Math.Round((newProgram.StartWeight - newProgram.GoalWeight) / numberOfDays, 2);
+
+                    double newWeight = 0;
+
+                    //var dailyProgress = new DailyProgress();
+                    while (numberOfDays > 0)
                     {
-
-                        DailyProgress addDailyProgress = new DailyProgress
+                        DailyProgress dailyProgress = new DailyProgress();
+                        dailyProgress.UserProgram = newProgram;
+                        if (startDate == newProgram.StartDate)
                         {
-                            UserProgram = userDailyProgress.Select(x => x.UserProgram).First(),
-                            DateId = dateRepository.getDateKey(startDate),
-                            PlannedWeight = 0,
-                            Created = DateTime.Now,
-                            CreatedBy = "GetCurrentName",
-                            LastModified = DateTime.Now,
-                            LastModifiedBy = "GetCurrentName"
-                        };
-                        _context.DailyProgress.Add(addDailyProgress);
-                        startDate = startDate.AddDays(1);
-                        addDays--;
+
+                            dailyProgress.DateId = dateRepository.getDateKey(startDate);
+                            dailyProgress.PlannedWeight = newProgram.StartWeight;
+                            startDate = startDate.AddDays(1);
+                            newWeight = Math.Round((newProgram.StartWeight - lbsPerDay), 2);
+                        }
+                        else
+                        {
+                            dailyProgress.DateId = dateRepository.getDateKey(startDate);
+                            dailyProgress.PlannedWeight = newWeight;
+                            startDate = startDate.AddDays(1);
+                            newWeight = Math.Round((newWeight - lbsPerDay), 2);
+                        }
+
+                        //dailyProgress.UserProgramId = newProgramId;
+                        dailyProgress.Created = DateTime.Now;
+                        dailyProgress.CreatedBy = currentUserName;
+                        dailyProgress.LastModified = DateTime.Now;
+                        dailyProgress.LastModifiedBy = currentUserName;
+
+                        _context.DailyProgress.Add(dailyProgress);
+                        numberOfDays--;
                     }
 
                     _context.SaveChanges();
                 }
-            }
 
-            if (updEndDate)
+            }
+            else
             {
-                var lastDailyProgress = userDailyProgress.OrderByDescending(x => x.DateId).Select(x => x.Dates.Date).First();
-                if (lastDailyProgress < userProgram.EndDate.Value)
+                var userProgram = userProgramRepository.Find(model.Id);
+                bool updStartDate = (userProgram.StartDate != model.currentProgramStartDate);
+                bool updEndDate = (userProgram.EndDate != model.currentProgramEndDate);
+                bool updStartWeight = (userProgram.StartWeight != model.StartWeight);
+                bool updEndWeight = (userProgram.GoalWeight != model.GoalWeight);
+
+                userProgram.ProgramType = model.ProgramName;
+                userProgram.StartDate = model.currentProgramStartDate;
+                userProgram.RenewalDate = model.currentProgramRenewalDate;
+                userProgram.EndDate = model.currentProgramEndDate;
+                userProgram.StartWeight = model.StartWeight;
+                userProgram.GoalWeight = model.GoalWeight;
+                userProgram.MasterProgramId = model.MasterProgramId;
+                userProgram.IsActive = model.IsActive;
+                userProgram.Notes = model.Notes;
+                userProgram.CoachUserId = model.CoachId;
+                userProgram.LastModified = DateTime.Now;
+                userProgram.LastModifiedBy = "RecordUserName";
+
+                userProgramRepository.Update(userProgram);
+
+                var userDailyProgress = _context.DailyProgress.Where(x => x.UserProgramId == userProgram.Id).OrderBy(x => x.DateId);
+
+                //Add or remove daily progress entries affected by the start date
+                if (updStartDate)
                 {
-                    var addDays = (userProgram.EndDate.Value - lastDailyProgress).TotalDays;
-                    DateTime endDate;
-                    if (userDailyProgress.Count() < 1)
+                    if (userDailyProgress.Select(x => x.Dates.Date).First() < userProgram.StartDate.Value)
                     {
-                        endDate = lastDailyProgress;
+                        var oldDays = userDailyProgress
+                            .Where(x => x.Dates.Date < userProgram.StartDate.Value);
+
+                        foreach (var day in oldDays)
+                        {
+                            _context.DailyProgress.Remove(day);
+                        }
+                        _context.SaveChanges();
                     }
                     else
                     {
-                        endDate = lastDailyProgress.AddDays(1);
-                    }
+                        var addDays = (userDailyProgress.Select(x => x.Dates.Date).First() - userProgram.StartDate.Value).TotalDays;
+                        var startDate = userProgram.StartDate.Value;
 
-                    do
-                    {
-                        DailyProgress addDailyProgress = new DailyProgress
+                        while (addDays > 0)
                         {
-                            UserProgramId = userProgram.Id,
-                            DateId = dateRepository.getDateKey(endDate),
-                            PlannedWeight = 0,
-                            Created = DateTime.Now,
-                            CreatedBy = "GetCurrentName",
-                            LastModified = DateTime.Now,
-                            LastModifiedBy = "GetCurrentName"
-                        };
-                        _context.DailyProgress.Add(addDailyProgress);
-                        endDate = endDate.AddDays(1);
-                        addDays--;
-                    }
-                    while (addDays > 0);
 
-                    _context.SaveChanges();
+                            DailyProgress addDailyProgress = new DailyProgress
+                            {
+                                UserProgram = userDailyProgress.Select(x => x.UserProgram).First(),
+                                DateId = dateRepository.getDateKey(startDate),
+                                PlannedWeight = 0,
+                                Created = DateTime.Now,
+                                CreatedBy = "GetCurrentName",
+                                LastModified = DateTime.Now,
+                                LastModifiedBy = "GetCurrentName"
+                            };
+                            _context.DailyProgress.Add(addDailyProgress);
+                            startDate = startDate.AddDays(1);
+                            addDays--;
+                        }
+
+                        _context.SaveChanges();
+                    }
                 }
-                else
+
+                if (updEndDate)
                 {
-                    var oldDays = userDailyProgress
-                            .Where(x => x.Dates.Date > userProgram.EndDate.Value);
-
-                    foreach (var day in oldDays)
+                    var lastDailyProgress = userDailyProgress.OrderByDescending(x => x.DateId).Select(x => x.Dates.Date).First();
+                    if (lastDailyProgress < userProgram.EndDate.Value)
                     {
-                        _context.DailyProgress.Remove(day);
+                        var addDays = (userProgram.EndDate.Value - lastDailyProgress).TotalDays;
+                        DateTime endDate;
+                        if (userDailyProgress.Count() < 1)
+                        {
+                            endDate = lastDailyProgress;
+                        }
+                        else
+                        {
+                            endDate = lastDailyProgress.AddDays(1);
+                        }
+
+                        do
+                        {
+                            DailyProgress addDailyProgress = new DailyProgress
+                            {
+                                UserProgramId = userProgram.Id,
+                                DateId = dateRepository.getDateKey(endDate),
+                                PlannedWeight = 0,
+                                Created = DateTime.Now,
+                                CreatedBy = "GetCurrentName",
+                                LastModified = DateTime.Now,
+                                LastModifiedBy = "GetCurrentName"
+                            };
+                            _context.DailyProgress.Add(addDailyProgress);
+                            endDate = endDate.AddDays(1);
+                            addDays--;
+                        }
+                        while (addDays > 0);
+
+                        _context.SaveChanges();
                     }
-                    _context.SaveChanges();
+                    else
+                    {
+                        var oldDays = userDailyProgress
+                                .Where(x => x.Dates.Date > userProgram.EndDate.Value);
+
+                        foreach (var day in oldDays)
+                        {
+                            _context.DailyProgress.Remove(day);
+                        }
+                        _context.SaveChanges();
+                    }
                 }
+
+                if (userProgram.IsActive && !userProgram.IsDeleted && (updEndDate || updStartDate || updStartWeight || updEndWeight))
+                    updateWeightPerDay(userDailyProgress, userProgram.StartDate.Value, userProgram.EndDate.Value, userProgram.StartWeight, userProgram.GoalWeight);
             }
 
-            if (userProgram.IsActive && !userProgram.IsDeleted && (updEndDate || updStartDate || updStartWeight || updEndWeight))
-                updateWeightPerDay(userDailyProgress, userProgram.StartDate.Value, userProgram.EndDate.Value, userProgram.StartWeight, userProgram.GoalWeight);
 
             return Request.CreateResponse(HttpStatusCode.OK);
 
