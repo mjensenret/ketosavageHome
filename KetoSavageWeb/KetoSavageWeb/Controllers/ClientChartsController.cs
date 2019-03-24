@@ -405,7 +405,7 @@ namespace KetoSavageWeb.Controllers
         {
             return PartialView("_plannedVsActualCurrentWeekPie");
         }
-
+         
         public PartialViewResult ClientMacroScoreChart()
         {
             var startDate = DateTime.Now.Date.AddDays(-7);

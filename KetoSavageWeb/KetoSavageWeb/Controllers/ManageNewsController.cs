@@ -25,14 +25,7 @@ namespace KetoSavageWeb.Controllers
         public ActionResult NewsGridPartial()
         {
 
-            var userQuery = _context.NewsModel.Where(x => x.IsActive).ToList();
-
-            var newsTypes = getTypeList();
-
-            //ViewBag.NewsType = newsTypes;
-            ViewBag.NewsType = getTypeList().ToList();
-
-            return PartialView("_newsGrid", userQuery);
+            return PartialView("_dxNewsGrid");
 
         }
 

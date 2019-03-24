@@ -1,0 +1,82 @@
+﻿@(Html.DevExtreme().DataGrid()
+    .ID("newsGrid")
+    .DataSource(d => d.WebApi()
+        .Controller("NewsAPI")
+        .LoadAction("GetNews")
+        .InsertAction("AddNews")
+        .UpdateAction("ModifyNews")
+        .DeleteAction("DeleteNews")
+        .Key("Id"))
+    .ShowBorders(true)
+    .WordWrapEnabled(true)
+    .RowAlternationEnabled(true)
+    .Scrolling(s => s.Mode(GridScrollingMode.Virtual))
+    .FilterRow(fr => fr
+        .Visible(true)
+        .ApplyFilter(GridApplyFilterMode.Auto)
+    )
+    .HeaderFilter(hf => hf.Visible(true))
+    .SearchPanel(searchPanel => searchPanel
+        .Visible(true)
+        .Width(240)
+        .Placeholder("Search...")
+    )
+    .Editing(e =>
+    {
+        e.Mode(GridEditMode.Popup);
+        e.AllowUpdating(true);
+        e.AllowAdding(true);
+        e.AllowDeleting(true);
+        e.UseIcons(true);
+        e.Popup(p => p
+            .Title("Manage News")
+            .ShowTitle(true)
+            );
+    })
+    .Columns(c =>
+    {
+        c.Add()
+            .Type(GridCommandColumnType.Buttons)
+            .Buttons(b =>
+            {
+                b.Add()
+                    .Name(GridColumnButtonName.Edit);
+                b.Add()
+                    .Name(GridColumnButtonName.Delete);
+            });
+    })
+    .Columns(c =>
+    {
+        c.Add()
+            .DataField("Headline");
+
+    })
+    .Columns(c =>
+    {
+        c.Add()
+            .DataField("Author");
+    })
+    .Columns(c =>
+    {
+        c.Add()
+            .DataField("Type")
+            .Lookup(l => l
+                .DataSource(d => d.WebApi().Controller("NewsAPI").Key("Value")
+                    .LoadAction("GetNewsTypes"))
+                .DisplayExpr("Text")
+                .ValueExpr("Value")
+            );
+    })
+    .Columns(c =>
+    {
+        c.Add()
+            .DataField("Expires")
+            .DataType(GridColumnDataType.Date);
+    })
+    .Columns(c =>
+    {
+        c.Add()
+            .DataField("IsActive")
+            .DataType(GridColumnDataType.Boolean);
+    })
+)

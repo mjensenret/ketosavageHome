@@ -9,6 +9,7 @@ using System.Security.Cryptography.X509Certificates;
 using System.Web.Http;
 using DevExtreme.AspNet.Data;
 using DevExtreme.AspNet.Mvc;
+using KetoSavageWeb.Controllers.Abstract;
 using KetoSavageWeb.Models;
 using KetoSavageWeb.Repositories;
 using KetoSavageWeb.ViewModels;
@@ -16,7 +17,7 @@ using Newtonsoft.Json;
 
 namespace KetoSavageWeb.Controllers
 {
-    public class ProgressApiController : ApiController
+    public class ProgressApiController : KSBaseAPIController
     {
         private ProgramRepository program;
         private RoleRepository roleRepository;
@@ -189,7 +190,7 @@ namespace KetoSavageWeb.Controllers
         {
             var date = DateTime.Now;
             var previousWeek = _context.DateModels.Where(x => x.Date == date.Date).Select(y => y.ISOWeekOfYear).First() - 1;
-            var dailyProgresses = _context.DailyProgress.Where(x => x.Dates.ISOWeekOfYear == previousWeek && x.Dates.Year == date.Year);
+            var dailyProgresses = _context.DailyProgress.Where(x => x.UserProgram.ProgramUserId == userId && x.Dates.ISOWeekOfYear == previousWeek && x.Dates.Year == date.Year);
 
             var model = dailyProgresses.Select(x => new
             {
@@ -225,7 +226,7 @@ namespace KetoSavageWeb.Controllers
         {
             var date = DateTime.Now;
             var currentWeek = _context.DateModels.Where(x => x.Date == date.Date).Select(y => y.ISOWeekOfYear).First();
-            var dailyProgresses = _context.DailyProgress.Where(x => x.Dates.ISOWeekOfYear == currentWeek && x.Dates.Year == date.Year);
+            var dailyProgresses = _context.DailyProgress.Where(x => x.UserProgram.ProgramUserId == userId &&  x.Dates.ISOWeekOfYear == currentWeek && x.Dates.Year == date.Year);
 
             var model = dailyProgresses.Select(x => new
             {
