@@ -39,7 +39,7 @@ namespace KetoSavageWeb.Controllers
 
         public ActionResult UserProgramList()
         {
-            Session["currentUser"] = User.Identity.Name;
+            //Session["currentUser"] = User.Identity.Name;
             return PartialView("_dxUserGridViewPartial");
         }
 

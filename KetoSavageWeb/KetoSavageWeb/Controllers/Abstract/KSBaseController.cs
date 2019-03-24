@@ -14,6 +14,7 @@ namespace KetoSavageWeb.Controllers
         public static ApplicationUser GetCurrentUser(int userId, HttpSessionStateBase session, ApplicationUserManager userManager)
         {
             // Make sure currently logged in user is the same user in the session
+            
             if (session["currentUser"] == null || ((ApplicationUser)session["currentUser"]).Id != userId)
             {
                 session["currentUser"] = userManager.FindById(userId);

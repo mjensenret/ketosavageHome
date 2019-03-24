@@ -63,7 +63,7 @@
                     .DataField("CoachId")
                     .Caption("Coach")
                     .Lookup(l => l
-                        .DataSource(d => d.WebApi().Controller("ManageClientProgramsAPI")
+                        .DataSource(d => d.WebApi().Controller("ManageClientProgramsAPI").Key("Id")
                             .LoadAction("getCoachList"))
                         .DisplayExpr("FirstName")
                         .ValueExpr("Id")
@@ -86,6 +86,7 @@
                 c.Add()
                     .DataField("currentProgramStartDate")
                     .DataType(GridColumnDataType.Date)
+                    .SetCellValue("setStartDate")
                     .Caption("Start Date");
             })
             .Columns(c =>
@@ -151,6 +152,17 @@
     function onRowUpdating(e) {
 
         e.newData["UserName"] = e.oldData["UserName"];
-        console.log(e.newData);
+        
+    }
+
+    function setStartDate(rowData, value) {
+        rowData.currentProgramStartDate = value;
+        var startDate = new Date(value);
+        var renewal = new Date(startDate);
+        renewal.setDate(renewal.getDate() + 30);
+        rowData.currentProgramRenewalDate = renewal;
+        var endDate = new Date(startDate);
+        endDate.setDate(endDate.getDate() + 90);
+        rowData.currentProgramEndDate = endDate;
     }
 </script>

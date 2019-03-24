@@ -200,39 +200,39 @@ html, body {
 #progressGauge {
     height: 250px;
     display: inline-block;
-    background-color: #0a0a0a;
+    background-color: #000;
 }
 
 #actualMacroPie {
     display: inline-block;
     height: 250px;
-    background-color: #0a0a0a;
+    background-color: #000;
 }
 
 #currentMacroGauge {
     display: inline-block;
-    background-color: #0a0a0a;
+    background-color: #000;
     height: 250px;
     position: relative;
 }
 
 #currentMacroGauge {
     display: inline-block;
-    background-color: #0a0a0a;
+    background-color: #000;
     height: 250px;
     position: relative;
 }
 
 #pvaMacroPieChartDiv {
     display: inline-block;
-    background-color: #0a0a0a;
+    background-color: #000;
     height: 250px;
     position: relative;
 }
 
 #currentWeekGaugePanel {
     /*border:solid;*/
-    background-color: #0a0a0a;
+    background-color: #000;
     color: #dedede;
     width: 150px;
     text-align: left;

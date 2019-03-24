@@ -1346,7 +1346,7 @@
     <Content Include="Views\ClientCharts\_clientProgramGridMobile.cshtml" />
     <Content Include="Views\Account\_dxChangePassword.cshtml" />
     <Content Include="Views\Account\_dxPersonalInformation.cshtml" />
-    <Content Include="Views\UserPrograms\_dxAddUpdateUserProgramForm.cshtml" />
+    <Content Include="Views\UserPrograms\_dxAddUpdateUserProgramForm_remove.cshtml" />
     <Content Include="Views\UserPrograms\_dxEnterWeeklyMacroForm.cshtml" />
     <Content Include="Views\UserPrograms\_dxManageMacroDataGrid.cshtml" />
     <Content Include="Views\UserPrograms\_dxUserGridViewPartial.cshtml" />
