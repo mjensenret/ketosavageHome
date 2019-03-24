@@ -9,6 +9,16 @@
                         .ShowBorders(true)
                         .RowAlternationEnabled(true)
                         .Scrolling(s => s.Mode(GridScrollingMode.Virtual))
+                        .FilterRow(fr => fr
+                            .Visible(true)
+                            .ApplyFilter(GridApplyFilterMode.Auto)
+                        )
+                        .HeaderFilter(hf => hf.Visible(true))
+                        .SearchPanel(searchPanel => searchPanel
+                            .Visible(true)
+                            .Width(240)
+                            .Placeholder("Search...")
+                        )
                         .Columns(c =>
                         {
                             c.Add()
@@ -19,7 +29,7 @@
                                     b.Add()
                                 .Icon("edit")
                                 .OnClick(@<text>EditMacros</text>);
-                                        });
+                                });
                         })
                         .Columns(c =>
                         {
@@ -43,34 +53,37 @@
                         {
                             c.Add()
                                 .DataField("StartWeight")
-                                .Caption("Start Weight");
+                                .Caption("Start Weight")
+                                .AllowFiltering(false);
                         })
                         .Columns(c =>
                         {
                             c.Add()
                                 .DataField("CurrentWeight")
-                                .Caption("Current Weight");
+                                .Caption("Current Weight")
+                                .AllowFiltering(false);
                         })
                         .Columns(c =>
                         {
                             c.Add()
                                 .DataField("GoalWeight")
-                                .Caption("Goal Weight");
+                                .Caption("Goal Weight")
+                                .AllowFiltering(false);
                         })
-                        .Columns(c =>
-                        {
-                            c.Add()
-                                .DataField("currentProgramStartDate")
-                                .Caption("Start Date")
-                                .DataType(GridColumnDataType.Date);
-                        })
-                        .Columns(c =>
-                        {
-                            c.Add()
-                                .DataField("currentProgramEndDate")
-                                .Caption("End Date")
-                                .DataType(GridColumnDataType.Date);
-                        })
+                        //.Columns(c =>
+                        //{
+                        //    c.Add()
+                        //        .DataField("currentProgramStartDate")
+                        //        .Caption("Start Date")
+                        //        .DataType(GridColumnDataType.Date);
+                        //})
+                        //.Columns(c =>
+                        //{
+                        //    c.Add()
+                        //        .DataField("currentProgramEndDate")
+                        //        .Caption("End Date")
+                        //        .DataType(GridColumnDataType.Date);
+                        //})
                         .Columns(c =>
                         {
                             c.Add()
