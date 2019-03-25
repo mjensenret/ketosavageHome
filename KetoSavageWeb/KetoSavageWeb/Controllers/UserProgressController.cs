@@ -8,7 +8,6 @@ using System.Data.Entity.Migrations;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-using DevExpress.XtraEditors.Filtering.Templates;
 using DevExtreme.AspNet.Data;
 using Newtonsoft.Json;
 using MeasurementEntriesViewModel = KetoSavageWeb.ViewModels.MeasurementEntriesViewModel;

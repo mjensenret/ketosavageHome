@@ -360,7 +360,7 @@ namespace KetoSavageWeb.Controllers
         [System.Web.Http.HttpGet]
         public HttpResponseMessage getProgramList(DataSourceLoadOptions loadOptions)
         {
-            var programs = _context.Programs.Where(x => x.IsActive);
+            var programs = _context.Programs.Where(x => x.IsActive).ToList();
             return Request.CreateResponse(DataSourceLoader.Load(programs, loadOptions));
         }
 

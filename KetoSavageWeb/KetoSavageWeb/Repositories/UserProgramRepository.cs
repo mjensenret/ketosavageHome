@@ -1,5 +1,4 @@
-﻿using DevExpress.Web.Mvc;
-using KetoSavageWeb.Domain.Infrastructure;
+﻿using KetoSavageWeb.Domain.Infrastructure;
 using KetoSavageWeb.Domain.Repositories;
 using KetoSavageWeb.Models;
 using KetoSavageWeb.ViewModels;
@@ -111,19 +110,20 @@ namespace KetoSavageWeb.Repositories
             var dp = db.DailyProgress.ToList();
             return dp;
         }
-        public void UpdateItem(UpdateMacrosViewModel postedItem, MVCxGridViewBatchUpdateValues<UpdateMacrosViewModel, int> batchValues)
-        {
-            try
-            {
-                var editedItem = db.DailyProgress.First(i => i.Id == postedItem.Id);
-                LoadNewValues(editedItem, postedItem);
-                db.SaveChanges();
-            }
-            catch (Exception e)
-            {
-                batchValues.SetErrorText(postedItem, e.Message);
-            }
-        }
+
+        //public void UpdateItem(UpdateMacrosViewModel postedItem, MVCxGridViewBatchUpdateValues<UpdateMacrosViewModel, int> batchValues)
+        //{
+        //    try
+        //    {
+        //        var editedItem = db.DailyProgress.First(i => i.Id == postedItem.Id);
+        //        LoadNewValues(editedItem, postedItem);
+        //        db.SaveChanges();
+        //    }
+        //    catch (Exception e)
+        //    {
+        //        batchValues.SetErrorText(postedItem, e.Message);
+        //    }
+        //}
         //public static void DeleteItem(int itemKey, MVCxGridViewBatchUpdateValues<GridDataItem, int> batchValues)
         //{
         //    try

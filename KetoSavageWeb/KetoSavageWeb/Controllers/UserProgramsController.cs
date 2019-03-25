@@ -9,7 +9,6 @@ using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
 using KetoSavageWeb.ViewModels;
-using DevExpress.Web.Mvc;
 
 namespace KetoSavageWeb.Controllers
 {
@@ -542,20 +541,20 @@ namespace KetoSavageWeb.Controllers
             return PartialView("_dailyMacros", q);
         }
 
-        [HttpPost, ValidateInput(true)]
-        public ActionResult BatchUpdateMacros(MVCxGridViewBatchUpdateValues<UpdateMacrosViewModel, int> batchValues)
-        {
-            foreach (var item in batchValues.Update)
-            {
-                if (batchValues.IsValid(item))
-                    userProgramRepository.UpdateItem(item, batchValues);
-                else
-                    batchValues.SetErrorText(item, "Correct validation errors");
-            }
+        //[HttpPost, ValidateInput(true)]
+        //public ActionResult BatchUpdateMacros(MVCxGridViewBatchUpdateValues<UpdateMacrosViewModel, int> batchValues)
+        //{
+        //    foreach (var item in batchValues.Update)
+        //    {
+        //        if (batchValues.IsValid(item))
+        //            userProgramRepository.UpdateItem(item, batchValues);
+        //        else
+        //            batchValues.SetErrorText(item, "Correct validation errors");
+        //    }
             
 
-            return RedirectToAction("ShowProgramDetails", new { @_userId = Session["UserId"] });
-        }
+        //    return RedirectToAction("ShowProgramDetails", new { @_userId = Session["UserId"] });
+        //}
 
         public ActionResult WeeklyMacroUpdateForm()
         {

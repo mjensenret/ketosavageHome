@@ -64,7 +64,7 @@ namespace KetoSavageWeb.Controllers
         [HttpGet]
         public HttpResponseMessage GetUserRoles(DataSourceLoadOptions loadOptions)
         {
-            var roles = RoleManager.Roles;
+            var roles = RoleManager.Roles.ToList();
             return Request.CreateResponse(DataSourceLoader.Load(roles, loadOptions));
         }
         [HttpPost]

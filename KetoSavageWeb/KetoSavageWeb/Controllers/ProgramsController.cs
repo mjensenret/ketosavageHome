@@ -14,8 +14,6 @@ using System.Data.Entity;
 using System.Net.Http;
 using System.Net.Http.Formatting;
 using System.Web.Http;
-using DevExpress.Spreadsheet;
-using DevExpress.Utils.DirectXPaint;
 using DevExtreme.AspNet.Data;
 using DevExtreme.AspNet.Mvc;
 
