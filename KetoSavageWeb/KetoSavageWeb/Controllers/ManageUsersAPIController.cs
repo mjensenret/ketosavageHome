@@ -32,7 +32,7 @@ namespace KetoSavageWeb.Controllers
         [System.Web.Http.HttpGet]
         public HttpResponseMessage GetUserList(DataSourceLoadOptions loadOptions)
         {
-            var userQuery = UserManager.Users.Where(x => x.IsActive == true).Include(x => x.Roles);
+            var userQuery = UserManager.Users.Where(x => x.IsActive == true).Include(x => x.Roles).ToList();
             var items = (userQuery
                 .OrderBy(x => x.UserName)
                 .Select(x => new

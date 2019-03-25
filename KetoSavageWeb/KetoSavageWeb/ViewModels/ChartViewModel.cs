@@ -94,6 +94,7 @@ namespace KetoSavageWeb.ViewModels
         public int Id { get; set; }
         public string ClientName { get; set; }
         public DateTime RenewalDate { get; set; }
+        public DateTime EndDate { get; set; }
     }
 
     public class ClientPerformanceData

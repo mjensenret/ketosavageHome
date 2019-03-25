@@ -28,6 +28,11 @@
                     .DataField("RenewalDate")
                     .DataType(GridColumnDataType.Date)
                     .SortOrder(SortOrder.Asc);
+                c.Add()
+                    .DataField("EndDate")
+                    .Caption("End Date")
+                    .DataType(GridColumnDataType.Date)
+                    .AllowEditing(false);
             })
             .OnCellPrepared("colorDates")
             .DataSource(d => d.WebApi()

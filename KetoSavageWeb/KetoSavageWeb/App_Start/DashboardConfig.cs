@@ -1,11 +1,11 @@
 using System.Web.Routing;
-using DevExpress.DashboardWeb;
-using DevExpress.DashboardWeb.Mvc;
+//using DevExpress.DashboardWeb;
+//using DevExpress.DashboardWeb.Mvc;
 
 namespace KetoSavageWeb {
 	public class DashboardConfig {
 		public static void RegisterService(RouteCollection routes) {
-			routes.MapDashboardRoute();
+			//routes.MapDashboardRoute();
 
 			// Uncomment this line to save dashboards to the App_Data folder.
 			//DashboardConfigurator.Default.SetDashboardStorage(new DashboardFileStorage(@"~/App_Data/"));

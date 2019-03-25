@@ -35,14 +35,16 @@ namespace KetoSavageWeb.Controllers
                 {
                     x.Id,
                     ClientName = x.ProgramUser.FirstName + " " + x.ProgramUser.LastName,
-                    x.RenewalDate
+                    x.RenewalDate,
+                    x.EndDate
                 })
                 .ToList()
                 .Select(y => new ClientRenewalGrid()
                 {
                     Id = y.Id,
                     ClientName = y.ClientName,
-                    RenewalDate = Convert.ToDateTime(y.RenewalDate)
+                    RenewalDate = Convert.ToDateTime(y.RenewalDate),
+                    EndDate = Convert.ToDateTime(y.EndDate)
                 });
 
             return Request.CreateResponse(DataSourceLoader.Load(model, loadOptions));
