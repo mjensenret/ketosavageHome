@@ -12,6 +12,10 @@
                 .UpdateAction("UpdateSingleDay")
                 .Key("Date")
             )
+            .Export(e => e
+                .Enabled(true)
+                .FileName("ProgramProgress")
+                .AllowExportSelectedData(false))
             .ShowBorders(true)
             .RowAlternationEnabled(true)
             .FocusedRowEnabled(true)

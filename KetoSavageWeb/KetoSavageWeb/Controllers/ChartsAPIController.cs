@@ -1,46 +1,68 @@
 ﻿using DevExtreme.AspNet.Data;
 using DevExtreme.AspNet.Mvc;
+using KetoSavageWeb.Controllers.Abstract;
 using KetoSavageWeb.Models;
 using KetoSavageWeb.ViewModels;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
+using System.Net.Http.Formatting;
 using System.Web.Http;
 
 namespace KetoSavageWeb.Controllers
 {
-    public class ChartsAPIController : ApiController
+    public class ChartsAPIController : KSBaseAPIController
     {
-        KSDataContext _context = new KSDataContext();
+        KSDataContext mcontext;
 
-        public ChartsAPIController()
+        public ChartsAPIController(KSDataContext dataContext)
         {
-
+            mcontext = dataContext;
         }
 
         [HttpGet]
         public HttpResponseMessage GetClientRenewals(DataSourceLoadOptions loadOptions)
         {
-            var today = DateTime.Now.Date;
-            var clients = _context.UserPrograms.Where(x => x.IsActive && !x.IsDeleted && x.RenewalDate <= today);
+            var date = DateTime.Now.Date.AddDays(30);
+            var clients = _context.UserPrograms.Where(x => x.IsActive && !x.IsDeleted && x.RenewalDate <= date);
 
             var model = clients
                 .Select(x => new
                 {
+                    x.Id,
                     ClientName = x.ProgramUser.FirstName + " " + x.ProgramUser.LastName,
                     x.RenewalDate
                 })
                 .ToList()
                 .Select(y => new ClientRenewalGrid()
                 {
+                    Id = y.Id,
                     ClientName = y.ClientName,
                     RenewalDate = Convert.ToDateTime(y.RenewalDate)
                 });
 
             return Request.CreateResponse(DataSourceLoader.Load(model, loadOptions));
+        }
+
+        [HttpPut]
+        public HttpResponseMessage UpdateRenewalDate(FormDataCollection form)
+        {
+            var key = Convert.ToInt32(form.Get("key"));
+            var values = form.Get("values");
+            var updRenewal = mcontext.UserPrograms.Where(x => x.Id == key).First();
+            var model = new ClientRenewalGrid();
+            JsonConvert.PopulateObject(values, model);
+
+            updRenewal.RenewalDate = model.RenewalDate;
+
+            mcontext.SaveChanges();
+
+            return Request.CreateResponse(HttpStatusCode.OK);
+
         }
 
         [HttpGet]

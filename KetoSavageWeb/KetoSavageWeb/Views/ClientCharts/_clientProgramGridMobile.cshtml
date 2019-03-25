@@ -11,10 +11,11 @@
             .Key("Date")
         )
         .RowAlternationEnabled(true)
-        //.FocusedRowEnabled(true)
-        //.FocusedRowKey(new DateTime(today.Year, today.Month, today.Day).ToString("s")) //<-- not sure what to put here...
-        //.OnInitialized("onDataGridInitialized")
-        //      .OnFocusedRowChanging("onFocusedRowChanging")
+        .FocusedRowEnabled(true)
+        .FocusedRowKey(new DateTime(today.Year, today.Month, today.Day).ToString("s")) //<-- not sure what to put here...
+        .OnInitialized("onDataGridInitialized")
+                .OnFocusedRowChanging("onFocusedRowChanging")
+        .Paging(p => p.PageSize(10))
         .Scrolling(scrolling => scrolling.Mode(GridScrollingMode.Virtual))
         .Columns(c =>
         {
@@ -87,7 +88,6 @@
 <script>
     function onDataGridInitialized(e) {
         dataGrid = e.component;
-        window.console.log(dataGrid);
     }
 
     function onFocusedRowChanging(e) {

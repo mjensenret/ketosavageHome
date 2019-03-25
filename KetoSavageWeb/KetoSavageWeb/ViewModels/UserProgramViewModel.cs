@@ -106,4 +106,9 @@ namespace KetoSavageWeb.ViewModels
         public bool Refeed { get; set; }
         public virtual DateModels dates { get; set; }
     }
+
+    public class UpdateRenewalDate
+    {
+        public DateTime RenewalDate { get; set; }
+    }
 }

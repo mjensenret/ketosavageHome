@@ -91,6 +91,7 @@ namespace KetoSavageWeb.ViewModels
 
     public class ClientRenewalGrid
     {
+        public int Id { get; set; }
         public string ClientName { get; set; }
         public DateTime RenewalDate { get; set; }
     }

@@ -17,6 +17,10 @@
             .ShowTitle(true)
             );
     })
+    .Export(e => e
+    .Enabled(true)
+    .FileName("ProgramProgress")
+    .AllowExportSelectedData(false))
     .FilterRow(fr => fr
         .Visible(true)
         .ApplyFilter(GridApplyFilterMode.Auto)

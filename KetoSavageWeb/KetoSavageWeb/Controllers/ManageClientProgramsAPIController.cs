@@ -144,8 +144,11 @@ namespace KetoSavageWeb.Controllers
             var values = form.Get("values");
             var model = new UserProgramViewModel();
             JsonConvert.PopulateObject(values, model);
-            if(key == 0)
+
+            if (key == 0)
             {
+
+
                 var activeProgram = userProgramRepository.GetActive.Where(x => x.ProgramUser.UserName == model.UserName).FirstOrDefault();
 
                 if (activeProgram == null)
@@ -219,24 +222,36 @@ namespace KetoSavageWeb.Controllers
             }
             else
             {
-                var userProgram = userProgramRepository.Find(model.Id);
-                bool updStartDate = (userProgram.StartDate != model.currentProgramStartDate);
-                bool updEndDate = (userProgram.EndDate != model.currentProgramEndDate);
-                bool updStartWeight = (userProgram.StartWeight != model.StartWeight);
-                bool updEndWeight = (userProgram.GoalWeight != model.GoalWeight);
+                var userProgram = userProgramRepository.Find(key);
 
-                userProgram.ProgramType = model.ProgramName;
-                userProgram.StartDate = model.currentProgramStartDate;
-                userProgram.RenewalDate = model.currentProgramRenewalDate;
-                userProgram.EndDate = model.currentProgramEndDate;
-                userProgram.StartWeight = model.StartWeight;
-                userProgram.GoalWeight = model.GoalWeight;
-                userProgram.MasterProgramId = model.MasterProgramId;
+                bool updStartDate = model.currentProgramStartDate.HasValue;
+                bool updEndDate = model.currentProgramEndDate.HasValue;
+                bool updStartWeight = (model.StartWeight > 0);
+                bool updEndWeight = (model.GoalWeight > 0);
+
+
+                if (model.ProgramName != null)
+                    userProgram.ProgramType = model.ProgramName;
+                if (model.currentProgramStartDate.HasValue)
+                    userProgram.StartDate = model.currentProgramStartDate;
+                if (model.currentProgramRenewalDate.HasValue)
+                    userProgram.RenewalDate = model.currentProgramRenewalDate;
+                if (model.currentProgramEndDate.HasValue)
+                    userProgram.EndDate = model.currentProgramEndDate;
+                if (model.StartWeight > 0)
+                    userProgram.StartWeight = model.StartWeight;
+                if (model.GoalWeight > 0)
+                    userProgram.GoalWeight = model.GoalWeight;
+                if (model.MasterProgramId > 0)
+                    userProgram.MasterProgramId = model.MasterProgramId;
+
+                if (model.Notes != null)
+                    userProgram.Notes = model.Notes;
+                if (model.CoachId > 0)
+                    userProgram.CoachUserId = model.CoachId;
                 userProgram.IsActive = model.IsActive;
-                userProgram.Notes = model.Notes;
-                userProgram.CoachUserId = model.CoachId;
                 userProgram.LastModified = DateTime.Now;
-                userProgram.LastModifiedBy = "RecordUserName";
+                userProgram.LastModifiedBy = RequestContext.Principal.Identity.Name;
 
                 userProgramRepository.Update(userProgram);
 

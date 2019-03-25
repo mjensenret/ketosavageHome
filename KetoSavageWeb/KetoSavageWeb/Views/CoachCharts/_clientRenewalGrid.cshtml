@@ -1,19 +1,59 @@
-﻿@(Html.DevExtreme().DataGrid()
-    .ID("clientRenewalGrid")
-    .ShowBorders(true)
-    .Columns(c =>
-    {
-        c.Add()
-        .DataField("ClientName")
-        .Caption("Client");
-    })
-    .Columns(c =>
-    {
-        c.Add()
-            .DataField("RenewalDate")
-            .DataType(GridColumnDataType.Date)
-            .SortOrder(SortOrder.Asc);
-    })
-    .DataSource(d => d.WebApi().Controller("ChartsAPI").LoadAction("GetClientRenewals"))
+﻿<style>
+    .datePassed {
+        background-color: red;
+    }
+
+    .dateApproaching {
+        background-color: darkgoldenrod;
+    }
+</style>
+@(Html.DevExtreme().DataGrid()
+            .ID("clientRenewalGrid")
+            .ShowBorders(true)
+            .RowAlternationEnabled(true)
+            .Editing(editing =>
+            {
+                editing.Mode(GridEditMode.Cell);
+                editing.AllowAdding(false);
+                editing.AllowDeleting(false);
+                editing.AllowUpdating(true);
+            })
+            .Columns(c =>
+            {
+                c.Add()
+                    .DataField("ClientName")
+                    .Caption("Client")
+                    .AllowEditing(false);
+                c.Add()
+                    .DataField("RenewalDate")
+                    .DataType(GridColumnDataType.Date)
+                    .SortOrder(SortOrder.Asc);
+            })
+            .OnCellPrepared("colorDates")
+            .DataSource(d => d.WebApi()
+                .Controller("ChartsAPI")
+                .LoadAction("GetClientRenewals")
+                .UpdateAction("UpdateRenewalDate")
+                .Key("Id"))
 
 )
+
+<script type="text/javascript">
+    function colorDates(cellInfo) {
+        if (cellInfo.rowType == "data" && cellInfo.column.dataField === "RenewalDate") {
+            const today = new Date();
+            console.log(today);
+            var renewalDate = new Date(cellInfo.value);
+            var numberOfDays = Math.floor((renewalDate - today) / (1000 * 60 * 60 * 24));
+
+            console.log(numberOfDays);
+            if (numberOfDays <= 1) {
+                cellInfo.cellElement.addClass('datePassed');
+            }
+            else if (numberOfDays >= 2 && numberOfDays <= 7) {
+                cellInfo.cellElement.addClass('dateApproaching');
+            }
+        }
+    }
+
+</script>

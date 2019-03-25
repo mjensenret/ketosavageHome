@@ -18,15 +18,16 @@ namespace KetoSavageWeb.Controllers
         private UserProgramRepository userProgramRepository;
         private DateRepository dateRepository;
 
-        private KSDataContext _context = new KSDataContext();
-        private ChartsAPIController chartsAPI = new ChartsAPIController();
+        public KSDataContext _context = new KSDataContext();
+        private ChartsAPIController chartsAPI;
 
-        public ClientChartsController(ProgramRepository pr, RoleRepository rr, UserProgramRepository up, DateRepository dr)
+        public ClientChartsController(ProgramRepository pr, RoleRepository rr, UserProgramRepository up, DateRepository dr, ChartsAPIController ca)
         {
             this.program = pr;
             this.roleRepository = rr;
             this.userProgramRepository = up;
             this.dateRepository = dr;
+            chartsAPI = ca;
         }
         // GET: UserProgress
         public PartialViewResult WeightGraph()
