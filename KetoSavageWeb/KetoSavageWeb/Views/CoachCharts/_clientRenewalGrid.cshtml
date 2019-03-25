@@ -47,11 +47,9 @@
     function colorDates(cellInfo) {
         if (cellInfo.rowType == "data" && cellInfo.column.dataField === "RenewalDate") {
             const today = new Date();
-            console.log(today);
             var renewalDate = new Date(cellInfo.value);
             var numberOfDays = Math.floor((renewalDate - today) / (1000 * 60 * 60 * 24));
 
-            console.log(numberOfDays);
             if (numberOfDays <= 1) {
                 cellInfo.cellElement.addClass('datePassed');
             }

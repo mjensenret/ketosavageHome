@@ -138,7 +138,6 @@
 <script type="text/javascript">
 
     function enterUserProgramPopup(data) {
-        window.console.log(data.row.data.Id);
         var url = '@Url.Action("UpdateUserProgram", "UserPrograms", new { userId = "placeholder" })';
         url = url.replace('placeholder', data.row.data.Id);
         document.getElementById("userProgram").innerHTML = url;

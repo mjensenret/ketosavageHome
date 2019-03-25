@@ -1229,14 +1229,6 @@
     <Content Include="Scripts\vectormap-utils\dx.vectormaputils.debug.js" />
     <Content Include="Scripts\vectormap-utils\dx.vectormaputils.js" />
     <Content Include="Scripts\vectormap-utils\dx.vectormaputils.node.js" />
-    <Content Include="Views\Shared\DisplayTemplates\Boolean.cshtml" />
-    <Content Include="Views\Shared\EditorTemplates\Boolean.cshtml" />
-    <Content Include="Views\Shared\EditorTemplates\DateTime.cshtml" />
-    <Content Include="Views\Shared\EditorTemplates\Decimal.cshtml" />
-    <Content Include="Views\Shared\EditorTemplates\MultilineText.cshtml" />
-    <Content Include="Views\Shared\EditorTemplates\Password.cshtml" />
-    <Content Include="Views\Shared\EditorTemplates\String.cshtml" />
-    <Content Include="Views\Shared\EditorTemplates\EmailAddress.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Web.config">
@@ -1249,11 +1241,7 @@
     </Content>
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Account\Register.cshtml" />
-    <Content Include="Views\Shared\_lightLayout.cshtml" />
-    <Content Include="Views\Shared\_leftMenuPartialView.cshtml" />
-    <Content Include="Views\Shared\HeaderPartialView.cshtml" />
     <Content Include="Views\Shared\LogOnPartialView.cshtml" />
-    <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Account\_ExternalLoginsListPartial.cshtml" />
     <Content Include="Views\Account\SendCode.cshtml" />
     <Content Include="Views\Account\VerifyCode.cshtml" />
@@ -1263,23 +1251,13 @@
     <Content Include="Views\UsersAdmin\DeleteUserPartial.cshtml" />
     <Content Include="Views\UsersAdmin\UpdateUser.cshtml" />
     <Content Include="Views\ManageUsers\Index.cshtml" />
-    <Content Include="Views\ManageUsers\_GridViewPartial.cshtml" />
-    <Content Include="Views\Shared\_menuPartial.cshtml" />
     <Content Include="Views\UserPrograms\Index.cshtml" />
-    <Content Include="Views\UserPrograms\_userGridViewPartial_remove.cshtml" />
     <Content Include="Views\Programs\Index.cshtml" />
     <Content Include="Views\Programs\_programGridViewPartial.cshtml" />
-    <Content Include="Views\UserPrograms\_userProgramDetails.cshtml" />
-    <Content Include="Views\UserPrograms\_userProgramHeader.cshtml" />
-    <Content Include="Views\ManageUsers\_userContactCardPartial.cshtml" />
     <Content Include="Views\UserPrograms\UserProgramDetails.cshtml" />
     <Content Include="Views\UserProgress\Index.cshtml" />
-    <Content Include="Views\UserProgress\_pastPerformanceGrid.cshtml" />
-    <Content Include="Views\UserPrograms\_enterNewMacroForm_remove.cshtml" />
     <Content Include="Views\ClientCharts\_clientWeightGraph.cshtml" />
-    <Content Include="Views\Shared\_ksRootLayout.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
-    <Content Include="Views\Home\_mainMenuButtons.cshtml" />
     <Content Include="Views\ClientCharts\_clientPlannedMacros.cshtml" />
     <Content Include="Views\ClientCharts\_clientPerformanceGauge.cshtml" />
     <Content Include="Views\ClientCharts\_clientPastWeekMacroChart.cshtml" />
@@ -1287,11 +1265,8 @@
     <Content Include="Views\ClientCharts\_clientProgramGrid.cshtml" />
     <Content Include="Views\ManageNews\_newsCarousel.cshtml" />
     <Content Include="Views\ManageNews\Index.cshtml" />
-    <Content Include="Views\ManageNews\_newsGrid.cshtml" />
-    <Content Include="Views\UserPrograms\_manageMacroPartial.cshtml" />
     <Content Include="Views\UserPrograms\ManageClientMacros.cshtml" />
     <Content Include="Views\UserPrograms\_macroPieChart.cshtml" />
-    <Content Include="Views\UserPrograms\_weeklyMacroUpdateForm_remove.cshtml" />
     <Content Include="Views\UserProgress\_dxMeasurementForm.cshtml" />
     <Content Include="Views\Home\_dxLoginForm.cshtml" />
     <Content Include="Views\ClientCharts\_plannedVsActualMacroPie.cshtml" />
@@ -1306,7 +1281,6 @@
     <Content Include="Views\ClientCharts\_clientProgramGridMobile.cshtml" />
     <Content Include="Views\Account\_dxChangePassword.cshtml" />
     <Content Include="Views\Account\_dxPersonalInformation.cshtml" />
-    <Content Include="Views\UserPrograms\_dxAddUpdateUserProgramForm_remove.cshtml" />
     <Content Include="Views\UserPrograms\_dxEnterWeeklyMacroForm.cshtml" />
     <Content Include="Views\UserPrograms\_dxManageMacroDataGrid.cshtml" />
     <Content Include="Views\UserPrograms\_dxUserGridViewPartial.cshtml" />
@@ -1502,6 +1476,8 @@
   <ItemGroup>
     <Folder Include="Controllers\Infrastructure\" />
     <Folder Include="Views\ProgramApi\" />
+    <Folder Include="Views\Shared\DisplayTemplates\" />
+    <Folder Include="Views\Shared\EditorTemplates\" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201803111631012_Initial.resx">

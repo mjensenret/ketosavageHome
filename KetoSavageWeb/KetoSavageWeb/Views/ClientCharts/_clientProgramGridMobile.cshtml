@@ -1,5 +1,4 @@
-﻿@using DevExpress.XtraLayout.Filtering.Templates
-@*@model IEnumerable<KetoSavageWeb.ViewModels.UserProgramProgress>*@
+﻿
 @{ var today = DateTime.Now; }
 <div id="devExtremeProgramMobileGrid">
     @(Html.DevExtreme().DataGrid()
@@ -10,6 +9,7 @@
             .LoadParams(new {userId = ViewData["UserId"]} )
             .Key("Date")
         )
+        .ShowBorders(true)
         .RowAlternationEnabled(true)
         .FocusedRowEnabled(true)
         .FocusedRowKey(new DateTime(today.Year, today.Month, today.Day).ToString("s")) //<-- not sure what to put here...

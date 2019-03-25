@@ -48,13 +48,10 @@
             url: '@Url.Action("onMacroChange", "UserPrograms")',
             data: { fat: fat, protein: protein, carbs: carbs},
             success: function(response) {
-                window.console.log("success");
-                window.console.log(response);
                 $("#macro-chart").html(response);
 
             },
             error: function (jqXHR, textStatus, errorThrown) {
-                window.console.log(errorThrown);
                 alert("For some reason, this did not work");
             }
         });
@@ -65,32 +62,7 @@
 <div id="client-name">
     Client: @ViewBag.ClientName
 </div>
-@*<div id="controlPanel">
-        @Html.DevExpress().Panel(settings =>
-        {
-            settings.Name = "pnlButtons";
-            settings.ControlStyle.CssClass = "pnlButtons";
-            settings.SetContent(() =>
-            {
-                ViewContext.Writer.Write("<div class=\"buttons\">");
-                Html.DevExpress().Button(um =>
-                {
-                    um.Name = "btnShowMacros";
-                    um.Text = "Update Macros";
-                    um.ClientSideEvents.Click = "function(s, e) { openWindow('Macros'); }";
-                }).Render();
-                ViewContext.Writer.Write("</div>");
-                //ViewContext.Writer.Write("<div class=\"buttons\">");
 
-                //Html.DevExpress().Button(t =>
-                //{
-                //    t.Name = "btnTest";
-                //    t.Text = "Test Button";
-                //}).Render();
-                //ViewContext.Writer.Write("</div>");
-            });
-        }).GetHtml()
-    </div>*@
 <div class="row">
     <div class="col-sm-12">
         @(Html.DevExtreme().Button()
@@ -149,24 +121,4 @@
 {
     @(Html.Action("EnterMacroForm"))
 }
-
-@*@Html.DevExpress().PopupControl(settings =>
-    {
-        settings.Name = "macroPopup";
-        //settings.Width = 400;
-        settings.AllowDragging = true;
-        settings.CloseAction = CloseAction.CloseButton;
-        settings.CloseOnEscape = true;
-        settings.PopupAnimationType = DevExpress.Web.AnimationType.None;
-        settings.ShowHeader = false;
-        settings.Modal = true;
-        settings.AutoUpdatePosition = true;
-        settings.PopupHorizontalAlign = PopupHorizontalAlign.OutsideLeft;
-        settings.PopupVerticalAlign = PopupVerticalAlign.TopSides;
-        settings.ClientSideEvents.CloseUp = "function(s, e){ ASPxClientEdit.ClearEditorsInContainer(null, '', true); }";
-        settings.SetContent(() =>
-        {
-            Html.RenderAction("WeeklyMacroUpdateForm", "UserPrograms");
-        });
-    }).GetHtml()*@
 

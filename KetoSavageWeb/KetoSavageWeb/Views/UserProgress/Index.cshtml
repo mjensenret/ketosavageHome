@@ -129,7 +129,6 @@
     }
 
     function clickHandler(e) {
-        window.console.log(e);
         if (e.validationGroup.validate().isValid) {
 
             $("#measurementGrid").dxDataGrid("instance").getDataSource().load().done(function (items) {
@@ -181,34 +180,21 @@
     }
 
     function changeMacroDate(date) {
-        var dd = date;
-        window.console.log("Value of date " + dd);
-
         var form = $("#macroForm").dxForm("instance");
 
         $.ajax({
             type: "POST",
             url: '@Url.Action("EnterMacroForm", "UserProgress")',
             data: { date: date},
-            //beforeSend: function() {
-            //    loadingPanel.Show();
-            //},
             success: function(response) {
-                //$("#form-container").html(response);
-                window.console.log("made it inside macroDate");
                 form.option("formData", response);
             },
             error: function (jqXHR, textStatus, errorThrown) {
-                window.console.log(errorThrown);
                 alert("For some reason, this did not work");
             }
         });
     }
 
-    //function macroDateChanged() {
-    //    window.console.log("macro date field updated");
-    //    var form
-    //}
 
 </script>
 
