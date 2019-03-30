@@ -1,47 +1,47 @@
 ﻿@model IEnumerable<KetoSavageWeb.ViewModels.MacroPieChart>
 <div id="macro-chart">
     @(Html.DevExtreme().PieChart()
-                                                          .ID("macroPieChart")
-                                                          .Size(s => s.Width(400))
-                                                          .Palette(VizPalette.Bright)
-                                                          .Series(s => s
-                                                              .Add()
-                                                              .ArgumentField("macro")
-                                                              .ValueField("value")
-                                                              .Label(l => l
-                                                                  .Visible(true)
-                                                                  .Connector(c => c
-                                                                      .Visible(true)
-                                                                      .Width(1)
-                                                                  )
-                                                                  .Format(Format.Percent)
-                                                              )
-                                                          )
-                                                          .CustomizePoint(@<text>
-                                                            function()
-                                                            {
-                                                            if(this.argument == "Carbs")
-                                                            {
-                                                            return { color: "#ff0000" }
-                                                            }
-                                                            else if(this.argument == "Fat")
-                                                            {
-                                                            return { color: "#ff6f00"}
-                                                            }
-                                                            else if(this.argument == "Protein")
-                                                            {
-                                                            return { color: "#ffa600"}
-                                                            }
-                                                            }
-                                                        </text>)
-                                                                                              .Legend(l => l
-                                                                                                  .Orientation(DevExtreme.AspNet.Mvc.Orientation.Horizontal)
-                                                                                                  .ItemTextPosition(Position.Bottom)
-                                                                                                  .HorizontalAlignment(HorizontalAlignment.Center)
-                                                                                                  .VerticalAlignment(VerticalEdge.Bottom)
-                                                                                              )
-                                                                                              .Export(e => e.Enabled(false))
-                                                                                              .DataSource(Model)
+        .ID("macroPieChart")
+        .Size(s => s.Width(400))
+        .Palette(VizPalette.Bright)
+        .Series(s => s
+            .Add()
+            .ArgumentField("macro")
+            .ValueField("value")
+            .Label(l => l
+                .Visible(true)
+                .Connector(c => c
+                    .Visible(true)
+                    .Width(1)
+                )
+                .Format(Format.Percent)
+            )
+        )
+        .CustomizePoint(@<text>
+        function()
+        {
+        if(this.argument == "Carbs")
+        {
+        return { color: "#ff0000" }
+        }
+        else if(this.argument == "Fat")
+        {
+        return { color: "#ff6f00"}
+        }
+        else if(this.argument == "Protein")
+        {
+        return { color: "#ffa600"}
+        }
+        }
+    </text>)
+        .Legend(l => l
+            .Orientation(DevExtreme.AspNet.Mvc.Orientation.Horizontal)
+            .ItemTextPosition(Position.Bottom)
+            .HorizontalAlignment(HorizontalAlignment.Center)
+            .VerticalAlignment(VerticalEdge.Bottom)
+        )
+        .Export(e => e.Enabled(false))
+        .DataSource(Model)
     )
 </div>
 

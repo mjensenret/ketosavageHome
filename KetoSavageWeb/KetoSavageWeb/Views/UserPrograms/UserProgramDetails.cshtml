@@ -17,6 +17,15 @@
         //setTimeout(FocusControl, 100);
     }
 
+    function onGridLoad() {
+        var form = $("#updateForm").dxForm("instance");
+        var fat = form.getEditor("Fat").option("value");
+        var protein = form.getEditor("Protein").option("value");
+        var carbs = form.getEditor("Carbohydrates").option("value");
+        var total = ((fat * 9) + (protein * 4) + (carbs * 4));
+        $("#updateForm").dxForm("instance").getEditor("TotalCalories").option("value", total);
+
+    }
     function FocusControl() {
 
         //currentControl.SelectAll();
@@ -42,6 +51,8 @@
         var fat = form.getEditor("Fat").option("value");
         var protein = form.getEditor("Protein").option("value");
         var carbs = form.getEditor("Carbohydrates").option("value");
+        //var test = form.updateData("TotalCalories", 5);
+
 
         $.ajax({
             type: "POST",
@@ -49,7 +60,8 @@
             data: { fat: fat, protein: protein, carbs: carbs},
             success: function(response) {
                 $("#macro-chart").html(response);
-
+                var total = ((fat * 9) + (protein * 4) + (carbs * 4));
+                $("#updateForm").dxForm("instance").getEditor("TotalCalories").option("value", total);
             },
             error: function (jqXHR, textStatus, errorThrown) {
                 alert("For some reason, this did not work");

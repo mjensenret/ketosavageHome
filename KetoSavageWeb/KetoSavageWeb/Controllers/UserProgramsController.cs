@@ -428,6 +428,7 @@ namespace KetoSavageWeb.Controllers
             var proteinCalories = Convert.ToDouble(protein) * 4;
             var carbCalories = Convert.ToDouble(carbs) * 4;
             var totalCalories = fatCalories + proteinCalories + carbCalories;
+            ViewBag.TotalCalories = totalCalories;
 
             List<MacroPieChart> model = new List<MacroPieChart>()
             {

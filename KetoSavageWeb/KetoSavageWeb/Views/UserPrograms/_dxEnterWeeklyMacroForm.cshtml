@@ -9,6 +9,7 @@
                 .ID("updateForm")
                 .FormData(Model)
                 .ColCount(2)
+                .OnContentReady("onGridLoad")
                 .Items(i =>
                 {
                     i.AddGroup()
@@ -35,15 +36,28 @@
                                 .NumberBox()
                                 .OnChange("updateMacroPieChart")
                             );
+                        g.AddSimple()
+                            .Name("TotalCalories")
+                            .Label(l => l
+                                .Text("Total Calories")
+                            )
+                            .Editor(e => e
+                                .NumberBox()
+                                .ID("totalCalories")
+                                .ReadOnly(true)
+                                .Name("TotalCalories")
+                                
+                            );
                     });
                     i.AddGroup()
                     .Items(g =>
                     {
-                    g.AddSimple()
-                            .Template(@<text>
-                                @Html.Action("MacroPieChart")
-                            </text>);
-                            });
+                        g.AddSimple()
+                                .Template(@<text>
+                                        @Html.Action("MacroPieChart")
+                                </text>);
+                                });
+
                     })
                     .Items(i =>
                     {
