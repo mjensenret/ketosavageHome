@@ -1296,6 +1296,7 @@
     <Content Include="Views\Manage\_personalInfo.cshtml" />
     <Content Include="Views\ManageUsers\_dxUserGrid.cshtml" />
     <Content Include="Views\ManageNews\_dxNewsGrid.cshtml" />
+    <Content Include="Views\ClientCharts\_clientCombinedChart.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

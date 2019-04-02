@@ -185,6 +185,36 @@ namespace KetoSavageWeb.Controllers
             return PartialView("_clientWeightGraph", weightChart);
         }
 
+        public ActionResult ClientCombinedGraph(int userId)
+        {
+            var user = userId;
+            
+            var currentDate = DateTime.Now;
+            var plannedWeight = userProgramRepository.GetDailyProgressByUser(userId)
+                .Select(x => new WeightViewModel()
+                {
+                    date = x.Dates.Date,
+                    type = "Planned",
+                    weight = x.PlannedWeight
+                })
+                .OrderBy(x => x.date)
+                .ToList();
+
+            var actualWeight = userProgramRepository.GetDailyProgressByUser(userId)
+                .Select(x => new WeightViewModel()
+                {
+                    date = x.Dates.Date,
+                    type = "Actual",
+                    weight = x.ActualWeight
+                })
+                .OrderBy(x => x.date)
+                .ToList();
+
+            var weightChart = plannedWeight.Union(actualWeight).ToList();
+
+            return PartialView("_clientCombinedChart", weightChart);
+        }
+
         public ActionResult ClientPerformanceGauge(int userId)
         {
             var model = userProgramRepository.calcWeightChangeByUser(userId);

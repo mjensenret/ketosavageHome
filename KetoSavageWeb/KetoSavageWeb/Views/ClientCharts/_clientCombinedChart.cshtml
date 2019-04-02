@@ -1,0 +1,104 @@
+﻿@using DevExtreme.AspNet.Mvc.Factories;
+@using DevExtreme.AspNet.Mvc.Builders;
+
+@functions {
+    Action<CollectionFactory<ChartSeriesBuilder>> ConfigureSeries()
+    {
+        return (CollectionFactory<ChartSeriesBuilder> factory) =>
+        {
+            factory.Add().ArgumentField("Date").ValueField("ActualWeight");
+            factory.Add().ArgumentField("Date").ValueField("PlannedWeight");
+            factory.Add().ArgumentField("Date").ValueField("ActualCalories");
+            factory.Add().ArgumentField("Date").ValueField("PlannedCalories");
+        };
+    }
+}
+
+<div id="weightGraph">
+    @(Html.DevExtreme().Chart()
+                .ID("combinedWeightChart")
+                .DataSource(d => d.WebApi()
+                    .Controller("ChartsAPI")
+                    .LoadAction("GetClientCombinedGraph")
+                    //.LoadParams(new { userId = 5 })
+                    .LoadParams(new { userId = Session["UserId"] })
+                    )
+                .CommonSeriesSettings(s =>
+                {
+                    s.ArgumentField("Date");
+                    //s.Label(l => l.Format("monthAndYear"));
+                    s.Point(p => p.Size(1));
+                })
+                .ArgumentAxis(x =>
+                {
+                    x.ArgumentType(ChartDataType.DateTime);
+                    x.Label(l => l.Format("shortDate"));
+                })
+                .Panes(p =>
+                {
+                    p.Add().Name("TopPane");
+                    p.Add().Name("BottomPane");
+                })
+                .DefaultPane("BottomPane")
+                .Series(s =>
+                {
+
+                    s.Add()
+            .Pane("TopPane")
+            .Type(SeriesType.Line)
+            .ValueField("PlannedWeight")
+            .Name("Planned Weight");
+                    s.Add()
+            .Pane("TopPane")
+            .Type(SeriesType.Line)
+            .ValueField("ActualWeight")
+            .Name("Actual Weight");
+                    s.Add()
+            .Pane("BottomPane")
+            .Type(SeriesType.Line)
+            .ValueField("PlannedCalories")
+            .Name("Planned Calories");
+                    s.Add()
+            .Pane("BottomPane")
+            .Type(SeriesType.Line)
+            .ValueField("ActualCalories")
+            .Name("Actual Calories");
+                })
+                .Legend(l => l
+                    .VerticalAlignment(VerticalEdge.Bottom)
+                    .HorizontalAlignment(HorizontalAlignment.Center)
+                    .ItemTextPosition(Position.Bottom)
+                )
+                .ValueAxis(a =>
+                {
+                    a.Add()
+            .Pane("BottomPane")
+            .Grid(g => g.Visible(true))
+            .Title(t => t.Text("Calories"));
+                    a.Add()
+            .Pane("TopPane")
+            .Grid(g => g.Visible(true))
+            .Title(t => t.Text("Weight"));
+                })
+                .Title(t => t
+                    .Text("Trend Graphs")
+                    //.Subtitle(s => s.Text("test"))
+                    .Font(f => f
+                        .Color("#dedede")
+                        .Weight(900)
+                        .Size(16)
+                    )
+                )
+                .Export(e => e.Enabled(false))
+                .Tooltip(t => t
+                    .Enabled(true)
+                    .CustomizeTooltip(@<text>
+                        function (arg) {
+                        return {
+                        text: arg.valueText
+                        };
+                        }
+                    </text>)
+                        )
+    )
+</div>

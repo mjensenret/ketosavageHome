@@ -68,6 +68,41 @@ namespace KetoSavageWeb.Controllers
         }
 
         [HttpGet]
+        public HttpResponseMessage GetClientCombinedGraph(DataSourceLoadOptions loadOptions, int userId)
+        {
+            var user = Convert.ToInt32(userId);
+            var date = DateTime.Now.AddDays(7);
+            var dailyProgress = _context.DailyProgress.Where(x => x.UserProgram.ProgramUser.Id == userId && x.IsActive && !x.IsDeleted && x.Dates.Date < date);
+
+            var model = dailyProgress
+                .OrderBy(x => x.DateId)
+                .Select(x => new
+                {
+                    x.Dates.Date,
+                    x.PlannedWeight,
+                    x.ActualWeight,
+                    x.PlannedCarbohydrate,
+                    x.PlannedFat,
+                    x.PlannedProtein,
+                    x.ActualCarbohydrate,
+                    x.ActualProtein,
+                    x.ActualFat                    
+                })
+                .ToList()
+                .Select(y => new ClientChartModel()
+                {
+                    Date = y.Date,
+                    PlannedWeight = y.PlannedWeight,
+                    ActualWeight = y.ActualWeight,
+                    PlannedCalories = ((y.PlannedCarbohydrate * 4) + (y.PlannedProtein * 4) + (y.PlannedFat * 9)),
+                    ActualCalories = ((y.ActualCarbohydrate * 4) + (y.ActualProtein * 4) + (y.ActualFat * 9))
+
+                });
+
+            return Request.CreateResponse(DataSourceLoader.Load(model, loadOptions));
+        }
+
+        [HttpGet]
         public HttpResponseMessage GetComplianceScore(DataSourceLoadOptions loadOptions, string type, bool lifetime)
         {
 

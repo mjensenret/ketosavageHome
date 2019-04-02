@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
@@ -17,6 +18,16 @@ namespace KetoSavageWeb.ViewModels
         public double? weight { get; set; }
     }
 
+    public class ClientChartModel
+    {
+        [JsonProperty]
+        [DisplayFormat(DataFormatString = "{0:MM/dd/yyyy}")]
+        public DateTime Date { get; set; }
+        public double? PlannedWeight { get; set; }
+        public double? ActualWeight { get; set; }
+        public double? PlannedCalories { get; set; }
+        public double? ActualCalories { get; set; }
+    }
     public class ProgressGaugeViewModel
     {
         public double actualWeight { get; set; }
