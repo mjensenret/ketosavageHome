@@ -33,7 +33,8 @@ namespace KetoSavageWeb.Repositories
 
         public int getDateKey(DateTime date)
         {
-            return _context.DateModels.Where(x => x.Date == date).Select(y => y.DateKey).First();
+            
+            return _context.DateModels.Where(x => x.Date == date.Date).Select(y => y.DateKey).First();
         }
 
         public IQueryable<DateModels> GetDatesByRange(DateTime startDate, DateTime endDate)
