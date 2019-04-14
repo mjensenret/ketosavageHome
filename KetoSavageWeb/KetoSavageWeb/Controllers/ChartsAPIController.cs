@@ -109,7 +109,7 @@ namespace KetoSavageWeb.Controllers
             var date = DateTime.Now.Date;
             var weekOfYear = _context.DateModels.Where(x => x.Date == date).Select(y => y.ISOWeekOfYear).First();
 
-            var clientProgress = _context.DailyProgress.Where(x => x.IsActive && !x.IsDeleted && x.Dates.Date < date && x.UserProgram.EndDate > date);
+            var clientProgress = _context.DailyProgress.Where(x => x.IsActive && !x.IsDeleted && x.Dates.Date < date && x.UserProgram.EndDate > date && x.PlannedFat != null);
 
             var variance = clientProgress
                 .OrderBy(x => x.UserProgram.ProgramUser.FirstName)
