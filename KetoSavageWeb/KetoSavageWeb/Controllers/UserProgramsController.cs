@@ -505,6 +505,7 @@ namespace KetoSavageWeb.Controllers
         {
             var userId = Session["UserId"];
             var currentWeek = dateRepository.GetWeekNum(DateTime.Now.Date);
+            
             var userProgramDetails = userProgramRepository.GetDailyProgressByUser(Convert.ToInt32(userId));
             //userProgramDetails.Where(x => x.Dates.WeekOfYear == currentWeek || x.Dates.WeekOfYear == (currentWeek - 1));
 
@@ -568,8 +569,8 @@ namespace KetoSavageWeb.Controllers
             
             DailyMacroUpdate model = new DailyMacroUpdate();
             model.userId = Convert.ToInt32(Session["userId"]);
-            model.week = DateTime.Now;
-            var weekOfYear = dateRepository.GetWeekNum(model.week);
+            model.week = dateRepository.GetNextWeek(DateTime.Now);
+            var weekOfYear = dateRepository.GetWeekNum(DateTime.Now);
             var userProgram = userProgramRepository.GetActive.Where(p => p.ProgramUserId == model.userId)
                 .Include(d => d.DailyProgress).FirstOrDefault();
             var dailyProgress = userProgram.DailyProgress.Where(d => d.Dates.ISOWeekOfYear == weekOfYear).FirstOrDefault();

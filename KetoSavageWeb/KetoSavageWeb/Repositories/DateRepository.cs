@@ -52,5 +52,13 @@ namespace KetoSavageWeb.Repositories
             var model = _context.DateModels.Where(x => x.Date == currentDate.Date).FirstOrDefault().ISOWeekOfYear;
             return model;
         }
+
+        public DateTime GetNextWeek(DateTime currentDate)
+        {
+            var dateModel = _context.DateModels.Where(x => x.Date == currentDate.Date);
+            var nextIsoWeek = dateModel.Select(x => x.ISOWeekOfYear).First() + 1;
+            var newDate = _context.DateModels.Where(x => x.ISOWeekOfYear == nextIsoWeek && x.Year == currentDate.Year).First();
+            return newDate.Date;
+        }
     }
 }
