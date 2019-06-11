@@ -151,7 +151,15 @@
     function onRowUpdating(e) {
 
         e.newData["UserName"] = e.oldData["UserName"];
-        e.newData["IsActive"] = e.oldData["IsActive"];
+        console.log("New Active: " + e.newData["IsActive"]);
+        console.log("Old Active: " + e.oldData["IsActive"]);
+        if (e.newData["IsActive"] == undefined) {
+            e.newData["IsActive"] = e.oldData["IsActive"];
+        }
+        else {
+            console.log("Checkbox was changed");
+        }
+        //e.newData["IsActive"] = e.newData["IsActive";
         
     }
 

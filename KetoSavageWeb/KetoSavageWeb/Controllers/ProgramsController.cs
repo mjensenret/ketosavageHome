@@ -117,32 +117,32 @@ namespace KetoSavageWeb.Controllers
         //{
         //    var values = form.Get("values");
 
-            //if (ModelState.IsValid)
-            //{
-            //    var editProgram = await programRepository.FindAsync(model.Id);
-            //    if (editProgram == null)
-            //    {
-            //        return HttpNotFound();
-            //    }
+        //    if (ModelState.IsValid)
+        //    {
+        //        var editProgram = await programRepository.FindAsync(model.Id);
+        //        if (editProgram == null)
+        //        {
+        //            return HttpNotFound();
+        //        }
 
-            //    editProgram.Name = model.Name;
-            //    editProgram.WeightWeek = model.WeightFactor;
-            //    editProgram.programDescription = model.Description;
-            //    editProgram.LastModified = DateTime.Now;
-            //    editProgram.LastModifiedBy = CurrentUser.UserName;
+        //        editProgram.Name = model.Name;
+        //        editProgram.WeightWeek = model.WeightFactor;
+        //        editProgram.programDescription = model.Description;
+        //        editProgram.LastModified = DateTime.Now;
+        //        editProgram.LastModifiedBy = CurrentUser.UserName;
 
-            //    try
-            //    {
-            //        programRepository.Update(editProgram);
-            //        return RedirectToAction("Index");
-            //    }
-            //    catch (Exception e)
-            //    {
-            //        ModelState.AddModelError("", e.Message.ToString());
-            //    }
-            //    return RedirectToAction("Index");
-            //}
-            //ModelState.AddModelError("", "Something failed editing the program template!");
+        //        try
+        //        {
+        //            programRepository.Update(editProgram);
+        //            return RedirectToAction("Index");
+        //        }
+        //        catch (Exception e)
+        //        {
+        //            ModelState.AddModelError("", e.Message.ToString());
+        //        }
+        //        return RedirectToAction("Index");
+        //    }
+        //    ModelState.AddModelError("", "Something failed editing the program template!");
         //    return RedirectToAction("Index");
         //}
 
