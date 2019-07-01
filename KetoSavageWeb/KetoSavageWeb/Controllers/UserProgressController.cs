@@ -173,7 +173,7 @@ namespace KetoSavageWeb.Controllers
         [HttpPost]
         public JsonResult DxUpdateMeasurementDateChange(DateTime newDate)
         {
-            var date = newDate;
+            var date = newDate.Date;
             var userProgram = userProgramRepository.GetActive.Where(p => p.ProgramUserId == CurrentUser.Id).Include(d => d.Measurements).FirstOrDefault();
             var userMeasurements = userProgram.Measurements.Where(x => x.Dates.Date == date);
             var userMeasurementDetails = userMeasurements.SelectMany(x => x.MeasurementDetails);

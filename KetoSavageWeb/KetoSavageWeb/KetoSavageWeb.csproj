@@ -735,6 +735,7 @@
     <Content Include="Content\icons\dxiconsmaterial.ttf" />
     <Content Include="Content\icons\dxiconsmaterial.woff" />
     <Content Include="Content\icons\dxiconsmaterial.woff2" />
+    <None Include="Properties\PublishProfiles\KetoSavageAZ - Web Deploy.pubxml" />
     <None Include="Properties\PublishProfiles\ks.razoredgetech.com - Web Deploy1.pubxml" />
     <None Include="Properties\PublishProfiles\ksstaging.razoredgetech.com - Web Deploy.pubxml" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
