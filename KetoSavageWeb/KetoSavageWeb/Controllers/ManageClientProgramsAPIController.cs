@@ -223,7 +223,7 @@ namespace KetoSavageWeb.Controllers
             else
             {
                 var userProgram = userProgramRepository.Find(key);
-
+                bool deactivate = false;
                 bool updStartDate = model.currentProgramStartDate.HasValue;
                 bool updEndDate = model.currentProgramEndDate.HasValue;
                 bool updStartWeight = (model.StartWeight > 0);
@@ -249,7 +249,13 @@ namespace KetoSavageWeb.Controllers
                     userProgram.Notes = model.Notes;
                 if (model.CoachId > 0)
                     userProgram.CoachUserId = model.CoachId;
-                userProgram.IsActive = model.IsActive;
+                if (!model.IsActive)
+                {
+                    userProgram.IsActive = model.IsActive;
+                    deactivate = true;
+                    
+                }
+
                 userProgram.LastModified = DateTime.Now;
                 userProgram.LastModifiedBy = RequestContext.Principal.Identity.Name;
 
@@ -257,6 +263,15 @@ namespace KetoSavageWeb.Controllers
 
                 var userDailyProgress = _context.DailyProgress.Where(x => x.UserProgramId == userProgram.Id).OrderBy(x => x.DateId);
 
+                //deactivate all daily progress
+                if(deactivate)
+                {
+                    foreach (var d in userDailyProgress)
+                    {
+                        d.IsActive = false;
+                    }
+                    _context.SaveChanges();
+                }
                 //Add or remove daily progress entries affected by the start date
                 if (updStartDate)
                 {
