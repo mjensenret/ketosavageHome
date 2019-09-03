@@ -139,7 +139,7 @@ namespace KetoSavageWeb.Controllers
 
             model.MeasurementDate = date;
             model.UserProgramId = userProgram.Id;
-            if (userMeasurements != null)
+            if (userMeasurements.Count() >= 1)
             {
                 model.Id = userMeasurements.Select(m => m.Id).FirstOrDefault();
                 model.MeasurementNotes = userMeasurements.Select(m => m.MeasurementNotes).FirstOrDefault();
